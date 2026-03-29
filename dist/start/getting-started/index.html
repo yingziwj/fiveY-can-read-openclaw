@@ -3971,361 +3971,135 @@
       </div>
 
       
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Getting Started</h2>
-          <p>这一页像一本关于“Getting Started”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：Getting Started。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
+      <section class="section-shell">
+        <div class="overview-card">
+          <div>
+            <p class="section-kicker">DeepSeek 中文解读版</p>
+            <h2>OpenClaw 快速上手：5分钟搭建你的AI助手网关</h2>
+            <p>这页文档帮你用最短时间把OpenClaw跑起来。我们会安装系统、完成初始配置，最后验证网关是否正常启动。整个过程就像组装一台智能路由器——先装好硬件，再设置网络参数，最后确认信号畅通。</p>
+          </div>
+          <div class="overview-meta">
+            <span>原始路径：/start/getting-started</span>
+            <span>模型输出章节：4</span>
+            <a href="https://docs.openclaw.ai/start/getting-started" target="_blank" rel="noreferrer">查看官方原文</a>
+          </div>
         </div>
-        <div class="overview-meta">
-          <span>原始路径：/start/getting-started</span>
-          <span>章节数量：4</span>
-          <a href="https://docs.openclaw.ai/start/getting-started" target="_blank" rel="noreferrer">查看原文</a>
+      </section>
+      
+          <section class="section-shell" id="section-1">
+            <div class="section-heading">
+              <p class="section-kicker">第 1 站</p>
+              <h2>从这里开始</h2>
+              <p>概述整个快速上手流程的目标和预期成果</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>让你明确这5分钟投入能换来什么——一个可运行的AI网关系统，而不是零散的安装步骤</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>目标是在5分钟内完成安装、配置、验证全流程</li><li>最终你会得到一个运行中的Gateway网关</li><li>系统会配置好身份验证机制</li><li>你将能立即开始与AI助手对话</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>这不是单纯的安装指南，而是让你快速获得一个可工作的AI助手基础设施</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-2">
+            <div class="section-heading">
+              <p class="section-kicker">第 2 站</p>
+              <h2>准备工作</h2>
+              <p>列出开始前必须满足的环境条件和资源</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>避免因为基础环境问题卡在第一步，浪费调试时间</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>需要Node.js运行时环境，推荐版本24，最低支持22.14+</li><li>需要一个AI模型提供商的API密钥（如Anthropic、OpenAI、Google等）</li><li>Windows用户建议使用WSL2以获得更稳定的体验</li><li>如果还没装Node.js，文档提供了专门的安装指引链接</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">命令 / 代码怎么理解</div>
+              <ul><li>node --version 命令用来检查当前Node版本，确保符合要求</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>就像装修前要确认水电到位，这两项是OpenClaw运行的基础依赖</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-3">
+            <div class="section-heading">
+              <p class="section-kicker">第 3 站</p>
+              <h2>快速安装配置</h2>
+              <p>分三步完成系统部署：安装、初始化、验证</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>这是核心操作部分，正确的执行顺序能避免后续配置错误</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>第一步：通过官方脚本安装OpenClaw，macOS/Linux用curl命令，Windows用PowerShell</li><li>第二步：运行onboarding向导，它会引导你选择模型提供商、设置API密钥、配置网关</li><li>第三步：用status命令验证网关服务是否正常启动</li><li>整个向导过程大约2分钟，是全自动的配置流程</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">命令 / 代码怎么理解</div>
+              <ul><li>curl -fsSL https://openclaw.ai/install.sh | bash 这条命令会下载并执行安装脚本，-f参数确保失败时静默退出</li><li>iwr -useb https://openclaw.ai/install.ps1 | iex 是Windows PowerShell的等效命令，iwr是Invoke-WebRequest的别名</li><li>openclaw onboard --install-daemon 启动配置向导，--install-daemon参数会同时安装后台服务</li><li>openclaw gateway status 检查网关运行状态，类似查看系统服务的健康状况</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>这三步是标准部署流程，按顺序执行就能获得一个基础可用的AI网关</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-4">
+            <div class="section-heading">
+              <p class="section-kicker">第 4 站</p>
+              <h2>下一步做什么</h2>
+              <p>安装完成后可以探索的核心功能方向</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>帮你规划从“能用”到“好用”的进阶路径，避免安装完不知道干什么</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>连接消息通道：让AI助手接入WhatsApp、Telegram等实际聊天平台</li><li>设置配对与安全：控制哪些人可以访问你的AI助手，管理权限边界</li><li>配置网关高级选项：调整模型参数、工具集成、沙箱设置等</li><li>浏览可用工具：了解系统内置的浏览器、代码执行、网络搜索等能力</li><li>高级用户还可以通过环境变量自定义安装路径和服务账户配置</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">命令 / 代码怎么理解</div>
+              <ul><li>OPENCLAW_HOME 环境变量定义系统的主目录，影响内部路径解析</li><li>OPENCLAW_STATE_DIR 可以覆盖默认的状态存储目录</li><li>OPENCLAW_CONFIG_PATH 允许指定自定义的配置文件位置</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>快速上手只是开始，真正的价值在于把这些功能模块组合成适合你场景的AI工作流</p>
+              </div>
+            </div>
+          </section>
+        
+      <section class="section-shell">
+        <div class="ad-placeholder">
+          <p>这里预留给未来的 Google AdSense 模块。</p>
+          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
         </div>
-      </div>
-    </section>
+      </section>
     
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Getting Started Install OpenClaw, run onboarding, and chat with your AI assistant — all in about 5 minutes. By the end…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Getting Started”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Getting Started</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Install OpenClaw, run onboarding, and chat with your AI assistant — all in about 5 minutes. By the end you will have a…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Install OpenClaw, run onboarding, and chat with your AI assistant — all in about 5 minutes. By the end you will have a running Gateway, configured auth, and a working chat session.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>What you need</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Tip&gt; Check your Node version with node --version. **Windows users:** both native Windows and WSL2 are supported. WSL2…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“What you need”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**Node.js** — Node 24 recommended (Node 2…、**An 对话接口 key** from a 聪明脑袋模型 provider (A…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Node.js** — Node 24 recommended (Node 22.14+ also supported)</li><li>**An API key** from a model provider (Anthropic, OpenAI, Google, etc.) — onboarding will prompt you</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Tip&gt; Check your Node version with node --version. **Windows users:** both native Windows and WSL2 are supported. WSL2…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Tip&gt; Check your Node version with <code>node --version</code>. **Windows users:** both native Windows and WSL2 are supported. WSL2 is more stable and recommended for the full experience. See <a href="/platforms/windows" target="_blank" rel="noreferrer">Windows</a>. Need to install Node? See <a href="/install/node" target="_blank" rel="noreferrer">Node setup</a>. &lt;/Tip&gt;</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Quick setup</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Steps&gt; &lt;Step title=&quot;Install OpenClaw&quot;&gt; &lt;Tabs&gt; &lt;Tab title=&quot;macOS / Linux&quot;&gt; &lt;img alt=&quot;Install Script Process&quot; /&gt; &lt;/Tab&gt;…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Steps&gt; &lt;Step title=&quot;Install OpenClaw&quot;&gt; &lt;Tabs&gt; &lt;Tab title=&quot;macOS / Linux&quot;&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Steps&gt; &lt;Step title=&quot;Install OpenClaw&quot;&gt; &lt;Tabs&gt; &lt;Tab title=&quot;macOS / Linux&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} curl -fsSL https://openclaw.ai/install.sh | bash </code>``</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;img alt=&quot;Install Script Process&quot; /&gt; &lt;/Tab&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;img alt=&quot;Install Script Process&quot; /&gt; &lt;/Tab&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Tab title=&quot;Windows (PowerShell)&quot;&gt; &lt;/Tab&gt; &lt;/Tabs&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Tab title=&quot;Windows (PowerShell)&quot;&gt; ``<code>powershell theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} iwr -useb https://openclaw.ai/install.ps1 | iex </code>`` &lt;/Tab&gt; &lt;/Tabs&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Note&gt; Other install methods (Docker, Nix, npm): Install. &lt;/Note&gt; &lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Note&gt; Other install methods (Docker, Nix, npm): <a href="/install" target="_blank" rel="noreferrer">Install</a>. &lt;/Note&gt; &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Run onboarding&quot;&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Run onboarding&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw onboard --install-daemon </code>``</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The wizard walks you through choosing a 聪明脑袋模型 provider, setting an 对话接口 key, and 设置说明书uring the 门口的小门卫. It takes about…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The wizard walks you through choosing a model provider, setting an API key, and configuring the Gateway. It takes about 2 minutes.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“See Onboarding (CLI) for the full reference. &lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>See <a href="/start/wizard" target="_blank" rel="noreferrer">Onboarding (CLI)</a> for the full reference. &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Verify the 门口的小门卫 is running&quot;&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Verify the Gateway is running&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw gateway status </code>``</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“You should see the 门口的小门卫 listening on port 18789. &lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>You should see the Gateway listening on port 18789. &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Open the dashboard&quot;&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Open the dashboard&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw dashboard </code>``</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“This opens the Control UI in your browser. If it loads, everything is working. &lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>This opens the Control UI in your browser. If it loads, everything is working. &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Send your first 小纸条消息&quot;&gt; Type a 小纸条消息 in the Control UI chat and you should get an AI reply.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Send your first message&quot;&gt; Type a message in the Control UI chat and you should get an AI reply.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Want to chat from your phone instead? The fastest 消息通道 to set up is Telegram (just a bot token). See 消息通道s for all opti…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Want to chat from your phone instead? The fastest channel to set up is <a href="/channels/telegram" target="_blank" rel="noreferrer">Telegram</a> (just a bot token). See <a href="/channels" target="_blank" rel="noreferrer">Channels</a> for all options. &lt;/Step&gt; &lt;/Steps&gt;</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>What to do next</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Columns&gt; &lt;Card title=&quot;Connect a 消息通道&quot; href=&quot;/消息通道s&quot; icon=&quot;小纸条消息-square&quot;&gt; WhatsApp, Telegram, Discord, i小纸条消息, and more…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Columns&gt; &lt;Card title=&quot;Connect a 消息通道&quot; href=&quot;/消息通道s&quot; icon=&quot;小纸条消息-square&quot;&gt; WhatsApp, Telegram, Discord, i小纸条消息, and more…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Columns&gt; &lt;Card title=&quot;Connect a channel&quot; href=&quot;/channels&quot; icon=&quot;message-square&quot;&gt; WhatsApp, Telegram, Discord, iMessage, and more. &lt;/Card&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Card title=&quot;Pairing and safety&quot; href=&quot;/消息通道s/pairing&quot; icon=&quot;shield&quot;&gt; Control who can 小纸条消息 your 机器人朋友. &lt;/Card&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Card title=&quot;Pairing and safety&quot; href=&quot;/channels/pairing&quot; icon=&quot;shield&quot;&gt; Control who can message your agent. &lt;/Card&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Card title=&quot;设置说明书ure the 门口的小门卫&quot; href=&quot;/门口的小门卫/设置说明书uration&quot; icon=&quot;settings&quot;&gt; 聪明脑袋模型s, 工具小帮手s, sandbox, and advanced s…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Card title=&quot;Configure the Gateway&quot; href=&quot;/gateway/configuration&quot; icon=&quot;settings&quot;&gt; Models, tools, sandbox, and advanced settings. &lt;/Card&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Card title=&quot;Browse 工具小帮手s&quot; href=&quot;/工具小帮手s&quot; icon=&quot;wrench&quot;&gt; Browser, exec, web search, skills, and 新本领插件s. &lt;/Card&gt; &lt;/Colu…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Card title=&quot;Browse tools&quot; href=&quot;/tools&quot; icon=&quot;wrench&quot;&gt; Browser, exec, web search, skills, and plugins. &lt;/Card&gt; &lt;/Columns&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Accordion title=&quot;Advanced: environment variables&quot;&gt; If you run OpenClaw as a service account or want custom paths:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Advanced: environment variables&quot;&gt; If you run OpenClaw as a service account or want custom paths:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“What to do next”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：OPENCLAW_HOME — home directory for intern…、OPENCLAW_STATE_DIR — override the state d…、OPENCLAW_设置说明书_PATH — override the 设置说明书…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>OPENCLAW_HOME</code> — home directory for internal path resolution</li><li><code>OPENCLAW_STATE_DIR</code> — override the state directory</li><li><code>OPENCLAW_CONFIG_PATH</code> — override the config file path</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Full reference: Environment variables. &lt;/Accordion&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Full reference: <a href="/help/environment" target="_blank" rel="noreferrer">Environment variables</a>. &lt;/Accordion&gt;</p>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
 
       <footer class="page-footer">
         <div>

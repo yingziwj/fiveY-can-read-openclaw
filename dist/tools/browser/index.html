@@ -3975,12 +3975,12 @@
         <div class="overview-card">
           <div>
             <p class="section-kicker">DeepSeek 中文解读版</p>
-            <h2>OpenClaw浏览器：为AI代理打造的独立操作空间</h2>
-            <p>OpenClaw提供了一个完全隔离的浏览器环境，专门供AI代理自动化操作，不会干扰你的个人浏览数据。这就像给AI配了一台专属电脑，它可以在里面安全地打开网页、点击按钮、输入文字，而你的Chrome历史记录和登录状态完全不受影响。核心价值在于：隔离性、可控性、以及为自动化任务提供稳定平台。</p>
+            <h2>OpenClaw浏览器：为AI代理准备的独立操作空间</h2>
+            <p>OpenClaw提供了一个完全隔离的浏览器环境，专门供AI代理进行自动化操作。它不会干扰你的个人浏览器数据，通过本地网关服务进行安全控制。你可以把它想象成给AI配了一台专属电脑，让它能在安全范围内浏览网页、点击按钮、输入文字，而你的Chrome历史记录和登录状态完全不受影响。</p>
           </div>
           <div class="overview-meta">
             <span>原始路径：/tools/browser</span>
-            <span>模型输出章节：8</span>
+            <span>模型输出章节：7</span>
             <a href="https://docs.openclaw.ai/tools/browser" target="_blank" rel="noreferrer">查看官方原文</a>
           </div>
         </div>
@@ -3989,22 +3989,22 @@
           <section class="section-shell" id="section-1">
             <div class="section-heading">
               <p class="section-kicker">第 1 站</p>
-              <h2>核心概念：隔离的浏览器空间</h2>
-              <p>解释OpenClaw浏览器到底是什么，以及它如何与你的日常浏览器区分开。</p>
+              <h2>核心价值：你得到什么</h2>
+              <p>这一节讲OpenClaw浏览器能提供哪些具体功能。</p>
             </div>
             <div class="story-grid">
               <div class="story-card">
                 <div class="story-card-label">为什么看这节</div>
-                <p>理解这个基本区别，才能明白为什么需要这个功能，以及它能解决什么问题（比如避免AI操作污染你的个人数据）。</p>
+                <p>了解这些功能，你才知道这个工具能帮你解决什么问题，值不值得投入时间配置。</p>
               </div>
               <div class="source-card">
                 <div class="story-card-label">这一节真正要带走的点</div>
-                <ul><li>OpenClaw会启动一个独立的Chrome/Brave/Edge/Chromium实例，使用名为`openclaw`的专属用户配置文件。</li><li>这个`openclaw`配置文件与你的个人浏览器配置文件（存放书签、历史、密码的那个）物理隔离，互不干扰。</li><li>AI代理可以在这个独立环境中执行打开标签页、阅读页面、点击、输入等操作，所有行为都被限制在这个“安全车道”内。</li><li>系统还内置了一个`user`配置文件，可以通过Chrome DevTools MCP协议连接到你已经登录的真实Chrome会话，但这需要用户在场确认。</li><li>这个浏览器不是给你日常上网用的，它是专门为AI自动化任务和验证工作流设计的沙盒环境。</li><li>默认情况下，浏览器控制服务只在本地回环地址（loopback）上运行，增强了安全性。</li></ul>
+                <ul><li>你会得到一个名为openclaw的独立浏览器配置文件，默认用橙色标识，与你的个人浏览器完全隔离。</li><li>你可以精确控制标签页：列出、打开、聚焦、关闭，操作是确定性的，不会乱点。</li><li>AI代理能执行点击、输入、拖拽、选择等动作，还能截图、生成PDF、抓取页面快照。</li><li>支持多配置文件，比如openclaw用于代理操作，work用于工作，remote用于连接远程浏览器。</li><li>这个浏览器不是给你日常用的，它是专门为自动化任务和验证流程准备的安全沙箱。</li><li>内置的user配置文件能通过Chrome MCP连接到你已经登录的真实Chrome会话。</li></ul>
               </div>
               
               <div class="story-card">
                 <div class="story-card-label">最后记一句</div>
-                <p>把它想象成一个AI专用的、干净的虚拟机浏览器，专事专办。</p>
+                <p>总之，你获得的是一个安全、可控的浏览器操作台，专门为自动化任务设计。</p>
               </div>
             </div>
           </section>
@@ -4012,27 +4012,27 @@
           <section class="section-shell" id="section-2">
             <div class="section-heading">
               <p class="section-kicker">第 2 站</p>
-              <h2>核心功能与快速上手</h2>
-              <p>列出你能获得的主要能力，并通过几个基础命令立即体验。</p>
+              <h2>快速上手：几个关键命令</h2>
+              <p>这一节展示了如何用命令行控制浏览器。</p>
             </div>
             <div class="story-grid">
               <div class="story-card">
                 <div class="story-card-label">为什么看这节</div>
-                <p>快速了解这个工具能做什么，并通过实际操作建立直观感受。</p>
+                <p>跟着做一遍，你就能立刻看到效果，建立直观感受。</p>
               </div>
               <div class="source-card">
                 <div class="story-card-label">这一节真正要带走的点</div>
-                <ul><li>获得一个独立的浏览器配置文件，默认名为`openclaw`（界面通常有橙色主题以示区分）。</li><li>支持确定性的标签页控制：列出、打开、聚焦、关闭特定标签页。</li><li>支持代理动作：点击、输入、拖拽、选择元素，并能捕获页面快照、截图、生成PDF。</li><li>支持多配置文件，你可以创建`work`、`remote`等不同场景的配置。</li><li>通过简单的CLI命令即可控制浏览器的生命周期和基本操作。</li></ul>
+                <ul><li>用openclaw browser status检查浏览器状态，这是诊断问题的第一步。</li><li>用openclaw browser start启动浏览器服务，如果没启动，后续操作都无效。</li><li>用openclaw browser open加网址来打开新标签页，这是让代理开始工作的起点。</li><li>用openclaw browser snapshot抓取页面快照，这是AI“看到”页面内容的方式。</li><li>如果看到“Browser disabled”错误，说明浏览器功能没启用，需要去配置文件里打开。</li><li>所有命令都可以通过--browser-profile参数指定使用哪个配置文件，比如openclaw或user。</li></ul>
               </div>
               
             <div class="source-card">
               <div class="story-card-label">命令 / 代码怎么理解</div>
-              <ul><li>`openclaw browser --browser-profile openclaw status`：检查指定配置文件（这里是`openclaw`）的浏览器状态。</li><li>`openclaw browser --browser-profile openclaw start`：启动该配置文件对应的浏览器实例。</li><li>`openclaw browser --browser-profile openclaw open https://example.com`：用该浏览器打开一个指定网址。</li><li>`openclaw browser --browser-profile openclaw snapshot`：捕获当前页面的快照（通常是一个结构化的文本描述，供AI理解页面内容）。</li><li>如果遇到“Browser disabled”错误，需要在配置文件中启用浏览器功能，并重启Gateway服务。</li></ul>
+              <ul><li>openclaw browser --browser-profile openclaw status：检查名为openclaw的配置文件状态。</li><li>openclaw browser --browser-profile openclaw start：启动该配置文件的浏览器服务。</li><li>openclaw browser --browser-profile openclaw open https://example.com：用该配置文件打开指定网页。</li><li>openclaw browser --browser-profile openclaw snapshot：抓取该配置文件当前页面的快照。</li></ul>
             </div>
           
               <div class="story-card">
                 <div class="story-card-label">最后记一句</div>
-                <p>几个命令就能让AI的专属浏览器跑起来并执行任务。</p>
+                <p>记住：先检查状态，再启动服务，然后才能执行具体操作。</p>
               </div>
             </div>
           </section>
@@ -4040,27 +4040,27 @@
           <section class="section-shell" id="section-3">
             <div class="section-heading">
               <p class="section-kicker">第 3 站</p>
-              <h2>插件化架构与配置管理</h2>
-              <p>解释浏览器功能如何作为插件集成，以及核心的配置选项。</p>
+              <h2>插件管理：如何开关浏览器功能</h2>
+              <p>这一节解释浏览器功能是如何作为插件集成，以及如何禁用或替换它。</p>
             </div>
             <div class="story-grid">
               <div class="story-card">
                 <div class="story-card-label">为什么看这节</div>
-                <p>理解其模块化设计，便于你按需启用、禁用或替换浏览器实现，同时掌握关键配置项的含义。</p>
+                <p>如果你需要自定义浏览器行为，或者安装第三方浏览器插件，必须理解这里的机制。</p>
               </div>
               <div class="source-card">
                 <div class="story-card-label">这一节真正要带走的点</div>
-                <ul><li>浏览器工具现在是一个默认捆绑并启用的插件，这意味着你可以关闭它而不影响OpenClaw其他插件系统。</li><li>禁用插件通常在你想安装另一个提供同名`browser`工具的自定义插件之前进行。</li><li>完整的浏览器体验需要两个条件同时满足：插件本身未禁用，且配置文件中的`browser.enabled`设置为`true`。</li><li>浏览器相关的配置（如启用开关、SSRF策略、超时设置等）都存放在`~/.openclaw/openclaw.json`配置文件中。</li><li>修改浏览器配置后，需要重启Gateway服务，以便捆绑的插件能用新设置重新注册其浏览器服务。</li><li>核心框架只保留共享的插件SDK辅助工具，浏览器运行时的具体实现由插件负责，这使得替换浏览器实现更干净。</li></ul>
+                <ul><li>浏览器工具现在是一个默认启用的捆绑插件，这意味着你可以单独禁用它，而不影响OpenClaw其他插件。</li><li>在配置文件中把plugins.entries.browser.enabled设为false，就能禁用这个捆绑插件。</li><li>禁用插件后，相关的CLI命令、网关方法、代理工具和浏览器控制服务都会一起消失。</li><li>你的浏览器配置（browser.*）会保留，方便其他插件复用这些设置。</li><li>浏览器运行时实现也由这个插件管理，移除或替换它就意味着移除了整个浏览器功能集。</li><li>修改浏览器配置后，需要重启网关，插件才能用新设置重新注册服务。</li></ul>
               </div>
               
             <div class="source-card">
               <div class="story-card-label">命令 / 代码怎么理解</div>
-              <ul><li>在配置的`plugins.entries.browser`部分设置`enabled: false`来禁用默认的浏览器插件。</li><li>`browser.enabled: true`是启用浏览器功能的全局开关，默认就是`true`。</li><li>`browser.ssrfPolicy.dangerouslyAllowPrivateNetwork: true`：默认允许访问私有网络地址（信任网络模式）。设为`false`则进入严格模式，只允许访问公网地址。</li><li>`browser.defaultProfile: &quot;openclaw&quot;`：设置默认使用的浏览器配置文件。</li><li>`browser.executablePath`：指定浏览器可执行文件的完整路径，用于覆盖自动检测。</li><li>`profiles`对象下可以定义多个配置，每个配置可以指定CDP端口、颜色、驱动类型等。</li></ul>
+              <ul><li>{&quot;plugins&quot;: {&quot;entries&quot;: {&quot;browser&quot;: {&quot;enabled&quot;: false}}}}：在JSON配置中禁用浏览器插件。</li><li>plugins.entries.browser.enabled：控制插件本身的开关。</li><li>browser.enabled：控制浏览器功能是否启用，两者需要配合使用。</li></ul>
             </div>
           
               <div class="story-card">
                 <div class="story-card-label">最后记一句</div>
-                <p>浏览器功能被设计成可插拔的模块，配置集中管理，修改后需重启生效。</p>
+                <p>插件机制让你能灵活控制浏览器功能，但改动配置后别忘了重启网关。</p>
               </div>
             </div>
           </section>
@@ -4069,21 +4069,21 @@
             <div class="section-heading">
               <p class="section-kicker">第 4 站</p>
               <h2>配置文件详解：openclaw vs user</h2>
-              <p>深入对比两种核心的浏览器配置文件类型及其使用场景。</p>
+              <p>这一节对比两种核心配置文件的使用场景和区别。</p>
             </div>
             <div class="story-grid">
               <div class="story-card">
                 <div class="story-card-label">为什么看这节</div>
-                <p>正确选择配置文件是高效使用浏览器的关键，这决定了AI是在隔离环境操作，还是复用你的真实登录状态。</p>
+                <p>选对配置文件，才能让AI在正确的上下文中操作，避免权限混乱。</p>
               </div>
               <div class="source-card">
                 <div class="story-card-label">这一节真正要带走的点</div>
-                <ul><li>`openclaw`配置文件：这是OpenClaw完全管理的、隔离的浏览器实例。它有自己的用户数据目录，不需要浏览器扩展，是AI自动化任务的主力。</li><li>`user`配置文件：这是一个内置配置，通过Chrome DevTools MCP协议尝试连接到你已经登录的真实Chrome会话。这让你能利用现有的登录状态（如Gmail、社交媒体）。</li><li>当AI代理调用浏览器工具时，默认使用隔离的`openclaw`浏览器。</li><li>当你需要利用现有登录会话，并且用户本人能在电脑前点击确认连接提示时，应优先使用`profile=&quot;user&quot;`。</li><li>`profile`参数是一个显式覆盖项，让你在调用时指定使用哪种浏览器模式。</li><li>你可以在配置中设置`browser.defaultProfile: &quot;openclaw&quot;`（默认）或`&quot;user&quot;`来改变默认行为。</li></ul>
+                <ul><li>openclaw配置文件是OpenClaw管理的独立浏览器，完全隔离，不需要浏览器扩展。</li><li>user配置文件是内置的，通过Chrome MCP连接到你已经登录的真实Chrome会话。</li><li>默认情况下，AI代理工具调用会使用隔离的openclaw浏览器，保证安全。</li><li>当操作需要利用现有登录状态（比如已登录的网站），且用户能在电脑前点击确认时，应使用profile=&quot;user&quot;。</li><li>profile参数是显式覆盖，让你能指定使用哪种浏览器模式。</li><li>你可以设置browser.defaultProfile: &quot;openclaw&quot;来让管理模式成为默认选择。</li></ul>
               </div>
               
               <div class="story-card">
                 <div class="story-card-label">最后记一句</div>
-                <p>`openclaw`用于安全的自动化，`user`用于借用你的真实登录状态（需人工介入）。</p>
+                <p>简单任务用openclaw保证隔离；需要登录状态时用user，但需人工介入确认。</p>
               </div>
             </div>
           </section>
@@ -4091,27 +4091,27 @@
           <section class="section-shell" id="section-5">
             <div class="section-heading">
               <p class="section-kicker">第 5 站</p>
-              <h2>控制模式：本地、远程与节点代理</h2>
-              <p>介绍OpenClaw浏览器支持的几种连接和控制方式。</p>
+              <h2>核心配置：看懂配置文件</h2>
+              <p>这一节深入讲解浏览器的主要配置项，它们决定了浏览器的行为和安全性。</p>
             </div>
             <div class="story-grid">
               <div class="story-card">
                 <div class="story-card-label">为什么看这节</div>
-                <p>根据你的部署架构（所有服务在一台机器，还是Gateway和浏览器分离），选择最合适的控制模式。</p>
+                <p>配置是定制的关键，理解每个字段，你才能根据需求调整安全策略、超时时间、默认浏览器等。</p>
               </div>
               <div class="source-card">
                 <div class="story-card-label">这一节真正要带走的点</div>
-                <ul><li>**本地控制（默认）**：Gateway在本地启动一个回环控制服务，并可以启动一个本地浏览器实例。这是最简单的单机部署模式。</li><li>**远程CDP控制**：通过设置`browser.profiles.&lt;name&gt;.cdpUrl`，让OpenClaw连接到一个运行在其他地方的Chromium浏览器的CDP（Chrome DevTools Protocol）端点。此时OpenClaw不会启动本地浏览器。</li><li>**节点主机代理（零配置默认）**：如果你在运行浏览器的机器上部署了OpenClaw节点主机（node host），Gateway会自动将浏览器工具调用路由到该节点，无需额外配置。这是远程Gateway场景的默认路径。</li><li>远程CDP URL可以包含认证信息，如查询参数token或HTTP Basic认证。建议使用环境变量或密钥管理器来管理token，而非直接写在配置文件中。</li><li>节点主机代理可以配置`allowProfiles`列表进行最小权限控制，只允许访问特定的配置文件。</li></ul>
+                <ul><li>浏览器配置放在~/.openclaw/openclaw.json的browser对象里。</li><li>enabled开关控制整个浏览器功能是否启用，默认是true。</li><li>ssrfPolicy定义网络安全策略，比如是否允许访问私有网络地址，这是防止服务器端请求伪造的关键。</li><li>remoteCdpTimeoutMs和remoteCdpHandshakeTimeoutMs设置连接远程CDP的超时时间，调大可以应对网络延迟。</li><li>defaultProfile设置默认使用的配置文件，比如openclaw或user。</li><li>executablePath可以指定浏览器可执行文件的路径，覆盖自动检测。</li><li>profiles对象里定义多个配置文件，每个可以设置CDP端口、颜色、是否仅附加等属性。</li><li>attachOnly: true表示“不启动本地浏览器，只附加到已运行的浏览器”，用于连接现有会话。</li><li>color和每个配置文件的color用于给浏览器UI着色，方便区分不同配置文件。</li><li>driver: &quot;existing-session&quot;表示使用Chrome DevTools MCP连接现有会话，而不是原始CDP。</li></ul>
               </div>
               
             <div class="source-card">
               <div class="story-card-label">命令 / 代码怎么理解</div>
-              <ul><li>设置`cdpUrl: &quot;http://remote-host:9222&quot;`或`&quot;wss://remote-host:9222&quot;`来连接远程浏览器的CDP端点。</li><li>在节点主机配置中设置`nodeHost.browserProxy.enabled=false`来禁用浏览器代理功能。</li><li>在Gateway配置中设置`gateway.nodes.browser.mode=&quot;off&quot;`来禁用通过节点代理的浏览器控制。</li></ul>
+              <ul><li>&quot;browser&quot;: {&quot;enabled&quot;: true}：启用浏览器功能。</li><li>&quot;ssrfPolicy&quot;: {&quot;dangerouslyAllowPrivateNetwork&quot;: true}：允许访问私有网络（默认信任网络模式）。</li><li>&quot;defaultProfile&quot;: &quot;openclaw&quot;：设置默认配置文件为openclaw。</li><li>&quot;executablePath&quot;: &quot;/Applications/Brave Browser.app/Contents/MacOS/Brave Browser&quot;：指定Brave浏览器的路径（macOS示例）。</li><li>&quot;profiles&quot;: {&quot;openclaw&quot;: {&quot;cdpPort&quot;: 18800, &quot;color&quot;: &quot;#FF4500&quot;}}：定义openclaw配置文件的端口和颜色。</li></ul>
             </div>
           
               <div class="story-card">
                 <div class="story-card-label">最后记一句</div>
-                <p>支持从本地直接控制到连接远程浏览器服务的多种灵活部署方式。</p>
+                <p>配置是平衡功能与安全的关键，仔细设置ssrfPolicy和超时参数，能避免很多连接问题。</p>
               </div>
             </div>
           </section>
@@ -4119,27 +4119,27 @@
           <section class="section-shell" id="section-6">
             <div class="section-heading">
               <p class="section-kicker">第 6 站</p>
-              <h2>快照、引用与自动化操作</h2>
-              <p>解释OpenClaw如何让AI“看到”页面并与之交互的核心机制。</p>
+              <h2>安全须知：保护你的浏览器环境</h2>
+              <p>这一节汇总了使用OpenClaw浏览器时需要注意的安全要点。</p>
             </div>
             <div class="story-grid">
               <div class="story-card">
                 <div class="story-card-label">为什么看这节</div>
-                <p>这是AI实现自动化浏览的关键。理解快照和引用系统，才能明白AI如何定位页面元素并执行点击、输入等操作。</p>
+                <p>自动化工具权限很大，忽视安全可能导致数据泄露或系统风险，这些原则能帮你建立安全基线。</p>
               </div>
               <div class="source-card">
                 <div class="story-card-label">这一节真正要带走的点</div>
-                <ul><li>OpenClaw支持两种页面快照风格：**AI快照（数字引用）** 和 **角色快照（如e12的引用）**。</li><li>AI快照（`openclaw browser snapshot`）输出包含数字引用（如`12`）的文本描述，AI可以通过`click 12`来操作对应元素。</li><li>角色快照（`openclaw browser snapshot --interactive`）输出基于ARIA角色的元素树，引用格式如`e12`，操作命令如`click e12`。角色快照更稳定，适合交互式调试。</li><li>这些引用（refs）**在页面导航后不会保持稳定**。如果操作失败，需要重新获取快照并使用新的引用。</li><li>AI通过`browser act`工具，结合快照中的引用ID，来执行点击、输入、拖拽、选择等具体动作。</li><li>还支持丰富的等待条件，如等待特定URL、等待网络空闲、等待JavaScript谓词成立、等待某个选择器可见等，并可组合使用。</li></ul>
+                <ul><li>浏览器控制服务默认只绑定在回环地址，访问需要通过网关认证或节点配对，这限制了攻击面。</li><li>如果启用了浏览器控制但没配置认证，OpenClaw会在启动时自动生成并保存网关认证令牌。</li><li>建议将网关和节点主机放在私有网络（如Tailscale），避免公开暴露。</li><li>远程CDP的URL和令牌应视为机密，最好用环境变量或密钥管理器存储，而不是直接写在配置文件里。</li><li>openclaw浏览器配置文件中可能包含登录会话，要像对待敏感数据一样保护它。</li><li>browser act kind=evaluate和openclaw browser evaluate等命令允许在页面上下文中执行任意JavaScript，可能被提示注入攻击利用，不需要时可禁用。</li><li>对于登录和反机器人网站（如X/Twitter），有专门的指南，操作时需额外小心。</li></ul>
               </div>
               
             <div class="source-card">
               <div class="story-card-label">命令 / 代码怎么理解</div>
-              <ul><li>`openclaw browser snapshot --interactive --compact`：获取紧凑格式的角色快照。</li><li>`openclaw browser click e12 --double`：双击引用为`e12`的元素。</li><li>`openclaw browser type 23 &quot;hello&quot; --submit`：在引用为`23`的输入框中输入“hello”并提交。</li><li>`openclaw browser wait &quot;#main&quot; --url &quot;**/dash&quot; --load networkidle`：等待ID为`main`的元素可见，同时URL匹配模式`**/dash`，并且网络状态变为空闲。</li></ul>
+              <ul><li>{&quot;browser&quot;: {&quot;ssrfPolicy&quot;: {&quot;dangerouslyAllowPrivateNetwork&quot;: false, &quot;hostnameAllowlist&quot;: [&quot;*.example.com&quot;]}}}：严格模式示例，只允许访问特定域名，禁止私有网络。</li></ul>
             </div>
           
               <div class="story-card">
                 <div class="story-card-label">最后记一句</div>
-                <p>快照是AI的“眼睛”，引用是AI的“手指”，两者结合实现精准的页面自动化。</p>
+                <p>遵循最小权限原则：用私有网络、保护令牌、按需启用功能，才能安全地享受自动化便利。</p>
               </div>
             </div>
           </section>
@@ -4147,50 +4147,22 @@
           <section class="section-shell" id="section-7">
             <div class="section-heading">
               <p class="section-kicker">第 7 站</p>
-              <h2>安全与隐私考量</h2>
-              <p>阐述使用OpenClaw浏览器时需要注意的安全边界和最佳实践。</p>
+              <h2>工作流程：AI代理如何操作浏览器</h2>
+              <p>这一节解释AI代理与浏览器交互的底层机制和工具设计。</p>
             </div>
             <div class="story-grid">
               <div class="story-card">
                 <div class="story-card-label">为什么看这节</div>
-                <p>任何自动化工具，尤其是能控制浏览器的，都必须关注安全。理解这些要点可以避免将内部系统暴露或引入风险。</p>
+                <p>理解这个流程，你就能预判AI的行为，更好地设计自动化任务，也能在出错时知道从哪里排查。</p>
               </div>
               <div class="source-card">
                 <div class="story-card-label">这一节真正要带走的点</div>
-                <ul><li>浏览器控制服务默认只绑定在本地回环地址，访问需通过Gateway的身份验证或已配对的节点主机。</li><li>如果启用了浏览器控制但未配置身份验证，OpenClaw会在启动时自动生成并保存一个Gateway认证token。</li><li>建议将Gateway和任何节点主机部署在私有网络（如Tailscale内），避免公开暴露。</li><li>远程CDP的URL和token应视为机密信息，优先使用环境变量或密钥管理器，而非直接写在配置文件中。</li><li>`openclaw`浏览器配置文件中可能包含登录会话，应将其视为敏感数据妥善处理。</li><li>`browser act`中的`evaluate`操作和`wait --fn`允许在页面上下文中执行任意JavaScript，这可能被提示注入攻击利用。如果不需要此功能，可通过`browser.evaluateEnabled=false`禁用它。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">命令 / 代码怎么理解</div>
-              <ul><li>严格SSRF模式配置示例：设置`dangerouslyAllowPrivateNetwork: false`并配置`hostnameAllowlist`来只允许访问特定的公网域名。</li><li>使用环境变量来传递敏感信息，例如在配置中引用`cdpUrl: &quot;${BROWSERLESS_WS_URL}&quot;`。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">最后记一句</div>
-                <p>遵循最小权限原则，保护认证信息，将服务部署在可信网络内，并审慎评估代码执行功能的风险。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>给AI代理的工具接口</h2>
-              <p>说明AI代理如何通过统一的工具接口来调用浏览器功能。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">为什么看这节</div>
-                <p>了解AI与浏览器交互的抽象层，这有助于你设计提示词或理解AI决策过程。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">这一节真正要带走的点</div>
-                <ul><li>AI代理通过一个名为`browser`的工具来执行所有浏览器自动化操作，包括状态检查、启动/停止、标签页管理、打开网页、导航、执行动作（点击/输入）、获取快照和截图等。</li><li>`browser snapshot`调用会返回一个稳定的UI树（AI格式或ARIA格式），供AI分析页面结构。</li><li>`browser act`则利用快照中提供的引用ID来执行具体的交互操作。</li><li>工具调用时可以指定`profile`参数来选择使用哪个命名的浏览器配置文件（如`openclaw`、`user`或自定义的远程CDP配置）。</li><li>还可以指定`target`参数（`sandbox` | `host` | `node`）来选择浏览器所在的位置，这在沙盒会话或有多节点连接时用于路由控制。</li><li>这种设计让AI基于稳定的界面（快照和引用）进行操作，避免了依赖脆弱且易变的CSS选择器，使自动化更健壮和可预测。</li></ul>
+                <ul><li>AI代理只有一个浏览器自动化工具：browser，它整合了状态检查、标签控制、快照、截图、导航、动作执行等功能。</li><li>工作流程是：先调用browser snapshot获取页面UI树（AI或ARIA格式），这个快照包含可操作的引用ID。</li><li>然后AI根据快照中的引用ID，调用browser act来执行点击、输入等具体动作。</li><li>browser screenshot用于捕获像素图像，可以是整个页面或特定元素。</li><li>工具调用时可以指定profile参数来选择浏览器配置文件，比如openclaw、user或远程CDP。</li><li>还可以指定target参数（sandbox、host、node）来控制浏览器运行的位置，这在沙箱或分布式环境中很重要。</li><li>如果连接了支持浏览器的节点，工具可能会自动路由到该节点，除非你显式指定target。</li><li>这种设计让AI的操作基于稳定的界面引用，避免了脆弱的CSS选择器，提高了可靠性。</li></ul>
               </div>
               
               <div class="story-card">
                 <div class="story-card-label">最后记一句</div>
-                <p>AI通过一个高度抽象且稳定的`browser`工具与浏览器交互，使其行为更确定，不依赖于易变的页面细节。</p>
+                <p>AI通过快照“看到”页面，通过引用ID“操作”元素，这是一个稳定且可预测的自动化范式。</p>
               </div>
             </div>
           </section>
