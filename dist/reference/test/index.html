@@ -1,0 +1,4458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tests | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Tests">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Fivey Can Read OpenClaw">
+  <meta property="og:title" content="Tests | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Tests">
+  <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/reference/test/">
+  <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/favicon.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tests | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Tests">
+  <meta name="theme-color" content="#f5576c">
+  <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/reference/test/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/assets/site.css" as="style">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Tests","description":"Tests","url":"https://fivey-can-read-openclaw.pages.dev/reference/test/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Reference","item":"https://fivey-can-read-openclaw.pages.dev/reference/test/"}]}</script>
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/">
+        <span class="brand-mark">🎈</span>
+        <span>
+          <strong>Fivey Can Read</strong>
+          <small>OpenClaw 绘本版文档站</small>
+        </span>
+      </a>
+      
+    <nav class="sidebar-nav">
+      
+            <section class="sidebar-group">
+              <h3>Channels</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/channels/bluebubbles/">
+                  <span>BlueBubbles</span>
+                  <small>BlueBubbles (macOS REST)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/broadcast-groups/">
+                  <span>Broadcast Groups</span>
+                  <small>Broadcast Groups</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/channel-routing/">
+                  <span>Channel Routing</span>
+                  <small>Channels &amp; routing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/discord/">
+                  <span>Discord</span>
+                  <small>Discord (Bot API)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/feishu/">
+                  <span>Feishu</span>
+                  <small>Feishu bot</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/googlechat/">
+                  <span>Google Chat</span>
+                  <small>Google Chat (Chat API)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/group-messages/">
+                  <span>Group Messages</span>
+                  <small>Group messages (WhatsApp web channel)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/groups/">
+                  <span>Groups</span>
+                  <small>Groups</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/imessage/">
+                  <span>iMessage</span>
+                  <small>iMessage (legacy: imsg)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/">
+                  <span>Chat Channels</span>
+                  <small>Chat Channels</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/irc/">
+                  <span>IRC</span>
+                  <small>IRC</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/line/">
+                  <span>LINE</span>
+                  <small>LINE (plugin)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/location/">
+                  <span>Channel Location Parsing</span>
+                  <small>Channel location parsing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/matrix/">
+                  <span>Matrix</span>
+                  <small>Matrix (plugin)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/mattermost/">
+                  <span>Mattermost</span>
+                  <small>Mattermost (plugin)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/msteams/">
+                  <span>Microsoft Teams</span>
+                  <small>Microsoft Teams (plugin)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/nextcloud-talk/">
+                  <span>Nextcloud Talk</span>
+                  <small>Nextcloud Talk (plugin)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/nostr/">
+                  <span>Nostr</span>
+                  <small>Nostr</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/pairing/">
+                  <span>Pairing</span>
+                  <small>Pairing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/signal/">
+                  <span>Signal</span>
+                  <small>Signal (signal-cli)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/slack/">
+                  <span>Slack</span>
+                  <small>Slack</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/synology-chat/">
+                  <span>Synology Chat</span>
+                  <small>Synology Chat (plugin)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/telegram/">
+                  <span>Telegram</span>
+                  <small>Telegram (Bot API)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/tlon/">
+                  <span>Tlon</span>
+                  <small>Tlon (plugin)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/troubleshooting/">
+                  <span>Channel Troubleshooting</span>
+                  <small>Channel troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/twitch/">
+                  <span>Twitch</span>
+                  <small>Twitch (plugin)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/whatsapp/">
+                  <span>WhatsApp</span>
+                  <small>WhatsApp (Web channel)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/zalo/">
+                  <span>Zalo</span>
+                  <small>Zalo (Bot API)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/zalouser/">
+                  <span>Zalo Personal</span>
+                  <small>Zalo Personal (unofficial)</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Concepts</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/concepts/agent/">
+                  <span>Agent Runtime</span>
+                  <small>Agent Runtime</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/agent-loop/">
+                  <span>Agent Loop</span>
+                  <small>Agent Loop (OpenClaw)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/agent-workspace/">
+                  <span>Agent Workspace</span>
+                  <small>Agent workspace</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/architecture/">
+                  <span>Gateway Architecture</span>
+                  <small>Gateway architecture</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/compaction/">
+                  <span>Compaction</span>
+                  <small>Context Window &amp; Compaction</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/context/">
+                  <span>Context</span>
+                  <small>Context</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/context-engine/">
+                  <span>Context Engine</span>
+                  <small>Context Engine</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/delegate-architecture/">
+                  <span>Delegate Architecture</span>
+                  <small>Delegate Architecture</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/features/">
+                  <span>Features</span>
+                  <small>Features</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/memory/">
+                  <span>Memory</span>
+                  <small>Memory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/messages/">
+                  <span>Messages</span>
+                  <small>Messages</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/multi-agent/">
+                  <span>Multi-Agent Routing</span>
+                  <small>Multi-Agent Routing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/oauth/">
+                  <span>OAuth</span>
+                  <small>OAuth</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/presence/">
+                  <span>Presence</span>
+                  <small>Presence</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/queue/">
+                  <span>Command Queue</span>
+                  <small>Command Queue (2026-01-16)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/retry/">
+                  <span>Retry Policy</span>
+                  <small>Retry policy</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/session/">
+                  <span>Session Management</span>
+                  <small>Session Management</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/session-pruning/">
+                  <span>Session Pruning</span>
+                  <small>Session Pruning</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/session-tool/">
+                  <span>Session Tools</span>
+                  <small>Session Tools</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/streaming/">
+                  <span>Streaming and Chunking</span>
+                  <small>Streaming + chunking</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/system-prompt/">
+                  <span>System Prompt</span>
+                  <small>System Prompt</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/model-failover/">
+                  <span>Model Failover</span>
+                  <small>Model failover</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/model-providers/">
+                  <span>Model Providers</span>
+                  <small>Model providers</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/models/">
+                  <span>Models CLI</span>
+                  <small>Models CLI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/markdown-formatting/">
+                  <span>Markdown Formatting</span>
+                  <small>Markdown formatting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/timezone/">
+                  <span>Timezones</span>
+                  <small>Timezones</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/typebox/">
+                  <span>TypeBox</span>
+                  <small>TypeBox as protocol source of truth</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/typing-indicators/">
+                  <span>Typing Indicators</span>
+                  <small>Typing indicators</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/usage-tracking/">
+                  <span>Usage Tracking</span>
+                  <small>Usage tracking</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Index</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/index/">
+                  <span>OpenClaw</span>
+                  <small>OpenClaw 🦞</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Install</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/install/ansible/">
+                  <span>Ansible</span>
+                  <small>Ansible Installation</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/azure/">
+                  <span>Azure</span>
+                  <small>OpenClaw on Azure Linux VM</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/bun/">
+                  <span>Bun (Experimental)</span>
+                  <small>Bun (Experimental)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/development-channels/">
+                  <span>Release Channels</span>
+                  <small>Development channels</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/digitalocean/">
+                  <span>DigitalOcean</span>
+                  <small>DigitalOcean</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/docker/">
+                  <span>Docker</span>
+                  <small>Docker (optional)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/docker-vm-runtime/">
+                  <span>Docker VM Runtime</span>
+                  <small>Docker VM Runtime</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/exe-dev/">
+                  <span>exe.dev</span>
+                  <small>exe.dev</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/fly/">
+                  <span>Fly.io</span>
+                  <small>Fly.io Deployment</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/gcp/">
+                  <span>GCP</span>
+                  <small>OpenClaw on GCP Compute Engine (Docker, Production…</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/hetzner/">
+                  <span>Hetzner</span>
+                  <small>OpenClaw on Hetzner (Docker, Production VPS Guide)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/">
+                  <span>Install</span>
+                  <small>Install</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/installer/">
+                  <span>Installer Internals</span>
+                  <small>Installer internals</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/kubernetes/">
+                  <span>Kubernetes</span>
+                  <small>OpenClaw on Kubernetes</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/macos-vm/">
+                  <span>macOS VMs</span>
+                  <small>OpenClaw on macOS VMs (Sandboxing)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/migrating/">
+                  <span>Migration Guide</span>
+                  <small>Migrating OpenClaw to a New Machine</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/migrating-matrix/">
+                  <span>Matrix migration</span>
+                  <small>Matrix migration</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/nix/">
+                  <span>Nix</span>
+                  <small>Nix Installation</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/node/">
+                  <span>Node.js</span>
+                  <small>Node.js</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/northflank/">
+                  <span>Northflank</span>
+                  <small>Deploy OpenClaw on Northflank with a one-click temp…</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/oracle/">
+                  <span>Oracle Cloud</span>
+                  <small>Oracle Cloud</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/podman/">
+                  <span>Podman</span>
+                  <small>Podman</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/railway/">
+                  <span>Railway</span>
+                  <small>Deploy OpenClaw on Railway with a one-click templat…</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/raspberry-pi/">
+                  <span>Raspberry Pi</span>
+                  <small>Raspberry Pi</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/render/">
+                  <span>Render</span>
+                  <small>Deploy OpenClaw on Render using Infrastructure as C…</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/uninstall/">
+                  <span>Uninstall</span>
+                  <small>Uninstall</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/updating/">
+                  <span>Updating</span>
+                  <small>Updating</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Plugins</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/plugins/building-plugins/">
+                  <span>Building Plugins</span>
+                  <small>Building Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/bundles/">
+                  <span>Plugin Bundles</span>
+                  <small>Plugin Bundles</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/community/">
+                  <span>Community Plugins</span>
+                  <small>Community Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-channel-plugins/">
+                  <span>Building Channel Plugins</span>
+                  <small>Building Channel Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-entrypoints/">
+                  <span>Plugin Entry Points</span>
+                  <small>Plugin Entry Points</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-migration/">
+                  <span>Plugin SDK Migration</span>
+                  <small>Plugin SDK Migration</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-overview/">
+                  <span>Plugin SDK Overview</span>
+                  <small>Plugin SDK Overview</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-provider-plugins/">
+                  <span>Building Provider Plugins</span>
+                  <small>Building Provider Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-runtime/">
+                  <span>Plugin Runtime Helpers</span>
+                  <small>Plugin Runtime Helpers</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/voice-call/">
+                  <span>Voice Call Plugin</span>
+                  <small>Voice Call (plugin)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/architecture/">
+                  <span>Plugin Internals</span>
+                  <small>Plugin Internals</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/manifest/">
+                  <span>Plugin Manifest</span>
+                  <small>Plugin manifest (openclaw\.plugin.json)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-setup/">
+                  <span>Plugin Setup and Config</span>
+                  <small>Plugin Setup and Config</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-testing/">
+                  <span>Plugin Testing</span>
+                  <small>Plugin Testing</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Start</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/start/bootstrapping/">
+                  <span>Agent Bootstrapping</span>
+                  <small>Agent Bootstrapping</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/getting-started/">
+                  <span>Getting Started</span>
+                  <small>Getting Started</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/onboarding/">
+                  <span>Onboarding (macOS App)</span>
+                  <small>Onboarding (macOS App)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/onboarding-overview/">
+                  <span>Onboarding Overview</span>
+                  <small>Onboarding Overview</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/openclaw/">
+                  <span>Personal Assistant Setup</span>
+                  <small>Building a personal assistant with OpenClaw</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/showcase/">
+                  <span>Showcase</span>
+                  <small>Showcase</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/wizard/">
+                  <span>Onboarding (CLI)</span>
+                  <small>Onboarding (CLI)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/wizard-cli-automation/">
+                  <span>CLI Automation</span>
+                  <small>CLI Automation</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/wizard-cli-reference/">
+                  <span>CLI Setup Reference</span>
+                  <small>CLI Setup Reference</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/docs-directory/">
+                  <span>Docs directory</span>
+                  <small>Docs Directory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/hubs/">
+                  <span>Docs Hubs</span>
+                  <small>Docs hubs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/lore/">
+                  <span>OpenClaw Lore</span>
+                  <small>The Lore of OpenClaw 🦞📖</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/setup/">
+                  <span>Setup</span>
+                  <small>Setup</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Tools</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/tools/">
+                  <span>Tools and Plugins</span>
+                  <small>Tools and Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/plugin/">
+                  <span>Plugins</span>
+                  <small>Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/acp-agents/">
+                  <span>ACP Agents</span>
+                  <small>ACP agents</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/agent-send/">
+                  <span>Agent Send</span>
+                  <small>Agent Send</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/apply-patch/">
+                  <span>apply_patch Tool</span>
+                  <small>apply\_patch tool</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/brave-search/">
+                  <span>Brave Search</span>
+                  <small>Brave Search API</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/browser/">
+                  <span>Browser (OpenClaw-managed)</span>
+                  <small>Browser (openclaw-managed)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/browser-linux-troubleshooting/">
+                  <span>Browser Troubleshooting</span>
+                  <small>Browser Troubleshooting (Linux)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/browser-login/">
+                  <span>Browser Login</span>
+                  <small>Browser login + X/Twitter posting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/browser-wsl2-windows-remote-cdp-troubleshooting/">
+                  <span>WSL2 + Windows + remote Chrome CDP troubleshooting</span>
+                  <small>WSL2 + Windows + remote Chrome CDP troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/btw/">
+                  <span>BTW Side Questions</span>
+                  <small>BTW Side Questions</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/clawhub/">
+                  <span>ClawHub</span>
+                  <small>ClawHub</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/code-execution/">
+                  <span>Code Execution</span>
+                  <small>Code Execution</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/creating-skills/">
+                  <span>Creating Skills</span>
+                  <small>Creating Skills</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/diffs/">
+                  <span>Diffs</span>
+                  <small>Diffs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/duckduckgo-search/">
+                  <span>DuckDuckGo Search</span>
+                  <small>DuckDuckGo Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/elevated/">
+                  <span>Elevated Mode</span>
+                  <small>Elevated Mode</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/exa-search/">
+                  <span>Exa Search</span>
+                  <small>Exa Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/exec/">
+                  <span>Exec Tool</span>
+                  <small>Exec tool</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/exec-approvals/">
+                  <span>Exec Approvals</span>
+                  <small>Exec approvals</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/firecrawl/">
+                  <span>Firecrawl</span>
+                  <small>Firecrawl</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/gemini-search/">
+                  <span>Gemini Search</span>
+                  <small>Gemini Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/grok-search/">
+                  <span>Grok Search</span>
+                  <small>Grok Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/kimi-search/">
+                  <span>Kimi Search</span>
+                  <small>Kimi Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/llm-task/">
+                  <span>LLM Task</span>
+                  <small>LLM Task</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/lobster/">
+                  <span>Lobster</span>
+                  <small>Lobster</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/loop-detection/">
+                  <span>Tool-loop detection</span>
+                  <small>Tool-loop detection</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/multi-agent-sandbox-tools/">
+                  <span>Multi-Agent Sandbox &amp; Tools</span>
+                  <small>Multi-Agent Sandbox &amp; Tools Configuration</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/pdf/">
+                  <span>PDF Tool</span>
+                  <small>PDF tool</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/perplexity-search/">
+                  <span>Perplexity Search</span>
+                  <small>Perplexity Search API</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/reactions/">
+                  <span>Reactions</span>
+                  <small>Reactions</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/skills/">
+                  <span>Skills</span>
+                  <small>Skills (OpenClaw)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/skills-config/">
+                  <span>Skills Config</span>
+                  <small>Skills Config</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/slash-commands/">
+                  <span>Slash Commands</span>
+                  <small>Slash commands</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/subagents/">
+                  <span>Sub-Agents</span>
+                  <small>Sub-agents</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/tavily/">
+                  <span>Tavily</span>
+                  <small>Tavily</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/thinking/">
+                  <span>Thinking Levels</span>
+                  <small>Thinking Levels (/think directives)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/web/">
+                  <span>Web Search</span>
+                  <small>Web Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/web-fetch/">
+                  <span>Web Fetch</span>
+                  <small>Web Fetch</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/tts/">
+                  <span>Text-to-Speech</span>
+                  <small>Text-to-speech (TTS)</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Vps</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/vps/">
+                  <span>Linux Server</span>
+                  <small>Linux Server</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Automation</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/automation/auth-monitoring/">
+                  <span>Auth Monitoring</span>
+                  <small>Auth monitoring</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/cron-jobs/">
+                  <span>Cron Jobs</span>
+                  <small>Cron jobs (Gateway scheduler)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/cron-vs-heartbeat/">
+                  <span>Cron vs Heartbeat</span>
+                  <small>Cron vs Heartbeat: When to Use Each</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/gmail-pubsub/">
+                  <span>Gmail PubSub</span>
+                  <small>Gmail Pub/Sub -&gt; OpenClaw</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/hooks/">
+                  <span>Hooks</span>
+                  <small>Hooks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/poll/">
+                  <span>Polls</span>
+                  <small>Polls</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/standing-orders/">
+                  <span>Standing Orders</span>
+                  <small>Standing Orders</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/troubleshooting/">
+                  <span>Automation Troubleshooting</span>
+                  <small>Automation troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/webhook/">
+                  <span>Webhooks</span>
+                  <small>Webhooks</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Platforms</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/platforms/android/">
+                  <span>Android App</span>
+                  <small>Android App (Node)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/">
+                  <span>Platforms</span>
+                  <small>Platforms</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/ios/">
+                  <span>iOS App</span>
+                  <small>iOS App (Node)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/linux/">
+                  <span>Linux App</span>
+                  <small>Linux App</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/dev-setup/">
+                  <span>macOS Dev Setup</span>
+                  <small>macOS Developer Setup</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/menu-bar/">
+                  <span>Menu Bar</span>
+                  <small>Menu Bar Status Logic</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/macos/">
+                  <span>macOS App</span>
+                  <small>OpenClaw macOS Companion (menu bar + gateway broker)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/windows/">
+                  <span>Windows</span>
+                  <small>Windows</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/bundled-gateway/">
+                  <span>Gateway on macOS</span>
+                  <small>Gateway on macOS (external launchd)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/canvas/">
+                  <span>Canvas</span>
+                  <small>Canvas (macOS app)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/child-process/">
+                  <span>Gateway Lifecycle</span>
+                  <small>Gateway lifecycle on macOS</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/health/">
+                  <span>Health Checks (macOS)</span>
+                  <small>Health Checks on macOS</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/icon/">
+                  <span>Menu Bar Icon</span>
+                  <small>Menu Bar Icon States</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/logging/">
+                  <span>macOS Logging</span>
+                  <small>Logging (macOS)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/peekaboo/">
+                  <span>Peekaboo Bridge</span>
+                  <small>Peekaboo Bridge (macOS UI automation)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/permissions/">
+                  <span>macOS Permissions</span>
+                  <small>macOS permissions (TCC)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/remote/">
+                  <span>Remote Control</span>
+                  <small>Remote OpenClaw (macOS ⇄ remote host)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/signing/">
+                  <span>macOS Signing</span>
+                  <small>mac signing (debug builds)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/skills/">
+                  <span>Skills (macOS)</span>
+                  <small>Skills (macOS)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/voice-overlay/">
+                  <span>Voice Overlay</span>
+                  <small>Voice Overlay Lifecycle (macOS)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/voicewake/">
+                  <span>Voice Wake (macOS)</span>
+                  <small>Voice Wake &amp; Push-to-Talk</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/webchat/">
+                  <span>WebChat (macOS)</span>
+                  <small>WebChat (macOS app)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/xpc/">
+                  <span>macOS IPC</span>
+                  <small>OpenClaw macOS IPC architecture</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Prose</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/prose/">
+                  <span>OpenProse</span>
+                  <small>OpenProse</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Providers</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/providers/anthropic/">
+                  <span>Anthropic</span>
+                  <small>Anthropic (Claude)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/bedrock/">
+                  <span>Amazon Bedrock</span>
+                  <small>Amazon Bedrock</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/claude-max-api-proxy/">
+                  <span>Claude Max API Proxy</span>
+                  <small>Claude Max API Proxy</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/cloudflare-ai-gateway/">
+                  <span>Cloudflare AI Gateway</span>
+                  <small>Cloudflare AI Gateway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/deepgram/">
+                  <span>Deepgram</span>
+                  <small>Deepgram (Audio Transcription)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/deepseek/">
+                  <span>Deepseek</span>
+                  <small>DeepSeek</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/github-copilot/">
+                  <span>GitHub Copilot</span>
+                  <small>GitHub Copilot</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/glm/">
+                  <span>GLM Models</span>
+                  <small>GLM models</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/google/">
+                  <span>Google (Gemini)</span>
+                  <small>Google (Gemini)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/groq/">
+                  <span>Groq</span>
+                  <small>Groq</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/huggingface/">
+                  <span>Hugging Face (Inference)</span>
+                  <small>Hugging Face (Inference)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/">
+                  <span>Provider Directory</span>
+                  <small>Model Providers</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/kilocode/">
+                  <span>Kilo Gateway</span>
+                  <small>Kilo Gateway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/litellm/">
+                  <span>LiteLLM</span>
+                  <small>LiteLLM</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/minimax/">
+                  <span>MiniMax</span>
+                  <small>MiniMax</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/mistral/">
+                  <span>Mistral</span>
+                  <small>Mistral</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/models/">
+                  <span>Model Provider Quickstart</span>
+                  <small>Model Providers</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/moonshot/">
+                  <span>Moonshot AI</span>
+                  <small>Moonshot AI (Kimi)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/nvidia/">
+                  <span>NVIDIA</span>
+                  <small>NVIDIA</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/ollama/">
+                  <span>Ollama</span>
+                  <small>Ollama</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/openai/">
+                  <span>OpenAI</span>
+                  <small>OpenAI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/opencode/">
+                  <span>OpenCode</span>
+                  <small>OpenCode</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/opencode-go/">
+                  <span>OpenCode Go</span>
+                  <small>OpenCode Go</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/openrouter/">
+                  <span>OpenRouter</span>
+                  <small>OpenRouter</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/perplexity-provider/">
+                  <span>Perplexity (Provider)</span>
+                  <small>Perplexity (Web Search Provider)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/qianfan/">
+                  <span>Qianfan</span>
+                  <small>Qianfan Provider Guide</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/qwen/">
+                  <span>Qwen</span>
+                  <small>Qwen</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/qwen_modelstudio/">
+                  <span>Qwen / Model Studio</span>
+                  <small>Qwen / Model Studio (Alibaba Cloud)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/sglang/">
+                  <span>SGLang</span>
+                  <small>SGLang</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/synthetic/">
+                  <span>Synthetic</span>
+                  <small>Synthetic</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/together/">
+                  <span>Together AI</span>
+                  <small>Together AI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/venice/">
+                  <span>Venice AI</span>
+                  <small>Venice AI (Venice highlight)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/vercel-ai-gateway/">
+                  <span>Vercel AI Gateway</span>
+                  <small>Vercel AI Gateway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/vllm/">
+                  <span>vLLM</span>
+                  <small>vLLM</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/volcengine/">
+                  <span>Volcengine (Doubao)</span>
+                  <small>Volcengine (Doubao)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/xai/">
+                  <span>xAI</span>
+                  <small>xAI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/xiaomi/">
+                  <span>Xiaomi MiMo</span>
+                  <small>Xiaomi MiMo</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/zai/">
+                  <span>Z.AI</span>
+                  <small>Z.AI</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Auth Credential Semantics</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/auth-credential-semantics/">
+                  <span>Auth Credential Semantics</span>
+                  <small>Auth Credential Semantics</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Cli</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/cli/agent/">
+                  <span>agent</span>
+                  <small>openclaw agent</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/agents/">
+                  <span>agents</span>
+                  <small>openclaw agents</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/approvals/">
+                  <span>approvals</span>
+                  <small>openclaw approvals</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/backup/">
+                  <span>backup</span>
+                  <small>openclaw backup</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/channels/">
+                  <span>channels</span>
+                  <small>openclaw channels</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/daemon/">
+                  <span>daemon</span>
+                  <small>openclaw daemon</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/devices/">
+                  <span>devices</span>
+                  <small>openclaw devices</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/directory/">
+                  <span>directory</span>
+                  <small>openclaw directory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/doctor/">
+                  <span>doctor</span>
+                  <small>openclaw doctor</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/gateway/">
+                  <span>gateway</span>
+                  <small>Gateway CLI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/health/">
+                  <span>health</span>
+                  <small>openclaw health</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/hooks/">
+                  <span>hooks</span>
+                  <small>openclaw hooks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/">
+                  <span>CLI Reference</span>
+                  <small>CLI reference</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/logs/">
+                  <span>logs</span>
+                  <small>openclaw logs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/memory/">
+                  <span>memory</span>
+                  <small>openclaw memory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/message/">
+                  <span>message</span>
+                  <small>openclaw message</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/models/">
+                  <span>models</span>
+                  <small>openclaw models</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/onboard/">
+                  <span>onboard</span>
+                  <small>openclaw onboard</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/pairing/">
+                  <span>pairing</span>
+                  <small>openclaw pairing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/qr/">
+                  <span>qr</span>
+                  <small>openclaw qr</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/reset/">
+                  <span>reset</span>
+                  <small>openclaw reset</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/secrets/">
+                  <span>secrets</span>
+                  <small>openclaw secrets</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/security/">
+                  <span>security</span>
+                  <small>openclaw security</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/sessions/">
+                  <span>sessions</span>
+                  <small>openclaw sessions</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/setup/">
+                  <span>setup</span>
+                  <small>openclaw setup</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/status/">
+                  <span>status</span>
+                  <small>openclaw status</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/system/">
+                  <span>system</span>
+                  <small>openclaw system</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/uninstall/">
+                  <span>uninstall</span>
+                  <small>openclaw uninstall</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/update/">
+                  <span>update</span>
+                  <small>openclaw update</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/voicecall/">
+                  <span>voicecall</span>
+                  <small>openclaw voicecall</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/acp/">
+                  <span>acp</span>
+                  <small>acp</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/browser/">
+                  <span>browser</span>
+                  <small>openclaw browser</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/clawbot/">
+                  <span>clawbot</span>
+                  <small>openclaw clawbot</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/completion/">
+                  <span>completion</span>
+                  <small>openclaw completion</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/config/">
+                  <span>config</span>
+                  <small>openclaw config</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/configure/">
+                  <span>configure</span>
+                  <small>openclaw configure</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/cron/">
+                  <span>cron</span>
+                  <small>openclaw cron</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/dashboard/">
+                  <span>dashboard</span>
+                  <small>openclaw dashboard</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/dns/">
+                  <span>dns</span>
+                  <small>openclaw dns</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/docs/">
+                  <span>docs</span>
+                  <small>openclaw docs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/mcp/">
+                  <span>mcp</span>
+                  <small>mcp</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/node/">
+                  <span>node</span>
+                  <small>openclaw node</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/nodes/">
+                  <span>nodes</span>
+                  <small>openclaw nodes</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/plugins/">
+                  <span>plugins</span>
+                  <small>openclaw plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/sandbox/">
+                  <span>Sandbox CLI</span>
+                  <small>Sandbox CLI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/skills/">
+                  <span>skills</span>
+                  <small>openclaw skills</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/tui/">
+                  <span>tui</span>
+                  <small>openclaw tui</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/webhooks/">
+                  <span>webhooks</span>
+                  <small>openclaw webhooks</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Gateway</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/gateway/authentication/">
+                  <span>Authentication</span>
+                  <small>Authentication</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/background-process/">
+                  <span>Background Exec and Process Tool</span>
+                  <small>Background Exec + Process Tool</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/bonjour/">
+                  <span>Bonjour Discovery</span>
+                  <small>Bonjour / mDNS discovery</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/bridge-protocol/">
+                  <span>Bridge Protocol</span>
+                  <small>Bridge protocol (legacy node transport)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/cli-backends/">
+                  <span>CLI Backends</span>
+                  <small>CLI backends (fallback runtime)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/configuration/">
+                  <span>Configuration</span>
+                  <small>Configuration</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/configuration-examples/">
+                  <span>Configuration Examples</span>
+                  <small>Configuration Examples</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/configuration-reference/">
+                  <span>Configuration Reference</span>
+                  <small>Configuration Reference</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/discovery/">
+                  <span>Discovery and Transports</span>
+                  <small>Discovery &amp; transports</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/doctor/">
+                  <span>Doctor</span>
+                  <small>Doctor</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/gateway-lock/">
+                  <span>Gateway Lock</span>
+                  <small>Gateway lock</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/health/">
+                  <span>Health Checks</span>
+                  <small>Health Checks (CLI)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/heartbeat/">
+                  <span>Heartbeat</span>
+                  <small>Heartbeat (Gateway)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/">
+                  <span>Gateway Runbook</span>
+                  <small>Gateway runbook</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/local-models/">
+                  <span>Local Models</span>
+                  <small>Local models</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/logging/">
+                  <span>Gateway Logging</span>
+                  <small>Logging</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/multiple-gateways/">
+                  <span>Multiple Gateways</span>
+                  <small>Multiple Gateways (same host)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/network-model/">
+                  <span>Network model</span>
+                  <small>Network Model</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/openai-http-api/">
+                  <span>OpenAI Chat Completions</span>
+                  <small>OpenAI Chat Completions (HTTP)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/openresponses-http-api/">
+                  <span>OpenResponses API</span>
+                  <small>OpenResponses API (HTTP)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/openshell/">
+                  <span>OpenShell</span>
+                  <small>OpenShell</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/pairing/">
+                  <span>Gateway-Owned Pairing</span>
+                  <small>Gateway-owned pairing (Option B)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/protocol/">
+                  <span>Gateway Protocol</span>
+                  <small>Gateway protocol (WebSocket)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/remote/">
+                  <span>Remote Access</span>
+                  <small>Remote access (SSH, tunnels, and tailnets)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/remote-gateway-readme/">
+                  <span>Remote Gateway Setup</span>
+                  <small>Running OpenClaw\.app with a Remote Gateway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/sandbox-vs-tool-policy-vs-elevated/">
+                  <span>Sandbox vs Tool Policy vs Elevated</span>
+                  <small>Sandbox vs Tool Policy vs Elevated</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/sandboxing/">
+                  <span>Sandboxing</span>
+                  <small>Sandboxing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/secrets/">
+                  <span>Secrets Management</span>
+                  <small>Secrets management</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/secrets-plan-contract/">
+                  <span>Secrets Apply Plan Contract</span>
+                  <small>Secrets apply plan contract</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/security/">
+                  <span>Security</span>
+                  <small>Security</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/tailscale/">
+                  <span>Tailscale</span>
+                  <small>Tailscale (Gateway dashboard)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/tools-invoke-http-api/">
+                  <span>Tools Invoke API</span>
+                  <small>Tools Invoke (HTTP)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/troubleshooting/">
+                  <span>Troubleshooting</span>
+                  <small>Gateway troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/trusted-proxy-auth/">
+                  <span>Trusted Proxy Auth</span>
+                  <small>Trusted Proxy Auth</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Logging</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/logging/">
+                  <span>Logging Overview</span>
+                  <small>Logging</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Network</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/network/">
+                  <span>Network</span>
+                  <small>Network hub</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Nodes</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/nodes/audio/">
+                  <span>Audio and Voice Notes</span>
+                  <small>Audio / Voice Notes (2026-01-17)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/camera/">
+                  <span>Camera Capture</span>
+                  <small>Camera capture (agent)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/images/">
+                  <span>Image and Media Support</span>
+                  <small>Image &amp; Media Support (2025-12-05)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/">
+                  <span>Nodes</span>
+                  <small>Nodes</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/location-command/">
+                  <span>Location Command</span>
+                  <small>Location command (nodes)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/media-understanding/">
+                  <span>Media Understanding</span>
+                  <small>Media Understanding - Inbound (2026-01-17)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/talk/">
+                  <span>Talk Mode</span>
+                  <small>Talk Mode</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/troubleshooting/">
+                  <span>Node Troubleshooting</span>
+                  <small>Node troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/voicewake/">
+                  <span>Voice Wake</span>
+                  <small>Voice Wake (Global Wake Words)</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Security</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/security/CONTRIBUTING-THREAT-MODEL/">
+                  <span>Contributing to the Threat Model</span>
+                  <small>Contributing to the OpenClaw Threat Model</small>
+                </a>
+              
+                <a class="sidebar-link " href="/security/THREAT-MODEL-ATLAS/">
+                  <span>Threat Model (MITRE ATLAS)</span>
+                  <small>OpenClaw Threat Model v1.0</small>
+                </a>
+              
+                <a class="sidebar-link " href="/security/formal-verification/">
+                  <span>Formal Verification (Security Models)</span>
+                  <small>Formal Verification (Security Models)</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Web</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/web/control-ui/">
+                  <span>Control UI</span>
+                  <small>Control UI (browser)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/web/dashboard/">
+                  <span>Dashboard</span>
+                  <small>Dashboard (Control UI)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/web/">
+                  <span>Web</span>
+                  <small>Web (Gateway)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/web/tui/">
+                  <span>TUI</span>
+                  <small>TUI (Terminal UI)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/web/webchat/">
+                  <span>WebChat</span>
+                  <small>WebChat (Gateway WebSocket UI)</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Ci</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/ci/">
+                  <span>CI Pipeline</span>
+                  <small>CI Pipeline</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Date Time</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/date-time/">
+                  <span>Date and Time</span>
+                  <small>Date &amp; Time</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Debug</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/debug/node-issue/">
+                  <span>Node + tsx Crash</span>
+                  <small>Node + tsx &quot;\_\_name is not a function&quot; crash</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Diagnostics</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/diagnostics/flags/">
+                  <span>Diagnostics Flags</span>
+                  <small>Diagnostics Flags</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Help</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/help/debugging/">
+                  <span>Debugging</span>
+                  <small>Debugging</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/environment/">
+                  <span>Environment Variables</span>
+                  <small>Environment variables</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/faq/">
+                  <span>FAQ</span>
+                  <small>FAQ</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/">
+                  <span>Help</span>
+                  <small>Help</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/scripts/">
+                  <span>Scripts</span>
+                  <small>Scripts</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/testing/">
+                  <span>Testing</span>
+                  <small>Testing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/troubleshooting/">
+                  <span>General Troubleshooting</span>
+                  <small>Troubleshooting</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Pi</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/pi/">
+                  <span>Pi Integration Architecture</span>
+                  <small>Pi Integration Architecture</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Pi Dev</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/pi-dev/">
+                  <span>Pi Development Workflow</span>
+                  <small>Pi Development Workflow</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Reference</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/reference/AGENTS.default/">
+                  <span>Default AGENTS.md</span>
+                  <small>AGENTS.md - OpenClaw Personal Assistant (default)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/RELEASING/">
+                  <span>Release Policy</span>
+                  <small>Release Policy</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/api-usage-costs/">
+                  <span>API Usage and Costs</span>
+                  <small>API usage &amp; costs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/credits/">
+                  <span>Credits</span>
+                  <small>Credits and Acknowledgments</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/device-models/">
+                  <span>Device Model Database</span>
+                  <small>Device model database (friendly names)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/memory-config/">
+                  <span>Memory configuration reference</span>
+                  <small>Memory configuration reference</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/prompt-caching/">
+                  <span>Prompt Caching</span>
+                  <small>Prompt caching</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/rpc/">
+                  <span>RPC Adapters</span>
+                  <small>RPC adapters</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/secretref-credential-surface/">
+                  <span>SecretRef Credential Surface</span>
+                  <small>SecretRef credential surface</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/session-management-compaction/">
+                  <span>Session Management Deep Dive</span>
+                  <small>Session Management &amp; Compaction (Deep Dive)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/AGENTS/">
+                  <span>AGENTS.md Template</span>
+                  <small>AGENTS.md - Your Workspace</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/BOOT/">
+                  <span>BOOT.md Template</span>
+                  <small>BOOT.md</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/BOOTSTRAP/">
+                  <span>BOOTSTRAP.md Template</span>
+                  <small>BOOTSTRAP.md - Hello, World</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/HEARTBEAT/">
+                  <span>HEARTBEAT.md Template</span>
+                  <small>HEARTBEAT.md Template</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/IDENTITY/">
+                  <span>IDENTITY Template</span>
+                  <small>IDENTITY.md - Who Am I?</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/SOUL/">
+                  <span>SOUL.md Template</span>
+                  <small>SOUL.md - Who You Are</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/TOOLS/">
+                  <span>TOOLS.md Template</span>
+                  <small>TOOLS.md - Local Notes</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/USER/">
+                  <span>USER Template</span>
+                  <small>USER.md - About Your Human</small>
+                </a>
+              
+                <a class="sidebar-link is-active" href="/reference/test/">
+                  <span>Tests</span>
+                  <small>Tests</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/token-use/">
+                  <span>Token Use and Costs</span>
+                  <small>Token use &amp; costs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/transcript-hygiene/">
+                  <span>Transcript Hygiene</span>
+                  <small>Transcript Hygiene (Provider Fixups)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/wizard/">
+                  <span>Onboarding Reference</span>
+                  <small>Onboarding Reference</small>
+                </a>
+              </div>
+            </section>
+          
+    </nav>
+  
+    </aside>
+
+    <main class="main">
+      <header class="hero">
+        <div class="hero-topbar">
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">菜单</button>
+          <a class="source-link" href="https://docs.openclaw.ai" target="_blank" rel="noreferrer">原始文档</a>
+        </div>
+        <p class="hero-eyebrow">Reference 故事分馆</p>
+        <h1>Tests，像讲故事一样读</h1>
+        <p class="hero-copy">这一页像一本关于“Tests”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：Tests。</p>
+        <div class="hero-pills">
+          <span>逐节讲解</span>
+          <span>代码也讲故事</span>
+          <span>SEO 友好</span>
+          <span>Cloudflare Pages</span>
+        </div>
+      </header>
+
+      <div id="mobile-nav" class="mobile-nav">
+        
+    <nav class="sidebar-nav">
+      
+            <section class="sidebar-group">
+              <h3>Channels</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/channels/bluebubbles/">
+                  <span>BlueBubbles</span>
+                  <small>BlueBubbles (macOS REST)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/broadcast-groups/">
+                  <span>Broadcast Groups</span>
+                  <small>Broadcast Groups</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/channel-routing/">
+                  <span>Channel Routing</span>
+                  <small>Channels &amp; routing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/discord/">
+                  <span>Discord</span>
+                  <small>Discord (Bot API)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/feishu/">
+                  <span>Feishu</span>
+                  <small>Feishu bot</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/googlechat/">
+                  <span>Google Chat</span>
+                  <small>Google Chat (Chat API)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/group-messages/">
+                  <span>Group Messages</span>
+                  <small>Group messages (WhatsApp web channel)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/groups/">
+                  <span>Groups</span>
+                  <small>Groups</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/imessage/">
+                  <span>iMessage</span>
+                  <small>iMessage (legacy: imsg)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/">
+                  <span>Chat Channels</span>
+                  <small>Chat Channels</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/irc/">
+                  <span>IRC</span>
+                  <small>IRC</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/line/">
+                  <span>LINE</span>
+                  <small>LINE (plugin)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/location/">
+                  <span>Channel Location Parsing</span>
+                  <small>Channel location parsing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/matrix/">
+                  <span>Matrix</span>
+                  <small>Matrix (plugin)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/mattermost/">
+                  <span>Mattermost</span>
+                  <small>Mattermost (plugin)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/msteams/">
+                  <span>Microsoft Teams</span>
+                  <small>Microsoft Teams (plugin)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/nextcloud-talk/">
+                  <span>Nextcloud Talk</span>
+                  <small>Nextcloud Talk (plugin)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/nostr/">
+                  <span>Nostr</span>
+                  <small>Nostr</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/pairing/">
+                  <span>Pairing</span>
+                  <small>Pairing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/signal/">
+                  <span>Signal</span>
+                  <small>Signal (signal-cli)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/slack/">
+                  <span>Slack</span>
+                  <small>Slack</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/synology-chat/">
+                  <span>Synology Chat</span>
+                  <small>Synology Chat (plugin)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/telegram/">
+                  <span>Telegram</span>
+                  <small>Telegram (Bot API)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/tlon/">
+                  <span>Tlon</span>
+                  <small>Tlon (plugin)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/troubleshooting/">
+                  <span>Channel Troubleshooting</span>
+                  <small>Channel troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/twitch/">
+                  <span>Twitch</span>
+                  <small>Twitch (plugin)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/whatsapp/">
+                  <span>WhatsApp</span>
+                  <small>WhatsApp (Web channel)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/zalo/">
+                  <span>Zalo</span>
+                  <small>Zalo (Bot API)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/zalouser/">
+                  <span>Zalo Personal</span>
+                  <small>Zalo Personal (unofficial)</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Concepts</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/concepts/agent/">
+                  <span>Agent Runtime</span>
+                  <small>Agent Runtime</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/agent-loop/">
+                  <span>Agent Loop</span>
+                  <small>Agent Loop (OpenClaw)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/agent-workspace/">
+                  <span>Agent Workspace</span>
+                  <small>Agent workspace</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/architecture/">
+                  <span>Gateway Architecture</span>
+                  <small>Gateway architecture</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/compaction/">
+                  <span>Compaction</span>
+                  <small>Context Window &amp; Compaction</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/context/">
+                  <span>Context</span>
+                  <small>Context</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/context-engine/">
+                  <span>Context Engine</span>
+                  <small>Context Engine</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/delegate-architecture/">
+                  <span>Delegate Architecture</span>
+                  <small>Delegate Architecture</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/features/">
+                  <span>Features</span>
+                  <small>Features</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/memory/">
+                  <span>Memory</span>
+                  <small>Memory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/messages/">
+                  <span>Messages</span>
+                  <small>Messages</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/multi-agent/">
+                  <span>Multi-Agent Routing</span>
+                  <small>Multi-Agent Routing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/oauth/">
+                  <span>OAuth</span>
+                  <small>OAuth</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/presence/">
+                  <span>Presence</span>
+                  <small>Presence</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/queue/">
+                  <span>Command Queue</span>
+                  <small>Command Queue (2026-01-16)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/retry/">
+                  <span>Retry Policy</span>
+                  <small>Retry policy</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/session/">
+                  <span>Session Management</span>
+                  <small>Session Management</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/session-pruning/">
+                  <span>Session Pruning</span>
+                  <small>Session Pruning</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/session-tool/">
+                  <span>Session Tools</span>
+                  <small>Session Tools</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/streaming/">
+                  <span>Streaming and Chunking</span>
+                  <small>Streaming + chunking</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/system-prompt/">
+                  <span>System Prompt</span>
+                  <small>System Prompt</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/model-failover/">
+                  <span>Model Failover</span>
+                  <small>Model failover</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/model-providers/">
+                  <span>Model Providers</span>
+                  <small>Model providers</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/models/">
+                  <span>Models CLI</span>
+                  <small>Models CLI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/markdown-formatting/">
+                  <span>Markdown Formatting</span>
+                  <small>Markdown formatting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/timezone/">
+                  <span>Timezones</span>
+                  <small>Timezones</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/typebox/">
+                  <span>TypeBox</span>
+                  <small>TypeBox as protocol source of truth</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/typing-indicators/">
+                  <span>Typing Indicators</span>
+                  <small>Typing indicators</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/usage-tracking/">
+                  <span>Usage Tracking</span>
+                  <small>Usage tracking</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Index</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/index/">
+                  <span>OpenClaw</span>
+                  <small>OpenClaw 🦞</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Install</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/install/ansible/">
+                  <span>Ansible</span>
+                  <small>Ansible Installation</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/azure/">
+                  <span>Azure</span>
+                  <small>OpenClaw on Azure Linux VM</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/bun/">
+                  <span>Bun (Experimental)</span>
+                  <small>Bun (Experimental)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/development-channels/">
+                  <span>Release Channels</span>
+                  <small>Development channels</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/digitalocean/">
+                  <span>DigitalOcean</span>
+                  <small>DigitalOcean</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/docker/">
+                  <span>Docker</span>
+                  <small>Docker (optional)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/docker-vm-runtime/">
+                  <span>Docker VM Runtime</span>
+                  <small>Docker VM Runtime</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/exe-dev/">
+                  <span>exe.dev</span>
+                  <small>exe.dev</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/fly/">
+                  <span>Fly.io</span>
+                  <small>Fly.io Deployment</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/gcp/">
+                  <span>GCP</span>
+                  <small>OpenClaw on GCP Compute Engine (Docker, Production…</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/hetzner/">
+                  <span>Hetzner</span>
+                  <small>OpenClaw on Hetzner (Docker, Production VPS Guide)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/">
+                  <span>Install</span>
+                  <small>Install</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/installer/">
+                  <span>Installer Internals</span>
+                  <small>Installer internals</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/kubernetes/">
+                  <span>Kubernetes</span>
+                  <small>OpenClaw on Kubernetes</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/macos-vm/">
+                  <span>macOS VMs</span>
+                  <small>OpenClaw on macOS VMs (Sandboxing)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/migrating/">
+                  <span>Migration Guide</span>
+                  <small>Migrating OpenClaw to a New Machine</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/migrating-matrix/">
+                  <span>Matrix migration</span>
+                  <small>Matrix migration</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/nix/">
+                  <span>Nix</span>
+                  <small>Nix Installation</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/node/">
+                  <span>Node.js</span>
+                  <small>Node.js</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/northflank/">
+                  <span>Northflank</span>
+                  <small>Deploy OpenClaw on Northflank with a one-click temp…</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/oracle/">
+                  <span>Oracle Cloud</span>
+                  <small>Oracle Cloud</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/podman/">
+                  <span>Podman</span>
+                  <small>Podman</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/railway/">
+                  <span>Railway</span>
+                  <small>Deploy OpenClaw on Railway with a one-click templat…</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/raspberry-pi/">
+                  <span>Raspberry Pi</span>
+                  <small>Raspberry Pi</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/render/">
+                  <span>Render</span>
+                  <small>Deploy OpenClaw on Render using Infrastructure as C…</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/uninstall/">
+                  <span>Uninstall</span>
+                  <small>Uninstall</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/updating/">
+                  <span>Updating</span>
+                  <small>Updating</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Plugins</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/plugins/building-plugins/">
+                  <span>Building Plugins</span>
+                  <small>Building Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/bundles/">
+                  <span>Plugin Bundles</span>
+                  <small>Plugin Bundles</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/community/">
+                  <span>Community Plugins</span>
+                  <small>Community Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-channel-plugins/">
+                  <span>Building Channel Plugins</span>
+                  <small>Building Channel Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-entrypoints/">
+                  <span>Plugin Entry Points</span>
+                  <small>Plugin Entry Points</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-migration/">
+                  <span>Plugin SDK Migration</span>
+                  <small>Plugin SDK Migration</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-overview/">
+                  <span>Plugin SDK Overview</span>
+                  <small>Plugin SDK Overview</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-provider-plugins/">
+                  <span>Building Provider Plugins</span>
+                  <small>Building Provider Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-runtime/">
+                  <span>Plugin Runtime Helpers</span>
+                  <small>Plugin Runtime Helpers</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/voice-call/">
+                  <span>Voice Call Plugin</span>
+                  <small>Voice Call (plugin)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/architecture/">
+                  <span>Plugin Internals</span>
+                  <small>Plugin Internals</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/manifest/">
+                  <span>Plugin Manifest</span>
+                  <small>Plugin manifest (openclaw\.plugin.json)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-setup/">
+                  <span>Plugin Setup and Config</span>
+                  <small>Plugin Setup and Config</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-testing/">
+                  <span>Plugin Testing</span>
+                  <small>Plugin Testing</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Start</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/start/bootstrapping/">
+                  <span>Agent Bootstrapping</span>
+                  <small>Agent Bootstrapping</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/getting-started/">
+                  <span>Getting Started</span>
+                  <small>Getting Started</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/onboarding/">
+                  <span>Onboarding (macOS App)</span>
+                  <small>Onboarding (macOS App)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/onboarding-overview/">
+                  <span>Onboarding Overview</span>
+                  <small>Onboarding Overview</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/openclaw/">
+                  <span>Personal Assistant Setup</span>
+                  <small>Building a personal assistant with OpenClaw</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/showcase/">
+                  <span>Showcase</span>
+                  <small>Showcase</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/wizard/">
+                  <span>Onboarding (CLI)</span>
+                  <small>Onboarding (CLI)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/wizard-cli-automation/">
+                  <span>CLI Automation</span>
+                  <small>CLI Automation</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/wizard-cli-reference/">
+                  <span>CLI Setup Reference</span>
+                  <small>CLI Setup Reference</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/docs-directory/">
+                  <span>Docs directory</span>
+                  <small>Docs Directory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/hubs/">
+                  <span>Docs Hubs</span>
+                  <small>Docs hubs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/lore/">
+                  <span>OpenClaw Lore</span>
+                  <small>The Lore of OpenClaw 🦞📖</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/setup/">
+                  <span>Setup</span>
+                  <small>Setup</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Tools</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/tools/">
+                  <span>Tools and Plugins</span>
+                  <small>Tools and Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/plugin/">
+                  <span>Plugins</span>
+                  <small>Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/acp-agents/">
+                  <span>ACP Agents</span>
+                  <small>ACP agents</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/agent-send/">
+                  <span>Agent Send</span>
+                  <small>Agent Send</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/apply-patch/">
+                  <span>apply_patch Tool</span>
+                  <small>apply\_patch tool</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/brave-search/">
+                  <span>Brave Search</span>
+                  <small>Brave Search API</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/browser/">
+                  <span>Browser (OpenClaw-managed)</span>
+                  <small>Browser (openclaw-managed)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/browser-linux-troubleshooting/">
+                  <span>Browser Troubleshooting</span>
+                  <small>Browser Troubleshooting (Linux)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/browser-login/">
+                  <span>Browser Login</span>
+                  <small>Browser login + X/Twitter posting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/browser-wsl2-windows-remote-cdp-troubleshooting/">
+                  <span>WSL2 + Windows + remote Chrome CDP troubleshooting</span>
+                  <small>WSL2 + Windows + remote Chrome CDP troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/btw/">
+                  <span>BTW Side Questions</span>
+                  <small>BTW Side Questions</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/clawhub/">
+                  <span>ClawHub</span>
+                  <small>ClawHub</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/code-execution/">
+                  <span>Code Execution</span>
+                  <small>Code Execution</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/creating-skills/">
+                  <span>Creating Skills</span>
+                  <small>Creating Skills</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/diffs/">
+                  <span>Diffs</span>
+                  <small>Diffs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/duckduckgo-search/">
+                  <span>DuckDuckGo Search</span>
+                  <small>DuckDuckGo Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/elevated/">
+                  <span>Elevated Mode</span>
+                  <small>Elevated Mode</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/exa-search/">
+                  <span>Exa Search</span>
+                  <small>Exa Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/exec/">
+                  <span>Exec Tool</span>
+                  <small>Exec tool</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/exec-approvals/">
+                  <span>Exec Approvals</span>
+                  <small>Exec approvals</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/firecrawl/">
+                  <span>Firecrawl</span>
+                  <small>Firecrawl</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/gemini-search/">
+                  <span>Gemini Search</span>
+                  <small>Gemini Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/grok-search/">
+                  <span>Grok Search</span>
+                  <small>Grok Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/kimi-search/">
+                  <span>Kimi Search</span>
+                  <small>Kimi Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/llm-task/">
+                  <span>LLM Task</span>
+                  <small>LLM Task</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/lobster/">
+                  <span>Lobster</span>
+                  <small>Lobster</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/loop-detection/">
+                  <span>Tool-loop detection</span>
+                  <small>Tool-loop detection</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/multi-agent-sandbox-tools/">
+                  <span>Multi-Agent Sandbox &amp; Tools</span>
+                  <small>Multi-Agent Sandbox &amp; Tools Configuration</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/pdf/">
+                  <span>PDF Tool</span>
+                  <small>PDF tool</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/perplexity-search/">
+                  <span>Perplexity Search</span>
+                  <small>Perplexity Search API</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/reactions/">
+                  <span>Reactions</span>
+                  <small>Reactions</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/skills/">
+                  <span>Skills</span>
+                  <small>Skills (OpenClaw)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/skills-config/">
+                  <span>Skills Config</span>
+                  <small>Skills Config</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/slash-commands/">
+                  <span>Slash Commands</span>
+                  <small>Slash commands</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/subagents/">
+                  <span>Sub-Agents</span>
+                  <small>Sub-agents</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/tavily/">
+                  <span>Tavily</span>
+                  <small>Tavily</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/thinking/">
+                  <span>Thinking Levels</span>
+                  <small>Thinking Levels (/think directives)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/web/">
+                  <span>Web Search</span>
+                  <small>Web Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/web-fetch/">
+                  <span>Web Fetch</span>
+                  <small>Web Fetch</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/tts/">
+                  <span>Text-to-Speech</span>
+                  <small>Text-to-speech (TTS)</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Vps</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/vps/">
+                  <span>Linux Server</span>
+                  <small>Linux Server</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Automation</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/automation/auth-monitoring/">
+                  <span>Auth Monitoring</span>
+                  <small>Auth monitoring</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/cron-jobs/">
+                  <span>Cron Jobs</span>
+                  <small>Cron jobs (Gateway scheduler)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/cron-vs-heartbeat/">
+                  <span>Cron vs Heartbeat</span>
+                  <small>Cron vs Heartbeat: When to Use Each</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/gmail-pubsub/">
+                  <span>Gmail PubSub</span>
+                  <small>Gmail Pub/Sub -&gt; OpenClaw</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/hooks/">
+                  <span>Hooks</span>
+                  <small>Hooks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/poll/">
+                  <span>Polls</span>
+                  <small>Polls</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/standing-orders/">
+                  <span>Standing Orders</span>
+                  <small>Standing Orders</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/troubleshooting/">
+                  <span>Automation Troubleshooting</span>
+                  <small>Automation troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/webhook/">
+                  <span>Webhooks</span>
+                  <small>Webhooks</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Platforms</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/platforms/android/">
+                  <span>Android App</span>
+                  <small>Android App (Node)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/">
+                  <span>Platforms</span>
+                  <small>Platforms</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/ios/">
+                  <span>iOS App</span>
+                  <small>iOS App (Node)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/linux/">
+                  <span>Linux App</span>
+                  <small>Linux App</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/dev-setup/">
+                  <span>macOS Dev Setup</span>
+                  <small>macOS Developer Setup</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/menu-bar/">
+                  <span>Menu Bar</span>
+                  <small>Menu Bar Status Logic</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/macos/">
+                  <span>macOS App</span>
+                  <small>OpenClaw macOS Companion (menu bar + gateway broker)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/windows/">
+                  <span>Windows</span>
+                  <small>Windows</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/bundled-gateway/">
+                  <span>Gateway on macOS</span>
+                  <small>Gateway on macOS (external launchd)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/canvas/">
+                  <span>Canvas</span>
+                  <small>Canvas (macOS app)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/child-process/">
+                  <span>Gateway Lifecycle</span>
+                  <small>Gateway lifecycle on macOS</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/health/">
+                  <span>Health Checks (macOS)</span>
+                  <small>Health Checks on macOS</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/icon/">
+                  <span>Menu Bar Icon</span>
+                  <small>Menu Bar Icon States</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/logging/">
+                  <span>macOS Logging</span>
+                  <small>Logging (macOS)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/peekaboo/">
+                  <span>Peekaboo Bridge</span>
+                  <small>Peekaboo Bridge (macOS UI automation)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/permissions/">
+                  <span>macOS Permissions</span>
+                  <small>macOS permissions (TCC)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/remote/">
+                  <span>Remote Control</span>
+                  <small>Remote OpenClaw (macOS ⇄ remote host)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/signing/">
+                  <span>macOS Signing</span>
+                  <small>mac signing (debug builds)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/skills/">
+                  <span>Skills (macOS)</span>
+                  <small>Skills (macOS)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/voice-overlay/">
+                  <span>Voice Overlay</span>
+                  <small>Voice Overlay Lifecycle (macOS)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/voicewake/">
+                  <span>Voice Wake (macOS)</span>
+                  <small>Voice Wake &amp; Push-to-Talk</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/webchat/">
+                  <span>WebChat (macOS)</span>
+                  <small>WebChat (macOS app)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/xpc/">
+                  <span>macOS IPC</span>
+                  <small>OpenClaw macOS IPC architecture</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Prose</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/prose/">
+                  <span>OpenProse</span>
+                  <small>OpenProse</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Providers</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/providers/anthropic/">
+                  <span>Anthropic</span>
+                  <small>Anthropic (Claude)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/bedrock/">
+                  <span>Amazon Bedrock</span>
+                  <small>Amazon Bedrock</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/claude-max-api-proxy/">
+                  <span>Claude Max API Proxy</span>
+                  <small>Claude Max API Proxy</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/cloudflare-ai-gateway/">
+                  <span>Cloudflare AI Gateway</span>
+                  <small>Cloudflare AI Gateway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/deepgram/">
+                  <span>Deepgram</span>
+                  <small>Deepgram (Audio Transcription)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/deepseek/">
+                  <span>Deepseek</span>
+                  <small>DeepSeek</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/github-copilot/">
+                  <span>GitHub Copilot</span>
+                  <small>GitHub Copilot</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/glm/">
+                  <span>GLM Models</span>
+                  <small>GLM models</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/google/">
+                  <span>Google (Gemini)</span>
+                  <small>Google (Gemini)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/groq/">
+                  <span>Groq</span>
+                  <small>Groq</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/huggingface/">
+                  <span>Hugging Face (Inference)</span>
+                  <small>Hugging Face (Inference)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/">
+                  <span>Provider Directory</span>
+                  <small>Model Providers</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/kilocode/">
+                  <span>Kilo Gateway</span>
+                  <small>Kilo Gateway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/litellm/">
+                  <span>LiteLLM</span>
+                  <small>LiteLLM</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/minimax/">
+                  <span>MiniMax</span>
+                  <small>MiniMax</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/mistral/">
+                  <span>Mistral</span>
+                  <small>Mistral</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/models/">
+                  <span>Model Provider Quickstart</span>
+                  <small>Model Providers</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/moonshot/">
+                  <span>Moonshot AI</span>
+                  <small>Moonshot AI (Kimi)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/nvidia/">
+                  <span>NVIDIA</span>
+                  <small>NVIDIA</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/ollama/">
+                  <span>Ollama</span>
+                  <small>Ollama</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/openai/">
+                  <span>OpenAI</span>
+                  <small>OpenAI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/opencode/">
+                  <span>OpenCode</span>
+                  <small>OpenCode</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/opencode-go/">
+                  <span>OpenCode Go</span>
+                  <small>OpenCode Go</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/openrouter/">
+                  <span>OpenRouter</span>
+                  <small>OpenRouter</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/perplexity-provider/">
+                  <span>Perplexity (Provider)</span>
+                  <small>Perplexity (Web Search Provider)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/qianfan/">
+                  <span>Qianfan</span>
+                  <small>Qianfan Provider Guide</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/qwen/">
+                  <span>Qwen</span>
+                  <small>Qwen</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/qwen_modelstudio/">
+                  <span>Qwen / Model Studio</span>
+                  <small>Qwen / Model Studio (Alibaba Cloud)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/sglang/">
+                  <span>SGLang</span>
+                  <small>SGLang</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/synthetic/">
+                  <span>Synthetic</span>
+                  <small>Synthetic</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/together/">
+                  <span>Together AI</span>
+                  <small>Together AI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/venice/">
+                  <span>Venice AI</span>
+                  <small>Venice AI (Venice highlight)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/vercel-ai-gateway/">
+                  <span>Vercel AI Gateway</span>
+                  <small>Vercel AI Gateway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/vllm/">
+                  <span>vLLM</span>
+                  <small>vLLM</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/volcengine/">
+                  <span>Volcengine (Doubao)</span>
+                  <small>Volcengine (Doubao)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/xai/">
+                  <span>xAI</span>
+                  <small>xAI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/xiaomi/">
+                  <span>Xiaomi MiMo</span>
+                  <small>Xiaomi MiMo</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/zai/">
+                  <span>Z.AI</span>
+                  <small>Z.AI</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Auth Credential Semantics</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/auth-credential-semantics/">
+                  <span>Auth Credential Semantics</span>
+                  <small>Auth Credential Semantics</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Cli</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/cli/agent/">
+                  <span>agent</span>
+                  <small>openclaw agent</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/agents/">
+                  <span>agents</span>
+                  <small>openclaw agents</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/approvals/">
+                  <span>approvals</span>
+                  <small>openclaw approvals</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/backup/">
+                  <span>backup</span>
+                  <small>openclaw backup</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/channels/">
+                  <span>channels</span>
+                  <small>openclaw channels</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/daemon/">
+                  <span>daemon</span>
+                  <small>openclaw daemon</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/devices/">
+                  <span>devices</span>
+                  <small>openclaw devices</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/directory/">
+                  <span>directory</span>
+                  <small>openclaw directory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/doctor/">
+                  <span>doctor</span>
+                  <small>openclaw doctor</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/gateway/">
+                  <span>gateway</span>
+                  <small>Gateway CLI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/health/">
+                  <span>health</span>
+                  <small>openclaw health</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/hooks/">
+                  <span>hooks</span>
+                  <small>openclaw hooks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/">
+                  <span>CLI Reference</span>
+                  <small>CLI reference</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/logs/">
+                  <span>logs</span>
+                  <small>openclaw logs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/memory/">
+                  <span>memory</span>
+                  <small>openclaw memory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/message/">
+                  <span>message</span>
+                  <small>openclaw message</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/models/">
+                  <span>models</span>
+                  <small>openclaw models</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/onboard/">
+                  <span>onboard</span>
+                  <small>openclaw onboard</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/pairing/">
+                  <span>pairing</span>
+                  <small>openclaw pairing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/qr/">
+                  <span>qr</span>
+                  <small>openclaw qr</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/reset/">
+                  <span>reset</span>
+                  <small>openclaw reset</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/secrets/">
+                  <span>secrets</span>
+                  <small>openclaw secrets</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/security/">
+                  <span>security</span>
+                  <small>openclaw security</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/sessions/">
+                  <span>sessions</span>
+                  <small>openclaw sessions</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/setup/">
+                  <span>setup</span>
+                  <small>openclaw setup</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/status/">
+                  <span>status</span>
+                  <small>openclaw status</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/system/">
+                  <span>system</span>
+                  <small>openclaw system</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/uninstall/">
+                  <span>uninstall</span>
+                  <small>openclaw uninstall</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/update/">
+                  <span>update</span>
+                  <small>openclaw update</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/voicecall/">
+                  <span>voicecall</span>
+                  <small>openclaw voicecall</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/acp/">
+                  <span>acp</span>
+                  <small>acp</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/browser/">
+                  <span>browser</span>
+                  <small>openclaw browser</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/clawbot/">
+                  <span>clawbot</span>
+                  <small>openclaw clawbot</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/completion/">
+                  <span>completion</span>
+                  <small>openclaw completion</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/config/">
+                  <span>config</span>
+                  <small>openclaw config</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/configure/">
+                  <span>configure</span>
+                  <small>openclaw configure</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/cron/">
+                  <span>cron</span>
+                  <small>openclaw cron</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/dashboard/">
+                  <span>dashboard</span>
+                  <small>openclaw dashboard</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/dns/">
+                  <span>dns</span>
+                  <small>openclaw dns</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/docs/">
+                  <span>docs</span>
+                  <small>openclaw docs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/mcp/">
+                  <span>mcp</span>
+                  <small>mcp</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/node/">
+                  <span>node</span>
+                  <small>openclaw node</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/nodes/">
+                  <span>nodes</span>
+                  <small>openclaw nodes</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/plugins/">
+                  <span>plugins</span>
+                  <small>openclaw plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/sandbox/">
+                  <span>Sandbox CLI</span>
+                  <small>Sandbox CLI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/skills/">
+                  <span>skills</span>
+                  <small>openclaw skills</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/tui/">
+                  <span>tui</span>
+                  <small>openclaw tui</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/webhooks/">
+                  <span>webhooks</span>
+                  <small>openclaw webhooks</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Gateway</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/gateway/authentication/">
+                  <span>Authentication</span>
+                  <small>Authentication</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/background-process/">
+                  <span>Background Exec and Process Tool</span>
+                  <small>Background Exec + Process Tool</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/bonjour/">
+                  <span>Bonjour Discovery</span>
+                  <small>Bonjour / mDNS discovery</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/bridge-protocol/">
+                  <span>Bridge Protocol</span>
+                  <small>Bridge protocol (legacy node transport)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/cli-backends/">
+                  <span>CLI Backends</span>
+                  <small>CLI backends (fallback runtime)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/configuration/">
+                  <span>Configuration</span>
+                  <small>Configuration</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/configuration-examples/">
+                  <span>Configuration Examples</span>
+                  <small>Configuration Examples</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/configuration-reference/">
+                  <span>Configuration Reference</span>
+                  <small>Configuration Reference</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/discovery/">
+                  <span>Discovery and Transports</span>
+                  <small>Discovery &amp; transports</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/doctor/">
+                  <span>Doctor</span>
+                  <small>Doctor</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/gateway-lock/">
+                  <span>Gateway Lock</span>
+                  <small>Gateway lock</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/health/">
+                  <span>Health Checks</span>
+                  <small>Health Checks (CLI)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/heartbeat/">
+                  <span>Heartbeat</span>
+                  <small>Heartbeat (Gateway)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/">
+                  <span>Gateway Runbook</span>
+                  <small>Gateway runbook</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/local-models/">
+                  <span>Local Models</span>
+                  <small>Local models</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/logging/">
+                  <span>Gateway Logging</span>
+                  <small>Logging</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/multiple-gateways/">
+                  <span>Multiple Gateways</span>
+                  <small>Multiple Gateways (same host)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/network-model/">
+                  <span>Network model</span>
+                  <small>Network Model</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/openai-http-api/">
+                  <span>OpenAI Chat Completions</span>
+                  <small>OpenAI Chat Completions (HTTP)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/openresponses-http-api/">
+                  <span>OpenResponses API</span>
+                  <small>OpenResponses API (HTTP)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/openshell/">
+                  <span>OpenShell</span>
+                  <small>OpenShell</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/pairing/">
+                  <span>Gateway-Owned Pairing</span>
+                  <small>Gateway-owned pairing (Option B)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/protocol/">
+                  <span>Gateway Protocol</span>
+                  <small>Gateway protocol (WebSocket)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/remote/">
+                  <span>Remote Access</span>
+                  <small>Remote access (SSH, tunnels, and tailnets)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/remote-gateway-readme/">
+                  <span>Remote Gateway Setup</span>
+                  <small>Running OpenClaw\.app with a Remote Gateway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/sandbox-vs-tool-policy-vs-elevated/">
+                  <span>Sandbox vs Tool Policy vs Elevated</span>
+                  <small>Sandbox vs Tool Policy vs Elevated</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/sandboxing/">
+                  <span>Sandboxing</span>
+                  <small>Sandboxing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/secrets/">
+                  <span>Secrets Management</span>
+                  <small>Secrets management</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/secrets-plan-contract/">
+                  <span>Secrets Apply Plan Contract</span>
+                  <small>Secrets apply plan contract</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/security/">
+                  <span>Security</span>
+                  <small>Security</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/tailscale/">
+                  <span>Tailscale</span>
+                  <small>Tailscale (Gateway dashboard)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/tools-invoke-http-api/">
+                  <span>Tools Invoke API</span>
+                  <small>Tools Invoke (HTTP)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/troubleshooting/">
+                  <span>Troubleshooting</span>
+                  <small>Gateway troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/trusted-proxy-auth/">
+                  <span>Trusted Proxy Auth</span>
+                  <small>Trusted Proxy Auth</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Logging</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/logging/">
+                  <span>Logging Overview</span>
+                  <small>Logging</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Network</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/network/">
+                  <span>Network</span>
+                  <small>Network hub</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Nodes</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/nodes/audio/">
+                  <span>Audio and Voice Notes</span>
+                  <small>Audio / Voice Notes (2026-01-17)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/camera/">
+                  <span>Camera Capture</span>
+                  <small>Camera capture (agent)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/images/">
+                  <span>Image and Media Support</span>
+                  <small>Image &amp; Media Support (2025-12-05)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/">
+                  <span>Nodes</span>
+                  <small>Nodes</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/location-command/">
+                  <span>Location Command</span>
+                  <small>Location command (nodes)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/media-understanding/">
+                  <span>Media Understanding</span>
+                  <small>Media Understanding - Inbound (2026-01-17)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/talk/">
+                  <span>Talk Mode</span>
+                  <small>Talk Mode</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/troubleshooting/">
+                  <span>Node Troubleshooting</span>
+                  <small>Node troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/voicewake/">
+                  <span>Voice Wake</span>
+                  <small>Voice Wake (Global Wake Words)</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Security</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/security/CONTRIBUTING-THREAT-MODEL/">
+                  <span>Contributing to the Threat Model</span>
+                  <small>Contributing to the OpenClaw Threat Model</small>
+                </a>
+              
+                <a class="sidebar-link " href="/security/THREAT-MODEL-ATLAS/">
+                  <span>Threat Model (MITRE ATLAS)</span>
+                  <small>OpenClaw Threat Model v1.0</small>
+                </a>
+              
+                <a class="sidebar-link " href="/security/formal-verification/">
+                  <span>Formal Verification (Security Models)</span>
+                  <small>Formal Verification (Security Models)</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Web</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/web/control-ui/">
+                  <span>Control UI</span>
+                  <small>Control UI (browser)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/web/dashboard/">
+                  <span>Dashboard</span>
+                  <small>Dashboard (Control UI)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/web/">
+                  <span>Web</span>
+                  <small>Web (Gateway)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/web/tui/">
+                  <span>TUI</span>
+                  <small>TUI (Terminal UI)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/web/webchat/">
+                  <span>WebChat</span>
+                  <small>WebChat (Gateway WebSocket UI)</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Ci</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/ci/">
+                  <span>CI Pipeline</span>
+                  <small>CI Pipeline</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Date Time</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/date-time/">
+                  <span>Date and Time</span>
+                  <small>Date &amp; Time</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Debug</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/debug/node-issue/">
+                  <span>Node + tsx Crash</span>
+                  <small>Node + tsx &quot;\_\_name is not a function&quot; crash</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Diagnostics</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/diagnostics/flags/">
+                  <span>Diagnostics Flags</span>
+                  <small>Diagnostics Flags</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Help</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/help/debugging/">
+                  <span>Debugging</span>
+                  <small>Debugging</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/environment/">
+                  <span>Environment Variables</span>
+                  <small>Environment variables</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/faq/">
+                  <span>FAQ</span>
+                  <small>FAQ</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/">
+                  <span>Help</span>
+                  <small>Help</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/scripts/">
+                  <span>Scripts</span>
+                  <small>Scripts</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/testing/">
+                  <span>Testing</span>
+                  <small>Testing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/troubleshooting/">
+                  <span>General Troubleshooting</span>
+                  <small>Troubleshooting</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Pi</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/pi/">
+                  <span>Pi Integration Architecture</span>
+                  <small>Pi Integration Architecture</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Pi Dev</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/pi-dev/">
+                  <span>Pi Development Workflow</span>
+                  <small>Pi Development Workflow</small>
+                </a>
+              </div>
+            </section>
+          
+            <section class="sidebar-group">
+              <h3>Reference</h3>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/reference/AGENTS.default/">
+                  <span>Default AGENTS.md</span>
+                  <small>AGENTS.md - OpenClaw Personal Assistant (default)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/RELEASING/">
+                  <span>Release Policy</span>
+                  <small>Release Policy</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/api-usage-costs/">
+                  <span>API Usage and Costs</span>
+                  <small>API usage &amp; costs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/credits/">
+                  <span>Credits</span>
+                  <small>Credits and Acknowledgments</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/device-models/">
+                  <span>Device Model Database</span>
+                  <small>Device model database (friendly names)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/memory-config/">
+                  <span>Memory configuration reference</span>
+                  <small>Memory configuration reference</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/prompt-caching/">
+                  <span>Prompt Caching</span>
+                  <small>Prompt caching</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/rpc/">
+                  <span>RPC Adapters</span>
+                  <small>RPC adapters</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/secretref-credential-surface/">
+                  <span>SecretRef Credential Surface</span>
+                  <small>SecretRef credential surface</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/session-management-compaction/">
+                  <span>Session Management Deep Dive</span>
+                  <small>Session Management &amp; Compaction (Deep Dive)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/AGENTS/">
+                  <span>AGENTS.md Template</span>
+                  <small>AGENTS.md - Your Workspace</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/BOOT/">
+                  <span>BOOT.md Template</span>
+                  <small>BOOT.md</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/BOOTSTRAP/">
+                  <span>BOOTSTRAP.md Template</span>
+                  <small>BOOTSTRAP.md - Hello, World</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/HEARTBEAT/">
+                  <span>HEARTBEAT.md Template</span>
+                  <small>HEARTBEAT.md Template</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/IDENTITY/">
+                  <span>IDENTITY Template</span>
+                  <small>IDENTITY.md - Who Am I?</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/SOUL/">
+                  <span>SOUL.md Template</span>
+                  <small>SOUL.md - Who You Are</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/TOOLS/">
+                  <span>TOOLS.md Template</span>
+                  <small>TOOLS.md - Local Notes</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/USER/">
+                  <span>USER Template</span>
+                  <small>USER.md - About Your Human</small>
+                </a>
+              
+                <a class="sidebar-link is-active" href="/reference/test/">
+                  <span>Tests</span>
+                  <small>Tests</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/token-use/">
+                  <span>Token Use and Costs</span>
+                  <small>Token use &amp; costs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/transcript-hygiene/">
+                  <span>Transcript Hygiene</span>
+                  <small>Transcript Hygiene (Provider Fixups)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/wizard/">
+                  <span>Onboarding Reference</span>
+                  <small>Onboarding Reference</small>
+                </a>
+              </div>
+            </section>
+          
+    </nav>
+  
+      </div>
+
+      
+    <section class="section-shell">
+      <div class="overview-card">
+        <div>
+          <p class="section-kicker">先听总故事</p>
+          <h2>Tests</h2>
+          <p>这一页像一本关于“Tests”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：Tests。</p>
+        </div>
+        <div class="overview-meta">
+          <span>原始路径：/reference/test</span>
+          <span>章节数量：6</span>
+          <a href="https://docs.openclaw.ai/reference/test" target="_blank" rel="noreferrer">查看原文</a>
+        </div>
+      </div>
+    </section>
+    
+        <section class="section-shell" id="section-1">
+          <div class="section-heading">
+            <p class="section-kicker">第 1 站</p>
+            <h2>Start Here</h2>
+            <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Start Here”。</p>
+          </div>
+          <div class="story-grid">
+            
+      <div class="story-card">
+        <div class="story-card-label">像讲绘本</div>
+        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Tests”。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <p># Tests</p>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Full testing kit (suites, live, Docker):…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li>Full testing kit (suites, live, Docker): <a href="/help/testing" target="_blank" rel="noreferrer">Testing</a></li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pnpm test:force: Kills any lingering 门口的小…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>pnpm test:force</code>: Kills any lingering gateway process holding the default control port, then runs the full Vitest suite with an isolated gateway port so server tests don’t collide with a running instance. Use this when a prior gateway run left port 18789 occupied.</li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pnpm test:coverage: Runs the unit suite w…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>pnpm test:coverage</code>: Runs the unit suite with V8 coverage (via <code>vitest.unit.config.ts</code>). Global thresholds are 70% lines/branches/functions/statements. Coverage excludes integration-heavy entrypoints (CLI wiring, gateway/telegram bridges, webchat static server) to keep the target focused on unit-testable logic.</li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pnpm test:coverage:changed: Runs unit cov…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>pnpm test:coverage:changed</code>: Runs unit coverage only for files changed since <code>origin/main</code>.</li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pnpm test:changed: runs the wrapper with…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>pnpm test:changed</code>: runs the wrapper with <code>--changed origin/main</code>. The base Vitest config treats the wrapper manifests/config files as <code>forceRerunTriggers</code> so scheduler changes still rerun broadly when needed.</li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pnpm test: runs the full wrapper. It keep…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>pnpm test</code>: runs the full wrapper. It keeps only a small behavioral override manifest in git, then uses a checked-in timing snapshot to peel the heaviest measured unit files into dedicated lanes.</li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Unit files default to threads in the wrap…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li>Unit files default to <code>threads</code> in the wrapper; keep fork-only exceptions documented in <code>test/fixtures/test-parallel.behavior.json</code>.</li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pnpm test:消息通道s now defaults to threads v…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>pnpm test:channels</code> now defaults to <code>threads</code> via <code>vitest.channels.config.ts</code>; the March 22, 2026 direct full-suite control run passed clean without channel-specific fork exceptions.</li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pnpm test:extensions runs through the wra…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>pnpm test:extensions</code> runs through the wrapper and keeps documented extension fork-only exceptions in <code>test/fixtures/test-parallel.behavior.json</code>; the shared extension lane still defaults to <code>threads</code>.</li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pnpm test:extensions: runs extension/新本领插…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>pnpm test:extensions</code>: runs extension/plugin suites.</li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pnpm test:perf:imports: enables Vitest im…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>pnpm test:perf:imports</code>: enables Vitest import-duration + import-breakdown reporting for the wrapper.</li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pnpm test:perf:imports:changed: same impo…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>pnpm test:perf:imports:changed</code>: same import profiling, but only for files changed since <code>origin/main</code>.</li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pnpm test:perf:profile:main: writes a CPU…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>pnpm test:perf:profile:main</code>: writes a CPU profile for the Vitest main thread (<code>.artifacts/vitest-main-profile</code>).</li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pnpm test:perf:profile:runner: writes CPU…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>pnpm test:perf:profile:runner</code>: writes CPU + heap profiles for the unit runner (<code>.artifacts/vitest-runner-profile</code>).</li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pnpm test:perf:update-timings: refreshes…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>pnpm test:perf:update-timings</code>: refreshes the checked-in slow-file timing snapshot used by <code>scripts/test-parallel.mjs</code>.</li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：门口的小门卫 integration: opt-in via OPENCLAW_T…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li>Gateway integration: opt-in via <code>OPENCLAW_TEST_INCLUDE_GATEWAY=1 pnpm test</code> or <code>pnpm test:gateway</code>.</li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pnpm test:e2e: Runs 门口的小门卫 end-to-end smo…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>pnpm test:e2e</code>: Runs gateway end-to-end smoke tests (multi-instance WS/HTTP/node pairing). Defaults to <code>forks</code> + adaptive workers in <code>vitest.e2e.config.ts</code>; tune with <code>OPENCLAW_E2E_WORKERS=&lt;n&gt;</code> and set <code>OPENCLAW_E2E_VERBOSE=1</code> for verbose logs.</li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pnpm test:live: Runs provider live tests…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>pnpm test:live</code>: Runs provider live tests (minimax/zai). Requires API keys and <code>LIVE=1</code> (or provider-specific <code>*_LIVE_TEST=1</code>) to unskip.</li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pnpm test:docker:openwebui: Starts Docker…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>pnpm test:docker:openwebui</code>: Starts Dockerized OpenClaw + Open WebUI, signs in through Open WebUI, checks <code>/api/models</code>, then runs a real proxied chat through <code>/api/chat/completions</code>. Requires a usable live model key (for example OpenAI in <code>~/.profile</code>), pulls an external Open WebUI image, and is not expected to be CI-stable like the normal unit/e2e suites.</li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pnpm test:docker:mcp-消息通道s: Starts a seed…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>pnpm test:docker:mcp-channels</code>: Starts a seeded Gateway container and a second client container that spawns <code>openclaw mcp serve</code>, then verifies routed conversation discovery, transcript reads, attachment metadata, live event queue behavior, outbound send routing, and Claude-style channel + permission notifications over the real stdio bridge. The Claude notification assertion reads the raw stdio MCP frames directly so the smoke reflects what the bridge actually emits.</li></ul>
+      </div>
+    
+          </div>
+        </section>
+      
+        <section class="section-shell" id="section-2">
+          <div class="section-heading">
+            <p class="section-kicker">第 2 站</p>
+            <h2>Local PR gate</h2>
+            <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Local PR gate”。</p>
+          </div>
+          <div class="story-grid">
+            
+      <div class="story-card">
+        <div class="story-card-label">像讲绘本</div>
+        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For local PR land/gate checks, run:”。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <p>For local PR land/gate checks, run:</p>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Local PR gate”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pnpm check、pnpm build、pnpm test、pnpm check:docs。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>pnpm check</code></li><li><code>pnpm build</code></li><li><code>pnpm test</code></li><li><code>pnpm check:docs</code></li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像讲绘本</div>
+        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If pnpm test flakes on a loaded host, rerun once before treating it as a regression, then isolate with pnpm vitest run…”。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <p>If <code>pnpm test</code> flakes on a loaded host, rerun once before treating it as a regression, then isolate with <code>pnpm vitest run &lt;path/to/test&gt;</code>. For memory-constrained hosts, use:</p>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Local PR gate”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：OPENCLAW_TEST_PROFILE=low OPENCLAW_TEST_S…、OPENCLAW_VITEST_FS_MODULE_CACHE_PATH=/tmp…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>OPENCLAW_TEST_PROFILE=low OPENCLAW_TEST_SERIAL_GATEWAY=1 pnpm test</code></li><li><code>OPENCLAW_VITEST_FS_MODULE_CACHE_PATH=/tmp/openclaw-vitest-cache pnpm test:changed</code></li></ul>
+      </div>
+    
+          </div>
+        </section>
+      
+        <section class="section-shell" id="section-3">
+          <div class="section-heading">
+            <p class="section-kicker">第 3 站</p>
+            <h2>聪明脑袋模型 latency bench (local keys)</h2>
+            <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“聪明脑袋模型 latency bench (local keys)”。</p>
+          </div>
+          <div class="story-grid">
+            
+      <div class="story-card">
+        <div class="story-card-label">像讲绘本</div>
+        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Script: scripts/bench-聪明脑袋模型.ts”。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <p>Script: <a href="https://github.com/openclaw/openclaw/blob/main/scripts/bench-model.ts" target="_blank" rel="noreferrer"><code>scripts/bench-model.ts</code></a></p>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像讲绘本</div>
+        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Usage:”。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <p>Usage:</p>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Model latency bench (local keys)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：source ~/.profile &amp;&amp; pnpm tsx scripts/ben…、Optional env: MINIMAX_对话接口_KEY, MINIMAX_B…、Default prompt: “Reply with a single word…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>source ~/.profile &amp;&amp; pnpm tsx scripts/bench-model.ts --runs 10</code></li><li>Optional env: <code>MINIMAX_API_KEY</code>, <code>MINIMAX_BASE_URL</code>, <code>MINIMAX_MODEL</code>, <code>ANTHROPIC_API_KEY</code></li><li>Default prompt: “Reply with a single word: ok. No punctuation or extra text.”</li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像讲绘本</div>
+        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Last run (2025-12-31, 20 runs):”。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <p>Last run (2025-12-31, 20 runs):</p>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“Model latency bench (local keys)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：minimax median 1279ms (min 1114, max 2431)、opus median 2454ms (min 1224, max 3170)。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li>minimax median 1279ms (min 1114, max 2431)</li><li>opus median 2454ms (min 1224, max 3170)</li></ul>
+      </div>
+    
+          </div>
+        </section>
+      
+        <section class="section-shell" id="section-4">
+          <div class="section-heading">
+            <p class="section-kicker">第 4 站</p>
+            <h2>CLI startup bench</h2>
+            <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“CLI startup bench”。</p>
+          </div>
+          <div class="story-grid">
+            
+      <div class="story-card">
+        <div class="story-card-label">像讲绘本</div>
+        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Script: scripts/bench-cli-startup.ts”。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <p>Script: <a href="https://github.com/openclaw/openclaw/blob/main/scripts/bench-cli-startup.ts" target="_blank" rel="noreferrer"><code>scripts/bench-cli-startup.ts</code></a></p>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像讲绘本</div>
+        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Usage:”。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <p>Usage:</p>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“CLI startup bench”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pnpm tsx scripts/bench-cli-startup.ts、pnpm tsx scripts/bench-cli-startup.ts --r…、pnpm tsx scripts/bench-cli-startup.ts --e…。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>pnpm tsx scripts/bench-cli-startup.ts</code></li><li><code>pnpm tsx scripts/bench-cli-startup.ts --runs 12</code></li><li><code>pnpm tsx scripts/bench-cli-startup.ts --entry dist/entry.js --timeout-ms 45000</code></li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像讲绘本</div>
+        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“This benchmarks these 魔法口令s:”。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <p>This benchmarks these commands:</p>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像准备清单</div>
+        <p>这一组条目像“CLI startup bench”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：--version、--help、health --json、status --json。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <ul><li><code>--version</code></li><li><code>--help</code></li><li><code>health --json</code></li><li><code>status --json</code></li><li><code>status</code></li></ul>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像讲绘本</div>
+        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Output includes avg, p50, p95, min/max, and exit-code/signal distribution for each 魔法口令.”。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <p>Output includes avg, p50, p95, min/max, and exit-code/signal distribution for each command.</p>
+      </div>
+    
+          </div>
+        </section>
+      
+        <section class="section-shell" id="section-5">
+          <div class="section-heading">
+            <p class="section-kicker">第 5 站</p>
+            <h2>Onboarding E2E (Docker)</h2>
+            <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Onboarding E2E (Docker)”。</p>
+          </div>
+          <div class="story-grid">
+            
+      <div class="story-card">
+        <div class="story-card-label">像讲绘本</div>
+        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Docker is optional; this is only needed for containerized onboarding smoke tests.”。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <p>Docker is optional; this is only needed for containerized onboarding smoke tests.</p>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像讲绘本</div>
+        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Full cold-start flow in a clean Linux container:”。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <p>Full cold-start flow in a clean Linux container:</p>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像魔法口令拆解</div>
+        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
+        <ul class="code-steps">
+          <li>这一行“scripts/e2e/onboard-docker.sh”是当前步骤要交给电脑的一小块提示。</li>
+        </ul>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文代码块</div>
+        <pre><code class="language-bash">scripts/e2e/onboard-docker.sh</code></pre>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像讲绘本</div>
+        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“This script drives the interactive wizard via a pseudo-tty, verifies 设置说明书/workspace/session files, then starts the 门口的…”。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <p>This script drives the interactive wizard via a pseudo-tty, verifies config/workspace/session files, then starts the gateway and runs <code>openclaw health</code>.</p>
+      </div>
+    
+          </div>
+        </section>
+      
+        <section class="section-shell" id="section-6">
+          <div class="section-heading">
+            <p class="section-kicker">第 6 站</p>
+            <h2>QR import smoke (Docker)</h2>
+            <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“QR import smoke (Docker)”。</p>
+          </div>
+          <div class="story-grid">
+            
+      <div class="story-card">
+        <div class="story-card-label">像讲绘本</div>
+        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Ensures qrcode-terminal loads under the supported Docker Node runtimes (Node 24 default, Node 22 compatible):”。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文小纸条</div>
+        <p>Ensures <code>qrcode-terminal</code> loads under the supported Docker Node runtimes (Node 24 default, Node 22 compatible):</p>
+      </div>
+    
+      <div class="story-card">
+        <div class="story-card-label">像魔法口令拆解</div>
+        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
+        <ul class="code-steps">
+          <li>这里在给“pnpm test”贴标签，意思是把它设置成“docker:qr”。</li>
+        </ul>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文代码块</div>
+        <pre><code class="language-bash">pnpm test:docker:qr</code></pre>
+      </div>
+    
+          </div>
+        </section>
+      
+    <section class="section-shell">
+      <div class="ad-placeholder">
+        <p>这里预留给未来的 Google AdSense 模块。</p>
+        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
+      </div>
+    </section>
+  
+
+      <footer class="page-footer">
+        <div>
+          <strong>Fivey Can Read OpenClaw</strong>
+          <p>同步时间：2026年3月29日 13:10</p>
+        </div>
+        <div class="footer-links">
+          <a href="/sitemap.xml">Sitemap</a>
+          <a href="/robots.txt">Robots</a>
+          <a href="/ads.txt">Ads.txt</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>

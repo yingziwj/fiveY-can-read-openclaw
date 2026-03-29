@@ -1,0 +1,47 @@
+name: Sync and Build Docs
+
+on:
+  schedule:
+    - cron: '0 2 */3 * *'
+  workflow_dispatch:
+
+jobs:
+  sync-build:
+    name: Sync docs and build site
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Sync against docs.openclaw.ai
+        run: npm run sync
+
+      - name: Build dist site
+        run: npm run build
+
+      - name: Commit dist changes
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          BRANCH="${GITHUB_REF_NAME:-main}"
+          if git diff --quiet dist; then
+            echo "No generated site changes to commit."
+            exit 0
+          fi
+          git add dist
+          git commit -m "Auto-sync docs and build $(date -u '+%F %T UTC')"
+          git push origin "HEAD:${BRANCH}"
