@@ -3970,141 +3970,200 @@
   
       </div>
 
+      
       <section class="section-shell">
-  <div class="overview-card">
-    <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>OpenClaw 的工具，到底是什么？</h2>
-      <p>把 OpenClaw 想成一个很聪明、但没有手脚的小助手。它能不能真的帮你干活，不取决于它会不会聊天，而取决于它有没有“工具”。工具就是它的手、脚、眼睛、耳朵。没有工具，它最多只能说“我知道”；有了工具，它才能真的去读文件、改代码、开浏览器、搜索网页、发消息、定时做事。</p>
-      <p>所以这页不是在列一堆抽象名词，而是在告诉你：OpenClaw 到底靠什么从“会回答问题”变成“真的能做事情”。</p>
-    </div>
-    <div class="overview-meta">
-      <span>适合第一次读 OpenClaw 的人</span>
-      <span>这页建议先读完再点具体工具页</span>
-      <a href="https://docs.openclaw.ai/tools" target="_blank" rel="noreferrer">查看官方原文</a>
-    </div>
-  </div>
-</section>
-
-<section class="section-shell">
-  <div class="section-heading">
-    <p class="section-kicker">第一站</p>
-    <h2>工具、技能、插件，三个人各管什么</h2>
-    <p>很多人第一次看 OpenClaw 会把这三个词混在一起。最简单的记法是：工具负责“能做什么”，技能负责“什么时候怎么做”，插件负责“把一整套新能力装进去”。</p>
-  </div>
-  <div class="story-grid">
-    <div class="story-card">
-      <div class="story-card-label">工具 Tools</div>
-      <p>工具是最底层的动作。比如 `read` 是去看文件，`exec` 是去执行命令，`browser` 是去操作浏览器。它们像机器人身上的小手小脚。</p>
-    </div>
-    <div class="story-card">
-      <div class="story-card-label">技能 Skills</div>
-      <p>技能不是新动作，而是写给机器人的“做事说明书”。它会告诉它：碰到什么问题先查什么、再用什么工具、有什么边界不能越。</p>
-    </div>
-    <div class="story-card">
-      <div class="story-card-label">插件 Plugins</div>
-      <p>插件是整包能力。它可以顺手带来新的通道、模型、工具、技能，甚至语音和图像能力。你可以把它理解成“给机器人加一个新职业”。</p>
-    </div>
-    <div class="source-card">
-      <div class="story-card-label">一句话记住</div>
-      <p>工具是“动作”，技能是“攻略”，插件是“扩展包”。你只要分清这三层，看后面的 OpenClaw 文档就不会总觉得术语在打架。</p>
-    </div>
-  </div>
-</section>
-
-<section class="section-shell">
-  <div class="section-heading">
-    <p class="section-kicker">第二站</p>
-    <h2>内置工具到底能帮你做什么</h2>
-    <p>官方文档列工具时看起来像一张功能表，但如果换成更好理解的方式，其实就是这几类：读写文件、指挥电脑、看网页、上网找资料、跨会话记事、发消息、自动执行。</p>
-  </div>
-  <div class="home-grid">
-    <article class="home-card">
-      <span class="home-card-index">📂</span>
-      <h2>文件工具</h2>
-      <p>`read`、`write`、`edit`、`apply_patch` 这一组，负责“看、写、改”。如果你让 OpenClaw 改代码，这一组就是它真正动手的地方。</p>
-    </article>
-    <article class="home-card">
-      <span class="home-card-index">💻</span>
-      <h2>执行工具</h2>
-      <p>`exec`、`process`、`code_execution` 这一组，负责让电脑真的跑起来。它们不是聊天，是把命令和代码丢给环境去执行。</p>
-    </article>
-    <article class="home-card">
-      <span class="home-card-index">🌐</span>
-      <h2>浏览和搜索</h2>
-      <p>`browser`、`web_search`、`web_fetch` 让它能看页面、搜资料、抓网页内容。换句话说，它不只是“记得一点知识”，而是可以真的去查。</p>
-    </article>
-    <article class="home-card">
-      <span class="home-card-index">📱</span>
-      <h2>消息和调度</h2>
-      <p>`message`、`cron`、`gateway` 让它能发消息、定时做事、连到实际运行环境。这一组把 OpenClaw 从“单次问答”推向“长期帮你做事”。</p>
-    </article>
-  </div>
-</section>
-
-<section class="section-shell">
-  <div class="section-heading">
-    <p class="section-kicker">第三站</p>
-    <h2>为什么官方会把工具分组</h2>
-    <p>这不是为了写得酷，而是为了让你能快速判断“这件事该交给哪一类能力”。像你整理房间时会把积木、绘本、衣服分开放，OpenClaw 也是把能力分成几个箱子。</p>
-  </div>
-  <div class="story-grid">
-    <div class="story-card">
-      <div class="story-card-label">runtime</div>
-      <p>和“执行”有关。你要让电脑跑命令、开后台进程，就会想到这里。</p>
-    </div>
-    <div class="story-card">
-      <div class="story-card-label">fs</div>
-      <p>和“文件”有关。你要读配置、改源码、写结果文件，就会想到这里。</p>
-    </div>
-    <div class="story-card">
-      <div class="story-card-label">web / ui</div>
-      <p>和“看网页、点网页、搜网页”有关。你要抓网页信息或自动化浏览，就会想到这里。</p>
-    </div>
-    <div class="story-card">
-      <div class="story-card-label">automation / messaging</div>
-      <p>和“长期帮你做事”有关。比如定时提醒、持续发消息、定期巡检，这些通常都不是一次性动作。</p>
-    </div>
-  </div>
-</section>
-
-<section class="section-shell">
-  <div class="section-heading">
-    <p class="section-kicker">第四站</p>
-    <h2>这页最重要的不是“工具很多”，而是“工具有边界”</h2>
-    <p>OpenClaw 真正好用，不是因为它什么都能做，而是因为你可以决定它什么能做、什么不能做。官方文档后面提到的 allow / deny、profile、sandbox，本质都在解决同一个问题：聪明不等于乱来。</p>
-  </div>
-  <div class="story-grid">
-    <div class="story-card">
-      <div class="story-card-label">allow / deny</div>
-      <p>像给机器人一张“可以做”和“不能做”的清单。比如你允许它读文件和开浏览器，但不允许它执行命令。</p>
-    </div>
-    <div class="story-card">
-      <div class="story-card-label">profile</div>
-      <p>像不同工作模式。写代码时开一套，发消息时开一套，最保守时只给最基本的工具。</p>
-    </div>
-    <div class="source-card">
-      <div class="story-card-label">真正的价值</div>
-      <p>这意味着 OpenClaw 不是一个“放出去随便跑”的黑盒，而是一个你可以一点点驯化、一步步加能力的系统。</p>
-    </div>
-    <div class="source-card">
-      <div class="story-card-label">如果你只记一件事</div>
-      <p>工具页不是“能力炫耀清单”，而是 OpenClaw 的能力边界图。你越早看懂这张图，后面越知道为什么某些事情它能做，某些事情它必须先问你。</p>
-    </div>
-  </div>
-</section>
-
-<section class="section-shell">
-  <div class="section-heading">
-    <p class="section-kicker">最后总结</p>
-    <h2>把这页翻成一句最容易记住的话</h2>
-    <p>OpenClaw 之所以不像普通聊天机器人，是因为它不是只会“说”，而是会“做”；它之所以不会轻易失控，是因为这些“做”的动作都被你放进了工具、规则和边界里。</p>
-  </div>
-  <div class="ad-placeholder">
-    <p>如果你接下来只想继续读一页，我建议先看具体的 <code>/tools/exec</code>、<code>/tools/browser</code> 或 <code>/tools/skills</code>，你会更快把这张能力地图和真实使用场景连起来。</p>
-  </div>
-</section>
-
+        <div class="overview-card">
+          <div>
+            <p class="section-kicker">DeepSeek 中文解读版</p>
+            <h2>OpenClaw工具与插件：智能体的行动手册</h2>
+            <p>OpenClaw的核心能力在于让智能体通过工具执行实际任务。本文档系统性地解释了工具、技能和插件三层架构如何协同工作，以及如何通过配置精确控制智能体的行为边界。无论你是想了解系统基础架构，还是需要精细控制智能体权限，这里都有清晰的答案。</p>
+          </div>
+          <div class="overview-meta">
+            <span>原始路径：/tools/index</span>
+            <span>模型输出章节：7</span>
+            <a href="https://docs.openclaw.ai/tools/index" target="_blank" rel="noreferrer">查看官方原文</a>
+          </div>
+        </div>
+      </section>
+      
+          <section class="section-shell" id="section-1">
+            <div class="section-heading">
+              <p class="section-kicker">第 1 站</p>
+              <h2>起点：理解三层架构</h2>
+              <p>本节定义了OpenClaw中工具、技能和插件三个核心概念及其关系。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>这是理解整个系统如何运作的基础框架，避免后续配置时概念混淆。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>工具是智能体可以调用的具体函数，比如执行命令、浏览网页、读写文件等，相当于智能体的“手和脚”。</li><li>技能是指导智能体何时以及如何使用工具的Markdown文档，通过系统提示词注入，相当于智能体的“操作手册”或“经验规则”。</li><li>插件是封装了工具、技能、通道等能力的完整包，可以扩展系统功能，分为核心插件和社区插件两类。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>工具是执行单元，技能是使用指南，插件是功能扩展包，三者共同构成智能体的行为能力体系。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-2">
+            <div class="section-heading">
+              <p class="section-kicker">第 2 站</p>
+              <h2>内置工具库</h2>
+              <p>列举了OpenClaw默认提供、无需额外安装即可使用的核心工具。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>了解这些现成工具能帮你快速评估系统开箱即用的能力范围，决定是否需要额外插件。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>exec/process工具允许智能体运行Shell命令和管理后台进程，是系统交互的基础。</li><li>browser工具控制Chromium浏览器进行导航、点击和截图，实现网页自动化。</li><li>web_search/x_search/web_fetch工具提供网页搜索、X平台搜索和页面内容抓取能力。</li><li>read/write/edit工具在工作空间内进行文件读写和编辑，是代码和文档处理的核心。</li><li>message工具用于跨所有通道发送消息，实现智能体间的通信。</li><li>其他工具包括代码沙箱执行、文件补丁、画布驱动、设备发现、定时任务、图像分析生成、会话管理等，覆盖了常见自动化场景。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>内置工具已覆盖从系统操作到网页交互、文件处理、通信协作的完整工作流，多数需求可直接使用。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-3">
+            <div class="section-heading">
+              <p class="section-kicker">第 3 站</p>
+              <h2>插件扩展的工具</h2>
+              <p>介绍通过插件可以获得的额外工具能力。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>当内置工具无法满足特定需求时，插件提供了专业化的扩展方案。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>Lobster插件提供了类型化的工作流运行时，支持可恢复的审批流程，适合复杂业务流程。</li><li>LLM Task插件专注于生成结构化JSON输出，简化了LLM集成步骤。</li><li>Diffs插件提供了差异对比查看和渲染功能，便于代码或文档变更管理。</li><li>OpenProse插件以Markdown优先的方式编排工作流，提升了可读性和维护性。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>插件工具通常针对特定场景深度优化，当需要专业化功能或更优的工作流时，应考虑安装相应插件。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-4">
+            <div class="section-heading">
+              <p class="section-kicker">第 4 站</p>
+              <h2>工具权限控制：允许与拒绝列表</h2>
+              <p>讲解如何通过配置文件的allow和deny列表精确控制智能体能使用的工具。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>安全性和可控性的关键配置，防止智能体越权操作，特别是在生产环境中。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>通过tools.allow数组指定智能体可以调用的工具列表，明确授权范围。</li><li>通过tools.deny数组指定禁止使用的工具列表，deny列表的优先级高于allow列表。</li><li>这种白名单+黑名单的组合方式提供了灵活的权限管理策略。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">命令 / 代码怎么理解</div>
+              <ul><li>配置示例中，allow: [&quot;group:fs&quot;, &quot;browser&quot;, &quot;web_search&quot;]表示允许文件系统工具组、浏览器工具和网页搜索工具。</li><li>deny: [&quot;exec&quot;]表示明确禁止执行Shell命令的工具，即使它在allow的组中也会被拒绝。</li><li>这种配置适合需要网页自动化但禁止系统命令执行的场景，平衡了功能与安全。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>使用allow和deny列表可以精细地定义智能体的操作边界，deny列表具有最终否决权。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-5">
+            <div class="section-heading">
+              <p class="section-kicker">第 5 站</p>
+              <h2>工具配置文件</h2>
+              <p>介绍通过预定义的工具配置文件快速设置常用权限模板。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>简化配置过程，避免手动列出大量工具名，特别是对于常见使用场景。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>tools.profile设置基础权限模板，在allow/deny规则应用之前生效。</li><li>full配置文件包含所有工具，是默认设置，适合开发调试阶段。</li><li>coding配置文件专注于编程相关工具，包括文件I/O、运行时、会话、内存和图像工具。</li><li>messaging配置文件仅包含消息传递和会话管理工具，适合纯通信场景。</li><li>minimal配置文件只包含session_status工具，权限最严格。</li><li>可以为单个智能体单独覆盖全局配置，实现差异化管理。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>工具配置文件提供了开箱即用的权限模板，大幅简化了常见场景的配置工作。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-6">
+            <div class="section-heading">
+              <p class="section-kicker">第 6 站</p>
+              <h2>工具组快捷方式</h2>
+              <p>解释如何使用工具组(group)简写来批量管理相关工具。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>提高配置的可读性和维护性，特别是当需要管理大量相关工具时。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>group:runtime包含exec、bash、process、code_execution等运行时工具。</li><li>group:fs包含read、write、edit、apply_patch等文件系统操作工具。</li><li>group:sessions包含所有会话管理相关工具，如列表、历史、发送、生成子智能体等。</li><li>group:web包含web_search、x_search、web_fetch等网页相关工具。</li><li>group:openclaw包含所有内置工具（不包括插件工具），是完整的默认工具集。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>使用工具组简写可以让配置文件更简洁，同时保持逻辑清晰，便于批量权限管理。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-7">
+            <div class="section-heading">
+              <p class="section-kicker">第 7 站</p>
+              <h2>按模型提供者限制工具</h2>
+              <p>讲解如何针对不同的模型提供者设置不同的工具权限，而不影响全局默认设置。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>在多模型环境中，不同模型的能力和信任级别可能不同，需要差异化的权限控制。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>通过tools.byProvider配置可以为特定模型提供者设置独立的工具权限。</li><li>这种配置不会改变全局的profile、allow或deny设置，只针对指定提供者生效。</li><li>适用于混合使用不同来源模型，且需要差异化安全策略的场景。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">命令 / 代码怎么理解</div>
+              <ul><li>配置示例中，全局profile设置为&quot;coding&quot;，但针对&quot;google-antigravity&quot;这个提供者，单独设置了&quot;minimal&quot;权限。</li><li>这意味着当智能体使用google-antigravity模型时，只能使用session_status工具，权限被严格限制。</li><li>这种配置方式实现了细粒度的权限控制，可以根据模型的特性和信任级别灵活调整。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>byProvider配置允许你为不同模型提供者定制工具权限，实现更精细的安全策略管理。</p>
+              </div>
+            </div>
+          </section>
+        
+      <section class="section-shell">
+        <div class="ad-placeholder">
+          <p>这里预留给未来的 Google AdSense 模块。</p>
+          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
+        </div>
+      </section>
+    
 
       <footer class="page-footer">
         <div>

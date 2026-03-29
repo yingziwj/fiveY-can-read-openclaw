@@ -3971,776 +3971,283 @@
       </div>
 
       
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Exec Tool</h2>
-          <p>这一页像一本关于“Exec 工具小帮手”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：Exec 工具小帮手。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
+      <section class="section-shell">
+        <div class="overview-card">
+          <div>
+            <p class="section-kicker">DeepSeek 中文解读版</p>
+            <h2>OpenClaw Exec工具：安全执行Shell命令的完整指南</h2>
+            <p>Exec工具是OpenClaw的核心功能，让你能在工作空间内安全地运行Shell命令。它支持前台/后台执行、多主机环境选择，并内置了精细的权限控制机制。理解Exec的工作原理，是构建自动化流程和确保系统安全的关键一步。</p>
+          </div>
+          <div class="overview-meta">
+            <span>原始路径：/tools/exec</span>
+            <span>模型输出章节：10</span>
+            <a href="https://docs.openclaw.ai/tools/exec" target="_blank" rel="noreferrer">查看官方原文</a>
+          </div>
         </div>
-        <div class="overview-meta">
-          <span>原始路径：/tools/exec</span>
-          <span>章节数量：10</span>
-          <a href="https://docs.openclaw.ai/tools/exec" target="_blank" rel="noreferrer">查看原文</a>
+      </section>
+      
+          <section class="section-shell" id="section-1">
+            <div class="section-heading">
+              <p class="section-kicker">第 1 站</p>
+              <h2>核心概念：Exec是什么？</h2>
+              <p>这一节定义了Exec工具的基本功能和运行模式。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>这是理解整个工具的基础，帮你建立正确的心理模型：Exec不是简单的Shell调用，而是一个受控的执行环境。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>Exec工具的核心是在OpenClaw工作空间内执行Shell命令。</li><li>它通过`process`工具支持后台运行，如果禁用`process`，则所有命令都是同步执行的。</li><li>后台会话的作用域是按代理（agent）划分的，每个`process`只能看到同一代理创建的会话。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>Exec是一个受控的、可管理的Shell命令执行器，而非简单的终端模拟。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-2">
+            <div class="section-heading">
+              <p class="section-kicker">第 2 站</p>
+              <h2>参数详解：如何配置一次执行</h2>
+              <p>这一节详细解释了调用Exec工具时可以传递的所有参数及其含义。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>参数决定了命令在哪里执行、如何执行以及受到何种安全约束，是控制Exec行为的关键。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>`command`是唯一必需的参数，指定要运行的命令。</li><li>`workdir`指定工作目录，默认是当前目录。</li><li>`env`可以覆盖环境变量。</li><li>`yieldMs`和`background`控制命令是立即后台运行，还是延迟后自动转入后台。</li><li>`timeout`设置命令执行的超时时间。</li><li>`pty`参数决定是否在伪终端中运行，这对需要TTY交互的命令（如vim、某些CLI工具）很重要。</li><li>`host`参数是核心，决定命令在何处执行：沙箱（sandbox）、网关主机（gateway）还是远程节点（node）。</li><li>`security`和`ask`参数共同决定了安全执行模式，从完全拒绝（deny）到白名单（allowlist）或完全信任（full），以及何时需要人工审批。</li><li>`node`参数仅在`host=node`时使用，指定具体的远程节点。</li><li>`elevated`用于请求提升权限（仅限gateway主机），它会强制`host=gateway`。</li><li>重要安全提示：沙箱功能默认是关闭的。如果沙箱关闭且未明确指定`host=gateway`，Exec会执行失败，而不是静默地在网关主机上运行，这是一种“失败即关闭”的安全设计。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>通过`host`、`security`、`ask`这三个核心参数，你可以精确控制命令的执行环境和安全级别。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-3">
+            <div class="section-heading">
+              <p class="section-kicker">第 3 站</p>
+              <h2>全局配置：定制Exec的默认行为</h2>
+              <p>这一节介绍了如何通过OpenClaw的配置文件，为所有Exec调用设置默认参数。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>全局配置让你不必每次调用都重复指定常用参数，并能统一安全策略。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>`tools.exec.notifyOnExit`控制后台任务结束时是否发送系统事件。</li><li>`tools.exec.approvalRunningNoticeMs`设置需要审批的任务在运行多久后发出“正在运行”的通知。</li><li>`tools.exec.host`、`.security`、`.ask`、`.node`分别对应同名参数的全局默认值。</li><li>`tools.exec.strictInlineEval`是一个重要的安全开关。开启后，像`python -c`、`node -e`这样的内联代码执行形式将始终需要显式审批，不会被“总是允许”策略记住。</li><li>`tools.exec.pathPrepend`允许你为Exec运行环境预置PATH目录（仅限gateway和sandbox）。</li><li>`tools.exec.safeBins`、`.safeBinTrustedDirs`、`.safeBinProfiles`共同定义了“安全二进制文件”策略，用于允许一些仅处理标准输入输出的工具（如`grep`、`cat`）无需审批即可运行。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">命令 / 代码怎么理解</div>
+              <ul><li>示例配置`{ tools: { exec: { pathPrepend: [&quot;~/bin&quot;, &quot;/opt/oss/bin&quot;] } } }`的作用是：在每次Exec运行时，将`~/bin`和`/opt/oss/bin`这两个目录添加到环境变量PATH的最前面。</li><li>这让你可以方便地使用自定义或第三方工具，而无需修改系统PATH。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>善用全局配置，可以大幅简化日常使用并固化安全策略。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-4">
+            <div class="section-heading">
+              <p class="section-kicker">第 4 站</p>
+              <h2>PATH处理机制：命令在哪里被找到？</h2>
+              <p>这一节解释了Exec在不同`host`模式下，如何解析和设置PATH环境变量。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>理解PATH处理机制，能帮你解决“命令找不到”的问题，并明白安全策略如何在此生效。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>当`host=gateway`时，Exec会合并你登录Shell的PATH到执行环境中，但通过`env.PATH`传递的覆盖值会被拒绝，这是为了防止二进制劫持或代码注入。</li><li>当`host=sandbox`时，Exec在容器内运行`sh -lc`（登录shell），因此`/etc/profile`等配置文件可能会重置PATH。OpenClaw会通过内部环境变量在profile加载后预置PATH，`tools.exec.pathPrepend`也在此生效。</li><li>当`host=node`时，只有未被阻止的环境变量覆盖会被发送到节点，`env.PATH`覆盖会被拒绝并被节点主机忽略。如果需要节点上有额外的PATH，应配置节点主机服务本身的环境。</li><li>你可以通过`openclaw config set agents.list[0].tools.exec.node &quot;node-id&quot;`命令，将特定的Exec节点绑定到某个代理（agent）。</li><li>控制台的“节点”标签页也提供了图形化界面来设置Exec节点绑定。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">命令 / 代码怎么理解</div>
+              <ul><li>命令`openclaw config get agents.list`用于查看当前代理列表及其索引。</li><li>命令`openclaw config set agents.list[0].tools.exec.node &quot;mac-1&quot;`的含义是：将索引为0的代理的Exec工具默认节点设置为名为“mac-1”的节点。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>PATH的处理因`host`模式而异，网关和沙箱模式相对灵活，节点模式则更严格，依赖节点自身的环境配置。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-5">
+            <div class="section-heading">
+              <p class="section-kicker">第 5 站</p>
+              <h2>会话级覆盖：临时改变执行设置</h2>
+              <p>这一节介绍了如何使用`/exec`命令，为当前会话临时覆盖Exec的默认参数。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>当你需要在一次对话或任务中临时改变执行主机、安全策略时，这比修改全局配置更方便。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>使用`/exec`命令可以设置本次会话的默认`host`、`security`、`ask`和`node`参数。</li><li>发送不带参数的`/exec`可以查看当前会话的设置。</li><li>这种覆盖只影响会话状态，不会写入配置文件。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">命令 / 代码怎么理解</div>
+              <ul><li>示例命令`/exec host=gateway security=allowlist ask=on-miss node=mac-1`的含义是：在当前会话中，将Exec的默认主机设为网关，安全模式设为白名单，审批策略设为“未命中白名单时询问”，默认节点设为“mac-1”。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>`/exec`是灵活调整单次任务执行环境的快捷方式。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-6">
+            <div class="section-heading">
+              <p class="section-kicker">第 6 站</p>
+              <h2>授权模型：谁可以设置会话覆盖？</h2>
+              <p>这一节说明了`/exec`命令的权限控制机制。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>确保只有被授权的发送者才能修改执行环境，这是系统安全的重要一环。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>`/exec`命令仅对已授权的发送者生效（基于频道白名单/配对以及`commands.useAccessGroups`配置）。</li><li>它只更新会话状态，不写入配置。</li><li>要完全禁用Exec，需要通过工具策略（`tools.deny: [&quot;exec&quot;]`）来拒绝。</li><li>即使使用了`/exec`，主机审批规则仍然适用，除非你显式设置了`security=full`和`ask=off`。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>`/exec`的权限受OpenClaw整体授权模型约束，它提供便利但不绕过核心安全审批。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-7">
+            <div class="section-heading">
+              <p class="section-kicker">第 7 站</p>
+              <h2>执行审批流程</h2>
+              <p>这一节描述了当命令需要在网关或节点主机上运行且需要审批时，会发生什么。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>了解审批流程的异步性和事件驱动特性，对于构建响应式的自动化脚本至关重要。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>当沙箱化代理需要在网关或节点主机上运行命令，且需要审批时，Exec工具会立即返回一个`status: &quot;approval-pending&quot;`的响应和一个审批ID。</li><li>一旦命令被批准、拒绝或超时，网关会发出相应的系统事件（如“Exec finished”、“Exec denied”）。</li><li>如果命令运行时间超过了`tools.exec.approvalRunningNoticeMs`的设定，则会发出一个“Exec running”通知。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>需要审批的Exec调用是异步的，你的自动化流程需要监听系统事件来获取最终结果。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-8">
+            <div class="section-heading">
+              <p class="section-kicker">第 8 站</p>
+              <h2>白名单与安全二进制文件策略</h2>
+              <p>这一节深入解释了allowlist（白名单）模式和safeBins（安全二进制文件）的区别与用法。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>混淆这两者可能导致安全策略失效。正确使用它们是实现“最小权限”原则的关键。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>手动白名单模式只匹配**解析后的二进制文件完整路径**，不匹配文件名。</li><li>当`security=allowlist`时，Shell命令只有在管道（`|`）的每一段都在白名单内或是安全二进制文件时，才会被自动允许。链式命令（`;`、`&amp;&amp;`、`||`）和重定向在allowlist模式下会被拒绝，除非每个顶层段都满足白名单要求。</li><li>`autoAllowSkills`是Exec审批中的一个便利功能，与手动路径白名单是分开的。为了严格的显式信任，应保持`autoAllowSkills`关闭。</li><li>安全二进制文件（safeBins）专为小型、仅处理标准输入输出的流过滤器（如`grep`, `wc`, `jq`）设计。</li><li>**切勿**将解释器/运行时二进制文件（如`python3`、`node`、`bash`）加入`safeBins`。如果需要它们，应使用显式的白名单条目，并保持审批提示开启。</li><li>如果显式地将解释器加入了白名单，强烈建议开启`tools.exec.strictInlineEval`，这样内联代码求值形式（如`python -c`）仍然需要新的审批。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>白名单用于完全信任的任意命令，安全二进制文件用于受限的、无害的数据处理工具，两者用途分明，不可混用。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-9">
+            <div class="section-heading">
+              <p class="section-kicker">第 9 站</p>
+              <h2>使用示例</h2>
+              <p>这一节通过几个典型场景的JSON示例，展示了Exec和配套`process`工具的实际用法。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>看具体的调用格式比读描述更直观，这些示例是快速上手的模板。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>前台执行是最简单的形式，只需指定工具和命令。</li><li>“后台+轮询”模式适合长时间运行的任务：先用`yieldMs`让命令转入后台，然后用`process`工具的`poll`动作检查状态。</li><li>`process`工具的`send-keys`动作可以模拟按键（如Enter、Ctrl+C、方向键），用于与交互式命令行程序通信。</li><li>`submit`动作专门用于发送回车键（CR）。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">命令 / 代码怎么理解</div>
+              <ul><li>`{&quot;tool&quot;:&quot;exec&quot;,&quot;command&quot;:&quot;ls -la&quot;}`：这是一个最基本的前台Exec调用。</li><li>`{&quot;tool&quot;:&quot;process&quot;,&quot;action&quot;:&quot;send-keys&quot;,&quot;sessionId&quot;:&quot;&lt;id&gt;&quot;,&quot;keys&quot;:[&quot;C-c&quot;]}`：这个调用向指定会话发送Ctrl+C按键组合，常用于中断正在运行的程序。</li><li>`{&quot;tool&quot;:&quot;process&quot;,&quot;action&quot;:&quot;poll&quot;,&quot;sessionId&quot;:&quot;&lt;id&gt;&quot;}`：这个调用轮询指定后台会话的当前状态（如是否仍在运行、退出码等）。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>结合`exec`和`process`工具，你可以实现从简单命令执行到复杂交互式任务管理的全场景覆盖。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-10">
+            <div class="section-heading">
+              <p class="section-kicker">第 10 站</p>
+              <h2>apply_patch子工具</h2>
+              <p>这一节介绍了Exec工具的一个特殊子工具`apply_patch`，用于结构化地编辑多个文件。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>这是AI辅助编程（如Codex模型）中的一个关键功能，理解其配置可以控制AI对工作空间的修改权限。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>`apply_patch`是`exec`的一个子工具，默认对OpenAI和OpenAI Codex模型开启。</li><li>它的配置位于`tools.exec.applyPatch`下。</li><li>`enabled`默认为`true`，设为`false`可对OpenAI模型禁用此工具。</li><li>`workspaceOnly`默认为`true`，意味着补丁只能应用于工作空间目录内的文件。将其设为`false`需谨慎，因为这允许AI修改工作空间外的文件。</li><li>工具策略仍然适用，拥有`write`权限通常隐含允许`apply_patch`。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">命令 / 代码怎么理解</div>
+              <ul><li>示例配置`{ tools: { exec: { applyPatch: { workspaceOnly: true, allowModels: [&quot;gpt-5.2&quot;] } } } }`的含义是：启用apply_patch工具，但限制它只能修改工作空间内的文件，并且仅允许名为“gpt-5.2”的模型使用它。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>`apply_patch`是AI模型进行代码修改的专用接口，通过配置可以精细控制其操作范围。</p>
+              </div>
+            </div>
+          </section>
+        
+      <section class="section-shell">
+        <div class="ad-placeholder">
+          <p>这里预留给未来的 Google AdSense 模块。</p>
+          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
         </div>
-      </div>
-    </section>
+      </section>
     
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Exec 工具小帮手 Run shell 魔法口令s in the workspace. Supports foreground + background execution via process. If process is disa…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Exec 工具小帮手”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Exec tool</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Run shell 魔法口令s in the workspace. Supports foreground + background execution via process. If process is disallowed, exe…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Run shell commands in the workspace. Supports foreground + background execution via <code>process</code>. If <code>process</code> is disallowed, <code>exec</code> runs synchronously and ignores <code>yieldMs</code>/<code>background</code>. Background sessions are scoped per agent; <code>process</code> only sees sessions from the same agent.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Parameters</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes: from PATH to avoid fish-incompatible scripts, then falls back to SHELL if neither exists. then falls back to Win…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Parameters”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：魔法口令 (required)、workdir (defaults to cwd)、env (key/value overrides)、yieldMs (default 10000): auto-background…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>command</code> (required)</li><li><code>workdir</code> (defaults to cwd)</li><li><code>env</code> (key/value overrides)</li><li><code>yieldMs</code> (default 10000): auto-background after delay</li><li><code>background</code> (bool): background immediately</li><li><code>timeout</code> (seconds, default 1800): kill on expiry</li><li><code>pty</code> (bool): run in a pseudo-terminal when available (TTY-only CLIs, coding agents, terminal UIs)</li><li><code>host</code> (<code>sandbox | gateway | node</code>): where to execute</li><li><code>security</code> (<code>deny | allowlist | full</code>): enforcement mode for <code>gateway</code>/<code>node</code></li><li><code>ask</code> (<code>off | on-miss | always</code>): approval prompts for <code>gateway</code>/<code>node</code></li><li><code>node</code> (string): node id/name for <code>host=node</code></li><li><code>elevated</code> (bool): request elevated mode (gateway host); <code>security=full</code> is only forced when elevated resolves to <code>full</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Notes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“from PATH to avoid fish-incompatible scripts, then falls back to SHELL if neither exists.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>from <code>PATH</code> to avoid fish-incompatible scripts, then falls back to <code>SHELL</code> if neither exists.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“then falls back to Windows PowerShell 5.1.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>then falls back to Windows PowerShell 5.1.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“prevent binary hijacking or injected code.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>prevent binary hijacking or injected code.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“host=sandbox (including the implicit default), exec fails closed instead of silently running on the 门口的小门卫 host. Enable…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>host=sandbox</code> (including the implicit default), exec fails closed instead of silently running on the gateway host. Enable sandboxing or use <code>host=gateway</code> with approvals.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“effective workdir boundary. If a script path resolves outside workdir, preflight is skipped for that file.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>effective <code>workdir</code> boundary. If a script path resolves outside <code>workdir</code>, preflight is skipped for that file.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Parameters”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：host defaults to sandbox.、elevated forces host=门口的小门卫; it is only a…、门口的小门卫/node approvals are controlled by ~…、node requires a paired node (companion ap…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>host</code> defaults to <code>sandbox</code>.</li><li><code>elevated</code> forces <code>host=gateway</code>; it is only available when elevated access is enabled for the current session/provider.</li><li><code>gateway</code>/<code>node</code> approvals are controlled by <code>~/.openclaw/exec-approvals.json</code>.</li><li><code>node</code> requires a paired node (companion app or headless node host).</li><li>If multiple nodes are available, set <code>exec.node</code> or <code>tools.exec.node</code> to select one.</li><li>On non-Windows hosts, exec uses <code>SHELL</code> when set; if <code>SHELL</code> is <code>fish</code>, it prefers <code>bash</code> (or <code>sh</code>)</li><li>On Windows hosts, exec prefers PowerShell 7 (<code>pwsh</code>) discovery (Program Files, ProgramW6432, then PATH),</li><li>Host execution (<code>gateway</code>/<code>node</code>) rejects <code>env.PATH</code> and loader overrides (<code>LD_*</code>/<code>DYLD_*</code>) to</li><li>OpenClaw sets <code>OPENCLAW_SHELL=exec</code> in the spawned command environment (including PTY and sandbox execution) so shell/profile rules can detect exec-tool context.</li><li>Important: sandboxing is **off by default**. If sandboxing is off and exec resolves to</li><li>Script preflight checks (for common Python/Node shell-syntax mistakes) only inspect files inside the</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>设置说明书</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Example:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Config”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：工具小帮手s.exec.notifyOnExit (default: true):…、工具小帮手s.exec.approvalRunningNoticeMs (defa…、工具小帮手s.exec.host (default: sandbox)、工具小帮手s.exec.安全守门员 (default: deny for sand…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>tools.exec.notifyOnExit</code> (default: true): when true, backgrounded exec sessions enqueue a system event and request a heartbeat on exit.</li><li><code>tools.exec.approvalRunningNoticeMs</code> (default: 10000): emit a single “running” notice when an approval-gated exec runs longer than this (0 disables).</li><li><code>tools.exec.host</code> (default: <code>sandbox</code>)</li><li><code>tools.exec.security</code> (default: <code>deny</code> for sandbox, <code>allowlist</code> for gateway + node when unset)</li><li><code>tools.exec.ask</code> (default: <code>on-miss</code>)</li><li><code>tools.exec.node</code> (default: unset)</li><li><code>tools.exec.strictInlineEval</code> (default: false): when true, inline interpreter eval forms such as <code>python -c</code>, <code>node -e</code>, <code>ruby -e</code>, <code>perl -e</code>, <code>php -r</code>, <code>lua -e</code>, and <code>osascript -e</code> always require explicit approval and are never persisted by <code>allow-always</code>.</li><li><code>tools.exec.pathPrepend</code>: list of directories to prepend to <code>PATH</code> for exec runs (gateway + sandbox only).</li><li><code>tools.exec.safeBins</code>: stdin-only safe binaries that can run without explicit allowlist entries. For behavior details, see <a href="/tools/exec-approvals#safe-bins-stdin-only" target="_blank" rel="noreferrer">Safe bins</a>.</li><li><code>tools.exec.safeBinTrustedDirs</code>: additional explicit directories trusted for <code>safeBins</code> path checks. <code>PATH</code> entries are never auto-trusted. Built-in defaults are <code>/bin</code> and <code>/usr/bin</code>.</li><li><code>tools.exec.safeBinProfiles</code>: optional custom argv policy per safe bin (<code>minPositional</code>, <code>maxPositional</code>, <code>allowedValueFlags</code>, <code>deniedFlags</code>).</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Example:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Example:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“tools”贴标签，意思是把它设置成“{”。</li><li>这里在给“exec”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  tools: {
-    exec: {
-      pathPrepend: [&quot;~/bin&quot;, &quot;/opt/oss/bin&quot;],
-    },
-  },
-}</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>PATH handling</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“rejected for host execution. The daemon itself still runs with a minimal PATH: OpenClaw prepends env.PATH after profile…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“rejected for host execution. The daemon itself still runs with a minimal PATH:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>rejected for host execution. The daemon itself still runs with a minimal <code>PATH</code>:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw prepends env.PATH after profile sourcing via an internal env var (no shell interpolation); 工具小帮手s.exec.pathPre…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw prepends <code>env.PATH</code> after profile sourcing via an internal env var (no shell interpolation); <code>tools.exec.pathPrepend</code> applies here too.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“rejected for host execution and ignored by node hosts. If you need additional PATH entries on a node, 设置说明书ure the node…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>rejected for host execution and ignored by node hosts. If you need additional PATH entries on a node, configure the node host service environment (systemd/launchd) or install tools in standard locations.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“PATH handling”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：host=门口的小门卫: merges your login-shell PATH…、macOS: /opt/homebrew/bin, /usr/local/bin,…、Linux: /usr/local/bin, /usr/bin, /bin、host=sandbox: runs sh -lc (login shell) i…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>host=gateway</code>: merges your login-shell <code>PATH</code> into the exec environment. <code>env.PATH</code> overrides are</li><li>macOS: <code>/opt/homebrew/bin</code>, <code>/usr/local/bin</code>, <code>/usr/bin</code>, <code>/bin</code></li><li>Linux: <code>/usr/local/bin</code>, <code>/usr/bin</code>, <code>/bin</code></li><li><code>host=sandbox</code>: runs <code>sh -lc</code> (login shell) inside the container, so <code>/etc/profile</code> may reset <code>PATH</code>.</li><li><code>host=node</code>: only non-blocked env overrides you pass are sent to the node. <code>env.PATH</code> overrides are</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Per-机器人朋友 node binding (use the 机器人朋友 list index in 设置说明书):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Per-agent node binding (use the agent list index in config):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw config get agents.list”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw config set agents.list[0].tools.exec.node &quot;node-id-or-name&quot;”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw config get agents.list
-openclaw config set agents.list[0].tools.exec.node &quot;node-id-or-name&quot;</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Control UI: the Nodes tab includes a small “Exec node binding” panel for the same settings.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Control UI: the Nodes tab includes a small “Exec node binding” panel for the same settings.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Session overrides (`/exec`)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use /exec to set **per-session** defaults for host, 安全守门员, ask, and node. Send /exec with no arguments to show the curr…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use /exec to set **per-session** defaults for host, 安全守门员, ask, and node. Send /exec with no arguments to show the curr…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use <code>/exec</code> to set **per-session** defaults for <code>host</code>, <code>security</code>, <code>ask</code>, and <code>node</code>. Send <code>/exec</code> with no arguments to show the current values.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Example:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Example:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像给机器人看的说明书，告诉它要按什么样子准备东西。</p>
-        <ul class="code-steps">
-          <li>这一行“/exec host=gateway security=allowlist ask=on-miss node=mac-1”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">/exec host=gateway security=allowlist ask=on-miss node=mac-1</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Authorization 聪明脑袋模型</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“/exec is only honored for **authorized senders** (消息通道 allowlists/pairing plus 魔法口令s.useAccess大家一起的房间s). It updates **s…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“/exec is only honored for **authorized senders** (消息通道 allowlists/pairing plus 魔法口令s.useAccess大家一起的房间s). It updates **s…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>/exec</code> is only honored for **authorized senders** (channel allowlists/pairing plus <code>commands.useAccessGroups</code>). It updates **session state only** and does not write config. To hard-disable exec, deny it via tool policy (<code>tools.deny: [&quot;exec&quot;]</code> or per-agent). Host approvals still apply unless you explicitly set <code>security=full</code> and <code>ask=off</code>.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Exec approvals (companion app / node host)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Sandboxed 机器人朋友s can require per-request approval before exec runs on the 门口的小门卫 or node host. See Exec approvals for t…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Sandboxed 机器人朋友s can require per-request approval before exec runs on the 门口的小门卫 or node host. See Exec approvals for t…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Sandboxed agents can require per-request approval before <code>exec</code> runs on the gateway or node host. See <a href="/tools/exec-approvals" target="_blank" rel="noreferrer">Exec approvals</a> for the policy, allowlist, and UI flow.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When approvals are required, the exec 工具小帮手 returns immediately with status: &quot;approval-pending&quot; and an approval id. Onc…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When approvals are required, the exec tool returns immediately with <code>status: &quot;approval-pending&quot;</code> and an approval id. Once approved (or denied / timed out), the Gateway emits system events (<code>Exec finished</code> / <code>Exec denied</code>). If the command is still running after <code>tools.exec.approvalRunningNoticeMs</code>, a single <code>Exec running</code> notice is emitted.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>Allowlist + safe bins</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Manual allowlist enforcement matches **resolved binary paths only** (no basename matches). When 安全守门员=allowlist, shell…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Manual allowlist enforcement matches **resolved binary paths only** (no basename matches). When 安全守门员=allowlist, shell…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Manual allowlist enforcement matches **resolved binary paths only** (no basename matches). When <code>security=allowlist</code>, shell commands are auto-allowed only if every pipeline segment is allowlisted or a safe bin. Chaining (<code>;</code>, <code>&amp;&amp;</code>, <code>||</code>) and redirections are rejected in allowlist mode unless every top-level segment satisfies the allowlist (including safe bins). Redirections remain unsupported.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“autoAllowSkills is a separate convenience path in exec approvals. It is not the same as manual path allowlist entries.…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>autoAllowSkills</code> is a separate convenience path in exec approvals. It is not the same as manual path allowlist entries. For strict explicit trust, keep <code>autoAllowSkills</code> disabled.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use the two controls for different jobs:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use the two controls for different jobs:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Allowlist + safe bins”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：工具小帮手s.exec.safeBins: small, stdin-only 一…、工具小帮手s.exec.safeBinTrustedDirs: explicit…、工具小帮手s.exec.safeBinProfiles: explicit arg…、allowlist: explicit trust for executable…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>tools.exec.safeBins</code>: small, stdin-only stream filters.</li><li><code>tools.exec.safeBinTrustedDirs</code>: explicit extra trusted directories for safe-bin executable paths.</li><li><code>tools.exec.safeBinProfiles</code>: explicit argv policy for custom safe bins.</li><li>allowlist: explicit trust for executable paths.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Do not treat safeBins as a generic allowlist, and do not add interpreter/runtime binaries (for example python3, node, r…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Do not treat <code>safeBins</code> as a generic allowlist, and do not add interpreter/runtime binaries (for example <code>python3</code>, <code>node</code>, <code>ruby</code>, <code>bash</code>). If you need those, use explicit allowlist entries and keep approval prompts enabled. <code>openclaw security audit</code> warns when interpreter/runtime <code>safeBins</code> entries are missing explicit profiles, and <code>openclaw doctor --fix</code> can scaffold missing custom <code>safeBinProfiles</code> entries. <code>openclaw security audit</code> and <code>openclaw doctor</code> also warn when you explicitly add broad-behavior bins such as <code>jq</code> back into <code>safeBins</code>. If you explicitly allowlist interpreters, enable <code>tools.exec.strictInlineEval</code> so inline code-eval forms still require a fresh approval.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For full policy details and examples, see Exec approvals and Safe bins versus allowlist.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For full policy details and examples, see <a href="/tools/exec-approvals#safe-bins-stdin-only" target="_blank" rel="noreferrer">Exec approvals</a> and <a href="/tools/exec-approvals#safe-bins-versus-allowlist" target="_blank" rel="noreferrer">Safe bins versus allowlist</a>.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>Examples</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Foreground: Background + poll: Send keys (tmux-style): Submit (send CR only): Paste (bracketed by default):”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Foreground:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Foreground:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{ &quot;tool&quot;: &quot;exec&quot;, &quot;command&quot;: &quot;ls -la&quot; }</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Background + poll:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Background + poll:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{&quot;tool&quot;:&quot;exec&quot;,&quot;command&quot;:&quot;npm run build&quot;,&quot;yieldMs&quot;:1000}
-{&quot;tool&quot;:&quot;process&quot;,&quot;action&quot;:&quot;poll&quot;,&quot;sessionId&quot;:&quot;&lt;id&gt;&quot;}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Send keys (tmux-style):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Send keys (tmux-style):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{&quot;tool&quot;:&quot;process&quot;,&quot;action&quot;:&quot;send-keys&quot;,&quot;sessionId&quot;:&quot;&lt;id&gt;&quot;,&quot;keys&quot;:[&quot;Enter&quot;]}
-{&quot;tool&quot;:&quot;process&quot;,&quot;action&quot;:&quot;send-keys&quot;,&quot;sessionId&quot;:&quot;&lt;id&gt;&quot;,&quot;keys&quot;:[&quot;C-c&quot;]}
-{&quot;tool&quot;:&quot;process&quot;,&quot;action&quot;:&quot;send-keys&quot;,&quot;sessionId&quot;:&quot;&lt;id&gt;&quot;,&quot;keys&quot;:[&quot;Up&quot;,&quot;Up&quot;,&quot;Enter&quot;]}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Submit (send CR only):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Submit (send CR only):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{ &quot;tool&quot;: &quot;process&quot;, &quot;action&quot;: &quot;submit&quot;, &quot;sessionId&quot;: &quot;&lt;id&gt;&quot; }</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Paste (bracketed by default):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Paste (bracketed by default):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{ &quot;tool&quot;: &quot;process&quot;, &quot;action&quot;: &quot;paste&quot;, &quot;sessionId&quot;: &quot;&lt;id&gt;&quot;, &quot;text&quot;: &quot;line1\nline2\n&quot; }</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>apply\_patch</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“apply_patch is a sub工具小帮手 of exec for structured multi-file edits. It is enabled by default for OpenAI and OpenAI Codex…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“apply_patch is a sub工具小帮手 of exec for structured multi-file edits. It is enabled by default for OpenAI and OpenAI Codex…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>apply_patch</code> is a subtool of <code>exec</code> for structured multi-file edits. It is enabled by default for OpenAI and OpenAI Codex models. Use config only when you want to disable it or restrict it to specific models:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“tools”贴标签，意思是把它设置成“{”。</li><li>这里在给“exec”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  tools: {
-    exec: {
-      applyPatch: { workspaceOnly: true, allowModels: [&quot;gpt-5.2&quot;] },
-    },
-  },
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Notes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“apply\_patch”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Only available for OpenAI/OpenAI Codex 聪明…、工具小帮手 policy still applies; allow: [&quot;writ…、设置说明书 lives under 工具小帮手s.exec.applyPatch.、工具小帮手s.exec.applyPatch.enabled defaults t…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Only available for OpenAI/OpenAI Codex models.</li><li>Tool policy still applies; <code>allow: [&quot;write&quot;]</code> implicitly allows <code>apply_patch</code>.</li><li>Config lives under <code>tools.exec.applyPatch</code>.</li><li><code>tools.exec.applyPatch.enabled</code> defaults to <code>true</code>; set it to <code>false</code> to disable the tool for OpenAI models.</li><li><code>tools.exec.applyPatch.workspaceOnly</code> defaults to <code>true</code> (workspace-contained). Set it to <code>false</code> only if you intentionally want <code>apply_patch</code> to write/delete outside the workspace directory.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
 
       <footer class="page-footer">
         <div>

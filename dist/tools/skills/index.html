@@ -3971,1203 +3971,357 @@
       </div>
 
       
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Skills</h2>
-          <p>这一页像一本关于“Skills”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：Skills (OpenClaw)。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
+      <section class="section-shell">
+        <div class="overview-card">
+          <div>
+            <p class="section-kicker">DeepSeek 中文解读版</p>
+            <h2>OpenClaw技能系统：如何让AI学会使用工具</h2>
+            <p>OpenClaw通过‘技能’文件夹教AI如何使用各种工具。每个技能都是一个包含YAML配置和说明的目录，系统会从多个位置加载这些技能，并根据环境、配置和二进制文件存在情况进行过滤。这页文档告诉你技能从哪里来、如何管理、以及如何让它们安全地工作。</p>
+          </div>
+          <div class="overview-meta">
+            <span>原始路径：/tools/skills</span>
+            <span>模型输出章节：13</span>
+            <a href="https://docs.openclaw.ai/tools/skills" target="_blank" rel="noreferrer">查看官方原文</a>
+          </div>
         </div>
-        <div class="overview-meta">
-          <span>原始路径：/tools/skills</span>
-          <span>章节数量：17</span>
-          <a href="https://docs.openclaw.ai/tools/skills" target="_blank" rel="noreferrer">查看原文</a>
+      </section>
+      
+          <section class="section-shell" id="section-1">
+            <div class="section-heading">
+              <p class="section-kicker">第 1 站</p>
+              <h2>技能从哪里加载？优先级如何确定？</h2>
+              <p>这一节解释OpenClaw从哪些地方寻找技能文件，以及当多个地方有同名技能时，哪个会被优先使用。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>了解加载顺序能帮你避免技能冲突，知道在哪里放技能最合适。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>OpenClaw会从六个地方加载技能：额外配置的文件夹、安装包自带的技能、用户本地管理的技能、个人代理技能、项目代理技能、以及工作区技能。</li><li>当同名技能出现冲突时，优先级从高到低是：工作区技能 &gt; 项目代理技能 &gt; 个人代理技能 &gt; 本地管理技能 &gt; 安装包自带技能 &gt; 额外配置文件夹。</li><li>简单说，离你当前工作越近的技能文件夹，优先级越高。</li><li>这种设计让你可以在不同层级定制技能：全局的、个人的、项目的、或者仅限当前工作区的。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>记住：工作区里的技能优先级最高，适合临时调试或项目专用；全局配置的技能优先级最低，适合基础共享功能。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-2">
+            <div class="section-heading">
+              <p class="section-kicker">第 2 站</p>
+              <h2>多代理环境下的技能共享与隔离</h2>
+              <p>在多个AI代理同时运行的情况下，这一节说明哪些技能是某个代理私有的，哪些是所有代理都能看到的。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>如果你在团队或复杂项目中使用OpenClaw，需要清楚技能的作用范围，避免意外影响其他代理。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>每个代理有自己的工作区，放在`&lt;workspace&gt;/skills`里的技能只属于这个代理。</li><li>项目代理技能放在`&lt;workspace&gt;/.agents/skills`，对同一工作区的所有代理生效。</li><li>个人代理技能放在`~/.agents/skills`，对这台机器上的所有工作区代理都可见。</li><li>共享技能放在`~/.openclaw/skills`，对所有代理开放，优先级低于代理专用技能。</li><li>你还可以通过配置`skills.load.extraDirs`添加额外的共享文件夹，但优先级最低。</li><li>同名技能冲突时，依然遵循工作区优先的规则：工作区技能覆盖项目代理技能，后者覆盖个人代理技能，以此类推。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>按需选择技能存放位置：私有技能放工作区，团队共享放项目代理文件夹，全局工具放共享目录。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-3">
+            <div class="section-heading">
+              <p class="section-kicker">第 3 站</p>
+              <h2>插件如何自带技能</h2>
+              <p>插件可以打包自己的技能，这一节解释插件技能的加载机制和覆盖规则。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>如果你开发或使用第三方插件，需要知道插件技能如何集成到系统中，以及它们可能被谁覆盖。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>插件可以在`openclaw.plugin.json`里声明技能目录，路径相对于插件根目录。</li><li>插件启用时，它的技能会被加载，但优先级和`skills.load.extraDirs`一样低。</li><li>这意味着，如果安装包、管理目录、代理目录或工作区里有同名技能，它们会覆盖插件技能。</li><li>你可以通过插件的配置项`metadata.openclaw.requires.config`来设置启用条件，控制技能是否加载。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>插件技能是扩展系统功能的好方式，但要注意它们容易被更高优先级的技能覆盖，适合提供可选或基础功能。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-4">
+            <div class="section-heading">
+              <p class="section-kicker">第 4 站</p>
+              <h2>使用ClawHub发现和安装技能</h2>
+              <p>ClawHub是OpenClaw的公共技能仓库，这一节介绍如何用它来查找、安装和更新技能。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>ClawHub让你能轻松获取社区贡献的技能，无需手动编写，快速扩展AI的能力。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>访问https://clawhub.com浏览可用的技能。</li><li>使用`openclaw skills install &lt;skill-slug&gt;`将技能安装到当前工作区。</li><li>用`openclaw skills update --all`更新所有已安装的技能。</li><li>如果需要发布或同步技能，使用独立的`clawhub sync --all`命令。</li><li>`openclaw skills install`默认安装到活动工作区的`skills/`目录，下次会话时OpenClaw会自动加载。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">命令 / 代码怎么理解</div>
+              <ul><li>`openclaw skills install &lt;skill-slug&gt;`：`&lt;skill-slug&gt;`是技能在ClawHub上的唯一标识符，比如`image-lab`。</li><li>`openclaw skills update --all`：`--all`参数表示更新所有技能，不加参数可能只更新指定的。</li><li>`clawhub sync --all`：这是独立CLI工具，用于技能作者同步更改到仓库，普通用户可能用不到。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>ClawHub是技能生态的核心，安装技能就像安装软件包一样简单，但记得检查技能来源是否可信。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-5">
+            <div class="section-heading">
+              <p class="section-kicker">第 5 站</p>
+              <h2>安全须知：把技能当代码对待</h2>
+              <p>技能可能包含任意指令，这一节强调安全最佳实践，教你如何降低风险。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>避免因为技能漏洞导致数据泄露或系统损坏，这是生产环境中必须考虑的一环。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>第三方技能应视为不受信任的代码，启用前务必阅读其内容。</li><li>对于不可信的输入或高风险工具，优先使用沙箱运行模式。</li><li>技能发现只接受配置根目录内的文件，防止路径遍历攻击。</li><li>`skills.entries.*.env`和`skills.entries.*.apiKey`会将密钥注入主机进程，仅限于当前代理运行期间。</li><li>不要把密钥放在提示词或日志中，参考安全文档获取完整威胁模型。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>安全第一：审查技能内容、使用沙箱隔离、妥善管理密钥，这些习惯能大幅降低操作风险。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-6">
+            <div class="section-heading">
+              <p class="section-kicker">第 6 站</p>
+              <h2>技能文件格式：YAML配置加说明</h2>
+              <p>每个技能的核心是一个`SKILL.md`文件，这一节详解其结构和关键字段。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>如果你想自定义技能或理解现有技能如何工作，必须掌握这个文件格式。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>`SKILL.md`必须包含YAML前置元数据，至少要有`name`和`description`字段。</li><li>元数据遵循AgentSkills规范，但解析器只支持单行键值对。</li><li>`metadata`字段应是一个单行JSON对象，用于技能加载时的条件过滤。</li><li>在说明中可以用`{baseDir}`引用技能文件夹路径，方便定位资源。</li><li>可选字段控制技能行为：比如`user-invocable`决定是否暴露为用户斜杠命令，`disable-model-invocation`决定是否从模型提示中排除。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">命令 / 代码怎么理解</div>
+              <ul><li>`---`和`---`之间的部分是YAML前置元数据，用于定义技能属性。</li><li>`name: image-lab`：技能的唯一名称，用于在配置中引用。</li><li>`description: Generate or edit images...`：简短描述，告诉AI这个技能是干什么的。</li><li>`metadata: {&quot;openclaw&quot;: {...}}`：单行JSON，设置技能启用条件，如依赖的二进制或环境变量。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>技能文件是AI的‘说明书’，写好元数据和说明，AI才能正确理解和使用这个工具。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-7">
+            <div class="section-heading">
+              <p class="section-kicker">第 7 站</p>
+              <h2>技能启用条件：用元数据控制加载</h2>
+              <p>OpenClaw在加载技能时会检查元数据中的条件，这一节解释如何设置这些过滤规则。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>通过条件过滤，你可以确保技能只在合适的环境下启用，避免因依赖缺失导致错误。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>在`metadata.openclaw`下设置`requires`字段来定义依赖：比如`bins`列表要求所有二进制文件都存在，`env`列表要求环境变量已设置。</li><li>`os`字段可以限制技能只在特定操作系统上启用，如`darwin`、`linux`、`win32`。</li><li>`primaryEnv`指定与`skills.entries.&lt;name&gt;.apiKey`关联的环境变量名，用于密钥管理。</li><li>如果设置了`always: true`，技能会跳过所有条件检查，始终加载。</li><li>在沙箱环境中，`requires.bins`不仅要在主机上存在，还要在容器内可用，可能需要通过`setupCommand`安装。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">命令 / 代码怎么理解</div>
+              <ul><li>`requires.bins: [&quot;uv&quot;]`：技能依赖名为`uv`的二进制文件，加载时会检查PATH。</li><li>`requires.env: [&quot;GEMINI_API_KEY&quot;]`：需要环境变量`GEMINI_API_KEY`，否则技能不会启用。</li><li>`requires.config: [&quot;browser.enabled&quot;]`：要求`openclaw.json`中`browser.enabled`为真值。</li><li>`primaryEnv: &quot;GEMINI_API_KEY&quot;`：将这个环境变量标记为主要密钥，方便在配置中覆盖。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>合理设置启用条件，让技能智能地适配不同环境，减少手动干预。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-8">
+            <div class="section-heading">
+              <p class="section-kicker">第 8 站</p>
+              <h2>配置覆盖：在openclaw.json中定制技能</h2>
+              <p>你可以在配置文件中覆盖技能的默认设置，比如启用状态、环境变量和API密钥。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>这让你能灵活调整技能行为，无需修改技能文件本身，适合不同部署场景。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>在`~/.openclaw/openclaw.json`的`skills.entries`下，用技能名作为键来配置覆盖。</li><li>可以设置`enabled: true/false`来启用或禁用技能。</li><li>通过`env`字段注入环境变量，比如`GEMINI_API_KEY: &quot;YOUR_KEY&quot;`。</li><li>`apiKey`支持纯文本字符串或SecretRef对象，后者更安全，可以引用外部密钥管理器。</li><li>如果技能名包含连字符，记得在JSON中给键加引号。</li><li>配置键默认匹配技能名，但如果技能定义了`metadata.openclaw.skillKey`，就用那个键。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">命令 / 代码怎么理解</div>
+              <ul><li>`&quot;image-lab&quot;: { enabled: true, ... }`：`image-lab`是技能名，作为配置键。</li><li>`apiKey: { source: &quot;env&quot;, provider: &quot;default&quot;, id: &quot;GEMINI_API_KEY&quot; }`：SecretRef对象，从环境变量`GEMINI_API_KEY`获取密钥。</li><li>`env: { GEMINI_API_KEY: &quot;GEMINI_KEY_HERE&quot; }`：直接设置环境变量值，适用于测试或简单部署。</li><li>`config: { endpoint: &quot;https://example.invalid&quot;, model: &quot;nano-pro&quot; }`：自定义配置参数，会传递给技能工具。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>配置文件是管理技能行为的中央控制台，用好它可以在不同环境间保持一致性。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-9">
+            <div class="section-heading">
+              <p class="section-kicker">第 9 站</p>
+              <h2>环境注入：技能密钥如何传递给AI</h2>
+              <p>OpenClaw在代理运行时动态注入技能所需的环境变量，运行结束后恢复原状。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>这确保了密钥只在需要时暴露，不会污染全局环境，提升安全性。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>代理开始时，系统读取技能元数据，应用`skills.entries.&lt;key&gt;.env`和`apiKey`设置到`process.env`。</li><li>然后构建系统提示，只包含符合条件的技能。</li><li>代理运行结束后，环境变量会被还原，不影响其他进程。</li><li>这个过程仅限于当前代理运行周期，不是永久性的shell环境变更。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>环境注入是临时且隔离的，让技能安全地使用密钥，同时避免系统级副作用。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-10">
+            <div class="section-heading">
+              <p class="section-kicker">第 10 站</p>
+              <h2>会话快照与热重载</h2>
+              <p>OpenClaw在会话开始时缓存技能列表，提升性能，但也支持运行时刷新。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>了解这个机制能帮你预测技能更改何时生效，避免困惑。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>会话启动时，系统会快照所有符合条件的技能，后续对话轮次复用这个列表。</li><li>如果你修改了技能或配置，需要开始新会话才能生效。</li><li>启用技能监视器后，`SKILL.md`文件变化会触发热重载，新列表在下个代理轮次被采用。</li><li>当新的远程节点出现时，技能列表也可能刷新，以适应节点能力。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">命令 / 代码怎么理解</div>
+              <ul><li>`skills.load: { watch: true, watchDebounceMs: 250 }`：启用监视器，`watchDebounceMs`设置防抖延迟，避免频繁刷新。</li><li>热重载意味着你改技能文件后，无需重启整个OpenClaw，AI在下次对话就能感知变化。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>技能列表在会话中基本是静态的，但热重载让你能动态调整，适合开发调试。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-11">
+            <div class="section-heading">
+              <p class="section-kicker">第 11 站</p>
+              <h2>远程节点支持：跨平台技能执行</h2>
+              <p>如果网关运行在Linux上，但连接了macOS节点，OpenClaw可以让macOS专属技能在远程节点上运行。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>这扩展了技能的使用范围，让你能在异构环境中利用特定平台的工具。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>需要macOS节点已连接，且`system.run`权限未被拒绝。</li><li>OpenClaw会检查节点上的二进制文件存在情况，将macOS技能标记为可用。</li><li>代理应通过`nodes`工具（通常是`nodes.run`）来执行这些技能。</li><li>如果节点离线，技能仍然可见，但调用可能失败，直到节点重新连接。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>远程节点支持让你能混合使用不同系统的能力，但依赖网络连接和节点状态。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-12">
+            <div class="section-heading">
+              <p class="section-kicker">第 12 站</p>
+              <h2>技能对提示词长度的影响</h2>
+              <p>技能列表会以XML格式注入系统提示，这一节估算其带来的字符开销。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>如果你使用按token计费的AI模型，需要知道技能数量如何影响成本。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>当至少有一个技能时，基础开销是195字符。</li><li>每个技能额外增加97字符，加上名称、描述和位置的XML转义后长度。</li><li>XML转义会将特殊字符如`&amp;`变成`&amp;amp;`，略微增加长度。</li><li>粗略估计，97字符约等于24个token，具体取决于模型的tokenizer。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">命令 / 代码怎么理解</div>
+              <ul><li>`total = 195 + Σ (97 + len(name_escaped) + len(description_escaped) + len(location_escaped))`：计算总字符数的公式。</li><li>`len(name_escaped)`：名称经XML转义后的长度，比如`image-lab`不变，但`A&amp;B`会变成`A&amp;amp;B`，长度增加。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>技能越多，提示词越长，成本越高。合理筛选技能，只启用当前任务需要的那些。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-13">
+            <div class="section-heading">
+              <p class="section-kicker">第 13 站</p>
+              <h2>技能生命周期：从安装包到用户覆盖</h2>
+              <p>这一节概述技能从系统自带、本地管理到工作区定制的完整流程。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>理解生命周期能帮你更好地维护技能，知道何时该更新、何时该自定义。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul><li>OpenClaw安装包自带一组基础技能，作为起点。</li><li>`~/.openclaw/skills`用于本地覆盖，比如你想修改某个技能而不动原版。</li><li>工作区技能由用户完全控制，优先级最高，适合项目特定需求。</li><li>当同名冲突时，工作区技能覆盖本地管理技能，后者覆盖安装包技能。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>技能管理是分层级的：用安装包技能打基础，本地目录做微调，工作区放专属定制。</p>
+              </div>
+            </div>
+          </section>
+        
+      <section class="section-shell">
+        <div class="ad-placeholder">
+          <p>这里预留给未来的 Google AdSense 模块。</p>
+          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
         </div>
-      </div>
-    </section>
+      </section>
     
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Skills (OpenClaw) OpenClaw uses **机器人朋友Skills-compatible** skill folders to teach the 机器人朋友 how to use 工具小帮手s. Each ski…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Skills (OpenClaw)”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Skills (OpenClaw)</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw uses **机器人朋友Skills-compatible** skill folders to teach the 机器人朋友 how to use 工具小帮手s. Each skill is a directory…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw uses **<a href="https://agentskills.io" target="_blank" rel="noreferrer">AgentSkills</a>-compatible** skill folders to teach the agent how to use tools. Each skill is a directory containing a <code>SKILL.md</code> with YAML frontmatter and instructions. OpenClaw loads **bundled skills** plus optional local overrides, and filters them at load time based on environment, config, and binary presence.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Locations and precedence</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw loads skills from these sources: 1. **Extra skill folders**: 设置说明书ured with skills.load.extraDirs 2. **Bundled…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw loads skills from these sources:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw loads skills from these sources:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“1. **Extra skill folders**: 设置说明书ured with skills.load.extraDirs 2. **Bundled skills**: shipped with the install (npm p…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. **Extra skill folders**: configured with <code>skills.load.extraDirs</code> 2. **Bundled skills**: shipped with the install (npm package or OpenClaw\.app) 3. **Managed/local skills**: <code>~/.openclaw/skills</code> 4. **Personal agent skills**: <code>~/.agents/skills</code> 5. **Project agent skills**: <code>&lt;workspace&gt;/.agents/skills</code> 6. **Workspace skills**: <code>&lt;workspace&gt;/skills</code></p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If a skill name conflicts, precedence is:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If a skill name conflicts, precedence is:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;workspace&gt;/skills (highest) → &lt;workspace&gt;/.机器人朋友s/skills → ~/.机器人朋友s/skills → ~/.openclaw/skills → bundled skills → sk…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>&lt;workspace&gt;/skills</code> (highest) → <code>&lt;workspace&gt;/.agents/skills</code> → <code>~/.agents/skills</code> → <code>~/.openclaw/skills</code> → bundled skills → <code>skills.load.extraDirs</code> (lowest)</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Per-机器人朋友 vs shared skills</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“In **multi-机器人朋友** setups, each 机器人朋友 has its own workspace. That means: that workspace before the normal workspace ski…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“In **multi-机器人朋友** setups, each 机器人朋友 has its own workspace. That means:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>In **multi-agent** setups, each agent has its own workspace. That means:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“that workspace before the normal workspace skills/ folder.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>that workspace before the normal workspace <code>skills/</code> folder.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“workspaces on that machine.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>workspaces on that machine.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“to **all 机器人朋友s** on the same machine.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>to **all agents** on the same machine.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“precedence) if you want a common skills pack used by multiple 机器人朋友s.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>precedence) if you want a common skills pack used by multiple agents.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Per-agent vs shared skills”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**Per-机器人朋友 skills** live in &lt;workspace&gt;/…、**Project 机器人朋友 skills** live in &lt;workspa…、**Personal 机器人朋友 skills** live in ~/.机器人朋…、**Shared skills** live in ~/.openclaw/ski…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Per-agent skills** live in <code>&lt;workspace&gt;/skills</code> for that agent only.</li><li>**Project agent skills** live in <code>&lt;workspace&gt;/.agents/skills</code> and apply to</li><li>**Personal agent skills** live in <code>~/.agents/skills</code> and apply across</li><li>**Shared skills** live in <code>~/.openclaw/skills</code> (managed/local) and are visible</li><li>**Shared folders** can also be added via <code>skills.load.extraDirs</code> (lowest</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If the same skill name exists in more than one place, the usual precedence applies: workspace wins, then project 机器人朋友…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If the same skill name exists in more than one place, the usual precedence applies: workspace wins, then project agent skills, then personal agent skills, then managed/local, then bundled, then extra dirs.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>新本领插件s + skills</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“新本领插件s can ship their own skills by listing skills directories in openclaw.新本领插件.json (paths relative to the 新本领插件 root…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“新本领插件s can ship their own skills by listing skills directories in openclaw.新本领插件.json (paths relative to the 新本领插件 root…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Plugins can ship their own skills by listing <code>skills</code> directories in <code>openclaw.plugin.json</code> (paths relative to the plugin root). Plugin skills load when the plugin is enabled. Today those directories are merged into the same low-precedence path as <code>skills.load.extraDirs</code>, so a same-named bundled, managed, agent, or workspace skill overrides them. You can gate them via <code>metadata.openclaw.requires.config</code> on the plugin’s config entry. See <a href="/tools/plugin" target="_blank" rel="noreferrer">Plugins</a> for discovery/config and <a href="/tools" target="_blank" rel="noreferrer">Tools</a> for the tool surface those skills teach.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>ClawHub (install + sync)</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“ClawHub is the public skills registry for OpenClaw. Browse at https://clawhub.com. Use native openclaw skills 魔法口令s to…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“ClawHub is the public skills registry for OpenClaw. Browse at https://clawhub.com. Use native openclaw skills 魔法口令s to…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>ClawHub is the public skills registry for OpenClaw. Browse at <a href="https://clawhub.com" target="_blank" rel="noreferrer">https://clawhub.com</a>. Use native <code>openclaw skills</code> commands to discover/install/update skills, or the separate <code>clawhub</code> CLI when you need publish/sync workflows. Full guide: <a href="/tools/clawhub" target="_blank" rel="noreferrer">ClawHub</a>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Common flows:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Common flows:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“ClawHub (install + sync)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Install a skill into your workspace:、openclaw skills install &lt;skill-slug&gt;、Update all installed skills:、openclaw skills update --all。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Install a skill into your workspace:</li><li><code>openclaw skills install &lt;skill-slug&gt;</code></li><li>Update all installed skills:</li><li><code>openclaw skills update --all</code></li><li>Sync (scan + publish updates):</li><li><code>clawhub sync --all</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Native openclaw skills install installs into the active workspace skills/ directory. The separate clawhub CLI also inst…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Native <code>openclaw skills install</code> installs into the active workspace <code>skills/</code> directory. The separate <code>clawhub</code> CLI also installs into <code>./skills</code> under your current working directory (or falls back to the configured OpenClaw workspace). OpenClaw picks that up as <code>&lt;workspace&gt;/skills</code> on the next session.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>安全守门员 notes</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“for that 机器人朋友 turn (not the sandbox). Keep secrets out of prompts and logs.”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“for that 机器人朋友 turn (not the sandbox). Keep secrets out of prompts and logs.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>for that agent turn (not the sandbox). Keep secrets out of prompts and logs.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Security notes”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Treat third-party skills as **untrusted c…、Prefer sandboxed runs for untrusted input…、Workspace and extra-dir skill discovery o…、skills.entries.*.env and skills.entries.*…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Treat third-party skills as **untrusted code**. Read them before enabling.</li><li>Prefer sandboxed runs for untrusted inputs and risky tools. See <a href="/gateway/sandboxing" target="_blank" rel="noreferrer">Sandboxing</a>.</li><li>Workspace and extra-dir skill discovery only accepts skill roots and <code>SKILL.md</code> files whose resolved realpath stays inside the configured root.</li><li><code>skills.entries.*.env</code> and <code>skills.entries.*.apiKey</code> inject secrets into the **host** process</li><li>For a broader threat model and checklists, see <a href="/gateway/security" target="_blank" rel="noreferrer">Security</a>.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Format (机器人朋友Skills + Pi-compatible)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“SKILL.md must include at least: Notes: The 工具小帮手 is invoked with params: { 魔法口令: &quot;&lt;raw args&gt;&quot;, 魔法口令Name: &quot;&lt;slash 魔法口令&gt;&quot;…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“SKILL.md must include at least:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>SKILL.md</code> must include at least:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像给机器人看的说明书，告诉它要按什么样子准备东西。</p>
-        <ul class="code-steps">
-          <li>这一行“---”是当前步骤要交给电脑的一小块提示。</li><li>这里在给“name”贴标签，意思是把它设置成“image-lab”。</li><li>这里在给“description”贴标签，意思是把它设置成“Generate or edit images via a provider-backed image workflow”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-markdown">---
-name: image-lab
-description: Generate or edit images via a provider-backed image workflow
----</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Notes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Format (AgentSkills + Pi-compatible)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：We follow the 机器人朋友Skills spec for layout…、The parser used by the embedded 机器人朋友 sup…、metadata should be a **single-line JSON o…、Use {baseDir} in instructions to referenc…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>We follow the AgentSkills spec for layout/intent.</li><li>The parser used by the embedded agent supports **single-line** frontmatter keys only.</li><li><code>metadata</code> should be a **single-line JSON object**.</li><li>Use <code>{baseDir}</code> in instructions to reference the skill folder path.</li><li>Optional frontmatter keys:</li><li><code>homepage</code> — URL surfaced as “Website” in the macOS Skills UI (also supported via <code>metadata.openclaw.homepage</code>).</li><li><code>user-invocable</code> — <code>true|false</code> (default: <code>true</code>). When <code>true</code>, the skill is exposed as a user slash command.</li><li><code>disable-model-invocation</code> — <code>true|false</code> (default: <code>false</code>). When <code>true</code>, the skill is excluded from the model prompt (still available via user invocation).</li><li><code>command-dispatch</code> — <code>tool</code> (optional). When set to <code>tool</code>, the slash command bypasses the model and dispatches directly to a tool.</li><li><code>command-tool</code> — tool name to invoke when <code>command-dispatch: tool</code> is set.</li><li><code>command-arg-mode</code> — <code>raw</code> (default). For tool dispatch, forwards the raw args string to the tool (no core parsing).</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The 工具小帮手 is invoked with params: { 魔法口令: &quot;&lt;raw args&gt;&quot;, 魔法口令Name: &quot;&lt;slash 魔法口令&gt;&quot;, skillName: &quot;&lt;skill name&gt;&quot; }.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The tool is invoked with params: <code>{ command: &quot;&lt;raw args&gt;&quot;, commandName: &quot;&lt;slash command&gt;&quot;, skillName: &quot;&lt;skill name&gt;&quot; }</code>.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>Gating (load-time filters)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw **filters skills at load time** using metadata (single-line JSON): Fields under metadata.openclaw: Note on san…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw **filters skills at load time** using metadata (single-line JSON):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw **filters skills at load time** using <code>metadata</code> (single-line JSON):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像给机器人看的说明书，告诉它要按什么样子准备东西。</p>
-        <ul class="code-steps">
-          <li>这一行“---”是当前步骤要交给电脑的一小块提示。</li><li>这里在给“name”贴标签，意思是把它设置成“image-lab”。</li><li>这里在给“description”贴标签，意思是把它设置成“Generate or edit images via a provider-backed image workflow”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-markdown">---
-name: image-lab
-description: Generate or edit images via a provider-backed image workflow
-metadata:
-  {
-    &quot;openclaw&quot;:
-      {
-        &quot;requires&quot;: { &quot;bins&quot;: [&quot;uv&quot;], &quot;env&quot;: [&quot;GEMINI_API_KEY&quot;], &quot;config&quot;: [&quot;browser.enabled&quot;] },
-        &quot;primaryEnv&quot;: &quot;GEMINI_API_KEY&quot;,
-      },
-  }
----</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Fields under metadata.openclaw:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Fields under <code>metadata.openclaw</code>:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Gating (load-time filters)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：always: true — always include the skill (…、emoji — optional emoji used by the macOS…、homepage — optional URL shown as “Website…、os — optional list of platforms (darwin,…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>always: true</code> — always include the skill (skip other gates).</li><li><code>emoji</code> — optional emoji used by the macOS Skills UI.</li><li><code>homepage</code> — optional URL shown as “Website” in the macOS Skills UI.</li><li><code>os</code> — optional list of platforms (<code>darwin</code>, <code>linux</code>, <code>win32</code>). If set, the skill is only eligible on those OSes.</li><li><code>requires.bins</code> — list; each must exist on <code>PATH</code>.</li><li><code>requires.anyBins</code> — list; at least one must exist on <code>PATH</code>.</li><li><code>requires.env</code> — list; env var must exist **or** be provided in config.</li><li><code>requires.config</code> — list of <code>openclaw.json</code> paths that must be truthy.</li><li><code>primaryEnv</code> — env var name associated with <code>skills.entries.&lt;name&gt;.apiKey</code>.</li><li><code>install</code> — optional array of installer specs used by the macOS Skills UI (brew/node/go/uv/download).</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Note on sandboxing:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Note on sandboxing:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Install it via 机器人朋友s.defaults.sandbox.docker.setup魔法口令 (or a custom image). setup魔法口令 runs once after the container is…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Install it via <code>agents.defaults.sandbox.docker.setupCommand</code> (or a custom image). <code>setupCommand</code> runs once after the container is created. Package installs also require network egress, a writable root FS, and a root user in the sandbox. Example: the <code>summarize</code> skill (<code>skills/summarize/SKILL.md</code>) needs the <code>summarize</code> CLI in the sandbox container to run there.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Gating (load-time filters)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：requires.bins is checked on the **host**…、If an 机器人朋友 is sandboxed, the binary must…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>requires.bins</code> is checked on the **host** at skill load time.</li><li>If an agent is sandboxed, the binary must also exist **inside the container**.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Installer example:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Installer example:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像给机器人看的说明书，告诉它要按什么样子准备东西。</p>
-        <ul class="code-steps">
-          <li>这一行“---”是当前步骤要交给电脑的一小块提示。</li><li>这里在给“name”贴标签，意思是把它设置成“gemini”。</li><li>这里在给“description”贴标签，意思是把它设置成“Use Gemini CLI for coding assistance and Google search lookups.”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-markdown">---
-name: gemini
-description: Use Gemini CLI for coding assistance and Google search lookups.
-metadata:
-  {
-    &quot;openclaw&quot;:
-      {
-        &quot;emoji&quot;: &quot;♊️&quot;,
-        &quot;requires&quot;: { &quot;bins&quot;: [&quot;gemini&quot;] },
-        &quot;install&quot;:
-          [
-            {
-              &quot;id&quot;: &quot;brew&quot;,
-              &quot;kind&quot;: &quot;brew&quot;,
-              &quot;formula&quot;: &quot;gemini-cli&quot;,
-              &quot;bins&quot;: [&quot;gemini&quot;],
-              &quot;label&quot;: &quot;Install Gemini CLI (brew)&quot;,
-            },
-          ],
-      },
-  }
----</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Notes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“This only affects **skill installs**; the 门口的小门卫 runtime should still be Node (Bun is not recommended for WhatsApp/Tele…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>This only affects **skill installs**; the Gateway runtime should still be Node (Bun is not recommended for WhatsApp/Telegram).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Gating (load-time filters)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：If multiple installers are listed, the 门口…、If all installers are download, OpenClaw…、Installer specs can include os: [&quot;darwin&quot;…、Node installs honor skills.install.nodeMa…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>If multiple installers are listed, the gateway picks a **single** preferred option (brew when available, otherwise node).</li><li>If all installers are <code>download</code>, OpenClaw lists each entry so you can see the available artifacts.</li><li>Installer specs can include <code>os: [&quot;darwin&quot;|&quot;linux&quot;|&quot;win32&quot;]</code> to filter options by platform.</li><li>Node installs honor <code>skills.install.nodeManager</code> in <code>openclaw.json</code> (default: npm; options: npm/pnpm/yarn/bun).</li><li>Go installs: if <code>go</code> is missing and <code>brew</code> is available, the gateway installs Go via Homebrew first and sets <code>GOBIN</code> to Homebrew’s <code>bin</code> when possible.</li><li>Download installs: <code>url</code> (required), <code>archive</code> (<code>tar.gz</code> | <code>tar.bz2</code> | <code>zip</code>), <code>extract</code> (default: auto when archive detected), <code>stripComponents</code>, <code>targetDir</code> (default: <code>~/.openclaw/tools/&lt;skillKey&gt;</code>).</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If no metadata.openclaw is present, the skill is always eligible (unless disabled in 设置说明书 or blocked by skills.allowBu…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If no <code>metadata.openclaw</code> is present, the skill is always eligible (unless disabled in config or blocked by <code>skills.allowBundled</code> for bundled skills).</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>设置说明书 overrides (`~/.openclaw/openclaw.json`)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Bundled/managed skills can be toggled and supplied with env values: Note: if the skill name contains hyphens, quote the…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Bundled/managed skills can be toggled and supplied with env values:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Bundled/managed skills can be toggled and supplied with env values:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“skills”贴标签，意思是把它设置成“{”。</li><li>这里在给“entries”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  skills: {
-    entries: {
-      &quot;image-lab&quot;: {
-        enabled: true,
-        apiKey: { source: &quot;env&quot;, provider: &quot;default&quot;, id: &quot;GEMINI_API_KEY&quot; }, // or plaintext string
-        env: {
-          GEMINI_API_KEY: &quot;GEMINI_KEY_HERE&quot;,
-        },
-        config: {
-          endpoint: &quot;https://example.invalid&quot;,
-          model: &quot;nano-pro&quot;,
-        },
-      },
-      peekaboo: { enabled: true },
-      sag: { enabled: false },
-    },
-  },
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Note: if the skill name contains hyphens, quote the key (JSON5 allows quoted keys).”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Note: if the skill name contains hyphens, quote the key (JSON5 allows quoted keys).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If you want stock image generation/editing inside OpenClaw itself, use the core image_generate 工具小帮手 with 机器人朋友s.defaul…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If you want stock image generation/editing inside OpenClaw itself, use the core <code>image_generate</code> tool with <code>agents.defaults.imageGenerationModel</code> instead of a bundled skill. Skill examples here are for custom or third-party workflows.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For native image analysis, use the image 工具小帮手 with 机器人朋友s.defaults.image聪明脑袋模型. For native image generation/editing, u…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For native image analysis, use the <code>image</code> tool with <code>agents.defaults.imageModel</code>. For native image generation/editing, use <code>image_generate</code> with <code>agents.defaults.imageGenerationModel</code>. If you pick <code>openai/*</code>, <code>google/*</code>, <code>fal/*</code>, or another provider-specific image model, add that provider&#39;s auth/API key too.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“设置说明书 keys match the **skill name** by default. If a skill defines metadata.openclaw.skillKey, use that key under skill…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Config keys match the **skill name** by default. If a skill defines <code>metadata.openclaw.skillKey</code>, use that key under <code>skills.entries</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Rules:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Rules:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Supports plaintext string or SecretRef object ({ source, provider, id }).”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Supports plaintext string or SecretRef object (<code>{ source, provider, id }</code>).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“bundled skills in the list are eligible (managed/workspace skills unaffected).”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>bundled skills in the list are eligible (managed/workspace skills unaffected).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Config overrides (`~/.openclaw/openclaw.json`)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：enabled: false disables the skill even if…、env: injected **only if** the variable is…、对话接口Key: convenience for skills that decl…、设置说明书: optional bag for custom per-skill…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>enabled: false</code> disables the skill even if it’s bundled/installed.</li><li><code>env</code>: injected **only if** the variable isn’t already set in the process.</li><li><code>apiKey</code>: convenience for skills that declare <code>metadata.openclaw.primaryEnv</code>.</li><li><code>config</code>: optional bag for custom per-skill fields; custom keys must live here.</li><li><code>allowBundled</code>: optional allowlist for **bundled** skills only. If set, only</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>Environment injection (per 机器人朋友 run)</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When an 机器人朋友 run starts, OpenClaw: 1. Reads skill metadata. 2. Applies any skills.entries.&lt;key&gt;.env or skills.entries.…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When an 机器人朋友 run starts, OpenClaw:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When an agent run starts, OpenClaw:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“1. Reads skill metadata. 2. Applies any skills.entries.&lt;key&gt;.env or skills.entries.&lt;key&gt;.对话接口Key to process.env. 3. Bui…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. Reads skill metadata. 2. Applies any <code>skills.entries.&lt;key&gt;.env</code> or <code>skills.entries.&lt;key&gt;.apiKey</code> to <code>process.env</code>. 3. Builds the system prompt with **eligible** skills. 4. Restores the original environment after the run ends.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“This is **scoped to the 机器人朋友 run**, not a global shell environment.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>This is **scoped to the agent run**, not a global shell environment.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-11">
-          <div class="section-heading">
-            <p class="section-kicker">第 11 站</p>
-            <h2>Session snapshot (performance)</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw snapshots the eligible skills **when a session starts** and reuses that list for subsequent turns in the same…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw snapshots the eligible skills **when a session starts** and reuses that list for subsequent turns in the same…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw snapshots the eligible skills **when a session starts** and reuses that list for subsequent turns in the same session. Changes to skills or config take effect on the next new session.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Skills can also refresh mid-session when the skills watcher is enabled or when a new eligible remote node appears (see…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Skills can also refresh mid-session when the skills watcher is enabled or when a new eligible remote node appears (see below). Think of this as a **hot reload**: the refreshed list is picked up on the next agent turn.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-12">
-          <div class="section-heading">
-            <p class="section-kicker">第 12 站</p>
-            <h2>Remote macOS nodes (Linux 门口的小门卫)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If the 门口的小门卫 is running on Linux but a **macOS node** is connected **with system.run allowed** (Exec approvals 安全守门员 n…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If the 门口的小门卫 is running on Linux but a **macOS node** is connected **with system.run allowed** (Exec approvals 安全守门员 n…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If the Gateway is running on Linux but a **macOS node** is connected **with <code>system.run</code> allowed** (Exec approvals security not set to <code>deny</code>), OpenClaw can treat macOS-only skills as eligible when the required binaries are present on that node. The agent should execute those skills via the <code>nodes</code> tool (typically <code>nodes.run</code>).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“This relies on the node reporting its 魔法口令 support and on a bin probe via system.run. If the macOS node goes offline la…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>This relies on the node reporting its command support and on a bin probe via <code>system.run</code>. If the macOS node goes offline later, the skills remain visible; invocations may fail until the node reconnects.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-13">
-          <div class="section-heading">
-            <p class="section-kicker">第 13 站</p>
-            <h2>Skills watcher (auto-refresh)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“By default, OpenClaw watches skill folders and bumps the skills snapshot when SKILL.md files change. 设置说明书ure this unde…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“By default, OpenClaw watches skill folders and bumps the skills snapshot when SKILL.md files change. 设置说明书ure this unde…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>By default, OpenClaw watches skill folders and bumps the skills snapshot when <code>SKILL.md</code> files change. Configure this under <code>skills.load</code>:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“skills”贴标签，意思是把它设置成“{”。</li><li>这里在给“load”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  skills: {
-    load: {
-      watch: true,
-      watchDebounceMs: 250,
-    },
-  },
-}</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-14">
-          <div class="section-heading">
-            <p class="section-kicker">第 14 站</p>
-            <h2>Token impact (skills list)</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When skills are eligible, OpenClaw injects a compact XML list of available skills into the system prompt (via formatSki…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When skills are eligible, OpenClaw injects a compact XML list of available skills into the system prompt (via formatSki…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When skills are eligible, OpenClaw injects a compact XML list of available skills into the system prompt (via <code>formatSkillsForPrompt</code> in <code>pi-coding-agent</code>). The cost is deterministic:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Token impact (skills list)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**Base overhead (only when ≥1 skill):** 1…、**Per skill:** 97 characters + the length…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Base overhead (only when ≥1 skill):** 195 characters.</li><li>**Per skill:** 97 characters + the length of the XML-escaped <code>&lt;name&gt;</code>, <code>&lt;description&gt;</code>, and <code>&lt;location&gt;</code> values.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Formula (characters):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Formula (characters):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像给机器人看的说明书，告诉它要按什么样子准备东西。</p>
-        <ul class="code-steps">
-          <li>这一行“total = 195 + Σ (97 + len(name_escaped) + len(description_escaped) + len(location_escaped))”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">total = 195 + Σ (97 + len(name_escaped) + len(description_escaped) + len(location_escaped))</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Notes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Token impact (skills list)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：XML esc对话接口ng expands &amp; &lt; &gt; &quot; &#39; into enti…、Token counts vary by 聪明脑袋模型 tokenizer. A…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>XML escaping expands <code>&amp; &lt; &gt; &quot; &#39;</code> into entities (<code>&amp;amp;</code>, <code>&amp;lt;</code>, etc.), increasing length.</li><li>Token counts vary by model tokenizer. A rough OpenAI-style estimate is \~4 chars/token, so **97 chars ≈ 24 tokens** per skill plus your actual field lengths.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-15">
-          <div class="section-heading">
-            <p class="section-kicker">第 15 站</p>
-            <h2>Managed skills lifecycle</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw ships a baseline set of skills as **bundled skills** as part of the install (npm package or OpenClaw\.app). ~/…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw ships a baseline set of skills as **bundled skills** as part of the install (npm package or OpenClaw\.app). ~/…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw ships a baseline set of skills as **bundled skills** as part of the install (npm package or OpenClaw\.app). <code>~/.openclaw/skills</code> exists for local overrides (for example, pinning/patching a skill without changing the bundled copy). Workspace skills are user-owned and override both on name conflicts.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-16">
-          <div class="section-heading">
-            <p class="section-kicker">第 16 站</p>
-            <h2>设置说明书 reference</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“See Skills 设置说明书 for the full 设置说明书uration schema.”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“See Skills 设置说明书 for the full 设置说明书uration schema.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>See <a href="/tools/skills-config" target="_blank" rel="noreferrer">Skills config</a> for the full configuration schema.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-17">
-          <div class="section-heading">
-            <p class="section-kicker">第 17 站</p>
-            <h2>Looking for more skills?</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Browse https://clawhub.com. ***”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Browse https://clawhub.com.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Browse <a href="https://clawhub.com" target="_blank" rel="noreferrer">https://clawhub.com</a>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“***”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>***</p>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
 
       <footer class="page-footer">
         <div>

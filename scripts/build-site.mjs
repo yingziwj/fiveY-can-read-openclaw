@@ -253,6 +253,81 @@ async function renderHandcraftedContent(page) {
   return fs.readFile(filePath, "utf8");
 }
 
+async function renderAiPageContent(page) {
+  const filePath = path.resolve("generated", "deepseek-pages", `${page.slug.replace(/\//g, "__")}.json`);
+  try {
+    const raw = await fs.readFile(filePath, "utf8");
+    const payload = JSON.parse(raw);
+    const result = payload.result;
+    if (!result?.sections?.length) return null;
+
+    const sectionsHtml = result.sections
+      .map((section, index) => {
+        const points = (section.points || []).map((point) => `<li>${escapeHtml(point)}</li>`).join("");
+        const codeNotes = (section.codeNotes || []).length
+          ? `
+            <div class="source-card">
+              <div class="story-card-label">命令 / 代码怎么理解</div>
+              <ul>${section.codeNotes.map((note) => `<li>${escapeHtml(note)}</li>`).join("")}</ul>
+            </div>
+          `
+          : "";
+
+        return `
+          <section class="section-shell" id="section-${index + 1}">
+            <div class="section-heading">
+              <p class="section-kicker">第 ${index + 1} 站</p>
+              <h2>${escapeHtml(section.title)}</h2>
+              <p>${escapeHtml(section.summary)}</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">为什么看这节</div>
+                <p>${escapeHtml(section.why)}</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">这一节真正要带走的点</div>
+                <ul>${points}</ul>
+              </div>
+              ${codeNotes}
+              <div class="story-card">
+                <div class="story-card-label">最后记一句</div>
+                <p>${escapeHtml(section.takeaway)}</p>
+              </div>
+            </div>
+          </section>
+        `;
+      })
+      .join("");
+
+    return `
+      <section class="section-shell">
+        <div class="overview-card">
+          <div>
+            <p class="section-kicker">DeepSeek 中文解读版</p>
+            <h2>${escapeHtml(result.heroTitle || page.title)}</h2>
+            <p>${escapeHtml(result.heroSummary || "")}</p>
+          </div>
+          <div class="overview-meta">
+            <span>原始路径：${escapeHtml(page.pathname)}</span>
+            <span>模型输出章节：${result.sections.length}</span>
+            <a href="${escapeHtml(page.url)}" target="_blank" rel="noreferrer">查看官方原文</a>
+          </div>
+        </div>
+      </section>
+      ${sectionsHtml}
+      <section class="section-shell">
+        <div class="ad-placeholder">
+          <p>这里预留给未来的 Google AdSense 模块。</p>
+          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
+        </div>
+      </section>
+    `;
+  } catch {
+    return null;
+  }
+}
+
 function renderSidebar(navigation, currentPathname) {
   return `
     <nav class="sidebar-nav">
@@ -640,7 +715,8 @@ async function renderDocPage(page) {
       </div>
     </section>
   `;
-  const handcraftedContent = await renderHandcraftedContent(page);
+  const aiContent = await renderAiPageContent(page);
+  const handcraftedContent = aiContent ? null : await renderHandcraftedContent(page);
 
   return renderPageLayout({
     title: page.title,
@@ -649,7 +725,7 @@ async function renderDocPage(page) {
     heroEyebrow: `${page.sectionLabel} 故事分馆`,
     heroTitle: `${page.title}，像讲故事一样读`,
     heroText: storyLead(page.title, page.description || ""),
-    content: handcraftedContent || genericContent,
+    content: aiContent || handcraftedContent || genericContent,
     navigation: siteData.navigation,
     breadcrumbs
   });
