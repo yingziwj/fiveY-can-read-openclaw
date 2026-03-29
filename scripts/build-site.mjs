@@ -53,6 +53,30 @@ const defaultIconSource = path.resolve("assets/icons/concept-balloon-book.svg");
 const iconOutput = path.join(DIST_DIR, "favicon.svg");
 await fs.copyFile(defaultIconSource, iconOutput);
 
+const iconConcepts = [
+  {
+    file: "concept-balloon-book.svg",
+    name: "Balloon Book",
+    chineseName: "气球故事书",
+    summary: "最贴近当前海报气质，温柔、可爱、像在读绘本。",
+    fit: "适合把站点重点放在“儿童友好解读”和“陪伴式学习”。"
+  },
+  {
+    file: "concept-rocket-toolbox.svg",
+    name: "Rocket Toolbox",
+    chineseName: "火箭工具箱",
+    summary: "更偏产品感和工程感，像带着工具去冒险。",
+    fit: "适合强调 OpenClaw 很能干、很会做事、适合全球技术用户。"
+  },
+  {
+    file: "concept-rainbow-claw.svg",
+    name: "Rainbow Claw",
+    chineseName: "彩虹小爪子",
+    summary: "识别度最高，也最像独立品牌标识。",
+    fit: "适合后面做品牌延展，比如社媒头像、贴纸、周边。"
+  }
+];
+
 async function copyDir(source, target) {
   await ensureDir(target);
   const entries = await fs.readdir(source, { withFileTypes: true });
@@ -271,7 +295,10 @@ function renderPageLayout({ title, description, pathname, heroEyebrow, heroTitle
       <header class="hero">
         <div class="hero-topbar">
           <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">菜单</button>
-          <a class="source-link" href="https://docs.openclaw.ai" target="_blank" rel="noreferrer">原始文档</a>
+          <div class="hero-actions">
+            <a class="source-link" href="/theme-icons/">图标样例</a>
+            <a class="source-link" href="https://docs.openclaw.ai" target="_blank" rel="noreferrer">原始文档</a>
+          </div>
         </div>
         <p class="hero-eyebrow">${escapeHtml(heroEyebrow)}</p>
         <h1>${escapeHtml(heroTitle)}</h1>
@@ -349,6 +376,51 @@ const sectionCards = siteData.navigation
 
     <section class="section-shell">
       <div class="section-heading">
+        <p class="section-kicker">站点主题</p>
+        <h2>先挑一个最像我们的门牌图标</h2>
+      </div>
+      <div class="home-grid">
+        ${iconConcepts
+          .map(
+            (icon) => `
+              <a class="home-card" href="/theme-icons/">
+                <span class="home-card-index">🎨</span>
+                <h2>${escapeHtml(icon.chineseName)}</h2>
+                <p>${escapeHtml(icon.summary)}</p>
+              </a>
+            `
+          )
+          .join("")}
+      </div>
+    </section>
+
+    <section class="section-shell">
+      <div class="section-heading">
+        <p class="section-kicker">上线步骤</p>
+        <h2>把它放上 Cloudflare Pages 的最短路径</h2>
+      </div>
+      <div class="story-grid">
+        <div class="story-card">
+          <div class="story-card-label">第一步</div>
+          <p>在 Cloudflare Pages 里连接 GitHub 仓库 <code>yingziwj/fivey-can-read-openclaw</code>，构建命令填 <code>npm run build</code>，输出目录填 <code>dist</code>。</p>
+        </div>
+        <div class="story-card">
+          <div class="story-card-label">第二步</div>
+          <p>把默认域名确认成 <code>fivey-can-read-openclaw.pages.dev</code>，这样全球用户会直接走 Cloudflare 的边缘网络访问。</p>
+        </div>
+        <div class="story-card">
+          <div class="story-card-label">第三步</div>
+          <p>启用仓库里的 GitHub Actions，之后每 3 天会自动同步官方文档并重建页面，原站增删改会覆盖到这里。</p>
+        </div>
+        <div class="story-card">
+          <div class="story-card-label">第四步</div>
+          <p>等你选好图标后，我再把默认 favicon 固定下来，并顺手把 Google AdSense 占位改成正式接入口。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell">
+      <div class="section-heading">
         <p class="section-kicker">未来广告位预留</p>
         <h2>这个位置以后可以接入 Google AdSense</h2>
       </div>
@@ -370,6 +442,57 @@ const sectionCards = siteData.navigation
     navigation: siteData.navigation,
     breadcrumbs: [
       { label: "Home", pathname: "/" }
+    ]
+  });
+}
+
+function renderIconPage() {
+  const cards = iconConcepts
+    .map(
+      (icon, index) => `
+        <article class="icon-card">
+          <div class="icon-preview">
+            <img src="/assets/icons/${escapeHtml(icon.file)}" alt="${escapeHtml(icon.chineseName)} 图标预览">
+          </div>
+          <div class="icon-copy">
+            <p class="section-kicker">方案 ${index + 1}</p>
+            <h2>${escapeHtml(icon.chineseName)}</h2>
+            <p>${escapeHtml(icon.summary)}</p>
+            <p>${escapeHtml(icon.fit)}</p>
+            <code>/assets/icons/${escapeHtml(icon.file)}</code>
+          </div>
+        </article>
+      `
+    )
+    .join("");
+
+  const content = `
+    <section class="section-shell">
+      <div class="overview-card">
+        <div>
+          <p class="section-kicker">主题图标候选</p>
+          <h2>这 3 个门牌都能直接拿来做站点主题</h2>
+          <p>我已经把它们都放进仓库，并且默认先用“气球故事书”作为 favicon。你后面只要告诉我选哪一个，我就可以把站点默认图标、社交分享图和品牌色再统一一轮。</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-shell">
+      <div class="icon-grid">${cards}</div>
+    </section>
+  `;
+
+  return renderPageLayout({
+    title: "Theme Icons",
+    description: "Fivey Can Read OpenClaw 的 3 个站点图标候选方案。",
+    pathname: "/theme-icons",
+    heroEyebrow: "Brand Preview",
+    heroTitle: "给网站挑一个最像它的门牌",
+    heroText: "这里把三个图标样例放在一起看，你可以很快判断我们是更偏绘本感、工具感，还是更偏独立品牌感。",
+    content,
+    navigation: siteData.navigation,
+    breadcrumbs: [
+      { label: "Home", pathname: "/" },
+      { label: "Theme Icons", pathname: "/theme-icons" }
     ]
   });
 }
@@ -587,6 +710,12 @@ code, pre {
   margin-bottom: 24px;
 }
 
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .nav-toggle,
 .source-link {
   border: 0;
@@ -692,6 +821,49 @@ code, pre {
   padding: 18px;
   background: linear-gradient(135deg, rgba(255, 240, 245, 0.95), rgba(243, 248, 255, 0.95));
   border: 1px solid rgba(113, 93, 180, 0.12);
+}
+
+.icon-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.icon-card {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.icon-preview {
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, rgba(255, 245, 214, 0.92), rgba(245, 239, 255, 0.92));
+}
+
+.icon-preview img {
+  width: min(220px, 100%);
+  height: auto;
+}
+
+.icon-copy h2 {
+  margin: 0 0 10px;
+  font-size: 1.9rem;
+}
+
+.icon-copy code {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(102, 126, 234, 0.12);
 }
 
 .stat-card strong {
@@ -834,7 +1006,8 @@ code, pre {
   }
 
   .spotlight-card,
-  .story-grid {
+  .story-grid,
+  .icon-card {
     grid-template-columns: 1fr;
   }
 }
@@ -880,6 +1053,8 @@ if (toggle && mobileNav) {
 await fs.writeFile(path.join(DIST_DIR, "assets", "site.css"), css.trimStart(), "utf8");
 await fs.writeFile(path.join(DIST_DIR, "assets", "site.js"), js.trimStart(), "utf8");
 await fs.writeFile(path.join(DIST_DIR, "index.html"), renderHomePage(), "utf8");
+await ensureDir(path.join(DIST_DIR, "theme-icons"));
+await fs.writeFile(path.join(DIST_DIR, "theme-icons", "index.html"), renderIconPage(), "utf8");
 
 for (const page of siteData.pages) {
   const outputPath = pageOutputPath(page.pathname);

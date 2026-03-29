@@ -57,5 +57,6 @@
 - `scripts/`：同步、构建、本地预览脚本。
 - `assets/icons/`：3 个候选图标样例。
 - `docs/operations.md`：运维说明。
+- `docs/cloudflare-pages.md`：Cloudflare Pages 实际上线步骤。
 
 如果你后面想把默认 favicon 切换成另外两个方案中的一个，只需要在 `scripts/build-site.mjs` 里把 `defaultIconSource` 改成对应的 SVG 文件名。
