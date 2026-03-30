@@ -3974,9 +3974,9 @@
   <div class="overview-card">
     <div>
       <p class="section-kicker">先讲人话版</p>
-      <h2>Telegram 通道，其实是在教你怎么给 OpenClaw 装一个“会回消息的分身”</h2>
-      <p>这页官方文档表面上在讲配置项，实际上讲的是一件很具体的事：怎样把 OpenClaw 接到 Telegram 上，让它能在私聊和群里像一个真的机器人那样工作，而且不会谁都能随便来用。</p>
-      <p>所以你读这页时，不要把它当“参数字典”，要把它当成一张布线图。图上最重要的不是术语多不多，而是三件事有没有接对：机器人身份、谁能跟它说话、它在群里什么时候开口。</p>
+      <h2>📱 Telegram 通道，其实就是给 OpenClaw 装一个“会回消息的小助手”</h2>
+      <p>这页看起来像在讲配置，其实是在讲一件很实际的事：怎样把 OpenClaw 接到 Telegram 上，让它能在私聊和群里正常工作，还不会谁都能随便来用。</p>
+      <p>所以别把它当参数表。把它当成一张接线图就行。你真正要盯住的，只有三件事：机器人是谁、谁能和它说话、它在群里什么时候开口。</p>
     </div>
     <div class="overview-meta">
       <span>适合第一次把 OpenClaw 接入 Telegram 的人</span>
@@ -3989,24 +3989,24 @@
 <section class="section-shell">
   <div class="section-heading">
     <p class="section-kicker">第一站</p>
-    <h2>先把它想成一个门口接待员，而不是一段配置</h2>
-    <p>Telegram 通道做的事很简单：别人从 Telegram 敲门，OpenClaw 收到消息，想好回复，再从 Telegram 把话送回去。</p>
+    <h2>🤖 先别想配置，先想画面</h2>
+    <p>别人从 Telegram 敲门，OpenClaw 收到消息，想好回复，再从 Telegram 把话送回去。Telegram 通道干的就是这件事。</p>
   </div>
   <div class="story-grid">
     <div class="story-card">
-      <div class="story-card-label">Bot Token 是工牌</div>
+      <div class="story-card-label">🪪 Bot Token 是工牌</div>
       <p>没有它，Telegram 根本不知道“这个机器人是谁”。所以 BotFather 给你的那串 token，不是可有可无的密钥，而是机器人上岗证。</p>
     </div>
     <div class="story-card">
-      <div class="story-card-label">DM Policy 是门禁</div>
+      <div class="story-card-label">🚪 DM Policy 是门禁</div>
       <p>它决定私聊时谁能进来找机器人。默认的 <code>pairing</code> 像门卫先拦一下，确认过再放人进来。</p>
     </div>
     <div class="story-card">
-      <div class="story-card-label">Group Policy 是群规</div>
+      <div class="story-card-label">📣 Group Policy 是群规</div>
       <p>它决定机器人在群里是“谁都能喊它”，还是“只有指定的人能喊它”，还是干脆不参与群聊。</p>
     </div>
     <div class="source-card">
-      <div class="story-card-label">如果你只记三件事</div>
+      <div class="story-card-label">⭐ 如果你只记三件事</div>
       <p>先拿到 token，再决定私聊门禁，最后决定群聊规则。Telegram 这页大半内容，其实都在围着这三件事转。</p>
     </div>
   </div>
@@ -4015,33 +4015,33 @@
 <section class="section-shell">
   <div class="section-heading">
     <p class="section-kicker">第二站</p>
-    <h2>真正动手时，顺序应该这样读</h2>
-    <p>官方原文把信息写得很全，但第一次配置时最怕的是“什么都看了，还是不知道先干嘛”。更好的顺序其实只有四步。</p>
+    <h2>🧩 真正动手时，其实就四步</h2>
+    <p>官方原文信息很多，但第一次配置最怕的是看完一圈还是不知道先做什么。其实顺序很简单，就四步。</p>
   </div>
   <div class="source-card">
-    <div class="story-card-label">把这四步想成一个小剧情</div>
+    <div class="story-card-label">🎬 把这四步想成一个小剧情</div>
     <p>你先去 Telegram 办一张机器人工作证，再把这张工作证交给 OpenClaw，然后让第一个来敲门的人完成登记，最后才决定它在群里是安静旁听，还是有人一喊就出来帮忙。</p>
   </div>
   <div class="story-grid">
     <div class="story-card">
-      <div class="story-card-label">第 1 步：去 BotFather 领钥匙</div>
+      <div class="story-card-label">1. 去 BotFather 领钥匙</div>
       <p>你去 Telegram 里找 <code>@BotFather</code>，执行 <code>/newbot</code>，Telegram 会发给你一串 token。那串 token 就是 OpenClaw 以后登录 Telegram 机器人的凭证。</p>
     </div>
     <div class="story-card">
-      <div class="story-card-label">第 2 步：把钥匙放进 OpenClaw</div>
+      <div class="story-card-label">2. 把钥匙交给 OpenClaw</div>
       <p>把 <code>channels.telegram.enabled</code> 打开，再把 <code>botToken</code> 填进去。这里不是网页扫码登录，而是直接喂 token，所以别再去找什么 <code>openclaw channels login telegram</code> 了，这条路对 Telegram 不适用。</p>
     </div>
     <div class="story-card">
-      <div class="story-card-label">第 3 步：先让一个人能私聊它</div>
+      <div class="story-card-label">3. 先放一个人进门</div>
       <p>默认私聊规则是 <code>pairing</code>。意思不是“所有人都能聊”，而是“第一次来的人先举手，管理员批准以后才能聊”。这是很合理的默认值，因为它比直接开放更稳。</p>
     </div>
     <div class="source-card">
-      <div class="story-card-label">第 4 步：再决定群里怎么说话</div>
+      <div class="story-card-label">4. 最后再定群规</div>
       <p>把机器人拉进群以后，你才需要认真看 <code>groups</code>、<code>groupPolicy</code>、<code>requireMention</code> 这些字段。很多人一上来就研究群规则，结果连私聊都还没跑通，顺序完全反了。</p>
     </div>
   </div>
   <div class="source-card">
-    <div class="story-card-label">命令 / 配置怎么理解</div>
+    <div class="story-card-label">💡 命令 / 配置怎么理解</div>
     <ul>
       <li><code>botToken: "123:abc"</code>：这里要换成 BotFather 真给你的 token。你可以把它理解成“把机器人工牌挂到 OpenClaw 脖子上”。没有这张工牌，它连 Telegram 大门都进不去。</li>
       <li><code>dmPolicy: "pairing"</code>：表示第一次私聊不是直接放行，而是先到门卫室登记。登记过、批准过，这个人以后再来敲门，机器人才会理他。</li>
@@ -4055,24 +4055,24 @@
 <section class="section-shell">
   <div class="section-heading">
     <p class="section-kicker">第三站</p>
-    <h2>Telegram 自己那边还有一把“静音开关”</h2>
-    <p>很多人会以为 OpenClaw 配好了，机器人就该在群里什么都能看到。不是。Telegram 自己还藏着一个很关键的设置，叫 Privacy Mode。</p>
+    <h2>🔇 Telegram 自己还有一个“静音开关”</h2>
+    <p>很多人会以为 OpenClaw 配好了，机器人就该在群里什么都能看到。不是。Telegram 自己还藏着一个关键设置，叫 Privacy Mode。</p>
   </div>
   <div class="story-grid">
     <div class="story-card">
-      <div class="story-card-label">Privacy Mode 像半掩的门</div>
+      <div class="story-card-label">🚧 Privacy Mode 像半掩的门</div>
       <p>默认情况下，机器人在群里不会听见所有人说的话。它更像只在“被点名”或者“收到命令”时才醒过来。</p>
     </div>
     <div class="story-card">
-      <div class="story-card-label">想让它全程旁听</div>
+      <div class="story-card-label">👂 想让它全程旁听</div>
       <p>你要么去 BotFather 用 <code>/setprivacy</code> 把隐私模式关掉，要么把机器人升成群管理员。否则你就算把 OpenClaw 里的 <code>requireMention</code> 改成 <code>false</code>，它也照样可能听不见。</p>
     </div>
     <div class="source-card">
-      <div class="story-card-label">一个很容易漏掉的小动作</div>
+      <div class="story-card-label">🔁 一个很容易漏掉的小动作</div>
       <p>切换隐私模式之后，最好把机器人从群里移出去再重新加回来。不是仪式感，而是 Telegram 往往要这样才会把新规则真正套进去。</p>
     </div>
     <div class="source-card">
-      <div class="story-card-label">这节真正想告诉你</div>
+      <div class="story-card-label">📌 这节真正想告诉你</div>
       <p>群里“机器人不说话”的问题，常常不是 OpenClaw 坏了，而是 Telegram 自己没让它听见。</p>
     </div>
   </div>
@@ -4081,7 +4081,7 @@
 <section class="section-shell">
   <div class="section-heading">
     <p class="section-kicker">第四站</p>
-    <h2>这一页最绕的地方，是很多人把“群”和值班的人搞混了</h2>
+    <h2>🧠 最容易绕晕的地方，在这里</h2>
     <p>官方这一大段其实都在防一种经典事故：你本来想配置“允许哪个群”，结果写成了“允许哪些人”；或者你本来想限制群里谁能触发机器人，却把群 ID 填错位置。</p>
   </div>
   <div class="home-grid">
@@ -4107,7 +4107,7 @@
     </article>
   </div>
   <div class="source-card">
-    <div class="story-card-label">这页最大的坑</div>
+    <div class="story-card-label">⚠️ 这页最大的坑</div>
     <ul>
       <li><code>groupAllowFrom</code> 不是“群白名单”，而是“群里的人白名单”。</li>
       <li>负数的 Telegram chat ID 应该放到 <code>channels.telegram.groups</code> 下面。</li>
@@ -4120,24 +4120,24 @@
 <section class="section-shell">
   <div class="section-heading">
     <p class="section-kicker">第五站</p>
-    <h2>如果你只是给自己用，最稳的配置思路其实很朴素</h2>
+    <h2>🏡 如果你只是给自己用，最稳的思路其实很朴素</h2>
     <p>官方给了很多高级选项，但对大多数人来说，先把它当“我自己的 Telegram 助手”去配置，反而最不容易翻车。</p>
   </div>
   <div class="story-grid">
     <div class="story-card">
-      <div class="story-card-label">私聊建议</div>
+      <div class="story-card-label">🙋 私聊建议</div>
       <p>如果最后只有你自己用，配通以后可以从 <code>pairing</code> 进阶到 <code>allowlist</code>，把你自己的数字用户 ID 明确写进去。这样权限不是靠“曾经批准过”，而是直接写死在配置里，更稳。</p>
     </div>
     <div class="story-card">
-      <div class="story-card-label">群聊建议</div>
+      <div class="story-card-label">👥 群聊建议</div>
       <p>如果机器人只是偶尔帮忙，先保持 <code>requireMention: true</code>。这相当于让它学会“被叫到再说话”，群里会安静很多，也更不容易误触发。</p>
     </div>
     <div class="source-card">
-      <div class="story-card-label">怎么找自己的 Telegram 用户 ID</div>
+      <div class="story-card-label">🆔 怎么找自己的 Telegram 用户 ID</div>
       <p>最私密的办法不是找第三方机器人，而是先私聊你自己的 bot，再跑 <code>openclaw logs --follow</code>，去看日志里的 <code>from.id</code>。这个方法虽然土，但最干净。</p>
     </div>
     <div class="source-card">
-      <div class="story-card-label">为什么官方强调数字 ID</div>
+      <div class="story-card-label">🧱 为什么官方强调数字 ID</div>
       <p>因为用户名会改，数字 ID 基本不变。权限配置里，稳定比好看更重要。</p>
     </div>
   </div>
@@ -4146,8 +4146,8 @@
 <section class="section-shell">
   <div class="section-heading">
     <p class="section-kicker">第六站</p>
-    <h2>把几段最关键的命令，翻成“你眼前到底发生了什么”</h2>
-    <p>很多文档一贴命令就突然变冷。其实命令不是冰冷咒语，它只是把你刚才脑子里的步骤，换成了电脑听得懂的话。</p>
+    <h2>🛠 把几段关键命令，翻成“现场到底发生了什么”</h2>
+    <p>很多文档一贴命令就突然变冷。其实命令不是冰冷咒语，它只是把你脑子里的动作，换成电脑听得懂的话。</p>
   </div>
   <div class="story-grid">
     <div class="source-card">
@@ -4172,24 +4172,24 @@
 <section class="section-shell">
   <div class="section-heading">
     <p class="section-kicker">第七站</p>
-    <h2>实时流式、按钮、投票这些花活，应该什么时候看</h2>
+    <h2>✨ 流式、按钮、投票这些花活，什么时候再看</h2>
     <p>这页后半段还有很多功能：流式预览、命令菜单、inline buttons、poll、webhook、exec approvals。它们不是不重要，而是它们都属于“先活起来，再变漂亮”。</p>
   </div>
   <div class="story-grid">
     <div class="story-card">
-      <div class="story-card-label">先求能用</div>
+      <div class="story-card-label">✅ 先求能用</div>
       <p>先确认机器人能收消息、能回消息、权限没配错。只要这三件事没稳住，去折腾流式预览和按钮，多半是在给自己加噪音。</p>
     </div>
     <div class="story-card">
-      <div class="story-card-label">再求好用</div>
+      <div class="story-card-label">🌟 再求好用</div>
       <p><code>streaming</code> 是让回复像“边想边打字”；<code>customCommands</code> 是给 Telegram 菜单加按钮入口；inline buttons 和 poll 则是在把机器人从“会聊天”推向“会操作”。</p>
     </div>
     <div class="source-card">
-      <div class="story-card-label">读这一大段时的正确姿势</div>
+      <div class="story-card-label">📚 读这一大段时的正确姿势</div>
       <p>把它当“升级菜单”读，不要当“基础必修课”读。否则很容易出现一种错觉：好像 Telegram 通道很可怕、参数很多。其实不是，是官方把基础和增强都写在了一页里。</p>
     </div>
     <div class="source-card">
-      <div class="story-card-label">一句话收住</div>
+      <div class="story-card-label">🎯 一句话收住</div>
       <p>前半页负责让机器人站起来，后半页负责让机器人看起来更聪明。</p>
     </div>
   </div>
@@ -4198,7 +4198,7 @@
 <section class="section-shell">
   <div class="section-heading">
     <p class="section-kicker">最后总结</p>
-    <h2>把 Telegram 这页压缩成一句最容易记住的话</h2>
+    <h2>🎈 把这一页压缩成一句最好记的话</h2>
     <p>这页真正讲的不是“Telegram 有多少配置项”，而是“怎样让一个 Telegram 机器人既能说上话，又不会乱说话”。</p>
   </div>
   <div class="ad-placeholder">
