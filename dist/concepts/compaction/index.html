@@ -3970,606 +3970,235 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Compaction</h2>
-          <p>这一页像一本关于“Compaction”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：Context Window &amp; Compaction。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/concepts/compaction</span>
-          <span>章节数量：10</span>
-          <a href="https://docs.openclaw.ai/concepts/compaction" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Context Window &amp; Compaction Every 聪明脑袋模型 has a **context window** (max tokens it can see). Long-running chats accumulat…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Context Window &amp; Compaction”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Context Window &amp; Compaction</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Every 聪明脑袋模型 has a **context window** (max tokens it can see). Long-running chats accumulate 小纸条消息s and 工具小帮手 results;…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Every model has a **context window** (max tokens it can see). Long-running chats accumulate messages and tool results; once the window is tight, OpenClaw **compacts** older history to stay within limits.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>What compaction is</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Compaction **summarizes older conversation** into a compact summary entry and keeps recent 小纸条消息s intact. The summary i…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Compaction **summarizes older conversation** into a compact summary entry and keeps recent 小纸条消息s intact. The summary i…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Compaction **summarizes older conversation** into a compact summary entry and keeps recent messages intact. The summary is stored in the session history, so future requests use:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“What compaction is”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：The compaction summary、Recent 小纸条消息s after the compaction point。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>The compaction summary</li><li>Recent messages after the compaction point</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Compaction **persists** in the session’s JSONL history.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Compaction **persists** in the session’s JSONL history.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>设置说明书uration</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use the 机器人朋友s.defaults.compaction setting in your openclaw.json to 设置说明书ure compaction behavior (mode, target tokens,…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use the 机器人朋友s.defaults.compaction setting in your openclaw.json to 设置说明书ure compaction behavior (mode, target tokens,…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use the <code>agents.defaults.compaction</code> setting in your <code>openclaw.json</code> to configure compaction behavior (mode, target tokens, etc.). Compaction summarization preserves opaque identifiers by default (<code>identifierPolicy: &quot;strict&quot;</code>). You can override this with <code>identifierPolicy: &quot;off&quot;</code> or provide custom text with <code>identifierPolicy: &quot;custom&quot;</code> and <code>identifierInstructions</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“You can optionally specify a different 聪明脑袋模型 for compaction summarization via 机器人朋友s.defaults.compaction.聪明脑袋模型. This…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>You can optionally specify a different model for compaction summarization via <code>agents.defaults.compaction.model</code>. This is useful when your primary model is a local or small model and you want compaction summaries produced by a more capable model. The override accepts any <code>provider/model-id</code> string:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“agents”贴标签，意思是把它设置成“{”。</li><li>这里在给“defaults”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{
-  &quot;agents&quot;: {
-    &quot;defaults&quot;: {
-      &quot;compaction&quot;: {
-        &quot;model&quot;: &quot;openrouter/anthropic/claude-sonnet-4-6&quot;
-      }
-    }
-  }
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“This also works with local 聪明脑袋模型s, for example a second Ollama 聪明脑袋模型 dedicated to summarization or a fine-tuned compa…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>This also works with local models, for example a second Ollama model dedicated to summarization or a fine-tuned compaction specialist:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“agents”贴标签，意思是把它设置成“{”。</li><li>这里在给“defaults”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{
-  &quot;agents&quot;: {
-    &quot;defaults&quot;: {
-      &quot;compaction&quot;: {
-        &quot;model&quot;: &quot;ollama/llama3.1:8b&quot;
-      }
-    }
-  }
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When unset, compaction uses the 机器人朋友&#39;s primary 聪明脑袋模型.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When unset, compaction uses the agent&#39;s primary model.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Auto-compaction (default on)</h2>
-            <p>这一节主要在解释“Auto-compaction (default on)”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Auto-compaction (default on)”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When a session nears or exceeds the 聪明脑袋模型’s context window, OpenClaw triggers auto-compaction and may retry the origin…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When a session nears or exceeds the 聪明脑袋模型’s context window, OpenClaw triggers auto-compaction and may retry the origin…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When a session nears or exceeds the model’s context window, OpenClaw triggers auto-compaction and may retry the original request using the compacted context.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“You’ll see:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>You’ll see:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Auto-compaction (default on)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：🧹 Auto-compaction complete in verbose mo…、/status showing 🧹 Compactions: &lt;count&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>🧹 Auto-compaction complete</code> in verbose mode</li><li><code>/status</code> showing <code>🧹 Compactions: &lt;count&gt;</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Before compaction, OpenClaw can run a **silent memory flush** turn to store durable notes to disk. See Memory for detai…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Before compaction, OpenClaw can run a **silent memory flush** turn to store durable notes to disk. See <a href="/concepts/memory" target="_blank" rel="noreferrer">Memory</a> for details and config.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Manual compaction</h2>
-            <p>这一节主要在解释“Manual compaction”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Manual compaction”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use /compact (optionally with instructions) to force a compaction pass:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use /compact (optionally with instructions) to force a compaction pass:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use <code>/compact</code> (optionally with instructions) to force a compaction pass:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像给机器人看的说明书，告诉它要按什么样子准备东西。</p>
-        <ul class="code-steps">
-          <li>这一行“/compact Focus on decisions and open questions”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">/compact Focus on decisions and open questions</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Context window source</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Context window is 聪明脑袋模型-specific. OpenClaw uses the 聪明脑袋模型 definition from the 设置说明书ured provider catalog to determine…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Context window is 聪明脑袋模型-specific. OpenClaw uses the 聪明脑袋模型 definition from the 设置说明书ured provider catalog to determine…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Context window is model-specific. OpenClaw uses the model definition from the configured provider catalog to determine limits.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Compaction vs pruning</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“See /concepts/session-pruning for pruning details.”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Compaction vs pruning”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**Compaction**: summarises and **persists…、**Session pruning**: trims old **工具小帮手 re…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Compaction**: summarises and **persists** in JSONL.</li><li>**Session pruning**: trims old **tool results** only, **in-memory**, per request.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“See /concepts/session-pruning for pruning details.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>See <a href="/concepts/session-pruning" target="_blank" rel="noreferrer">/concepts/session-pruning</a> for pruning details.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>OpenAI 大房子服务器-side compaction</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw also supports OpenAI Responses 大房子服务器-side compaction hints for compatible direct OpenAI 聪明脑袋模型s. This is sepa…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw also supports OpenAI Responses 大房子服务器-side compaction hints for compatible direct OpenAI 聪明脑袋模型s. This is sepa…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw also supports OpenAI Responses server-side compaction hints for compatible direct OpenAI models. This is separate from local OpenClaw compaction and can run alongside it.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“store + context_management are enabled.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>store</code> + <code>context_management</code> are enabled.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“OpenAI server-side compaction”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Local compaction: OpenClaw summarizes and…、大房子服务器-side compaction: OpenAI compacts c…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Local compaction: OpenClaw summarizes and persists into session JSONL.</li><li>Server-side compaction: OpenAI compacts context on the provider side when</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“See OpenAI provider for 聪明脑袋模型 params and overrides.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>See <a href="/providers/openai" target="_blank" rel="noreferrer">OpenAI provider</a> for model params and overrides.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>Custom context engines</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Compaction behavior is owned by the active context engine. The legacy engine uses the built-in summarization described…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Compaction behavior is owned by the active context engine. The legacy engine uses the built-in summarization described…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Compaction behavior is owned by the active <a href="/concepts/context-engine" target="_blank" rel="noreferrer">context engine</a>. The legacy engine uses the built-in summarization described above. Plugin engines (selected via <code>plugins.slots.contextEngine</code>) can implement any compaction strategy — DAG summaries, vector retrieval, incremental condensation, etc.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When a 新本领插件 engine sets ownsCompaction: true, OpenClaw delegates all compaction decisions to the engine and does not r…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When a plugin engine sets <code>ownsCompaction: true</code>, OpenClaw delegates all compaction decisions to the engine and does not run built-in auto-compaction.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When ownsCompaction is false or unset, OpenClaw may still use Pi&#39;s built-in in-attempt auto-compaction, but the active…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When <code>ownsCompaction</code> is <code>false</code> or unset, OpenClaw may still use Pi&#39;s built-in in-attempt auto-compaction, but the active engine&#39;s <code>compact()</code> method still handles <code>/compact</code> and overflow recovery. There is no automatic fallback to the legacy engine&#39;s compaction path.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If you are building a non-owning context engine, implement compact() by calling delegateCompactionToRuntime(...) from o…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If you are building a non-owning context engine, implement <code>compact()</code> by calling <code>delegateCompactionToRuntime(...)</code> from <code>openclaw/plugin-sdk/core</code>.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>Tips</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Tips”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Use /compact when sessions feel stale or…、Large 工具小帮手 outputs are already truncated…、If you need a fresh slate, /new or /reset…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Use <code>/compact</code> when sessions feel stale or context is bloated.</li><li>Large tool outputs are already truncated; pruning can further reduce tool-result buildup.</li><li>If you need a fresh slate, <code>/new</code> or <code>/reset</code> starts a new session id.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧹 Compaction 不是魔法，它更像聊天聊太久以后，帮你把旧纸条叠整齐</h2>
+      <p>OpenClaw 跟模型聊天时，不可能把一整天、一个月、甚至一年的所有内容都永远摊在桌上。桌面有大小限制，这个限制就是 context window。</p>
+      <p>当桌子快堆满时，OpenClaw 会把比较旧的那一大摞内容压成一张更短、更紧凑的“重点小抄”，这样新内容还能继续放进来。这件事，就叫 compaction。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合总觉得“为什么聊天越久越要整理”的人</span>
+      <span>这页的重点不是参数，而是先分清 compaction 到底在收拾什么</span>
+      <a href="https://docs.openclaw.ai/concepts/compaction" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>📚 先想画面：模型的脑袋前面，有一张大小有限的桌子</h2>
+    <p>你每发一句话、每跑一次工具、每贴一段日志，都像往桌上再放一张纸。桌子不是无限大，塞满以后就得先整理。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🪟 Context Window</div>
+      <p>它就是那张桌子的大小。每个模型的桌子大小不一样，有的大，有的小。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧾 旧消息和工具结果</div>
+      <p>这些东西会越积越多。最开始很轻松，越聊越久以后，它们就会开始挤位置。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 这页一句话版</div>
+      <p>compaction 不是“删掉聊天”，而是把旧聊天压成更短的重点摘要，好让桌面腾出位置。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 一个重要区别</div>
+      <p>它不是只在你眼前临时缩一缩，而是会把压出来的摘要真的记进这段会话历史里。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧠 Compaction 到底做了什么</h2>
+    <p>原文“what compaction is”其实就在讲一个动作：把比较旧的聊天浓缩成一小段摘要，再把最近的内容保留原样。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>先看旧内容</h2>
+      <p>OpenClaw 会挑比较旧的一段历史出来，不是把最新那几句直接揉碎。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>再压成摘要</h2>
+      <p>像把一大摞纸改写成一张重点卡：做过什么决定、还剩什么问题、哪些名字和编号不能丢。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>最近内容保留</h2>
+      <p>离现在最近的消息会尽量原样留下，因为它们通常最影响当前这一轮回答。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>摘要会写进历史</h2>
+      <p>这一步很关键。它不是一次性口头提醒，而是会真的存进 session 的 JSONL 历史里。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🤖 自动整理和手动整理，不是一回事</h2>
+    <p>官方这里分了 auto-compaction 和 manual compaction。翻成人话，就是“桌子快满时系统自己收拾”和“你觉得太乱时自己喊它收拾”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧹 自动整理</div>
+      <p>当聊天快把窗口塞满时，OpenClaw 会自己触发 compaction。有时候它整理完，还会拿新的紧凑上下文再重试刚刚那次请求。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🙋 手动整理</div>
+      <p>你也可以主动发 <code>/compact</code>。这像你自己拍桌子说：“这堆旧纸条先帮我整理一下，我想清爽点继续聊。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 命令像在做什么</div>
+      <ul>
+        <li><code>/compact</code>：像对 OpenClaw 说“现在就收拾桌面”。</li>
+        <li><code>/compact Focus on decisions and open questions</code>：像补一句“收的时候别什么都抄，重点记决定和还没解决的问题”。</li>
+        <li><code>/status</code> 里的 <code>🧹 Compactions</code>：像告诉你“这张桌子今天已经被整理过几次了”。</li>
+      </ul>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>自动整理是系统自己觉得快满了，手动整理是你自己觉得该收拾了。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🪪 为什么原文一直提“identifier”</h2>
+    <p>因为整理聊天时，最怕发生一件事：字数变少了，但关键名字、编号、路径、票据号也被顺手弄丢了。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🔒 strict</div>
+      <p>默认的 <code>identifierPolicy: "strict"</code>，像在提醒整理员：“这些门牌号、任务号、文件名，别偷懒改写，尽量原样保住。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">✍️ custom</div>
+      <p>如果你自己有特别要求，也能额外告诉它“遇到编号、名字、命令时该怎么保留”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 这节真正想告诉你</div>
+      <p>compaction 不是随便写一篇读后感。它得在“缩短内容”和“别弄丢关键线索”之间拿捏平衡。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 配置像在做什么</div>
+      <ul>
+        <li><code>identifierPolicy: "strict"</code>：像对整理员说“编号、ID、路径这类东西别改花样”。</li>
+        <li><code>identifierPolicy: "off"</code>：像说“这里不用特别死守编号”。</li>
+        <li><code>identifierInstructions</code>：像补一张你自己的整理规则小纸条。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🔀 Compaction 和 pruning 长得像，但其实不是一类东西</h2>
+    <p>原文特地分这一段，是因为很多人会把这两个词混掉。它们都像“减肥”，但减的地方不一样。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧹</span>
+      <h2>Compaction</h2>
+      <p>会把旧聊天压成摘要，而且这个摘要会真的写进历史里。所以它是“整理后留下新版本”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✂️</span>
+      <h2>Pruning</h2>
+      <p>主要是临时把一些旧工具结果从当前这一轮提示里拿掉，减轻负担。它更像“这次先别把那摞附件搬上桌”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📂</span>
+      <h2>谁会留下痕迹</h2>
+      <p>Compaction 会留下新摘要记录。Pruning 更偏当前这一轮的临时瘦身，不是重写整段历史。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎯</span>
+      <h2>别混成一句话</h2>
+      <p>一个是“把旧故事压成短一点的故事”，一个是“这次先别把一些旧附件搬出来”。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🧰 你还能指定谁来负责“整理”</h2>
+    <p>原文说 compaction 可以指定单独模型，这一点很实用。意思不是换主脑，而是找一个更适合做“整理摘要”的帮手。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧑‍🏫 主模型</div>
+      <p>平时负责主要对话和做事。默认情况下，它也会兼任整理员。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📝 摘要专员模型</div>
+      <p>如果你愿意，也可以单独给 compaction 指一个模型。这样像请了一个专门负责做会议纪要的人。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 配置像在做什么</div>
+      <ul>
+        <li><code>agents.defaults.compaction.model</code>：像在配置里指定“以后整理桌子这活儿，交给哪位专门老师来做”。</li>
+        <li><code>"openrouter/anthropic/claude-sonnet-4-6"</code>：像写上你想请哪位外部老师。</li>
+        <li><code>"ollama/llama3.1:8b"</code>：像说“这份整理工作就交给我本地这位模型来做”。</li>
+      </ul>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>主模型负责聊天，compaction 模型负责做旧内容摘要。可以同一个，也可以分开。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第七站</p>
+    <h2>🧠 Memory flush 和 server-side compaction 是两件额外的小事</h2>
+    <p>原文后面提到 memory flush、OpenAI server-side compaction、custom context engine。别一口气吓住，它们只是“整理桌子”周边的附加玩法。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📝 Memory flush</div>
+      <p>像在大扫除前，先提醒你把真正该长期记住的东西抄进笔记本。这样整理完，也不会把重要偏好和决定弄丢。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">☁️ Server-side compaction</div>
+      <p>这是 OpenAI 那边自己帮你做的压缩提示，跟 OpenClaw 本地这套整理不是同一件事。两边甚至可以同时存在。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🧩 Context engine</div>
+      <p>如果你换了自定义 context engine，那它可能会自己决定怎么整理。官方这段是在提醒插件作者：你接了这活儿，就要真的把它做好，别接了又不干。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 这节真正想告诉你</div>
+      <p>compaction 不是永远只有一种做法。默认有默认的整理员，换了引擎以后，规则也可能跟着换。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Compaction 这页压成一句最好记的话</h2>
+    <p>聊天太久以后，OpenClaw 会把旧内容压成重点小抄，把最近内容留在桌上，这样它还能继续聪明地往前聊。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/concepts/context</code> 或 <code>/providers/openai</code>。因为 compaction 这件事，真正是从“桌子有多大”和“提供商怎么处理上下文”这两边一起影响的。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

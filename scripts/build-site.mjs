@@ -111,7 +111,10 @@ const handcraftedPageMap = new Map([
   ["/tools/index", path.resolve("content/handcrafted/tools.index.zh.html")],
   ["/tools/skills", path.resolve("content/handcrafted/tools.skills.zh.html")],
   ["/channels/index", path.resolve("content/handcrafted/channels.index.zh.html")],
+  ["/channels/slack", path.resolve("content/handcrafted/channels.slack.zh.html")],
   ["/channels/telegram", path.resolve("content/handcrafted/channels.telegram.zh.html")],
+  ["/concepts/compaction", path.resolve("content/handcrafted/concepts.compaction.zh.html")],
+  ["/concepts/features", path.resolve("content/handcrafted/concepts.features.zh.html")],
   ["/providers/openai", path.resolve("content/handcrafted/providers.openai.zh.html")]
 ]);
 
