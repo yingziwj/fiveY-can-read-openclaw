@@ -106,11 +106,13 @@ await copyDir(path.resolve("assets/icons"), path.join(DIST_DIR, "assets/icons"))
 
 const handcraftedPageMap = new Map([
   ["/start/getting-started", path.resolve("content/handcrafted/start.getting-started.zh.html")],
+  ["/start/openclaw", path.resolve("content/handcrafted/start.openclaw.zh.html")],
   ["/install/index", path.resolve("content/handcrafted/install.index.zh.html")],
   ["/tools/index", path.resolve("content/handcrafted/tools.index.zh.html")],
   ["/tools/skills", path.resolve("content/handcrafted/tools.skills.zh.html")],
   ["/channels/index", path.resolve("content/handcrafted/channels.index.zh.html")],
-  ["/channels/telegram", path.resolve("content/handcrafted/channels.telegram.zh.html")]
+  ["/channels/telegram", path.resolve("content/handcrafted/channels.telegram.zh.html")],
+  ["/providers/openai", path.resolve("content/handcrafted/providers.openai.zh.html")]
 ]);
 
 function asset(fileName) {

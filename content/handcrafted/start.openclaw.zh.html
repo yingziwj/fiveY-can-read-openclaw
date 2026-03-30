@@ -1,0 +1,224 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📱 这页其实是在教你：给 OpenClaw 配一个专属“助理号码”</h2>
+      <p>这里说的不是普通安装，而是更像“给自己养一个长期在线的小助理”。它有自己的 WhatsApp 号码，有自己的工作空间，会一直待命，等你发消息给它。</p>
+      <p>所以这页最重要的，不是炫酷配置，而是先把边界划清楚：这个助理应该用自己的号码，不该偷听你的私人号码。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想做“个人 AI 助理”场景的人</span>
+      <span>这页的关键词是专属号码、安全边界、长期在线</span>
+      <a href="https://docs.openclaw.ai/start/openclaw" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🛡 这页最该先读的，不是功能，是“别乱接”</h2>
+    <p>官方一开头就在踩刹车，这不是客气，而是在救你。因为你一旦把助理接进真实聊天世界，它就真的有机会读消息、回消息、碰工具、动文件。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🚫 别用你自己的私人 WhatsApp</div>
+      <p>如果你把个人号直接接进 OpenClaw，别人发给你的每一条消息，都可能变成 AI 输入。这几乎从来都不是你真正想要的结果。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📵 给它一个专属号码</div>
+      <p>最好的做法是单独给助理准备一个号码。这样像给它发一部工作手机，而不是让它偷看你自己的手机。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🔐 allowFrom 那句到底在说什么</div>
+      <p>它的意思是：不是谁都能给这个助理派活。你得先把允许的人写进白名单里，像门卫手里的那张名单。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">💓 heartbeat 那句为什么这么凶</div>
+      <p>因为 heartbeat 会让助理主动跑任务。你还没完全信任它之前，先关掉，就像新招来的员工先别让他夜里自己乱巡逻。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>📞 官方最推荐的，是“双手机模式”</h2>
+    <p>这页那张图其实非常重要，它不是装饰，而是在讲最不容易出事的架构。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">👤 你的手机</div>
+      <p>还是你自己的生活手机。你用它去给“助理号”发消息，像老板给员工派任务。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🤖 助理手机</div>
+      <p>它只负责当助理的 WhatsApp 号码。别人联系这个号码，就是在联系你的 AI 助理，不是在联系你本人。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">💻 你的电脑</div>
+      <p>OpenClaw 跑在这儿。助理手机通过扫码把 WhatsApp Web 连到这里，电脑才是那个真正接住消息、调用模型、生成回答的大脑。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 最后记一句</div>
+      <p>你和助理，不该共用同一个号码。最好是你有你的手机，它有它的工作机。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>⚡ 快速开始，其实就是三步半</h2>
+    <p>这页虽然写了很多内容，但第一次真的要动手时，你只要先跑通最小闭环。</p>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">🎬 把这几步想成一个小剧情</div>
+    <p>先让助理号和电脑牵上线，再把总控台开起来，然后在配置里写清楚“谁能跟它说话”，最后从你的白名单号码发一条消息过去试试。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>先扫码登录</h2>
+      <p>让助理手机通过 WhatsApp Web 认出这台电脑。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>再开 Gateway</h2>
+      <p>总控台没开，前面扫码再成功也只是连上了门，后面没人值班。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>写最小配置</h2>
+      <p>尤其是把 <code>allowFrom</code> 写进去，这一步决定谁能真的跟它讲话。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>发第一条消息</h2>
+      <p>当白名单里的号码发过去，它回了你，这才叫真的活了。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🛠 这些命令到底在现场做什么</h2>
+    <p>这一页的命令不该只看字面。你一旦把画面想清楚，就不容易乱接。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw channels login</code></div>
+      <p>像把电脑摆到助理手机面前，说：“来，认一下脸。”扫完码以后，这台电脑才算拿到了替助理号收发 WhatsApp 消息的资格。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway --port 18789</code></div>
+      <p>像把总控台开机，并告诉它值班窗口开在 18789 这个门牌号。总控台不开，消息即使进来，也没人接。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>allowFrom: ["+1555..."]</code></div>
+      <p>像在门卫名单上写下“只有这个号码能进来派活”。这不是装饰字段，是安全底线。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw dashboard</code></div>
+      <p>像重新打开控制台面板。之前 onboarding 自动帮你开过一次，后面想再进，就按这个按钮。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧠 工作空间就是助理的大脑抽屉</h2>
+    <p>官方中间这一大段在讲 workspace。别把它看成普通文件夹，它更像助理的脑袋里那几层抽屉。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📁 为什么重要</div>
+      <p>这里放着它的身份、性格、工具规则、长期记忆。换句话说，这个文件夹决定它像谁、会怎么做事。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📝 那些 md 文件像什么</div>
+      <p><code>SOUL.md</code> 像性格卡，<code>TOOLS.md</code> 像工具规则表，<code>IDENTITY.md</code> 像身份卡，<code>HEARTBEAT.md</code> 像定时巡逻手册。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw setup</code></div>
+      <p>像一键帮你把这些抽屉先搭好，让助理不至于脑袋空空地上岗。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📦 为什么官方建议 git</div>
+      <p>因为这套“大脑抽屉”以后会越改越重要。用 git 像给它的大脑做版本备份，哪天改坏了也能找回来。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🎛 那份长配置，不是在堆参数，而是在调助理的脾气</h2>
+    <p>看到大段 JSON5 很容易头大，但你翻成人话以后，会发现它只是在决定几件事情。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧠</span>
+      <h2>用哪个模型</h2>
+      <p><code>model</code> 决定这颗脑袋是谁。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🤔</span>
+      <h2>想多想少</h2>
+      <p><code>thinkingDefault</code> 决定它默认是快答，还是先多想一会儿。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">👥</span>
+      <h2>群里怎么开口</h2>
+      <p><code>requireMention: true</code> 像让它学会礼貌，群里被点名才说话。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔄</span>
+      <h2>会话怎么重置</h2>
+      <p><code>/new</code>、<code>/reset</code> 这些像“重新开一张新纸”。</p>
+    </article>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">🎈 一句话收住</div>
+    <p>这份配置不是为了显得复杂，而是在告诉助理：你是谁、你能跟谁说话、你在群里要不要插嘴、你多久忘一次旧上下文。</p>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第七站</p>
+    <h2>💓 heartbeat、media、状态命令，这些都是“长期上岗后”的事</h2>
+    <p>后半页有很多高级内容，不是不重要，而是更像正式上岗后的管理手册。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">💓 Heartbeat</div>
+      <p>像让助理定时自己巡视。很强，但也容易烧 token，所以前期先关掉是对的。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🖼 Media</div>
+      <p>像让它不只会说话，还会看图、听音频、发图片。<code>MEDIA:</code> 那种写法，本质就是告诉系统“这一行不是普通文本，是要顺手带出去的附件”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🩺 状态命令</div>
+      <p><code>openclaw status</code>、<code>openclaw health --json</code> 这些更像体检工具。等助理长期跑起来以后，你会靠它们看它有没有生病。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>先把助理招进来，再教它高级动作；别还没入职就让它夜里自己值班。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把这页压缩成一句最好记的话</h2>
+    <p>这页真正讲的不是“怎么把 WhatsApp 接进来”，而是“怎么给 OpenClaw 配一个有自己号码、自己大脑、自己边界的长期助理”。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你接下来只继续看一页，我建议去看 <code>/channels/whatsapp</code> 或 <code>/channels/pairing</code>，因为个人助理这个场景最关键的两件事，就是接好门和守好门。</p>
+  </div>
+</section>

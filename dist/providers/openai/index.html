@@ -3970,215 +3970,207 @@
   
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>OpenAI接入指南：两种认证方式与高级配置详解</h2>
-            <p>这页文档帮你理清OpenClaw如何对接OpenAI服务。核心是两种认证路径：API密钥适合按量计费，Codex订阅适合已有ChatGPT账户。我们会解释每种方式如何配置、模型命名规则，以及如何优化响应速度和上下文管理。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/providers/openai</span>
-            <span>故事卡片：7 张</span>
-            <a href="https://docs.openclaw.ai/providers/openai" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>从这里开始：理解两种接入方式</h2>
-              <p>介绍OpenAI在OpenClaw中的两种主要认证机制及其适用场景。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>选对认证方式直接影响计费模式和功能可用性，这是配置的第一步。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>OpenAI提供GPT模型的开发者API，OpenClaw支持两种登录方式：API密钥和Codex订阅。</li><li>API密钥适合直接调用API并按使用量计费，从OpenAI控制台获取。</li><li>Codex订阅使用ChatGPT账户登录，适合已有订阅的用户，云端服务必须用此方式。</li><li>OpenAI明确支持在OpenClaw这类外部工具中使用订阅OAuth。</li><li>两种方式在模型命名和功能支持上略有差异，需要根据需求选择。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>先确定你的计费偏好和账户类型，再选择对应的认证路径。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>选项A：使用OpenAI API密钥</h2>
-              <p>详细说明如何通过API密钥接入OpenAI平台，包括CLI设置和配置片段。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这是最灵活的接入方式，适合需要精细控制API调用和预算的项目。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>最佳场景：直接API访问和按使用量计费，密钥从OpenAI仪表板获取。</li><li>CLI设置提供交互式和非交互式两种命令，方便自动化集成。</li><li>配置中需设置环境变量OPENAI_API_KEY，并指定默认模型如openai/gpt-5.4。</li><li>OpenClaw只转发OpenAI官方支持的模型（如gpt-5.4），废弃的模型（如gpt-5.3-codex-spark）会被屏蔽。</li><li>这种路径下，Spark模型被视为Codex专属，不通过API密钥暴露。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>openclaw onboard --auth-choice openai-api-key：启动交互式向导设置API密钥。</li><li>openclaw onboard --openai-api-key &quot;$OPENAI_API_KEY&quot;：非交互式直接传入密钥，适合脚本环境。</li><li>env: { OPENAI_API_KEY: &quot;sk-...&quot; }：在配置文件中设置密钥，sk-开头的是你的私钥。</li><li>agents: { defaults: { model: { primary: &quot;openai/gpt-5.4&quot; } } }：指定默认使用OpenAI的gpt-5.4模型。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>API密钥方式简单直接，但需妥善保管密钥并监控使用量。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>选项B：使用Codex订阅</h2>
-              <p>解释如何通过Codex订阅（ChatGPT账户）接入，包括OAuth流程和配置。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>如果你已有ChatGPT订阅，这种方式可以无缝集成，避免额外API费用。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>最佳场景：使用ChatGPT/Codex订阅访问，无需单独管理API密钥。</li><li>Codex云端服务必须用ChatGPT登录，CLI支持ChatGPT或API密钥。</li><li>配置中使用openai-codex/gpt-5.4作为模型标识，对应Codex的当前模型。</li><li>如果账户有权使用Codex Spark，OpenClaw也支持openai-codex/gpt-5.3-codex-spark。</li><li>Spark模型是Codex专属，不通过API密钥路径提供，且可用性取决于账户权限。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>openclaw onboard --auth-choice openai-codex：在向导中启动Codex OAuth登录。</li><li>openclaw models auth login --provider openai-codex：直接运行OAuth登录命令。</li><li>agents: { defaults: { model: { primary: &quot;openai-codex/gpt-5.4&quot; } } }：配置默认使用Codex的gpt-5.4模型。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>Codex订阅适合已有ChatGPT的用户，但要注意模型兼容性和账户权限。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>传输协议与WebSocket预热</h2>
-              <p>说明OpenClaw如何处理模型流传输，以及如何优化WebSocket连接的启动延迟。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>传输设置影响响应速度和稳定性，预热能减少首次请求的等待时间。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>OpenClaw使用pi-ai进行模型流传输，默认传输策略为auto（优先WebSocket，失败回退到SSE）。</li><li>你可以手动设置transport为sse、websocket或auto，以适应不同网络环境。</li><li>对于openai/*路径，OpenClaw默认启用WebSocket预热（openaiWsWarmup: true），以减少首轮延迟。</li><li>预热是可选的，但默认开启以提升体验，相关文档参考OpenAI的实时API指南。</li><li>配置示例展示了如何为特定模型设置传输参数，确保流式响应高效进行。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>transport: &quot;auto&quot;：自动选择传输协议，先尝试WebSocket，不行再用SSE。</li><li>openaiWsWarmup: true：启用WebSocket预热，加速首次连接。</li><li>agents.defaults.models[&quot;openai-codex/gpt-5.4&quot;].params.transport：在配置中为指定模型设置传输方式。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>根据网络条件调整传输协议，启用预热可以显著改善实时交互体验。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>高级功能：优先级处理与快速模式</h2>
-              <p>介绍如何通过配置实现请求优先级处理和低延迟快速模式。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这些功能让你在需要高性能时优化API调用，比如实时应用或高负载场景。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>OpenAI API支持priority服务层级，在OpenClaw中通过serviceTier参数传递。</li><li>支持的值包括auto、default、flex和priority，根据需求选择以调整处理顺序。</li><li>快速模式（fastMode）是一个共享开关，适用于openai/*和openai-codex/*会话。</li><li>启用快速模式后，OpenClaw自动应用低延迟配置：降低推理努力和文本冗余度，并设置优先级。</li><li>会话级别的设置会覆盖配置默认值，UI中清除覆盖后恢复为配置值。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>serviceTier: &quot;priority&quot;：设置服务层级为优先级，可能加快处理但成本更高。</li><li>fastMode: true：启用快速模式，自动优化参数以减少延迟。</li><li>agents.defaults.models[&quot;openai/gpt-5.4&quot;].params.fastMode：在配置中为特定模型启用快速模式。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>使用优先级和快速模式可以在关键时刻提升响应速度，但需权衡成本和效果。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>服务器端上下文压缩</h2>
-              <p>解释OpenClaw如何自动管理长上下文，通过服务器端压缩优化性能。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>处理长对话或文档时，压缩能减少令牌使用，提升效率并控制成本。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>对于直接使用OpenAI Responses的模型，OpenClaw默认启用服务器端压缩提示。</li><li>这包括强制store: true（除非模型不支持）和注入context_management压缩配置。</li><li>默认压缩阈值为模型上下文窗口的70%，或80000（当窗口大小未知时）。</li><li>你可以显式启用、禁用或自定义压缩阈值，以适应特定需求如Azure OpenAI。</li><li>responsesServerCompaction参数仅控制压缩注入，store设置仍受模型兼容性影响。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>responsesServerCompaction: true：显式启用服务器端压缩，适用于兼容模型。</li><li>responsesCompactThreshold: 120000：自定义压缩阈值，单位是令牌数。</li><li>agents.defaults.models[&quot;openai/gpt-5.4&quot;].params.responsesServerCompaction：在配置中管理压缩设置。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>利用服务器端压缩可以智能管理长上下文，平衡性能和资源使用。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>关键注意事项</h2>
-              <p>总结使用OpenAI接入时的核心概念和参考链接。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这些要点帮助避免常见错误，并指向更深入的文档资源。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>模型引用始终使用provider/model格式（如openai/gpt-5.4），详见概念文档。</li><li>认证详情和重用规则在OAuth概念页中有详细说明，建议查阅以优化登录流程。</li><li>保持配置与OpenAI官方文档同步，及时更新模型名称和参数设置。</li><li>实验性功能如Codex Spark需谨慎使用，依赖账户权限且可能变动。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>遵循命名规范并参考官方文档，可以确保配置的准确性和未来兼容性。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🤖 OpenAI 这页，其实是在问你：你想拿“钥匙”进门，还是拿“会员卡”进门？</h2>
+      <p>这页表面上在讲 OpenAI 配置，实际上只是在讲两条主要路线。第一条是 API key，像拿一把钥匙，按次付费。第二条是 Codex / ChatGPT 订阅登录，像拿会员卡，按账号资格来。</p>
+      <p>后面那些 transport、warm-up、fast mode、server compaction，看起来吓人，其实都是“门已经打开以后，怎么让它跑得更快、更顺”的细节。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合第一次把 OpenClaw 接到 OpenAI 的人</span>
+      <span>先决定走钥匙路线还是会员卡路线</span>
+      <a href="https://docs.openclaw.ai/providers/openai" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🗝 先分清楚两种进门方式</h2>
+    <p>这页如果一开始没分清，很容易后面越看越乱。其实 OpenAI 在这里主要就两种接法。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🔑 API key 路线</div>
+      <p>像拿 OpenAI 平台发给你的钥匙。你自己控制调用，自己按用量付钱，最适合想清清楚楚管配额和账单的人。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🪪 Codex / ChatGPT 登录路线</div>
+      <p>像拿一张订阅会员卡。你不是直接塞 API key，而是用已经有资格的 ChatGPT / Codex 账号登录。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">☁️ “Codex cloud 必须登录”那句在说什么</div>
+      <p>意思是有些云端场景根本不认你自己塞的 API key，它要看的是“你这个 ChatGPT / Codex 账号到底有没有这张票”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>API key 像钥匙，Codex 登录像会员卡，先决定你手里拿哪一种。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔑 如果你走 API key 路线，重点就是“把钥匙放对地方”</h2>
+    <p>这一段最适合想要直接、明确、可控的人。你有自己的 OpenAI 平台 key，就走这条。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📍 什么时候适合</div>
+      <p>你想按调用量计费，想自己挑模型，想把账单和使用记录都握在自己手里时，这条路最顺。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧠 模型名字怎么看</div>
+      <p><code>openai/gpt-5.4</code> 这种写法，前半截像在写“这是哪家店的”，后半截像在写“你要买哪种型号”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 命令 / 配置像在做什么</div>
+      <ul>
+        <li><code>openclaw onboard --auth-choice openai-api-key</code>：像在 onboarding 里直接告诉系统“我要走钥匙路线”。</li>
+        <li><code>openclaw onboard --openai-api-key "$OPENAI_API_KEY"</code>：像你自己已经把钥匙拿在手里，现在直接塞进去，不走对话式向导。</li>
+        <li><code>env: { OPENAI_API_KEY: "sk-..." }</code>：像把钥匙放进配置柜里，方便系统以后取用。</li>
+        <li><code>primary: "openai/gpt-5.4"</code>：像告诉 OpenClaw“默认先去找这位模型老师来帮我答题”。</li>
+      </ul>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 那些“不暴露 stale 模型”的话在说什么</div>
+      <p>意思不是故意刁难你，而是在说：有些旧模型名字虽然还在某些库里出现，但 OpenAI 实际已经不让你这样叫了，所以 OpenClaw 直接帮你拦住，免得你走一条死路。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🪪 如果你走 Codex 路线，重点就是“你的账号有没有资格”</h2>
+    <p>这条路跟 API key 最大的不同，不是命令长得不一样，而是它在看“你这个账号有没有那张票”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🎫 什么时候适合</div>
+      <p>如果你已经有 ChatGPT / Codex 订阅，想直接用账号权限，不想额外单独管理 API key，这条会更顺。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">⚠️ Spark 为什么总被单独讲</div>
+      <p>因为它不像普通模型那样“有就有、没有就没有”，它更像特定账号才发的特别门票。所以官方一直在提醒你：这东西看 entitlement，不是你想叫就能叫。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 命令 / 配置像在做什么</div>
+      <ul>
+        <li><code>openclaw onboard --auth-choice openai-codex</code>：像在 onboarding 里说“这次别让我拿钥匙，我用会员卡刷进去”。</li>
+        <li><code>openclaw models auth login --provider openai-codex</code>：像单独去办一次会员登录，不走整套 onboarding。</li>
+        <li><code>primary: "openai-codex/gpt-5.4"</code>：像告诉系统“默认走 Codex 这条专属通道”。</li>
+      </ul>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>Codex 路线不只是“换个登录方式”，而是在看你的账号到底有没有这张模型入场券。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🚚 transport、WebSocket、SSE，这些都在讲“消息走哪条路”</h2>
+    <p>这一段最容易把人看晕。其实别想太多，它就是在讲 OpenClaw 和 OpenAI 之间，消息到底走哪条路更顺。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🚅 WebSocket</div>
+      <p>像一条一直保持连通的快车道。连上以后，后面说话来回更流畅。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚚 SSE</div>
+      <p>像一条也能送消息的备用路，通常比 WebSocket 更朴素，但兼容性好。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🤖 auto</div>
+      <p>像先试试快车道，不行就改走备用路。默认这么做，是因为它最省心。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🔥 warm-up 是什么</div>
+      <p>像在正式开跑前先热一下车。官方说它是可选的，但 OpenClaw 默认帮你开着，是为了让第一轮响应别那么慢吞吞。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>⚡ fast mode、priority、service tier，都在讲“要不要插队走快一点”</h2>
+    <p>这一段不是在讲新模型，而是在讲同一个模型用什么跑法。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">⚡ fast mode</div>
+      <p>像跟系统说：“这次别慢慢抠细节了，先快一点给我答。”它会自动把一些参数往更低延迟方向拧。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🥇 priority</div>
+      <p>像给请求贴一张“这份比较急”的标签。能更快，但通常也意味着成本和资源策略不同。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 配置像在做什么</div>
+      <ul>
+        <li><code>serviceTier: "priority"</code>：像给请求加急。</li>
+        <li><code>fastMode: true</code>：像告诉系统“这轮先讲快一点、短一点、别想太久”。</li>
+        <li><code>/fast on</code></li>
+      </ul>
+      <p>像会话里临时按下“加速按钮”，比改大配置更像一次性现场切换。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>fast mode 不是换模型，而是给模型换跑法。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🧳 server-side compaction 在讲“聊天太长了，要不要帮你先收拾书包”</h2>
+    <p>这段如果直读很容易像论文。其实它就在说：当上下文越来越长时，要不要先在服务器那边帮你压一压。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📚 为什么需要它</div>
+      <p>因为对话越拖越长，书包就越塞越满。再不整理，后面拿东西会越来越笨、越来越贵。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧹 它在做什么</div>
+      <p>像在书包快装不下的时候，先帮你把旧纸条压成更紧凑的一包，再继续往里放。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 配置像在做什么</div>
+      <ul>
+        <li><code>responsesServerCompaction: true</code>：像明确说“对，这个书包要有人帮我定期整理”。</li>
+        <li><code>responsesCompactThreshold: 120000</code>：像告诉整理员“等书包塞到这个程度再开始收拾”。</li>
+        <li><code>responsesServerCompaction: false</code>：像说“别自动整理，我自己来”。</li>
+      </ul>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>compaction 不是新能力，它是聊天太长时的收纳术。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 OpenAI 这页压缩成一句最好记的话</h2>
+    <p>这页最核心的不是参数，而是先选进门方式，再决定消息怎么跑、要不要加速、要不要收拾长上下文。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你接下来只继续看一页，我建议先看模型总览或你真正要用的那条认证路径页面。因为 OpenAI 这页的关键，不是全背下来，而是先选对路。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

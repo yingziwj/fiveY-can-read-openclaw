@@ -3970,340 +3970,231 @@
   
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>用OpenClaw搭建你的专属AI助手：从零到一的实战指南</h2>
-            <p>这页文档教你如何将OpenClaw配置成一个真正的个人AI助手——一个专属的WhatsApp号码，24小时待命。它不是简单的功能罗列，而是帮你避开常见陷阱，理解每个配置背后的安全逻辑和设计意图。读完你就能搭建一个既安全又实用的智能助手。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/start/openclaw</span>
-            <span>故事卡片：12 张</span>
-            <a href="https://docs.openclaw.ai/start/openclaw" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>从这里开始：理解OpenClaw的定位</h2>
-              <p>本节定义了OpenClaw的核心价值：它是一个自托管网关，能把WhatsApp、Telegram等通讯工具连接到AI智能体。我们聚焦于‘个人助手’这个最实用的场景。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这帮你明确目标：你不是在搭建一个通用聊天机器人，而是在创建一个有专属身份、能处理你私人事务的AI伙伴。理解这个定位，后续所有配置才有意义。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>OpenClaw本质上是一个连接器，让你熟悉的通讯App成为AI的交互界面。</li><li>‘个人助手’模式的核心是使用一个独立的WhatsApp号码，与你的私人号码完全隔离。</li><li>这种设计确保了助手可以7x24小时运行，而不会干扰你的正常社交沟通。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>记住：你是在为AI创建一个专属的‘工作手机号’，而不是把你的私人聊天记录交给AI处理。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>安全第一：给AI助手划定边界</h2>
-              <p>本节强调安全配置的极端重要性，因为你的AI助手将获得在本地机器执行命令、读写文件、对外发送消息的权限。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>忽略这些安全建议，相当于把家门钥匙交给一个还不完全了解的程序。本节告诉你如何从一开始就建立安全护栏。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>AI助手的能力取决于你授予的权限，它可能执行命令、访问文件，这既是强大之处也是风险来源。</li><li>绝对不要在个人Mac上运行‘对全世界开放’的配置，必须使用`allowFrom`白名单严格限制可联系的号码。</li><li>务必使用一个专门为助手准备的手机号（SIM/eSIM/预付费卡），实现物理隔离。</li><li>初始阶段强烈建议禁用‘心跳’功能（设置间隔为`&quot;0m&quot;`），等完全信任系统后再考虑开启。</li><li>‘心跳’是AI主动执行任务的机制，默认每30分钟运行一次，在未充分测试前开启可能导致意外行为或消耗大量API额度。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`channels.whatsapp.allowFrom: [&quot;+15555550123&quot;]`：这是最重要的安全配置。数组里只放你允许其联系助手的电话号码，其他号码的消息将被直接拒绝。</li><li>`agents.defaults.heartbeat.every: &quot;0m&quot;`：将心跳间隔设置为零分钟，即完全禁用。这是新手的推荐设置，避免AI在你不知情时自动运行任务。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>安全配置不是可选项，而是让这个系统可用且可信的前提。从最严格的限制开始，逐步放宽。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>准备工作：你需要什么</h2>
-              <p>列出搭建个人助手前必须满足的两个硬性条件。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>确保你在正确的起点上，避免做到一半才发现基础不满足。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>已经完成OpenClaw的安装和初始引导流程。如果还没做，需要先去看‘入门指南’。</li><li>准备一个独立的手机号码，专门用于注册助手的WhatsApp账号。这是实现‘双机模式’的关键。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>一个已安装的OpenClaw，加上一个专属号码，就是你的全部入场券。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>推荐架构：双手机模式</h2>
-              <p>通过图表解释为什么以及如何将你的个人手机与助手手机分开。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这是避免生活被AI入侵的最佳实践。理解了架构，就能明白后续所有操作步骤的设计逻辑。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>核心架构是：你的个人手机 -&gt; 助手的专属手机 -&gt; 运行OpenClaw的电脑（Mac）。</li><li>你的个人WhatsApp账号完全不动，只用来给助手的号码发消息。</li><li>助手的手机通过扫描二维码，与电脑上的OpenClaw网关链接。</li><li>绝对不要把你日常使用的个人WhatsApp账号直接链接到OpenClaw，否则所有发给你的消息都会变成AI的输入，这几乎从来都不是你想要的结果。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>把助手想象成一个拥有自己手机和号码的独立员工，你通过工作电话（助手号）给它派活，而不是让它监听你的私人电话（个人号）。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>五分钟快速启动</h2>
-              <p>用最简步骤让你体验助手从无到有的过程。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>快速获得正反馈，验证基础功能是否跑通，然后再深入配置细节。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>第一步：运行`openclaw channels login`，这会生成一个二维码，用你的‘助手手机’上的WhatsApp扫描登录网页版。</li><li>第二步：运行`openclaw gateway --port 18789`启动网关服务，这个进程需要一直保持运行。</li><li>第三步：在指定路径创建最简配置文件，核心就是设置消息来源白名单`allowFrom`。</li><li>完成以上三步后，你就可以从白名单里的手机号，给助手号码发送消息，并收到AI的回复了。</li><li>初始化完成后，系统会自动打开控制面板。如果提示需要认证，去网关配置里找到`gateway.auth.token`的值粘贴进去即可。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`openclaw channels login`：这个命令负责建立通讯渠道（如WhatsApp）与OpenClaw网关之间的链接，扫码是授权过程。</li><li>`openclaw gateway --port 18789`：启动核心的网关服务，`--port`指定了服务监听的端口号。</li><li>`~/.openclaw/openclaw.json`：这是主配置文件路径。`~`代表你的用户主目录。</li><li>`channels: { whatsapp: { allowFrom: [&quot;+15555550123&quot;] } }`：配置文件示例。`allowFrom`数组必须包含你允许的号码，例如你的个人号码。这是安全基石。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>跟着这三步走，你就能拥有一个能对话的基础版AI助手了。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>赋予助手记忆与能力：工作空间</h2>
-              <p>解释OpenClaw如何通过一个本地文件夹（工作空间）来存储AI的‘大脑’——包括它的身份、指令、工具和记忆。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>工作空间是定制化助手的核心。在这里，你定义它是谁、能做什么、记得什么。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>工作空间（默认在`~/.openclaw/workspace`）是AI助手的‘记忆宫殿’，所有操作指南和上下文记忆都来自这里。</li><li>运行`openclaw setup`命令会自动创建这个文件夹，并生成一系列初始的Markdown说明文件，如定义助手身份的`SOUL.md`、可用工具列表`TOOLS.md`等。</li><li>强烈建议将这个文件夹初始化为一个Git仓库（最好是私有的），这样你的助手配置和记忆文件就都有了版本备份。</li><li>你可以通过配置`agents.defaults.workspace`来指定其他路径作为工作空间。</li><li>如果你已经从代码库部署了自己的一套工作空间文件，可以完全禁用自动创建引导文件的功能。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`openclaw setup`：一键初始化命令，创建标准的工作空间目录结构和基础配置文件。</li><li>`agents.defaults.workspace: &quot;~/.openclaw/workspace&quot;`：在配置文件中指定工作空间路径。支持使用`~`代表家目录。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>工作空间文件夹就是AI的‘大脑硬盘’，你通过编辑里面的文件来塑造它的性格和能力，并用Git来备份它的‘记忆’。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>核心配置：从‘能运行’到‘好用’</h2>
-              <p>展示一个完整的、经过调优的配置文件示例，解释关键参数如何将基础AI变成一个符合你需求的智能助手。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>默认配置能让系统跑起来，但精细调整后才能让它真正理解你的意图、高效工作并安全可控。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>配置文件是你对AI助手进行‘微调’的主要手段，覆盖了从AI模型选择到交互规则的各个方面。</li><li>关键调优点包括：在`SOUL.md`中定义助手的‘人设’和核心指令；设置‘思考深度’（`thinkingDefault`）以平衡响应速度与质量；按需管理‘心跳’任务。</li><li>安全配置依然重要：`allowFrom`白名单、在群聊中设置`requireMention: true`（仅在被@时才响应）可以防止助手在群里刷屏。</li><li>`timeoutSeconds`设置了单次任务的最大运行时间，防止AI陷入死循环。</li><li>路由配置（`routing`）定义了AI如何识别和处理群聊中的指令，比如哪些关键词会触发它。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`model: &quot;anthropic/claude-opus-4-6&quot;`：指定使用的AI模型。你可以根据需求（成本、性能）更换为其他支持的模型。</li><li>`thinkingDefault: &quot;high&quot;`：设置默认的‘思考’深度。‘高’意味着AI会进行更深入的推理，响应可能更优质但更慢、更贵。</li><li>`heartbeat: { every: &quot;0m&quot; }`：再次强调，初期建议禁用。</li><li>`groups: { &quot;*&quot;: { requireMention: true } }`：这条规则对所有群聊（`&quot;*&quot;`）生效，要求必须@助手它才会回应，避免干扰正常群聊。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>一个好的配置文件，是在强大功能、响应速度、使用成本和安全边界之间找到的最佳平衡点。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>会话与记忆管理</h2>
-              <p>解释OpenClaw如何管理每次聊天的上下文（会话），以及相关的操作命令。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>理解会话机制，你才能有效管理AI的‘短期记忆’，避免上下文过长导致性能下降或混乱，也能在需要时清空重来。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>每次与助手的对话都会创建一个‘会话’文件，记录完整的交互历史，这就是AI的‘短期记忆’。</li><li>会话文件以JSONL格式存储，元数据（如token消耗）则记录在另一个文件中。</li><li>你可以通过发送`/new`或`/reset`命令来开始一个全新的会话，清空之前的聊天上下文。如果单独发送，助手会回复确认信息。</li><li>发送`/compact [指令]`命令可以让AI主动压缩当前的会话上下文，并汇报剩余可用的上下文长度，这在长时间聊天后非常有用。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>把`/reset`当作‘重启对话’按钮，把`/compact`当作‘清理内存’工具，让你能主动管理AI的对话状态。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-9">
-            <div class="section-heading">
-              <p class="section-kicker">第 9 站</p>
-              <h2>主动模式：心跳任务</h2>
-              <p>详细说明‘心跳’功能——让AI助手能够定期主动执行检查或任务的机制。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>心跳是让助手从‘被动应答’变为‘主动助理’的关键。但用不好会带来风险和成本，必须充分理解其规则。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>心跳功能默认每30分钟运行一次，AI会读取`HEARTBEAT.md`文件（如果存在）并严格执行其中的指令。</li><li>如果`HEARTBEAT.md`文件内容为空（只有标题和空行），系统会智能地跳过这次心跳执行，以节省API调用。</li><li>如果文件不存在，心跳仍会运行，此时AI会自主决定做什么（这可能不是你想要的结果）。</li><li>当AI执行完心跳任务后，如果回复`HEARTBEAT_OK`，系统会抑制这次回复的对外发送，避免产生无意义的通知消息。</li><li>心跳执行的是完整的AI任务循环，设置过短的间隔会显著增加token消耗和成本。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`agents.defaults.heartbeat.every: &quot;30m&quot;`：在配置中启用心跳，并设置执行间隔。`&quot;0m&quot;`表示禁用，`&quot;30m&quot;`表示30分钟，`&quot;2h&quot;`表示2小时。</li><li>`agents.defaults.heartbeat.directPolicy: &quot;block&quot;`：可以设置为`&quot;block&quot;`来阻止心跳结果直接发送给用户，同时保留心跳检查本身，适用于‘仅监控，不打扰’的场景。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>心跳是高级功能，适合用于定期检查邮件、汇总报告等自动化任务。务必先禁用，充分测试后再谨慎开启并设置合理的间隔。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-10">
-            <div class="section-heading">
-              <p class="section-kicker">第 10 站</p>
-              <h2>处理多媒体内容</h2>
-              <p>说明如何让AI助手接收和发送图片、音频、文档等非文本内容。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>一个真正的助手不能只处理文字。理解媒体处理机制，能让AI帮你分析截图、处理文档，甚至生成带图片的回复。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>当用户给助手发送图片、音频或文档时，这些附件可以通过特定的模板变量（如`{{MediaPath}}`本地路径）在你的工具命令或提示词中被引用。</li><li>如果启用了音频转录，还可以通过`{{Transcript}}`获取文字稿。</li><li>要让助手回复时附带媒体文件，只需在它的文本回复中单独一行写上`MEDIA:&lt;文件路径或网址&gt;`。</li><li>系统会自动识别这行指令，提取媒体文件并将其与文本一同发送出去。</li><li>出于安全考虑，助手发送本地文件时有严格的路径白名单限制（如临时目录、工作空间）。如果需要发送其他位置的文件，需要在配置中明确允许。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`{{MediaPath}}`：在工具命令或提示词模板中使用，会被替换为接收到的媒体文件在服务器上的临时存储路径。</li><li>`MEDIA:https://example.com/screenshot.png`：在AI助手的回复文本中，这样单独一行写，助手就会附带发送这张网络图片。</li><li>`MEDIA:/Users/you/Pictures/chart.png`：发送本地文件。注意路径必须在安全白名单内，否则发送会失败。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>用`{{MediaPath}}`让AI‘看到’你发的图，用`MEDIA:`开头的行让AI‘发出’它想附带的文件。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-11">
-            <div class="section-heading">
-              <p class="section-kicker">第 11 站</p>
-              <h2>运维与诊断</h2>
-              <p>提供一套命令，用于检查OpenClaw系统的运行状态、排查问题。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>当助手不响应或行为异常时，这些命令是你快速定位问题根源的工具箱。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>`openclaw status`是快速检查本地状态（凭证、活跃会话、待处理事件）的首选命令。</li><li>`openclaw status --all`会输出更全面的诊断信息，适合在寻求帮助时直接复制粘贴给技术支持。</li><li>`openclaw status --deep`在此基础上增加了对Telegram、Discord等外部网关连接的健康探测。</li><li>`openclaw health --json`以JSON格式输出网关的健康状态快照，适合被其他监控工具调用。</li><li>系统的运行日志默认存储在`/tmp/openclaw/`目录下，按日期命名，是排查复杂问题的最终依据。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`openclaw status`：最常用的状态检查命令，无参数时输出概要信息。</li><li>`openclaw status --all`：添加`--all`标志，输出所有可读的诊断详情，便于分享。</li><li>`openclaw status --deep`：添加`--deep`标志，进行更深度的网络连通性测试。</li><li>`openclaw health --json`：以结构化的JSON格式输出健康状态，适合程序化处理。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>从`status`到`health`，这套命令链让你能由浅入深地掌握助手的运行脉搏。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-12">
-            <div class="section-heading">
-              <p class="section-kicker">第 12 站</p>
-              <h2>后续探索</h2>
-              <p>列出相关的高级主题和平台支持文档，指引你继续深入。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>搭建好基础助手后，你可能想尝试网页聊天界面、自动化任务，或在手机端使用。这里提供了清晰的导航。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>如果你想通过网页与助手聊天，可以查看WebChat的相关文档。</li><li>关于网关的深入运维和调优，请参考网关运行手册。</li><li>学习如何设置定时任务（Cron jobs）和自动唤醒，实现更复杂的自动化。</li><li>OpenClaw提供了macOS菜单栏伴侣应用、iOS和Android的节点应用，以及Windows（通过WSL2）和Linux上的支持方案。</li><li>最后，务必阅读安全专题，以全面了解系统的安全模型和最佳实践。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>你的个人AI助手已经就绪，这些链接将带你解锁它的更多潜能和更便捷的使用方式。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📱 这页其实是在教你：给 OpenClaw 配一个专属“助理号码”</h2>
+      <p>这里说的不是普通安装，而是更像“给自己养一个长期在线的小助理”。它有自己的 WhatsApp 号码，有自己的工作空间，会一直待命，等你发消息给它。</p>
+      <p>所以这页最重要的，不是炫酷配置，而是先把边界划清楚：这个助理应该用自己的号码，不该偷听你的私人号码。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想做“个人 AI 助理”场景的人</span>
+      <span>这页的关键词是专属号码、安全边界、长期在线</span>
+      <a href="https://docs.openclaw.ai/start/openclaw" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🛡 这页最该先读的，不是功能，是“别乱接”</h2>
+    <p>官方一开头就在踩刹车，这不是客气，而是在救你。因为你一旦把助理接进真实聊天世界，它就真的有机会读消息、回消息、碰工具、动文件。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🚫 别用你自己的私人 WhatsApp</div>
+      <p>如果你把个人号直接接进 OpenClaw，别人发给你的每一条消息，都可能变成 AI 输入。这几乎从来都不是你真正想要的结果。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📵 给它一个专属号码</div>
+      <p>最好的做法是单独给助理准备一个号码。这样像给它发一部工作手机，而不是让它偷看你自己的手机。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🔐 allowFrom 那句到底在说什么</div>
+      <p>它的意思是：不是谁都能给这个助理派活。你得先把允许的人写进白名单里，像门卫手里的那张名单。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">💓 heartbeat 那句为什么这么凶</div>
+      <p>因为 heartbeat 会让助理主动跑任务。你还没完全信任它之前，先关掉，就像新招来的员工先别让他夜里自己乱巡逻。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>📞 官方最推荐的，是“双手机模式”</h2>
+    <p>这页那张图其实非常重要，它不是装饰，而是在讲最不容易出事的架构。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">👤 你的手机</div>
+      <p>还是你自己的生活手机。你用它去给“助理号”发消息，像老板给员工派任务。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🤖 助理手机</div>
+      <p>它只负责当助理的 WhatsApp 号码。别人联系这个号码，就是在联系你的 AI 助理，不是在联系你本人。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">💻 你的电脑</div>
+      <p>OpenClaw 跑在这儿。助理手机通过扫码把 WhatsApp Web 连到这里，电脑才是那个真正接住消息、调用模型、生成回答的大脑。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 最后记一句</div>
+      <p>你和助理，不该共用同一个号码。最好是你有你的手机，它有它的工作机。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>⚡ 快速开始，其实就是三步半</h2>
+    <p>这页虽然写了很多内容，但第一次真的要动手时，你只要先跑通最小闭环。</p>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">🎬 把这几步想成一个小剧情</div>
+    <p>先让助理号和电脑牵上线，再把总控台开起来，然后在配置里写清楚“谁能跟它说话”，最后从你的白名单号码发一条消息过去试试。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>先扫码登录</h2>
+      <p>让助理手机通过 WhatsApp Web 认出这台电脑。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>再开 Gateway</h2>
+      <p>总控台没开，前面扫码再成功也只是连上了门，后面没人值班。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>写最小配置</h2>
+      <p>尤其是把 <code>allowFrom</code> 写进去，这一步决定谁能真的跟它讲话。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>发第一条消息</h2>
+      <p>当白名单里的号码发过去，它回了你，这才叫真的活了。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🛠 这些命令到底在现场做什么</h2>
+    <p>这一页的命令不该只看字面。你一旦把画面想清楚，就不容易乱接。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw channels login</code></div>
+      <p>像把电脑摆到助理手机面前，说：“来，认一下脸。”扫完码以后，这台电脑才算拿到了替助理号收发 WhatsApp 消息的资格。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway --port 18789</code></div>
+      <p>像把总控台开机，并告诉它值班窗口开在 18789 这个门牌号。总控台不开，消息即使进来，也没人接。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>allowFrom: ["+1555..."]</code></div>
+      <p>像在门卫名单上写下“只有这个号码能进来派活”。这不是装饰字段，是安全底线。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw dashboard</code></div>
+      <p>像重新打开控制台面板。之前 onboarding 自动帮你开过一次，后面想再进，就按这个按钮。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧠 工作空间就是助理的大脑抽屉</h2>
+    <p>官方中间这一大段在讲 workspace。别把它看成普通文件夹，它更像助理的脑袋里那几层抽屉。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📁 为什么重要</div>
+      <p>这里放着它的身份、性格、工具规则、长期记忆。换句话说，这个文件夹决定它像谁、会怎么做事。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📝 那些 md 文件像什么</div>
+      <p><code>SOUL.md</code> 像性格卡，<code>TOOLS.md</code> 像工具规则表，<code>IDENTITY.md</code> 像身份卡，<code>HEARTBEAT.md</code> 像定时巡逻手册。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw setup</code></div>
+      <p>像一键帮你把这些抽屉先搭好，让助理不至于脑袋空空地上岗。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📦 为什么官方建议 git</div>
+      <p>因为这套“大脑抽屉”以后会越改越重要。用 git 像给它的大脑做版本备份，哪天改坏了也能找回来。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🎛 那份长配置，不是在堆参数，而是在调助理的脾气</h2>
+    <p>看到大段 JSON5 很容易头大，但你翻成人话以后，会发现它只是在决定几件事情。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧠</span>
+      <h2>用哪个模型</h2>
+      <p><code>model</code> 决定这颗脑袋是谁。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🤔</span>
+      <h2>想多想少</h2>
+      <p><code>thinkingDefault</code> 决定它默认是快答，还是先多想一会儿。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">👥</span>
+      <h2>群里怎么开口</h2>
+      <p><code>requireMention: true</code> 像让它学会礼貌，群里被点名才说话。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔄</span>
+      <h2>会话怎么重置</h2>
+      <p><code>/new</code>、<code>/reset</code> 这些像“重新开一张新纸”。</p>
+    </article>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">🎈 一句话收住</div>
+    <p>这份配置不是为了显得复杂，而是在告诉助理：你是谁、你能跟谁说话、你在群里要不要插嘴、你多久忘一次旧上下文。</p>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第七站</p>
+    <h2>💓 heartbeat、media、状态命令，这些都是“长期上岗后”的事</h2>
+    <p>后半页有很多高级内容，不是不重要，而是更像正式上岗后的管理手册。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">💓 Heartbeat</div>
+      <p>像让助理定时自己巡视。很强，但也容易烧 token，所以前期先关掉是对的。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🖼 Media</div>
+      <p>像让它不只会说话，还会看图、听音频、发图片。<code>MEDIA:</code> 那种写法，本质就是告诉系统“这一行不是普通文本，是要顺手带出去的附件”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🩺 状态命令</div>
+      <p><code>openclaw status</code>、<code>openclaw health --json</code> 这些更像体检工具。等助理长期跑起来以后，你会靠它们看它有没有生病。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>先把助理招进来，再教它高级动作；别还没入职就让它夜里自己值班。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把这页压缩成一句最好记的话</h2>
+    <p>这页真正讲的不是“怎么把 WhatsApp 接进来”，而是“怎么给 OpenClaw 配一个有自己号码、自己大脑、自己边界的长期助理”。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你接下来只继续看一页，我建议去看 <code>/channels/whatsapp</code> 或 <code>/channels/pairing</code>，因为个人助理这个场景最关键的两件事，就是接好门和守好门。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>
