@@ -1,0 +1,256 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📦 Install 这页，其实是在教你“选哪条路把 OpenClaw 搬进来”</h2>
+      <p>这一页看上去方法很多：脚本、npm、pnpm、Docker、源码、云部署……但你第一次不用全懂。它本质上只是在问你一句话：你想要最省事，还是最可控？</p>
+      <p>如果你只是想快点开始，走官方一键脚本那条路。后面那些更像岔路口，是给已经知道自己想干什么的人准备的。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合还没决定安装方式的人</span>
+      <span>第一次装，优先看推荐路线</span>
+      <a href="https://docs.openclaw.ai/install/index" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🛣 先别被很多方法吓到，其实只有几条大路</h2>
+    <p>官方列了很多安装法，但第一次看时，你可以先把它们分成四类。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">⚡</span>
+      <h2>最快那条</h2>
+      <p>官方安装脚本。最像“按一下就自动帮你铺路”。第一次体验，基本先看它。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧰</span>
+      <h2>自己管 Node 的人</h2>
+      <p>npm / pnpm。适合已经习惯自己装包、自己管环境的开发者。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧪</span>
+      <h2>想改源码的人</h2>
+      <p>从源码构建。适合贡献者，或者你就是想摸内部零件。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2>想换运行盒子的人</h2>
+      <p>Docker、Podman、Nix、Ansible 这些更像“换一种打包和搬运方式”。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🥇 官方最推荐的，其实就是“自动铺路车”</h2>
+    <p>推荐脚本那一段最重要，不是因为它高级，而是因为它最省脑子。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🚜 安装脚本像什么</div>
+      <p>像一辆自动铺路车。它会先认你的系统，再看看缺不缺 Node，缺的话帮你装上，然后把 OpenClaw 搬进来，最后还顺手把 onboarding 拉起来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🪟 Windows 那条是同一路</div>
+      <p>不是另一套世界观，只是把“自动铺路车”换成了 PowerShell 能听懂的说法。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 命令像在做什么</div>
+      <ul>
+        <li><code>curl -fsSL https://openclaw.ai/install.sh | bash</code>：像从官网拖来一辆安装车，然后立刻让它开始干活。</li>
+        <li><code>iwr -useb https://openclaw.ai/install.ps1 | iex</code>：这是 Windows 版的同一个动作，只是换成 PowerShell 语言。</li>
+        <li><code>--no-onboard</code> / <code>-NoOnboard</code>：像跟安装车说“先把东西搬进来，别急着带我逛新手村”。</li>
+      </ul>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>第一次装，能走脚本就先走脚本，它就是官方给你铺好的最短路。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧳 系统要求其实没那么神秘</h2>
+    <p>这段不是在吓你，它只是想提前确认：你电脑上的地板够不够平，别等搬家具时才发现门太窄。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🟢 Node</div>
+      <p>推荐 Node 24，22.14 以上也行。你可以继续把它想成发动机型号。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">💻 操作系统</div>
+      <p>macOS、Linux、Windows 都支持。官方顺手提醒 WSL2 更稳，是在帮你少踩坑，不是在禁止原生 Windows。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 关于 pnpm 那句</div>
+      <p>它不是说所有人都要先装 pnpm，而是在说：如果你只是普通安装，通常用不到。只有你要从源码搭的时候，它才开始重要。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>大部分人先确认 Node 版本就够了，别一上来就把自己吓进源码路线。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧰 npm / pnpm 这条路，适合“我自己管工具箱”的人</h2>
+    <p>如果你本来就习惯自己装 Node 包，那这条路会很顺。但它不是第一眼最省心的路。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📦 npm 安装</div>
+      <p>像你自己去仓库搬箱子，自己把 OpenClaw 放到全局工具架上。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📦 pnpm 安装</div>
+      <p>也是自己搬箱子，只不过用的是另一套工具管理习惯。它还会额外问一句：这些带构建脚本的包，你确定要让它们动手吗？</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 命令像在做什么</div>
+      <ul>
+        <li><code>npm install -g openclaw@latest</code>：像把最新版 OpenClaw 放到全局工具架上。</li>
+        <li><code>openclaw onboard --install-daemon</code>：装完以后，再让新手老师带你把后台值班员也安排好。</li>
+        <li><code>pnpm approve-builds -g</code>：像门卫拦你一下，确认这些会自己跑构建脚本的包是不是允许进来。</li>
+        <li><code>SHARP_IGNORE_GLOBAL_LIBVIPS=1</code>：像告诉安装过程“别去碰系统里那套旧零件，按你自己带的来”。</li>
+      </ul>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>npm / pnpm 更像“自己装配”，脚本安装更像“有人帮你整包送到家”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧪 从源码、从 GitHub main，这两条都是“我想摸最新的零件”</h2>
+    <p>这两段别混成一锅。它们都更靠近开发者，只是一个更手工，一个更偷懒。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧱 从源码构建</div>
+      <p>像把零件一箱一箱搬回来，自己拧、自己装、自己接线。适合贡献者，或者你真想改里面的东西。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🌿 从 GitHub main 安装</div>
+      <p>像说“我不要商店里上架的正式版，我要仓库里现在这份最新的”。它比源码轻一点，但还是偏尝鲜路线。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 命令像在做什么</div>
+      <ul>
+        <li><code>git clone ...</code>：像先把整箱零件搬回家。</li>
+        <li><code>pnpm install && pnpm ui:build && pnpm build</code>：像先把零件拆好、前台面板拼好、再把整个机器装起来。</li>
+        <li><code>pnpm link --global</code>：像把你家里这台刚装好的机器挂到全局工具架上，方便你到哪儿都能叫它。</li>
+        <li><code>npm install -g github:openclaw/openclaw#main</code>：像直接去 GitHub 仓库抓最新那份，不走正式发售货架。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>📦 Docker、Podman、Nix 这些，不是“更高级”，只是“换盒子”</h2>
+    <p>很多人一看容器就以为那是高手路线。其实它只是另一种打包方式，适合不同场景。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🐳</span>
+      <h2>Docker / Podman</h2>
+      <p>像把 OpenClaw 装进一个盒子里，方便搬、方便隔离、也方便丢到服务器上。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">❄️</span>
+      <h2>Nix</h2>
+      <p>像一张很严格的搭建配方。你照着配方来，环境就更容易每次都一样。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🛠</span>
+      <h2>Ansible</h2>
+      <p>像远程派一队工人去很多台机器上统一装东西，适合批量部署。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⚡</span>
+      <h2>Bun</h2>
+      <p>更像换一种运行时口味，不是所有人都会走这条路。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第七站</p>
+    <h2>✅ 装完别急着走，先验货</h2>
+    <p>安装结束不等于真正能用。官方后面这几条，就是在教你别被“看起来装上了”骗了。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw --version</code></div>
+      <p>像先问一句：“你到底在不在？”能吐出版本号，说明 CLI 至少已经能被系统认出来了。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw doctor</code></div>
+      <p>像请医生来做体检。不是只看它活没活，还会看看路径、配置这些地方有没有小毛病。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway status</code></div>
+      <p>像走到值班室门口看看总控台是不是亮着。Gateway 不在，后面的聊天和管理很多都接不上。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>装完要验货，不然你很可能只是把箱子放进家里了，却还没插电。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第八站</p>
+    <h2>🧭 后面那些“部署、更新、迁移、卸载”是生活管理，不是第一次考试</h2>
+    <p>官方把这些都列出来很贴心，但第一次不用全学。你只要知道：以后真要搬家、升级、上云，这里有路标。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">☁️ 部署到云上</div>
+      <p>像把家里的小助手搬去服务器住，适合想长期在线或者多人一起用的时候。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔄 更新 / 迁移 / 卸载</div>
+      <p>像以后换新机器、升新版、或者彻底收摊时要看的说明书。现在知道它们在哪儿就够了。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🔍 `openclaw` 找不到那段在说什么</div>
+      <p>它其实就是在教你顺藤摸瓜：Node 在不在，全局包装到了哪儿，PATH 有没有把那条路连上。不是玄学，是一条条查路。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 命令像在做什么</div>
+      <ul>
+        <li><code>npm prefix -g</code>：像问系统“你平时把全局工具都堆在哪个柜子里？”</li>
+        <li><code>echo "$PATH"</code>：像看你家的路牌列表，确认通往那个柜子的路有没有写进去。</li>
+        <li><code>export PATH="..."</code>：像把“去工具柜的路”正式写进门口地图里。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Install 这页压缩成一句最好记的话</h2>
+    <p>第一次装 OpenClaw，别贪多，先走官方脚本那条最短路；后面的路，等你真需要时再拐过去。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你接下来只继续看一页，我建议先看 <code>/start/getting-started</code>。因为安装完成以后，真正重要的是把它点亮，而不是停在“装好了”三个字上。</p>
+  </div>
+</section>

@@ -3970,136 +3970,160 @@
   
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>OpenClaw 快速上手：5分钟搭建你的AI助手网关</h2>
-            <p>这页文档是OpenClaw的入门指南，目标是在5分钟内让你完成安装、配置并开始与AI助手对话。整个过程会引导你搭建一个运行中的Gateway网关，配置好认证，并启动一个可用的聊天会话。它不是简单的步骤罗列，而是帮你理解每个环节背后的逻辑和目的。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/start/getting-started</span>
-            <span>故事卡片：4 张</span>
-            <a href="https://docs.openclaw.ai/start/getting-started" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>从这里开始</h2>
-              <p>这一节是整篇指南的概览，告诉你接下来要做什么以及最终能达到什么效果。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>读这一节能让你对整个过程有个宏观把握，知道投入5分钟时间能换来什么成果，避免在后续步骤中迷失方向。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>文档的核心目标是让你快速运行起OpenClaw系统，而不是深入每个细节。</li><li>你会依次完成安装、运行配置向导、验证服务状态这三个关键动作。</li><li>最终成果是一个配置了认证（Auth）并正在运行的Gateway（网关），这是AI助手与外部世界（如聊天应用）通信的核心枢纽。</li><li>整个流程设计为约5分钟，强调快速验证和上手体验。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>把这看作一个快速试驾：先让车跑起来，再研究引擎盖下的构造。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>你需要准备什么</h2>
-              <p>这一节列出了开始前必须满足的软硬件前提条件。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>提前检查这些条件能避免你在安装过程中突然卡住，白白浪费时间。它帮你扫清启动前的障碍。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>**Node.js 环境**：这是OpenClaw的运行基础。推荐使用Node 24版本，22.14+也支持。你可以把它想象成汽车的发动机，版本不对可能动力不足或无法启动。</li><li>**一个模型提供商的API密钥**：比如来自Anthropic、OpenAI或Google等。这是让你的AI助手‘思考’的燃料，没有它，系统只是个空壳。配置向导会提示你输入。</li><li>**对于Windows用户**：系统明确支持原生Windows和WSL2两种环境，但更推荐使用WSL2以获得更稳定、完整的体验。这好比在Windows上模拟一个更接近Linux的开发环境，能减少兼容性问题。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>文档中提到的 `node --version` 命令用于在终端中快速检查你当前安装的Node.js版本号，这是验证环境是否合格的第一步。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>确保你的‘发动机’（Node）版本合适，并且备好了‘燃料’（API密钥），就可以准备启动了。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>快速安装与配置</h2>
-              <p>这一节是操作核心，通过三个步骤带你完成从安装到验证的完整流程。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这是你将文字指南转化为实际运行系统的关键环节。理解每个命令的作用，而不仅仅是复制粘贴，能让你在遇到问题时知道从哪里排查。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>**第一步：安装OpenClaw**：根据你的操作系统（macOS/Linux 或 Windows）选择对应的安装命令。这些命令的本质是从官方服务器下载并自动执行安装脚本。对于macOS/Linux，使用的是 `curl` 命令通过bash执行远程脚本；对于Windows，使用的是PowerShell的 `iwr` (Invoke-WebRequest) 命令。</li><li>**第二步：运行配置向导**：安装后，执行 `openclaw onboard --install-daemon` 命令。这个向导（wizard）会交互式地引导你完成最关键的三件事：选择AI模型提供商（如选Claude还是GPT）、设置对应的API密钥、以及配置Gateway网关的基本参数。整个过程约2分钟，目的是让你不必手动编辑复杂的配置文件。`--install-daemon` 参数意味着它还会帮你把OpenClaw安装为系统后台服务（守护进程），以便持续运行。</li><li>**第三步：验证Gateway运行状态**：执行 `openclaw gateway status` 命令。这个命令用于检查上一步配置的Gateway网关服务是否已成功启动并在正常运行。如果看到运行中的状态，就证明核心服务已就绪。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`curl -fsSL https://openclaw.ai/install.sh | bash`：`curl` 是下载工具，`-fsSL` 是一组参数（如静默模式、跟随重定向等），`| bash` 表示将下载的脚本内容直接交给bash解释器执行。</li><li>`iwr -useb https://openclaw.ai/install.ps1 | iex`：这是PowerShell的等效命令，`iwr` 是下载，`-useb` 是参数，`| iex` 表示下载后通过 `Invoke-Expression` 执行。</li><li>`openclaw onboard --install-daemon`：`onboard` 是触发配置向导的子命令，`--install-daemon` 是一个标志（flag），告诉程序在配置完成后安装为后台服务。</li><li>`openclaw gateway status`：`gateway` 是管理网关的子命令，`status` 是查看其运行状态的子命令。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>跟着这三步走，你就能从一个空系统，到拥有一个配置完毕、正在后台运行的AI助手网关。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>接下来可以做什么</h2>
-              <p>在基础系统运行起来后，这一节为你指明了几个关键的深化方向。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>快速上手后，你很可能想知道‘然后呢？’。这一节就像游戏的新手任务指引，告诉你解锁了哪些新功能区域，避免你停留在起点。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>**连接一个通信渠道**：这是让AI助手‘活’起来的关键。你可以将它连接到WhatsApp、Telegram、Discord等日常聊天应用，这样你就能通过这些应用直接与你的AI助手对话了。</li><li>**配置配对与安全**：控制哪些人或设备可以与你的AI助手通信，防止未经授权的访问。这是将个人或内部使用的助手与公开服务区分开的重要设置。</li><li>**深入配置Gateway**：调整AI模型、启用工具（如网络搜索、代码执行）、设置沙箱环境等高级选项。这相当于给你的助手升级大脑和装备。</li><li>**浏览可用工具**：了解OpenClaw集成了哪些现成的工具（如浏览器自动化、命令行执行、插件等），这些工具能极大扩展AI助手的能力边界。</li><li>**高级话题：环境变量**：如果你需要在服务账户下运行OpenClaw，或者想自定义其数据、配置文件的存储路径，可以通过设置 `OPENCLAW_HOME`、`OPENCLAW_STATE_DIR` 等环境变量来实现。这为部署到服务器或满足特定目录结构要求提供了灵活性。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>环境变量部分提到的 `OPENCLAW_HOME`、`OPENCLAW_STATE_DIR`、`OPENCLAW_CONFIG_PATH` 是三个关键变量。它们允许你覆盖程序的默认路径查找逻辑。例如，设置 `OPENCLAW_CONFIG_PATH=/my/custom/config.yaml` 会让程序从指定路径读取配置文件，而不是默认位置。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>基础网关已就绪，现在你可以选择方向：是立刻连接一个聊天应用用起来，还是先深入配置，打造一个更强大的专属助手。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🚀 Getting Started 这页，其实就是“5 分钟把 OpenClaw 点亮”</h2>
+      <p>这页不是在教你研究全部细节，它只做一件事：让你别再空想，先把 OpenClaw 真正跑起来。</p>
+      <p>你可以把它想成新玩具的“快速开机卡”。照着走一遍，你会装好程序、跑完引导、看到控制台、发出第一句话。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合第一次装 OpenClaw 的人</span>
+      <span>重点不是学全，而是先亮起来</span>
+      <a href="https://docs.openclaw.ai/start/getting-started" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧳 开始前，你口袋里至少要有两样东西</h2>
+    <p>官方这一段看起来像准备清单，翻成人话其实很简单：一台能跑 Node 的电脑，再加一把能让模型开口说话的钥匙。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🟢 Node.js</div>
+      <p>它像发动机。没有发动机，OpenClaw 这台小车就没法动。官方推荐 Node 24，22.14 以上也能跑。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔑 API Key</div>
+      <p>它像燃料卡。OpenClaw 自己会搭系统，但真正“想答案”的那部分，要靠你接入的模型提供商，所以得先准备一把 key。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🪟 Windows 用户那句提醒在说什么</div>
+      <p>官方不是说原生 Windows 不能用，而是在提醒你：WSL2 更稳，更像它原本习惯生活的环境。所以如果你想少踩坑，WSL2 通常更省心。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 命令像在做什么</div>
+      <ul>
+        <li><code>node --version</code>：像先低头看看你车里装的是不是正确型号的发动机。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧩 真正动手时，其实就五步</h2>
+    <p>你不用先懂 Gateway、认证、守护进程这些词。第一次只要按顺序走，后面再补课就行。</p>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">🎬 把这五步想成一个小剧情</div>
+    <p>先把 OpenClaw 装到电脑里，再跟着向导填好钥匙和设置，然后看看总控台是不是已经亮了，接着打开面板，最后发出第一句话，确认它真的会回你。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>先安装</h2>
+      <p>macOS、Linux、WSL2 跟 Windows 都有官方一键安装命令。第一次别想太多，先把程序装进去。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>再跑引导</h2>
+      <p><code>openclaw onboard --install-daemon</code> 会像新手老师一样，一步一步问你该填什么。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>检查 Gateway</h2>
+      <p>看总控台是不是已经开机了。Gateway 没起来，后面很多功能都只是空壳。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>打开 Dashboard</h2>
+      <p>如果浏览器里的控制面板能打开，说明系统这时候已经不只是“装好了”，而是“能摸到了”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">5</span>
+      <h2>发第一句话</h2>
+      <p>它回你了，这才叫真正活过来。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🛠 这些命令，别背，先看它们各自在现场干什么</h2>
+    <p>这一页最容易变成“复制命令但不知道发生了什么”。其实每条命令都像一个很具体的动作。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>curl ... | bash</code></div>
+      <p>像从官网领一张自动安装卡，然后立刻交给电脑照着执行。它干的是“下载 + 动手装”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw onboard --install-daemon</code></div>
+      <p>像启动一个新手老师，带你填模型、密钥、网关设置。后面的 <code>--install-daemon</code> 则像顺手把它设置成“开机后能在后台继续守着”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway status</code></div>
+      <p>像走到总控室门口问一句：“里面有人值班吗？”有状态、有端口，才说明系统核心真的在运行。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw dashboard</code></div>
+      <p>像按下“打开驾驶舱”的按钮。你不是在看日志，而是在打开一个能直接操作 OpenClaw 的面板。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🌱 跑起来以后，下一步别乱逛，先挑一条路</h2>
+    <p>这页最后那一串“接下来可以做什么”看起来很多，其实只是几条不同方向的路。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">💬</span>
+      <h2>接聊天通道</h2>
+      <p>如果你想马上在 Telegram、Discord、WhatsApp 里跟它说话，就往这条路走。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🛡</span>
+      <h2>先管安全</h2>
+      <p>如果你担心谁都能来敲门，那就先去看 pairing 和安全规则。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⚙️</span>
+      <h2>继续调 Gateway</h2>
+      <p>如果你想动模型、沙箱、工具这些“引擎盖下面”的东西，就去配 Gateway。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧰</span>
+      <h2>看看它会什么</h2>
+      <p>如果你现在最想知道“它到底能干嘛”，那就去翻工具页。</p>
+    </article>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">🎈 最后记一句</div>
+    <p>Getting Started 不是终点，它只是帮你把门推开。门一开，后面才轮到聊天、工具、安全和高级玩法。</p>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把这页压缩成一句最好记的话</h2>
+    <p>这页其实就是在教你：别研究太久，先把 OpenClaw 点亮，再慢慢学它有多厉害。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你接下来只继续看一页，我建议先看 <code>/channels/telegram</code>。因为最快感受到“它真的活了”的方式，往往就是把它接进你正在用的聊天工具里。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

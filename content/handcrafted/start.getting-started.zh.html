@@ -1,0 +1,153 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🚀 Getting Started 这页，其实就是“5 分钟把 OpenClaw 点亮”</h2>
+      <p>这页不是在教你研究全部细节，它只做一件事：让你别再空想，先把 OpenClaw 真正跑起来。</p>
+      <p>你可以把它想成新玩具的“快速开机卡”。照着走一遍，你会装好程序、跑完引导、看到控制台、发出第一句话。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合第一次装 OpenClaw 的人</span>
+      <span>重点不是学全，而是先亮起来</span>
+      <a href="https://docs.openclaw.ai/start/getting-started" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧳 开始前，你口袋里至少要有两样东西</h2>
+    <p>官方这一段看起来像准备清单，翻成人话其实很简单：一台能跑 Node 的电脑，再加一把能让模型开口说话的钥匙。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🟢 Node.js</div>
+      <p>它像发动机。没有发动机，OpenClaw 这台小车就没法动。官方推荐 Node 24，22.14 以上也能跑。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔑 API Key</div>
+      <p>它像燃料卡。OpenClaw 自己会搭系统，但真正“想答案”的那部分，要靠你接入的模型提供商，所以得先准备一把 key。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🪟 Windows 用户那句提醒在说什么</div>
+      <p>官方不是说原生 Windows 不能用，而是在提醒你：WSL2 更稳，更像它原本习惯生活的环境。所以如果你想少踩坑，WSL2 通常更省心。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 命令像在做什么</div>
+      <ul>
+        <li><code>node --version</code>：像先低头看看你车里装的是不是正确型号的发动机。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧩 真正动手时，其实就五步</h2>
+    <p>你不用先懂 Gateway、认证、守护进程这些词。第一次只要按顺序走，后面再补课就行。</p>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">🎬 把这五步想成一个小剧情</div>
+    <p>先把 OpenClaw 装到电脑里，再跟着向导填好钥匙和设置，然后看看总控台是不是已经亮了，接着打开面板，最后发出第一句话，确认它真的会回你。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>先安装</h2>
+      <p>macOS、Linux、WSL2 跟 Windows 都有官方一键安装命令。第一次别想太多，先把程序装进去。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>再跑引导</h2>
+      <p><code>openclaw onboard --install-daemon</code> 会像新手老师一样，一步一步问你该填什么。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>检查 Gateway</h2>
+      <p>看总控台是不是已经开机了。Gateway 没起来，后面很多功能都只是空壳。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>打开 Dashboard</h2>
+      <p>如果浏览器里的控制面板能打开，说明系统这时候已经不只是“装好了”，而是“能摸到了”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">5</span>
+      <h2>发第一句话</h2>
+      <p>它回你了，这才叫真正活过来。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🛠 这些命令，别背，先看它们各自在现场干什么</h2>
+    <p>这一页最容易变成“复制命令但不知道发生了什么”。其实每条命令都像一个很具体的动作。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>curl ... | bash</code></div>
+      <p>像从官网领一张自动安装卡，然后立刻交给电脑照着执行。它干的是“下载 + 动手装”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw onboard --install-daemon</code></div>
+      <p>像启动一个新手老师，带你填模型、密钥、网关设置。后面的 <code>--install-daemon</code> 则像顺手把它设置成“开机后能在后台继续守着”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway status</code></div>
+      <p>像走到总控室门口问一句：“里面有人值班吗？”有状态、有端口，才说明系统核心真的在运行。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw dashboard</code></div>
+      <p>像按下“打开驾驶舱”的按钮。你不是在看日志，而是在打开一个能直接操作 OpenClaw 的面板。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🌱 跑起来以后，下一步别乱逛，先挑一条路</h2>
+    <p>这页最后那一串“接下来可以做什么”看起来很多，其实只是几条不同方向的路。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">💬</span>
+      <h2>接聊天通道</h2>
+      <p>如果你想马上在 Telegram、Discord、WhatsApp 里跟它说话，就往这条路走。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🛡</span>
+      <h2>先管安全</h2>
+      <p>如果你担心谁都能来敲门，那就先去看 pairing 和安全规则。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⚙️</span>
+      <h2>继续调 Gateway</h2>
+      <p>如果你想动模型、沙箱、工具这些“引擎盖下面”的东西，就去配 Gateway。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧰</span>
+      <h2>看看它会什么</h2>
+      <p>如果你现在最想知道“它到底能干嘛”，那就去翻工具页。</p>
+    </article>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">🎈 最后记一句</div>
+    <p>Getting Started 不是终点，它只是帮你把门推开。门一开，后面才轮到聊天、工具、安全和高级玩法。</p>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把这页压缩成一句最好记的话</h2>
+    <p>这页其实就是在教你：别研究太久，先把 OpenClaw 点亮，再慢慢学它有多厉害。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你接下来只继续看一页，我建议先看 <code>/channels/telegram</code>。因为最快感受到“它真的活了”的方式，往往就是把它接进你正在用的聊天工具里。</p>
+  </div>
+</section>
