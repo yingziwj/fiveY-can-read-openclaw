@@ -46,6 +46,10 @@
     <h2>真正动手时，顺序应该这样读</h2>
     <p>官方原文把信息写得很全，但第一次配置时最怕的是“什么都看了，还是不知道先干嘛”。更好的顺序其实只有四步。</p>
   </div>
+  <div class="source-card">
+    <div class="story-card-label">把这四步想成一个小剧情</div>
+    <p>你先去 Telegram 办一张机器人工作证，再把这张工作证交给 OpenClaw，然后让第一个来敲门的人完成登记，最后才决定它在群里是安静旁听，还是有人一喊就出来帮忙。</p>
+  </div>
   <div class="story-grid">
     <div class="story-card">
       <div class="story-card-label">第 1 步：去 BotFather 领钥匙</div>
@@ -67,11 +71,11 @@
   <div class="source-card">
     <div class="story-card-label">命令 / 配置怎么理解</div>
     <ul>
-      <li><code>botToken: "123:abc"</code>：这里要换成 BotFather 真给你的 token，它就是机器人身份证。</li>
-      <li><code>dmPolicy: "pairing"</code>：表示第一次私聊不是直接放行，而是要先配对批准。</li>
-      <li><code>groups: { "*": { requireMention: true } }</code>：表示默认在所有群里，只有有人明确叫它，它才开口。</li>
-      <li><code>openclaw pairing list telegram</code>：看有哪些人在排队等批准。</li>
-      <li><code>openclaw pairing approve telegram &lt;CODE&gt;</code>：把某个配对码对应的人放进来。</li>
+      <li><code>botToken: "123:abc"</code>：这里要换成 BotFather 真给你的 token。你可以把它理解成“把机器人工牌挂到 OpenClaw 脖子上”。没有这张工牌，它连 Telegram 大门都进不去。</li>
+      <li><code>dmPolicy: "pairing"</code>：表示第一次私聊不是直接放行，而是先到门卫室登记。登记过、批准过，这个人以后再来敲门，机器人才会理他。</li>
+      <li><code>groups: { "*": { requireMention: true } }</code>：这段配置的意思不是“允许所有群里乱聊”，而是“在所有群里先默认装个礼貌规则，只有被点名才说话”。</li>
+      <li><code>openclaw pairing list telegram</code>：像翻门口登记簿，看看现在有哪些 Telegram 用户正站在外面等你点头。</li>
+      <li><code>openclaw pairing approve telegram &lt;CODE&gt;</code>：像把其中一个人领进门。<code>&lt;CODE&gt;</code> 不是随便写，它就是那个人手里的临时入场券号码。</li>
     </ul>
   </div>
 </section>
@@ -170,6 +174,32 @@
 <section class="section-shell">
   <div class="section-heading">
     <p class="section-kicker">第六站</p>
+    <h2>把几段最关键的命令，翻成“你眼前到底发生了什么”</h2>
+    <p>很多文档一贴命令就突然变冷。其实命令不是冰冷咒语，它只是把你刚才脑子里的步骤，换成了电脑听得懂的话。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway</code></div>
+      <p>这条命令像“把总控台开机”。它不是 Telegram 专属命令，而是把整个 OpenClaw 的消息中枢拉起来。中枢不开，前面那些 token、群规则、配对规则都只是纸上谈兵。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw logs --follow</code></div>
+      <p>这条命令像站在后台玻璃窗后面偷看机器人上班。你能看到是谁发来了消息、系统认出了什么 ID、为什么某条消息被跳过，所以它特别适合查“为什么它不回我”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>curl https://api.telegram.org/.../getUpdates</code></div>
+      <p>这条命令像直接去问 Telegram 前台：“刚刚到底发生了什么？”一般情况下不必先用它，但当你怀疑问题出在 Telegram 侧，而不是 OpenClaw 侧，它就像一条绕过中间人的直查路线。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">配置里的负数群 ID</div>
+      <p>像 <code>-1001234567890</code> 这种值看着吓人，其实只是 Telegram 发给每个群的门牌号。把它放进 <code>groups</code>，意思就是告诉 OpenClaw：“只允许到这个门牌号的房间里工作。”</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第七站</p>
     <h2>实时流式、按钮、投票这些花活，应该什么时候看</h2>
     <p>这页后半段还有很多功能：流式预览、命令菜单、inline buttons、poll、webhook、exec approvals。它们不是不重要，而是它们都属于“先活起来，再变漂亮”。</p>
   </div>
