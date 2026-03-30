@@ -3970,1539 +3970,197 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Multi-Agent Routing</h2>
-          <p>这一页像一本关于“Multi-机器人朋友 Routing”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：Multi-机器人朋友 Routing。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/concepts/multi-agent</span>
-          <span>章节数量：18</span>
-          <a href="https://docs.openclaw.ai/concepts/multi-agent" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节主要在解释“Start Here”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Start Here”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Multi-机器人朋友 Routing Goal: multiple *isolated* 机器人朋友s (separate workspace + 机器人朋友Dir + sessions), plus multiple 消息通道 acc…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Multi-机器人朋友 Routing”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Multi-Agent Routing</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Goal: multiple *isolated* 机器人朋友s (separate workspace + 机器人朋友Dir + sessions), plus multiple 消息通道 accounts (e.g. two What…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Goal: multiple *isolated* agents (separate workspace + <code>agentDir</code> + sessions), plus multiple channel accounts (e.g. two WhatsApps) in one running Gateway. Inbound is routed to an agent via bindings.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>What is &quot;one 机器人朋友&quot;?</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“An **机器人朋友** is a fully scoped brain with its own: Auth profiles are **per-机器人朋友**. Each 机器人朋友 reads from its own: Main…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“An **机器人朋友** is a fully scoped brain with its own:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>An **agent** is a fully scoped brain with its own:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“What is &quot;one agent&quot;?”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**Workspace** (files, 机器人朋友S.md/SOUL.md/U…、**State directory** (机器人朋友Dir) for auth p…、**Session store** (chat history + routing…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Workspace** (files, AGENTS.md/SOUL.md/USER.md, local notes, persona rules).</li><li>**State directory** (<code>agentDir</code>) for auth profiles, model registry, and per-agent config.</li><li>**Session store** (chat history + routing state) under <code>~/.openclaw/agents/&lt;agentId&gt;/sessions</code>.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Auth profiles are **per-机器人朋友**. Each 机器人朋友 reads from its own:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Auth profiles are **per-agent**. Each agent reads from its own:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像给机器人看的说明书，告诉它要按什么样子准备东西。</p>
-        <ul class="code-steps">
-          <li>这一行“~/.openclaw/agents/&lt;agentId&gt;/agent/auth-profiles.json”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">~/.openclaw/agents/&lt;agentId&gt;/agent/auth-profiles.json</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Main 机器人朋友 credentials are **not** shared automatically. Never reuse 机器人朋友Dir across 机器人朋友s (it causes auth/session col…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Main agent credentials are **not** shared automatically. Never reuse <code>agentDir</code> across agents (it causes auth/session collisions). If you want to share creds, copy <code>auth-profiles.json</code> into the other agent&#39;s <code>agentDir</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Skills are per-机器人朋友 via each workspace’s skills/ folder, with shared skills available from ~/.openclaw/skills. See Ski…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Skills are per-agent via each workspace’s <code>skills/</code> folder, with shared skills available from <code>~/.openclaw/skills</code>. See <a href="/tools/skills#per-agent-vs-shared-skills" target="_blank" rel="noreferrer">Skills: per-agent vs shared</a>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The 门口的小门卫 can host **one 机器人朋友** (default) or **many 机器人朋友s** side-by-side.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The Gateway can host **one agent** (default) or **many agents** side-by-side.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Workspace note:** each 机器人朋友’s workspace is the **default cwd**, not a hard sandbox. Relative paths resolve inside th…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Workspace note:** each agent’s workspace is the **default cwd**, not a hard sandbox. Relative paths resolve inside the workspace, but absolute paths can reach other host locations unless sandboxing is enabled. See <a href="/gateway/sandboxing" target="_blank" rel="noreferrer">Sandboxing</a>.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Paths (quick map)</h2>
-            <p>这一节主要在解释“Paths (quick map)”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Paths (quick map)”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Paths (quick map)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：设置说明书: ~/.openclaw/openclaw.json (or OPEN…、State dir: ~/.openclaw (or OPENCLAW_STATE…、Workspace: ~/.openclaw/workspace (or ~/.o…、机器人朋友 dir: ~/.openclaw/机器人朋友s/&lt;机器人朋友Id&gt;/机…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Config: <code>~/.openclaw/openclaw.json</code> (or <code>OPENCLAW_CONFIG_PATH</code>)</li><li>State dir: <code>~/.openclaw</code> (or <code>OPENCLAW_STATE_DIR</code>)</li><li>Workspace: <code>~/.openclaw/workspace</code> (or <code>~/.openclaw/workspace-&lt;agentId&gt;</code>)</li><li>Agent dir: <code>~/.openclaw/agents/&lt;agentId&gt;/agent</code> (or <code>agents.list[].agentDir</code>)</li><li>Sessions: <code>~/.openclaw/agents/&lt;agentId&gt;/sessions</code></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Single-机器人朋友 mode (default)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If you do nothing, OpenClaw runs a single 机器人朋友:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If you do nothing, OpenClaw runs a single 机器人朋友:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If you do nothing, OpenClaw runs a single agent:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Single-agent mode (default)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：机器人朋友Id defaults to **main**.、Sessions are keyed as 机器人朋友:main:&lt;mainKey…、Workspace defaults to ~/.openclaw/workspa…、State defaults to ~/.openclaw/机器人朋友s/main…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>agentId</code> defaults to **<code>main</code>**.</li><li>Sessions are keyed as <code>agent:main:&lt;mainKey&gt;</code>.</li><li>Workspace defaults to <code>~/.openclaw/workspace</code> (or <code>~/.openclaw/workspace-&lt;profile&gt;</code> when <code>OPENCLAW_PROFILE</code> is set).</li><li>State defaults to <code>~/.openclaw/agents/main/agent</code>.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>机器人朋友 helper</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use the 机器人朋友 wizard to add a new isolated 机器人朋友: Then add bindings (or let the wizard do it) to route inbound 小纸条消息s.…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use the 机器人朋友 wizard to add a new isolated 机器人朋友:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use the agent wizard to add a new isolated agent:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw agents add work”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw agents add work</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Then add bindings (or let the wizard do it) to route inbound 小纸条消息s.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Then add <code>bindings</code> (or let the wizard do it) to route inbound messages.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Verify with:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Verify with:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw agents list --bindings”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw agents list --bindings</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Quick start</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Steps&gt; &lt;Step title=&quot;Create each 机器人朋友 workspace&quot;&gt; Use the wizard or create workspaces manually: Each 机器人朋友 gets its ow…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Steps&gt; &lt;Step title=&quot;Create each 机器人朋友 workspace&quot;&gt; Use the wizard or create workspaces manually:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Steps&gt; &lt;Step title=&quot;Create each agent workspace&quot;&gt; Use the wizard or create workspaces manually:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw agents add coding openclaw agents add social </code>``</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Each 机器人朋友 gets its own workspace with SOUL.md, 机器人朋友S.md, and optional USER.md, plus a dedicated 机器人朋友Dir and session…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Each agent gets its own workspace with <code>SOUL.md</code>, <code>AGENTS.md</code>, and optional <code>USER.md</code>, plus a dedicated <code>agentDir</code> and session store under <code>~/.openclaw/agents/&lt;agentId&gt;</code>. &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Create 消息通道 accounts&quot;&gt; Create one account per 机器人朋友 on your preferred 消息通道s:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Create channel accounts&quot;&gt; Create one account per agent on your preferred channels:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Quick start”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Discord: one bot per 机器人朋友, enable 小纸条消息…、Telegram: one bot per 机器人朋友 via BotFather…、WhatsApp: link each phone number per acco…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Discord: one bot per agent, enable Message Content Intent, copy each token.</li><li>Telegram: one bot per agent via BotFather, copy each token.</li><li>WhatsApp: link each phone number per account.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw channels login --channel whatsapp --account work </code>``</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“See 消息通道 guides: Discord, Telegram, WhatsApp. &lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>See channel guides: <a href="/channels/discord" target="_blank" rel="noreferrer">Discord</a>, <a href="/channels/telegram" target="_blank" rel="noreferrer">Telegram</a>, <a href="/channels/whatsapp" target="_blank" rel="noreferrer">WhatsApp</a>. &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Add 机器人朋友s, accounts, and bindings&quot;&gt; Add 机器人朋友s under 机器人朋友s.list, 消息通道 accounts under 消息通道s.&lt;消息通道&gt;.accoun…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Add agents, accounts, and bindings&quot;&gt; Add agents under <code>agents.list</code>, channel accounts under <code>channels.&lt;channel&gt;.accounts</code>, and connect them with <code>bindings</code> (examples below). &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Restart and verify&quot;&gt; &lt;/Step&gt; &lt;/Steps&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Restart and verify&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw gateway restart openclaw agents list --bindings openclaw channels status --probe </code>`` &lt;/Step&gt; &lt;/Steps&gt;</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Multiple 机器人朋友s = multiple people, multiple personalities</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“With **multiple 机器人朋友s**, each 机器人朋友Id becomes a **fully isolated persona**: This lets **multiple people** share one 门口…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“With **multiple 机器人朋友s**, each 机器人朋友Id becomes a **fully isolated persona**:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>With **multiple agents**, each <code>agentId</code> becomes a **fully isolated persona**:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Multiple agents = multiple people, multiple personalities”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**Different phone numbers/accounts** (per…、**Different personalities** (per-机器人朋友 wo…、**Separate auth + sessions** (no cross-ta…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Different phone numbers/accounts** (per channel <code>accountId</code>).</li><li>**Different personalities** (per-agent workspace files like <code>AGENTS.md</code> and <code>SOUL.md</code>).</li><li>**Separate auth + sessions** (no cross-talk unless explicitly enabled).</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“This lets **multiple people** share one 门口的小门卫 大房子服务器 while keeping their AI “brains” and data isolated.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>This lets **multiple people** share one Gateway server while keeping their AI “brains” and data isolated.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>One WhatsApp number, multiple people (DM split)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“You can route **different WhatsApp DMs** to different 机器人朋友s while staying on **one WhatsApp account**. Match on sender…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“You can route **different WhatsApp DMs** to different 机器人朋友s while staying on **one WhatsApp account**. Match on sender…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>You can route **different WhatsApp DMs** to different agents while staying on **one WhatsApp account**. Match on sender E.164 (like <code>+15551234567</code>) with <code>peer.kind: &quot;direct&quot;</code>. Replies still come from the same WhatsApp number (no per‑agent sender identity).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Important detail: direct chats collapse to the 机器人朋友’s **main session key**, so true isolation requires **one 机器人朋友 per…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Important detail: direct chats collapse to the agent’s **main session key**, so true isolation requires **one agent per person**.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Example:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Example:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“agents”贴标签，意思是把它设置成“{”。</li><li>这里在给“list”贴标签，意思是把它设置成“[”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  agents: {
-    list: [
-      { id: &quot;alex&quot;, workspace: &quot;~/.openclaw/workspace-alex&quot; },
-      { id: &quot;mia&quot;, workspace: &quot;~/.openclaw/workspace-mia&quot; },
-    ],
-  },
-  bindings: [
-    {
-      agentId: &quot;alex&quot;,
-      match: { channel: &quot;whatsapp&quot;, peer: { kind: &quot;direct&quot;, id: &quot;+15551230001&quot; } },
-    },
-    {
-      agentId: &quot;mia&quot;,
-      match: { channel: &quot;whatsapp&quot;, peer: { kind: &quot;direct&quot;, id: &quot;+15551230002&quot; } },
-    },
-  ],
-  channels: {
-    whatsapp: {
-      dmPolicy: &quot;allowlist&quot;,
-      allowFrom: [&quot;+15551230001&quot;, &quot;+15551230002&quot;],
-    },
-  },
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Notes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“One WhatsApp number, multiple people (DM split)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：DM access control is **global per WhatsAp…、For shared 大家一起的房间s, bind the 大家一起的房间 to…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>DM access control is **global per WhatsApp account** (pairing/allowlist), not per agent.</li><li>For shared groups, bind the group to one agent or use <a href="/channels/broadcast-groups" target="_blank" rel="noreferrer">Broadcast groups</a>.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>Routing rules (how 小纸条消息s pick an 机器人朋友)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Bindings are **deterministic** and **most-specific wins**: 1. peer match (exact DM/大家一起的房间/消息通道 id) 2. parentPeer match…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Bindings are **deterministic** and **most-specific wins**:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Bindings are **deterministic** and **most-specific wins**:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“1. peer match (exact DM/大家一起的房间/消息通道 id) 2. parentPeer match (thread inheritance) 3. guildId + roles (Discord role rout…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. <code>peer</code> match (exact DM/group/channel id) 2. <code>parentPeer</code> match (thread inheritance) 3. <code>guildId + roles</code> (Discord role routing) 4. <code>guildId</code> (Discord) 5. <code>teamId</code> (Slack) 6. <code>accountId</code> match for a channel 7. channel-level match (<code>accountId: &quot;*&quot;</code>) 8. fallback to default agent (<code>agents.list[].default</code>, else first list entry, default: <code>main</code>)</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If multiple bindings match in the same tier, the first one in 设置说明书 order wins. If a binding sets multiple match fields…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If multiple bindings match in the same tier, the first one in config order wins. If a binding sets multiple match fields (for example <code>peer</code> + <code>guildId</code>), all specified fields are required (<code>AND</code> semantics).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Important account-scope detail:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Important account-scope detail:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Routing rules (how messages pick an agent)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：A binding that omits accountId matches th…、Use accountId: &quot;*&quot; for a 消息通道-wide fallba…、If you later add the same binding for the…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>A binding that omits <code>accountId</code> matches the default account only.</li><li>Use <code>accountId: &quot;*&quot;</code> for a channel-wide fallback across all accounts.</li><li>If you later add the same binding for the same agent with an explicit account id, OpenClaw upgrades the existing channel-only binding to account-scoped instead of duplicating it.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>Multiple accounts / phone numbers</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“消息通道s that support **multiple accounts** (e.g. WhatsApp) use accountId to identify each login. Each accountId can be ro…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“消息通道s that support **multiple accounts** (e.g. WhatsApp) use accountId to identify each login. Each accountId can be ro…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Channels that support **multiple accounts** (e.g. WhatsApp) use <code>accountId</code> to identify each login. Each <code>accountId</code> can be routed to a different agent, so one server can host multiple phone numbers without mixing sessions.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If you want a 消息通道-wide default account when accountId is omitted, set 消息通道s.&lt;消息通道&gt;.defaultAccount (optional). When uns…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If you want a channel-wide default account when <code>accountId</code> is omitted, set <code>channels.&lt;channel&gt;.defaultAccount</code> (optional). When unset, OpenClaw falls back to <code>default</code> if present, otherwise the first configured account id (sorted).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Common 消息通道s supporting this pattern include:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Common channels supporting this pattern include:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Multiple accounts / phone numbers”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：whatsapp, telegram, discord, slack, signa…、irc, line, googlechat, mattermost, matrix…、bluebubbles, zalo, zalouser, nostr, feishu。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>whatsapp</code>, <code>telegram</code>, <code>discord</code>, <code>slack</code>, <code>signal</code>, <code>imessage</code></li><li><code>irc</code>, <code>line</code>, <code>googlechat</code>, <code>mattermost</code>, <code>matrix</code>, <code>nextcloud-talk</code></li><li><code>bluebubbles</code>, <code>zalo</code>, <code>zalouser</code>, <code>nostr</code>, <code>feishu</code></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-11">
-          <div class="section-heading">
-            <p class="section-kicker">第 11 站</p>
-            <h2>Concepts</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Concepts”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：机器人朋友Id: one “brain” (workspace, per-机器人朋…、accountId: one 消息通道 account instance (e.g…、binding: routes inbound 小纸条消息s to an 机器人朋…、Direct chats collapse to 机器人朋友:&lt;机器人朋友Id&gt;:…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>agentId</code>: one “brain” (workspace, per-agent auth, per-agent session store).</li><li><code>accountId</code>: one channel account instance (e.g. WhatsApp account <code>&quot;personal&quot;</code> vs <code>&quot;biz&quot;</code>).</li><li><code>binding</code>: routes inbound messages to an <code>agentId</code> by <code>(channel, accountId, peer)</code> and optionally guild/team ids.</li><li>Direct chats collapse to <code>agent:&lt;agentId&gt;:&lt;mainKey&gt;</code> (per-agent “main”; <code>session.mainKey</code>).</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-12">
-          <div class="section-heading">
-            <p class="section-kicker">第 12 站</p>
-            <h2>Discord bots per 机器人朋友</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Each Discord bot account maps to a unique accountId. Bind each account to an 机器人朋友 and keep allowlists per bot. Notes:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Each Discord bot account maps to a unique accountId. Bind each account to an 机器人朋友 and keep allowlists per bot.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Each Discord bot account maps to a unique <code>accountId</code>. Bind each account to an agent and keep allowlists per bot.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“agents”贴标签，意思是把它设置成“{”。</li><li>这里在给“list”贴标签，意思是把它设置成“[”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  agents: {
-    list: [
-      { id: &quot;main&quot;, workspace: &quot;~/.openclaw/workspace-main&quot; },
-      { id: &quot;coding&quot;, workspace: &quot;~/.openclaw/workspace-coding&quot; },
-    ],
-  },
-  bindings: [
-    { agentId: &quot;main&quot;, match: { channel: &quot;discord&quot;, accountId: &quot;default&quot; } },
-    { agentId: &quot;coding&quot;, match: { channel: &quot;discord&quot;, accountId: &quot;coding&quot; } },
-  ],
-  channels: {
-    discord: {
-      groupPolicy: &quot;allowlist&quot;,
-      accounts: {
-        default: {
-          token: &quot;DISCORD_BOT_TOKEN_MAIN&quot;,
-          guilds: {
-            &quot;123456789012345678&quot;: {
-              channels: {
-                &quot;222222222222222222&quot;: { allow: true, requireMention: false },
-              },
-            },
-          },
-        },
-        coding: {
-          token: &quot;DISCORD_BOT_TOKEN_CODING&quot;,
-          guilds: {
-            &quot;123456789012345678&quot;: {
-              channels: {
-                &quot;333333333333333333&quot;: { allow: true, requireMention: false },
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Notes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Discord bots per agent”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Invite each bot to the guild and enable 小…、Tokens live in 消息通道s.discord.accounts.&lt;id…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Invite each bot to the guild and enable Message Content Intent.</li><li>Tokens live in <code>channels.discord.accounts.&lt;id&gt;.token</code> (default account can use <code>DISCORD_BOT_TOKEN</code>).</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-13">
-          <div class="section-heading">
-            <p class="section-kicker">第 13 站</p>
-            <h2>Telegram bots per 机器人朋友</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“agents”贴标签，意思是把它设置成“{”。</li><li>这里在给“list”贴标签，意思是把它设置成“[”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  agents: {
-    list: [
-      { id: &quot;main&quot;, workspace: &quot;~/.openclaw/workspace-main&quot; },
-      { id: &quot;alerts&quot;, workspace: &quot;~/.openclaw/workspace-alerts&quot; },
-    ],
-  },
-  bindings: [
-    { agentId: &quot;main&quot;, match: { channel: &quot;telegram&quot;, accountId: &quot;default&quot; } },
-    { agentId: &quot;alerts&quot;, match: { channel: &quot;telegram&quot;, accountId: &quot;alerts&quot; } },
-  ],
-  channels: {
-    telegram: {
-      accounts: {
-        default: {
-          botToken: &quot;123456:ABC...&quot;,
-          dmPolicy: &quot;pairing&quot;,
-        },
-        alerts: {
-          botToken: &quot;987654:XYZ...&quot;,
-          dmPolicy: &quot;allowlist&quot;,
-          allowFrom: [&quot;tg:123456789&quot;],
-        },
-      },
-    },
-  },
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Notes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Telegram bots per agent”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Create one bot per 机器人朋友 with BotFather a…、Tokens live in 消息通道s.telegram.accounts.&lt;i…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Create one bot per agent with BotFather and copy each token.</li><li>Tokens live in <code>channels.telegram.accounts.&lt;id&gt;.botToken</code> (default account can use <code>TELEGRAM_BOT_TOKEN</code>).</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-14">
-          <div class="section-heading">
-            <p class="section-kicker">第 14 站</p>
-            <h2>WhatsApp numbers per 机器人朋友</h2>
-            <p>这一节主要在解释“WhatsApp numbers per 机器人朋友”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“WhatsApp numbers per 机器人朋友”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Link each account before starting the 门口的小门卫: ~/.openclaw/openclaw.json (JSON5):”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Link each account before starting the 门口的小门卫:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Link each account before starting the gateway:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw channels login --channel whatsapp --account personal”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw channels login --channel whatsapp --account biz”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw channels login --channel whatsapp --account personal
-openclaw channels login --channel whatsapp --account biz</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“~/.openclaw/openclaw.json (JSON5):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>~/.openclaw/openclaw.json</code> (JSON5):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“agents”贴标签，意思是把它设置成“{”。</li><li>这里在给“list”贴标签，意思是把它设置成“[”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-js">{
-  agents: {
-    list: [
-      {
-        id: &quot;home&quot;,
-        default: true,
-        name: &quot;Home&quot;,
-        workspace: &quot;~/.openclaw/workspace-home&quot;,
-        agentDir: &quot;~/.openclaw/agents/home/agent&quot;,
-      },
-      {
-        id: &quot;work&quot;,
-        name: &quot;Work&quot;,
-        workspace: &quot;~/.openclaw/workspace-work&quot;,
-        agentDir: &quot;~/.openclaw/agents/work/agent&quot;,
-      },
-    ],
-  },
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>👥 Multi-Agent 不是一个机器人戴很多帽子，而是住着好几个“各有房间的小助手”</h2>
+      <p>这页看起来像在讲 workspace、agentDir、bindings，实际上只在讲一件很重要的事：如果你想让 OpenClaw 同时扮演不同角色，就别让它们全住一个房间。</p>
+      <p>工作助手、家庭助手、深度研究助手，都应该有自己的房间、自己的抽屉、自己的聊天本。这样它们才不会把彼此的记忆、账号和任务混在一起。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合一台 Gateway 上准备跑多个助手的人</span>
+      <span>这页最重要的词不是“多”，而是“隔离”</span>
+      <a href="https://docs.openclaw.ai/concepts/multi-agent" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
-  // Deterministic routing: first match wins (most-specific first).
-  bindings: [
-    { agentId: &quot;home&quot;, match: { channel: &quot;whatsapp&quot;, accountId: &quot;personal&quot; } },
-    { agentId: &quot;work&quot;, match: { channel: &quot;whatsapp&quot;, accountId: &quot;biz&quot; } },
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🏠 先想画面：一栋房子里住着很多助手，每个人都有自己的房间</h2>
+    <p>官方说“一个 agent 是完整的 brain”，翻成人话就是：它不是一个昵称，而是一个完整的小住户。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📁 Workspace 是房间</div>
+      <p>这里放它的文件、规则、性格和项目资料。进了哪个房间，它就按哪个房间的规矩做事。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🗄 agentDir 是私人抽屉</div>
+      <p>这里放认证资料、模型登记、代理自己的状态文件。像一只写着名字的上锁抽屉。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">💬 Sessions 是聊天本</div>
+      <p>每个 agent 都有自己的聊天本。这样家庭助手不会突然把工作群里听来的东西讲给家人。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 如果你只先记一句</div>
+      <p>多代理最重要的不是多，而是别串台。</p>
+    </div>
+  </div>
+</section>
 
-    // Optional per-peer override (example: send a specific group to work agent).
-    {
-      agentId: &quot;work&quot;,
-      match: {
-        channel: &quot;whatsapp&quot;,
-        accountId: &quot;personal&quot;,
-        peer: { kind: &quot;group&quot;, id: &quot;1203630...@g.us&quot; },
-      },
-    },
-  ],
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔐 为什么官方一直强调“不要共用 agentDir”</h2>
+    <p>因为那会像让两个小朋友共用同一本护照和同一本日记。最后谁是谁，你自己都会看乱。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🪪 认证会撞车</div>
+      <p>不同 agent 的登录资料混在一起，很容易把账号覆盖掉，或者让一个助手误用另一个助手的钥匙。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧠 会话会串线</div>
+      <p>你明明想要“工作”和“个人”完全分开，结果聊天记录却堆进同一个抽屉，这就失去意义了。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📦 想共享怎么办</div>
+      <p>官方给的思路很朴素：如果真要共享凭据，就只复制需要的那份 <code>auth-profiles.json</code>，不要整间抽屉柜都共用。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>共享资料可以，别共享整颗脑袋的私人物品柜。</p>
+    </div>
+  </div>
+</section>
 
-  // Off by default: agent-to-agent messaging must be explicitly enabled + allowlisted.
-  tools: {
-    agentToAgent: {
-      enabled: false,
-      allow: [&quot;home&quot;, &quot;work&quot;],
-    },
-  },
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧭 Routing 在做什么？就是决定“这条消息该送进谁的房间”</h2>
+    <p>原文很多段都在讲 bindings、accountId、peer、guild。翻成人话，全都在回答一句：这条消息到底归谁处理。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>先看是不是某个人或某个群</h2>
+      <p>最具体的匹配最先赢。比如某个 WhatsApp 群、某个 Telegram bot、某个 Discord 频道。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>再看账号或渠道</h2>
+      <p>如果没精确到某个群或某个人，那就看是不是某个渠道账号，比如个人号还是工作号。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>最后才用默认助手</h2>
+      <p>都没匹配上，才会落到默认 agent。默认不是万能胶，别什么都往它身上粘。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🥇</span>
+      <h2>越具体越优先</h2>
+      <p>官方那句“most-specific wins”可以记成：写了精确门牌号的纸条，永远比“这栋楼都算”的纸条更有力。</p>
+    </article>
+  </div>
+</section>
 
-  channels: {
-    whatsapp: {
-      accounts: {
-        personal: {
-          // Optional override. Default: ~/.openclaw/credentials/whatsapp/personal
-          // authDir: &quot;~/.openclaw/credentials/whatsapp/personal&quot;,
-        },
-        biz: {
-          // Optional override. Default: ~/.openclaw/credentials/whatsapp/biz
-          // authDir: &quot;~/.openclaw/credentials/whatsapp/biz&quot;,
-        },
-      },
-    },
-  },
-}</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-15">
-          <div class="section-heading">
-            <p class="section-kicker">第 15 站</p>
-            <h2>Example: WhatsApp daily chat + Telegram deep work</h2>
-            <p>这一节主要在解释“Example: WhatsApp daily chat + Telegram deep work”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Example: WhatsApp daily chat + Telegram deep work”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Split by 消息通道: route WhatsApp to a fast everyday 机器人朋友 and Telegram to an Opus 机器人朋友. Notes:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Split by 消息通道: route WhatsApp to a fast everyday 机器人朋友 and Telegram to an Opus 机器人朋友.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Split by channel: route WhatsApp to a fast everyday agent and Telegram to an Opus agent.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“agents”贴标签，意思是把它设置成“{”。</li><li>这里在给“list”贴标签，意思是把它设置成“[”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  agents: {
-    list: [
-      {
-        id: &quot;chat&quot;,
-        name: &quot;Everyday&quot;,
-        workspace: &quot;~/.openclaw/workspace-chat&quot;,
-        model: &quot;anthropic/claude-sonnet-4-6&quot;,
-      },
-      {
-        id: &quot;opus&quot;,
-        name: &quot;Deep Work&quot;,
-        workspace: &quot;~/.openclaw/workspace-opus&quot;,
-        model: &quot;anthropic/claude-opus-4-6&quot;,
-      },
-    ],
-  },
-  bindings: [
-    { agentId: &quot;chat&quot;, match: { channel: &quot;whatsapp&quot; } },
-    { agentId: &quot;opus&quot;, match: { channel: &quot;telegram&quot; } },
-  ],
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Notes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Example: WhatsApp daily chat + Telegram deep work”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：If you have multiple accounts for a 消息通道,…、To route a single DM/大家一起的房间 to Opus whil…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>If you have multiple accounts for a channel, add <code>accountId</code> to the binding (for example <code>{ channel: &quot;whatsapp&quot;, accountId: &quot;personal&quot; }</code>).</li><li>To route a single DM/group to Opus while keeping the rest on chat, add a <code>match.peer</code> binding for that peer; peer matches always win over channel-wide rules.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-16">
-          <div class="section-heading">
-            <p class="section-kicker">第 16 站</p>
-            <h2>Example: same 消息通道, one peer to Opus</h2>
-            <p>这一节主要在解释“Example: same 消息通道, one peer to Opus”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Example: same 消息通道, one peer to Opus”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Keep WhatsApp on the fast 机器人朋友, but route one DM to Opus: Peer bindings always win, so keep them above the 消息通道-wide r…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Keep WhatsApp on the fast 机器人朋友, but route one DM to Opus:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Keep WhatsApp on the fast agent, but route one DM to Opus:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“agents”贴标签，意思是把它设置成“{”。</li><li>这里在给“list”贴标签，意思是把它设置成“[”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  agents: {
-    list: [
-      {
-        id: &quot;chat&quot;,
-        name: &quot;Everyday&quot;,
-        workspace: &quot;~/.openclaw/workspace-chat&quot;,
-        model: &quot;anthropic/claude-sonnet-4-6&quot;,
-      },
-      {
-        id: &quot;opus&quot;,
-        name: &quot;Deep Work&quot;,
-        workspace: &quot;~/.openclaw/workspace-opus&quot;,
-        model: &quot;anthropic/claude-opus-4-6&quot;,
-      },
-    ],
-  },
-  bindings: [
-    {
-      agentId: &quot;opus&quot;,
-      match: { channel: &quot;whatsapp&quot;, peer: { kind: &quot;direct&quot;, id: &quot;+15551234567&quot; } },
-    },
-    { agentId: &quot;chat&quot;, match: { channel: &quot;whatsapp&quot; } },
-  ],
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Peer bindings always win, so keep them above the 消息通道-wide rule.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Peer bindings always win, so keep them above the channel-wide rule.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-17">
-          <div class="section-heading">
-            <p class="section-kicker">第 17 站</p>
-            <h2>Family 机器人朋友 bound to a WhatsApp 大家一起的房间</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Bind a dedicated family 机器人朋友 to a single WhatsApp 大家一起的房间, with mention gating and a tighter 工具小帮手 policy: Notes: bina…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Bind a dedicated family 机器人朋友 to a single WhatsApp 大家一起的房间, with mention gating and a tighter 工具小帮手 policy:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Bind a dedicated family agent to a single WhatsApp group, with mention gating and a tighter tool policy:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“agents”贴标签，意思是把它设置成“{”。</li><li>这里在给“list”贴标签，意思是把它设置成“[”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  agents: {
-    list: [
-      {
-        id: &quot;family&quot;,
-        name: &quot;Family&quot;,
-        workspace: &quot;~/.openclaw/workspace-family&quot;,
-        identity: { name: &quot;Family Bot&quot; },
-        groupChat: {
-          mentionPatterns: [&quot;@family&quot;, &quot;@familybot&quot;, &quot;@Family Bot&quot;],
-        },
-        sandbox: {
-          mode: &quot;all&quot;,
-          scope: &quot;agent&quot;,
-        },
-        tools: {
-          allow: [
-            &quot;exec&quot;,
-            &quot;read&quot;,
-            &quot;sessions_list&quot;,
-            &quot;sessions_history&quot;,
-            &quot;sessions_send&quot;,
-            &quot;sessions_spawn&quot;,
-            &quot;session_status&quot;,
-          ],
-          deny: [&quot;write&quot;, &quot;edit&quot;, &quot;apply_patch&quot;, &quot;browser&quot;, &quot;canvas&quot;, &quot;nodes&quot;, &quot;cron&quot;],
-        },
-      },
-    ],
-  },
-  bindings: [
-    {
-      agentId: &quot;family&quot;,
-      match: {
-        channel: &quot;whatsapp&quot;,
-        peer: { kind: &quot;group&quot;, id: &quot;120363999999999999@g.us&quot; },
-      },
-    },
-  ],
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Notes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“binary, ensure exec is allowed and the binary exists in the sandbox.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>binary, ensure <code>exec</code> is allowed and the binary exists in the sandbox.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“大家一起的房间 allowlists enabled for the 消息通道.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>group allowlists enabled for the channel.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Family agent bound to a WhatsApp group”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：工具小帮手 allow/deny lists are **工具小帮手s**, no…、For stricter gating, set 机器人朋友s.list[].大家…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Tool allow/deny lists are **tools**, not skills. If a skill needs to run a</li><li>For stricter gating, set <code>agents.list[].groupChat.mentionPatterns</code> and keep</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-18">
-          <div class="section-heading">
-            <p class="section-kicker">第 18 站</p>
-            <h2>Per-机器人朋友 Sandbox and 工具小帮手 设置说明书uration</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Each 机器人朋友 can have its own sandbox and 工具小帮手 restrictions: Note: setup魔法口令 lives under sandbox.docker and runs once on…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Each 机器人朋友 can have its own sandbox and 工具小帮手 restrictions:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Each agent can have its own sandbox and tool restrictions:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“agents”贴标签，意思是把它设置成“{”。</li><li>这里在给“list”贴标签，意思是把它设置成“[”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-js">{
-  agents: {
-    list: [
-      {
-        id: &quot;personal&quot;,
-        workspace: &quot;~/.openclaw/workspace-personal&quot;,
-        sandbox: {
-          mode: &quot;off&quot;,  // No sandbox for personal agent
-        },
-        // No tool restrictions - all tools available
-      },
-      {
-        id: &quot;family&quot;,
-        workspace: &quot;~/.openclaw/workspace-family&quot;,
-        sandbox: {
-          mode: &quot;all&quot;,     // Always sandboxed
-          scope: &quot;agent&quot;,  // One container per agent
-          docker: {
-            // Optional one-time setup after container creation
-            setupCommand: &quot;apt-get update &amp;&amp; apt-get install -y git curl&quot;,
-          },
-        },
-        tools: {
-          allow: [&quot;read&quot;],                    // Only read tool
-          deny: [&quot;exec&quot;, &quot;write&quot;, &quot;edit&quot;, &quot;apply_patch&quot;],    // Deny others
-        },
-      },
-    ],
-  },
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Note: setup魔法口令 lives under sandbox.docker and runs once on container creation. Per-机器人朋友 sandbox.docker.* overrides ar…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Note: <code>setupCommand</code> lives under <code>sandbox.docker</code> and runs once on container creation. Per-agent <code>sandbox.docker.*</code> overrides are ignored when the resolved scope is <code>&quot;shared&quot;</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Benefits:**”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Benefits:**</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Per-Agent Sandbox and Tool Configuration”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**安全守门员 isolation**: Restrict 工具小帮手s for…、**Resource control**: Sandbox specific 机器…、**Flexible policies**: Different permissi…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Security isolation**: Restrict tools for untrusted agents</li><li>**Resource control**: Sandbox specific agents while keeping others on host</li><li>**Flexible policies**: Different permissions per agent</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Note: 工具小帮手s.elevated is **global** and sender-based; it is not 设置说明书urable per 机器人朋友. If you need per-机器人朋友 boundaries…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Note: <code>tools.elevated</code> is **global** and sender-based; it is not configurable per agent. If you need per-agent boundaries, use <code>agents.list[].tools</code> to deny <code>exec</code>. For group targeting, use <code>agents.list[].groupChat.mentionPatterns</code> so @mentions map cleanly to the intended agent.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“See Multi-机器人朋友 Sandbox &amp; 工具小帮手s for detailed examples.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>See <a href="/tools/multi-agent-sandbox-tools" target="_blank" rel="noreferrer">Multi-Agent Sandbox &amp; Tools</a> for detailed examples.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🛠 命令和配置，不是咒语，而是在“盖房间、挂门牌、绑绳子”</h2>
+    <p>这页代码块很多，但大多数都在做三件事：创建新助手、给它配入口、把消息绑过去。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw agents add work</code></div>
+      <p>像对 OpenClaw 说：“给我再收拾一个叫 work 的房间，让新的工作助手住进去。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw agents list --bindings</code></div>
+      <p>像去前台看值班表：现在有哪几个助手，每个人负责哪些门口和群聊。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw channels login --channel whatsapp --account work</code></div>
+      <p>像给叫 work 的那位助手单独配一个 WhatsApp 入口，不和别人共用同一张门卡。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">`bindings` 配置块</div>
+      <p>像一张布线图：从哪个渠道、哪个账号、哪个群、哪个人来的消息，应该接去哪一个助手房间。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>📱 一个 WhatsApp 号也能分给不同助手，但这里最容易误会</h2>
+    <p>原文专门举了“一个 WhatsApp 号，多个人 DM 分流”的例子，是因为它很实用，也很容易掉坑。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📮 同一个门牌，不同来访者</div>
+      <p>虽然大家都在敲同一个 WhatsApp 号，但可以按发送者手机号，把不同人分给不同助手。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">⚠️ 关键提醒</div>
+      <p>直接聊天默认会收进 agent 的主会话。所以如果你真想隔离不同人的上下文，最好还是“一人一个 agent”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🧱 DM allowlist 在讲什么</div>
+      <p>意思是门口门卫规则还是全局的。不是说分给不同 agent 了，门禁就自动按 agent 分开。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>可以用同一个门牌分流不同人，但真正的隐私隔离，还是一人一个房间最稳。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🛡 多代理不只是为了分工，更是为了安全边界</h2>
+    <p>原文后面举的 family agent 例子，其实在讲一个更重要的东西：不同 agent 可以有完全不同的安全围栏。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🏖</span>
+      <h2>每个 agent 可以单独进沙箱</h2>
+      <p>家庭助手可以永远关在沙箱里，个人助手却可以更自由。边界不是只能全局一刀切。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✂️</span>
+      <h2>每个 agent 工具权限不同</h2>
+      <p>有的只给 <code>read</code>，有的能给 <code>exec</code>，有的连 <code>write</code> 都不给。这像给不同助手发不同颜色的门禁卡。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📣</span>
+      <h2>群聊还可以加点名规则</h2>
+      <p><code>mentionPatterns</code> 像约定暗号：必须先叫它名字，它才知道这句是在叫它回答。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎯</span>
+      <h2>真正的收益</h2>
+      <p>不是为了“看起来很高级”，而是为了让不同任务、不同风险和不同人群各自待在安全的盒子里。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Multi-Agent 这页压成一句最好记的话</h2>
+    <p>多代理就是给不同工作和不同人群准备不同的小助手房间，再把消息准确送进对应房间，还要给每个房间单独装门锁。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/channels/channel-routing</code> 或 <code>/tools/multi-agent-sandbox-tools</code>。因为多代理真正落地，最关键的就是“怎么分流”和“怎么设边界”。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

@@ -1,0 +1,223 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🐙 Discord 通道，其实就是给 OpenClaw 发一张“能进服务器上班”的工牌</h2>
+      <p>这页看起来在讲 token、intents、invite URL 和 guild，其实是在讲一件很具体的事：怎样把 OpenClaw 接进 Discord，让它能在私聊里回话，也能在服务器频道里工作。</p>
+      <p>第一次看这页，别把它当说明书。把它当成“先造机器人、再把它请进服务器、最后给它定门禁”的小剧情，就好懂多了。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合第一次把 OpenClaw 接入 Discord 的人</span>
+      <span>这页最容易卡住的是 token、权限和频道门禁</span>
+      <a href="https://docs.openclaw.ai/channels/discord" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🏠 先想画面：Discord 像一栋楼，OpenClaw 先要有自己的房卡</h2>
+    <p>Discord 通道的第一件事，不是写配置，而是先在 Discord Developer Portal 里造一个应用，再把 bot 请进你的服务器。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🪪 Bot Token 是工牌</div>
+      <p>你点 <code>Reset Token</code>，其实不是在“重置”什么，而是在拿到第一张真正能用的 bot 工牌。没有它，OpenClaw 连门都进不去。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔎 Developer Mode 是找门牌</div>
+      <p>Discord 的 Server ID、User ID、Channel ID 都要靠开发者模式去复制。它像在楼里找房号，数字才是最稳的门牌。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📨 Invite URL 是请帖</div>
+      <p>你在 OAuth2 里勾选 <code>bot</code> 和 <code>applications.commands</code>，再选好权限，生成的链接就像一张请帖，带着机器人走进你的服务器。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 如果你只先记一句</div>
+      <p>Discord 不是“登录一个账号”这么简单，它更像“先造机器人，再拿请帖，把它送进服务器”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🛠 真正动手时，先做五件小事</h2>
+    <p>原文的 quick setup 信息很多，但第一次上手最重要的顺序只有五步。</p>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">🎬 把这五步想成一个小剧情</div>
+    <p>先去 Discord 后台造应用，再把机器人送进你自己的服务器，接着把三个关键身份信息交给 OpenClaw，最后让它第一次在私聊里报到。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">1. 创建应用和 bot</div>
+      <p>在 Discord Developer Portal 里点 <code>New Application</code>，再去 <code>Bot</code> 页面设置 bot 名字。这里就是先把“机器人同事”造出来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">2. 开启必要的权限开关</div>
+      <p>打开 <code>Message Content Intent</code>，最好再开 <code>Server Members Intent</code>。前者让它看得见消息内容，后者让它更容易做角色白名单和名字转 ID。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">3. 把 bot 请进服务器</div>
+      <p>在 OAuth2 里生成 invite URL，勾上 <code>bot</code> 和 <code>applications.commands</code>，再选好基本权限。这一步像拿请帖去前台登记，把机器人领进楼里。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">4. 把 token 安全放好</div>
+      <p>Discord bot token 像密码，不要扔到聊天里。先放到环境变量或 SecretRef，再让 OpenClaw 读取。这样就像把钥匙锁进抽屉，而不是挂在门把手上。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">5. 先让私聊跑起来</div>
+      <p>bot 先在 DM 里跟你报到，拿到 pairing code，再去批准。等私聊通了，再往 guild 频道扩。</p>
+    </div>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">💡 命令 / 配置怎么理解</div>
+    <ul>
+      <li><code>openclaw config set channels.discord.token --ref-provider default --ref-source env --ref-id DISCORD_BOT_TOKEN</code>：像先把 bot 工牌放进环境变量柜子里，再告诉 OpenClaw 去那个柜子里取。</li>
+      <li><code>channels.discord.enabled: true</code>：像把这条通道的开关打开，不然再好的工牌也不会上班。</li>
+      <li><code>openclaw pairing list discord</code>：像翻门口登记簿，看看谁在等你批准。</li>
+      <li><code>openclaw pairing approve discord &lt;CODE&gt;</code>：像把这个人从门口放进来，允许它和 bot 正式说话。</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🚪 Discord 里要分清两扇门：私聊门和服务器门</h2>
+    <p>原文的 access control 和 routing 其实就在讲这件事：DM 和 guild 不是同一个房间，门禁也不是同一套。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🚪</span>
+      <h2>DM Policy</h2>
+      <p>管私聊谁能来找 bot。<code>pairing</code> 是先登记，<code>allowlist</code> 是只认名单，<code>open</code> 是全放行，<code>disabled</code> 是干脆关门。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏛</span>
+      <h2>Guild Policy</h2>
+      <p>管服务器频道怎么开门。默认安全基线是 <code>allowlist</code>，也就是先认你列出来的服务器，再决定它能不能说话。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📣</span>
+      <h2>requireMention</h2>
+      <p>管频道里是不是必须 @ 它才回应。默认是要点名的，这样它在群里不会乱插嘴。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🆔</span>
+      <h2>稳定 ID 更靠谱</h2>
+      <p>服务器名、用户名会变，数字 ID 不容易变。官方也一直在强调：做白名单，尽量用 ID。</p>
+    </article>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">⚠️ 这页最大的坑</div>
+    <p>Discord 里“我能私聊 bot”不等于“我能在服务器里随便说话”。DM 授权和 guild 授权是两套门。</p>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🏢 如果你把服务器当工作区，OpenClaw 会给每个频道分小房间</h2>
+    <p>原文还特地讲了 guild workspace。意思很直白：服务器里不同频道，能当成不同的工作小房间，各自有自己的会话。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧩 服务器白名单</div>
+      <p>把 Server ID 放进 <code>guilds</code>，就像给这栋楼发了一张通行证。没有通行证，别的服务器就进不来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🗂 频道独立会话</div>
+      <p>同一个服务器里的 <code>#coding</code>、<code>#home</code>、<code>#research</code> 可以各有各的 session，不会全塞成一锅粥。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📚 记忆怎么放</div>
+      <p>Discord 的 guild 频道默认不会像 DM 那样自动加载 <code>MEMORY.md</code>。如果你想让它记住长期信息，最好把稳定规则放进 <code>AGENTS.md</code> 或 <code>USER.md</code>，长期笔记再用 memory 工具去取。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>Discord 的服务器像一栋楼，频道像不同房间，OpenClaw 会尽量让它们各自安静地工作。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧱 论坛频道和组件，是更高级的“门口告示牌”</h2>
+    <p>如果你用 Discord 的论坛、媒体频道，或者想做按钮、表单、下拉菜单，这一段就很关键。它不是装饰，是让机器人更像一个会操作的小助手。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧵</span>
+      <h2>论坛频道</h2>
+      <p>给论坛父频道发一条消息，就能自动开一个线程。像先在公告板上贴一张纸，再让它自己长成一个话题房间。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔘</span>
+      <h2>Interactive Components</h2>
+      <p>按钮、下拉菜单、表单这些组件，都可以像现场小按钮一样，让人点一下再回到 OpenClaw 继续处理。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪟</span>
+      <h2>谁能点按钮</h2>
+      <p>可以给按钮加 <code>allowedUsers</code>。这就像在按钮上写“只有这几个人可以按”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📎</span>
+      <h2>文件块怎么用</h2>
+      <p><code>file</code> 块要指向附件引用，像把文件名贴在贴纸上，再让系统把对应附件挂上去。</p>
+    </article>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">🛠 命令 / 配置像在做什么</div>
+    <ul>
+      <li><code>openclaw message thread create</code>：像手工把一个话题房间先开出来。</li>
+      <li><code>components.reusable: true</code>：像给按钮装上可重复使用的小弹簧，不是按一次就报废。</li>
+      <li><code>/model</code> 和 <code>/models</code>：像给自己加一个“选老师”的互动菜单。</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>⌨️ 这些快捷命令，不只是名字好看，它们真的会管门</h2>
+    <p>Discord 原文里还有 native commands、slash commands、thread bindings 和 ACP 绑定。它们的共同点是：不是让页面更花，而是让消息路由更聪明。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧷 原生命令</div>
+      <p><code>commands.native</code> 默认是 <code>auto</code>，Discord 会启用原生命令。你也可以把它关掉，等于把这类快捷入口收起来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🪢 线程绑定</div>
+      <p><code>/focus</code>、<code>/unfocus</code>、<code>/agents</code> 这些命令像把某个线程绑到一个固定会话上，方便后续一直在同一个小房间里说话。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 命令 / 配置像在做什么</div>
+      <ul>
+        <li><code>commands.native = false</code>：像把 Discord 的原生快捷入口先收起来。</li>
+        <li><code>session.threadBindings.enabled</code>：像告诉系统“线程绑定这件事我真的要用”。</li>
+        <li><code>bindings[]</code> 配 ACP：像把某个 Discord 线程直接钉到一个固定代理身上，让它长期值班。</li>
+      </ul>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>Discord 的命令不是摆设，它们是把“哪个房间归谁管”这件事做实的按钮。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Discord 这页压缩成一句最好记的话</h2>
+    <p>Discord 通道的本质，就是先造机器人、再给它请帖、再把私聊门和服务器门分别管好，最后让频道和线程各自安静工作。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只继续看一页，我建议先看 <code>/channels/pairing</code> 或 <code>/channels/troubleshooting</code>。Discord 真正容易卡住的，通常不是“能不能连上”，而是“权限、门禁和频道规则有没有摆对”。</p>
+  </div>
+</section>

@@ -1,0 +1,241 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📱 WhatsApp 通道，其实就是把 OpenClaw 变成一个会在手机聊天里回消息的小伙伴</h2>
+      <p>这页看着像在讲安装、QR、allowlist、groupPolicy，其实是在讲一件事：怎样让 OpenClaw 通过 WhatsApp Web 正常工作，既能回私聊，也能管群里谁能叫它。</p>
+      <p>WhatsApp 这页最容易绕晕的地方，不是命令本身，而是“先连号、再定门禁、再分清私聊和群聊”的顺序。顺着这个顺序看，就会顺很多。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合第一次把 OpenClaw 接入 WhatsApp 的人</span>
+      <span>这页最重要的是 QR、allowlist 和群规则</span>
+      <a href="https://docs.openclaw.ai/channels/whatsapp" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧵 先想画面：WhatsApp 像一条手机绳，OpenClaw 要先把这根绳子系上</h2>
+    <p>WhatsApp Web channel 的本质，是 Gateway 通过 Baileys 接住你已经登录的 WhatsApp 会话。它不是另起炉灶，而是把现有的 WhatsApp 连接起来。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📲 QR 是绑定动作</div>
+      <p>第一次连接时，你用 <code>openclaw channels login --channel whatsapp</code> 扫二维码，就像把手机上的那条线和 OpenClaw 绑到一起。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🏠 Gateway 是总管</div>
+      <p>不是手机自己单独值班，而是 Gateway 负责 socket、重连和会话状态。手机只是门口那条线，真正管家的还是 Gateway。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🥇 专用号码更稳</div>
+      <p>官方推荐单独号码。意思很朴素：别把个人聊天和机器人工作号搅在一起，分开更稳，也更少自己给自己发消息。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 如果你只先记一句</div>
+      <p>WhatsApp 不是“填个 token 就完事”，它更像“先扫 QR 把账号绑上，再给它定谁能说话”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🛠 真正动手时，先做四件小事</h2>
+    <p>原文 quick setup 很短，但动作很实。第一次上手，按这个顺序最稳。</p>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">🎬 把这四步想成一个小剧情</div>
+    <p>先定好谁能进来，再把 WhatsApp 账号扫进系统，然后把 Gateway 打开，最后让第一位陌生人来敲门时先走 pairing 流程。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">1. 先定访问策略</div>
+      <p>把 <code>dmPolicy</code>、<code>allowFrom</code>、<code>groupPolicy</code>、<code>groupAllowFrom</code> 先摆出来。像先在门口贴好“谁能进、谁不能进”的纸条。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">2. 扫码连接 WhatsApp</div>
+      <p>运行 <code>openclaw channels login --channel whatsapp</code>，如果是指定账号，就再加 <code>--account work</code>。这一步像把手机账号领到 OpenClaw 的门牌上。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">3. 启动 Gateway</div>
+      <p><code>openclaw gateway</code> 就像把总管叫醒。没有它，账号绑好了也不会真的开始收发消息。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">4. 批准第一位 pairing</div>
+      <p>如果你用 pairing 模式，第一次来的人会拿到代码。你再用 <code>openclaw pairing list whatsapp</code> 和 <code>openclaw pairing approve whatsapp &lt;CODE&gt;</code> 放行。</p>
+    </div>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">💡 命令 / 配置怎么理解</div>
+    <ul>
+      <li><code>openclaw channels login --channel whatsapp</code>：像拿手机扫码，把账号和 OpenClaw 绑成一对。</li>
+      <li><code>dmPolicy: "pairing"</code>：像让陌生人先在门口等一会儿，登记通过再说话。</li>
+      <li><code>groupAllowFrom</code>：像在群里再加一层“谁能叫醒机器人”的名单。</li>
+      <li><code>openclaw pairing approve whatsapp &lt;CODE&gt;</code>：像把门口那位第一个来访者正式请进来。</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🚪 私聊和群聊，要分开看门</h2>
+    <p>原文的 access control and activation 分成 DM 和 group 两层，正是因为 WhatsApp 的私聊和群聊不是同一件事。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🚪</span>
+      <h2>DM Policy</h2>
+      <p>管谁能私聊它。<code>pairing</code> 是默认门卫模式，<code>allowlist</code> 是只认名单，<code>open</code> 是全放行，<code>disabled</code> 是关门。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">👥</span>
+      <h2>Group Policy</h2>
+      <p>管群里谁能触发它。<code>open</code>、<code>allowlist</code>、<code>disabled</code> 是三种完全不同的门禁。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📣</span>
+      <h2>requireMention</h2>
+      <p>群里默认得点名它才回应。这样它不会在群里每句话都插嘴，比较安静。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧾</span>
+      <h2>allowFrom 是硬名单</h2>
+      <p>它就像“只有这些号码能进门”的名单。没在名单里的，就算会说话也先别进。</p>
+    </article>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">⚠️ 一个很关键的小提醒</div>
+    <p>群里回复了，不等于它被授权了。WhatsApp 这里把“能不能触发”和“能不能进门”分得很清楚。</p>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🪞 如果你把自己也放进 allowFrom，Self-chat 会变得很安静</h2>
+    <p>原文特别提了 self-chat。意思是：如果你自己的号码也在 allowFrom 里，OpenClaw 会帮你避免一些“自己给自己发消息”的怪动作。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🙋 自己跟自己说话</div>
+      <p>如果 linked self number 也在 allowFrom 里，系统会开启 self-chat 防护。像在提醒它：这是自己人，别重复敲门。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">👀 已读回执更谨慎</div>
+      <p>self-chat turn 会跳过 read receipt。这样不会因为自己给自己回消息，就把一些状态弄得很乱。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 这节真正想告诉你</div>
+      <p>WhatsApp 的个人号码模式不是“特殊福利”，而是要把自己当成一位特别重要的用户去认真处理。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 命令 / 配置像在做什么</div>
+      <ul>
+        <li><code>allowFrom</code> 里包含自己的号码：像把自己也写进门卫名单。</li>
+        <li><code>sendReadReceipts: false</code>：像把回执灯关掉，别让自己把自己点亮得太吵。</li>
+        <li><code>messages.responsePrefix</code>：如果没设置，self-chat 会用名字前缀，像告诉你“这句是机器人自己回的”。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧺 WhatsApp 不只收文字，它也会把图片、语音、位置和联系人一起打包</h2>
+    <p>原文的 message normalization and context 这一段是在讲：WhatsApp 不只是看字，它还会把各种东西整理成给模型看的上下文。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📝 引用回复会带前文</div>
+      <p>如果你回的是别人的消息，OpenClaw 会把“我正在回复谁、被引用了什么”一起补进上下文。这样模型知道这不是一条孤零零的新消息。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🖼 媒体会变成占位符</div>
+      <p>图片、音频、文档、贴纸这些不会直接变成空白，它们会先变成像 <code>&lt;media:image&gt;</code> 这样的占位符，让模型知道“这里原来有个东西”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📍 位置和联系人也能进来</div>
+      <p>地点和联系人信息会先变成文本，再送给模型。这样它不是只看“这是一张图”，而是知道“这张图里还带了什么”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>WhatsApp 不是只收一句话，它会把对话现场一起装进来。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>📦 长聊天不会一次全塞进去，OpenClaw 会先把前面的故事整理成上下文</h2>
+    <p>原文里有 pending group history injection 和 chunking。意思都很实在：长对话不会一口气全吃进来，而是会按规则整理、切块、再送给模型。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧾 组群历史缓存</div>
+      <p>群里如果还没触发运行，消息可以先放进一个小背包里。等机器人真正被叫醒时，再把这包历史拿出来做上下文。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">✂️ 分段发消息</div>
+      <p><code>textChunkLimit</code> 和 <code>chunkMode</code> 像在告诉系统：太长的回复要分成几小段，优先按段落切，不行再按长度切。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 命令 / 配置像在做什么</div>
+      <ul>
+        <li><code>channels.whatsapp.textChunkLimit = 4000</code>：像给每一段回复定好纸张大小。</li>
+        <li><code>channels.whatsapp.chunkMode = "newline"</code>：像先按段落换行来裁剪，再不够才硬切。</li>
+        <li><code>channels.whatsapp.historyLimit = 50</code>：像告诉它“群里前面那堆对话，先留 50 条左右”。</li>
+      </ul>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 这节真正想告诉你</div>
+      <p>WhatsApp 的长对话处理，核心不是“能不能发很多字”，而是“发很多字时还会不会乱”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第七站</p>
+    <h2>🛎 还有一个小动作：收到消息时可以先亮一下眼睛</h2>
+    <p>原文的 ack reaction 很短，但很有用。它像一个轻轻的“我看到了”，让对方知道消息已经被接住。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">👀 Ack reaction</div>
+      <p>你可以配置一个表情，比如 <code>👀</code>，让 OpenClaw 收到消息后先亮一下。像点头示意，不代表回答完了，只代表它看到了。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔔 群里只在合适时候亮</div>
+      <p>群里可以按 <code>always</code>、<code>mentions</code>、<code>never</code> 控制这个动作。这样既能反馈，又不会把群聊搞得太吵。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 命令 / 配置像在做什么</div>
+      <ul>
+        <li><code>ackReaction.emoji: "👀"</code>：像给“已收到”贴一个小眼睛表情。</li>
+        <li><code>group: "mentions"</code>：像规定群里只有被点名时才眨眼。</li>
+        <li><code>sendReadReceipts: false</code>：像把“已读”这盏灯关掉，不让自己太显眼。</li>
+      </ul>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>Ack reaction 不是回答本身，它只是“我已经接到你了”的小提示。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 WhatsApp 这页压缩成一句最好记的话</h2>
+    <p>WhatsApp 通道的本质，就是先把账号扫进来，再把私聊和群聊分别看门，最后把图片、语音和长消息也整理成机器人看得懂的故事。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只继续看一页，我建议先看 <code>/channels/pairing</code> 或 <code>/channels/troubleshooting</code>。WhatsApp 真正最容易卡住的，通常不是“能不能连上”，而是“门禁、群规则和自聊天的边界有没有摆对”。</p>
+  </div>
+</section>

@@ -1,0 +1,220 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🖥 Exec 工具，就是 OpenClaw 真正去敲终端键盘的那只手</h2>
+      <p>读文件、搜网页、看图片，这些更像“看”。Exec 不一样，它是“动手”。它会真的去终端里跑命令，所以这页其实是在讲：这只手什么时候能动、在哪儿动、要不要先问你。</p>
+      <p>如果把 OpenClaw 想成一个助手，那 exec 就像你把键盘递给了它。因此这页不只是讲能力，也在讲刹车。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想让 OpenClaw 真跑命令的人</span>
+      <span>这页最重要的是先分清 sandbox、gateway、node 和 elevated</span>
+      <a href="https://docs.openclaw.ai/tools/exec" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>⌨️ 先想画面：你把终端键盘递给 OpenClaw，它就能真的去敲</h2>
+    <p>这不是“建议你运行什么命令”，而是“它自己去运行”。所以它的力气比普通阅读工具大得多。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🛠 foreground</div>
+      <p>像站在你面前当场做事。命令跑完之前，它就专心盯着这一件事。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🏃 background</div>
+      <p>像把任务派去后台慢慢跑，前台不用一直等着。后面再通过 <code>process</code> 去看它跑得怎么样。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 如果你只先记一句</div>
+      <p>Exec 是 OpenClaw 真动手的那只手，<code>process</code> 是盯着这只手后续动作的那双眼。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 这页真正的主题</div>
+      <p>不是“会不会跑命令”，而是“在哪儿跑、要不要审批、跑坏了怎么收住”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🏠 sandbox、gateway、node，像三种不同的工作地点</h2>
+    <p>官方把 <code>host</code> 写得很醒目，就是因为同一条命令，放在不同地方跑，风险和能力完全不同。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🏖</span>
+      <h2>sandbox</h2>
+      <p>像围栏里的练习场。默认就该先考虑这里，比较不容易碰到主机最敏感的地方。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏠</span>
+      <h2>gateway</h2>
+      <p>像直接在你家主机里做事。能力更大，但也更需要审批和边界。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📱</span>
+      <h2>node</h2>
+      <p>像把命令派去另一台配对设备上跑，比如伴侣 App 或远端节点主机。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚨</span>
+      <h2>elevated</h2>
+      <p>它不是第四个地点，而是把 gateway 这条路再开得更深一些。像把更高权限的门卡递出来。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🛠 参数看着像一堆小格子，其实都是在管“怎么开工”</h2>
+    <p>原文的参数表最容易让人发困。我把最关键的几个翻成现场动作。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>command</code></div>
+      <p>就是你真正让它去敲的那句话。像递给它一张纸条，上面写着“去终端里做这件事”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>workdir</code></div>
+      <p>像告诉它“请你站在这个房间里再开工”。在哪个目录跑，结果经常差很多。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>yieldMs</code></div>
+      <p>像前台等候时间。等了这么久还没做完，就把任务挪去后台，别一直堵在门口。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>timeout</code></div>
+      <p>像给命令装一个闹钟。时间一到还没结束，就别让它无限拖下去。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🙋 security 和 ask，像“门卫规则”和“要不要先请示”</h2>
+    <p>这一段是这页真正的安全心脏。官方不是在卖术语，而是在教你怎么别把主机随便交出去。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🚫 security=deny</div>
+      <p>像门直接锁着。尤其在 sandbox 外，这是一条很硬的安全线。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📋 security=allowlist</div>
+      <p>像门口有一张“只准这些动作通过”的白名单。名单外的，不让进。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔓 security=full</div>
+      <p>像把门完全打开。不是不能用，而是只有你真的知道自己在做什么时才该碰。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛎 ask=on-miss / always</div>
+      <p><code>on-miss</code> 像“名单里没有才来敲你”；<code>always</code> 像“每次都先来请示”；<code>off</code> 则像“别问了，按规则直接走”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>⏱ background、notifyOnExit、approvalRunningNoticeMs，都是在防“任务飞走了你却忘了”</h2>
+    <p>命令一旦去后台跑，最怕的不是慢，而是没人盯着它。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>background: true</code></div>
+      <p>像你直接对它说：“这活儿去后厨做，别占着前台。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>tools.exec.notifyOnExit</code></div>
+      <p>像后台任务做完以后回来拍你一下肩膀，说“我结束了”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>approvalRunningNoticeMs</code></div>
+      <p>像一条“这活儿还在跑”的中途提醒，防止你以为它已经死掉了。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>process</code> 工具</div>
+      <p>像后台值班员。任务放去后台后，你得靠它去 poll、send-keys、paste、submit，继续和那条进程打交道。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🧰 allowlist 和 safe bins，看起来像一类，其实不是</h2>
+    <p>官方这段特地写得很重，是因为很多人会把 safe bins 当成万能白名单，这是不对的。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📋</span>
+      <h2>allowlist</h2>
+      <p>像你明确写死“这些可执行文件路径我信任”。它是强授权，讲究的是准确。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🥣</span>
+      <h2>safe bins</h2>
+      <p>像给一些很小、很温和、主要处理标准输入的小工具开快捷通道，不等于给一整类大工具放行。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚫</span>
+      <h2>别把解释器塞进 safe bins</h2>
+      <p>Python、Node、Ruby、Bash 这种，不是小漏斗，而是大机器。官方反复提醒别乱加，就是怕你绕过审批。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧠</span>
+      <h2>strictInlineEval</h2>
+      <p>像专门盯住那些 <code>python -c</code>、<code>node -e</code> 这种“现场写一段就执行”的小纸条，不让它们偷偷钻过门缝。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第七站</p>
+    <h2>✍️ apply_patch 为什么放在 exec 这页一起讲</h2>
+    <p>因为它本质上也是动手，只不过它不是“跑命令”，而是“按结构改文件”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧵 apply_patch 像针线活</div>
+      <p>它不是随便拿刀乱砍，而是按补丁格式，一针一线地改文件内容。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📍 workspaceOnly</div>
+      <p>像在说“只能在自己房间里缝补，别跑到房子外面去拆别人家的东西”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 配置像在做什么</div>
+      <ul>
+        <li><code>tools.exec.applyPatch.enabled: true</code>：像把这套针线包摆在桌上，允许合适的模型拿来用。</li>
+        <li><code>allowModels: ["gpt-5.2"]</code>：像只允许你信任的那几位老师拿针线。</li>
+        <li><code>workspaceOnly: true</code>：像画一条线，提醒它只准在当前工作区里缝补。</li>
+      </ul>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>Exec 更像锤子，apply_patch 更像针线包。都能动手，但手势不一样。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Exec 这页压成一句最好记的话</h2>
+    <p>Exec 是 OpenClaw 真正去敲终端的那只手，而这整页都在教你怎么给这只手套手套、装门禁、系安全绳。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/tools/exec-approvals</code>。因为让它会动手只是第一步，真正重要的是谁能点头、哪些命令能过门。</p>
+  </div>
+</section>

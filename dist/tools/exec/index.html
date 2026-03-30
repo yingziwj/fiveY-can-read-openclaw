@@ -3970,284 +3970,227 @@
   
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>OpenClaw Exec工具：在安全边界内执行任意命令</h2>
-            <p>Exec工具是OpenClaw的核心功能之一，它允许你在工作空间内运行shell命令，支持前台和后台执行。这页文档详细解释了如何配置和执行命令，重点是安全性和灵活性之间的平衡。无论你是想自动化任务还是让AI助手帮你操作文件，理解Exec的机制都至关重要。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/tools/exec</span>
-            <span>故事卡片：10 张</span>
-            <a href="https://docs.openclaw.ai/tools/exec" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>从这里开始</h2>
-              <p>介绍Exec工具的基本概念和执行模式。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这部分让你快速理解Exec能做什么、不能做什么，以及它如何与你的工作流程集成。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>Exec工具的核心功能是在OpenClaw工作空间内运行shell命令，就像在终端里操作一样。</li><li>它支持两种执行模式：前台同步执行和后台异步执行，后者通过`process`工具管理。</li><li>如果`process`被禁用，Exec会自动退化为同步模式，忽略后台相关参数。</li><li>后台会话是按代理（agent）隔离的，这意味着每个代理的后台进程互不可见。</li><li>这种设计既保证了灵活性，又避免了不同代理之间的命令冲突。</li><li>理解这些基础概念是后续配置和高级用法的前提。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>Exec工具是你的命令执行入口，它提供了灵活的执行模式来适应不同场景。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>参数详解</h2>
-              <p>详细解释Exec工具的所有可配置参数及其含义。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这些参数决定了命令如何执行、在哪里执行以及安全策略如何应用，是定制化Exec行为的关键。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>`command`是唯一必需的参数，指定要运行的shell命令。</li><li>`workdir`设置命令的工作目录，默认是当前目录，这决定了命令的上下文环境。</li><li>`env`允许你覆盖环境变量，但注意在主机执行时`PATH`等关键变量会被拒绝。</li><li>`yieldMs`和`background`控制后台行为：前者是延迟自动后台，后者是立即后台。</li><li>`timeout`设置命令超时时间，超时后进程会被强制终止，防止长时间占用资源。</li><li>`pty`启用伪终端，这对于需要TTY的CLI工具或终端UI应用是必要的。</li><li>`host`参数决定命令在哪里执行：沙箱（sandbox）、网关（gateway）或节点（node）。</li><li>`security`和`ask`参数控制安全策略和审批流程，这是保护系统安全的核心机制。</li><li>`node`参数在`host=node`时指定目标节点，`elevated`请求提升权限执行。</li><li>沙箱模式默认是关闭的，如果关闭且未指定主机，命令会失败而不是静默在网关执行。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>每个参数都有其特定用途，正确配置它们可以确保命令安全、高效地执行。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>配置选项</h2>
-              <p>介绍Exec工具的全局配置选项，这些设置影响所有Exec调用。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>全局配置让你可以一次性设定默认行为，避免在每个命令中重复指定参数。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>`tools.exec.notifyOnExit`控制后台进程退出时是否发送系统事件，便于监控。</li><li>`tools.exec.approvalRunningNoticeMs`设置审批后命令运行多久才发送“运行中”通知。</li><li>`tools.exec.host`、`security`、`ask`、`node`是全局默认值，覆盖单个命令的参数。</li><li>`tools.exec.strictInlineEval`严格限制内联代码执行（如`python -c`），防止代码注入。</li><li>`tools.exec.pathPrepend`允许你为Exec环境预置PATH目录，方便调用自定义工具。</li><li>`tools.exec.safeBins`定义“安全二进制文件”，这些工具可以不经审批直接运行。</li><li>`tools.exec.safeBinTrustedDirs`指定安全二进制文件的信任目录，PATH本身不被自动信任。</li><li>`tools.exec.safeBinProfiles`为每个安全二进制文件定制参数策略，精细控制允许的操作。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`tools.exec.pathPrepend: [&quot;~/bin&quot;, &quot;/opt/oss/bin&quot;]`这行配置将两个目录添加到PATH的前面，这样Exec就能优先找到这些目录下的可执行文件。</li><li>这种配置适用于网关和沙箱执行，但不影响节点主机，节点需要单独配置环境。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>全局配置是设定安全基线和便利性的重要手段，合理设置可以大幅提升使用体验。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>PATH处理机制</h2>
-              <p>解释Exec在不同执行环境下如何处理PATH环境变量。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>PATH决定了系统在哪里查找可执行文件，理解其处理方式可以避免“命令找不到”的问题。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>在网关执行时，Exec会合并你的登录shell的PATH，但拒绝通过`env.PATH`覆盖，防止二进制劫持。</li><li>沙箱执行时，Exec在容器内运行登录shell，因此`/etc/profile`可能会重置PATH，需要特别注意。</li><li>节点执行时，`env.PATH`覆盖会被拒绝和忽略，节点主机的PATH由服务环境（如systemd）决定。</li><li>OpenClaw守护进程本身使用最小化的PATH：macOS包括Homebrew和标准目录，Linux包括标准目录。</li><li>`tools.exec.pathPrepend`配置会在所有环境（网关和沙箱）中生效，为PATH添加自定义目录。</li><li>你可以通过配置将特定代理绑定到特定节点，实现精细化的节点分配。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`openclaw config get agents.list`查看代理列表，获取索引号。</li><li>`openclaw config set agents.list[0].tools.exec.node &quot;node-id-or-name&quot;`将第一个代理绑定到指定节点，这样该代理的所有Exec命令默认在该节点执行。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>PATH处理因执行环境而异，正确理解可以确保命令在不同环境下都能找到所需工具。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>会话覆盖（/exec命令）</h2>
-              <p>介绍如何使用`/exec`命令为当前会话设置临时默认值。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这让你可以在不修改全局配置的情况下，临时调整Exec行为，非常适合测试或特定任务。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>`/exec`命令允许你为当前会话设置`host`、`security`、`ask`和`node`的临时默认值。</li><li>这些设置只影响当前会话，不会写入配置文件，会话结束后失效。</li><li>不带参数运行`/exec`可以查看当前会话的覆盖值，便于调试和确认。</li><li>这种机制提供了灵活性，让你可以快速切换执行环境或安全策略。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`/exec host=gateway security=allowlist ask=on-miss node=mac-1`这行命令将当前会话的Exec默认主机设为网关，安全策略为允许列表，审批模式为缺失时询问，节点指定为mac-1。</li><li>执行后，当前会话内所有未显式指定这些参数的Exec调用都会使用这些值。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>`/exec`是临时调整Exec行为的快捷方式，适合快速实验和场景切换。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>授权模型</h2>
-              <p>解释`/exec`命令的授权机制和限制。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>理解授权模型可以确保只有可信用户才能修改Exec设置，防止未授权操作。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>`/exec`命令只对授权发送者生效，授权基于频道允许列表或配对机制。</li><li>它只更新会话状态，不写入配置文件，因此是临时性的。</li><li>如果你想完全禁用Exec，需要通过工具策略（`tools.deny: [&quot;exec&quot;]`）来拒绝。</li><li>即使使用`/exec`设置了安全参数，主机审批仍然适用，除非显式设置为`security=full`和`ask=off`。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>`/exec`的授权机制确保了临时修改的安全性，不会影响系统整体配置。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>Exec审批（伴侣应用/节点主机）</h2>
-              <p>介绍沙箱代理在网关或节点执行命令时的审批流程。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>审批机制是安全执行外部命令的关键，防止恶意或意外操作。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>沙箱代理在网关或节点执行命令时，可能需要每请求审批，这由安全策略决定。</li><li>当需要审批时，Exec工具立即返回“审批待定”状态，并生成一个审批ID。</li><li>审批通过、拒绝或超时后，网关会发送相应的系统事件（如“Exec完成”或“Exec拒绝”）。</li><li>如果命令运行时间超过`tools.exec.approvalRunningNoticeMs`，会发送一次“Exec运行中”通知。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>审批流程提供了额外的安全层，确保敏感操作经过人工确认。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>允许列表与安全二进制文件</h2>
-              <p>详细解释允许列表和安全二进制文件的区别及使用场景。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>混淆这两者可能导致安全漏洞或使用不便，正确区分是构建安全策略的基础。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>允许列表匹配解析后的二进制文件路径（不是基本名称），提供精确的信任控制。</li><li>当`security=allowlist`时，shell命令只有在每个管道段都被允许或是安全二进制文件时才会自动放行。</li><li>链式命令（如`;`、`&amp;&amp;`）和重定向在允许列表模式下被拒绝，除非每个顶层段都满足允许条件。</li><li>`autoAllowSkills`是一个便利功能，不同于手动路径允许列表，严格信任时应禁用它。</li><li>安全二进制文件（`safeBins`）是小型、仅限标准输入的工具，如流过滤器，不应包含解释器。</li><li>`safeBinTrustedDirs`指定安全二进制文件的额外信任目录，PATH条目不会被自动信任。</li><li>`safeBinProfiles`为自定义安全二进制文件定义参数策略，控制允许的标志和参数数量。</li><li>不要将安全二进制文件当作通用允许列表使用，解释器（如python3）应通过允许列表管理。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>允许列表用于精确信任，安全二进制文件用于低风险工具，两者结合实现平衡的安全策略。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-9">
-            <div class="section-heading">
-              <p class="section-kicker">第 9 站</p>
-              <h2>示例</h2>
-              <p>提供Exec工具的实际使用示例，涵盖常见场景。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>示例是理解如何应用Exec工具的最佳方式，可以直接参考或修改使用。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>前台执行示例：直接运行`ls -la`命令，同步等待结果。</li><li>后台轮询示例：启动`npm run build`后立即后台，然后通过`process`工具轮询状态。</li><li>发送按键示例：模拟tmux风格的按键发送，如回车、Ctrl+C、方向上键等。</li><li>提交示例：仅发送回车键，适用于需要确认的交互式命令。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`{ &quot;tool&quot;: &quot;exec&quot;, &quot;command&quot;: &quot;ls -la&quot; }`这是一个简单的JSON调用，指定工具为exec，命令为列出目录详情。</li><li>`{&quot;tool&quot;:&quot;exec&quot;,&quot;command&quot;:&quot;npm run build&quot;,&quot;yieldMs&quot;:1000}`这行设置yieldMs为1000毫秒，命令运行1秒后自动转入后台。</li><li>`{&quot;tool&quot;:&quot;process&quot;,&quot;action&quot;:&quot;send-keys&quot;,&quot;sessionId&quot;:&quot;&lt;id&gt;&quot;,&quot;keys&quot;:[&quot;C-c&quot;]}`这行向指定会话发送Ctrl+C按键，用于中断正在运行的命令。</li><li>`{ &quot;tool&quot;: &quot;process&quot;, &quot;action&quot;: &quot;submit&quot;, &quot;sessionId&quot;: &quot;&lt;id&gt;&quot; }`这行仅发送回车键，适用于提交表单或确认提示。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>这些示例展示了Exec工具的灵活性，从前台命令到复杂交互都能处理。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-10">
-            <div class="section-heading">
-              <p class="section-kicker">第 10 站</p>
-              <h2>apply_patch子工具</h2>
-              <p>介绍Exec工具的一个特殊子工具，用于结构化多文件编辑。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>`apply_patch`是AI助手进行代码修改的核心工具，理解其配置可以控制AI的写入权限。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>`apply_patch`是Exec的一个子工具，专门用于结构化多文件编辑，如代码补丁应用。</li><li>它默认对OpenAI和OpenAI Codex模型启用，可以通过配置限制或禁用。</li><li>配置位于`tools.exec.applyPatch`下，包括启用状态、模型允许列表和工作空间限制。</li><li>`workspaceOnly`默认true，限制补丁只能在工作空间目录内应用，防止意外修改系统文件。</li><li>工具策略仍然适用，`allow: [&quot;write&quot;]`会隐式允许`apply_patch`，但配置可以进一步细化。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`tools.exec.applyPatch: { workspaceOnly: true, allowModels: [&quot;gpt-5.2&quot;] }`这行配置限制apply_patch仅在工作空间内生效，且只允许gpt-5.2模型使用。</li><li>通过这种配置，你可以精确控制哪些AI模型可以修改文件，以及修改范围。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>`apply_patch`是AI辅助开发的关键工具，合理配置可以平衡便利性和安全性。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🖥 Exec 工具，就是 OpenClaw 真正去敲终端键盘的那只手</h2>
+      <p>读文件、搜网页、看图片，这些更像“看”。Exec 不一样，它是“动手”。它会真的去终端里跑命令，所以这页其实是在讲：这只手什么时候能动、在哪儿动、要不要先问你。</p>
+      <p>如果把 OpenClaw 想成一个助手，那 exec 就像你把键盘递给了它。因此这页不只是讲能力，也在讲刹车。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想让 OpenClaw 真跑命令的人</span>
+      <span>这页最重要的是先分清 sandbox、gateway、node 和 elevated</span>
+      <a href="https://docs.openclaw.ai/tools/exec" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>⌨️ 先想画面：你把终端键盘递给 OpenClaw，它就能真的去敲</h2>
+    <p>这不是“建议你运行什么命令”，而是“它自己去运行”。所以它的力气比普通阅读工具大得多。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🛠 foreground</div>
+      <p>像站在你面前当场做事。命令跑完之前，它就专心盯着这一件事。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🏃 background</div>
+      <p>像把任务派去后台慢慢跑，前台不用一直等着。后面再通过 <code>process</code> 去看它跑得怎么样。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 如果你只先记一句</div>
+      <p>Exec 是 OpenClaw 真动手的那只手，<code>process</code> 是盯着这只手后续动作的那双眼。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 这页真正的主题</div>
+      <p>不是“会不会跑命令”，而是“在哪儿跑、要不要审批、跑坏了怎么收住”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🏠 sandbox、gateway、node，像三种不同的工作地点</h2>
+    <p>官方把 <code>host</code> 写得很醒目，就是因为同一条命令，放在不同地方跑，风险和能力完全不同。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🏖</span>
+      <h2>sandbox</h2>
+      <p>像围栏里的练习场。默认就该先考虑这里，比较不容易碰到主机最敏感的地方。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏠</span>
+      <h2>gateway</h2>
+      <p>像直接在你家主机里做事。能力更大，但也更需要审批和边界。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📱</span>
+      <h2>node</h2>
+      <p>像把命令派去另一台配对设备上跑，比如伴侣 App 或远端节点主机。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚨</span>
+      <h2>elevated</h2>
+      <p>它不是第四个地点，而是把 gateway 这条路再开得更深一些。像把更高权限的门卡递出来。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🛠 参数看着像一堆小格子，其实都是在管“怎么开工”</h2>
+    <p>原文的参数表最容易让人发困。我把最关键的几个翻成现场动作。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>command</code></div>
+      <p>就是你真正让它去敲的那句话。像递给它一张纸条，上面写着“去终端里做这件事”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>workdir</code></div>
+      <p>像告诉它“请你站在这个房间里再开工”。在哪个目录跑，结果经常差很多。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>yieldMs</code></div>
+      <p>像前台等候时间。等了这么久还没做完，就把任务挪去后台，别一直堵在门口。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>timeout</code></div>
+      <p>像给命令装一个闹钟。时间一到还没结束，就别让它无限拖下去。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🙋 security 和 ask，像“门卫规则”和“要不要先请示”</h2>
+    <p>这一段是这页真正的安全心脏。官方不是在卖术语，而是在教你怎么别把主机随便交出去。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🚫 security=deny</div>
+      <p>像门直接锁着。尤其在 sandbox 外，这是一条很硬的安全线。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📋 security=allowlist</div>
+      <p>像门口有一张“只准这些动作通过”的白名单。名单外的，不让进。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔓 security=full</div>
+      <p>像把门完全打开。不是不能用，而是只有你真的知道自己在做什么时才该碰。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛎 ask=on-miss / always</div>
+      <p><code>on-miss</code> 像“名单里没有才来敲你”；<code>always</code> 像“每次都先来请示”；<code>off</code> 则像“别问了，按规则直接走”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>⏱ background、notifyOnExit、approvalRunningNoticeMs，都是在防“任务飞走了你却忘了”</h2>
+    <p>命令一旦去后台跑，最怕的不是慢，而是没人盯着它。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>background: true</code></div>
+      <p>像你直接对它说：“这活儿去后厨做，别占着前台。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>tools.exec.notifyOnExit</code></div>
+      <p>像后台任务做完以后回来拍你一下肩膀，说“我结束了”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>approvalRunningNoticeMs</code></div>
+      <p>像一条“这活儿还在跑”的中途提醒，防止你以为它已经死掉了。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>process</code> 工具</div>
+      <p>像后台值班员。任务放去后台后，你得靠它去 poll、send-keys、paste、submit，继续和那条进程打交道。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🧰 allowlist 和 safe bins，看起来像一类，其实不是</h2>
+    <p>官方这段特地写得很重，是因为很多人会把 safe bins 当成万能白名单，这是不对的。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📋</span>
+      <h2>allowlist</h2>
+      <p>像你明确写死“这些可执行文件路径我信任”。它是强授权，讲究的是准确。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🥣</span>
+      <h2>safe bins</h2>
+      <p>像给一些很小、很温和、主要处理标准输入的小工具开快捷通道，不等于给一整类大工具放行。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚫</span>
+      <h2>别把解释器塞进 safe bins</h2>
+      <p>Python、Node、Ruby、Bash 这种，不是小漏斗，而是大机器。官方反复提醒别乱加，就是怕你绕过审批。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧠</span>
+      <h2>strictInlineEval</h2>
+      <p>像专门盯住那些 <code>python -c</code>、<code>node -e</code> 这种“现场写一段就执行”的小纸条，不让它们偷偷钻过门缝。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第七站</p>
+    <h2>✍️ apply_patch 为什么放在 exec 这页一起讲</h2>
+    <p>因为它本质上也是动手，只不过它不是“跑命令”，而是“按结构改文件”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧵 apply_patch 像针线活</div>
+      <p>它不是随便拿刀乱砍，而是按补丁格式，一针一线地改文件内容。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📍 workspaceOnly</div>
+      <p>像在说“只能在自己房间里缝补，别跑到房子外面去拆别人家的东西”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 配置像在做什么</div>
+      <ul>
+        <li><code>tools.exec.applyPatch.enabled: true</code>：像把这套针线包摆在桌上，允许合适的模型拿来用。</li>
+        <li><code>allowModels: ["gpt-5.2"]</code>：像只允许你信任的那几位老师拿针线。</li>
+        <li><code>workspaceOnly: true</code>：像画一条线，提醒它只准在当前工作区里缝补。</li>
+      </ul>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>Exec 更像锤子，apply_patch 更像针线包。都能动手，但手势不一样。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Exec 这页压成一句最好记的话</h2>
+    <p>Exec 是 OpenClaw 真正去敲终端的那只手，而这整页都在教你怎么给这只手套手套、装门禁、系安全绳。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/tools/exec-approvals</code>。因为让它会动手只是第一步，真正重要的是谁能点头、哪些命令能过门。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>
