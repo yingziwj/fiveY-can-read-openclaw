@@ -1,0 +1,191 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧩 <code>openclaw plugins</code> 像“去能力零件仓库挑新零件，再决定装上、拆下、升级还是体检”</h2>
+      <p>这页讲的是插件、扩展、hook packs、兼容 bundle 的总管理台。翻成人话，就是 OpenClaw 原本是一台主机，你可以不断给它装新零件。</p>
+      <p>但零件不是糖豆，装进去就真的会开始参与干活。所以这页一边像商店，一边像维修间：要挑货、要验货、要启用、要卸掉、还要升级和做体检。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合准备扩展 OpenClaw 能力、安装插件市场包、做版本升级的人</span>
+      <span>这页最重要的是记住：插件安装本质上就是装代码，所以要像对待零件仓库一样谨慎</span>
+      <a href="https://docs.openclaw.ai/cli/plugins" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🛒 先记这几个主按钮：看货架、装零件、开关零件、拆零件、修零件</h2>
+    <p>官方开头那组命令，其实就是插件仓库最常见的几个动作。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📋</span>
+      <h2><code>plugins list</code></h2>
+      <p>像先看仓库和机身上现在都有哪些零件，哪些已经装好、哪些只是随箱附送但还没通电。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">➕</span>
+      <h2><code>plugins install ...</code></h2>
+      <p>像把一个新零件从仓库、市场或本地箱子里搬进来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔌</span>
+      <h2><code>enable</code> / <code>disable</code></h2>
+      <p>像把零件真正接上电，或者先拔掉电源让它别参与工作。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🩺</span>
+      <h2><code>inspect</code> / <code>doctor</code> / <code>update</code></h2>
+      <p>像看零件说明书、做体检、换新版本。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>📦 不是所有零件长一样，所以官方才分“原生插件”和“兼容 bundle”</h2>
+    <p>这块看起来术语多，但压成画面很好懂：有的是专门为 OpenClaw 造的零件，有的是别家标准但能装进来的兼容件。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">openclaw.plugin.json</div>
+      <p>像原厂零件盒，上面贴着 OpenClaw 自己的说明标签。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Codex / Claude / Cursor bundles</div>
+      <p>像兼容配件。虽然不是原厂盒子，但能识别出接口后，也能参与同一套安装流程。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Format: openclaw / bundle</div>
+      <p>像货架上会先给你贴清楚：这是原厂件，还是兼容件。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Bundled plugins 默认禁用</div>
+      <p>像机器出厂时随箱送的零件先放在盒子里，得你自己点头再装上电。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🛍️ install 这一段，像“先去 ClawHub 看货，没有再去 npm，实在不行就搬本地箱子”</h2>
+    <p>官方这段写得长，是因为来源真的很多，但核心顺序很清楚。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🏪</span>
+      <h2>ClawHub first</h2>
+      <p>像先去官方能力商城找，bare package names 也会先去这里看。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2>npm fallback</h2>
+      <p>ClawHub 没货时，再去 npm 仓库翻箱子。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧳</span>
+      <h2>local path / archive</h2>
+      <p>像你自己手里就拎着一个本地零件盒，也可以直接装。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>先商城，再仓库，再自己手里的箱子。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧷 为什么一直强调 pin、prerelease、integrity？因为这不是贴纸，是会跑起来的零件</h2>
+    <p>这页最应该被认真看待的，不是“怎么装上”，而是“怎么别装歪”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>--pin</code></div>
+      <p>像把零件型号钉死，别下次偷偷换成别的版本。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">prerelease 要显式点头</div>
+      <p>像试验版零件不能混进正式仓库，得你自己说“我知道这是 beta/rc，我就是要装”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">integrity hash 变化会警告</div>
+      <p>像同一个零件盒标签没变，里面重量却变了，系统会停下来问你：“你确定还要装吗？”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Treat plugin installs like running code</div>
+      <p>官方这句要当真。装插件不只是“多一个按钮”，而是把新代码请进家里。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🔍 inspect / info 像“把零件翻过来，看它到底有几根线、几种能力、会不会偷偷带挂件”</h2>
+    <p>很多人装完就不看了，其实 inspect 很值得看，因为它会把插件真正注册出来的东西摊平给你看。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🪪</span>
+      <h2>identity / source / load status</h2>
+      <p>像先确认这是谁家的零件、从哪来的、现在有没有真的通电。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🛠️</span>
+      <h2>hooks / tools / commands / services</h2>
+      <p>像看这块零件到底接了哪些线、会动哪些开关、有没有挂服务和路由。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧬</span>
+      <h2>plain / hybrid / hook-only</h2>
+      <p>像给零件分类：单功能、多功能、只挂钩子、或者不是能力件而是辅助件。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2><code>--json</code></h2>
+      <p>像把整份零件体检单变成机器能继续审计的格式。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🧹 uninstall / update 像“拆零件”和“换新版零件”</h2>
+    <p>拆和更都不是简单的删目录。官方说明里有很多联动细节。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>plugins uninstall &lt;id&gt;</code></div>
+      <p>像把零件从记录表、白名单、加载路径里一起摘下来，不只是把盒子扔出门。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--keep-files</code></div>
+      <p>像先把电断掉、账删掉，但零件盒子先留在仓库地上。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>plugins update --all</code></div>
+      <p>像按安装记录给整排零件一起查有没有新版，再逐个换上去。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">memory 插件特殊点</div>
+      <p>如果你拆的是当前正在当记忆槽位的插件，系统会把那个槽位退回 <code>memory-core</code>，像把脑袋里的外挂记忆片先换回原厂片。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw plugins</code> 压成一句话</h2>
+    <p><code>openclaw plugins</code> 就像能力零件仓库和维修台：先看货架，再装或启用新零件，必要时拆掉、升级、验货，还得一直记住这些零件装进来以后真的会开始参与干活。</p>
+  </div>
+</section>

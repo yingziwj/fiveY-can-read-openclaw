@@ -3970,717 +3970,198 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>plugins</h2>
-          <p>这一页像一本关于“新本领插件s”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：openclaw 新本领插件s。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/cli/plugins</span>
-          <span>章节数量：6</span>
-          <a href="https://docs.openclaw.ai/cli/plugins" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“openclaw 新本领插件s Manage 门口的小门卫 新本领插件s/extensions, hook packs, and compatible bundles. Related:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“openclaw 新本领插件s”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># <code>openclaw plugins</code></p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Manage 门口的小门卫 新本领插件s/extensions, hook packs, and compatible bundles.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Manage Gateway plugins/extensions, hook packs, and compatible bundles.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Related:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Related:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：新本领插件 system: 新本领插件s、Bundle compatibility: 新本领插件 bundles、新本领插件 manifest + schema: 新本领插件 manifest、安全守门员 hardening: 安全守门员。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Plugin system: <a href="/tools/plugin" target="_blank" rel="noreferrer">Plugins</a></li><li>Bundle compatibility: <a href="/plugins/bundles" target="_blank" rel="noreferrer">Plugin bundles</a></li><li>Plugin manifest + schema: <a href="/plugins/manifest" target="_blank" rel="noreferrer">Plugin manifest</a></li><li>Security hardening: <a href="/gateway/security" target="_blank" rel="noreferrer">Security</a></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>魔法口令s</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Bundled 新本领插件s ship with OpenClaw but start disabled. Use 新本领插件s enable to activate them. Native OpenClaw 新本领插件s must s…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins list”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins install &lt;path-or-spec&gt;”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins inspect &lt;id&gt;”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw plugins list
-openclaw plugins install &lt;path-or-spec&gt;
-openclaw plugins inspect &lt;id&gt;
-openclaw plugins enable &lt;id&gt;
-openclaw plugins disable &lt;id&gt;
-openclaw plugins uninstall &lt;id&gt;
-openclaw plugins doctor
-openclaw plugins update &lt;id&gt;
-openclaw plugins update --all
-openclaw plugins marketplace list &lt;marketplace&gt;</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Bundled 新本领插件s ship with OpenClaw but start disabled. Use 新本领插件s enable to activate them.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Bundled plugins ship with OpenClaw but start disabled. Use <code>plugins enable</code> to activate them.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Native OpenClaw 新本领插件s must ship openclaw.新本领插件.json with an inline JSON Schema (设置说明书Schema, even if empty). Compatibl…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Native OpenClaw plugins must ship <code>openclaw.plugin.json</code> with an inline JSON Schema (<code>configSchema</code>, even if empty). Compatible bundles use their own bundle manifests instead.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“新本领插件s list shows Format: openclaw or Format: bundle. Verbose list/info output also shows the bundle subtype (codex, cl…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>plugins list</code> shows <code>Format: openclaw</code> or <code>Format: bundle</code>. Verbose list/info output also shows the bundle subtype (<code>codex</code>, <code>claude</code>, or <code>cursor</code>) plus detected bundle capabilities.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Install</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Bare package names are checked against ClawHub first, then npm. 安全守门员 note: treat 新本领插件 installs like running code. Pre…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins install &lt;package&gt;                      # ClawHub first, then npm”。你可以把它想成对机器人说的完整命令。</li><li>这里在给“openclaw plugins install clawhub”贴标签，意思是把它设置成“&lt;package&gt;              # ClawHub only”。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins install &lt;package&gt; --pin                # pin version”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw plugins install &lt;package&gt;                      # ClawHub first, then npm
-openclaw plugins install clawhub:&lt;package&gt;              # ClawHub only
-openclaw plugins install &lt;package&gt; --pin                # pin version
-openclaw plugins install &lt;path&gt;                         # local path
-openclaw plugins install &lt;plugin&gt;@&lt;marketplace&gt;         # marketplace
-openclaw plugins install &lt;plugin&gt; --marketplace &lt;name&gt;  # marketplace (explicit)</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Bare package names are checked against ClawHub first, then npm. 安全守门员 note: treat 新本领插件 installs like running code. Pre…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Bare package names are checked against ClawHub first, then npm. Security note: treat plugin installs like running code. Prefer pinned versions.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“新本领插件s install is also the install surface for hook packs that expose openclaw.hooks in package.json. Use openclaw hook…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>plugins install</code> is also the install surface for hook packs that expose <code>openclaw.hooks</code> in <code>package.json</code>. Use <code>openclaw hooks</code> for filtered hook visibility and per-hook enablement, not package installation.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Npm specs are **registry-only** (package name + optional **exact version** or **dist-tag**). Git/URL/file specs and sem…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Npm specs are **registry-only** (package name + optional **exact version** or **dist-tag**). Git/URL/file specs and semver ranges are rejected. Dependency installs run with <code>--ignore-scripts</code> for safety.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Bare specs and @latest stay on the stable track. If npm resolves either of those to a prerelease, OpenClaw stops and as…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Bare specs and <code>@latest</code> stay on the stable track. If npm resolves either of those to a prerelease, OpenClaw stops and asks you to opt in explicitly with a prerelease tag such as <code>@beta</code>/<code>@rc</code> or an exact prerelease version such as <code>@1.2.3-beta.4</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If a bare install spec matches a bundled 新本领插件 id (for example diffs), OpenClaw installs the bundled 新本领插件 directly. To…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If a bare install spec matches a bundled plugin id (for example <code>diffs</code>), OpenClaw installs the bundled plugin directly. To install an npm package with the same name, use an explicit scoped spec (for example <code>@scope/diffs</code>).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Supported archives: .zip, .tgz, .tar.gz, .tar.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Supported archives: <code>.zip</code>, <code>.tgz</code>, <code>.tar.gz</code>, <code>.tar</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Claude marketplace installs are also supported.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Claude marketplace installs are also supported.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“ClawHub installs use an explicit clawhub:&lt;package&gt; locator:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>ClawHub installs use an explicit <code>clawhub:&lt;package&gt;</code> locator:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这里在给“openclaw plugins install clawhub”贴标签，意思是把它设置成“openclaw-codex-app-server”。</li><li>这里在给“openclaw plugins install clawhub”贴标签，意思是把它设置成“openclaw-codex-app-server@1.2.3”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw plugins install clawhub:openclaw-codex-app-server
-openclaw plugins install clawhub:openclaw-codex-app-server@1.2.3</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw now also prefers ClawHub for bare npm-safe 新本领插件 specs. It only falls back to npm if ClawHub does not have tha…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw now also prefers ClawHub for bare npm-safe plugin specs. It only falls back to npm if ClawHub does not have that package or version:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins install openclaw-codex-app-server”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw plugins install openclaw-codex-app-server</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw downloads the package archive from ClawHub, checks the advertised 新本领插件 对话接口 / minimum 门口的小门卫 compatibility, t…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw downloads the package archive from ClawHub, checks the advertised plugin API / minimum gateway compatibility, then installs it through the normal archive path. Recorded installs keep their ClawHub source metadata for later updates.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use 新本领插件@marketplace shorthand when the marketplace name exists in Claude&#39;s local registry cache at ~/.claude/新本领插件s/k…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use <code>plugin@marketplace</code> shorthand when the marketplace name exists in Claude&#39;s local registry cache at <code>~/.claude/plugins/known_marketplaces.json</code>:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins marketplace list &lt;marketplace-name&gt;”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins install &lt;plugin-name&gt;@&lt;marketplace-name&gt;”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw plugins marketplace list &lt;marketplace-name&gt;
-openclaw plugins install &lt;plugin-name&gt;@&lt;marketplace-name&gt;</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use --marketplace when you want to pass the marketplace source explicitly:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use <code>--marketplace</code> when you want to pass the marketplace source explicitly:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins install &lt;plugin-name&gt; --marketplace &lt;marketplace-name&gt;”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins install &lt;plugin-name&gt; --marketplace &lt;owner/repo&gt;”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins install &lt;plugin-name&gt; --marketplace ./my-marketplace”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw plugins install &lt;plugin-name&gt; --marketplace &lt;marketplace-name&gt;
-openclaw plugins install &lt;plugin-name&gt; --marketplace &lt;owner/repo&gt;
-openclaw plugins install &lt;plugin-name&gt; --marketplace ./my-marketplace</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Marketplace sources can be:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Marketplace sources can be:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Install”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：a Claude known-marketplace name from ~/.c…、a local marketplace root or marketplace.j…、a GitHub repo shorthand such as owner/repo、a git URL。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>a Claude known-marketplace name from <code>~/.claude/plugins/known_marketplaces.json</code></li><li>a local marketplace root or <code>marketplace.json</code> path</li><li>a GitHub repo shorthand such as <code>owner/repo</code></li><li>a git URL</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For remote marketplaces loaded from GitHub or git, 新本领插件 entries must stay inside the cloned marketplace repo. OpenClaw…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For remote marketplaces loaded from GitHub or git, plugin entries must stay inside the cloned marketplace repo. OpenClaw accepts relative path sources from that repo and rejects external git, GitHub, URL/archive, and absolute-path plugin sources from remote manifests.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For local paths and archives, OpenClaw auto-detects:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For local paths and archives, OpenClaw auto-detects:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“component layout)”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>component layout)</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Install”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：native OpenClaw 新本领插件s (openclaw.新本领插件.js…、Codex-compatible bundles (.codex-新本领插件/新本…、Claude-compatible bundles (.claude-新本领插件/…、Cursor-compatible bundles (.cursor-新本领插件/…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>native OpenClaw plugins (<code>openclaw.plugin.json</code>)</li><li>Codex-compatible bundles (<code>.codex-plugin/plugin.json</code>)</li><li>Claude-compatible bundles (<code>.claude-plugin/plugin.json</code> or the default Claude</li><li>Cursor-compatible bundles (<code>.cursor-plugin/plugin.json</code>)</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Compatible bundles install into the normal extensions root and participate in the same list/info/enable/disable flow. T…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Compatible bundles install into the normal extensions root and participate in the same list/info/enable/disable flow. Today, bundle skills, Claude command-skills, Claude <code>settings.json</code> defaults, Cursor command-skills, and compatible Codex hook directories are supported; other detected bundle capabilities are shown in diagnostics/info but are not yet wired into runtime execution.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use --link to avoid copying a local directory (adds to 新本领插件s.load.paths):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use <code>--link</code> to avoid copying a local directory (adds to <code>plugins.load.paths</code>):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins install -l ./my-plugin”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw plugins install -l ./my-plugin</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use --pin on npm installs to save the resolved exact spec (name@version) in 新本领插件s.installs while keeping the default b…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use <code>--pin</code> on npm installs to save the resolved exact spec (<code>name@version</code>) in <code>plugins.installs</code> while keeping the default behavior unpinned.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Uninstall</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“uninstall removes 新本领插件 records from 新本领插件s.entries, 新本领插件s.installs, the 新本领插件 allowlist, and linked 新本领插件s.load.paths…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins uninstall &lt;id&gt;”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins uninstall &lt;id&gt; --dry-run”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins uninstall &lt;id&gt; --keep-files”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw plugins uninstall &lt;id&gt;
-openclaw plugins uninstall &lt;id&gt; --dry-run
-openclaw plugins uninstall &lt;id&gt; --keep-files</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“uninstall removes 新本领插件 records from 新本领插件s.entries, 新本领插件s.installs, the 新本领插件 allowlist, and linked 新本领插件s.load.paths…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>uninstall</code> removes plugin records from <code>plugins.entries</code>, <code>plugins.installs</code>, the plugin allowlist, and linked <code>plugins.load.paths</code> entries when applicable. For active memory plugins, the memory slot resets to <code>memory-core</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“By default, uninstall also removes the 新本领插件 install directory under the active state dir extensions root ($OPENCLAW_ST…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>By default, uninstall also removes the plugin install directory under the active state dir extensions root (<code>$OPENCLAW_STATE_DIR/extensions/&lt;id&gt;</code>). Use <code>--keep-files</code> to keep files on disk.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“--keep-设置说明书 is supported as a deprecated alias for --keep-files.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>--keep-config</code> is supported as a deprecated alias for <code>--keep-files</code>.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Update</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Updates apply to tracked installs in 新本领插件s.installs and tracked hook-pack installs in hooks.internal.installs. When yo…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins update &lt;id-or-npm-spec&gt;”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins update --all”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins update &lt;id-or-npm-spec&gt; --dry-run”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw plugins update &lt;id-or-npm-spec&gt;
-openclaw plugins update --all
-openclaw plugins update &lt;id-or-npm-spec&gt; --dry-run
-openclaw plugins update @openclaw/voice-call@beta</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Updates apply to tracked installs in 新本领插件s.installs and tracked hook-pack installs in hooks.internal.installs.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Updates apply to tracked installs in <code>plugins.installs</code> and tracked hook-pack installs in <code>hooks.internal.installs</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When you pass a 新本领插件 id, OpenClaw reuses the recorded install spec for that 新本领插件. That means previously stored dist-t…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When you pass a plugin id, OpenClaw reuses the recorded install spec for that plugin. That means previously stored dist-tags such as <code>@beta</code> and exact pinned versions continue to be used on later <code>update &lt;id&gt;</code> runs.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For npm installs, you can also pass an explicit npm package spec with a dist-tag or exact version. OpenClaw resolves th…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For npm installs, you can also pass an explicit npm package spec with a dist-tag or exact version. OpenClaw resolves that package name back to the tracked plugin record, updates that installed plugin, and records the new npm spec for future id-based updates.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When a stored integrity hash exists and the fetched artifact hash changes, OpenClaw prints a warning and asks for confi…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When a stored integrity hash exists and the fetched artifact hash changes, OpenClaw prints a warning and asks for confirmation before proceeding. Use global <code>--yes</code> to bypass prompts in CI/non-interactive runs.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Inspect</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Deep introspection for a single 新本领插件. Shows identity, load status, source, registered capabilities, hooks, 工具小帮手s, 魔法口…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins inspect &lt;id&gt;”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw plugins inspect &lt;id&gt; --json”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw plugins inspect &lt;id&gt;
-openclaw plugins inspect &lt;id&gt; --json</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Deep introspection for a single 新本领插件. Shows identity, load status, source, registered capabilities, hooks, 工具小帮手s, 魔法口…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Deep introspection for a single plugin. Shows identity, load status, source, registered capabilities, hooks, tools, commands, services, gateway methods, HTTP routes, policy flags, diagnostics, and install metadata.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Each 新本领插件 is classified by what it actually registers at runtime:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Each plugin is classified by what it actually registers at runtime:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Inspect”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**plain-capability** — one capability typ…、**hybrid-capability** — multiple capabili…、**hook-only** — only hooks, no capabiliti…、**non-capability** — 工具小帮手s/魔法口令s/service…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**plain-capability** — one capability type (e.g. a provider-only plugin)</li><li>**hybrid-capability** — multiple capability types (e.g. text + speech + images)</li><li>**hook-only** — only hooks, no capabilities or surfaces</li><li>**non-capability** — tools/commands/services but no capabilities</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“See 新本领插件 shapes for more on the capability 聪明脑袋模型.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>See <a href="/plugins/architecture#plugin-shapes" target="_blank" rel="noreferrer">Plugin shapes</a> for more on the capability model.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The --json flag outputs a machine-readable report suitable for scripting and auditing.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The <code>--json</code> flag outputs a machine-readable report suitable for scripting and auditing.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“info is an alias for inspect.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>info</code> is an alias for <code>inspect</code>.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧩 <code>openclaw plugins</code> 像“去能力零件仓库挑新零件，再决定装上、拆下、升级还是体检”</h2>
+      <p>这页讲的是插件、扩展、hook packs、兼容 bundle 的总管理台。翻成人话，就是 OpenClaw 原本是一台主机，你可以不断给它装新零件。</p>
+      <p>但零件不是糖豆，装进去就真的会开始参与干活。所以这页一边像商店，一边像维修间：要挑货、要验货、要启用、要卸掉、还要升级和做体检。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合准备扩展 OpenClaw 能力、安装插件市场包、做版本升级的人</span>
+      <span>这页最重要的是记住：插件安装本质上就是装代码，所以要像对待零件仓库一样谨慎</span>
+      <a href="https://docs.openclaw.ai/cli/plugins" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🛒 先记这几个主按钮：看货架、装零件、开关零件、拆零件、修零件</h2>
+    <p>官方开头那组命令，其实就是插件仓库最常见的几个动作。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📋</span>
+      <h2><code>plugins list</code></h2>
+      <p>像先看仓库和机身上现在都有哪些零件，哪些已经装好、哪些只是随箱附送但还没通电。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">➕</span>
+      <h2><code>plugins install ...</code></h2>
+      <p>像把一个新零件从仓库、市场或本地箱子里搬进来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔌</span>
+      <h2><code>enable</code> / <code>disable</code></h2>
+      <p>像把零件真正接上电，或者先拔掉电源让它别参与工作。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🩺</span>
+      <h2><code>inspect</code> / <code>doctor</code> / <code>update</code></h2>
+      <p>像看零件说明书、做体检、换新版本。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>📦 不是所有零件长一样，所以官方才分“原生插件”和“兼容 bundle”</h2>
+    <p>这块看起来术语多，但压成画面很好懂：有的是专门为 OpenClaw 造的零件，有的是别家标准但能装进来的兼容件。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">openclaw.plugin.json</div>
+      <p>像原厂零件盒，上面贴着 OpenClaw 自己的说明标签。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Codex / Claude / Cursor bundles</div>
+      <p>像兼容配件。虽然不是原厂盒子，但能识别出接口后，也能参与同一套安装流程。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Format: openclaw / bundle</div>
+      <p>像货架上会先给你贴清楚：这是原厂件，还是兼容件。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Bundled plugins 默认禁用</div>
+      <p>像机器出厂时随箱送的零件先放在盒子里，得你自己点头再装上电。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🛍️ install 这一段，像“先去 ClawHub 看货，没有再去 npm，实在不行就搬本地箱子”</h2>
+    <p>官方这段写得长，是因为来源真的很多，但核心顺序很清楚。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🏪</span>
+      <h2>ClawHub first</h2>
+      <p>像先去官方能力商城找，bare package names 也会先去这里看。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2>npm fallback</h2>
+      <p>ClawHub 没货时，再去 npm 仓库翻箱子。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧳</span>
+      <h2>local path / archive</h2>
+      <p>像你自己手里就拎着一个本地零件盒，也可以直接装。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>先商城，再仓库，再自己手里的箱子。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧷 为什么一直强调 pin、prerelease、integrity？因为这不是贴纸，是会跑起来的零件</h2>
+    <p>这页最应该被认真看待的，不是“怎么装上”，而是“怎么别装歪”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>--pin</code></div>
+      <p>像把零件型号钉死，别下次偷偷换成别的版本。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">prerelease 要显式点头</div>
+      <p>像试验版零件不能混进正式仓库，得你自己说“我知道这是 beta/rc，我就是要装”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">integrity hash 变化会警告</div>
+      <p>像同一个零件盒标签没变，里面重量却变了，系统会停下来问你：“你确定还要装吗？”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Treat plugin installs like running code</div>
+      <p>官方这句要当真。装插件不只是“多一个按钮”，而是把新代码请进家里。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🔍 inspect / info 像“把零件翻过来，看它到底有几根线、几种能力、会不会偷偷带挂件”</h2>
+    <p>很多人装完就不看了，其实 inspect 很值得看，因为它会把插件真正注册出来的东西摊平给你看。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🪪</span>
+      <h2>identity / source / load status</h2>
+      <p>像先确认这是谁家的零件、从哪来的、现在有没有真的通电。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🛠️</span>
+      <h2>hooks / tools / commands / services</h2>
+      <p>像看这块零件到底接了哪些线、会动哪些开关、有没有挂服务和路由。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧬</span>
+      <h2>plain / hybrid / hook-only</h2>
+      <p>像给零件分类：单功能、多功能、只挂钩子、或者不是能力件而是辅助件。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2><code>--json</code></h2>
+      <p>像把整份零件体检单变成机器能继续审计的格式。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🧹 uninstall / update 像“拆零件”和“换新版零件”</h2>
+    <p>拆和更都不是简单的删目录。官方说明里有很多联动细节。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>plugins uninstall &lt;id&gt;</code></div>
+      <p>像把零件从记录表、白名单、加载路径里一起摘下来，不只是把盒子扔出门。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--keep-files</code></div>
+      <p>像先把电断掉、账删掉，但零件盒子先留在仓库地上。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>plugins update --all</code></div>
+      <p>像按安装记录给整排零件一起查有没有新版，再逐个换上去。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">memory 插件特殊点</div>
+      <p>如果你拆的是当前正在当记忆槽位的插件，系统会把那个槽位退回 <code>memory-core</code>，像把脑袋里的外挂记忆片先换回原厂片。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw plugins</code> 压成一句话</h2>
+    <p><code>openclaw plugins</code> 就像能力零件仓库和维修台：先看货架，再装或启用新零件，必要时拆掉、升级、验货，还得一直记住这些零件装进来以后真的会开始参与干活。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

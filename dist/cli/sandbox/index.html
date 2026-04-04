@@ -3970,818 +3970,198 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Sandbox CLI</h2>
-          <p>这一页像一本关于“Sandbox CLI”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：Sandbox CLI。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/cli/sandbox</span>
-          <span>章节数量：14</span>
-          <a href="https://docs.openclaw.ai/cli/sandbox" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Sandbox CLI Manage sandbox runtimes for isolated 机器人朋友 execution.”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Sandbox CLI”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Sandbox CLI</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Manage sandbox runtimes for isolated 机器人朋友 execution.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Manage sandbox runtimes for isolated agent execution.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Overview</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw can run 机器人朋友s in isolated sandbox runtimes for 安全守门员. The sandbox 魔法口令s help you inspect and recreate those r…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw can run 机器人朋友s in isolated sandbox runtimes for 安全守门员. The sandbox 魔法口令s help you inspect and recreate those r…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw can run agents in isolated sandbox runtimes for security. The <code>sandbox</code> commands help you inspect and recreate those runtimes after updates or configuration changes.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Today that usually means:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Today that usually means:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Overview”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Docker sandbox containers、SSH sandbox runtimes when 机器人朋友s.defaults…、OpenShell sandbox runtimes when 机器人朋友s.de…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Docker sandbox containers</li><li>SSH sandbox runtimes when <code>agents.defaults.sandbox.backend = &quot;ssh&quot;</code></li><li>OpenShell sandbox runtimes when <code>agents.defaults.sandbox.backend = &quot;openshell&quot;</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For ssh and OpenShell remote, recreate matters more than with Docker:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For <code>ssh</code> and OpenShell <code>remote</code>, recreate matters more than with Docker:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Overview”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：the remote workspace is canonical after t…、openclaw sandbox recreate deletes that ca…、next use seeds it again from the current…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>the remote workspace is canonical after the initial seed</li><li><code>openclaw sandbox recreate</code> deletes that canonical remote workspace for the selected scope</li><li>next use seeds it again from the current local workspace</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>`openclaw sandbox explain`</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Inspect the **effective** sandbox mode/scope/workspace access, sandbox 工具小帮手 policy, and elevated gates (with fix-it 设置…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Inspect the **effective** sandbox mode/scope/workspace access, sandbox 工具小帮手 policy, and elevated gates (with fix-it 设置…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Inspect the **effective** sandbox mode/scope/workspace access, sandbox tool policy, and elevated gates (with fix-it config key paths).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw sandbox explain”。你可以把它想成对机器人说的完整命令。</li><li>这里在给“openclaw sandbox explain --session agent”贴标签，意思是把它设置成“main:main”。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw sandbox explain --agent work”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw sandbox explain
-openclaw sandbox explain --session agent:main:main
-openclaw sandbox explain --agent work
-openclaw sandbox explain --json</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>`openclaw sandbox list`</h2>
-            <p>这一节主要在解释“`openclaw sandbox list`”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“`openclaw sandbox list`”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“List all sandbox runtimes with their status and 设置说明书uration. **Output includes:**”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“List all sandbox runtimes with their status and 设置说明书uration.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>List all sandbox runtimes with their status and configuration.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw sandbox list”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw sandbox list --browser  # List only browser containers”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw sandbox list --json     # JSON output”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw sandbox list
-openclaw sandbox list --browser  # List only browser containers
-openclaw sandbox list --json     # JSON output</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Output includes:**”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Output includes:**</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“`openclaw sandbox list`”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Runtime name and status、Backend (docker, openshell, etc.)、设置说明书 label and whether it matches curren…、Age (time since creation)。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Runtime name and status</li><li>Backend (<code>docker</code>, <code>openshell</code>, etc.)</li><li>Config label and whether it matches current config</li><li>Age (time since creation)</li><li>Idle time (time since last use)</li><li>Associated session/agent</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>`openclaw sandbox recreate`</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Remove sandbox runtimes to force recreation with updated 设置说明书. **Options:** **Important:** Runtimes are automatically…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Remove sandbox runtimes to force recreation with updated 设置说明书.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Remove sandbox runtimes to force recreation with updated config.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw sandbox recreate --all                # Recreate all containers”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw sandbox recreate --session main       # Specific session”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw sandbox recreate --agent mybot        # Specific agent”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw sandbox recreate --all                # Recreate all containers
-openclaw sandbox recreate --session main       # Specific session
-openclaw sandbox recreate --agent mybot        # Specific agent
-openclaw sandbox recreate --browser            # Only browser containers
-openclaw sandbox recreate --all --force        # Skip confirmation</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Options:**”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Options:**</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“`openclaw sandbox recreate`”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：--all: Recreate all sandbox containers、--session &lt;key&gt;: Recreate container for s…、--机器人朋友 &lt;id&gt;: Recreate containers for spe…、--browser: Only recreate browser containe…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>--all</code>: Recreate all sandbox containers</li><li><code>--session &lt;key&gt;</code>: Recreate container for specific session</li><li><code>--agent &lt;id&gt;</code>: Recreate containers for specific agent</li><li><code>--browser</code>: Only recreate browser containers</li><li><code>--force</code>: Skip confirmation prompt</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Important:** Runtimes are automatically recreated when the 机器人朋友 is next used.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Important:** Runtimes are automatically recreated when the agent is next used.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>After updating a Docker image</h2>
-            <p>这一节主要在解释“After updating a Docker image”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“After updating a Docker image”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
-        <ul class="code-steps">
-          <li>这一行“# Pull new image”是当前步骤要交给电脑的一小块提示。</li><li>这里在给“docker pull openclaw-sandbox”贴标签，意思是把它设置成“latest”。</li><li>这里在给“docker tag openclaw-sandbox”贴标签，意思是把它设置成“latest openclaw-sandbox:bookworm-slim”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash"># Pull new image
-docker pull openclaw-sandbox:latest
-docker tag openclaw-sandbox:latest openclaw-sandbox:bookworm-slim
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧪 <code>openclaw sandbox</code> 像“给小工人们准备隔离实验箱，改了箱子规则后再整批重做箱子”</h2>
+      <p>这页讲的是隔离运行时。翻成人话，就是 OpenClaw 不想让 agent 直接在大房子里到处乱跑，于是会给它们安排一个个单独的小实验箱。</p>
+      <p>你平时最常做的不是“造箱子”，而是“看现在箱子长什么样、解释规则、改完配置后把旧箱子拆掉重做”。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合在意隔离执行、安全边界、Docker/SSH/OpenShell 运行箱的人</span>
+      <span>这页最重要的是记住：sandbox 主要管“看箱子”和“重造箱子”，不是日常聊天功能</span>
+      <a href="https://docs.openclaw.ai/cli/sandbox" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
-# Update config to use new image
-# Edit config: agents.defaults.sandbox.docker.image (or agents.list[].sandbox.docker.image)
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>📦 先记 3 个主动作：解释规则、看现有箱子、拆旧重做</h2>
+    <p>官方的命令面其实很集中，几乎都围着这三件事转。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧭</span>
+      <h2><code>sandbox explain</code></h2>
+      <p>像请老师把当前隔离规则念给你听：模式是什么、能看多大范围、哪些门还是锁着的。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📋</span>
+      <h2><code>sandbox list</code></h2>
+      <p>像把现在所有实验箱列出来，看它们活没活着、老没老、归谁用。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔨</span>
+      <h2><code>sandbox recreate</code></h2>
+      <p>像把旧箱子拆掉，等下次小工人上工时按新图纸自动重做一只新箱子。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>先搞清规则，再看箱子，必要时重造箱子。</p>
+    </article>
+  </div>
+</section>
 
-# Recreate containers
-openclaw sandbox recreate --all</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>After changing sandbox 设置说明书uration</h2>
-            <p>这一节主要在解释“After changing sandbox 设置说明书uration”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“After changing sandbox 设置说明书uration”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
-        <ul class="code-steps">
-          <li>这里在给“# Edit config”贴标签，意思是把它设置成“agents.defaults.sandbox.* (or agents.list[].sandbox.*)”。</li><li>这一行“# Recreate to apply new config”是当前步骤要交给电脑的一小块提示。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw sandbox recreate --all”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash"># Edit config: agents.defaults.sandbox.* (or agents.list[].sandbox.*)
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🏗️ 这些箱子可能是 Docker、SSH、OpenShell，不是只有一种箱子材质</h2>
+    <p>官方先讲 Overview，就是怕你把 sandbox 想成只等于 Docker。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">Docker sandbox containers</div>
+      <p>像本机院子里摆着的一排标准实验箱。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">SSH sandbox runtimes</div>
+      <p>像把实验箱搭在远处另一栋楼里，通过 SSH 走过去用。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">OpenShell sandbox runtimes</div>
+      <p>像另一种隔离材料做成的箱子，规则和行为又有点不同。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">远程箱子更要重建</div>
+      <p>官方特别强调 SSH 和 OpenShell remote，因为它们的远端工作区是“正本”，不是临时影子。重建时真的会把那边的正本箱子拆掉重种。</p>
+    </div>
+  </div>
+</section>
 
-# Recreate to apply new config
-openclaw sandbox recreate --all</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>After changing SSH target or SSH auth material</h2>
-            <p>这一节主要在解释“After changing SSH target or SSH auth material”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“After changing SSH target or SSH auth material”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For the core ssh backend, recreate deletes the per-scope remote workspace root on the SSH target. The next run seeds it…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
-        <ul class="code-steps">
-          <li>这里在给“# Edit config”贴标签，意思是把它设置成“”。</li><li>这一行“# - agents.defaults.sandbox.backend”是当前步骤要交给电脑的一小块提示。</li><li>这一行“# - agents.defaults.sandbox.ssh.target”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash"># Edit config:
-# - agents.defaults.sandbox.backend
-# - agents.defaults.sandbox.ssh.target
-# - agents.defaults.sandbox.ssh.workspaceRoot
-# - agents.defaults.sandbox.ssh.identityFile / certificateFile / knownHostsFile
-# - agents.defaults.sandbox.ssh.identityData / certificateData / knownHostsData
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🔍 <code>explain</code> 像“把这只箱子的门禁规则摊开给你看”</h2>
+    <p>这条命令很适合先看，不适合跳过。因为你不先看规则，就容易误会为什么某些工具能用、某些工具被挡住。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🚪</span>
+      <h2>mode / scope / workspace access</h2>
+      <p>像看这只箱子门开多大、是一个人单用还是几个人共用、能走到哪块地板。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🛡️</span>
+      <h2>sandbox tool policy</h2>
+      <p>像看箱子里哪些工具能拿，哪些只能隔着玻璃看。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔼</span>
+      <h2>elevated gates</h2>
+      <p>像哪些门后面还要再刷更高级别门卡，不能随便闯。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧷</span>
+      <h2>fix-it config key paths</h2>
+      <p>像老师不只告诉你“错了”，还顺手指给你看该去哪一行配置改。</p>
+    </article>
+  </div>
+</section>
 
-openclaw sandbox recreate --all</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For the core ssh backend, recreate deletes the per-scope remote workspace root on the SSH target. The next run seeds it…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For the core <code>ssh</code> backend, recreate deletes the per-scope remote workspace root on the SSH target. The next run seeds it again from the local workspace.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>After changing OpenShell source, policy, or mode</h2>
-            <p>这一节主要在解释“After changing OpenShell source, policy, or mode”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“After changing OpenShell source, policy, or mode”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For OpenShell remote mode, recreate deletes the canonical remote workspace for that scope. The next run seeds it again…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
-        <ul class="code-steps">
-          <li>这里在给“# Edit config”贴标签，意思是把它设置成“”。</li><li>这一行“# - agents.defaults.sandbox.backend”是当前步骤要交给电脑的一小块提示。</li><li>这一行“# - plugins.entries.openshell.config.from”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash"># Edit config:
-# - agents.defaults.sandbox.backend
-# - plugins.entries.openshell.config.from
-# - plugins.entries.openshell.config.mode
-# - plugins.entries.openshell.config.policy
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧾 <code>list</code> 最像“盘点仓库里现在到底摆了多少只实验箱”</h2>
+    <p>这条命令很像仓库盘点表，帮助你确认旧箱子是不是还赖着不走。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">runtime name / status</div>
+      <p>像每只箱子外面都有名字牌和红绿灯，告诉你它现在是活着、闲着还是挂着。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">backend / config label</div>
+      <p>像写清楚这只箱子是什么材质做的、贴的配置标签是不是还和现在的图纸一致。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">age / idle time</div>
+      <p>像看这只箱子已经搭了多久、多久没人进去用了。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--browser</code></div>
+      <p>像只盘点浏览器专用那一批箱子，不把别的混进来。</p>
+    </div>
+  </div>
+</section>
 
-openclaw sandbox recreate --all</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For OpenShell remote mode, recreate deletes the canonical remote workspace for that scope. The next run seeds it again…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For OpenShell <code>remote</code> mode, recreate deletes the canonical remote workspace for that scope. The next run seeds it again from the local workspace.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>After changing setup魔法口令</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw sandbox recreate --all”。你可以把它想成对机器人说的完整命令。</li><li>这里在给“# or just one agent”贴标签，意思是把它设置成“”。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw sandbox recreate --agent family”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw sandbox recreate --all
-# or just one agent:
-openclaw sandbox recreate --agent family</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-11">
-          <div class="section-heading">
-            <p class="section-kicker">第 11 站</p>
-            <h2>For a specific 机器人朋友 only</h2>
-            <p>这一节主要在解释“For a specific 机器人朋友 only”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“For a specific 机器人朋友 only”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
-        <ul class="code-steps">
-          <li>这一行“# Update only one agent&#39;s containers”是当前步骤要交给电脑的一小块提示。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw sandbox recreate --agent alfred”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash"># Update only one agent&#39;s containers
-openclaw sandbox recreate --agent alfred</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-12">
-          <div class="section-heading">
-            <p class="section-kicker">第 12 站</p>
-            <h2>Why is this needed?</h2>
-            <p>这一节主要在解释“Why is this needed?”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Why is this needed?”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Problem:** When you update sandbox 设置说明书uration: **Solution:** Use openclaw sandbox recreate to force removal of old…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Problem:** When you update sandbox 设置说明书uration:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Problem:** When you update sandbox configuration:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Why is this needed?”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Existing runtimes continue running with o…、Runtimes are only pruned after 24h of ina…、Regularly-used 机器人朋友s keep old runtimes a…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Existing runtimes continue running with old settings</li><li>Runtimes are only pruned after 24h of inactivity</li><li>Regularly-used agents keep old runtimes alive indefinitely</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Solution:** Use openclaw sandbox recreate to force removal of old runtimes. They&#39;ll be recreated automatically with c…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Solution:** Use <code>openclaw sandbox recreate</code> to force removal of old runtimes. They&#39;ll be recreated automatically with current settings when next needed.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Tip: prefer openclaw sandbox recreate over manual backend-specific cleanup. It uses the 门口的小门卫’s runtime registry and a…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Tip: prefer <code>openclaw sandbox recreate</code> over manual backend-specific cleanup. It uses the Gateway’s runtime registry and avoids mismatches when scope/session keys change.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-13">
-          <div class="section-heading">
-            <p class="section-kicker">第 13 站</p>
-            <h2>设置说明书uration</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Sandbox settings live in ~/.openclaw/openclaw.json under 机器人朋友s.defaults.sandbox (per-机器人朋友 overrides go in 机器人朋友s.list…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Sandbox settings live in ~/.openclaw/openclaw.json under 机器人朋友s.defaults.sandbox (per-机器人朋友 overrides go in 机器人朋友s.list…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Sandbox settings live in <code>~/.openclaw/openclaw.json</code> under <code>agents.defaults.sandbox</code> (per-agent overrides go in <code>agents.list[].sandbox</code>):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“agents”贴标签，意思是把它设置成“{”。</li><li>这里在给“defaults”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-jsonc">{
-  &quot;agents&quot;: {
-    &quot;defaults&quot;: {
-      &quot;sandbox&quot;: {
-        &quot;mode&quot;: &quot;all&quot;, // off, non-main, all
-        &quot;backend&quot;: &quot;docker&quot;, // docker, ssh, openshell
-        &quot;scope&quot;: &quot;agent&quot;, // session, agent, shared
-        &quot;docker&quot;: {
-          &quot;image&quot;: &quot;openclaw-sandbox:bookworm-slim&quot;,
-          &quot;containerPrefix&quot;: &quot;openclaw-sbx-&quot;,
-          // ... more Docker options
-        },
-        &quot;prune&quot;: {
-          &quot;idleHours&quot;: 24, // Auto-prune after 24h idle
-          &quot;maxAgeDays&quot;: 7, // Auto-prune after 7 days
-        },
-      },
-    },
-  },
-}</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-14">
-          <div class="section-heading">
-            <p class="section-kicker">第 14 站</p>
-            <h2>See Also</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“See Also”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Sandbox Documentation、机器人朋友 设置说明书uration、Doctor 魔法口令 - Check sandbox setup。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><a href="/gateway/sandboxing" target="_blank" rel="noreferrer">Sandbox Documentation</a></li><li><a href="/concepts/agent-workspace" target="_blank" rel="noreferrer">Agent Configuration</a></li><li><a href="/gateway/doctor" target="_blank" rel="noreferrer">Doctor Command</a> - Check sandbox setup</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🔨 <code>recreate</code> 最像“旧箱子留着会一直按旧图纸跑，所以干脆拆了让它按新图纸再搭”</h2>
+    <p>这整页的核心其实就是这一句。为什么要 recreate？因为老箱子自己不会突然学会新配置。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧱</span>
+      <h2>为什么要重建</h2>
+      <p>官方说旧 runtime 可能一直沿用旧设置，而且常用的 agent 会让这些旧箱子一直活着不被自动清理。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎯</span>
+      <h2><code>--all</code> / <code>--agent</code> / <code>--session</code></h2>
+      <p>像决定是拆整片箱区，还是只拆某个工位、某个会话那一只。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪟</span>
+      <h2><code>--browser</code></h2>
+      <p>像只拆浏览器那几只实验箱，不惊动别的工位。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✅</span>
+      <h2><code>--force</code></h2>
+      <p>像你已经点头说“别再问我了，这批旧箱子现在就拆”。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🛠️ 什么时候最该重建？换镜像、改 SSH、改 OpenShell、改 setupCommand 之后</h2>
+    <p>官方列这些 use cases，就是在告诉你“别傻等它自动变新”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">换 Docker image</div>
+      <p>像实验箱材质换了新钢板，旧箱子不会自己长出新壳，得重搭。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">改 SSH target / auth</div>
+      <p>像你连实验楼地址和钥匙都换了，旧远程箱子当然得整批重建。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">改 OpenShell source / policy / mode</div>
+      <p>像箱子的组装方式、守则和运行模式都换了，旧箱子没法原地变身。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">setupCommand 变了也一样</div>
+      <p>像箱子搭好后会先跑一套进场布置。你把布置步骤改了，旧箱子也要拆了重来。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw sandbox</code> 压成一句话</h2>
+    <p><code>openclaw sandbox</code> 就像隔离实验箱管理台：先把箱子的规则和状态看清，再在换图纸、换材料、换远端地址之后，把旧箱子拆掉，等系统下次按新规则自动重建。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

@@ -1,0 +1,191 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧪 <code>openclaw sandbox</code> 像“给小工人们准备隔离实验箱，改了箱子规则后再整批重做箱子”</h2>
+      <p>这页讲的是隔离运行时。翻成人话，就是 OpenClaw 不想让 agent 直接在大房子里到处乱跑，于是会给它们安排一个个单独的小实验箱。</p>
+      <p>你平时最常做的不是“造箱子”，而是“看现在箱子长什么样、解释规则、改完配置后把旧箱子拆掉重做”。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合在意隔离执行、安全边界、Docker/SSH/OpenShell 运行箱的人</span>
+      <span>这页最重要的是记住：sandbox 主要管“看箱子”和“重造箱子”，不是日常聊天功能</span>
+      <a href="https://docs.openclaw.ai/cli/sandbox" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>📦 先记 3 个主动作：解释规则、看现有箱子、拆旧重做</h2>
+    <p>官方的命令面其实很集中，几乎都围着这三件事转。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧭</span>
+      <h2><code>sandbox explain</code></h2>
+      <p>像请老师把当前隔离规则念给你听：模式是什么、能看多大范围、哪些门还是锁着的。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📋</span>
+      <h2><code>sandbox list</code></h2>
+      <p>像把现在所有实验箱列出来，看它们活没活着、老没老、归谁用。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔨</span>
+      <h2><code>sandbox recreate</code></h2>
+      <p>像把旧箱子拆掉，等下次小工人上工时按新图纸自动重做一只新箱子。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>先搞清规则，再看箱子，必要时重造箱子。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🏗️ 这些箱子可能是 Docker、SSH、OpenShell，不是只有一种箱子材质</h2>
+    <p>官方先讲 Overview，就是怕你把 sandbox 想成只等于 Docker。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">Docker sandbox containers</div>
+      <p>像本机院子里摆着的一排标准实验箱。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">SSH sandbox runtimes</div>
+      <p>像把实验箱搭在远处另一栋楼里，通过 SSH 走过去用。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">OpenShell sandbox runtimes</div>
+      <p>像另一种隔离材料做成的箱子，规则和行为又有点不同。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">远程箱子更要重建</div>
+      <p>官方特别强调 SSH 和 OpenShell remote，因为它们的远端工作区是“正本”，不是临时影子。重建时真的会把那边的正本箱子拆掉重种。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🔍 <code>explain</code> 像“把这只箱子的门禁规则摊开给你看”</h2>
+    <p>这条命令很适合先看，不适合跳过。因为你不先看规则，就容易误会为什么某些工具能用、某些工具被挡住。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🚪</span>
+      <h2>mode / scope / workspace access</h2>
+      <p>像看这只箱子门开多大、是一个人单用还是几个人共用、能走到哪块地板。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🛡️</span>
+      <h2>sandbox tool policy</h2>
+      <p>像看箱子里哪些工具能拿，哪些只能隔着玻璃看。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔼</span>
+      <h2>elevated gates</h2>
+      <p>像哪些门后面还要再刷更高级别门卡，不能随便闯。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧷</span>
+      <h2>fix-it config key paths</h2>
+      <p>像老师不只告诉你“错了”，还顺手指给你看该去哪一行配置改。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧾 <code>list</code> 最像“盘点仓库里现在到底摆了多少只实验箱”</h2>
+    <p>这条命令很像仓库盘点表，帮助你确认旧箱子是不是还赖着不走。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">runtime name / status</div>
+      <p>像每只箱子外面都有名字牌和红绿灯，告诉你它现在是活着、闲着还是挂着。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">backend / config label</div>
+      <p>像写清楚这只箱子是什么材质做的、贴的配置标签是不是还和现在的图纸一致。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">age / idle time</div>
+      <p>像看这只箱子已经搭了多久、多久没人进去用了。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--browser</code></div>
+      <p>像只盘点浏览器专用那一批箱子，不把别的混进来。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🔨 <code>recreate</code> 最像“旧箱子留着会一直按旧图纸跑，所以干脆拆了让它按新图纸再搭”</h2>
+    <p>这整页的核心其实就是这一句。为什么要 recreate？因为老箱子自己不会突然学会新配置。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧱</span>
+      <h2>为什么要重建</h2>
+      <p>官方说旧 runtime 可能一直沿用旧设置，而且常用的 agent 会让这些旧箱子一直活着不被自动清理。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎯</span>
+      <h2><code>--all</code> / <code>--agent</code> / <code>--session</code></h2>
+      <p>像决定是拆整片箱区，还是只拆某个工位、某个会话那一只。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪟</span>
+      <h2><code>--browser</code></h2>
+      <p>像只拆浏览器那几只实验箱，不惊动别的工位。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✅</span>
+      <h2><code>--force</code></h2>
+      <p>像你已经点头说“别再问我了，这批旧箱子现在就拆”。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🛠️ 什么时候最该重建？换镜像、改 SSH、改 OpenShell、改 setupCommand 之后</h2>
+    <p>官方列这些 use cases，就是在告诉你“别傻等它自动变新”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">换 Docker image</div>
+      <p>像实验箱材质换了新钢板，旧箱子不会自己长出新壳，得重搭。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">改 SSH target / auth</div>
+      <p>像你连实验楼地址和钥匙都换了，旧远程箱子当然得整批重建。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">改 OpenShell source / policy / mode</div>
+      <p>像箱子的组装方式、守则和运行模式都换了，旧箱子没法原地变身。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">setupCommand 变了也一样</div>
+      <p>像箱子搭好后会先跑一套进场布置。你把布置步骤改了，旧箱子也要拆了重来。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw sandbox</code> 压成一句话</h2>
+    <p><code>openclaw sandbox</code> 就像隔离实验箱管理台：先把箱子的规则和状态看清，再在换图纸、换材料、换远端地址之后，把旧箱子拆掉，等系统下次按新规则自动重建。</p>
+  </div>
+</section>

@@ -1,0 +1,231 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📱 Nodes 就是那些“跟着 Gateway 一起跑的小伙伴设备”</h2>
+      <p>这页不是在讲主机本身，而是在讲那些会连到 Gateway 的伴侣设备。它们可以是 macOS、iPhone、Android，也可以是没有屏幕的 headless 机器。</p>
+      <p>你可以把 Node 想成一双手、一只眼、一台手机，都会听 Gateway 的指挥，但它自己不是总控台。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合第一次想明白“节点到底是什么”的人</span>
+      <span>这页最重要的是分清：node 是周边设备，不是 gateway 本体</span>
+      <a href="https://docs.openclaw.ai/nodes/index" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧩 先想画面：Gateway 在前台，Node 在旁边帮忙</h2>
+    <p>官方一开头就说得很明确。Node 会连到 Gateway 的 WebSocket，而且它会带着 <code>role: "node"</code> 来报到。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧑‍🍳</span>
+      <h2>Gateway</h2>
+      <p>像厨房里的总厨，负责收单、分单、调度所有活。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧰</span>
+      <h2>Node</h2>
+      <p>像厨房旁边的帮手桌。它能做具体动作，但不会自己变成总厨。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📡</span>
+      <h2>WebSocket</h2>
+      <p>像一根一直插着的对讲线。Node 和 Gateway 靠它持续说话。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏷</span>
+      <h2><code>role: "node"</code></h2>
+      <p>像进门时贴的胸牌。告诉 Gateway：“我是来当节点帮忙的。”</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🚪 Node 不是 Gateway，它只是来开一扇小门</h2>
+    <p>官方一直在强调一件事：Node 是外围设备，不是 Gateway 服务本身。它能把自己的能力暴露出来，但它不负责当总入口。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📱 macOS / iOS / Android</div>
+      <p>这些都可以当 Node。它们像不同形状的小帮手桌，但都能接进同一条系统线。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🫥 headless</div>
+      <p>像没有屏幕的后厨机器。看不见脸，但照样能干活。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚫 不是网关</div>
+      <p>Node 不跑 Gateway 服务。它只是把自己的命令、摄像头、画布、通知之类能力交给 Gateway 调用。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 先记一句</div>
+      <p>Node 是配件，不是总台。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🛠 `openclaw nodes` 这组命令，像是在给节点发工作牌</h2>
+    <p>官方把节点的 CLI 集合叫做 <code>nodes</code>。它能列清单、看状态、改名字、批准配对，也能往节点里真正送命令。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw nodes list</code></div>
+      <p>像翻一张“现在有哪些节点在场”的名单。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw nodes status</code></div>
+      <p>像抬头看仪表盘，看看这些节点有没有连上、最近有没有回来过。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw nodes approve &lt;requestId&gt;</code></div>
+      <p>像给刚来报到的新设备点头：“可以，你正式成为节点了。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw nodes rename --name \"Build Node\"</code></div>
+      <p>像给这位小帮手贴一张更好认的名字牌。以后叫它就方便多了。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🔐 Pairing 不是装饰，它是在给节点发正式通行证</h2>
+    <p>WS 节点要用 device pairing。官方的意思很明确：设备连上来时要先登记，Gateway 再决定放不放它进来。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🪪</span>
+      <h2>先报到</h2>
+      <p>Node 发起连接时，会先展示自己的身份。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📋</span>
+      <h2>再审批</h2>
+      <p>Gateway 会生成一个设备配对请求，等你去批准。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✅</span>
+      <h2>批准后才算进门</h2>
+      <p>没批准前，它只是门口排队的小朋友；批准后才是正式成员。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔁</span>
+      <h2>重试会换新票</h2>
+      <p>如果它改了 auth details 再来，旧票会被顶掉，新 requestId 才算数。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧳 远程节点主机，像让另一台机器替你跑腿</h2>
+    <p>官方还讲了一个更实用的场景：Gateway 在一台机器上，命令想在另一台机器上跑。这时就会有 node host。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🏃 `openclaw node run`</div>
+      <p>像在那台远处的机器上启动一个跑腿小帮手。它会连回 Gateway，然后替你在本机做事。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🛠 `openclaw node install` / `restart`</div>
+      <p>像把这位跑腿小帮手装成常驻服务，不用每次都手动叫醒它。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔗 SSH tunnel</div>
+      <p>如果 Gateway 只听本机，那就先搭一条私密小桥，再让 node host 走桥过来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 这节最重要的点</div>
+      <p>Node host 不是“再装一个 Gateway”，而是“给远处那台机器装一个执行跑腿的人”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>📷 Camera、Canvas、Location、SMS，都是节点手里不同的小本领</h2>
+    <p>官方把节点能力拆得很细。你可以把它们想成不同抽屉：有的装相机，有的装画布，有的装定位，还有的装短信。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📸</span>
+      <h2>Camera / Screen</h2>
+      <p>像让节点把眼前的画面拍给你看，或者录下来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🖼</span>
+      <h2>Canvas</h2>
+      <p>像给节点一块可操作的白板，能展示、能导航、能截图。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📍</span>
+      <h2>Location</h2>
+      <p>像问它“你现在站在哪儿”。这个能力默认关着，要看设备和权限。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">💬</span>
+      <h2>SMS / Notifications</h2>
+      <p>像让 Android 节点会发短信、让 macOS 节点会弹通知。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第七站</p>
+    <h2>🛠 这些命令本质上都在做“把动作送到节点那边”</h2>
+    <p>不要被一长串子命令吓到。它们大多都在做同一件事：把指定动作交给指定节点。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw nodes invoke --command canvas.eval</code></div>
+      <p>像对节点说：“帮我在那块白板上做这件事。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw nodes canvas snapshot</code></div>
+      <p>像让节点拍一张当前画布的照片，再交给你看。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw nodes camera snap</code></div>
+      <p>像让节点把摄像头前的景象咔嚓拍下来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw nodes location get</code></div>
+      <p>像问节点：“你现在坐标在哪儿？”</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第八站</p>
+    <h2>🧠 macOS node mode 和 headless node host，像两种不同的小帮手外形</h2>
+    <p>一个有界面，一个没有界面，但本质都一样：它们都是 Gateway 旁边干活的节点。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🖥 macOS node mode</div>
+      <p>像你的菜单栏 App 自己也变成一个节点，能把本机的画布和相机能力分享出来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🫥 headless node host</div>
+      <p>像没有脸的小帮手，安静地连着 Gateway，专心做执行任务。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>Nodes 这一页讲的是：让外围设备先报到，再按门牌叫它们做具体动作。</p>
+    </div>
+  </div>
+</section>
