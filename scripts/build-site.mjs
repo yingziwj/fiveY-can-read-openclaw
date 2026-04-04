@@ -129,6 +129,7 @@ const handcraftedPageMap = new Map([
   ["/tools/subagents", path.resolve("content/handcrafted/tools.subagents.zh.html")],
   ["/tools/thinking", path.resolve("content/handcrafted/tools.thinking.zh.html")],
   ["/tools/tavily", path.resolve("content/handcrafted/tools.tavily.zh.html")],
+  ["/cli/browser", path.resolve("content/handcrafted/cli.browser.zh.html")],
   ["/channels/index", path.resolve("content/handcrafted/channels.index.zh.html")],
   ["/channels/discord", path.resolve("content/handcrafted/channels.discord.zh.html")],
   ["/channels/pairing", path.resolve("content/handcrafted/channels.pairing.zh.html")],

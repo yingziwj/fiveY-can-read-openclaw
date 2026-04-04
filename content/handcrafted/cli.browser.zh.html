@@ -1,0 +1,220 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧭 `openclaw browser` 像“给 OpenClaw 配一只会看网页的眼睛”</h2>
+      <p>这页不是在讲普通浏览器，而是在讲一个能被 OpenClaw 指挥的浏览器小助手。它可以开标签、看页面、拍快照、点按钮、打字，像一个坐在电脑前认真干活的小帮手。</p>
+      <p>你可以把它想成：OpenClaw 不只是会聊天，它还会派出一只手，去网页里做事。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合要让机器人自己打开网页、看网页、操作网页的人</span>
+      <span>这页最重要的是分清：profile 是“哪只眼睛”，tab 是“看哪一页”</span>
+      <a href="https://docs.openclaw.ai/cli/browser" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🎪 先把舞台搭好：浏览器不是一个按钮，而是一整套小剧场</h2>
+    <p>官方开头就说它能管 tabs、snapshots、screenshots、navigation、clicks、typing。翻成人话，就是浏览器里的动作都能被它接住。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🪟</span>
+      <h2>tabs</h2>
+      <p>像一叠小卡片。每一张都可以是一个网页。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📷</span>
+      <h2>snapshot / screenshot</h2>
+      <p>像先看一眼、再拍一张照。一个偏结构，一个偏画面。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🖱</span>
+      <h2>navigation / click / typing</h2>
+      <p>像在网页里走路、按按钮、写字，把手伸进网页里干活。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⭐</span>
+      <h2>一句话先记住</h2>
+      <p>它不是“打开一个浏览器窗口”，而是“让 OpenClaw 能指挥浏览器做事”。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧰 Common flags 像出门前先拿对门牌和门票</h2>
+    <p>这一页的参数不多，但都很关键。你可以把它们想成“我要连哪儿、用谁的身份、等多久、要哪种输出”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>--url</code></div>
+      <p>像告诉这只眼睛：你要先飞到哪个 Gateway 门口去排队。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--token</code></div>
+      <p>像门票。门口如果要验票，你就得带着它。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--timeout</code></div>
+      <p>像说“我只等这么久，别让我在门口站太久”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--browser-profile</code></div>
+      <p>像告诉小助手要用哪套衣服、哪副眼镜、哪间小房间。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🚀 Quick start 其实就是“先叫醒浏览器，再把它领到网页前”</h2>
+    <p>官方把最常见的开法压成了几条命令。顺序很重要：先看 profile，再启动，再打开网页，再拍一张。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2><code>openclaw browser profiles</code></h2>
+      <p>像先去看家里有几只小眼睛、它们叫什么名字。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2><code>openclaw browser --browser-profile openclaw start</code></h2>
+      <p>像把指定那只眼睛叫醒，让它准备看网页。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2><code>openclaw browser ... open https://example.com</code></h2>
+      <p>像牵着它走到指定网页门口。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2><code>openclaw browser ... snapshot</code></h2>
+      <p>像让它睁眼看一眼，然后把眼前的样子记下来。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🎭 Profiles 不是花哨名字，而是“不同性格的浏览器小帮手”</h2>
+    <p>官方把 profile 讲得很实用：有的跟随你自己的 Chrome，有的用 OpenClaw 管的独立 Chrome，有的连远端 CDP。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">🧩 <code>openclaw</code></div>
+      <p>像 OpenClaw 自己养的一只独立小帮手，住在自己的小窝里，互不打扰。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">👤 <code>user</code></div>
+      <p>像直接借你平时正在登录的那只浏览器，用它已经有的登录状态继续干活。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🌐 自定义 CDP</div>
+      <p>像把这只眼睛接到一台远处的浏览器机器上，不一定是本机。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 一句话</div>
+      <p>profile 决定你叫来的到底是哪只浏览器。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>📑 Tabs 这段在提醒你：先找到桌上的牌子，再决定翻哪一张</h2>
+    <p>标签页操作是最像“手伸进去翻卡片”的部分。它们不是抽象概念，而是浏览器里一张张能被点开的门。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>tabs</code></div>
+      <p>像把所有小卡片摊开看看，现在桌上有几张。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>open</code></div>
+      <p>像再放一张新卡片进桌面，让小助手打开一个新页面。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>focus</code></div>
+      <p>像把手指点到那一张上，让它成为眼前正在看的那张。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>close</code></div>
+      <p>像把看完的卡片收起来，不要占着桌面。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🪄 snapshot、screenshot、navigate、click、type，是“五个动作手势”</h2>
+    <p>这些词看起来很技术，其实都可以当成动作来记。它们是小助手最常见的五个手势。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">👀</span>
+      <h2><code>snapshot</code></h2>
+      <p>先看清楚现在页面长什么样，像扫一眼桌面布局。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📸</span>
+      <h2><code>screenshot</code></h2>
+      <p>像按下相机快门，把画面拍下来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧭</span>
+      <h2><code>navigate</code></h2>
+      <p>像从这张网页走到另一张网页。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⌨️</span>
+      <h2><code>click</code> / <code>type</code></h2>
+      <p>像伸手按按钮，再在输入框里写字。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第七站</p>
+    <h2>🔗 远程浏览器这段，其实是在说“浏览器可以住在别的机器上”</h2>
+    <p>如果浏览器不在本机，OpenClaw 也不是束手无策。它可以通过 node host 代理到那台机器上，让动作照样做出去。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">🖥 node host</div>
+      <p>像在那台真正有 Chrome 的机器旁边，放一个小耳朵，帮 OpenClaw 递话。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🧷 不用再单独起浏览器控制服务器</div>
+      <p>因为 Gateway 会把动作转发过去，像派快递员把纸条送到远处的桌子上。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>gateway.nodes.browser.mode</code></div>
+      <p>像告诉系统：要不要自动找一台合适的浏览器小帮手。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>gateway.nodes.browser.node</code></div>
+      <p>像在多台机器里指定“就让这台来干活”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw browser</code> 这页压成一句话</h2>
+    <p><code>openclaw browser</code> 就是给 OpenClaw 配一只会看网页、会点网页、会写网页的眼睛；你选 profile，就是选这只眼睛住哪儿，选 tab，就是选它正看哪一张卡片。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/tools/browser</code>。那一页会继续讲“这个浏览器工具本身到底能干什么”。</p>
+  </div>
+</section>
