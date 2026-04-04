@@ -1,0 +1,190 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🌊 Streaming 不是“真正在一个字一个字流出来”，它更像 OpenClaw 边想边分段往外递小纸条</h2>
+      <p>这页最容易让人误会的地方，就是一看到 streaming 就以为像打字机那样每个字都实时蹦出来。OpenClaw 这里不是那种玩法。</p>
+      <p>它更像：先攒成一小块，再发出去；或者先用一个预览气泡不停更新，最后再换成正式答案。原文整页，就是在讲这两种“看起来在流”的方式。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想弄懂“为什么不同渠道的流式感觉不一样”的人</span>
+      <span>这页重点是先分清 block streaming 和 preview streaming</span>
+      <a href="https://docs.openclaw.ai/concepts/streaming" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🪄 OpenClaw 其实有两种“流”</h2>
+    <p>原文一开始就说得很清楚：它不是只有一种流式，而是两层。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧱</span>
+      <h2>Block streaming</h2>
+      <p>像一块一块地把写好的内容递出来。不是每个字都飞出来，而是攒成段，再发消息。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">👀</span>
+      <h2>Preview streaming</h2>
+      <p>像先在一个临时小黑板上不断擦写，让你看到它正在生成，最后再给出正式版本。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚫</span>
+      <h2>没有真 token 雨</h2>
+      <p>官方明确说了，目前不是那种“字粒子雨”式 streaming。它仍然是按消息块在工作。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎯</span>
+      <h2>为什么要分两层</h2>
+      <p>因为不同渠道能做的事不一样。有的更适合不断改同一条预览，有的更适合分块发多条消息。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧱 Block streaming 像边写边递纸条</h2>
+    <p>模型写出一段内容后，chunker 会先看看这一小段够不够发、要不要再攒一会儿、要不要先找个更好看的断点。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📏 minChars</div>
+      <p>像“太短先别递”。一句半句就飞出去会很碎，所以会先攒到差不多。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">✂️ maxChars</div>
+      <p>像“太长也别憋着”。到了这个上限，就要找地方切开，先发一块出去。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🪶 breakPreference</div>
+      <p>像优先按自然段、换行、句号这些地方切，尽量别把一句话从中间硬砍开。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 代码块为什么被特别照顾</div>
+      <p>因为官方不想把代码围栏切坏。所以如果逼不得已要中间断，也会先帮你把围栏收好，再在下一块重新打开。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧺 Coalescing 像先把几张小纸条叠一起，再递给你</h2>
+    <p>如果每攒一点点就发一条，很容易像被消息雨砸脸。所以 OpenClaw 还会先把连续小块再合一下。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">⏳ idleMs</div>
+      <p>像等一小会儿，看看后面还有没有接着写。如果还有，就先别急着发。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📦 maxChars</div>
+      <p>像合并篮子也不能太大，太大了就得先倒出来一部分。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 这节一句话版</div>
+      <p>Coalescing 不是新的流式，是为了别让 block streaming 碎成满地纸屑。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🧠 为什么 Slack / Discord / Signal 默认更想合并</div>
+      <p>因为这些地方如果一行一个气泡，读感会特别吵，所以官方会更偏向先攒大一点再发。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>👀 Preview streaming 更像临时草稿板</h2>
+    <p>有些渠道支持不断改一条预览消息。这时候你看到的是“草稿板在更新”，不一定是正式多条消息已经发出去了。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🪄</span>
+      <h2>partial</h2>
+      <p>像一块草稿板，上面的字不断被更新成最新版本。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧱</span>
+      <h2>block</h2>
+      <p>像草稿板不是整块重写，而是一步步往下追加几块内容。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📊</span>
+      <h2>progress</h2>
+      <p>像先显示“正在做事”的状态提示，等真正写完再把正式答案递出来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📣</span>
+      <h2>渠道映射不完全一样</h2>
+      <p>Telegram、Discord、Slack 都能做预览，但每家的玩法不完全一样，别以为一个配置 everywhere 都同样表现。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🛠 配置项别硬背，先看它们在现场控制什么</h2>
+    <p>这一页的配置很多，但本质上都在管“什么时候发、发多大、发成什么样”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>agents.defaults.blockStreamingDefault</code></div>
+      <p>像总开关，决定默认要不要用“边写边递纸条”这一套。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>blockStreamingBreak: "text_end"</code></div>
+      <p>像一写完一小块就尝试往外递，节奏更快。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>blockStreamingBreak: "message_end"</code></div>
+      <p>像等整段大作文基本写好，再一次或分几块送出去，节奏更稳。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>channels.&lt;channel&gt;.streaming</code></div>
+      <p>像给某个具体聊天门口单独决定：这个地方是用草稿板预览，还是干脆不要预览。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🧍 Human delay 是什么？像故意别把多条消息喷得太像机关枪</h2>
+    <p>原文这段很可爱。它不是技术必须，而是读感优化。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">⏸ natural</div>
+      <p>像在多条 block 回复之间故意停一小下，更像人类发消息，不像脚本喷射器。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🎛 custom</div>
+      <p>像你自己决定停顿区间，让节奏更快或更慢。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 注意它只影响什么</div>
+      <p>它只影响多块 block 回复之间的间隔，不是让整条最终答案都慢下来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>Human delay 是读感化妆，不是功能核心。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Streaming 这页压成一句最好记的话</h2>
+    <p>OpenClaw 的 streaming 更像“边写边分块递纸条”或“先用草稿板不断更新”，而不是每个字都像雨点一样掉出来。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/tools/browser</code>。因为浏览器工具和流式回复很像，表面看起来很丝滑，背后其实也分“即时预览”和“真正动作”两层。</p>
+  </div>
+</section>

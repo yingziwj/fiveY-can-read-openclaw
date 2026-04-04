@@ -3970,1098 +3970,197 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Session Management</h2>
-          <p>这一页像一本关于“Session Management”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：Session Management。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/concepts/session</span>
-          <span>章节数量：18</span>
-          <a href="https://docs.openclaw.ai/concepts/session" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Session Management OpenClaw treats **one direct-chat session per 机器人朋友** as primary. Direct chats collapse to 机器人朋友:&lt;机器…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Session Management”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Session Management</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw treats **one direct-chat session per 机器人朋友** as primary. Direct chats collapse to 机器人朋友:&lt;机器人朋友Id&gt;:&lt;mainKey&gt; (d…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw treats **one direct-chat session per agent** as primary. Direct chats collapse to <code>agent:&lt;agentId&gt;:&lt;mainKey&gt;</code> (default <code>main</code>), while group/channel chats get their own keys. <code>session.mainKey</code> is honored.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use session.dmScope to control how **direct 小纸条消息s** are 大家一起的房间ed:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use <code>session.dmScope</code> to control how **direct messages** are grouped:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use session.identityLinks to map provider-prefixed peer ids to a canonical identity so the same person shares a DM sess…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use <code>session.identityLinks</code> to map provider-prefixed peer ids to a canonical identity so the same person shares a DM session across channels when using <code>per-peer</code>, <code>per-channel-peer</code>, or <code>per-account-channel-peer</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：main (default): all DMs share the main se…、per-peer: isolate by sender id across 消息通…、per-消息通道-peer: isolate by 消息通道 + sender (…、per-account-消息通道-peer: isolate by account…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>main</code> (default): all DMs share the main session for continuity.</li><li><code>per-peer</code>: isolate by sender id across channels.</li><li><code>per-channel-peer</code>: isolate by channel + sender (recommended for multi-user inboxes).</li><li><code>per-account-channel-peer</code>: isolate by account + channel + sender (recommended for multi-account inboxes).</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Secure DM mode (recommended for multi-user setups)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&gt; **安全守门员 Warning:** If your 机器人朋友 can receive DMs from **multiple people**, you should strongly consider enabling secu…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&gt; **安全守门员 Warning:** If your 机器人朋友 can receive DMs from **multiple people**, you should strongly consider enabling secu…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&gt; **Security Warning:** If your agent can receive DMs from **multiple people**, you should strongly consider enabling secure DM mode. Without it, all users share the same conversation context, which can leak private information between users.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Example of the problem with default settings:**”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Example of the problem with default settings:**</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Secure DM mode (recommended for multi-user setups)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Alice (&lt;SENDER_A&gt;) 小纸条消息s your 机器人朋友 abou…、Bob (&lt;SENDER_B&gt;) 小纸条消息s your 机器人朋友 asking…、Because both DMs share the same session,…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Alice (<code>&lt;SENDER_A&gt;</code>) messages your agent about a private topic (for example, a medical appointment)</li><li>Bob (<code>&lt;SENDER_B&gt;</code>) messages your agent asking &quot;What were we talking about?&quot;</li><li>Because both DMs share the same session, the model may answer Bob using Alice&#39;s prior context.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**The fix:** Set dmScope to isolate sessions per user:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**The fix:** Set <code>dmScope</code> to isolate sessions per user:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>这一行“// ~/.openclaw/openclaw.json”是当前步骤要交给电脑的一小块提示。</li><li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“session”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">// ~/.openclaw/openclaw.json
-{
-  session: {
-    // Secure DM mode: isolate DM context per channel + sender.
-    dmScope: &quot;per-channel-peer&quot;,
-  },
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**When to enable this:**”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**When to enable this:**</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Secure DM mode (recommended for multi-user setups)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：You have pairing approvals for more than…、You use a DM allowlist with multiple entr…、You set dmPolicy: &quot;open&quot;、Multiple phone numbers or accounts can 小纸…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>You have pairing approvals for more than one sender</li><li>You use a DM allowlist with multiple entries</li><li>You set <code>dmPolicy: &quot;open&quot;</code></li><li>Multiple phone numbers or accounts can message your agent</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Notes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Secure DM mode (recommended for multi-user setups)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Default is dmScope: &quot;main&quot; for continuity…、Local CLI onboarding writes session.dmSco…、For multi-account inboxes on the same 消息通…、If the same person contacts you on multip…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Default is <code>dmScope: &quot;main&quot;</code> for continuity (all DMs share the main session). This is fine for single-user setups.</li><li>Local CLI onboarding writes <code>session.dmScope: &quot;per-channel-peer&quot;</code> by default when unset (existing explicit values are preserved).</li><li>For multi-account inboxes on the same channel, prefer <code>per-account-channel-peer</code>.</li><li>If the same person contacts you on multiple channels, use <code>session.identityLinks</code> to collapse their DM sessions into one canonical identity.</li><li>You can verify your DM settings with <code>openclaw security audit</code> (see <a href="/cli/security" target="_blank" rel="noreferrer">security</a>).</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>门口的小门卫 is the source of truth</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“All session state is **owned by the 门口的小门卫** (the “master” OpenClaw). UI 来帮忙的小伙伴s (macOS app, WebChat, etc.) must query…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“All session state is **owned by the 门口的小门卫** (the “master” OpenClaw). UI 来帮忙的小伙伴s (macOS app, WebChat, etc.) must query…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>All session state is **owned by the gateway** (the “master” OpenClaw). UI clients (macOS app, WebChat, etc.) must query the gateway for session lists and token counts instead of reading local files.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Gateway is the source of truth”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：In **remote mode**, the session store you…、Token counts shown in UIs come from the 门…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>In **remote mode**, the session store you care about lives on the remote gateway host, not your Mac.</li><li>Token counts shown in UIs come from the gateway’s store fields (<code>inputTokens</code>, <code>outputTokens</code>, <code>totalTokens</code>, <code>contextTokens</code>). Clients do not parse JSONL transcripts to “fix up” totals.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Where state lives</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Where state lives”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：On the **门口的小门卫 host**:、Store file: ~/.openclaw/机器人朋友s/&lt;机器人朋友Id&gt;/…、Transcripts: ~/.openclaw/机器人朋友s/&lt;机器人朋友Id&gt;…、The store is a map sessionKey -&gt; { sessio…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>On the **gateway host**:</li><li>Store file: <code>~/.openclaw/agents/&lt;agentId&gt;/sessions/sessions.json</code> (per agent).</li><li>Transcripts: <code>~/.openclaw/agents/&lt;agentId&gt;/sessions/&lt;SessionId&gt;.jsonl</code> (Telegram topic sessions use <code>.../&lt;SessionId&gt;-topic-&lt;threadId&gt;.jsonl</code>).</li><li>The store is a map <code>sessionKey -&gt; { sessionId, updatedAt, ... }</code>. Deleting entries is safe; they are recreated on demand.</li><li>Group entries may include <code>displayName</code>, <code>channel</code>, <code>subject</code>, <code>room</code>, and <code>space</code> to label sessions in UIs.</li><li>Session entries include <code>origin</code> metadata (label + routing hints) so UIs can explain where a session came from.</li><li>OpenClaw does **not** read legacy Pi/Tau session folders.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Maintenance</h2>
-            <p>这一节主要在解释“Maintenance”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Maintenance”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw applies session-store maintenance to keep sessions.json and transcript artifacts bounded over time.”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw applies session-store maintenance to keep sessions.json and transcript artifacts bounded over time.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw applies session-store maintenance to keep <code>sessions.json</code> and transcript artifacts bounded over time.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Defaults</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Defaults”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：session.maintenance.mode: warn、session.maintenance.pruneAfter: 30d、session.maintenance.maxEntries: 500、session.maintenance.rotateBytes: 10mb。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>session.maintenance.mode</code>: <code>warn</code></li><li><code>session.maintenance.pruneAfter</code>: <code>30d</code></li><li><code>session.maintenance.maxEntries</code>: <code>500</code></li><li><code>session.maintenance.rotateBytes</code>: <code>10mb</code></li><li><code>session.maintenance.resetArchiveRetention</code>: defaults to <code>pruneAfter</code> (<code>30d</code>)</li><li><code>session.maintenance.maxDiskBytes</code>: unset (disabled)</li><li><code>session.maintenance.highWaterBytes</code>: defaults to <code>80%</code> of <code>maxDiskBytes</code> when budgeting is enabled</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>How it works</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Maintenance runs during session-store writes, and you can trigger it on demand with openclaw sessions cleanup. 1. prune…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Maintenance runs during session-store writes, and you can trigger it on demand with openclaw sessions cleanup.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Maintenance runs during session-store writes, and you can trigger it on demand with <code>openclaw sessions cleanup</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“1. prune stale entries older than pruneAfter 2. cap entry count to maxEntries (oldest first) 3. archive transcript file…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. prune stale entries older than <code>pruneAfter</code> 2. cap entry count to <code>maxEntries</code> (oldest first) 3. archive transcript files for removed entries that are no longer referenced 4. purge old <code>*.deleted.&lt;timestamp&gt;</code> and <code>*.reset.&lt;timestamp&gt;</code> archives by retention policy 5. rotate <code>sessions.json</code> when it exceeds <code>rotateBytes</code> 6. if <code>maxDiskBytes</code> is set, enforce disk budget toward <code>highWaterBytes</code> (oldest artifacts first, then oldest sessions)</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“How it works”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：mode: &quot;warn&quot;: reports what would be evict…、mode: &quot;enforce&quot;: applies cleanup in this…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>mode: &quot;warn&quot;</code>: reports what would be evicted but does not mutate entries/transcripts.</li><li><code>mode: &quot;enforce&quot;</code>: applies cleanup in this order:</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>Performance caveat for large stores</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Large session stores are common in high-volume setups. Maintenance work is write-path work, so very large stores can in…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Large session stores are common in high-volume setups. Maintenance work is write-path work, so very large stores can in…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Large session stores are common in high-volume setups. Maintenance work is write-path work, so very large stores can increase write latency.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“What increases cost most:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>What increases cost most:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Performance caveat for large stores”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：very high session.maintenance.maxEntries…、long pruneAfter windows that keep stale e…、many transcript/archive artifacts in ~/.o…、enabling disk budgets (maxDiskBytes) with…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>very high <code>session.maintenance.maxEntries</code> values</li><li>long <code>pruneAfter</code> windows that keep stale entries around</li><li>many transcript/archive artifacts in <code>~/.openclaw/agents/&lt;agentId&gt;/sessions/</code></li><li>enabling disk budgets (<code>maxDiskBytes</code>) without reasonable pruning/cap limits</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“What to do:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>What to do:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Performance caveat for large stores”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：use mode: &quot;enforce&quot; in production so grow…、set both time and count limits (pruneAfte…、set maxDiskBytes + highWaterBytes for har…、keep highWaterBytes meaningfully below ma…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>use <code>mode: &quot;enforce&quot;</code> in production so growth is bounded automatically</li><li>set both time and count limits (<code>pruneAfter</code> + <code>maxEntries</code>), not just one</li><li>set <code>maxDiskBytes</code> + <code>highWaterBytes</code> for hard upper bounds in large deployments</li><li>keep <code>highWaterBytes</code> meaningfully below <code>maxDiskBytes</code> (default is 80%)</li><li>run <code>openclaw sessions cleanup --dry-run --json</code> after config changes to verify projected impact before enforcing</li><li>for frequent active sessions, pass <code>--active-key</code> when running manual cleanup</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>Customize examples</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use a conservative enforce policy: Enable a hard disk budget for the sessions directory: Tune for larger installs (exam…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use a conservative enforce policy:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use a conservative enforce policy:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“session”贴标签，意思是把它设置成“{”。</li><li>这里在给“maintenance”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  session: {
-    maintenance: {
-      mode: &quot;enforce&quot;,
-      pruneAfter: &quot;45d&quot;,
-      maxEntries: 800,
-      rotateBytes: &quot;20mb&quot;,
-      resetArchiveRetention: &quot;14d&quot;,
-    },
-  },
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Enable a hard disk budget for the sessions directory:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Enable a hard disk budget for the sessions directory:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“session”贴标签，意思是把它设置成“{”。</li><li>这里在给“maintenance”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  session: {
-    maintenance: {
-      mode: &quot;enforce&quot;,
-      maxDiskBytes: &quot;1gb&quot;,
-      highWaterBytes: &quot;800mb&quot;,
-    },
-  },
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Tune for larger installs (example):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Tune for larger installs (example):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“session”贴标签，意思是把它设置成“{”。</li><li>这里在给“maintenance”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  session: {
-    maintenance: {
-      mode: &quot;enforce&quot;,
-      pruneAfter: &quot;14d&quot;,
-      maxEntries: 2000,
-      rotateBytes: &quot;25mb&quot;,
-      maxDiskBytes: &quot;2gb&quot;,
-      highWaterBytes: &quot;1.6gb&quot;,
-    },
-  },
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Preview or force maintenance from CLI:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Preview or force maintenance from CLI:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw sessions cleanup --dry-run”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw sessions cleanup --enforce”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw sessions cleanup --dry-run
-openclaw sessions cleanup --enforce</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>Session pruning</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw trims **old 工具小帮手 results** from the in-memory context right before LLM calls by default. This does **not** re…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw trims **old 工具小帮手 results** from the in-memory context right before LLM calls by default. This does **not** re…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw trims **old tool results** from the in-memory context right before LLM calls by default. This does **not** rewrite JSONL history. See <a href="/concepts/session-pruning" target="_blank" rel="noreferrer">/concepts/session-pruning</a>.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-11">
-          <div class="section-heading">
-            <p class="section-kicker">第 11 站</p>
-            <h2>Pre-compaction memory flush</h2>
-            <p>这一节主要在解释“Pre-compaction memory flush”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Pre-compaction memory flush”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When a session nears auto-compaction, OpenClaw can run a **silent memory flush** turn that reminds the 聪明脑袋模型 to write…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When a session nears auto-compaction, OpenClaw can run a **silent memory flush** turn that reminds the 聪明脑袋模型 to write…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When a session nears auto-compaction, OpenClaw can run a **silent memory flush** turn that reminds the model to write durable notes to disk. This only runs when the workspace is writable. See <a href="/concepts/memory" target="_blank" rel="noreferrer">Memory</a> and <a href="/concepts/compaction" target="_blank" rel="noreferrer">Compaction</a>.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-12">
-          <div class="section-heading">
-            <p class="section-kicker">第 12 站</p>
-            <h2>Mapping transports → session keys</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Mapping transports → session keys”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Direct chats follow session.dmScope (defa…、main: 机器人朋友:&lt;机器人朋友Id&gt;:&lt;mainKey&gt; (continui…、Multiple phone numbers and 消息通道s can map…、per-peer: 机器人朋友:&lt;机器人朋友Id&gt;:direct:&lt;peerId&gt;.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Direct chats follow <code>session.dmScope</code> (default <code>main</code>).</li><li><code>main</code>: <code>agent:&lt;agentId&gt;:&lt;mainKey&gt;</code> (continuity across devices/channels).</li><li>Multiple phone numbers and channels can map to the same agent main key; they act as transports into one conversation.</li><li><code>per-peer</code>: <code>agent:&lt;agentId&gt;:direct:&lt;peerId&gt;</code>.</li><li><code>per-channel-peer</code>: <code>agent:&lt;agentId&gt;:&lt;channel&gt;:direct:&lt;peerId&gt;</code>.</li><li><code>per-account-channel-peer</code>: <code>agent:&lt;agentId&gt;:&lt;channel&gt;:&lt;accountId&gt;:direct:&lt;peerId&gt;</code> (accountId defaults to <code>default</code>).</li><li>If <code>session.identityLinks</code> matches a provider-prefixed peer id (for example <code>telegram:123</code>), the canonical key replaces <code>&lt;peerId&gt;</code> so the same person shares a session across channels.</li><li>Group chats isolate state: <code>agent:&lt;agentId&gt;:&lt;channel&gt;:group:&lt;id&gt;</code> (rooms/channels use <code>agent:&lt;agentId&gt;:&lt;channel&gt;:channel:&lt;id&gt;</code>).</li><li>Telegram forum topics append <code>:topic:&lt;threadId&gt;</code> to the group id for isolation.</li><li>Legacy <code>group:&lt;id&gt;</code> keys are still recognized for migration.</li><li>Inbound contexts may still use <code>group:&lt;id&gt;</code>; the channel is inferred from <code>Provider</code> and normalized to the canonical <code>agent:&lt;agentId&gt;:&lt;channel&gt;:group:&lt;id&gt;</code> form.</li><li>Other sources:</li><li>Cron jobs: <code>cron:&lt;job.id&gt;</code> (isolated) or custom <code>session:&lt;custom-id&gt;</code> (persistent)</li><li>Webhooks: <code>hook:&lt;uuid&gt;</code> (unless explicitly set by the hook)</li><li>Node runs: <code>node-&lt;nodeId&gt;</code></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-13">
-          <div class="section-heading">
-            <p class="section-kicker">第 13 站</p>
-            <h2>Lifecycle</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Lifecycle”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Reset policy: sessions are reused until t…、Daily reset: defaults to **4:00 AM local…、Idle reset (optional): idleMinutes adds a…、Legacy idle-only: if you set session.idle…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Reset policy: sessions are reused until they expire, and expiry is evaluated on the next inbound message.</li><li>Daily reset: defaults to **4:00 AM local time on the gateway host**. A session is stale once its last update is earlier than the most recent daily reset time.</li><li>Idle reset (optional): <code>idleMinutes</code> adds a sliding idle window. When both daily and idle resets are configured, **whichever expires first** forces a new session.</li><li>Legacy idle-only: if you set <code>session.idleMinutes</code> without any <code>session.reset</code>/<code>resetByType</code> config, OpenClaw stays in idle-only mode for backward compatibility.</li><li>Per-type overrides (optional): <code>resetByType</code> lets you override the policy for <code>direct</code>, <code>group</code>, and <code>thread</code> sessions (thread = Slack/Discord threads, Telegram topics, Matrix threads when provided by the connector).</li><li>Per-channel overrides (optional): <code>resetByChannel</code> overrides the reset policy for a channel (applies to all session types for that channel and takes precedence over <code>reset</code>/<code>resetByType</code>).</li><li>Reset triggers: exact <code>/new</code> or <code>/reset</code> (plus any extras in <code>resetTriggers</code>) start a fresh session id and pass the remainder of the message through. <code>/new &lt;model&gt;</code> accepts a model alias, <code>provider/model</code>, or provider name (fuzzy match) to set the new session model. If <code>/new</code> or <code>/reset</code> is sent alone, OpenClaw runs a short “hello” greeting turn to confirm the reset.</li><li>Manual reset: delete specific keys from the store or remove the JSONL transcript; the next message recreates them.</li><li>Isolated cron jobs always mint a fresh <code>sessionId</code> per run (no idle reuse).</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-14">
-          <div class="section-heading">
-            <p class="section-kicker">第 14 站</p>
-            <h2>Send policy (optional)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Block delivery for specific session types without listing individual ids. Runtime override (owner only): Send these as…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Block delivery for specific session types without listing individual ids.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Block delivery for specific session types without listing individual ids.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“session”贴标签，意思是把它设置成“{”。</li><li>这里在给“sendPolicy”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  session: {
-    sendPolicy: {
-      rules: [
-        { action: &quot;deny&quot;, match: { channel: &quot;discord&quot;, chatType: &quot;group&quot; } },
-        { action: &quot;deny&quot;, match: { keyPrefix: &quot;cron:&quot; } },
-        // Match the raw session key (including the `agent:&lt;id&gt;:` prefix).
-        { action: &quot;deny&quot;, match: { rawKeyPrefix: &quot;agent:main:discord:&quot; } },
-      ],
-      default: &quot;allow&quot;,
-    },
-  },
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Runtime override (owner only):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Runtime override (owner only):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Send these as standalone 小纸条消息s so they register.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Send these as standalone messages so they register.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Send policy (optional)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：/send on → allow for this session、/send off → deny for this session、/send inherit → clear override and use 设置…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>/send on</code> → allow for this session</li><li><code>/send off</code> → deny for this session</li><li><code>/send inherit</code> → clear override and use config rules</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-15">
-          <div class="section-heading">
-            <p class="section-kicker">第 15 站</p>
-            <h2>设置说明书uration (optional rename example)</h2>
-            <p>这一节主要在解释“设置说明书uration (optional rename example)”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“设置说明书uration (optional rename example)”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>这一行“// ~/.openclaw/openclaw.json”是当前步骤要交给电脑的一小块提示。</li><li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“session”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">// ~/.openclaw/openclaw.json
-{
-  session: {
-    scope: &quot;per-sender&quot;, // keep group keys separate
-    dmScope: &quot;main&quot;, // DM continuity (set per-channel-peer/per-account-channel-peer for shared inboxes)
-    identityLinks: {
-      alice: [&quot;telegram:123456789&quot;, &quot;discord:987654321012345678&quot;],
-    },
-    reset: {
-      // Defaults: mode=daily, atHour=4 (gateway host local time).
-      // If you also set idleMinutes, whichever expires first wins.
-      mode: &quot;daily&quot;,
-      atHour: 4,
-      idleMinutes: 120,
-    },
-    resetByType: {
-      thread: { mode: &quot;daily&quot;, atHour: 4 },
-      direct: { mode: &quot;idle&quot;, idleMinutes: 240 },
-      group: { mode: &quot;idle&quot;, idleMinutes: 120 },
-    },
-    resetByChannel: {
-      discord: { mode: &quot;idle&quot;, idleMinutes: 10080 },
-    },
-    resetTriggers: [&quot;/new&quot;, &quot;/reset&quot;],
-    store: &quot;~/.openclaw/agents/{agentId}/sessions/sessions.json&quot;,
-    mainKey: &quot;main&quot;,
-  },
-}</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-16">
-          <div class="section-heading">
-            <p class="section-kicker">第 16 站</p>
-            <h2>Inspecting</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Inspecting”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：openclaw status — shows store path and re…、openclaw sessions --json — dumps every en…、openclaw 门口的小门卫 call sessions.list --para…、Send /status as a standalone 小纸条消息 in cha…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>openclaw status</code> — shows store path and recent sessions.</li><li><code>openclaw sessions --json</code> — dumps every entry (filter with <code>--active &lt;minutes&gt;</code>).</li><li><code>openclaw gateway call sessions.list --params &#39;{}&#39;</code> — fetch sessions from the running gateway (use <code>--url</code>/<code>--token</code> for remote gateway access).</li><li>Send <code>/status</code> as a standalone message in chat to see whether the agent is reachable, how much of the session context is used, current thinking/fast/verbose toggles, and when your WhatsApp web creds were last refreshed (helps spot relink needs).</li><li>Send <code>/context list</code> or <code>/context detail</code> to see what’s in the system prompt and injected workspace files (and the biggest context contributors).</li><li>Send <code>/stop</code> (or standalone abort phrases like <code>stop</code>, <code>stop action</code>, <code>stop run</code>, <code>stop openclaw</code>) to abort the current run, clear queued followups for that session, and stop any sub-agent runs spawned from it (the reply includes the stopped count).</li><li>Send <code>/compact</code> (optional instructions) as a standalone message to summarize older context and free up window space. See <a href="/concepts/compaction" target="_blank" rel="noreferrer">/concepts/compaction</a>.</li><li>JSONL transcripts can be opened directly to review full turns.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-17">
-          <div class="section-heading">
-            <p class="section-kicker">第 17 站</p>
-            <h2>Tips</h2>
-            <p>这一节主要在解释“Tips”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Tips”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Tips”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Keep the primary key dedicated to 1:1 tra…、When automating cleanup, delete individua…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Keep the primary key dedicated to 1:1 traffic; let groups keep their own keys.</li><li>When automating cleanup, delete individual keys instead of the whole store to preserve context elsewhere.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-18">
-          <div class="section-heading">
-            <p class="section-kicker">第 18 站</p>
-            <h2>Session origin metadata</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Each session entry records where it came from (best-effort) in origin: The origin fields are populated for direct 小纸条消息…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Each session entry records where it came from (best-effort) in origin:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Each session entry records where it came from (best-effort) in <code>origin</code>:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The origin fields are populated for direct 小纸条消息s, 消息通道s, and 大家一起的房间s. If a connector only updates delivery routing (f…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The origin fields are populated for direct messages, channels, and groups. If a connector only updates delivery routing (for example, to keep a DM main session fresh), it should still provide inbound context so the session keeps its explainer metadata. Extensions can do this by sending <code>ConversationLabel</code>, <code>GroupSubject</code>, <code>GroupChannel</code>, <code>GroupSpace</code>, and <code>SenderName</code> in the inbound context and calling <code>recordSessionMetaFromInbound</code> (or passing the same context to <code>updateLastRoute</code>).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Session origin metadata”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：label: human label (resolved from convers…、provider: normalized 消息通道 id (including e…、from/to: raw routing ids from the inbound…、accountId: provider account id (when mult…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>label</code>: human label (resolved from conversation label + group subject/channel)</li><li><code>provider</code>: normalized channel id (including extensions)</li><li><code>from</code>/<code>to</code>: raw routing ids from the inbound envelope</li><li><code>accountId</code>: provider account id (when multi-account)</li><li><code>threadId</code>: thread/topic id when the channel supports it</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📒 Session 不是一个抽象词，它更像 OpenClaw 的“聊天本”</h2>
+      <p>你跟 OpenClaw 每聊一次，不是说完就没了。它会把这段对话记进一本聊天本里，下次再聊时，就能接着前面的话往下说。</p>
+      <p>这页看起来像在讲 key、reset、dmScope、cleanup，其实是在讲三件事：聊天本怎么分、什么时候换新本、旧本怎么收拾。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合第一次想弄懂“OpenClaw 怎么把不同聊天分开记”的人</span>
+      <span>这页最重要的是先分清私聊、群聊和主会话</span>
+      <a href="https://docs.openclaw.ai/concepts/session" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>📚 先想画面：每种聊天，都可能有自己的一本本子</h2>
+    <p>OpenClaw 不会把所有地方说过的话都硬抄进同一本本子里。私聊、群聊、频道、定时任务，都可以有自己的记录格子。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">💬</span>
+      <h2>主私聊本</h2>
+      <p>默认情况下，很多直接聊天会收进一本文本叫 <code>main</code> 的主本子里，这样连续聊起来最顺。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">👥</span>
+      <h2>群聊本</h2>
+      <p>群聊通常会有自己的本子。这样群里的讨论不会和你私聊里的碎碎念混成一锅。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⏰</span>
+      <h2>定时任务本</h2>
+      <p>像 cron、hook、node 这种来源，也会用自己的专门本子，不会挤进普通聊天里。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧠</span>
+      <h2>为什么要这样</h2>
+      <p>因为“方便连续聊”和“别串台”要同时兼顾。session 就是在做这个平衡。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🚪 dmScope 在做什么？就是决定“私聊是不是都记进同一本”</h2>
+    <p>原文里最值得先记住的词就是 <code>dmScope</code>。它决定不同私聊到底要不要共用一本聊天本。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📓 main</div>
+      <p>默认模式。所有私聊都像记进同一本主本子，连续感最好，但多人使用时最容易串内容。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🙋 per-peer</div>
+      <p>像一人一本。谁来聊，就记到谁自己的那本里。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📱 per-channel-peer</div>
+      <p>像“同一个人，不同平台也分开记”。Telegram 一本、Discord 一本、WhatsApp 再一本。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⚠️ 官方为什么一直提醒“多用户 DM 要开安全模式”</div>
+      <p>因为如果几个人都共用同一本私聊本，甲昨天说的私事，乙今天就可能被它当成“前文”继续聊下去。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧾 Session key 像每本聊天本贴在封面上的门牌号</h2>
+    <p>原文列了很多 key 形状，不是为了吓人，而是为了让你知道系统到底怎么区分这些本子。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>agent:&lt;agentId&gt;:&lt;mainKey&gt;</code></div>
+      <p>像主私聊本的封面门牌。只要你还在同一个主会话里聊，它就一直沿用这本。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>agent:&lt;agentId&gt;:&lt;channel&gt;:group:&lt;id&gt;</code></div>
+      <p>像某个群聊自己的专属本子。群名会变，但这里更认数字门牌号。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>cron:&lt;jobId&gt;</code> / <code>hook:&lt;uuid&gt;</code></div>
+      <p>像系统自己开的工作本，不是给人聊天用的，而是给定时任务和 webhook 留痕。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>session key 就是“这段对话到底该记进哪一本”的门牌号。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🔄 Reset 像换新本，不是把整间书柜烧了</h2>
+    <p>原文花了不少篇幅讲 reset、idle、daily、/new、/reset。翻成人话，就是“什么时候该开一本新本子”。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🌙</span>
+      <h2>daily reset</h2>
+      <p>像每天固定时间换一本新本子。默认常见是凌晨某个点，这样隔天就不会把昨天的旧纸条全背着。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">😴</span>
+      <h2>idle reset</h2>
+      <p>像太久没聊，这本本子就先收起来。下次再来，重新开一本。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✋</span>
+      <h2><code>/new</code> / <code>/reset</code></h2>
+      <p>像你亲自说“这页翻过去，重新开始”。不是全盘失忆，而是给当前会话换一个新 session id。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎯</span>
+      <h2>谁先到谁算</h2>
+      <p>如果你既设了 daily 又设了 idle，那谁先过线，就谁先触发换本。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🛠 命令不是术语，它们是在“看本子、清本子、换本子”</h2>
+    <p>这一页的 CLI 命令很多，但动作都很具体。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw status</code></div>
+      <p>像去柜子前看一眼：最近有哪些会话本子、当前本子放在哪儿。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw sessions --json</code></div>
+      <p>像把整排书架清单导出来，看看每本本子最近有没有更新。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>/status</code></div>
+      <p>像在当前聊天里低头看看：这本本子用了多少上下文、现在还活着没、开了哪些模式。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>/new</code> / <code>/reset</code></div>
+      <p>像对当前聊天本说：“这一页到这里结束，我们换一本干净的继续写。”</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🧹 Maintenance 在做什么？在给旧本子收纳和打扫</h2>
+    <p>会话多了以后，书柜会越来越满。官方这段就是在讲怎么别让它一直堆到天花板。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🗑 pruneAfter</div>
+      <p>像“多少天没翻过的本子，可以准备收掉了”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📚 maxEntries</div>
+      <p>像规定书柜最多放多少本。超了就得把最旧的先挪走。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📦 maxDiskBytes</div>
+      <p>像给书柜总重量设上限。再多就会逼着你先清老的。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw sessions cleanup --dry-run</code></div>
+      <p>像先演习一遍看看如果真收拾，会拿走哪些旧本子，还没真的动手。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Session 这页压成一句最好记的话</h2>
+    <p>Session 就是 OpenClaw 给不同聊天准备的不同本子，而这整页都在教你怎么分本、换本、和收本。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/concepts/queue</code> 或 <code>/concepts/compaction</code>。因为一本本子写久了，接下来最容易碰到的问题就是“消息怎么排队”和“旧内容怎么收拾”。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

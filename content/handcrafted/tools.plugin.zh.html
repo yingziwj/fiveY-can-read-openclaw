@@ -1,0 +1,190 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🔌 Plugin 就像给 OpenClaw 装新的零件盒</h2>
+      <p>OpenClaw 本来就会很多东西，但有些新本领不是天生长在它身上的。插件就是把新的门、工具、模型供应商、语音能力，再接到它身上的那一盒零件。</p>
+      <p>这页不是教你写插件，而是先教你怎么认、怎么装、怎么启用、怎么别把来路不明的零件随便焊上去。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合第一次准备安装或管理插件的人</span>
+      <span>这页重点不是 SDK，而是先分清插件有哪些类型、怎么装、什么时候会生效</span>
+      <a href="https://docs.openclaw.ai/tools/plugin" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧰 先想画面：OpenClaw 本体像一个大工具箱，插件是后来加进去的功能盒</h2>
+    <p>有的插件会给它接一个新聊天渠道，有的会给它接一个新模型供应商，有的会给它加一把新工具。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧱 Core 插件</div>
+      <p>像出厂自带的功能盒，很多已经跟 OpenClaw 一起装好了。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📦 外部插件</div>
+      <p>像后来从 npm 或社区装进来的额外零件，不是天生就有。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 这页最重要的一句</div>
+      <p>插件不是装饰，它是真的在给 OpenClaw 接新能力。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 你现在先不用管什么</div>
+      <p>先别急着看 SDK。对大多数使用者来说，更重要的是知道怎么装、怎么看有没有生效、怎么关掉。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧩 官方说的两种格式，其实是在分“真插件”和“兼容包”</h2>
+    <p>原文把插件分成 Native 和 Bundle。你可以先把它们想成两种来路不同的零件盒。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">⚙️</span>
+      <h2>Native</h2>
+      <p>这是真正按 OpenClaw 规则做的插件，能在系统里正式注册能力。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎁</span>
+      <h2>Bundle</h2>
+      <p>这更像把 Codex、Claude、Cursor 那些格式的包拿进来，再由 OpenClaw 帮你翻译成自己能认的能力。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧭</span>
+      <h2>对普通用户来说</h2>
+      <p>你装的时候不一定非得区分很细，但要知道：有些是原生的，有些是兼容接入的。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎯</span>
+      <h2>为什么这重要</h2>
+      <p>因为不同格式的能力边界和信任边界不完全一样。不是都叫“插件”，就完全一回事。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🛠 装插件的动作，其实非常朴素</h2>
+    <p>原文的 Quick start 看起来简短，但已经把普通用户最需要的动作讲完了。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw plugins list</code></div>
+      <p>像先打开工具箱目录，看看现在已经装了哪些功能盒。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw plugins install @openclaw/voice-call</code></div>
+      <p>像从 npm 仓库把一个新的功能盒拿回来，放进你的 OpenClaw 身上。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw plugins install ./my-plugin</code></div>
+      <p>像你手里已经有一个本地零件盒，直接把它接进来，不必先发到公网。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway restart</code></div>
+      <p>像装完新零件后，重新开机，让系统重新点名，确认这个新零件真的挂上去了。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🗂 配置里的 allow、deny、entries，不是在摆样子，是在决定“哪些零件上电”</h2>
+    <p>插件配置块看着像表格，其实每一项都很直白。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">✅ allow</div>
+      <p>像白名单：只允许这些插件真正接电工作。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">⛔ deny</div>
+      <p>像黑名单：这几个插件就算找到了，也别让它们开机。官方强调 deny 赢，是为了让“别开”优先级更大。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧩 entries.&lt;id&gt;</div>
+      <p>像每个插件自己的小控制面板，能单独开关、单独塞配置。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>插件不是“发现了就自动全开”，而是得过几层开关，才真的上电。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>📍 Discovery and precedence 在讲什么？在讲“先去哪里找零件”</h2>
+    <p>原文这一段其实很好懂：OpenClaw 会按顺序去几个地方搜插件，谁先匹配到，谁就先算。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>先看你显式写的路径</h2>
+      <p>也就是 <code>plugins.load.paths</code>。你都亲手指路了，它当然先去这里找。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>再看工作区扩展目录</h2>
+      <p>像先找当前项目旁边的插件盒，离你最近的优先。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>再看全局扩展目录</h2>
+      <p>像去整台机器的共享仓库里找。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>最后才是 bundled</h2>
+      <p>也就是 OpenClaw 自带的那些。不是最后才重要，而是前面那些更像你自己明确要接的东西。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🎛 Slots 像“同一个插槽一次只能插一块板子”</h2>
+    <p>原文里的 <code>memory</code> 和 <code>contextEngine</code> slot 很关键。因为这些不是可以全都一起开的类型。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧠 memory slot</div>
+      <p>像记忆模块插槽。一次通常只选一个主要记忆插件来值班。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧩 contextEngine slot</div>
+      <p>像上下文装配器插槽。一次只会有一个真正接管“怎么拼上下文”的引擎。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>plugins.slots.memory = "none"</code></div>
+      <p>像干脆把这个插槽留空，不让任何记忆插件上岗。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 这节真正想告诉你</div>
+      <p>有些插件类别不是“多多益善”，而是“同一插槽只能坐一个”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Plugin 这页压成一句最好记的话</h2>
+    <p>插件就是给 OpenClaw 加新零件，而这整页都在教你怎么把零件找出来、装进去、通上电，还别乱装错装。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/plugins/building-plugins</code> 或 <code>/plugins/bundles</code>。因为一个是教你自己做零件，一个是教你怎么看兼容包到底算不算原生零件。</p>
+  </div>
+</section>

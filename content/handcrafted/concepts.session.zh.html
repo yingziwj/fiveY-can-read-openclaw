@@ -1,0 +1,190 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📒 Session 不是一个抽象词，它更像 OpenClaw 的“聊天本”</h2>
+      <p>你跟 OpenClaw 每聊一次，不是说完就没了。它会把这段对话记进一本聊天本里，下次再聊时，就能接着前面的话往下说。</p>
+      <p>这页看起来像在讲 key、reset、dmScope、cleanup，其实是在讲三件事：聊天本怎么分、什么时候换新本、旧本怎么收拾。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合第一次想弄懂“OpenClaw 怎么把不同聊天分开记”的人</span>
+      <span>这页最重要的是先分清私聊、群聊和主会话</span>
+      <a href="https://docs.openclaw.ai/concepts/session" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>📚 先想画面：每种聊天，都可能有自己的一本本子</h2>
+    <p>OpenClaw 不会把所有地方说过的话都硬抄进同一本本子里。私聊、群聊、频道、定时任务，都可以有自己的记录格子。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">💬</span>
+      <h2>主私聊本</h2>
+      <p>默认情况下，很多直接聊天会收进一本文本叫 <code>main</code> 的主本子里，这样连续聊起来最顺。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">👥</span>
+      <h2>群聊本</h2>
+      <p>群聊通常会有自己的本子。这样群里的讨论不会和你私聊里的碎碎念混成一锅。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⏰</span>
+      <h2>定时任务本</h2>
+      <p>像 cron、hook、node 这种来源，也会用自己的专门本子，不会挤进普通聊天里。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧠</span>
+      <h2>为什么要这样</h2>
+      <p>因为“方便连续聊”和“别串台”要同时兼顾。session 就是在做这个平衡。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🚪 dmScope 在做什么？就是决定“私聊是不是都记进同一本”</h2>
+    <p>原文里最值得先记住的词就是 <code>dmScope</code>。它决定不同私聊到底要不要共用一本聊天本。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📓 main</div>
+      <p>默认模式。所有私聊都像记进同一本主本子，连续感最好，但多人使用时最容易串内容。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🙋 per-peer</div>
+      <p>像一人一本。谁来聊，就记到谁自己的那本里。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📱 per-channel-peer</div>
+      <p>像“同一个人，不同平台也分开记”。Telegram 一本、Discord 一本、WhatsApp 再一本。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⚠️ 官方为什么一直提醒“多用户 DM 要开安全模式”</div>
+      <p>因为如果几个人都共用同一本私聊本，甲昨天说的私事，乙今天就可能被它当成“前文”继续聊下去。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧾 Session key 像每本聊天本贴在封面上的门牌号</h2>
+    <p>原文列了很多 key 形状，不是为了吓人，而是为了让你知道系统到底怎么区分这些本子。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>agent:&lt;agentId&gt;:&lt;mainKey&gt;</code></div>
+      <p>像主私聊本的封面门牌。只要你还在同一个主会话里聊，它就一直沿用这本。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>agent:&lt;agentId&gt;:&lt;channel&gt;:group:&lt;id&gt;</code></div>
+      <p>像某个群聊自己的专属本子。群名会变，但这里更认数字门牌号。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>cron:&lt;jobId&gt;</code> / <code>hook:&lt;uuid&gt;</code></div>
+      <p>像系统自己开的工作本，不是给人聊天用的，而是给定时任务和 webhook 留痕。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>session key 就是“这段对话到底该记进哪一本”的门牌号。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🔄 Reset 像换新本，不是把整间书柜烧了</h2>
+    <p>原文花了不少篇幅讲 reset、idle、daily、/new、/reset。翻成人话，就是“什么时候该开一本新本子”。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🌙</span>
+      <h2>daily reset</h2>
+      <p>像每天固定时间换一本新本子。默认常见是凌晨某个点，这样隔天就不会把昨天的旧纸条全背着。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">😴</span>
+      <h2>idle reset</h2>
+      <p>像太久没聊，这本本子就先收起来。下次再来，重新开一本。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✋</span>
+      <h2><code>/new</code> / <code>/reset</code></h2>
+      <p>像你亲自说“这页翻过去，重新开始”。不是全盘失忆，而是给当前会话换一个新 session id。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎯</span>
+      <h2>谁先到谁算</h2>
+      <p>如果你既设了 daily 又设了 idle，那谁先过线，就谁先触发换本。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🛠 命令不是术语，它们是在“看本子、清本子、换本子”</h2>
+    <p>这一页的 CLI 命令很多，但动作都很具体。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw status</code></div>
+      <p>像去柜子前看一眼：最近有哪些会话本子、当前本子放在哪儿。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw sessions --json</code></div>
+      <p>像把整排书架清单导出来，看看每本本子最近有没有更新。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>/status</code></div>
+      <p>像在当前聊天里低头看看：这本本子用了多少上下文、现在还活着没、开了哪些模式。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>/new</code> / <code>/reset</code></div>
+      <p>像对当前聊天本说：“这一页到这里结束，我们换一本干净的继续写。”</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🧹 Maintenance 在做什么？在给旧本子收纳和打扫</h2>
+    <p>会话多了以后，书柜会越来越满。官方这段就是在讲怎么别让它一直堆到天花板。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🗑 pruneAfter</div>
+      <p>像“多少天没翻过的本子，可以准备收掉了”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📚 maxEntries</div>
+      <p>像规定书柜最多放多少本。超了就得把最旧的先挪走。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📦 maxDiskBytes</div>
+      <p>像给书柜总重量设上限。再多就会逼着你先清老的。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw sessions cleanup --dry-run</code></div>
+      <p>像先演习一遍看看如果真收拾，会拿走哪些旧本子，还没真的动手。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Session 这页压成一句最好记的话</h2>
+    <p>Session 就是 OpenClaw 给不同聊天准备的不同本子，而这整页都在教你怎么分本、换本、和收本。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/concepts/queue</code> 或 <code>/concepts/compaction</code>。因为一本本子写久了，接下来最容易碰到的问题就是“消息怎么排队”和“旧内容怎么收拾”。</p>
+  </div>
+</section>

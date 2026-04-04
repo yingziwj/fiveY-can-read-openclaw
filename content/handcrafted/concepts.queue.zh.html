@@ -1,0 +1,160 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🪢 Queue 就是 OpenClaw 的“排队绳”</h2>
+      <p>如果很多消息一股脑同时涌进来，OpenClaw 不能每条都立刻抢着处理，不然会互相撞车。Queue 这页，就是在讲它怎么把大家先排好队。</p>
+      <p>它的目标很朴素：别让同一个会话里同时跑两次，别把日志和状态踩乱，但也别让所有事情都慢吞吞排成一条老长队。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合总在想“为什么消息有时会等一下”的人</span>
+      <span>这页最重要的是先分清 steer、followup、collect</span>
+      <a href="https://docs.openclaw.ai/concepts/queue" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🚶 先想画面：每个会话门口都有一条小排队绳</h2>
+    <p>同一个会话里，如果上一轮还没做完，新消息就不能硬挤进去。否则两个助手会同时翻同一本本子，现场一定乱。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📚 同一本本子一次只翻一页</div>
+      <p>原文那句“only one active run per session”可以这样记：同一个 session，一次只允许一个人坐在桌前写。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚦 全局也有总阀门</div>
+      <p>除了每个会话自己的小排队绳，系统还有全局并发上限，免得所有会话一起冲，把网关累坏。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 这一页的一句话版</div>
+      <p>Queue 不是为了拖慢你，而是为了别让同一个会话同时被两只手乱写。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 真正想解决的</div>
+      <p>LLM 调用贵、工具运行慢、文件和日志容易冲突，所以排队不是装样子，是秩序。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧭 queue mode 不是术语大全，它是在决定“新消息插到哪儿”</h2>
+    <p>这页最容易看晕的就是几种 mode。把它们想成几种插队方式，就顺了。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">➡️</span>
+      <h2>steer</h2>
+      <p>像对正在做事的助手喊一声“顺手把这个也带上”。如果它还来得及转向，就直接插进当前那轮。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⏭</span>
+      <h2>followup</h2>
+      <p>像说“这条先记在后面，等当前这轮做完再单独处理”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧺</span>
+      <h2>collect</h2>
+      <p>像把后面一串零散新消息先装进一个小篮子，等轮到时再一起处理。默认就是这种，更安静也更省。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✂️</span>
+      <h2>interrupt</h2>
+      <p>像直接打断当前动作，改做最新的那条。力气最大，也最容易让前一轮半途而废。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧺 为什么默认更偏爱 collect</h2>
+    <p>因为现实聊天里，最常见的不是你真的要硬插一条紧急指令，而是你连着发了两三句补充说明。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">💬 连发消息很常见</div>
+      <p>“等一下”“还有这个”“刚刚那个再补一句”，这些都很像同一件事，不值得每句都单开一轮。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧠 collect 更像人类聊天</div>
+      <p>它会先等一会儿，看看你是不是还要继续补，再把这一串一起交给代理，更顺也更省上下文。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>debounceMs</code></div>
+      <p>像在门口多等几秒，看看后面还有没有你刚刚补发的那句，别每个字都单独起跑。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>cap</code> 和 <code>drop</code></div>
+      <p>像规定篮子最多装多少条，太多了以后是丢旧的、丢新的，还是先压成一张简短小纸条。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🛠 命令和配置，在现场到底是在调什么</h2>
+    <p>这一页的配置块别背，先把动作看懂。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>/queue collect</code></div>
+      <p>像对当前会话说：“接下来新消息先帮我攒着，别一条条抢着跑。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>/queue steer</code></div>
+      <p>像说：“如果来得及，就把新补充直接塞进当前正在跑的这轮里。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>/queue default</code></div>
+      <p>像把当前会话临时改过的排队规则清掉，回到系统默认。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>messages.queue.byChannel.discord: "collect"</code></div>
+      <p>像提前给 Discord 这扇门贴上规则牌：从这里来的消息，默认按 collect 这套排法走。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🎯 Queue 最容易造成的错觉，是“怎么像重复回复了”</h2>
+    <p>原文专门提醒 <code>steer-backlog</code> 可能让你感觉像收到了两次。其实不是系统疯了，而是它故意分了“当前带一嘴”和“后面再补一轮”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">➕ steer-backlog</div>
+      <p>像一边冲着正在干活的助手大喊一句“把这个也记上”，一边又把完整消息放回后面的待办篮子里。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">👀 看起来像两次</div>
+      <p>你可能先看到一条在当前流里被带上的响应，后面又看到一轮正式 followup，所以表面上像重复。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 官方真正建议什么</div>
+      <p>如果你就想“一条新消息对应一次结果”，优先用 <code>collect</code> 或普通 <code>steer</code>，别上来就玩 steer-backlog。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>有些像“重复”的现象，其实是排队策略不同，不是消息坏了。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Queue 这页压成一句最好记的话</h2>
+    <p>Queue 就是 OpenClaw 门口那条排队绳，它负责把同一个会话里的新消息安排好，别让大家一窝蜂冲进来把桌子撞翻。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/concepts/streaming</code>。因为消息一旦排进队里，接下来大家最关心的通常就是：回复会不会边写边冒出来，还是最后一次吐完。</p>
+  </div>
+</section>

@@ -119,9 +119,14 @@ const handcraftedPageMap = new Map([
   ["/concepts/context", path.resolve("content/handcrafted/concepts.context.zh.html")],
   ["/concepts/multi-agent", path.resolve("content/handcrafted/concepts.multi-agent.zh.html")],
   ["/concepts/memory", path.resolve("content/handcrafted/concepts.memory.zh.html")],
+  ["/concepts/queue", path.resolve("content/handcrafted/concepts.queue.zh.html")],
+  ["/concepts/session", path.resolve("content/handcrafted/concepts.session.zh.html")],
+  ["/concepts/streaming", path.resolve("content/handcrafted/concepts.streaming.zh.html")],
   ["/concepts/features", path.resolve("content/handcrafted/concepts.features.zh.html")],
   ["/providers/openai", path.resolve("content/handcrafted/providers.openai.zh.html")],
-  ["/tools/exec", path.resolve("content/handcrafted/tools.exec.zh.html")]
+  ["/tools/browser", path.resolve("content/handcrafted/tools.browser.zh.html")],
+  ["/tools/exec", path.resolve("content/handcrafted/tools.exec.zh.html")],
+  ["/tools/plugin", path.resolve("content/handcrafted/tools.plugin.zh.html")]
 ]);
 
 function asset(fileName) {
