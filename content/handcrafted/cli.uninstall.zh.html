@@ -1,0 +1,194 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧹 <code>openclaw uninstall</code> 像“把屋子里的大件先搬走，但还给你留一条退路”</h2>
+      <p>这页不是在讲“删掉就完了”，而是在讲“怎么把 Gateway 服务和本地数据清掉，同时别把自己最后的后悔路也一起掀了”。</p>
+      <p>官方特别强调：最好先备份，再卸载。像搬家前先拍照、装箱、贴标签，不是矫情，是以后真的要回头时能找得回来。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想把 OpenClaw 从机器上干净拿掉的人</span>
+      <span>这页最重要的是分清普通卸载、全量卸载、dry-run</span>
+      <a href="https://docs.openclaw.ai/cli/uninstall" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>📦 先别急着拆，先看三种最常见的动作</h2>
+    <p>官方给的命令虽然少，但已经足够把这个动作说清楚了。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">💾</span>
+      <h2><code>openclaw backup create</code></h2>
+      <p>像先把房间拍成照片、把重要东西装进备用箱，再考虑搬走。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧹</span>
+      <h2><code>openclaw uninstall</code></h2>
+      <p>像请搬家工把 Gateway 服务和本地数据先搬走，但 CLI 这个工具本身还留着。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧨</span>
+      <h2><code>openclaw uninstall --all --yes</code></h2>
+      <p>像一次搬空更彻底的房间整理，先把大件小件一起处理掉。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">👀</span>
+      <h2><code>openclaw uninstall --dry-run</code></h2>
+      <p>像先把搬家清单拿出来看一眼，不真的动手。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🛠 官方最想你先记住的，不是卸载，而是备份</h2>
+    <p>这一页开头就说得很直接：如果你想要可回头的版本，先做快照。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">💾 先做备份</div>
+      <p><code>openclaw backup create</code> 像把家里的重要抽屉先拍照封存。这样后面搬走了，还能按图找回来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧷 再做卸载</div>
+      <p>备份做完以后，再动 <code>openclaw uninstall</code>，心里会稳很多。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔁 为什么顺序重要</div>
+      <p>因为卸载之后，真正的本地状态可能就没了。先备份，就像先把退路画在纸上。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 这节真正的重点</div>
+      <p>官方不是在卖弄谨慎，而是在提醒你：删之前先留一个可以回家的口袋。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🚪 普通卸载，像“把服务和本地房间一起清掉，但门口工具箱还在”</h2>
+    <p>这一页最容易误解的地方，就是以为 uninstall 会把所有东西全删没。不是，它有边界。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🏭</span>
+      <h2>Gateway 服务</h2>
+      <p>会被卸掉。像机房里的主机器被带走了。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📁</span>
+      <h2>本地数据</h2>
+      <p>会被清掉。像桌上的记录本、钥匙串、工作痕迹一起收走。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧰</span>
+      <h2>CLI 本体</h2>
+      <p>还留着。也就是你手里的那把小扳手还在，不等于整套屋子都没了。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⭐</span>
+      <h2>一句话先记住</h2>
+      <p><code>uninstall</code> 不是“把世界删干净”，而是“把服务和状态移走”。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧨 <code>--all --yes</code> 像“把车库、仓库、后院一起清空”</h2>
+    <p>这不是轻轻点一下的动作，而是更彻底的版本。官方把它摆出来，是为了给真正想全量清掉的人用。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>--all</code></div>
+      <p>像不只搬走主屋，还把相关附属空间也一起算上。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--yes</code></div>
+      <p>像你已经提前把“我真的要搬走”这句话说死了，不再反复问。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">风险更高</div>
+      <p>这个组合比普通卸载更激进，所以更要先备份。官方这么写不是吓人，是在给你一个明确的刹车点。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 这页的真实含义</div>
+      <p>全量卸载不是玩笑，它是“我真的要从这台机器上离开”的动作。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>👀 <code>--dry-run</code> 像“先把搬家清单念给你听”</h2>
+    <p>这个参数很像把行动放慢半拍，先让你看清楚会删什么，再决定要不要真的按下去。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📝 只预演，不动手</div>
+      <p><code>openclaw uninstall --dry-run</code> 会先告诉你将要做什么，但不真的拆门、搬箱、清屋子。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧠 适合先确认范围</div>
+      <p>如果你不确定到底会删到哪里，这个参数就是一个很好的暂停键。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔐 特别适合重要机器</div>
+      <p>越是上面装了重要数据的机器，越应该先 dry-run 看一眼。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>dry-run 就是先看剧本，不先真演。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🏠 卸载之后，你真正需要想的是“这台机器以后还要不要回头装”</h2>
+    <p>这页没有长篇大论，但它其实在提醒你一个很现实的点：卸载和重装，不是同一件事。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧾</span>
+      <h2>保留备份</h2>
+      <p>如果以后还可能回来，备份文件就是你回家的地图。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪪</span>
+      <h2>清掉状态</h2>
+      <p>如果你就是要彻底离开，那就把本地状态和服务都收拾干净。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔁</span>
+      <h2>重装不等于恢复</h2>
+      <p>以后再装回去，也不一定自动回到原来的样子，所以备份很关键。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>卸载是离开，不是忘记。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw uninstall</code> 压成一句话</h2>
+    <p><code>openclaw uninstall</code> 是把 Gateway 服务和本地数据干净拿掉，但官方先提醒你备份，再让你决定是普通卸载还是更彻底的全量卸载。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页还想继续看，我建议之后接着整理“更新 / 恢复 / 备份”这条线，因为它和卸载是最常连在一起的。</p>
+  </div>
+</section>

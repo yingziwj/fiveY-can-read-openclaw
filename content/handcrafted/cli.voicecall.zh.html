@@ -1,0 +1,135 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📞 <code>openclaw voicecall</code> 像“给电话机器人发任务，再决定它的来电门是不是要对外打开”</h2>
+      <p>这页不是默认每个人都会看到的命令。官方第一句就提醒了：它是插件提供的，只有 voice-call 插件装好并启用以后，它才会出现。</p>
+      <p>所以这页最像一套电话机器人控制台：打一通电话、续一句话、挂断电话，再决定来电 webhook 这扇门要不要通过 Tailscale 暴露出去。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合已经装了 voice-call 插件，准备让 OpenClaw 打电话或接来电的人</span>
+      <span>这页最重要的是记住：它是插件能力，不是基础 CLI 人人自带的按钮</span>
+      <a href="https://docs.openclaw.ai/cli/voicecall" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🤖 先记一个前提：没装电话插件，这台电话机器人就不会站出来</h2>
+    <p>这句很关键，因为它解释了为什么有的人在自己机器上根本看不到这条命令。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧩</span>
+      <h2>plugin-provided</h2>
+      <p>像这是后来加装的电话模块，不是房子出厂就带的座机。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔌</span>
+      <h2>installed and enabled</h2>
+      <p>像电话机不只要摆上桌，还得真的接好线、通上电。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📘</span>
+      <h2>Primary doc</h2>
+      <p>更细的电话插件玩法要去 Voice Call 那篇主文档，这页更像 CLI 门口说明牌。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>先有电话插件，才会有这台电话机器人。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>☎️ 这 4 个主命令，像“看看通话、拨出去、接着说、挂电话”</h2>
+    <p>官方例子已经把最常用的动作压得很清楚了。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>voicecall status --call-id &lt;id&gt;</code></div>
+      <p>像去看某通电话现在进行到哪了，是还在响、正在说，还是已经结束。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>voicecall call --to "+1555..." --message "Hello" --mode notify</code></div>
+      <p>像对电话机器人说：“给这个号码拨过去，先把这句话念出来。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>voicecall continue --call-id &lt;id&gt; --message ...</code></div>
+      <p>像这通电话没讲完，于是你再递一句台词，让机器人继续往下说。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>voicecall end --call-id &lt;id&gt;</code></div>
+      <p>像对机器人挥挥手说：“行了，这通电话到这儿挂断吧。”</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🚪 <code>expose --mode serve|funnel|off</code> 在干嘛？是在决定“来电这扇门要不要对外打开”</h2>
+    <p>这一段其实比打电话本身更值得小心，因为它关系到 webhook 从哪儿能进来。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🪟</span>
+      <h2><code>--mode serve</code></h2>
+      <p>像把来电小窗口开给可信的 Tailscale 私有网络看。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🌍</span>
+      <h2><code>--mode funnel</code></h2>
+      <p>像把窗口再往外开大，能从更广的外部世界摸到这扇门。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔒</span>
+      <h2><code>--mode off</code></h2>
+      <p>像把来电门先关上，别让 webhook 从外面再敲进来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>serve 比 funnel 更收敛，off 就是先把门关上。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🛡️ 官方那句安全提醒要当真：电话门别随便朝外敞开</h2>
+    <p>这不是客套话。来电 webhook 本质上就是一扇能把外部事件送进来的门。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">只给你信任的网络</div>
+      <p>像你家门铃最好先装在小区院门里，而不是直接挂到大马路中间。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Prefer Tailscale Serve</div>
+      <p>官方建议能用 Serve 就先用 Serve，像先用小区门禁，不急着把门开到整条街都能摸到。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Funnel 更外放</div>
+      <p>它不是不能用，而是更像把门开到外面，得先想清楚你到底愿不愿意。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>电话机器人很有用，但来电门不要比你心里预期开得更大。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw voicecall</code> 压成一句话</h2>
+    <p><code>openclaw voicecall</code> 就像电话机器人控制台：前提是先装好电话插件，然后你可以发起电话、续说一句、挂断通话，再决定来电 webhook 这扇门要不要通过 Tailscale 对外打开。</p>
+  </div>
+</section>

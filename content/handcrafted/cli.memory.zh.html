@@ -1,0 +1,165 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧠 <code>openclaw memory</code> 像“把旧故事做成会检索的小卡片盒，想找时再飞快翻出来”</h2>
+      <p>这页讲的是语义记忆索引和搜索。翻成人话，就是你先把散落的旧笔记、旧对话、旧资料做成可搜索的小卡片，之后一问关键词，它就能帮你翻出最像的那几张。</p>
+      <p>所以它不是普通文件查找。它更像一位会整理记忆抽屉的管理员，先建索引，再帮你按意思找回旧故事。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想知道记忆库是否健康、要不要重建、怎么按意思检索的人</span>
+      <span>这页最重要的是记住：memory 先把故事做成卡片，再按“意思”找，不只是按文件名找</span>
+      <a href="https://docs.openclaw.ai/cli/memory" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>📚 先把这 3 个主动作记成“看卡片盒、重做卡片、按意思翻卡片”</h2>
+    <p>官方示例其实已经把主线交代完了：<code>status</code>、<code>index</code>、<code>search</code>。只要把这三件事分清，整页就不难。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">👀</span>
+      <h2><code>memory status</code></h2>
+      <p>像先看看记忆卡片盒现在健不健康，抽屉有没有脏、钥匙有没有丢。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧱</span>
+      <h2><code>memory index</code></h2>
+      <p>像重新把旧故事切成卡片，再一张张放回抽屉里。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔎</span>
+      <h2><code>memory search</code></h2>
+      <p>像问管理员：“帮我找和 deployment、meeting notes 最像的那几张记忆卡。”</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>先看状态，再建索引，最后按意思找。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔦 <code>status</code>、<code>--deep</code>、<code>--index</code>，像“看一眼、照深一点、顺手重整抽屉”</h2>
+    <p>这一组参数不是在堆功能，而是在决定你今天只想巡一圈，还是想把抽屉深处也一起照一照。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw memory status</code></div>
+      <p>像先站在抽屉柜前看看：卡片盒还在不在，门是不是卡住了。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--deep</code></div>
+      <p>像把手电筒往更里面照，确认向量库和 embedding 那套齿轮是不是也都能转。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--index</code></div>
+      <p>像发现抽屉里纸片有点乱，于是顺手把该重做的卡片重新整理一遍。官方说它会隐含 <code>--deep</code>，因为要真整理，就得先看深处。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--json</code></div>
+      <p>像把检查结果装成一张标准报表，方便脚本继续接着看。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🛠️ <code>index --force</code> 像“别修修补补了，整柜卡片重做一遍”</h2>
+    <p>平时索引可能只是补一点脏掉的部分，但 <code>--force</code> 的意思更重。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧺</span>
+      <h2>普通 index</h2>
+      <p>像把最近新增或弄乱的那批卡片补齐。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔨</span>
+      <h2><code>--force</code></h2>
+      <p>像把整排卡片柜重新洗牌重做，不再只补局部。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📣</span>
+      <h2><code>--verbose</code></h2>
+      <p>像管理员一边重做，一边把“现在在切哪批卡、用哪个模型、进度到哪”念给你听。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">👤</span>
+      <h2><code>--agent main</code></h2>
+      <p>像别翻整栋楼所有人的卡片柜，只处理 main 这一间工位自己的那套抽屉。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🔍 <code>search</code> 最像“说一句大概意思，让管理员去翻最像的几张卡”</h2>
+    <p>这部分最容易被误会成普通 grep。其实它更像“按意思”找，而不是只按字面找。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw memory search "meeting notes"</code></div>
+      <p>像你只说一个印象：“帮我找和会议笔记有关的那些卡。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--query</code> 胜过位置参数</div>
+      <p>像你嘴上说了一个词，后来又递了一张更正式的小纸条，那管理员会以纸条为准。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--max-results</code> / <code>--min-score</code></div>
+      <p>像限定“最多拿几张来”和“太不像的别拿出来”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">不写 query 会报错</div>
+      <p>像你只说“帮我找”，却没说找什么，管理员当然只能摊手。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🔐 SecretRef 那段在说：有些记忆库钥匙藏在远处抽屉里，拿不到就先别硬开</h2>
+    <p>官方特别提醒了 memory remote API key 可能是 SecretRef 管理的。这类提示都在讲同一件事：开门前先拿到正确钥匙。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🗝️</span>
+      <h2>SecretRef 可解析</h2>
+      <p>像管理员能从活动 Gateway 快照里拿到那把远程记忆库钥匙，就继续工作。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚫</span>
+      <h2>Gateway 不可用</h2>
+      <p>像钥匙柜暂时够不着，那它会直接拦下，不乱猜也不乱开。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧩</span>
+      <h2>版本太旧也不行</h2>
+      <p>如果 Gateway 老到还不会 <code>secrets.resolve</code>，这条路也走不通，像门锁和新钥匙规格不匹配。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>记忆抽屉能不能打开，先看钥匙到不到位。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw memory</code> 压成一句话</h2>
+    <p><code>openclaw memory</code> 就像一套会检索的记忆卡片柜：先看卡片柜状态，再决定要不要整柜重建，最后按“意思”去翻最像的那几张旧故事卡。</p>
+  </div>
+</section>

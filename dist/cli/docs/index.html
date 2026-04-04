@@ -3970,90 +3970,186 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>docs</h2>
-          <p>这一页像一本关于“docs”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：openclaw docs。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/cli/docs</span>
-          <span>章节数量：1</span>
-          <a href="https://docs.openclaw.ai/cli/docs" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“openclaw docs Search the live docs index.”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“openclaw docs”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># <code>openclaw docs</code></p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Search the live docs index.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Search the live docs index.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw docs browser existing-session”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw docs sandbox allowHostControl”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw docs browser existing-session
-openclaw docs sandbox allowHostControl</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🗺 Docs 页面不是教程，它更像 OpenClaw 的“总地图”</h2>
+      <p>这页不是一篇文章，也不是一条从头讲到尾的指南。它更像一张大地图，告诉你整套文档有哪些门、哪些区域、先去哪里，后去哪里。</p>
+      <p>如果你把整个站点想成一座城，Docs 页面就是城门口那块总导览牌。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合第一次想找文档入口的人</span>
+      <span>这页本质上是 curated index，不是正文内容</span>
+      <a href="https://docs.openclaw.ai/start/docs-directory" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧭 先把它想成“书架上的总目录”</h2>
+    <p>官方说得很直白：Docs Directory 是一个 curated index。意思就是它帮你挑好了最该先看的门牌，不让你在整个站里乱撞。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📚 curated index</div>
+      <p>像图书馆门口的总目录牌。它不把每本书都讲一遍，只告诉你哪一排放的是什么。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🏁 新人先去哪</div>
+      <p>如果你是新来的，官方先让你去 <code>Getting Started</code>，而不是直接扎进深水区。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧠 为什么需要这页</div>
+      <p>因为 OpenClaw 文档很多。没有总目录，就会像走进一个全是门的走廊，不知道该推哪一扇。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 先记一句</div>
+      <p>Docs 页面不是正文，它是整座文档城的地图牌。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🚪 Start here 这一栏，就是“先吃前菜，再吃主菜”</h2>
+    <p>官方把最该先看的东西都放在最前面。你可以把它理解成：先看怎么上手，再看怎么配置，再看怎么查问题。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🌱</span>
+      <h2>Getting Started</h2>
+      <p>像第一次把灯点亮。先让系统跑起来，先别急着折腾细节。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧰</span>
+      <h2>Configuration</h2>
+      <p>像给机器穿衣服。等能动了，再慢慢把细节配好。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎛</span>
+      <h2>Slash commands</h2>
+      <p>像给前台装遥控按钮。你要知道 OpenClaw 能被怎样指挥。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔁</span>
+      <h2>Updating and rollback</h2>
+      <p>像教你怎么往前走，也怎么退一步。更新会发生，回滚也要会。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>💬 Providers and UX 这一栏，像“和人打交道的门”</h2>
+    <p>这一组链接很像 OpenClaw 的对外窗口。消息从哪里进来，用户从哪个界面看见它，基本都在这里。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📱 WebChat / Control UI</div>
+      <p>像手机和浏览器里的前台窗口。它们是人真正和系统说话的地方。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">💬 Telegram / Discord / WhatsApp</div>
+      <p>像不同的门铃。你从哪扇门敲进来，OpenClaw 就从哪儿接住你。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧩 Plugins / companion apps</div>
+      <p>像给系统加新把手、新接口、新外壳。它们不是主线路，但能把体验补完整。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 这一栏的意思</div>
+      <p>如果你关心“人怎么看到 OpenClaw、怎么把消息送进来”，先看这一组。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧠 Operations and safety，像“这台机器怎么活得久”</h2>
+    <p>这组页面不是教你怎么玩，而是教你怎么不把它玩坏。它们负责会话、自动化、权限、排错。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧵 Sessions</div>
+      <p>像一个个正在讲故事的小房间。每个会话都有自己的上下文和记忆。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🕰 Cron jobs / webhooks</div>
+      <p>像定时铃和门铃。事情到了点，或者外面有人敲门，系统就知道该动了。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🛡 Security / troubleshooting</div>
+      <p>像门锁和维修手册。门怎么锁、坏了怎么修，这两块都得会看。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 这栏的核心</div>
+      <p>系统不只是能跑，还要能管、能守、能修。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🪜 Docs hubs 这块更像“全城总地图”</h2>
+    <p>如果 Docs Directory 是精选目录，那 Docs hubs 就是更大的全景地图。它把所有入口都按区域摆开了。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🏁</span>
+      <h2>Start here</h2>
+      <p>像新手区。先从这里摸方向。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏗</span>
+      <h2>Installation + updates</h2>
+      <p>像搭房子和修房子。先装，再更新。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧠</span>
+      <h2>Core concepts</h2>
+      <p>像认识这座城的地形。架构、会话、流式、队列都在这里。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔌</span>
+      <h2>Extensions + plugins</h2>
+      <p>像外接零件区。想加能力，就从这里找。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>📚 这个页面最值钱的，不是信息量，而是导航顺序</h2>
+    <p>官方把页面按用途排好了。先入门，再安装，再理解原理，再去扩展。这种顺序很像陪人走路，不会一上来就扔进迷宫。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">🟢 先看什么</div>
+      <p>先看 Getting Started、Docs hubs、Configuration、Slash commands。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🟡 再看什么</div>
+      <p>再看 Channels、Plugins、Sessions、Web surfaces、Security。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🔵 最后看什么</div>
+      <p>最后才去啃更深的 reference、platform pages 和专项排错页。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>Docs 页是整套文档的门口总览，帮你先找到路，再挑具体门进去。</p>
+    </div>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

@@ -1,0 +1,179 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🕹 Dashboard 就是 OpenClaw 的“驾驶舱”，但它是给管理员坐的</h2>
+      <p>这页不是在讲聊天，也不是在讲普通网页。它讲的是浏览器里的控制室：你可以在这里看状态、接线、处理 token、做审批，但前提是你得先拿到门票。</p>
+      <p>所以别把它当成“随便给人看的主页”。它更像总控台，里面放的是方向盘，不是海报。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合第一次打开 Control UI 的人</span>
+      <span>这页最重要的是记住：它是 admin surface，不要公开乱放</span>
+      <a href="https://docs.openclaw.ai/web/dashboard" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🚪 先把画面想明白：这是“浏览器里的总控室”</h2>
+    <p>官方一开始就把它说得很清楚。Dashboard 是 Gateway 提供的 Control UI，默认挂在 `/` 上。也就是说，你打开的是一扇控制大门，不是随便逛的网页。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🏠 默认门口</div>
+      <p><code>http://127.0.0.1:18789/</code> 像家门口那扇最常见的门。先从本机打开，最稳。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧭 <code>openclaw dashboard</code></div>
+      <p>像让门卫直接递给你一张干净的入口纸条，有时还会顺手帮你开浏览器。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧩 <code>gateway.controlUi.basePath</code></div>
+      <p>像把这扇门从默认位置挪一小格。门牌可以改，但它还是同一间控制室。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 先记一句</div>
+      <p>Dashboard 是 Gateway 的浏览器控制室，不是给全世界公开看的展示页。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔐 进去之前，要先把“身份牌”贴好</h2>
+    <p>这页真正最容易卡住的地方，不是网页本身，而是认证。浏览器跟 Gateway 握手时，要带上 token 或 password。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🪪</span>
+      <h2>token / password</h2>
+      <p>像进门时掏出的门卡。没有它，浏览器连门把手都摸不到。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2><code>gateway.auth.token</code></h2>
+      <p>像门卡放在抽屉里。你可以从配置里拿，也可以从 <code>OPENCLAW_GATEWAY_TOKEN</code> 拿。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧰</span>
+      <h2><code>openclaw doctor --generate-gateway-token</code></h2>
+      <p>像让系统现场给你补办一张新门卡。卡没了，就来这里重办。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪟</span>
+      <h2>sessionStorage</h2>
+      <p>像只放在当前这扇浏览器窗里的临时记事本。关掉这扇窗，记事本就不该到处乱跑。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧯 为什么官方一直说：别把它公开到互联网上</h2>
+    <p>因为这不是普通 UI。这里能看聊天、能动配置、还能做 exec approvals。换句话说，它不是客厅，是保险柜旁边的工作台。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🚫 不要公开裸奔</div>
+      <p>官方明确提醒：Control UI 是 admin surface，不要直接对全网暴露。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🏡 localhost 最稳</div>
+      <p>像只让自己这台机器看见控制室，最省心。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧵 SSH tunnel</div>
+      <p>像在你和控制室之间临时搭一条私密走廊。外面的人看不到门口长什么样。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🛫 Tailscale Serve / Funnel</div>
+      <p>像把门交给一条更规整的安全通道。能用，但要按它的安全规则来。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧭 <code>openclaw dashboard</code> 到底做了什么</h2>
+    <p>这个命令很像“帮我把总控室打开，还顺手把链接整理干净”。它不只是开浏览器，更是帮你处理 token 的展示方式。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw dashboard</code></div>
+      <p>像前台递给你一张已经整理好的控制室门票。能开浏览器就开，不能开就给你 SSH 提示。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🧹 干净链接</div>
+      <p>如果 token 能通过 URL 临时带过去，命令会先帮你开门；但页面加载后会把 token 从地址栏里擦掉，免得它一直挂在外面。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🗂 SecretRef 情况</div>
+      <p>如果 token 是外部密钥管理的，命令就不会把它塞进 URL 里，而是只给你一条不带 token 的干净入口。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 这节最该记住的点</div>
+      <p>Dashboard 命令不是装饰，它是在帮你安全地把管理员入口打开。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🪟 如果你看到 unauthorized 或 1008，先别慌</h2>
+    <p>这类报错通常不是“网页坏了”，而是门卡没对上。官方给的修法也很像现场排查。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🔎</span>
+      <h2>先看门卡在哪儿</h2>
+      <p>用 <code>openclaw config get gateway.auth.token</code> 像去抽屉里翻门卡。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧪</span>
+      <h2>没有就现场补办</h2>
+      <p><code>openclaw doctor --generate-gateway-token</code> 像让系统给你补发一张新的。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧷</span>
+      <h2>再把它贴回去</h2>
+      <p>在 Dashboard settings 里把 token 重新放进去，然后再连。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚶</span>
+      <h2>远程场景先想通路</h2>
+      <p>如果不是 localhost，就优先想 Tailscale 或 SSH tunnel，不要硬把控制室直接暴露。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🛠 <code>pnpm ui:build</code> 其实是在“烤”这个控制室</h2>
+    <p>官方最后还提到 UI 的构建。意思很简单：控制室不是凭空长出来的，它是从静态文件烤出来的。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>pnpm ui:build</code></div>
+      <p>像把前端控制室烤成一份能被 Gateway 提供的静态成品。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>dist/control-ui</code></div>
+      <p>像这份烤好的成品盒子。Gateway 就从这里把网页端控制室递给浏览器。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🧱 basePath</div>
+      <p>像给这间控制室换个门牌号。只要路径一致，门还在，位置可以变。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p>Dashboard 这页讲的就是：怎么安全地走进管理员控制室，怎么拿对门卡，怎么别把这扇门公开给全世界。</p>
+    </div>
+  </div>
+</section>
