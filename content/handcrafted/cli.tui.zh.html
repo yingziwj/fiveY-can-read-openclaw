@@ -1,0 +1,164 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>⌨️ `openclaw tui` 像把 OpenClaw 的总控室搬进终端里</h2>
+      <p>如果说浏览器里的 Dashboard 像大房间里的总控制台，那 TUI 就像把同一套常用按钮缩小，放进你现在这扇终端门后面。</p>
+      <p>你不用切去网页，也能看见会话、换会话、发消息、切 deliver、调 session。它不是另一个聊天玩具，而是一张在终端里工作的驾驶舱。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合喜欢终端、想少开一个网页的人</span>
+      <span>这页最重要的是记住：TUI 不是本地自娱自乐，它连的还是 Gateway</span>
+      <a href="https://docs.openclaw.ai/cli/tui" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🖥 先想画面：你坐在终端前，但后面连着一整栋楼</h2>
+    <p>官方开头很短，因为它想先把边界说清楚。TUI 是终端 UI，真正干活的还是 Gateway 那头。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw tui</code></div>
+      <p>像在你眼前打开一块终端驾驶屏。你坐下就能开始用。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--url ws://127.0.0.1:18789 --token &lt;token&gt;</code></div>
+      <p>像你要去另一栋楼坐驾驶舱，所以得先带地址，再带门票。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--session main --deliver</code></div>
+      <p>像你一进门就指定“今天我要坐哪个工位，还要把消息送出去”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 一句话</div>
+      <p>TUI 是终端里的前台，后面仍然是 Gateway 在撑着。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🪪 这页最先要懂的，是“门票怎么来”</h2>
+    <p>官方 notes 只有两句，但都很关键。它在提醒你：TUI 不是乱连的，auth 和 session 默认都会尽量帮你选好。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🎫</span>
+      <h2>SecretRefs 会先帮你找门票</h2>
+      <p>如果 token 或 password 被藏在 env / file / exec 里，TUI 会尽量把它们翻出来，不让你手动乱抄。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧺</span>
+      <h2>它先帮你把能拿到的都拿来</h2>
+      <p>像出门前家里人先帮你把钥匙找好，你不用每次都弯腰翻抽屉。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏷</span>
+      <h2>session 默认会看你现在在哪个工位</h2>
+      <p>如果你就在一个配置好的 agent 工作区里，TUI 会很聪明地默认选那个 agent。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>门票能自动找的，TUI 会先帮你找；工位能自动认的，它也会先认。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🎒 `openclaw tui` 的几条例子，其实是在讲“怎么从不同门口坐进去”</h2>
+    <p>官方的 example 不多，但每一条都很像实际坐车的几种方式。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw tui</code></div>
+      <p>像你坐到本机默认驾驶舱里，先看看当前楼里谁在值班。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw tui --url ws://127.0.0.1:18789 --token &lt;token&gt;</code></div>
+      <p>像你手里拿着地址和门票，明确告诉它要去哪个 Gateway。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw tui --session main --deliver</code></div>
+      <p>像你坐下后就先把“我要发出去”这盏灯打开，不然消息可能只会在车厢里转。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw tui --session bugfix</code></div>
+      <p>像你直接钻进一个叫 bugfix 的抽屉里，专心修这一件事。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🪑 这个终端驾驶舱，本质上还是在帮你坐对工位</h2>
+    <p>很多人第一次用 TUI 会以为它只是聊天框。其实它更像工位切换器。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧑‍💻</span>
+      <h2>坐哪一个 agent</h2>
+      <p>如果你在一个配置好的 agent 工作区里，TUI 会尽量替你对号入座。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📁</span>
+      <h2>看哪一段 session</h2>
+      <p>session 像抽屉，TUI 让你在抽屉之间走来走去，不用每次重开。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📨</span>
+      <h2>消息要不要送出去</h2>
+      <p><code>--deliver</code> 就像把“只看不发”切成“真的把消息递出去”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎚</span>
+      <h2>默认行为尽量聪明</h2>
+      <p>它会尽量帮你选对身份，但你也可以自己手动指定，不必完全靠猜。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🌙 这页真正的味道，是“少跳一层网页，多一层手感”</h2>
+    <p>TUI 的意义不是炫技，而是让你在终端里直接做平时会去浏览器里做的事。它更快，也更像手边工具。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">⌨️ 更像敲键盘的人</div>
+      <p>如果你习惯 shell，TUI 就像把网页里那些常用按钮收进键盘里。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🪟 少开一扇窗</div>
+      <p>很多时候你不想来回切浏览器，那就直接在终端里完成。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔗 背后还是 Gateway</div>
+      <p>这不是本地离线聊天小屋，而是 Gateway 的前台驾驶舱。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>TUI 的便利来自“少切一个界面”，不是来自“换了一套系统”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 `openclaw tui` 压成一句话</h2>
+    <p>`openclaw tui` 就是终端里的 OpenClaw 总控室：它会尽量帮你找好门票、认好工位，然后让你在 shell 里直接和 Gateway 说话。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 `<code>/web/tui</code>`。那一页会把这个终端驾驶舱的界面讲得更像房间布置图。</p>
+  </div>
+</section>

@@ -1,0 +1,217 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🛰 `openclaw node` 像“派一个不睡觉的小工人，去别的机器上干活”</h2>
+      <p>这页讲的是一个很轻的头脑风暴小帮手：它自己不负责聊天，也不负责界面，它只负责连上 Gateway，然后在别的机器上帮你跑命令。</p>
+      <p>你可以把它想成一只会跑腿的手。手不住在主机里最显眼的地方，但需要它时，它能伸到别的电脑上去做事。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想把命令放到远端机器执行的人</span>
+      <span>这页最重要的是记住：它连的是 Gateway WebSocket，干活时仍然要过审批</span>
+      <a href="https://docs.openclaw.ai/cli/node" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧳 为什么要有它？因为有些机器上没有大管家，但你还是想让它干活</h2>
+    <p>官方一开始讲得很朴素：有些电脑不想装完整的 macOS 伴侣，但你还是想让它们帮你跑命令。node host 就是干这个的。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🖥</span>
+      <h2>远端 Linux / Windows</h2>
+      <p>像把一只手伸到 build server、NAS、实验机上去敲命令。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎛</span>
+      <h2>保持执行权受控</h2>
+      <p>不是谁都能随便乱跑。exec approvals 和 allowlist 还在门口站着。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪶</span>
+      <h2>更轻</h2>
+      <p>它是个头less 小工人，不是整套大前台。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话先记住</h2>
+      <p>node host 负责把命令送到别的机器上，不负责替你把整栋楼都搬过去。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>👀 Browser proxy 像“顺手给这台远端机器配一双眼睛”</h2>
+    <p>官方说得很妙：node host 还会自动带一个浏览器代理，前提是你没有把它关掉。意思就是，它不只是能跑命令，还能顺手帮你管浏览器。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧭 自动带眼睛</div>
+      <p>如果没关，node host 会自己带上 browser proxy。像小工人出门时顺手带了一副望远镜。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>browser.enabled = false</code></div>
+      <p>像你在出门前把那副眼镜收起来。这样这台 node 就不再负责浏览器动作。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>allowProfiles</code></div>
+      <p>像给这双眼睛列白名单。没写进名单的浏览器房间，它就不乱进。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚧 更严一点</div>
+      <p>如果你把代理设得更收敛，它还会挡住一些会改掉持久配置的浏览器动作。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🚀 <code>openclaw node run</code> 像“把这只手先叫到现场”</h2>
+    <p>run 是前台开着跑。你给它 Gateway 的门牌，它就去连那边，开始工作。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">▶</span>
+      <h2><code>openclaw node run --host &lt;gateway-host&gt; --port 18789</code></h2>
+      <p>像对小工人说：“现在去这台总机房门口报到。”</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔐</span>
+      <h2><code>--tls</code> / <code>--tls-fingerprint</code></h2>
+      <p>像在路上再加一层透明雨罩，还要核对这层罩是不是你认识的那一层。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪪</span>
+      <h2><code>--node-id</code> / <code>--display-name</code></h2>
+      <p>像给这只手换工牌。名字和身份都可以换，但换了有时会清掉旧配对。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>run 是前台工作模式，先把手叫出来，再让它连上 Gateway。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🪙 Gateway auth 这段在说：这只手虽然轻，但也不能裸奔进门</h2>
+    <p>官方特别强调 node 命令不吃 `--token` / `--password`，它要从环境和配置里找钥匙，而且找不到时会直接失败。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>OPENCLAW_GATEWAY_TOKEN</code> / <code>OPENCLAW_GATEWAY_PASSWORD</code></div>
+      <p>像你先把门票放在口袋最前面。它们会优先被找到。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>gateway.auth.token</code> / <code>gateway.auth.password</code></div>
+      <p>像第二层抽屉里的门票。口袋里没有时，再去抽屉找。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">SecretRef unresolved</div>
+      <p>像抽屉名牌在，但里面的票没拿到。官方说这时候要直接失败，不许偷偷拿远端的票来糊弄。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>gateway.mode=remote</code></div>
+      <p>像机器现在在远程模式里跑，某些远程客户端字段也可以参与找票。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🏠 <code>openclaw node install</code> 像“把这只手正式登记成长期值班员工”</h2>
+    <p>run 是临时叫来，install 是把它装进系统服务，让它长期在后台待命。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw node install --host ... --port 18789</code></div>
+      <p>像给这只手办入职手续。以后它不是临时来一下，而是正式驻扎。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--runtime node</code> / <code>--runtime bun</code></div>
+      <p>像给同一个值班员选不同的早餐车。后台用哪套运行时，可以挑。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--force</code></div>
+      <p>像你说“这份入职记录我就覆盖掉，重新来一版”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛎 管理服务</div>
+      <p><code>status</code>、<code>stop</code>、<code>restart</code>、<code>uninstall</code> 像查勤、叫停、重新开工、解除登记。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🪪 Pairing 这段最像“门口先排队领临时工牌”</h2>
+    <p>第一次连上时，node 会在 Gateway 侧产生一个待批准的设备配对请求。通过以后，这台机器才算正式入队。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>第一次连线</h2>
+      <p>像一个新工人到门口报到，先拿到待审批小条。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2><code>openclaw devices list</code></h2>
+      <p>像去看门口还有哪些工牌条目正在排队。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2><code>openclaw devices approve &lt;requestId&gt;</code></h2>
+      <p>像给那张工牌盖章，说“这台可以进”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2>本机记账</h2>
+      <p>node 自己也会把 id、token、名字和连接信息收在 <code>~/.openclaw/node.json</code> 里。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第七站</p>
+    <h2>✋ Exec approvals 像“就算是帮忙干活，也得先问一句能不能动手”</h2>
+    <p>node 真正执行命令时，还要过本地 exec approvals。它不是野马，手伸出去前要先点头。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>~/.openclaw/exec-approvals.json</code></div>
+      <p>像一本允许名单。谁能动手、动到哪一步，里面都有记号。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw approvals --node ...</code></div>
+      <p>像从 Gateway 那边把审批名单翻出来，专门给这台 node 看。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">允许与允许列表</div>
+      <p>不是每个命令都能自动放。node host 会继续守住“明确、有限、可控”的那条线。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>node 能跑命令，但不是无证司机。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 `openclaw node` 压成一句话</h2>
+    <p>`openclaw node` 就是一只去别的机器上干活的轻量小工人：先连 Gateway，再按审批和白名单办事，顺手还能带一双浏览器眼睛。</p>
+  </div>
+</section>

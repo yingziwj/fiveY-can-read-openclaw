@@ -3970,548 +3970,224 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>node</h2>
-          <p>这一页像一本关于“node”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：openclaw node。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/cli/node</span>
-          <span>章节数量：8</span>
-          <a href="https://docs.openclaw.ai/cli/node" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节主要在解释“Start Here”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Start Here”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“openclaw node Run a **headless node host** that connects to the 门口的小门卫 WebSocket and exposes system.run / system.which…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“openclaw node”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># <code>openclaw node</code></p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Run a **headless node host** that connects to the 门口的小门卫 WebSocket and exposes system.run / system.which on this machin…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Run a **headless node host** that connects to the Gateway WebSocket and exposes <code>system.run</code> / <code>system.which</code> on this machine.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Why use a node host?</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use a node host when you want 机器人朋友s to **run 魔法口令s on other machines** in your network without installing a full macOS…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use a node host when you want 机器人朋友s to **run 魔法口令s on other machines** in your network without installing a full macOS…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use a node host when you want agents to **run commands on other machines** in your network without installing a full macOS companion app there.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Common use cases:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Common use cases:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Why use a node host?”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Run 魔法口令s on remote Linux/Windows boxes (…、Keep exec **sandboxed** on the 门口的小门卫, bu…、Provide a lightweight, headless execution…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Run commands on remote Linux/Windows boxes (build servers, lab machines, NAS).</li><li>Keep exec **sandboxed** on the gateway, but delegate approved runs to other hosts.</li><li>Provide a lightweight, headless execution target for automation or CI nodes.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Execution is still guarded by **exec approvals** and per‑机器人朋友 allowlists on the node host, so you can keep 魔法口令 access…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Execution is still guarded by **exec approvals** and per‑agent allowlists on the node host, so you can keep command access scoped and explicit.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Browser proxy (zero-设置说明书)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Node hosts automatically advertise a browser proxy if browser.enabled is not disabled on the node. This lets the 机器人朋友…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Node hosts automatically advertise a browser proxy if browser.enabled is not disabled on the node. This lets the 机器人朋友…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Node hosts automatically advertise a browser proxy if <code>browser.enabled</code> is not disabled on the node. This lets the agent use browser automation on that node without extra configuration.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“By default, the proxy exposes the node&#39;s normal browser profile surface. If you set nodeHost.browserProxy.allowProfiles…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>By default, the proxy exposes the node&#39;s normal browser profile surface. If you set <code>nodeHost.browserProxy.allowProfiles</code>, the proxy becomes restrictive: non-allowlisted profile targeting is rejected, and persistent profile create/delete routes are blocked through the proxy.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Disable it on the node if needed:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Disable it on the node if needed:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“nodeHost”贴标签，意思是把它设置成“{”。</li><li>这里在给“browserProxy”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  nodeHost: {
-    browserProxy: {
-      enabled: false,
-    },
-  },
-}</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Run (foreground)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Options:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw node run --host &lt;gateway-host&gt; --port 18789”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw node run --host &lt;gateway-host&gt; --port 18789</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Options:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Options:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Run (foreground)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：--host &lt;host&gt;: 门口的小门卫 WebSocket host (def…、--port &lt;port&gt;: 门口的小门卫 WebSocket port (def…、--tls: Use TLS for the 门口的小门卫 connection、--tls-fingerprint &lt;sha256&gt;: Expected TLS…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>--host &lt;host&gt;</code>: Gateway WebSocket host (default: <code>127.0.0.1</code>)</li><li><code>--port &lt;port&gt;</code>: Gateway WebSocket port (default: <code>18789</code>)</li><li><code>--tls</code>: Use TLS for the gateway connection</li><li><code>--tls-fingerprint &lt;sha256&gt;</code>: Expected TLS certificate fingerprint (sha256)</li><li><code>--node-id &lt;id&gt;</code>: Override node id (clears pairing token)</li><li><code>--display-name &lt;name&gt;</code>: Override the node display name</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>门口的小门卫 auth for node host</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“openclaw node run and openclaw node install resolve 门口的小门卫 auth from 设置说明书/env (no --token/--秘密口令 flags on node 魔法口令s):”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“openclaw node run and openclaw node install resolve 门口的小门卫 auth from 设置说明书/env (no --token/--秘密口令 flags on node 魔法口令s):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>openclaw node run</code> and <code>openclaw node install</code> resolve gateway auth from config/env (no <code>--token</code>/<code>--password</code> flags on node commands):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Gateway auth for node host”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：OPENCLAW_门口的小门卫_TOKEN / OPENCLAW_门口的小门卫_秘…、Then local 设置说明书 fallback: 门口的小门卫.auth.to…、In local mode, node host intentionally do…、If 门口的小门卫.auth.token / 门口的小门卫.auth.秘密口令 i…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>OPENCLAW_GATEWAY_TOKEN</code> / <code>OPENCLAW_GATEWAY_PASSWORD</code> are checked first.</li><li>Then local config fallback: <code>gateway.auth.token</code> / <code>gateway.auth.password</code>.</li><li>In local mode, node host intentionally does not inherit <code>gateway.remote.token</code> / <code>gateway.remote.password</code>.</li><li>If <code>gateway.auth.token</code> / <code>gateway.auth.password</code> is explicitly configured via SecretRef and unresolved, node auth resolution fails closed (no remote fallback masking).</li><li>In <code>gateway.mode=remote</code>, remote client fields (<code>gateway.remote.token</code> / <code>gateway.remote.password</code>) are also eligible per remote precedence rules.</li><li>Node host auth resolution only honors <code>OPENCLAW_GATEWAY_*</code> env vars.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Service (background)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Install a headless node host as a user service. Options: Manage the service: Use openclaw node run for a foreground nod…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Install a headless node host as a user service.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Install a headless node host as a user service.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw node install --host &lt;gateway-host&gt; --port 18789”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw node install --host &lt;gateway-host&gt; --port 18789</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Options:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Options:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Service (background)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：--host &lt;host&gt;: 门口的小门卫 WebSocket host (def…、--port &lt;port&gt;: 门口的小门卫 WebSocket port (def…、--tls: Use TLS for the 门口的小门卫 connection、--tls-fingerprint &lt;sha256&gt;: Expected TLS…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>--host &lt;host&gt;</code>: Gateway WebSocket host (default: <code>127.0.0.1</code>)</li><li><code>--port &lt;port&gt;</code>: Gateway WebSocket port (default: <code>18789</code>)</li><li><code>--tls</code>: Use TLS for the gateway connection</li><li><code>--tls-fingerprint &lt;sha256&gt;</code>: Expected TLS certificate fingerprint (sha256)</li><li><code>--node-id &lt;id&gt;</code>: Override node id (clears pairing token)</li><li><code>--display-name &lt;name&gt;</code>: Override the node display name</li><li><code>--runtime &lt;runtime&gt;</code>: Service runtime (<code>node</code> or <code>bun</code>)</li><li><code>--force</code>: Reinstall/overwrite if already installed</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Manage the service:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Manage the service:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw node status”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw node stop”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw node restart”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw node status
-openclaw node stop
-openclaw node restart
-openclaw node uninstall</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use openclaw node run for a foreground node host (no service).”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use <code>openclaw node run</code> for a foreground node host (no service).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Service 魔法口令s accept --json for machine-readable output.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Service commands accept <code>--json</code> for machine-readable output.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Pairing</h2>
-            <p>这一节主要在解释“Pairing”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Pairing”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The first connection creates a pending device pairing request (role: node) on the 门口的小门卫. Approve it via: If the node r…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The first connection creates a pending device pairing request (role: node) on the 门口的小门卫. Approve it via:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The first connection creates a pending device pairing request (<code>role: node</code>) on the Gateway. Approve it via:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw devices list”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw devices approve &lt;requestId&gt;”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw devices list
-openclaw devices approve &lt;requestId&gt;</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If the node retries pairing with changed auth details (role/scopes/public key), the previous pending request is superse…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If the node retries pairing with changed auth details (role/scopes/public key), the previous pending request is superseded and a new <code>requestId</code> is created. Run <code>openclaw devices list</code> again before approval.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The node host stores its node id, token, display name, and 门口的小门卫 connection info in ~/.openclaw/node.json.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The node host stores its node id, token, display name, and gateway connection info in <code>~/.openclaw/node.json</code>.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>Exec approvals</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“system.run is gated by local exec approvals:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“system.run is gated by local exec approvals:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>system.run</code> is gated by local exec approvals:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Exec approvals”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：~/.openclaw/exec-approvals.json、Exec approvals、openclaw approvals --node &lt;id name ip&gt; (e…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>~/.openclaw/exec-approvals.json</code></li><li><a href="/tools/exec-approvals" target="_blank" rel="noreferrer">Exec approvals</a></li><li><code>openclaw approvals --node &lt;id|name|ip&gt;</code> (edit from the Gateway)</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🛰 `openclaw node` 像“派一个不睡觉的小工人，去别的机器上干活”</h2>
+      <p>这页讲的是一个很轻的头脑风暴小帮手：它自己不负责聊天，也不负责界面，它只负责连上 Gateway，然后在别的机器上帮你跑命令。</p>
+      <p>你可以把它想成一只会跑腿的手。手不住在主机里最显眼的地方，但需要它时，它能伸到别的电脑上去做事。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想把命令放到远端机器执行的人</span>
+      <span>这页最重要的是记住：它连的是 Gateway WebSocket，干活时仍然要过审批</span>
+      <a href="https://docs.openclaw.ai/cli/node" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧳 为什么要有它？因为有些机器上没有大管家，但你还是想让它干活</h2>
+    <p>官方一开始讲得很朴素：有些电脑不想装完整的 macOS 伴侣，但你还是想让它们帮你跑命令。node host 就是干这个的。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🖥</span>
+      <h2>远端 Linux / Windows</h2>
+      <p>像把一只手伸到 build server、NAS、实验机上去敲命令。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎛</span>
+      <h2>保持执行权受控</h2>
+      <p>不是谁都能随便乱跑。exec approvals 和 allowlist 还在门口站着。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪶</span>
+      <h2>更轻</h2>
+      <p>它是个头less 小工人，不是整套大前台。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话先记住</h2>
+      <p>node host 负责把命令送到别的机器上，不负责替你把整栋楼都搬过去。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>👀 Browser proxy 像“顺手给这台远端机器配一双眼睛”</h2>
+    <p>官方说得很妙：node host 还会自动带一个浏览器代理，前提是你没有把它关掉。意思就是，它不只是能跑命令，还能顺手帮你管浏览器。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧭 自动带眼睛</div>
+      <p>如果没关，node host 会自己带上 browser proxy。像小工人出门时顺手带了一副望远镜。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>browser.enabled = false</code></div>
+      <p>像你在出门前把那副眼镜收起来。这样这台 node 就不再负责浏览器动作。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>allowProfiles</code></div>
+      <p>像给这双眼睛列白名单。没写进名单的浏览器房间，它就不乱进。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚧 更严一点</div>
+      <p>如果你把代理设得更收敛，它还会挡住一些会改掉持久配置的浏览器动作。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🚀 <code>openclaw node run</code> 像“把这只手先叫到现场”</h2>
+    <p>run 是前台开着跑。你给它 Gateway 的门牌，它就去连那边，开始工作。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">▶</span>
+      <h2><code>openclaw node run --host &lt;gateway-host&gt; --port 18789</code></h2>
+      <p>像对小工人说：“现在去这台总机房门口报到。”</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔐</span>
+      <h2><code>--tls</code> / <code>--tls-fingerprint</code></h2>
+      <p>像在路上再加一层透明雨罩，还要核对这层罩是不是你认识的那一层。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪪</span>
+      <h2><code>--node-id</code> / <code>--display-name</code></h2>
+      <p>像给这只手换工牌。名字和身份都可以换，但换了有时会清掉旧配对。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>run 是前台工作模式，先把手叫出来，再让它连上 Gateway。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🪙 Gateway auth 这段在说：这只手虽然轻，但也不能裸奔进门</h2>
+    <p>官方特别强调 node 命令不吃 `--token` / `--password`，它要从环境和配置里找钥匙，而且找不到时会直接失败。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>OPENCLAW_GATEWAY_TOKEN</code> / <code>OPENCLAW_GATEWAY_PASSWORD</code></div>
+      <p>像你先把门票放在口袋最前面。它们会优先被找到。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>gateway.auth.token</code> / <code>gateway.auth.password</code></div>
+      <p>像第二层抽屉里的门票。口袋里没有时，再去抽屉找。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">SecretRef unresolved</div>
+      <p>像抽屉名牌在，但里面的票没拿到。官方说这时候要直接失败，不许偷偷拿远端的票来糊弄。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>gateway.mode=remote</code></div>
+      <p>像机器现在在远程模式里跑，某些远程客户端字段也可以参与找票。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🏠 <code>openclaw node install</code> 像“把这只手正式登记成长期值班员工”</h2>
+    <p>run 是临时叫来，install 是把它装进系统服务，让它长期在后台待命。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw node install --host ... --port 18789</code></div>
+      <p>像给这只手办入职手续。以后它不是临时来一下，而是正式驻扎。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--runtime node</code> / <code>--runtime bun</code></div>
+      <p>像给同一个值班员选不同的早餐车。后台用哪套运行时，可以挑。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--force</code></div>
+      <p>像你说“这份入职记录我就覆盖掉，重新来一版”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛎 管理服务</div>
+      <p><code>status</code>、<code>stop</code>、<code>restart</code>、<code>uninstall</code> 像查勤、叫停、重新开工、解除登记。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🪪 Pairing 这段最像“门口先排队领临时工牌”</h2>
+    <p>第一次连上时，node 会在 Gateway 侧产生一个待批准的设备配对请求。通过以后，这台机器才算正式入队。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>第一次连线</h2>
+      <p>像一个新工人到门口报到，先拿到待审批小条。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2><code>openclaw devices list</code></h2>
+      <p>像去看门口还有哪些工牌条目正在排队。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2><code>openclaw devices approve &lt;requestId&gt;</code></h2>
+      <p>像给那张工牌盖章，说“这台可以进”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2>本机记账</h2>
+      <p>node 自己也会把 id、token、名字和连接信息收在 <code>~/.openclaw/node.json</code> 里。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第七站</p>
+    <h2>✋ Exec approvals 像“就算是帮忙干活，也得先问一句能不能动手”</h2>
+    <p>node 真正执行命令时，还要过本地 exec approvals。它不是野马，手伸出去前要先点头。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>~/.openclaw/exec-approvals.json</code></div>
+      <p>像一本允许名单。谁能动手、动到哪一步，里面都有记号。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw approvals --node ...</code></div>
+      <p>像从 Gateway 那边把审批名单翻出来，专门给这台 node 看。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">允许与允许列表</div>
+      <p>不是每个命令都能自动放。node host 会继续守住“明确、有限、可控”的那条线。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>node 能跑命令，但不是无证司机。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 `openclaw node` 压成一句话</h2>
+    <p>`openclaw node` 就是一只去别的机器上干活的轻量小工人：先连 Gateway，再按审批和白名单办事，顺手还能带一双浏览器眼睛。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>
