@@ -1,0 +1,135 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🤝 <code>openclaw pairing</code> 像“门口有人举着配对码敲门，你来决定放不放行”</h2>
+      <p>这页讲的是 DM pairing request。翻成人话，就是某个支持配对的通道上，有人想把自己和 OpenClaw 连起来，于是先递来一张小纸条，上面写着配对码。</p>
+      <p>你用这组命令做的事很简单：先看门口排了谁，再决定把哪张小纸条盖章通过。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合已经开了支持配对的通道，准备人工审核配对请求的人</span>
+      <span>这页最重要的是记住：它管的是“配对申请审核”，不是普通消息收发</span>
+      <a href="https://docs.openclaw.ai/cli/pairing" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🪪 这组命令只有两个主动作：看名单，盖通过章</h2>
+    <p>官方示例很短，因为这页本来就不是复杂系统。它就是门口审批台。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📋</span>
+      <h2><code>pairing list</code></h2>
+      <p>看看现在有哪些人在门口排队，举着哪些配对码等你看。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✅</span>
+      <h2><code>pairing approve</code></h2>
+      <p>从名单里挑一个码，盖章说“这位可以进”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📨</span>
+      <h2><code>--notify</code></h2>
+      <p>像盖完章以后，再顺手回一句：“通过啦，你可以继续了。”</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>list 看排队，approve 放行。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧾 这两条示例命令，其实就是“翻排队簿”和“按号码叫号”</h2>
+    <p>把命令想成办事大厅动作，会比背参数顺很多。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw pairing list telegram</code></div>
+      <p>像对门卫说：“把 Telegram 这扇门前面排队的名单给我看看。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw pairing list --channel telegram --account work</code></div>
+      <p>像再补一句：“别把所有窗口都给我，只看 Telegram 里 work 这个账号负责的那一列。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw pairing approve telegram &lt;code&gt;</code></div>
+      <p>像照着小纸条上的号码叫号，然后把这一位放进来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--notify</code></div>
+      <p>像办完以后再递一张回执，告诉对方审批已经过了。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🚪 `telegram` 既可以直接写在后面，也可以放进 <code>--channel</code></h2>
+    <p>官方专门提醒这一点，是因为很多命令行页都容易把“位置参数”和“选项参数”搞得很像两套不同玩法。其实这里不是。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2><code>pairing list telegram</code></h2>
+      <p>像直接说门名，简单直接。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2><code>pairing list --channel telegram</code></h2>
+      <p>像把门名放进表格栏目里，读起来更规整。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>本质一样</h2>
+      <p>都是在告诉系统：“我要看 Telegram 这扇门的配对队伍。”</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>门名可以直接说，也可以塞进 <code>--channel</code> 里说。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧷 `--account` 在说：同一扇门里，可能还有多个值班窗口</h2>
+    <p>如果一条通道下面挂了不止一个账号，官方就让你用 <code>--account</code> 把窗口再说细一点。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">一扇门，多张工牌</div>
+      <p>比如同样是 Telegram，可能有默认账号，也可能有 work 账号、support 账号。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--account work</code></div>
+      <p>像走到大厅里指定说：“我要找 work 这个窗口的队伍，不看别的队伍。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">不写会怎样</div>
+      <p>如果系统能很明确知道你只配了一种窗口，它就能自己猜；但窗口一多，你最好别让它猜。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">审批更稳</div>
+      <p>配对这种事最怕放错门，所以多账号时把窗口说清楚，会比靠默认值更稳。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw pairing</code> 压成一句话</h2>
+    <p><code>openclaw pairing</code> 就像门口审核台：先看谁拿着配对码在排队，再按通道和账号找到对的窗口，把该通过的人盖章放行，必要时再回一声“你已经通过啦”。</p>
+  </div>
+</section>

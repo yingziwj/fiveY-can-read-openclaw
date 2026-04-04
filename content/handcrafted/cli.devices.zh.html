@@ -1,0 +1,194 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📟 <code>openclaw devices</code> 像“门卫的设备名单簿和通行证回收箱”</h2>
+      <p>这页讲的是设备配对请求和设备级 token。翻成人话，就是哪些手机、平板、控制台已经被允许进门，哪些还在门口排队等你点头。</p>
+      <p>你可以把它想成门卫桌上的两样东西：一本名单簿，还有一只钥匙盒。名单簿管谁能进，钥匙盒管谁手上的通行证要不要换、要不要作废。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合已经开始做设备接入、控制台接入、移动端接入的人</span>
+      <span>这页最重要的是记住：它是在管“设备身份和设备通行证”，不是在发普通聊天消息</span>
+      <a href="https://docs.openclaw.ai/cli/devices" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>📋 先把常见动作看成门卫桌上的 6 个开关</h2>
+    <p>官方把命令分得很清楚。你不用一下子背全，只要先记住它们各自像什么动作。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">👀</span>
+      <h2><code>list</code></h2>
+      <p>看门口排队的设备，也看已经拿到通行证的设备。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✅</span>
+      <h2><code>approve</code></h2>
+      <p>给某个待审批设备点头放行。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚫</span>
+      <h2><code>reject</code></h2>
+      <p>把门口这次申请驳回，不给它进。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧹</span>
+      <h2><code>remove</code> / <code>clear</code></h2>
+      <p>把某台设备从名单上划掉，或者整批清掉。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔄 `rotate` 和 `revoke`，像“给它换新工牌”和“把工牌当场剪掉”</h2>
+    <p>这两个动作特别重要，因为它们管的不是设备壳子，而是设备手里那张能不能进门的票。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>rotate --device ... --role operator</code></div>
+      <p>像给这台设备重新发一张新工牌。旧牌最好别再继续用。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--scope ...</code></div>
+      <p>像在新工牌背后重新写“你这次能进哪些房间”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>revoke --device ... --role node</code></div>
+      <p>像把某种角色的工牌直接剪掉，从现在起这台设备别再拿它开门。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⚠️ 敏感信息</div>
+      <p>官方提醒新 token 很敏感，这句话要当真。它不是普通回执，而是新门卡本身。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧾 这几条常用命令，像门卫处理排队和名册的日常动作</h2>
+    <p>把它们想成“门卫今天怎么上班”，会好记很多。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw devices list</code></div>
+      <p>像翻开名单簿，左边看谁在门口等，右边看谁已经领过工牌。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw devices approve</code></div>
+      <p>如果你不写 <code>requestId</code>，它会默认批准最新那位，像直接放行刚刚排到最前面的访客。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw devices remove &lt;deviceId&gt;</code></div>
+      <p>像把某台已经登记过的设备从长期通行名单里划掉。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw devices clear --yes --pending</code></div>
+      <p>像拿橡皮把待审批那一整栏都擦掉。官方要求加 <code>--yes</code>，就是怕你手一滑把整页名单清空。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🪵 为什么官方提醒“改了 auth 细节会换 requestId”？因为来的人已经不是同一张申请单了</h2>
+    <p>这条注释很容易被忽略，但很实用。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📝</span>
+      <h2>旧申请会被顶掉</h2>
+      <p>如果设备重试配对时把角色、scope、公钥这些关键信息改了，系统会认为这是新的申请，不再沿用旧编号。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔄</span>
+      <h2>先 list 再 approve</h2>
+      <p>所以官方才说批准前最好先跑一遍 <code>devices list</code>，确认手里的号码还是最新那张。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚫</span>
+      <h2>别拿旧号盖章</h2>
+      <p>老编号可能已经过期了，就像你手里拿的是昨天的排队号。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>要放行，先看最新名单，不要凭记忆批。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🔐 <code>--url</code> 这句提醒很关键：你自己指定门口地址时，系统就不替你猜钥匙了</h2>
+    <p>官方说得很直接：一旦你手工传了 <code>--url</code>，CLI 就不会再回头帮你从配置或环境里猜 token / password。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">默认模式</div>
+      <p>像门卫平时就在固定岗位上班，所以系统大概知道该去哪个抽屉找钥匙。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--url &lt;url&gt;</code></div>
+      <p>像你突然说：“今天我们改去另一个门口值班。” 那系统就不敢替你乱拿旧门的钥匙了。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">所以要显式补票</div>
+      <p>这时你就得自己把 <code>--token</code> 或 <code>--password</code> 一起递上。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">少猜更安全</div>
+      <p>这一条看起来麻烦，其实是为了不把 A 门的钥匙错拿去开 B 门。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🩹 Token drift recovery checklist，像“门卡对不上号时的抢修流程”</h2>
+    <p>如果你碰到 <code>AUTH_TOKEN_MISMATCH</code> 这类报错，官方不是让你盲猜，而是给了一条很清楚的修理顺序。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2><code>openclaw config get gateway.auth.token</code></h2>
+      <p>先确认总门钥匙现在到底是哪一把。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2><code>openclaw devices list</code></h2>
+      <p>再找到是哪台设备手里的门卡出问题。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2><code>openclaw devices rotate --device ... --role operator</code></h2>
+      <p>先给这台设备重发一张新工牌。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>还不行就 remove + approve</h2>
+      <p>像把旧登记删掉，让它重新排队、重新审批、重新拿票。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw devices</code> 压成一句话</h2>
+    <p><code>openclaw devices</code> 就像门卫的设备名单簿和钥匙盒：看谁在排队、批准谁进门、清掉旧设备、换发新工牌、作废旧通行证，还顺手在门卡对不上号时给你一整套抢修步骤。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/cli/qr</code>。因为 <code>qr</code> 负责发入场票，<code>devices</code> 负责最后放人进门，这两页是连着看的。</p>
+  </div>
+</section>

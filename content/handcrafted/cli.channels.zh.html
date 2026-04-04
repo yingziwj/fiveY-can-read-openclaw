@@ -1,0 +1,194 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🚪 <code>openclaw channels</code> 像“给每一扇聊天大门发门禁卡，再看看它们今天开没开”</h2>
+      <p>这页不是在教你聊天，而是在教你管门。Telegram 是一扇门，Slack 是一扇门，Discord 也是一扇门。OpenClaw 要先知道每扇门归谁管、钥匙放哪、门现在通不通。</p>
+      <p>所以这组命令干的事很像门卫室日常：登记、查看状态、试钥匙、认门牌、看值班日志。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合已经装好 OpenClaw，准备把各个聊天通道接进来的人</span>
+      <span>这页最重要的是记住：它不是聊天命令，它是“管通道账号和门禁状态”的命令</span>
+      <a href="https://docs.openclaw.ai/cli/channels" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧭 先把 5 个常见动作看成门卫桌上的 5 个按钮</h2>
+    <p>官方一开头就给了 `list`、`status`、`capabilities`、`resolve`、`logs`。别被英文吓到，它们其实就是门卫每天会按的五个按钮。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📋</span>
+      <h2><code>list</code></h2>
+      <p>看看现在到底接了哪几扇门，门后各自挂着哪些账号。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">💓</span>
+      <h2><code>status</code></h2>
+      <p>看看这些门今天有没有在线，有没有掉线，有没有哪把钥匙不灵了。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧰</span>
+      <h2><code>capabilities</code></h2>
+      <p>像问这扇门到底会什么：能发群消息吗，能读目录吗，权限够不够。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏷️</span>
+      <h2><code>resolve</code></h2>
+      <p>像把“#general”“@jane”这种昵称，翻成机器真正认得的门牌号。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🪄 这几个命令翻成现场动作，会更好懂</h2>
+    <p>命令不是魔法咒语。你把它们想成门卫在值班室做动作，就不拗口了。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw channels list</code></div>
+      <p>像把登记簿摊开，看看 Telegram、Slack、Discord 这些门现在都写没写进去。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw channels status</code></div>
+      <p>像门卫挨扇门试一下门铃，看看哪扇门通，哪扇门只是账本里写着、其实已经没人应门了。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw channels capabilities --channel discord --target channel:123</code></div>
+      <p>像拿着一张测试表去问 Discord 这扇门：“你这边到底允许我进多少房间、做多少动作？”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw channels logs --channel all</code></div>
+      <p>像站到值班室后面的玻璃窗前，看所有门最近有没有报错、有没有人在疯狂敲门。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🔑 `add` 和 `remove` 在干嘛？就是发钥匙、收钥匙</h2>
+    <p>官方的 `add/remove accounts` 这一段，本质上是在说：把新门接进来，或者把旧门撤掉。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">➕</span>
+      <h2><code>openclaw channels add --channel telegram --token &lt;bot-token&gt;</code></h2>
+      <p>像把 Telegram 机器人门卡交给门卫，说：“以后这扇门归你值班。”</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">➕</span>
+      <h2><code>openclaw channels add --channel nostr --private-key ...</code></h2>
+      <p>换了门，钥匙样子也会变。Telegram 用 token，Nostr 用 private key，但动作还是“把门钥匙登记进来”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">➖</span>
+      <h2><code>openclaw channels remove --channel telegram --delete</code></h2>
+      <p>像把这扇门从登记簿划掉，还顺手把门卡一起收回。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p><code>add</code> 是接门，<code>remove</code> 是撤门。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>👥 交互向导里那句 “Bind now?”，像“这扇门现在归哪个小工位值班”</h2>
+    <p>官方特别提了 interactive wizard 会问你要不要立刻绑定 agent。因为“门接进来”还不等于“已经分配给谁负责”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">先配账号</div>
+      <p>先把 Telegram、Slack 这些门配好，告诉系统钥匙在哪。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">再问归谁管</div>
+      <p>向导接着会问：“这扇门要不要现在就交给某个 agent 值班？”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">绑定像分工</div>
+      <p>像把前台电话交给客服组，把报警电话交给值班组，不同工位接不同门。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">多账号升级</div>
+      <p>官方那段很长，其实就在说：如果原来一扇门只有一个账号，后来你又加了第二个，OpenClaw 会帮你把原来的默认账号搬进更整齐的多账号抽屉里。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🔍 `capabilities` 和 `resolve` 为什么重要？因为门开着，不代表你认路</h2>
+    <p>很多人以为通道接上就完事了。其实后面最常卡住的是两件事：不知道这扇门能做什么，不知道目标名字该写成什么 ID。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧪</span>
+      <h2><code>capabilities</code></h2>
+      <p>像拿权限清单照一照，看看这把钥匙能开哪些房间，哪些房间还是锁着的。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🗺️</span>
+      <h2><code>resolve --channel slack "#general" "@jane"</code></h2>
+      <p>像拿着花名册去问：“#general 这间房真正的内部编号是多少？@jane 这个人机器到底怎么认？”</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎯</span>
+      <h2>昵称不是机器门牌</h2>
+      <p>人看得懂名字，机器更爱精确 ID，所以常常要先翻译一次。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p><code>capabilities</code> 看“能做什么”，<code>resolve</code> 看“该往哪打”。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🩺 排障这段在说：先看总状态，再找医生，再翻监控</h2>
+    <p>官方给的排障建议很实在。不是让你猜，而是给你一条顺序。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw status --deep</code></div>
+      <p>像先做一次全屋巡检，别一上来就只盯一扇门。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw doctor</code></div>
+      <p>像把总维修师叫来，让它按常见故障表帮你查。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">config-only fallback</div>
+      <p>如果 Gateway 暂时够不着，<code>status</code> 也会先照账本告诉你“理论上配了哪些门”，不会一句话都不给。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">SecretRef 提醒</div>
+      <p>有些钥匙藏在秘密抽屉里。要是这次命令路上没法打开那个抽屉，系统会说“我知道你配过，但我现在没拿到钥匙”，而不是瞎报没配置。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw channels</code> 压成一句话</h2>
+    <p><code>openclaw channels</code> 就像门卫室控制台：负责把聊天通道接进来、给门发钥匙、看门有没有在线、查这扇门会什么、把昵称翻成门牌号，再顺手看看门口日志有没有报警。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/cli/pairing</code> 或 <code>/cli/message</code>。前者是“有人在门口举手申请进来”，后者是“已经进门以后怎么送消息”。</p>
+  </div>
+</section>

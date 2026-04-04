@@ -1,0 +1,161 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📱 <code>openclaw qr</code> 像“把一张临时入场二维码门票打印出来，给手机扫一下就能进场”</h2>
+      <p>这页讲的是 iOS 配对二维码。你可以把它想成一张一次性的入场门票，上面写着“去哪个 Gateway、拿什么短期凭证敲门”。</p>
+      <p>重点不是二维码长什么样，而是它里面装了哪条路、哪把临时钥匙、是给本地门还是远程门用。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合要把 iPhone 或 iPad 接进 OpenClaw 的人</span>
+      <span>这页最重要的是记住：它打印的是“配对门票”，不是永久钥匙</span>
+      <a href="https://docs.openclaw.ai/cli/qr" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🎟️ 先把 4 个常用命令看成 4 种出票方式</h2>
+    <p>官方示例看起来像几行普通命令，其实就是四种发门票的方法。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw qr</code></div>
+      <p>像按默认规则直接打印一张标准门票，二维码和 setup code 都给你。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw qr --setup-code-only</code></div>
+      <p>像说：“图我不要了，只把那串入场号码抄给我。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw qr --json</code></div>
+      <p>像不是给人看海报，而是把门票信息整整齐齐装进一个数据盒子里，方便别的程序接着处理。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw qr --remote</code></div>
+      <p>像对打印机说：“这次别印本地门票，改印远程会场那边的门票。”</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🗺️ <code>--url</code>、<code>--public-url</code>、<code>--remote</code>，其实都在回答“门票上印哪一个地址”</h2>
+    <p>二维码里最怕印错的就是地址。扫了码，却跑去错误的门，那后面什么都对不上。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🏠</span>
+      <h2>默认模式</h2>
+      <p>像先用你家里现在这套 Gateway 配置来印门票。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🌍</span>
+      <h2><code>--remote</code></h2>
+      <p>像改成拿远程会场的地址和通行证来出票。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✏️</span>
+      <h2><code>--url</code> / <code>--public-url</code></h2>
+      <p>像你觉得默认印刷地址不对，于是亲手把门票上的门牌和公开入口改掉。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>这些参数都在决定“扫完以后手机会往哪扇门走”。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🔐 <code>--token</code> 和 <code>--password</code> 在干嘛？是在决定门票背后夹哪种通行证</h2>
+    <p>官方专门提醒这两个参数互斥，因为同一张门票背后，不该同时塞两张不同的通行证。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>--token</code></div>
+      <p>像在门票背后夹一张“令牌通行证”。扫完码后，系统拿这张票去和门卫对暗号。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--password</code></div>
+      <p>像改成夹一张“口令通行证”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">不能两张都夹</div>
+      <p>因为门口总得按一种规则验票。你同时给两种，反而会乱。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">更关键的一句</div>
+      <p>真正塞进 setup code 的并不是长期共用大钥匙，而是一个短命的 <code>bootstrapToken</code>。这就像一次性入场券，不是把主仓库总钥匙直接印在海报上。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧰 <code>--setup-code-only</code>、<code>--no-ascii</code>、<code>--json</code>，是在决定“门票怎么交到你手里”</h2>
+    <p>有时候你要的是海报，有时候只要号码，有时候要给程序接着处理。官方把这些出口都留给你了。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🔢</span>
+      <h2><code>--setup-code-only</code></h2>
+      <p>只给号码，不画二维码，像只抄门票编号。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪄</span>
+      <h2><code>--no-ascii</code></h2>
+      <p>别在终端里画那张黑白方块海报，只输出别的必要信息。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2><code>--json</code></h2>
+      <p>像把门票内容装进一只透明盒子，字段清清楚楚：setupCode、gatewayUrl、auth、urlSource。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>不是门票本身变了，而是交付门票的样子变了。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧪 扫完码后为什么还要去 <code>devices</code>？因为扫票只是到门口，放行还要门卫点头</h2>
+    <p>官方最后那句很关键：扫描之后，还是要用 <code>openclaw devices list</code> 和 <code>openclaw devices approve</code> 完成批准。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">第一步</div>
+      <p>手机扫二维码，拿着临时门票跑到门口。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">第二步</div>
+      <p>Gateway 看到门口来了一位新访客，于是把它挂进待审批名单里。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">第三步</div>
+      <p>你再去 <code>devices</code> 那边看名单、点通过，门才真正开。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 一句话</div>
+      <p><code>qr</code> 负责出票，<code>devices</code> 负责放行。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw qr</code> 压成一句话</h2>
+    <p><code>openclaw qr</code> 就像打印一张给手机用的临时入场门票：决定门票上写哪个 Gateway 地址、夹哪种短期通行证、用二维码还是号码交付，然后把新设备送到门口，等你后面去 <code>/cli/devices</code> 真正审批放行。</p>
+  </div>
+</section>
