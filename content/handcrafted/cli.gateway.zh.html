@@ -1,0 +1,190 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🏭 <code>openclaw gateway</code> 像机房值班员的整套工具包</h2>
+      <p>这页不是在解释 Gateway 是什么楼，而是在讲：当你站在命令行前，想把这间机房开起来、问状态、远程探测、重启服务时，该按哪几个按钮。</p>
+      <p>所以它更像“值班员操作手册”。不是概念页，而是实操页。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合需要亲手启动、巡检、重启 Gateway 的人</span>
+      <span>这页最重要的是分清：启动、查询、探测、服务托管，是四套不同动作</span>
+      <a href="https://docs.openclaw.ai/cli/gateway" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🚀 <code>openclaw gateway</code> 就是在说：“把机房现在就开起来”</h2>
+    <p>官方一开头先讲运行。因为很多事情都得先有一台活着的 Gateway，后面的状态、探测、远程连接才有意义。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway</code></div>
+      <p>像当场把机房电闸拉起，让它在你眼前运行。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway run</code></div>
+      <p>像同一件事的另一个名字，还是前台跑，还是你盯着它。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--allow-unconfigured</code></div>
+      <p>像你规则表还没正式贴好，但今天先想临时通电试一下。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⚠️ 非 loopback + 无 auth</div>
+      <p>官方明确拦这个场景。翻成人话就是：门朝外开时，不给门票就别想偷懒。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🎛 启动参数别背术语，把它们想成“门牌、门朝哪开、门禁、监控灯”</h2>
+    <p>这一串 flags 容易看花眼，其实完全可以按现场物件来记。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🚪</span>
+      <h2><code>--port</code></h2>
+      <p>像机房门牌号，常见默认是 <code>18789</code>。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧭</span>
+      <h2><code>--bind</code></h2>
+      <p>像门只朝家里开，还是朝局域网、尾网、更远处开。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎟</span>
+      <h2><code>--auth</code> / <code>--token</code> / <code>--password</code></h2>
+      <p>像门禁卡、口令和验票方式。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">💡</span>
+      <h2><code>--verbose</code> / <code>--ws-log</code> / <code>--raw-stream</code></h2>
+      <p>像把更多监控灯打开，让你看到后台细节流出来。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🔎 Query a running Gateway 这段的重点，是“先问，不要先拍机房电闸”</h2>
+    <p>真正会值班的人，出问题时先查状态，不是先重启。官方这段写得很务实。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw gateway status</code></div>
+      <p>像去前台问：“服务到底在不在？是托管服务在跑，还是只有一层空壳？”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw gateway health</code></div>
+      <p>像索要更偏体检单的健康快照。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw gateway call status</code></div>
+      <p>像直接拿内线电话，问某个具体 RPC 房间一句话。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--json</code></div>
+      <p>像不要彩色人话，直接要机器可抄走的表格。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🛰 <code>gateway probe</code> 像“拿探照灯把本地和远端都扫一遍”</h2>
+    <p>这不是普通问状态，而是更像全场侦察。官方甚至说它是“debug everything”命令。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway probe</code></div>
+      <p>像一手照本地，一手照远端，看看哪边真的有人回应。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>Reachable: yes</code></div>
+      <p>像至少有一间机房愿意开门搭话。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>RPC: ok</code></div>
+      <p>像不只是门开了，里面值班员还真的能回答更细的问题。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--ssh user@host</code></div>
+      <p>像先用一条秘密走廊钻到远端楼下，再从那里敲机房门。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🛎 service commands 在讲“别老站着手扶开关，要请物业长期值班”</h2>
+    <p>这一组命令管理的不是一次性前台运行，而是长期托管的服务。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2><code>gateway install</code></h2>
+      <p>像把机房正式登记给物业，变成系统托管服务。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">▶</span>
+      <h2><code>start</code> / <code>stop</code> / <code>restart</code></h2>
+      <p>像叫物业开门、关门、重新拉一次电。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧹</span>
+      <h2><code>uninstall</code></h2>
+      <p>像撤销这套托管登记，让它不再被系统当正式设施照看。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🩺</span>
+      <h2><code>status --require-rpc</code></h2>
+      <p>像不满足于“门口灯亮着”，而是要求后台也真的能说话，不然就算没过关。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🔐 这页反复在提醒一件事：你一旦手填远端地址，就自己把票带齐</h2>
+    <p>官方多次强调 `--url` 的行为。因为很多人以为“我给了 URL，它应该顺便猜到 token”。它不会这么做。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>--url</code></div>
+      <p>像你自己指了一栋楼，说“我今天去那边”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--token</code> / <code>--password</code></div>
+      <p>像你还得把那栋楼的门票一起带上。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">不会自动兜底</div>
+      <p>官方明确说不会再回头帮你猜配置或环境变量里的隐式凭证。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>门牌你自己指定了，门票也请你自己拿稳。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw gateway</code> 这页压成一句话</h2>
+    <p><code>openclaw gateway</code> 这整页讲的是机房值班动作：先把 Gateway 开起来，再学会问状态、拿探照灯探远端、最后交给系统服务长期托管。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/cli/acp</code> 或 <code>/cli/browser</code>。前者是把别的编辑器和 OpenClaw 接起来，后者是让 OpenClaw 动浏览器。</p>
+  </div>
+</section>

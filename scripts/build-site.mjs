@@ -105,6 +105,10 @@ async function copyDir(source, target) {
 await copyDir(path.resolve("assets/icons"), path.join(DIST_DIR, "assets/icons"));
 
 const handcraftedPageMap = new Map([
+  ["/cli/acp", path.resolve("content/handcrafted/cli.acp.zh.html")],
+  ["/cli/browser", path.resolve("content/handcrafted/cli.browser.zh.html")],
+  ["/cli/gateway", path.resolve("content/handcrafted/cli.gateway.zh.html")],
+  ["/cli/index", path.resolve("content/handcrafted/cli.index.zh.html")],
   ["/start/getting-started", path.resolve("content/handcrafted/start.getting-started.zh.html")],
   ["/start/openclaw", path.resolve("content/handcrafted/start.openclaw.zh.html")],
   ["/install/index", path.resolve("content/handcrafted/install.index.zh.html")],

@@ -1,0 +1,164 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧰 CLI Reference 像一整盒工具抽屉地图</h2>
+      <p>这页不是教你立刻做某一件事，而是在告诉你：`openclaw` 这把瑞士军刀，刀片都藏在哪些抽屉里。</p>
+      <p>如果你把 OpenClaw 想成一栋楼，这页就像楼层索引。想装机器、查健康、看日志、管会话、调浏览器、接 Gateway，都能从这里找到门。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合刚打开命令行，还不知道该先敲哪条的人</span>
+      <span>这页最重要的是先分清：安装类、查看类、控制类、扩展类，是四种不同动作</span>
+      <a href="https://docs.openclaw.ai/cli/index" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🪄 先把 <code>openclaw</code> 想成“总工具箱入口”</h2>
+    <p>你敲的不是一串散命令，而是在打开一个总工具箱。后面跟什么词，就像伸手去摸不同抽屉。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw setup</code> / <code>onboard</code></div>
+      <p>像先把新家布置好，让 OpenClaw 能住进来、亮起来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw status</code> / <code>health</code> / <code>logs</code></div>
+      <p>像去看体检单、看仪表盘、看监控屏。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway</code> / <code>sessions</code> / <code>agents</code></div>
+      <p>像去机房和值班室管理后台怎么跑、桌子怎么分、抽屉怎么开。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw browser</code> / <code>plugins</code> / <code>skills</code></div>
+      <p>像给它加手、加眼睛、加新道具。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧭 最容易迷路的地方，是把“先搭起来”和“已经在运行”混成一件事</h2>
+    <p>这页列了很多命令，但真正好记的方法是按场景分。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🏗</span>
+      <h2>搭起来</h2>
+      <p><code>setup</code>、<code>onboard</code>、<code>configure</code> 像装修和领钥匙。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🩺</span>
+      <h2>看状态</h2>
+      <p><code>status</code>、<code>health</code>、<code>doctor</code>、<code>logs</code> 像查体温、问病情、翻监控。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎛</span>
+      <h2>控后台</h2>
+      <p><code>gateway</code>、<code>sessions</code>、<code>agents</code>、<code>system</code> 像总控室按钮。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧩</span>
+      <h2>加能力</h2>
+      <p><code>plugins</code>、<code>skills</code>、<code>browser</code>、<code>mcp</code> 像往工具箱里继续塞新零件。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🎨 Global flags 其实是在讲：这次要不要开测试小屋、换一套家当、把彩灯关掉</h2>
+    <p>这些不是业务命令，而是整把工具箱的总开关。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>--dev</code></div>
+      <p>像临时进测试小屋。状态目录和默认端口都会偏到一套更安全的试玩区域。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--profile &lt;name&gt;</code></div>
+      <p>像拿另一把钥匙进另一套房。你还是你，但配置、状态、家当是另一份。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--no-color</code></div>
+      <p>像把工具箱上的彩灯关掉，只留下纯文字，方便机器抄走或人眼睛休息一下。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--update</code> / <code>--version</code></div>
+      <p>前者像顺手查有没有新版零件，后者像看看你手上这把工具箱是哪一代。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🌳 Command tree 不是让你背，而是让你知道“抽屉里还有小抽屉”</h2>
+    <p>比如 <code>openclaw gateway</code> 下面还有 <code>status</code>、<code>probe</code>、<code>restart</code>。这就像大抽屉里继续分小格子。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>backup create</code> / <code>backup verify</code></div>
+      <p>像先打包，再验包是不是没坏。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>gateway status</code> / <code>gateway probe</code></div>
+      <p>像一个是问值班室“你还在吗”，另一个是拿着手电到处照一圈。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>plugins install</code> / <code>plugins inspect</code></div>
+      <p>像先把新玩具搬进来，再拆开看看它到底有几只手、几条腿。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>看到空格继续变长时，不要慌，那只是说明你还在往更细的小抽屉里走。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>💡 真正的使用顺序，通常不是乱敲，而是这条小路线</h2>
+    <p>你第一次上手，大多数时候不会从树顶一路往下背，而是按问题走。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>先搭</h2>
+      <p><code>setup</code> 或 <code>onboard</code></p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>再看活没活</h2>
+      <p><code>status</code>、<code>gateway status</code>、<code>health</code></p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>有问题就翻监控</h2>
+      <p><code>logs</code>、<code>doctor</code></p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>再加能力</h2>
+      <p><code>plugins</code>、<code>skills</code>、<code>browser</code>、<code>mcp</code></p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 CLI Reference 这页压成一句话</h2>
+    <p>CLI Reference 就是 OpenClaw 命令行的抽屉地图：先知道哪类命令负责哪类动作，你以后看到长命令时就不会觉得它像一团绳子。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/cli/gateway</code>。因为大多数“先让它跑起来”的第一站，最后都会落到 Gateway 这间总控室。</p>
+  </div>
+</section>

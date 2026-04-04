@@ -3970,912 +3970,197 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>gateway</h2>
-          <p>这一页像一本关于“门口的小门卫”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：门口的小门卫 CLI。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/cli/gateway</span>
-          <span>章节数量：12</span>
-          <a href="https://docs.openclaw.ai/cli/gateway" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节主要在解释“Start Here”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Start Here”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“门口的小门卫 CLI The 门口的小门卫 is OpenClaw’s WebSocket 大房子服务器 (消息通道s, nodes, sessions, hooks). Sub魔法口令s in this page live under…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“门口的小门卫 CLI”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Gateway CLI</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The 门口的小门卫 is OpenClaw’s WebSocket 大房子服务器 (消息通道s, nodes, sessions, hooks).”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The Gateway is OpenClaw’s WebSocket server (channels, nodes, sessions, hooks).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Sub魔法口令s in this page live under openclaw 门口的小门卫 ….”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Subcommands in this page live under <code>openclaw gateway …</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Related docs:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Related docs:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：/门口的小门卫/bonjour、/门口的小门卫/discovery、/门口的小门卫/设置说明书uration。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><a href="/gateway/bonjour" target="_blank" rel="noreferrer">/gateway/bonjour</a></li><li><a href="/gateway/discovery" target="_blank" rel="noreferrer">/gateway/discovery</a></li><li><a href="/gateway/configuration" target="_blank" rel="noreferrer">/gateway/configuration</a></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Run the 门口的小门卫</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Run a local 门口的小门卫 process: Foreground alias: Notes:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Run a local 门口的小门卫 process:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Run a local Gateway process:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw gateway”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw gateway</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Foreground alias:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Foreground alias:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw gateway run”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw gateway run</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Notes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Run the Gateway”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：By default, the 门口的小门卫 refuses to start u…、Binding beyond loopback without auth is b…、SIGUSR1 triggers an in-process restart wh…、SIGINT/SIGTERM handlers stop the 门口的小门卫 p…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>By default, the Gateway refuses to start unless <code>gateway.mode=local</code> is set in <code>~/.openclaw/openclaw.json</code>. Use <code>--allow-unconfigured</code> for ad-hoc/dev runs.</li><li>Binding beyond loopback without auth is blocked (safety guardrail).</li><li><code>SIGUSR1</code> triggers an in-process restart when authorized (<code>commands.restart</code> is enabled by default; set <code>commands.restart: false</code> to block manual restart, while gateway tool/config apply/update remain allowed).</li><li><code>SIGINT</code>/<code>SIGTERM</code> handlers stop the gateway process, but they don’t restore any custom terminal state. If you wrap the CLI with a TUI or raw-mode input, restore the terminal before exit.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Options</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Options”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：--port &lt;port&gt;: WebSocket port (default co…、--bind &lt;loopback lan tailnet auto custom&gt;…、--auth &lt;token 秘密口令&gt;: auth mode override.、--token &lt;token&gt;: token override (also set…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>--port &lt;port&gt;</code>: WebSocket port (default comes from config/env; usually <code>18789</code>).</li><li><code>--bind &lt;loopback|lan|tailnet|auto|custom&gt;</code>: listener bind mode.</li><li><code>--auth &lt;token|password&gt;</code>: auth mode override.</li><li><code>--token &lt;token&gt;</code>: token override (also sets <code>OPENCLAW_GATEWAY_TOKEN</code> for the process).</li><li><code>--password &lt;password&gt;</code>: password override. Warning: inline passwords can be exposed in local process listings.</li><li><code>--password-file &lt;path&gt;</code>: read the gateway password from a file.</li><li><code>--tailscale &lt;off|serve|funnel&gt;</code>: expose the Gateway via Tailscale.</li><li><code>--tailscale-reset-on-exit</code>: reset Tailscale serve/funnel config on shutdown.</li><li><code>--allow-unconfigured</code>: allow gateway start without <code>gateway.mode=local</code> in config.</li><li><code>--dev</code>: create a dev config + workspace if missing (skips BOOTSTRAP.md).</li><li><code>--reset</code>: reset dev config + credentials + sessions + workspace (requires <code>--dev</code>).</li><li><code>--force</code>: kill any existing listener on the selected port before starting.</li><li><code>--verbose</code>: verbose logs.</li><li><code>--cli-backend-logs</code>: only show CLI backend logs in the console (and enable stdout/stderr).</li><li><code>--claude-cli-logs</code>: deprecated alias for <code>--cli-backend-logs</code>.</li><li><code>--ws-log &lt;auto|full|compact&gt;</code>: websocket log style (default <code>auto</code>).</li><li><code>--compact</code>: alias for <code>--ws-log compact</code>.</li><li><code>--raw-stream</code>: log raw model stream events to jsonl.</li><li><code>--raw-stream-path &lt;path&gt;</code>: raw stream jsonl path.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Query a running 门口的小门卫</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“All query 魔法口令s use WebSocket RPC. Output modes: Shared options (where supported): Note: when you set --url, the CLI do…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“All query 魔法口令s use WebSocket RPC.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>All query commands use WebSocket RPC.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Output modes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Output modes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Query a running Gateway”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Default: human-readable (colored in TTY).、--json: machine-readable JSON (no styling…、--no-color (or NO_COLOR=1): disable ANSI…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Default: human-readable (colored in TTY).</li><li><code>--json</code>: machine-readable JSON (no styling/spinner).</li><li><code>--no-color</code> (or <code>NO_COLOR=1</code>): disable ANSI while keeping human layout.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Shared options (where supported):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Shared options (where supported):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Query a running Gateway”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：--url &lt;url&gt;: 门口的小门卫 WebSocket URL.、--token &lt;token&gt;: 门口的小门卫 token.、--秘密口令 &lt;秘密口令&gt;: 门口的小门卫 秘密口令.、--timeout &lt;ms&gt;: timeout/budget (varies pe…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>--url &lt;url&gt;</code>: Gateway WebSocket URL.</li><li><code>--token &lt;token&gt;</code>: Gateway token.</li><li><code>--password &lt;password&gt;</code>: Gateway password.</li><li><code>--timeout &lt;ms&gt;</code>: timeout/budget (varies per command).</li><li><code>--expect-final</code>: wait for a “final” response (agent calls).</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Note: when you set --url, the CLI does not fall back to 设置说明书 or environment credentials. Pass --token or --秘密口令 explic…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Note: when you set <code>--url</code>, the CLI does not fall back to config or environment credentials. Pass <code>--token</code> or <code>--password</code> explicitly. Missing explicit credentials is an error.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>`门口的小门卫 health`</h2>
-            <p>这一节主要在解释“`门口的小门卫 health`”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“`门口的小门卫 health`”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这里在给“openclaw gateway health --url ws”贴标签，意思是把它设置成“//127.0.0.1:18789”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw gateway health --url ws://127.0.0.1:18789</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>`门口的小门卫 status`</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“门口的小门卫 status shows the 门口的小门卫 service (launchd/systemd/schtasks) plus an optional RPC probe. Options: Notes:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“门口的小门卫 status shows the 门口的小门卫 service (launchd/systemd/schtasks) plus an optional RPC probe.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>gateway status</code> shows the Gateway service (launchd/systemd/schtasks) plus an optional RPC probe.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw gateway status”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw gateway status --json”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw gateway status --require-rpc”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw gateway status
-openclaw gateway status --json
-openclaw gateway status --require-rpc</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Options:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Options:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“`gateway status`”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：--url &lt;url&gt;: override the probe URL.、--token &lt;token&gt;: token auth for the probe.、--秘密口令 &lt;秘密口令&gt;: 秘密口令 auth for the probe.、--timeout &lt;ms&gt;: probe timeout (default 10…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>--url &lt;url&gt;</code>: override the probe URL.</li><li><code>--token &lt;token&gt;</code>: token auth for the probe.</li><li><code>--password &lt;password&gt;</code>: password auth for the probe.</li><li><code>--timeout &lt;ms&gt;</code>: probe timeout (default <code>10000</code>).</li><li><code>--no-probe</code>: skip the RPC probe (service-only view).</li><li><code>--deep</code>: scan system-level services too.</li><li><code>--require-rpc</code>: exit non-zero when the RPC probe fails. Cannot be combined with <code>--no-probe</code>.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Notes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“`gateway status`”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：门口的小门卫 status resolves 设置说明书ured auth Sec…、If a required auth SecretRef is unresolve…、If the probe succeeds, unresolved auth-re…、Use --require-rpc in scripts and 自动小闹钟 wh…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>gateway status</code> resolves configured auth SecretRefs for probe auth when possible.</li><li>If a required auth SecretRef is unresolved in this command path, <code>gateway status --json</code> reports <code>rpc.authWarning</code> when probe connectivity/auth fails; pass <code>--token</code>/<code>--password</code> explicitly or resolve the secret source first.</li><li>If the probe succeeds, unresolved auth-ref warnings are suppressed to avoid false positives.</li><li>Use <code>--require-rpc</code> in scripts and automation when a listening service is not enough and you need the Gateway RPC itself to be healthy.</li><li>On Linux systemd installs, service auth drift checks read both <code>Environment=</code> and <code>EnvironmentFile=</code> values from the unit (including <code>%h</code>, quoted paths, multiple files, and optional <code>-</code> files).</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>`门口的小门卫 probe`</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“门口的小门卫 probe is the “debug everything” 魔法口令. It always probes: If multiple 门口的小门卫s are reachable, it prints all of them…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“门口的小门卫 probe is the “debug everything” 魔法口令. It always probes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>gateway probe</code> is the “debug everything” command. It always probes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“`gateway probe`”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：your 设置说明书ured remote 门口的小门卫 (if set), and、localhost (loopback) **even if remote is…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>your configured remote gateway (if set), and</li><li>localhost (loopback) **even if remote is configured**.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If multiple 门口的小门卫s are reachable, it prints all of them. Multiple 门口的小门卫s are supported when you use isolated profiles…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If multiple gateways are reachable, it prints all of them. Multiple gateways are supported when you use isolated profiles/ports (e.g., a rescue bot), but most installs still run a single gateway.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw gateway probe”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw gateway probe --json”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw gateway probe
-openclaw gateway probe --json</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Interpretation:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Interpretation:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“`gateway probe`”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Reachable: yes means at least one target…、RPC: ok means detail RPC calls (health/st…、RPC: limited - missing scope: operator.re…、Exit code is non-zero only when no probed…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>Reachable: yes</code> means at least one target accepted a WebSocket connect.</li><li><code>RPC: ok</code> means detail RPC calls (<code>health</code>/<code>status</code>/<code>system-presence</code>/<code>config.get</code>) also succeeded.</li><li><code>RPC: limited - missing scope: operator.read</code> means connect succeeded but detail RPC is scope-limited. This is reported as **degraded** reachability, not full failure.</li><li>Exit code is non-zero only when no probed target is reachable.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“JSON notes (--json):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>JSON notes (<code>--json</code>):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“`gateway probe`”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Top level:、ok: at least one target is reachable.、degraded: at least one target had scope-l…、Per target (targets[].connect):。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Top level:</li><li><code>ok</code>: at least one target is reachable.</li><li><code>degraded</code>: at least one target had scope-limited detail RPC.</li><li>Per target (<code>targets[].connect</code>):</li><li><code>ok</code>: reachability after connect + degraded classification.</li><li><code>rpcOk</code>: full detail RPC success.</li><li><code>scopeLimited</code>: detail RPC failed due to missing operator scope.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>Remote over SSH (Mac app parity)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The macOS app “Remote over SSH” mode uses a local port-forward so the remote 门口的小门卫 (which may be bound to loopback onl…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The macOS app “Remote over SSH” mode uses a local port-forward so the remote 门口的小门卫 (which may be bound to loopback onl…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The macOS app “Remote over SSH” mode uses a local port-forward so the remote gateway (which may be bound to loopback only) becomes reachable at <code>ws://127.0.0.1:&lt;port&gt;</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“CLI equivalent:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>CLI equivalent:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw gateway probe --ssh user@gateway-host”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw gateway probe --ssh user@gateway-host</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Options:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Options:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Remote over SSH (Mac app parity)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：--ssh &lt;target&gt;: user@host or user@host:po…、--ssh-identity &lt;path&gt;: identity file.、--ssh-auto: pick the first discovered 门口的…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>--ssh &lt;target&gt;</code>: <code>user@host</code> or <code>user@host:port</code> (port defaults to <code>22</code>).</li><li><code>--ssh-identity &lt;path&gt;</code>: identity file.</li><li><code>--ssh-auto</code>: pick the first discovered gateway host as SSH target (LAN/WAB only).</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“设置说明书 (optional, used as defaults):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Config (optional, used as defaults):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Remote over SSH (Mac app parity)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：门口的小门卫.remote.sshTarget、门口的小门卫.remote.sshIdentity。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>gateway.remote.sshTarget</code></li><li><code>gateway.remote.sshIdentity</code></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>`门口的小门卫 call &lt;method&gt;`</h2>
-            <p>这一节主要在解释“`门口的小门卫 call &lt;method&gt;`”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“`门口的小门卫 call &lt;method&gt;`”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Low-level RPC helper.”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Low-level RPC helper.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Low-level RPC helper.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw gateway call status”。你可以把它想成对机器人说的完整命令。</li><li>这里在给“openclaw gateway call logs.tail --params {sinceMs”贴标签，意思是把它设置成“60000}&#39;”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw gateway call status
-openclaw gateway call logs.tail --params &#39;{&quot;sinceMs&quot;: 60000}&#39;</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>Manage the 门口的小门卫 service</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw gateway install”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw gateway start”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw gateway stop”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw gateway install
-openclaw gateway start
-openclaw gateway stop
-openclaw gateway restart
-openclaw gateway uninstall</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Notes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Manage the Gateway service”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：门口的小门卫 install supports --port, --runtime…、When token auth requires a token and 门口的小…、If token auth requires a token and the 设置…、For 秘密口令 auth on 门口的小门卫 run, prefer OPENC…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>gateway install</code> supports <code>--port</code>, <code>--runtime</code>, <code>--token</code>, <code>--force</code>, <code>--json</code>.</li><li>When token auth requires a token and <code>gateway.auth.token</code> is SecretRef-managed, <code>gateway install</code> validates that the SecretRef is resolvable but does not persist the resolved token into service environment metadata.</li><li>If token auth requires a token and the configured token SecretRef is unresolved, install fails closed instead of persisting fallback plaintext.</li><li>For password auth on <code>gateway run</code>, prefer <code>OPENCLAW_GATEWAY_PASSWORD</code>, <code>--password-file</code>, or a SecretRef-backed <code>gateway.auth.password</code> over inline <code>--password</code>.</li><li>In inferred auth mode, shell-only <code>OPENCLAW_GATEWAY_PASSWORD</code> does not relax install token requirements; use durable config (<code>gateway.auth.password</code> or config <code>env</code>) when installing a managed service.</li><li>If both <code>gateway.auth.token</code> and <code>gateway.auth.password</code> are configured and <code>gateway.auth.mode</code> is unset, install is blocked until mode is set explicitly.</li><li>Lifecycle commands accept <code>--json</code> for scripting.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-11">
-          <div class="section-heading">
-            <p class="section-kicker">第 11 站</p>
-            <h2>Discover 门口的小门卫s (Bonjour)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“门口的小门卫 discover scans for 门口的小门卫 beacons (_openclaw-gw._tcp). Only 门口的小门卫s with Bonjour discovery enabled (default) adv…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“门口的小门卫 discover scans for 门口的小门卫 beacons (_openclaw-gw._tcp).”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>gateway discover</code> scans for Gateway beacons (<code>_openclaw-gw._tcp</code>).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Discover gateways (Bonjour)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Multicast DNS-SD: local.、Unicast DNS-SD (Wide-Area Bonjour): choos…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Multicast DNS-SD: <code>local.</code></li><li>Unicast DNS-SD (Wide-Area Bonjour): choose a domain (example: <code>openclaw.internal.</code>) and set up split DNS + a DNS server; see <a href="/gateway/bonjour" target="_blank" rel="noreferrer">/gateway/bonjour</a></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Only 门口的小门卫s with Bonjour discovery enabled (default) advertise the beacon.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Only gateways with Bonjour discovery enabled (default) advertise the beacon.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Wide-Area discovery records include (TXT):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Wide-Area discovery records include (TXT):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Discover gateways (Bonjour)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：role (门口的小门卫 role hint)、transport (transport hint, e.g. 门口的小门卫)、门口的小门卫Port (WebSocket port, usually 18789)、sshPort (SSH port; defaults to 22 if not…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>role</code> (gateway role hint)</li><li><code>transport</code> (transport hint, e.g. <code>gateway</code>)</li><li><code>gatewayPort</code> (WebSocket port, usually <code>18789</code>)</li><li><code>sshPort</code> (SSH port; defaults to <code>22</code> if not present)</li><li><code>tailnetDns</code> (MagicDNS hostname, when available)</li><li><code>gatewayTls</code> / <code>gatewayTlsSha256</code> (TLS enabled + cert fingerprint)</li><li><code>cliPath</code> (optional hint for remote installs)</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-12">
-          <div class="section-heading">
-            <p class="section-kicker">第 12 站</p>
-            <h2>`门口的小门卫 discover`</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Options: Examples:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw gateway discover”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw gateway discover</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Options:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Options:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“`gateway discover`”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：--timeout &lt;ms&gt;: per-魔法口令 timeout (browse/…、--json: machine-readable output (also dis…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>--timeout &lt;ms&gt;</code>: per-command timeout (browse/resolve); default <code>2000</code>.</li><li><code>--json</code>: machine-readable output (also disables styling/spinner).</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Examples:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Examples:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw gateway discover --timeout 4000”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw gateway discover --json | jq &#39;.beacons[].wsUrl&#39;”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw gateway discover --timeout 4000
-openclaw gateway discover --json | jq &#39;.beacons[].wsUrl&#39;</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🏭 <code>openclaw gateway</code> 像机房值班员的整套工具包</h2>
+      <p>这页不是在解释 Gateway 是什么楼，而是在讲：当你站在命令行前，想把这间机房开起来、问状态、远程探测、重启服务时，该按哪几个按钮。</p>
+      <p>所以它更像“值班员操作手册”。不是概念页，而是实操页。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合需要亲手启动、巡检、重启 Gateway 的人</span>
+      <span>这页最重要的是分清：启动、查询、探测、服务托管，是四套不同动作</span>
+      <a href="https://docs.openclaw.ai/cli/gateway" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🚀 <code>openclaw gateway</code> 就是在说：“把机房现在就开起来”</h2>
+    <p>官方一开头先讲运行。因为很多事情都得先有一台活着的 Gateway，后面的状态、探测、远程连接才有意义。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway</code></div>
+      <p>像当场把机房电闸拉起，让它在你眼前运行。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway run</code></div>
+      <p>像同一件事的另一个名字，还是前台跑，还是你盯着它。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--allow-unconfigured</code></div>
+      <p>像你规则表还没正式贴好，但今天先想临时通电试一下。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⚠️ 非 loopback + 无 auth</div>
+      <p>官方明确拦这个场景。翻成人话就是：门朝外开时，不给门票就别想偷懒。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🎛 启动参数别背术语，把它们想成“门牌、门朝哪开、门禁、监控灯”</h2>
+    <p>这一串 flags 容易看花眼，其实完全可以按现场物件来记。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🚪</span>
+      <h2><code>--port</code></h2>
+      <p>像机房门牌号，常见默认是 <code>18789</code>。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧭</span>
+      <h2><code>--bind</code></h2>
+      <p>像门只朝家里开，还是朝局域网、尾网、更远处开。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎟</span>
+      <h2><code>--auth</code> / <code>--token</code> / <code>--password</code></h2>
+      <p>像门禁卡、口令和验票方式。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">💡</span>
+      <h2><code>--verbose</code> / <code>--ws-log</code> / <code>--raw-stream</code></h2>
+      <p>像把更多监控灯打开，让你看到后台细节流出来。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🔎 Query a running Gateway 这段的重点，是“先问，不要先拍机房电闸”</h2>
+    <p>真正会值班的人，出问题时先查状态，不是先重启。官方这段写得很务实。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw gateway status</code></div>
+      <p>像去前台问：“服务到底在不在？是托管服务在跑，还是只有一层空壳？”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw gateway health</code></div>
+      <p>像索要更偏体检单的健康快照。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw gateway call status</code></div>
+      <p>像直接拿内线电话，问某个具体 RPC 房间一句话。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--json</code></div>
+      <p>像不要彩色人话，直接要机器可抄走的表格。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🛰 <code>gateway probe</code> 像“拿探照灯把本地和远端都扫一遍”</h2>
+    <p>这不是普通问状态，而是更像全场侦察。官方甚至说它是“debug everything”命令。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway probe</code></div>
+      <p>像一手照本地，一手照远端，看看哪边真的有人回应。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>Reachable: yes</code></div>
+      <p>像至少有一间机房愿意开门搭话。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>RPC: ok</code></div>
+      <p>像不只是门开了，里面值班员还真的能回答更细的问题。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--ssh user@host</code></div>
+      <p>像先用一条秘密走廊钻到远端楼下，再从那里敲机房门。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🛎 service commands 在讲“别老站着手扶开关，要请物业长期值班”</h2>
+    <p>这一组命令管理的不是一次性前台运行，而是长期托管的服务。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2><code>gateway install</code></h2>
+      <p>像把机房正式登记给物业，变成系统托管服务。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">▶</span>
+      <h2><code>start</code> / <code>stop</code> / <code>restart</code></h2>
+      <p>像叫物业开门、关门、重新拉一次电。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧹</span>
+      <h2><code>uninstall</code></h2>
+      <p>像撤销这套托管登记，让它不再被系统当正式设施照看。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🩺</span>
+      <h2><code>status --require-rpc</code></h2>
+      <p>像不满足于“门口灯亮着”，而是要求后台也真的能说话，不然就算没过关。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🔐 这页反复在提醒一件事：你一旦手填远端地址，就自己把票带齐</h2>
+    <p>官方多次强调 `--url` 的行为。因为很多人以为“我给了 URL，它应该顺便猜到 token”。它不会这么做。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>--url</code></div>
+      <p>像你自己指了一栋楼，说“我今天去那边”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--token</code> / <code>--password</code></div>
+      <p>像你还得把那栋楼的门票一起带上。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">不会自动兜底</div>
+      <p>官方明确说不会再回头帮你猜配置或环境变量里的隐式凭证。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>门牌你自己指定了，门票也请你自己拿稳。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw gateway</code> 这页压成一句话</h2>
+    <p><code>openclaw gateway</code> 这整页讲的是机房值班动作：先把 Gateway 开起来，再学会问状态、拿探照灯探远端、最后交给系统服务长期托管。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/cli/acp</code> 或 <code>/cli/browser</code>。前者是把别的编辑器和 OpenClaw 接起来，后者是让 OpenClaw 动浏览器。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>
