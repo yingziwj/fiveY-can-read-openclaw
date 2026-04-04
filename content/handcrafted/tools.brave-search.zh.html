@@ -1,0 +1,171 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🔦 Brave Search 像一把“快、稳、能带路标”的网页小手电</h2>
+      <p>这页讲的是：OpenClaw 想上网找资料时，可以把 Brave 当成默认的搜网页同学。它不只是帮你翻网页，还会尽量把结果摆得更清楚。</p>
+      <p>你可以把它想成一位带地图的找路员。你只要说问题，它就把能用的线索带回来。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想给 OpenClaw 配一个网页搜索提供商的人</span>
+      <span>这页最重要的是区分：Brave 是 <code>web_search</code> 提供商，不是浏览器</span>
+      <a href="https://docs.openclaw.ai/tools/brave-search" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🌐 Brave 先干的事，其实就是“帮你把网页世界先扫一遍”</h2>
+    <p>官方一开头就把角色说得很清楚：Brave 不是浏览器控制，也不是网页抓取器，它是网页搜索提供商。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🔍</span>
+      <h2>它负责找</h2>
+      <p>你给一个问题，它去搜网页，挑出相关结果。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧭</span>
+      <h2>它负责带方向</h2>
+      <p>不是只丢一堆链接，而是尽量把搜索结果整理得更有用。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2>它不是浏览器</h2>
+      <p>不点网页，不开标签页，不替你操作网页界面。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⭐</span>
+      <h2>先记一句</h2>
+      <p>Brave 是“搜网页”，不是“看网页”。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔑 API key 像门口工牌，没有它就进不了搜索服务台</h2>
+    <p>官方把拿 key 的动作写得很直接。这个流程的本质就是：先注册，再开 Search 计划，再拿 key。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">1. 先开账号</div>
+      <p>像先去办一张 Brave Search 的服务卡。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">2. 选 Search 计划</div>
+      <p>像在门口选你要进哪一条服务通道。官方现在把 Search 计划当正式入口。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">3. 拿 API key</div>
+      <p><code>BRAVE_API_KEY</code> 像工牌。没有它，OpenClaw 就没法跟 Brave 搜索服务打招呼。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">4. 放进配置</div>
+      <p>你可以写进 config，也可以放在 Gateway 环境变量里。效果一样，都是给它看门牌。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🛠 配置那段 JSON，翻成人话就是“给网页搜索换成 Brave”</h2>
+    <p>官方给的配置例子很典型：插件里放 key，网页搜索里选 provider。两层意思都很简单。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>plugins.entries.brave.config.webSearch.apiKey</code></div>
+      <p>像把工牌放到 Brave 自己的抽屉里。以后系统知道去哪里找它。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>tools.web.search.provider: \"brave\"</code></div>
+      <p>像在总搜索按钮上贴一张便签：“以后默认搜网页，就叫 Brave 出场。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>maxResults: 5</code></div>
+      <p>像告诉它：“这次别拖太多条，先给我 5 条够看的线索。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>timeoutSeconds: 30</code></div>
+      <p>像给找路员一个时间沙漏。太久没结果，就先停。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🎚 Brave 的参数，像给找路员下的几个小口令</h2>
+    <p>这一页里最有用的地方，是那些把搜索范围缩小的参数。它们不是装饰，是为了让结果更像你要的东西。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📝</span>
+      <h2><code>query</code></h2>
+      <p>你真正想问的问题。必须有，不然不知道往哪找。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧺</span>
+      <h2><code>count</code></h2>
+      <p>要几条结果。像告诉它：先捡几样回来就行。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🌍</span>
+      <h2><code>country</code> / <code>language</code></h2>
+      <p>像告诉它先去哪一片街区、看哪种语言的牌子。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🕒</span>
+      <h2><code>freshness</code> / 日期范围</h2>
+      <p>像告诉它只看新消息，还是按日期门牌去找。</p>
+    </article>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>freshness: \"week\"</code></div>
+      <p>像说：“只要最近一周的线索。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>date_after</code> / <code>date_before</code></div>
+      <p>像拿一把时间尺，圈出某一段区间。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>ui_lang</code></div>
+      <p>像告诉它，界面提示要用哪种语言给你看。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 一句话</div>
+      <p>Brave 的参数，就是把“搜大海”收成“搜某个街区、某段时间、某种语言”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>💡 Brave 这页真正想提醒你的，不只是能搜，而是搜的时候别乱花</h2>
+    <p>官方在 Notes 里提了计划、额度、缓存和权利问题。这些听起来像商店说明，其实是在告诉你怎么用得稳。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">💳 预算别忘了看</div>
+      <p>Search 计划每月有免费额度，但超了就会变成真的花钱。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧊 缓存像冰箱</div>
+      <p>搜索结果会缓存一段时间。意思是同样的问题别总去重新翻，省力也省钱。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📚 权利要分清</div>
+      <p>搜索结果能不能拿去训练或存储，不是随便想当然，要看方案和条款。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 最后收住</div>
+      <p>Brave 这页说到底，就是给 OpenClaw 一把稳一点的网页搜索手电，还附了时间、地区和语言这些小旋钮。</p>
+    </div>
+  </div>
+</section>

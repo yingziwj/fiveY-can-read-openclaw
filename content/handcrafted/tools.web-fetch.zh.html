@@ -1,0 +1,186 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📄 Web Fetch 像“拿着一个网址，进去把正文抄回来”</h2>
+      <p>这页讲的不是搜索，也不是浏览器自动点按钮。它更像你已经知道要去哪一页了，于是让 OpenClaw 进去把那一页的主要内容尽量干净地抄回来。</p>
+      <p>重点是“抄内容”，不是“操作网页”。所以它不会执行 JavaScript，也不适合登录后页面。它更像一个安静的抄写员。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合已经拿到具体 URL，只想快速抓正文的人</span>
+      <span>这页最重要的是分清：它不是 browser，也不是 search</span>
+      <a href="https://docs.openclaw.ai/tools/web-fetch" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧭 先想画面：别人给你门牌号，你派人去把正文抄回来</h2>
+    <p><code>web_fetch</code> 最适合的场景，不是“我还不知道去哪儿”，而是“我已经知道具体网址了，帮我把主要内容拿回来”。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🔎</span>
+      <h2>不是搜索</h2>
+      <p>它不会替你满网找结果。你得先有 URL。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📄</span>
+      <h2>是单页抓取</h2>
+      <p>像派抄写员进一间房，把主要文字内容摘出来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚫</span>
+      <h2>不是浏览器</h2>
+      <p>它不会点按钮，不会跑前端脚本，不会帮你登录。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⭐</span>
+      <h2>一句话先记住</h2>
+      <p>搜网页用 search，进网页操作用 browser，拿单页正文用 fetch。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>⚡ Quick start 只有一句，因为这工具本来就很直接</h2>
+    <p>官方说它默认开启，这意味着你通常不用先配钥匙、挑 provider、做复杂设置。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>await web_fetch({ url: "https://example.com/article" })</code></div>
+      <p>像直接把一张网址纸条递给抄写员，说：“去，把这页的主要内容抄回来。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">✅ 为什么它适合快查</div>
+      <p>因为不用先搜一轮，也不用真的打开浏览器窗口。它就是一次 HTTP GET 加一次内容提取。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚫 为什么它不适合复杂站</div>
+      <p>如果页面要靠 JavaScript 动起来，或者必须先登录，它看到的就可能只是空壳，像只抄到了门口告示板。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 这节一句话</div>
+      <p><code>web_fetch</code> 是“轻抓取”，不是“全功能网页操控”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧪 它在后台到底做了哪几步</h2>
+    <p>官方把它拆成 Fetch、Extract、Fallback、Cache 四步。翻成人话，其实是一条很顺的流水线。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">1. Fetch</div>
+      <p>像先到网页门口敲门，把 HTML 原文拿回来。它会带着像浏览器的 User-Agent 去，免得一进门就被当奇怪机器人赶出去。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">2. Extract</div>
+      <p>像把网页上的广告、侧边栏、杂乱导航尽量拨开，优先抄正文。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">3. Fallback</div>
+      <p>如果普通抄写法失败了，而你又配了 Firecrawl，它会像请一个更会钻缝的助手再试一次。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">4. Cache</div>
+      <p>像刚抄过的那页会先放进抽屉里 15 分钟，别同一页短时间重复抄很多遍。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🎛 参数很少，因为它的工作就三件事：去哪、抄成什么样、最多抄多长</h2>
+    <p>这也是它为什么适合日常快用。参数少，脑子负担小。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>url</code></div>
+      <p>像门牌号。没有它，抄写员根本不知道该去哪。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>extractMode: "markdown" | "text"</code></div>
+      <p>像决定抄回来时要不要尽量保留标题、列表这些结构。<code>markdown</code> 更像整理过的笔记，<code>text</code> 更像纯文字抄本。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>maxChars</code></div>
+      <p>像提前说：“别整本都搬回来，最多抄这么长。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 一句话</div>
+      <p>给网址、选抄法、限制长度，就够了。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧯 Firecrawl fallback 是“普通抄写员不行时，再叫一个更会钻的网站助手”</h2>
+    <p>官方这段不能跳，因为它解释了为什么有些网页普通 fetch 不行，但你配了 Firecrawl 后又能多救回来一点。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🪜 第一层：Readability</div>
+      <p>先用本地这套轻量方法抽正文。快，也省事。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔥 第二层：Firecrawl</div>
+      <p>如果第一层抽不出来，而你已经给 Firecrawl 配好钥匙，它就像第二梯队上场，再帮你闯一次。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">⚠️ 为什么官方说 SecretRef 没解出来会 fail fast</div>
+      <p>像你明明说“失败了就叫第二队”，结果第二队的工牌根本不在。与其中途才掉链子，不如启动时就先提醒你。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 这节一句话</div>
+      <p>Firecrawl 不是默认主角，而是 fetch 失败时的救场队员。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🛡 限制和安全规则，都在讲“别让抄写员乱跑”</h2>
+    <p>这页后面那些上限，不是在烦你，而是在保护系统别因为一张离谱网页被拖进坑里。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>maxCharsCap</code></div>
+      <p>像就算你临时说“多抄一点”，系统也会看总上限，不会让你无限搬书回来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>maxResponseBytes</code></div>
+      <p>像先规定这次最多搬多大的纸箱，太大的页面会被截断，不然容易把整个流程拖慢。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚫 private/internal hostnames blocked</div>
+      <p>像抄写员被明确告知：私宅、内网、后台机房这种门牌，不许乱进。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>maxRedirects</code></div>
+      <p>像如果门卫一直说“你去隔壁”“再去下一个”，系统不会无限追着跑，拐几次弯就会停下。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Web Fetch 这页压成一句话</h2>
+    <p><code>web_fetch</code> 就是一个轻量抄写员：你给它一个具体网址，它尽量把正文干净地抄回来；但遇到要登录、要 JS、要复杂交互的页面，就该换 <code>/tools/browser</code> 上场。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/tools/firecrawl</code>。因为一旦普通抓取不够用，很多人下一步自然就会问：那谁来当第二梯队救场。</p>
+  </div>
+</section>

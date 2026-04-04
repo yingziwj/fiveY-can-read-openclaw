@@ -3970,519 +3970,193 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Web Fetch</h2>
-          <p>这一页像一本关于“Web Fetch”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：Web Fetch。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/tools/web-fetch</span>
-          <span>章节数量：9</span>
-          <a href="https://docs.openclaw.ai/tools/web-fetch" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Web Fetch The web_fetch 工具小帮手 does a plain HTTP GET and extracts readable content (HTML to markdown or text). It does *…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Web Fetch”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Web Fetch</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The web_fetch 工具小帮手 does a plain HTTP GET and extracts readable content (HTML to markdown or text). It does **not** exe…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The <code>web_fetch</code> tool does a plain HTTP GET and extracts readable content (HTML to markdown or text). It does **not** execute JavaScript.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For JS-heavy sites or login-protected pages, use the Web Browser instead.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For JS-heavy sites or login-protected pages, use the <a href="/tools/browser" target="_blank" rel="noreferrer">Web Browser</a> instead.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Quick start</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“web_fetch is **enabled by default** -- no 设置说明书uration needed. The 机器人朋友 can call it immediately:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“web_fetch is **enabled by default** -- no 设置说明书uration needed. The 机器人朋友 can call it immediately:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>web_fetch</code> is **enabled by default** -- no configuration needed. The agent can call it immediately:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像给机器人看的说明书，告诉它要按什么样子准备东西。</p>
-        <ul class="code-steps">
-          <li>这里在给“await web_fetch({ url”贴标签，意思是把它设置成“https://example.com/article });”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-javascript">await web_fetch({ url: &quot;https://example.com/article&quot; });</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>工具小帮手 parameters</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Parameter Type Description ------------- -------- ---------------------------------------- url string URL to fetch (req…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Parameter Type Description ------------- -------- ---------------------------------------- url string URL to fetch (req…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>| Parameter | Type | Description | | ------------- | -------- | ---------------------------------------- | | <code>url</code> | <code>string</code> | URL to fetch (required, http/https only) | | <code>extractMode</code> | <code>string</code> | <code>&quot;markdown&quot;</code> (default) or <code>&quot;text&quot;</code> | | <code>maxChars</code> | <code>number</code> | Truncate output to this many chars |</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>How it works</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Steps&gt; &lt;Step title=&quot;Fetch&quot;&gt; Sends an HTTP GET with a Chrome-like User-机器人朋友 and Accept-Language header. Blocks private…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Steps&gt; &lt;Step title=&quot;Fetch&quot;&gt; Sends an HTTP GET with a Chrome-like User-机器人朋友 and Accept-Language header. Blocks private…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Steps&gt; &lt;Step title=&quot;Fetch&quot;&gt; Sends an HTTP GET with a Chrome-like User-Agent and <code>Accept-Language</code> header. Blocks private/internal hostnames and re-checks redirects. &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Extract&quot;&gt; Runs Readability (main-content extraction) on the HTML response. &lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Extract&quot;&gt; Runs Readability (main-content extraction) on the HTML response. &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Fallback (optional)&quot;&gt; If Readability fails and Firecrawl is 设置说明书ured, retries through the Firecrawl 对话接口…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Fallback (optional)&quot;&gt; If Readability fails and Firecrawl is configured, retries through the Firecrawl API with bot-circumvention mode. &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Cache&quot;&gt; Results are cached for 15 minutes (设置说明书urable) to reduce repeated fetches of the same URL. &lt;/Step…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Cache&quot;&gt; Results are cached for 15 minutes (configurable) to reduce repeated fetches of the same URL. &lt;/Step&gt; &lt;/Steps&gt;</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>设置说明书</h2>
-            <p>这一节主要在解释“设置说明书”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“设置说明书”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“tools”贴标签，意思是把它设置成“{”。</li><li>这里在给“web”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  tools: {
-    web: {
-      fetch: {
-        enabled: true, // default: true
-        maxChars: 50000, // max output chars
-        maxCharsCap: 50000, // hard cap for maxChars param
-        maxResponseBytes: 2000000, // max download size before truncation
-        timeoutSeconds: 30,
-        cacheTtlMinutes: 15,
-        maxRedirects: 3,
-        readability: true, // use Readability extraction
-        userAgent: &quot;Mozilla/5.0 ...&quot;, // override User-Agent
-      },
-    },
-  },
-}</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Firecrawl fallback</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If Readability extraction fails, web_fetch can fall back to Firecrawl for bot-circumvention and better extraction: 工具小帮…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If Readability extraction fails, web_fetch can fall back to Firecrawl for bot-circumvention and better extraction:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If Readability extraction fails, <code>web_fetch</code> can fall back to <a href="/tools/firecrawl" target="_blank" rel="noreferrer">Firecrawl</a> for bot-circumvention and better extraction:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“tools”贴标签，意思是把它设置成“{”。</li><li>这里在给“web”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  tools: {
-    web: {
-      fetch: {
-        firecrawl: {
-          enabled: true,
-          apiKey: &quot;fc-...&quot;, // optional if FIRECRAWL_API_KEY is set
-          baseUrl: &quot;https://api.firecrawl.dev&quot;,
-          onlyMainContent: true,
-          maxAgeMs: 86400000, // cache duration (1 day)
-          timeoutSeconds: 60,
-        },
-      },
-    },
-  },
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“工具小帮手s.web.fetch.firecrawl.对话接口Key supports SecretRef objects.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>tools.web.fetch.firecrawl.apiKey</code> supports SecretRef objects.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Note&gt; If Firecrawl is enabled and its SecretRef is unresolved with no FIRECRAWL_对话接口_KEY env fallback, 门口的小门卫 startup…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Note&gt; If Firecrawl is enabled and its SecretRef is unresolved with no <code>FIRECRAWL_API_KEY</code> env fallback, gateway startup fails fast. &lt;/Note&gt;</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Limits and safety</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“responses are truncated with a warning”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“responses are truncated with a warning”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>responses are truncated with a warning</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Limits and safety”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：maxChars is clamped to 工具小帮手s.web.fetch.m…、Response body is capped at maxResponseByt…、Private/internal hostnames are blocked、Redirects are checked and limited by maxR…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>maxChars</code> is clamped to <code>tools.web.fetch.maxCharsCap</code></li><li>Response body is capped at <code>maxResponseBytes</code> before parsing; oversized</li><li>Private/internal hostnames are blocked</li><li>Redirects are checked and limited by <code>maxRedirects</code></li><li><code>web_fetch</code> is best-effort -- some sites need the <a href="/tools/browser" target="_blank" rel="noreferrer">Web Browser</a></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>工具小帮手 profiles</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If you use 工具小帮手 profiles or allowlists, add web_fetch or 大家一起的房间:web:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If you use 工具小帮手 profiles or allowlists, add web_fetch or 大家一起的房间:web:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If you use tool profiles or allowlists, add <code>web_fetch</code> or <code>group:web</code>:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“tools”贴标签，意思是把它设置成“{”。</li><li>这里在给“allow”贴标签，意思是把它设置成“[web_fetch]”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  tools: {
-    allow: [&quot;web_fetch&quot;],
-    // or: allow: [&quot;group:web&quot;]  (includes both web_fetch and web_search)
-  },
-}</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>Related</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Related”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Web Search -- search the web with multipl…、Web Browser -- full browser 自动小闹钟 for JS-…、Firecrawl -- Firecrawl search and scrape…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><a href="/tools/web" target="_blank" rel="noreferrer">Web Search</a> -- search the web with multiple providers</li><li><a href="/tools/browser" target="_blank" rel="noreferrer">Web Browser</a> -- full browser automation for JS-heavy sites</li><li><a href="/tools/firecrawl" target="_blank" rel="noreferrer">Firecrawl</a> -- Firecrawl search and scrape tools</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📄 Web Fetch 像“拿着一个网址，进去把正文抄回来”</h2>
+      <p>这页讲的不是搜索，也不是浏览器自动点按钮。它更像你已经知道要去哪一页了，于是让 OpenClaw 进去把那一页的主要内容尽量干净地抄回来。</p>
+      <p>重点是“抄内容”，不是“操作网页”。所以它不会执行 JavaScript，也不适合登录后页面。它更像一个安静的抄写员。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合已经拿到具体 URL，只想快速抓正文的人</span>
+      <span>这页最重要的是分清：它不是 browser，也不是 search</span>
+      <a href="https://docs.openclaw.ai/tools/web-fetch" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧭 先想画面：别人给你门牌号，你派人去把正文抄回来</h2>
+    <p><code>web_fetch</code> 最适合的场景，不是“我还不知道去哪儿”，而是“我已经知道具体网址了，帮我把主要内容拿回来”。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🔎</span>
+      <h2>不是搜索</h2>
+      <p>它不会替你满网找结果。你得先有 URL。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📄</span>
+      <h2>是单页抓取</h2>
+      <p>像派抄写员进一间房，把主要文字内容摘出来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚫</span>
+      <h2>不是浏览器</h2>
+      <p>它不会点按钮，不会跑前端脚本，不会帮你登录。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⭐</span>
+      <h2>一句话先记住</h2>
+      <p>搜网页用 search，进网页操作用 browser，拿单页正文用 fetch。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>⚡ Quick start 只有一句，因为这工具本来就很直接</h2>
+    <p>官方说它默认开启，这意味着你通常不用先配钥匙、挑 provider、做复杂设置。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>await web_fetch({ url: "https://example.com/article" })</code></div>
+      <p>像直接把一张网址纸条递给抄写员，说：“去，把这页的主要内容抄回来。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">✅ 为什么它适合快查</div>
+      <p>因为不用先搜一轮，也不用真的打开浏览器窗口。它就是一次 HTTP GET 加一次内容提取。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚫 为什么它不适合复杂站</div>
+      <p>如果页面要靠 JavaScript 动起来，或者必须先登录，它看到的就可能只是空壳，像只抄到了门口告示板。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 这节一句话</div>
+      <p><code>web_fetch</code> 是“轻抓取”，不是“全功能网页操控”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧪 它在后台到底做了哪几步</h2>
+    <p>官方把它拆成 Fetch、Extract、Fallback、Cache 四步。翻成人话，其实是一条很顺的流水线。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">1. Fetch</div>
+      <p>像先到网页门口敲门，把 HTML 原文拿回来。它会带着像浏览器的 User-Agent 去，免得一进门就被当奇怪机器人赶出去。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">2. Extract</div>
+      <p>像把网页上的广告、侧边栏、杂乱导航尽量拨开，优先抄正文。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">3. Fallback</div>
+      <p>如果普通抄写法失败了，而你又配了 Firecrawl，它会像请一个更会钻缝的助手再试一次。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">4. Cache</div>
+      <p>像刚抄过的那页会先放进抽屉里 15 分钟，别同一页短时间重复抄很多遍。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🎛 参数很少，因为它的工作就三件事：去哪、抄成什么样、最多抄多长</h2>
+    <p>这也是它为什么适合日常快用。参数少，脑子负担小。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>url</code></div>
+      <p>像门牌号。没有它，抄写员根本不知道该去哪。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>extractMode: "markdown" | "text"</code></div>
+      <p>像决定抄回来时要不要尽量保留标题、列表这些结构。<code>markdown</code> 更像整理过的笔记，<code>text</code> 更像纯文字抄本。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>maxChars</code></div>
+      <p>像提前说：“别整本都搬回来，最多抄这么长。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 一句话</div>
+      <p>给网址、选抄法、限制长度，就够了。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧯 Firecrawl fallback 是“普通抄写员不行时，再叫一个更会钻的网站助手”</h2>
+    <p>官方这段不能跳，因为它解释了为什么有些网页普通 fetch 不行，但你配了 Firecrawl 后又能多救回来一点。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🪜 第一层：Readability</div>
+      <p>先用本地这套轻量方法抽正文。快，也省事。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔥 第二层：Firecrawl</div>
+      <p>如果第一层抽不出来，而你已经给 Firecrawl 配好钥匙，它就像第二梯队上场，再帮你闯一次。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">⚠️ 为什么官方说 SecretRef 没解出来会 fail fast</div>
+      <p>像你明明说“失败了就叫第二队”，结果第二队的工牌根本不在。与其中途才掉链子，不如启动时就先提醒你。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 这节一句话</div>
+      <p>Firecrawl 不是默认主角，而是 fetch 失败时的救场队员。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🛡 限制和安全规则，都在讲“别让抄写员乱跑”</h2>
+    <p>这页后面那些上限，不是在烦你，而是在保护系统别因为一张离谱网页被拖进坑里。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>maxCharsCap</code></div>
+      <p>像就算你临时说“多抄一点”，系统也会看总上限，不会让你无限搬书回来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>maxResponseBytes</code></div>
+      <p>像先规定这次最多搬多大的纸箱，太大的页面会被截断，不然容易把整个流程拖慢。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚫 private/internal hostnames blocked</div>
+      <p>像抄写员被明确告知：私宅、内网、后台机房这种门牌，不许乱进。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>maxRedirects</code></div>
+      <p>像如果门卫一直说“你去隔壁”“再去下一个”，系统不会无限追着跑，拐几次弯就会停下。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Web Fetch 这页压成一句话</h2>
+    <p><code>web_fetch</code> 就是一个轻量抄写员：你给它一个具体网址，它尽量把正文干净地抄回来；但遇到要登录、要 JS、要复杂交互的页面，就该换 <code>/tools/browser</code> 上场。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/tools/firecrawl</code>。因为一旦普通抓取不够用，很多人下一步自然就会问：那谁来当第二梯队救场。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

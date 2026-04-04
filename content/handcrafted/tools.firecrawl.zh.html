@@ -1,0 +1,190 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🔥 Firecrawl 像一位“能绕过坏天气、把网页硬送回来的搬运员”</h2>
+      <p>这页讲的是：当普通网页搜索、普通 fetch 遇到 JS-heavy 页面或者爱拦人的站点时，Firecrawl 可以出来帮忙。它会搜索、会抽取，还能给 web_fetch 当后备队。</p>
+      <p>你可以把它想成一位穿雨衣的搬运员。网页难进，它照样尽量把内容背回来。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合需要强抽取、JS-heavy 页面、或容易被拦的站点的人</span>
+      <span>这页最重要的是看懂三种用法：搜索、抓取、给 web_fetch 兜底</span>
+      <a href="https://docs.openclaw.ai/tools/firecrawl" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🚚 Firecrawl 不只是一种工具，它像三条进门路线</h2>
+    <p>官方一上来就说得很清楚：Firecrawl 可以当搜索提供商、可以当显式工具，还可以当 web_fetch 的后备抽取器。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🔎</span>
+      <h2><code>web_search</code> 提供商</h2>
+      <p>像让 Firecrawl 负责平时的网页搜索入口。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧰</span>
+      <h2><code>firecrawl_search</code></h2>
+      <p>像点名让它用更细的搜索方式去找。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧲</span>
+      <h2><code>firecrawl_scrape</code></h2>
+      <p>像指定某个网页，让它直接搬重点回来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🛟</span>
+      <h2><code>web_fetch</code> 后备</h2>
+      <p>像普通搬运失败后，Firecrawl 出来兜底。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔑 API key 像给搬运员发进场证</h2>
+    <p>和其他提供商一样，先办 key，再把它放进 config 或环境变量。这个动作看起来普通，但很关键。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">1. 注册 Firecrawl</div>
+      <p>像先雇到这位搬运员。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">2. 生成 API key</div>
+      <p><code>FIRECRAWL_API_KEY</code> 像工牌。没有它，系统不认。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">3. 放进环境或配置</div>
+      <p>你可以写进 Gateway 环境，也可以放在插件 config 里。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 一句话</div>
+      <p>先发工牌，再叫搬运员上场。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🛠 配置那两段 JSON，翻成人话就是“把网页搜索和网页抓取都接到 Firecrawl”</h2>
+    <p>官方把 search 和 fetch 分开写，是为了让你知道：同一个服务，能干两种不同的活。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>tools.web.search.provider: \"firecrawl\"</code></div>
+      <p>像给总搜索台换上 Firecrawl 这位新值班员。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>tools.web.fetch.firecrawl</code></div>
+      <p>像在普通 fetch 后面再放一个后备抽取员。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>onlyMainContent: true</code></div>
+      <p>像让它别把网页边边角角都抱回来，只抱主菜。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>maxAgeMs: 172800000</code></div>
+      <p>像给缓存结果设一个“新鲜期”。默认两天。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🎛 Firecrawl 的工具，像“搜索员”和“抄网页的人”两份工作</h2>
+    <p>这页里最重要的就是这两个工具。名字不同，动作也不同。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🔎</span>
+      <h2><code>firecrawl_search</code></h2>
+      <p>像更会搜网页的版本。你可以再告诉它 sources、categories、scrapeResults 等等。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📄</span>
+      <h2><code>firecrawl_scrape</code></h2>
+      <p>像拿着明确网址去抄重点，特别适合 JS-heavy 页面。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧯</span>
+      <h2>web_fetch 兜底</h2>
+      <p>普通 fetch 先试，失败了 Firecrawl 来接手。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⭐</span>
+      <h2>先记一句</h2>
+      <p>搜索和抽取是两条工作线。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🪄 proxy = auto，像让搬运员先试普通门，卡住了再换隐身门</h2>
+    <p>官方这段写得很重要。Firecrawl 支持 proxy 模式，OpenClaw 默认会用 auto，再配上缓存。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>proxy: \"auto\"</code></div>
+      <p>像先试普通路线，如果遇到门禁，再换更会绕路的路线。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>storeInCache: true</code></div>
+      <p>像把背回来的网页内容先存进仓库，别下次又白跑一趟。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>stealth</code></div>
+      <p>像穿上隐身雨衣。不是所有站都需要，但有些站会很爱拦人。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 为什么要这样做</div>
+      <p>因为有些网页就是会对普通抓取很凶。Firecrawl 的价值，就是尽量把内容搬回来，而不是在门口站着发呆。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🧠 web_fetch 用 Firecrawl 兜底，这个顺序很像“先自己拿，再请强力帮手”</h2>
+    <p>官方把 extraction order 写得很明白：先看本地 readability，再用 Firecrawl，最后才做基本清理。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">1. Readability</div>
+      <p>先自己把网页整理一下。能看就先自己看。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">2. Firecrawl</div>
+      <p>不够用时，叫专门会绕门的搬运员来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">3. Basic HTML cleanup</div>
+      <p>最后再做最朴素的清理。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>Firecrawl 是 web_fetch 的后备大力士，不是第一步就上场的唯一选项。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Firecrawl 压成一句最好记的话</h2>
+    <p>Firecrawl 就是那个在网页不好搬、页面很爱挡人时，愿意上来帮你把内容背回来的搬运员；它既能搜，也能抄，还能给 web_fetch 做后备。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <a href="https://docs.openclaw.ai/tools/web" target="_blank" rel="noreferrer">Web Search</a> 或 <a href="https://docs.openclaw.ai/tools/web-fetch" target="_blank" rel="noreferrer">Web Fetch</a>。这样更容易把 Firecrawl 放进整个网页工具家族里看。</p>
+  </div>
+</section>

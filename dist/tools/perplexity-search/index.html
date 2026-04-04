@@ -3970,586 +3970,193 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Perplexity Search</h2>
-          <p>这一页像一本关于“Perplexity Search”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：Perplexity Search 对话接口。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/tools/perplexity-search</span>
-          <span>章节数量：10</span>
-          <a href="https://docs.openclaw.ai/tools/perplexity-search" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Perplexity Search 对话接口 OpenClaw supports Perplexity Search 对话接口 as a web_search provider. It returns structured results…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Perplexity Search 对话接口”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Perplexity Search API</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw supports Perplexity Search 对话接口 as a web_search provider. It returns structured results with title, url, and s…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw supports Perplexity Search API as a <code>web_search</code> provider. It returns structured results with <code>title</code>, <code>url</code>, and <code>snippet</code> fields.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For compatibility, OpenClaw also supports legacy Perplexity Sonar/OpenRouter setups. If you use OPENROUTER_对话接口_KEY, an…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For compatibility, OpenClaw also supports legacy Perplexity Sonar/OpenRouter setups. If you use <code>OPENROUTER_API_KEY</code>, an <code>sk-or-...</code> key in <code>plugins.entries.perplexity.config.webSearch.apiKey</code>, or set <code>plugins.entries.perplexity.config.webSearch.baseUrl</code> / <code>model</code>, the provider switches to the chat-completions path and returns AI-synthesized answers with citations instead of structured Search API results.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Getting a Perplexity 对话接口 key</h2>
-            <p>这一节主要在解释“Getting a Perplexity 对话接口 key”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Getting a Perplexity 对话接口 key”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“1. Create a Perplexity account at perplexity.ai/settings/对话接口 2. Generate an 对话接口 key in the dashboard 3. Store the key…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“1. Create a Perplexity account at perplexity.ai/settings/对话接口 2. Generate an 对话接口 key in the dashboard 3. Store the key…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. Create a Perplexity account at <a href="https://www.perplexity.ai/settings/api" target="_blank" rel="noreferrer">perplexity.ai/settings/api</a> 2. Generate an API key in the dashboard 3. Store the key in config or set <code>PERPLEXITY_API_KEY</code> in the Gateway environment.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>OpenRouter compatibility</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If you were already using OpenRouter for Perplexity Sonar, keep provider: &quot;perplexity&quot; and set OPENROUTER_对话接口_KEY in t…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If you were already using OpenRouter for Perplexity Sonar, keep provider: &quot;perplexity&quot; and set OPENROUTER_对话接口_KEY in t…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If you were already using OpenRouter for Perplexity Sonar, keep <code>provider: &quot;perplexity&quot;</code> and set <code>OPENROUTER_API_KEY</code> in the Gateway environment, or store an <code>sk-or-...</code> key in <code>plugins.entries.perplexity.config.webSearch.apiKey</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Optional compatibility controls:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Optional compatibility controls:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“OpenRouter compatibility”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：新本领插件s.entries.perplexity.设置说明书.webSearch…、新本领插件s.entries.perplexity.设置说明书.webSearch…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>plugins.entries.perplexity.config.webSearch.baseUrl</code></li><li><code>plugins.entries.perplexity.config.webSearch.model</code></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Native Perplexity Search 对话接口</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“plugins”贴标签，意思是把它设置成“{”。</li><li>这里在给“entries”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  plugins: {
-    entries: {
-      perplexity: {
-        config: {
-          webSearch: {
-            apiKey: &quot;pplx-...&quot;,
-          },
-        },
-      },
-    },
-  },
-  tools: {
-    web: {
-      search: {
-        provider: &quot;perplexity&quot;,
-      },
-    },
-  },
-}</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>OpenRouter / Sonar compatibility</h2>
-            <p>这一节主要在解释“OpenRouter / Sonar compatibility”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“OpenRouter / Sonar compatibility”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“plugins”贴标签，意思是把它设置成“{”。</li><li>这里在给“entries”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  plugins: {
-    entries: {
-      perplexity: {
-        config: {
-          webSearch: {
-            apiKey: &quot;&lt;openrouter-api-key&gt;&quot;,
-            baseUrl: &quot;https://openrouter.ai/api/v1&quot;,
-            model: &quot;perplexity/sonar-pro&quot;,
-          },
-        },
-      },
-    },
-  },
-  tools: {
-    web: {
-      search: {
-        provider: &quot;perplexity&quot;,
-      },
-    },
-  },
-}</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Where to set the key</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Via 设置说明书:** run openclaw 设置说明书ure --section web. It stores the key in ~/.openclaw/openclaw.json under 新本领插件s.entries…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Via 设置说明书:** run openclaw 设置说明书ure --section web. It stores the key in ~/.openclaw/openclaw.json under 新本领插件s.entries…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Via config:** run <code>openclaw configure --section web</code>. It stores the key in <code>~/.openclaw/openclaw.json</code> under <code>plugins.entries.perplexity.config.webSearch.apiKey</code>. That field also accepts SecretRef objects.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Via environment:** set PERPLEXITY_对话接口_KEY or OPENROUTER_对话接口_KEY in the 门口的小门卫 process environment. For a 门口的小门卫 ins…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Via environment:** set <code>PERPLEXITY_API_KEY</code> or <code>OPENROUTER_API_KEY</code> in the Gateway process environment. For a gateway install, put it in <code>~/.openclaw/.env</code> (or your service environment). See <a href="/help/faq#env-vars-and-env-loading" target="_blank" rel="noreferrer">Env vars</a>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If provider: &quot;perplexity&quot; is 设置说明书ured and the Perplexity key SecretRef is unresolved with no env fallback, startup/rel…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If <code>provider: &quot;perplexity&quot;</code> is configured and the Perplexity key SecretRef is unresolved with no env fallback, startup/reload fails fast.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>工具小帮手 parameters</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“These parameters apply to the native Perplexity Search 对话接口 path. Parameter Description --------------------- ---------…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“These parameters apply to the native Perplexity Search 对话接口 path.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>These parameters apply to the native Perplexity Search API path.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Parameter Description --------------------- ---------------------------------------------------- query Search query (re…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>| Parameter | Description | | --------------------- | ---------------------------------------------------- | | <code>query</code> | Search query (required) | | <code>count</code> | Number of results to return (1-10, default: 5) | | <code>country</code> | 2-letter ISO country code (e.g., &quot;US&quot;, &quot;DE&quot;) | | <code>language</code> | ISO 639-1 language code (e.g., &quot;en&quot;, &quot;de&quot;, &quot;fr&quot;) | | <code>freshness</code> | Time filter: <code>day</code> (24h), <code>week</code>, <code>month</code>, or <code>year</code> | | <code>date_after</code> | Only results published after this date (YYYY-MM-DD) | | <code>date_before</code> | Only results published before this date (YYYY-MM-DD) | | <code>domain_filter</code> | Domain allowlist/denylist array (max 20) | | <code>max_tokens</code> | Total content budget (default: 25000, max: 1000000) | | <code>max_tokens_per_page</code> | Per-page token limit (default: 2048) |</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For the legacy Sonar/OpenRouter compatibility path, only query and freshness are supported. Search 对话接口-only filters su…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For the legacy Sonar/OpenRouter compatibility path, only <code>query</code> and <code>freshness</code> are supported. Search API-only filters such as <code>country</code>, <code>language</code>, <code>date_after</code>, <code>date_before</code>, <code>domain_filter</code>, <code>max_tokens</code>, and <code>max_tokens_per_page</code> return explicit errors.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Examples:**”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Examples:**</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像给机器人看的说明书，告诉它要按什么样子准备东西。</p>
-        <ul class="code-steps">
-          <li>这一行“// Country and language-specific search”是当前步骤要交给电脑的一小块提示。</li><li>这一行“await web_search({”是当前步骤要交给电脑的一小块提示。</li><li>这里在给“query”贴标签，意思是把它设置成“renewable energy”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-javascript">// Country and language-specific search
-await web_search({
-  query: &quot;renewable energy&quot;,
-  country: &quot;DE&quot;,
-  language: &quot;de&quot;,
-});
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧠 Perplexity Search 像一个“会找资料，还可能顺手先替你嚼一遍”的搜索员</h2>
+      <p>这页最绕的地方，不是参数多，而是它其实有两张脸。一张脸是老老实实带回结构化搜索结果，另一张脸是走兼容路线，直接给你带回“我先帮你总结过”的答案。</p>
+      <p>所以读这页时，第一件事不是看字段，而是先看你现在走的是“原生搜索 API”还是“旧 Sonar / OpenRouter 兼容路”。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想用 Perplexity 当网页搜索提供商的人</span>
+      <span>这页最重要的是分清：原生 Search API 和 OpenRouter / Sonar 兼容路径，不是同一种返回结果</span>
+      <a href="https://docs.openclaw.ai/tools/perplexity-search" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
-// Recent results (past week)
-await web_search({
-  query: &quot;AI news&quot;,
-  freshness: &quot;week&quot;,
-});
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🪞 它为什么像有两张脸</h2>
+    <p>官方开头讲 compatibility，看起来像历史包袱，其实是非常实用的提醒：同样写着 <code>provider: "perplexity"</code>，返回的东西可能长得完全不一样。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📚</span>
+      <h2>原生 Search API</h2>
+      <p>像外勤把一张整齐的小报告交给你：标题、网址、摘要，规规矩矩三列。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🗣</span>
+      <h2>Sonar / OpenRouter 兼容路</h2>
+      <p>像它不只给你线索，还先把这些线索嚼了一遍，直接带回一段带引用的回答。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⚠️</span>
+      <h2>为什么要先分清</h2>
+      <p>因为后面很多参数只对原生搜索 API 有效。你走兼容路时，再扔这些参数过去，系统会明确报错。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⭐</span>
+      <h2>一句话先记住</h2>
+      <p>Perplexity 可以是“带回资料单”，也可以是“先帮你总结一嘴”。</p>
+    </article>
+  </div>
+</section>
 
-// Date range search
-await web_search({
-  query: &quot;AI developments&quot;,
-  date_after: &quot;2024-01-01&quot;,
-  date_before: &quot;2024-06-30&quot;,
-});
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔑 拿 key 和配置这段，翻成人话就是“给这位搜索员发哪张工牌”</h2>
+    <p>这部分主线很简单：你要么给它 Perplexity 自家的工牌，要么继续走以前 OpenRouter 那条兼容老路。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>PERPLEXITY_API_KEY</code></div>
+      <p>像给它发 Perplexity 自家的正式工牌。这样它更像按“原生搜索员”上岗。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>OPENROUTER_API_KEY</code></div>
+      <p>像告诉系统：“我们继续走以前那条兼容老路。”这时它更像 Sonar 聊天答案模式，而不是纯结构化搜索。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>baseUrl</code> / <code>model</code></div>
+      <p>这些字段像额外路标。只要你显式填了，系统就知道你不是在走最朴素的原生路子。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw configure --section web</code></div>
+      <p>像把“你想叫哪位搜索员出门、他拿哪张工牌”一次填进系统。</p>
+    </div>
+  </div>
+</section>
 
-// Domain filtering (allowlist)
-await web_search({
-  query: &quot;climate research&quot;,
-  domain_filter: [&quot;nature.com&quot;, &quot;science.org&quot;, &quot;.edu&quot;],
-});
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🎛 参数表其实都在讲“你要它搜得多细、带回多少料、排除哪几家”</h2>
+    <p>别被参数名吓到。翻成人话以后，大多数都很顺。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>count</code></div>
+      <p>像说：“先带 5 条线索回来，不用把整条街都翻遍。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>country</code> / <code>language</code></div>
+      <p>像交代这次先去哪个国家、哪种语言圈打听消息。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>freshness</code> / <code>date_after</code> / <code>date_before</code></div>
+      <p>像补一句：“我只要最近的，或者只要某个时间窗里的线索。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>max_tokens</code> / <code>max_tokens_per_page</code></div>
+      <p>像规定这次最多带多少内容回来，以及每一页最多抄多少，别一页就把背包塞爆。</p>
+    </div>
+  </div>
+</section>
 
-// Domain filtering (denylist - prefix with -)
-await web_search({
-  query: &quot;product reviews&quot;,
-  domain_filter: [&quot;-reddit.com&quot;, &quot;-pinterest.com&quot;],
-});
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🚧 <code>domain_filter</code> 像给搜索员一份“可以去哪些街区、不要去哪些街区”的名单</h2>
+    <p>这个功能很实用，因为很多时候你不是没答案，而是答案被不想看的站点淹掉了。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">✅ allowlist</div>
+      <p>像明确说：“这次只去 nature、science、.edu 这些街区打听。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚫 denylist</div>
+      <p>像说：“别去 reddit、pinterest 那几条街转了，太吵。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">❌ 不能混着写</div>
+      <p>因为这张名单要么是“只许去哪”，要么是“这些地方别去”，两种规矩不能一口气都贴给它。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 最大 20 个域名</div>
+      <p>像给搜索员的黑白名单不能无限长，不然它还没出门先被规则淹死了。</p>
+    </div>
+  </div>
+</section>
 
-// More content extraction
-await web_search({
-  query: &quot;detailed AI research&quot;,
-  max_tokens: 50000,
-  max_tokens_per_page: 4096,
-});</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>Domain filter rules</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Domain filter rules”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Maximum 20 domains per filter、Cannot mix allowlist and denylist in the…、Use - prefix for denylist entries (e.g.,…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Maximum 20 domains per filter</li><li>Cannot mix allowlist and denylist in the same request</li><li>Use <code>-</code> prefix for denylist entries (e.g., <code>[&quot;-reddit.com&quot;]</code>)</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>Notes</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Notes”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Perplexity Search 对话接口 returns structured…、OpenRouter or explicit 新本领插件s.entries.per…、Results are cached for 15 minutes by defa…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Perplexity Search API returns structured web search results (<code>title</code>, <code>url</code>, <code>snippet</code>)</li><li>OpenRouter or explicit <code>plugins.entries.perplexity.config.webSearch.baseUrl</code> / <code>model</code> switches Perplexity back to Sonar chat completions for compatibility</li><li>Results are cached for 15 minutes by default (configurable via <code>cacheTtlMinutes</code>)</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>Related</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Related”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Web Search overview -- all providers and…、Perplexity Search 对话接口 docs -- official P…、Brave Search -- structured results with c…、Exa Search -- neural search with content…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><a href="/tools/web" target="_blank" rel="noreferrer">Web Search overview</a> -- all providers and auto-detection</li><li><a href="https://docs.perplexity.ai/docs/search/quickstart" target="_blank" rel="noreferrer">Perplexity Search API docs</a> -- official Perplexity documentation</li><li><a href="/tools/brave-search" target="_blank" rel="noreferrer">Brave Search</a> -- structured results with country/language filters</li><li><a href="/tools/exa-search" target="_blank" rel="noreferrer">Exa Search</a> -- neural search with content extraction</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🪵 为什么兼容路有时会报“这个参数不支持”</h2>
+    <p>因为你一旦走的是 OpenRouter / Sonar 兼容路径，它干的已经不再是同一种搜索工作。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📚 原生 Search API</div>
+      <p>像一个老老实实带结果清单回来的搜索员，所以国家、语言、日期、域名这些过滤器都能挂上去。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🗣 Sonar / OpenRouter</div>
+      <p>像另一个更爱先总结再回答的人。它能懂的旋钮少得多，主要只认 <code>query</code> 和 <code>freshness</code> 这种基础口令。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 这节一句话</div>
+      <p>不是参数坏了，而是你换了一条路，车就不是同一辆了。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🔐 fail fast 那句在讲什么</div>
+      <p>像你明明指定了要叫 Perplexity 出门，结果它的工牌没解出来。系统会选择立刻提醒你，而不是等半路才掉链子。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🧪 官方例子真正想教你的，不是语法，而是“怎么提更像一张靠谱搜索任务单”</h2>
+    <p>这些例子凑在一起看，主线很清楚：你可以按地区搜、按时间搜、按站点搜、按内容量搜。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">国家 / 语言搜索</div>
+      <p>像你明确指定“去德国那边打听，用德语结果”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">最近一周</div>
+      <p>像告诉它：“别翻旧报纸了，只要最近这周的消息。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">日期区间</div>
+      <p>像把资料窗口框得更窄，避免它把太旧或太新的都混进来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">更高 token 预算</div>
+      <p>像允许它多背一点资料回来，但这也意味着包更重、回得可能更慢。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Perplexity Search 这页压成一句话</h2>
+    <p>Perplexity Search 像一个会找资料的搜索员，但它既可以老老实实交结构化结果单，也可能顺手先帮你总结一嘴；读这页时，最先分清你走的是原生 Search API 还是兼容老路。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议接着看 <code>/tools/web</code> 或 <code>/tools/tavily</code>。这样你会更容易比较：同样是网页搜索，Perplexity、Tavily、Brave 到底各擅长哪种打法。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

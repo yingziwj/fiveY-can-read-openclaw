@@ -1,0 +1,186 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🌍 Web Search 就像给 OpenClaw 发了一位“会出去打听消息的外勤同学”</h2>
+      <p>如果浏览器工具像亲自走进一家店里翻抽屉、点按钮，那 <code>web_search</code> 更像先派一个外勤出去打听：“这件事网上都怎么说？有哪些靠谱线索？”</p>
+      <p>它不负责登录网站，不负责点复杂页面，也不是完整浏览器。它做的事更轻：出去搜、带回结果、顺手整理一点线索给你。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想给 OpenClaw 配网页搜索的人</span>
+      <span>这页最重要的是分清：<code>web_search</code> 不是浏览器自动化，<code>web_fetch</code> 也不是搜索</span>
+      <a href="https://docs.openclaw.ai/tools/web" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧭 先分清三件事：搜、抓、逛</h2>
+    <p>官方开头其实就在帮你拆这三兄弟。很多人把它们混在一起，读起来当然晕。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🔎</span>
+      <h2><code>web_search</code></h2>
+      <p>像先去街上打听消息。重点是“找有哪些结果”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📄</span>
+      <h2><code>web_fetch</code></h2>
+      <p>像你已经拿到具体门牌号，再派人进去把那一页内容抄回来。重点是“抓这一个网址”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🌐</span>
+      <h2><code>browser</code></h2>
+      <p>像你真的亲自开门进屋、点按钮、填表单。适合 JS 重、要登录、要交互的页面。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⭐</span>
+      <h2>一句话先记住</h2>
+      <p>搜是找线索，抓是抄单页，逛才是开浏览器真进场。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🚀 Quick start 那三步，其实就是“领外勤工牌、告诉他找哪家、然后让他出门”</h2>
+    <p>官方 quick start 写得很短，因为这套工具的上岗主线真的不复杂。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">1. 先拿 API key</div>
+      <p>像给外勤同学发工牌。没有工牌，他到门口也进不了对方的数据服务台。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw configure --section web</code></div>
+      <p>像让系统问你：“你准备让哪位外勤去跑腿？工牌号码是多少？”配完以后，它就知道以后该叫谁出门。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>await web_search({ query: "OpenClaw plugin SDK" })</code></div>
+      <p>像明确下达一张打听任务单：“去帮我找这个问题的网页线索。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>x_search</code></div>
+      <p>像把打听范围专门切到 X（以前叫 Twitter）那条街上，不是整个互联网到处问。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧰 提供商列表别硬背，把它看成“不同风格的外勤同学”</h2>
+    <p>这页中间那张大表，不是在炫 providers 多，而是在帮你选跑腿的人。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🛡 Brave</div>
+      <p>像一个比较稳的整理型同学，结构化结果清晰，还有地区和语言过滤。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🦆 DuckDuckGo</div>
+      <p>像一个不用工牌也能帮你跑腿的应急同学。方便，但路数也更朴素。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧠 Exa / Firecrawl / Tavily</div>
+      <p>像更擅长“找完还帮你拆内容”的外勤，适合你不只想知道哪里有，还想顺手拿回更多可读内容。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">✨ Gemini / Grok / Kimi</div>
+      <p>这些更像会先消化一遍，再带着引用回来告诉你“我觉得答案大概是这样”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🤖 Auto-detection 不是玄学，它就是“看看你桌上先摆着谁的工牌”</h2>
+    <p>官方特别强调 provider 列表和自动检测顺序不是一回事。这个点很容易被忽略。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📋 文档列表是按字母排</div>
+      <p>只是为了好找，不代表系统真的按这个顺序选人。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🪪 Auto-detect 看谁先有 key</div>
+      <p>像系统低头看一眼桌上：Brave 的工牌在不在？Gemini 的在不在？按自己的优先顺序找出第一个能上岗的人。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚨 没 key 会怎样</div>
+      <p>它会退回 Brave，然后很老实地告诉你：现在没工牌，没法上路。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🔐 SecretRef 那句在讲什么</div>
+      <p>像你把工牌锁进抽屉里，系统只有真的决定叫这个 provider 出门时，才会去打开对应那格抽屉。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🎛 通用参数，翻成人话就是“这次打听消息要打听到多细”</h2>
+    <p>官方参数表看着像说明书，其实都可以翻成很生活化的口令。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>query</code></div>
+      <p>像你真正托付出去的问题本身。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>count</code></div>
+      <p>像你说“先带回 5 条线索给我看看”，不是把整条街全搬回来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>country</code> / <code>language</code></div>
+      <p>像你交代外勤：“先在德国那边打听，尽量带德语资料回来。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>freshness</code> / <code>date_after</code> / <code>date_before</code></div>
+      <p>像再补一句：“我只想听最近一周的，或者某个时间段里的消息。”</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🐦 <code>x_search</code> 是“专门去 X 那条街打听”的特别外勤</h2>
+    <p>它不是普通 web search 的完全替代，而是把搜索范围专门缩到 X 上。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🗞 普通网页搜索</div>
+      <p>像满城找资料，博客、官网、新闻、各种站点都可能带回来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🐦 <code>x_search</code></div>
+      <p>像直接走进 X 那条街，只打听帖子、账号、线程这些东西。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🎯 为什么官方说最好先定位再追问</div>
+      <p>因为你先找到具体那条帖子，再让它围着这条帖子继续查，拿回来的细节往往更准。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 一句话</div>
+      <p><code>x_search</code> 更像专项外勤，不是普通网页搜索的换皮。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Web Search 这页压成一句话</h2>
+    <p><code>web_search</code> 就是给 OpenClaw 配一个会出去打听网页线索的外勤；想搜得更轻用它，想抓具体网页内容看 <code>/tools/web-fetch</code>，想真进站点操作看 <code>/tools/browser</code>。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议先看 <code>/tools/web-fetch</code>。因为很多人第一次真正卡住的，不是“怎么搜”，而是“我已经拿到网址了，到底该抓内容还是该开浏览器”。</p>
+  </div>
+</section>
