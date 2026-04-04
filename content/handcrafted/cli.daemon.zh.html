@@ -1,0 +1,135 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧯 <code>openclaw daemon</code> 像“旧门牌上的老名字，其实还是在叫 Gateway 服务员”</h2>
+      <p>这页最容易让人误会成一套新系统。其实不是。官方第一句就讲了：它只是旧别名，背后还是同一套 Gateway 服务管理命令。</p>
+      <p>所以你可以把它想成旧小区门口还挂着“值班室”这块老牌子，但里面坐的还是现在那位 Gateway 管家。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合碰到旧文档、旧命令、老教程时做对照的人</span>
+      <span>这页最重要的是记住：daemon 不是新东西，它是 gateway 服务命令的旧名字</span>
+      <a href="https://docs.openclaw.ai/cli/daemon" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🔁 先记一句大白话：看见 <code>daemon</code>，脑子里直接翻译成“Gateway 服务管理”</h2>
+    <p>官方说得很直白：<code>openclaw daemon ...</code> 映射到和 <code>openclaw gateway ...</code> 一样的服务控制面。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🪪</span>
+      <h2>老名字</h2>
+      <p><code>daemon</code> 像旧招牌，还留着方便你认人。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧍</span>
+      <h2>同一个人</h2>
+      <p>背后真正干活的，还是 Gateway 服务那套动作。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📚</span>
+      <h2>旧教程能对照</h2>
+      <p>你如果看到老文章里写 daemon，不用慌，它没换系统，只是旧称呼。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p><code>daemon</code> = 老名字的 <code>gateway</code> 服务命令。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧰 这些子命令很像值班室的 6 个常用按钮</h2>
+    <p>虽然它是旧别名，但按钮还是很实用：看状态、安装、启动、停止、重启、卸掉。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw daemon status</code></div>
+      <p>像去值班室窗前问一句：“现在有没有人在岗？门铃通不通？”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw daemon install</code></div>
+      <p>像正式把值班制度挂起来，让系统开机后也知道谁来守门。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>start</code> / <code>stop</code> / <code>restart</code></div>
+      <p>像叫值班员上岗、下岗，或者重整衣服再来一轮。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>uninstall</code></div>
+      <p>像把这套托管值班制度拆掉，不再让系统替你自动安排这位值班员。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🔐 <code>status</code> 和 <code>install</code> 的那些参数，其实都在围绕“值班员怎么认门、拿哪把钥匙”</h2>
+    <p>官方列的选项多，但核心就是地址、认证、超时、运行时这些几件事。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📍</span>
+      <h2><code>--url</code> / <code>--port</code></h2>
+      <p>像告诉值班员门口具体在哪，或者要守哪个端口。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔑</span>
+      <h2><code>--token</code> / <code>--password</code></h2>
+      <p>像交给它上岗时要带的门卡或口令。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⏱️</span>
+      <h2><code>--timeout</code> / <code>--deep</code></h2>
+      <p>像决定检查多久、查多深，不是只看门口灯亮不亮。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⚙️</span>
+      <h2><code>--runtime &lt;node|bun&gt;</code></h2>
+      <p>像决定值班员坐哪种交通工具来上岗。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🪵 那些 SecretRef 注释其实是在提醒：值班员拿不到钥匙时，不要假装自己已经开门成功</h2>
+    <p>官方在这页特别谨慎，因为服务安装和探测一旦拿错钥匙，就很容易造成“明明装了，却总报未授权”的怪现象。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>status</code> 的 authWarning</div>
+      <p>像值班员去试门时说：“门在那儿，但我今天没拿到正确钥匙，所以只能给你报个提醒。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">probe 成功就不乱报</div>
+      <p>如果门真的已经成功打开，系统就不会再拿旧提醒吓你。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">install 失败关口</div>
+      <p>如果 token 模式需要钥匙，而 SecretRef 又根本解不出来，安装会直接拦下，像门卫说“钥匙没拿到，不许你假装上岗”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">mode 不明确也拦</div>
+      <p>如果 token 和 password 两把钥匙都摆着，但没说到底用哪把，系统宁可先不装，也不让值班员糊里糊涂上班。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw daemon</code> 压成一句话</h2>
+    <p><code>openclaw daemon</code> 就像 Gateway 服务命令的旧门牌：看上去是老名字，背后做的还是安装、启动、停用、探测和带钥匙上岗那套值班室管理动作。</p>
+  </div>
+</section>

@@ -1,0 +1,165 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧠 <code>openclaw models</code> 像“去模型仓库挑主力队员、替补队员，再检查他们有没有带工牌”</h2>
+      <p>这页讲的是模型发现、扫描、默认模型、fallback、auth profiles。翻成人话，就是你得先决定今天谁上场、谁当替补、他们有没有拿着正确的入场证。</p>
+      <p>所以这页不只是“看有哪些模型”，更像教练在排阵容：主力是谁，替补是谁，账号有没有过期，探针一照能不能真的上场。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合正在配 provider、切默认模型、查登录状态的人</span>
+      <span>这页最重要的是记住：models 不只是列清单，它还管默认阵容、替补路线和认证工牌</span>
+      <a href="https://docs.openclaw.ai/cli/models" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🎛️ 先记 4 个最常用按钮：看状态、看名单、换主力、扫货架</h2>
+    <p>官方一开头给的四条命令，就是这页的主干。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📋</span>
+      <h2><code>models status</code></h2>
+      <p>像看现在主力是谁、替补是谁、他们的工牌是不是还有效。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧺</span>
+      <h2><code>models list</code></h2>
+      <p>像翻模型货架名册，看看仓库里都有哪些队员可选。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🥇</span>
+      <h2><code>models set &lt;model-or-alias&gt;</code></h2>
+      <p>像把某个队员拎出来，贴上“今天你首发”的纸条。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔦</span>
+      <h2><code>models scan</code></h2>
+      <p>像拿手电筒去扫仓库，看还有哪些新模型已经上架。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🪪 <code>status</code> 为什么重要？因为不是每个队员都真的带着能上场的工牌</h2>
+    <p>官方把 auth overview、usage snapshots、probe 都塞进 status，不是在堆功能，而是在回答一个最实际的问题：这个模型今天真的能打吗？</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw models status</code></div>
+      <p>像教练看阵容板：主力是谁、替补是谁、每个人工牌是不是还有效。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--probe</code></div>
+      <p>像不只看名单，还真的吹哨让队员跑两步。官方提醒这是真请求，可能花 token，也可能撞限流。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--agent &lt;id&gt;</code></div>
+      <p>像别看全队总名单，只检查某个工位自己那套模型阵容。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>marker(...)</code></div>
+      <p>有时候你看到的不是被掩码的秘密，而是像“OPENAI_API_KEY”“secretref-managed”这种提示牌，意思是系统在告诉你钥匙类型，不是在泄露钥匙本身。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🏷️ <code>set</code>、alias、fallbacks，像“首发名字、外号和替补顺序”</h2>
+    <p>官方专门讲 provider/model、alias、first slash parsing，是因为模型名字这件事真的很容易写歪。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🥇</span>
+      <h2><code>provider/model</code></h2>
+      <p>像把球员全名写完整，最不容易认错人。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏷️</span>
+      <h2>alias</h2>
+      <p>像给常用队员起外号，喊起来更快。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🛟</span>
+      <h2>fallbacks</h2>
+      <p>像主力临时上不了时，替补从谁开始顶上。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✂️</span>
+      <h2>按第一个 <code>/</code> 分</h2>
+      <p>官方提醒你只按第一个斜杠切开。像名字里后面还能带小队名，但开头那个斜杠才是“哪家俱乐部”。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🔐 Auth profiles 这段，其实是在说“给不同模型队员办不同入场证”</h2>
+    <p>登录、setup-token、paste-token 这些动作，都是在管“这位队员凭什么能上场”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>models auth add</code></div>
+      <p>像新建一个工牌档案夹，准备给某类 provider 放证件。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>models auth login --provider ...</code></div>
+      <p>像按 provider 的规矩去办正式入场证，有的是 OAuth，有的是 API key，有的是复用本地 CLI 登录。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>setup-token</code> / <code>paste-token</code></div>
+      <p>像把别处办好的票据拿过来贴进档案夹，一个是现场引导填，一个是直接把现成票据贴进去。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Anthropic 那条注释</div>
+      <p>官方特地提醒 setup-token 的兼容性和条款风险，意思像“技术上刷得过门禁，不代表这张票在所有场馆都永远允许这样用”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧪 <code>--check</code>、<code>--probe-provider</code>、<code>--probe-profile</code> 这些，是“体检全队”还是“点名抽查某几个人”</h2>
+    <p>这组参数很多，但全在说探测范围和探测力度。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🩺</span>
+      <h2><code>--check</code></h2>
+      <p>像给全队做健康检查，并用退出码告诉你是完全没问题、快过期，还是已经不能上场。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎯</span>
+      <h2><code>--probe-provider &lt;name&gt;</code></h2>
+      <p>像今天只点名检查某一家 provider 的队员，不查全场。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪪</span>
+      <h2><code>--probe-profile &lt;id&gt;</code></h2>
+      <p>像在同一家 provider 里，再精确点到某几张工牌来验。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⏱️</span>
+      <h2>timeout / concurrency / max-tokens</h2>
+      <p>像给体检队伍安排队列：查多久、几个人同时查、每次测试花多少预算。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw models</code> 压成一句话</h2>
+    <p><code>openclaw models</code> 就像模型仓库的排兵布阵台：挑谁当主力、谁做替补、名字该怎么写、工牌有没有过期，还能真的吹哨测试他们今天能不能上场。</p>
+  </div>
+</section>

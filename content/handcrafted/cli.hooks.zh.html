@@ -1,0 +1,165 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🪝 <code>openclaw hooks</code> 像“在门口拴几根会自己拉响的小线，一发生某件事就自动做动作”</h2>
+      <p>这页讲的是 agent hooks。比如 `/new`、`/reset`、Gateway 启动这些时刻一发生，某些小动作就自动触发。</p>
+      <p>你可以把 hook 想成机关线。门一开，线一拉，旁边的小铃铛就响了；或者抽屉一关，旁边的小记录员就自动记一笔。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想知道当前有哪些自动钩子、哪些能启用、哪些还没准备好的人</span>
+      <span>这页最重要的是记住：hook 是“事件一发生就自动接动作”，不是手动敲一次才跑</span>
+      <a href="https://docs.openclaw.ai/cli/hooks" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>📚 先把 5 个常用动作记成“看清单、看详情、做体检、开机关、关机关”</h2>
+    <p>官方这页结构其实很规整。你只要先记住这些按钮是干嘛的，就不容易迷路。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📋</span>
+      <h2><code>hooks list</code></h2>
+      <p>像把所有机关线摊开，看看家里现在到底装了哪些自动机关。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔎</span>
+      <h2><code>hooks info &lt;name&gt;</code></h2>
+      <p>像拿起其中一根机关线，仔细看它连着哪扇门、什么时候会响、要满足什么条件。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🩺</span>
+      <h2><code>hooks check</code></h2>
+      <p>像做一次总检查，看看多少机关已经能用，多少还缺零件。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✅</span>
+      <h2><code>enable</code> / <code>disable</code></h2>
+      <p>像把某根机关线正式接上，或者把它先摘下来。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧾 <code>list</code> 输出为什么会写 Ready、missing requirements？因为不是每根机关线现在都已经拴好了</h2>
+    <p>这页很重要的一点是，它不只告诉你“有几个 hook”，还会告诉你“有几个现在能真的拉得动”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw hooks list</code></div>
+      <p>像把所有机关名册摊开，看看到底有哪些自动动作已经装在房子里。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--eligible</code></div>
+      <p>像只看那些零件都齐了、现在一拉就会响的机关。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--verbose</code></div>
+      <p>像不只看“能不能响”，还看“为什么这根还响不了，是不是少了某个条件”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--json</code></div>
+      <p>像把机关清单装进一只数据盒子，方便别的程序继续接着数和筛。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🔍 <code>info</code> 这页像“把某根机关线拿起来，顺藤摸瓜看它接到了哪”</h2>
+    <p>官方示例里把 source、path、handler、events、requirements 都列出来了。其实就是在帮你顺线找源头。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📍</span>
+      <h2>Source / Path</h2>
+      <p>像看这根机关线是从哪间仓库拿来的，实际挂在哪个角落。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🛠️</span>
+      <h2>Handler</h2>
+      <p>像真正去动手的小机械臂，线一拉，它就开工。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎬</span>
+      <h2>Events</h2>
+      <p>像告诉你“这根线会在什么时刻被拉动”，比如 <code>command:new</code>、<code>command:reset</code>。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧩</span>
+      <h2>Requirements</h2>
+      <p>像这根机关线要先接上电，少了哪个条件，它就只能挂着好看。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🟢 <code>enable</code> 真正在做什么？像把这根机关线接到总开关上</h2>
+    <p>官方把这部分写得很清楚，因为很多 workspace hook 默认只是放在那里，还没正式接电。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw hooks enable session-memory</code></div>
+      <p>像说：“把这根叫 session-memory 的机关线真的接上去吧。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">写进 config</div>
+      <p>它会把 <code>hooks.internal.entries.&lt;name&gt;.enabled = true</code> 写进配置，像把总控面板上的这个开关拨到开。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">workspace hooks 默认不开</div>
+      <p>像房间里预留了机关线，但出厂时先没接电，得你亲手点头才连上。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">plugin 管的 hook 另算</div>
+      <p>如果这根线是插件带来的，它会写成 <code>plugin:&lt;id&gt;</code>。这种不是在这里开关，而是去开关整个插件。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🔄 开完以后为什么还要重启 Gateway？因为总控台要重新把这些机关线读一遍</h2>
+    <p>这句很像废话，其实很关键。你把线接上了，不等于正在值班的那位控制员立刻知道了。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🔌</span>
+      <h2>enable 只是接线</h2>
+      <p>配置已经改了，但正在运行的 Gateway 可能还没重新读到。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔄</span>
+      <h2>restart gateway</h2>
+      <p>像让总控台重读当前这套机关布线图。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>接线之后，得让值班系统重新看见它。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2><code>check</code></h2>
+      <p>像最后再点一次总检查，数一数 Ready 和 Not ready。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw hooks</code> 压成一句话</h2>
+    <p><code>openclaw hooks</code> 就像一面自动机关控制板：先看现在装了哪些机关线，查清楚每根线会在什么时刻被拉动，再决定把哪根正式接上总开关，最后让 Gateway 重新读这份机关图。</p>
+  </div>
+</section>

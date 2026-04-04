@@ -1,0 +1,135 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📋 <code>openclaw approvals</code> 像“谁能动剪刀和电钻，要先在门卫那里批条子”</h2>
+      <p>这页讲的是 exec approvals。翻成人话，就是哪些命令可以在本机、Gateway 主机、某个 node 主机上放行，哪些不能。</p>
+      <p>你可以把它想成一张施工许可表。默认先看本地这张表，但你也可以去看 Gateway 的那张，或者某台远端小工位自己的那张。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合在意哪些命令能被执行、想收紧或放宽 exec 白名单的人</span>
+      <span>这页最重要的是记住：它不是“执行命令”，而是“决定哪些命令以后可以被执行”</span>
+      <a href="https://docs.openclaw.ai/cli/approvals" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🏠 先分清 3 个地方：本地门卫、Gateway 门卫、Node 门卫</h2>
+    <p>官方一上来就说清楚了：默认改的是本地审批簿。带上 <code>--gateway</code> 或 <code>--node</code>，你才是在改别人的门禁本。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🏠</span>
+      <h2>默认本地</h2>
+      <p>像你先看自己桌上的那本审批册。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🌉</span>
+      <h2><code>--gateway</code></h2>
+      <p>像走去总控室，翻 Gateway 那本施工许可表。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🛰️</span>
+      <h2><code>--node</code></h2>
+      <p>像点名某一台远端小工位，去看它自己的许可本。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>先分清你是在管哪一本审批册。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>👀 <code>get</code> 和 <code>set</code>，像“翻现有批条子”和“整本换新批条子”</h2>
+    <p>这两个动作很像办公室日常：一个是先看现在怎么规定的，一个是拿一份新规则整本替换。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw approvals get</code></div>
+      <p>像把本地审批册翻开，看看现在哪些命令已经被门卫允许过。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw approvals get --node &lt;id|name|ip&gt;</code></div>
+      <p>像对着某台小工位说：“把你自己的批条子拿来我看看。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw approvals set --file ./exec-approvals.json</code></div>
+      <p>像拿一整份新的审批模板过来，直接整本替换旧规定。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--gateway</code> / <code>--node</code></div>
+      <p>像换规则时也要先说清楚，是换哪间办公室的规则本，不然默认只会改你自己桌上的那本。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>✅ allowlist helpers 像“往白名单里加一张通行纸条”</h2>
+    <p>如果你不想整本换，只想多放行一个具体命令，或者收回一个旧放行，就用 allowlist helpers。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">➕</span>
+      <h2><code>allowlist add "~/Projects/**/bin/rg"</code></h2>
+      <p>像给某类常用工具开一张白名单纸条，以后见到它就别再层层请示。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">👷</span>
+      <h2><code>--agent main</code></h2>
+      <p>像说这张纸条只发给某个工位，不是人人都能拿。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🌐</span>
+      <h2><code>--agent "*"</code></h2>
+      <p>像一张全楼通用的批条子，默认就是这样。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">➖</span>
+      <h2><code>allowlist remove ...</code></h2>
+      <p>像把旧纸条收回来，以后再遇到这把工具要重新审批。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🗃️ 它把审批册放在哪？就像每台机器自己抽屉里都有一本</h2>
+    <p>官方最后这几条注释很实用，因为它告诉你这本表不是一张天上飘着的规则，而是每台主机各有一本。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>~/.openclaw/exec-approvals.json</code></div>
+      <p>像每台机器抽屉里那本审批册的默认放置地点。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--node</code> 解析方式</div>
+      <p>你可以用 id、name、ip、id 前缀去找那台机器，像报门牌号、报小名、报地址都行。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">主机也得会这个能力</div>
+      <p>如果 node 主机自己根本不会提供 <code>system.execApprovals.get/set</code>，你就像在找一个根本没设门卫台的小屋。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p><code>approvals</code> 管的是“以后能不能动工具”，不是“现在立刻去施工”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw approvals</code> 压成一句话</h2>
+    <p><code>openclaw approvals</code> 就像门卫手里的施工许可表：先分清是在看本地、Gateway 还是 node 的审批册，再决定是整本替换规则，还是只给某个命令补一张白名单纸条。</p>
+  </div>
+</section>
