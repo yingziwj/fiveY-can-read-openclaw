@@ -1,0 +1,186 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>💬 WebChat 像“直接坐到 Gateway 柜台前聊天”</h2>
+      <p>这页讲的不是某个第三方聊天软件接入，而是 OpenClaw 自己的一种聊天前台。你可以把它想成：总机房前面放了一个原生聊天窗口，你坐下来就能跟里面的人说话。</p>
+      <p>它最重要的特点不是好看，而是它不绕路。它直接连 Gateway WebSocket，用的也是同一套 session 和路由规则。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想在 macOS、iOS 或控制台里直接聊 OpenClaw 的人</span>
+      <span>这页最重要的是记住：WebChat 不是单独服务器，它只是 Gateway 的一个前台</span>
+      <a href="https://docs.openclaw.ai/web/webchat" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🪑 WebChat 到底是什么？就是“同一栋楼里的聊天柜台”</h2>
+    <p>官方开头讲得很直接：它是 native chat UI，直接走 Gateway WebSocket，不内嵌浏览器，也不用另起本地静态服务器。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🏢 同一栋楼</div>
+      <p>WebChat 不是楼外另搭的小棚子，它就在 Gateway 这栋楼里。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔌 直接接线</div>
+      <p>它不是先过浏览器壳子再绕一圈，而是直接连到 WebSocket 这根主线。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🎯 回复回到原柜台</div>
+      <p>官方说 deterministic routing，翻成人话就是：你从 WebChat 这个柜台说话，回信也会回这个柜台，不会乱跑到别的通道。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 一句话</div>
+      <p>WebChat 是 Gateway 自带的聊天前台，不是外接聊天平台。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🚀 Quick start 其实就是“三步坐到柜台前”</h2>
+    <p>官方 quick start 很短，因为这个前台本来就不想多绕弯。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>先启动 Gateway</h2>
+      <p>像先把整栋楼通电。柜台有人之前，后台得先活着。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>打开 WebChat UI</h2>
+      <p>像走到聊天柜台前坐下。你可以用 macOS / iOS app，也可以用 Control UI 的 chat 标签页。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>带上门票</h2>
+      <p>哪怕在 loopback，本页也提醒你要有 Gateway auth。柜台就在楼里，不代表谁都能直接坐下。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>先开楼，再坐到柜台前，再出示门票。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>📜 那几个接口名，翻成人话就是“翻聊天记录、递纸条、塞一张便签”</h2>
+    <p>官方在 behavior 里提了三个关键词：<code>chat.history</code>、<code>chat.send</code>、<code>chat.inject</code>。这三个特别值得记住。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>chat.history</code></div>
+      <p>像柜台阿姨帮你把聊天记录本翻出来，但太大的页会被裁掉一点，免得本子重得砸桌子。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>chat.send</code></div>
+      <p>像你真的把一张问题纸条交到后台，请 agent 去跑一轮正式处理。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>chat.inject</code></div>
+      <p>像工作人员直接往聊天本里塞一张便签，不重新叫 agent 出来开工。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">✂️ oversized history</div>
+      <p>官方说大块内容会被截短或替换成提示。翻成人话就是：为了让前台稳定，太重的旧记录不会原样全搬过来。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>✋ 中途打断时，为什么你还会看到半句话</h2>
+    <p>这一段很像真实使用体验说明。官方明确说，abort 过的运行，前台可能还会保留部分已经吐出来的助手文本。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🗣 已经说出口的半句</div>
+      <p>像工作人员刚说到一半你就喊停，但前面那半句你已经听到了，当然不会凭空消失。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧾 transcript history</div>
+      <p>如果 Gateway 已经缓冲到一部分输出，它也可能把这半段记进聊天本里，并标记“这是被中止的”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📚 没有本地私藏记录</div>
+      <p>历史总是从 Gateway 拿，不靠 WebChat 自己偷偷盯本地文件。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>你喊停以后，已经飘出来的字可能还留着，因为那是现场真实发生过的半句话。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧰 Tools panel 那段在说：配置清单，不等于现在这张桌子真能用</h2>
+    <p>Control UI 里的 Tools 面板有两个视图。官方写这段，其实是在提醒你别把“目录里有”误会成“此刻就能用”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">Available Right Now</div>
+      <p>像问“我现在坐的这张桌子上，此刻能摸到哪些工具”。它跟 session 紧紧绑定。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Tool Configuration</div>
+      <p>像看总仓库的目录、开关和规则，不代表全都已经摆在你眼前。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">换 session 会变</div>
+      <p>同一个 agent，不同 session 也像换了另一张桌子，手边工具可能不一样。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 一句话</div>
+      <p>“能配置” 和 “现在能用” 不是一回事。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🌍 Remote use 在讲：远程也只是把柜台搬远，不是再搭一套新服务器</h2>
+    <p>官方这句很重要：远程模式下，WebChat 还是通过 SSH / Tailscale 把 Gateway WebSocket 接过来。你不需要再单独跑一个 WebChat server。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧵 SSH / Tailscale</div>
+      <p>像把柜台和你之间修一条安全通道，让你在远处也能坐过来聊天。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚫 不用另起 WebChat server</div>
+      <p>像不用为了一个前台，再造一栋小楼。它还是吃 Gateway 这栋楼的电和线。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔐 还是那套 auth</div>
+      <p>不管本地还是远程，端点和认证规则仍然都看 Gateway 那边怎么设。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>远程 WebChat 只是把柜台搬远，不是再额外搭后台。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 WebChat 这页压成一句话</h2>
+    <p>WebChat 就是一个直接连 Gateway 的聊天柜台：翻记录、递消息、塞便签都在同一套机房规则里完成，远程时也只是把这张柜台通过安全通道搬到你面前。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议回头看 <code>/gateway/index</code> 或继续看 <code>/web/tui</code>。前者讲后台机房，后者讲另一种前台形态。</p>
+  </div>
+</section>

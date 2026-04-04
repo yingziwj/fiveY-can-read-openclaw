@@ -1,0 +1,190 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🏢 Gateway 这页其实在讲：OpenClaw 的总机房，到底怎么开、怎么查、怎么守</h2>
+      <p>如果说 channels 是一扇扇门，agents 是楼里的工作人员，那 Gateway 就像整栋楼的总机房。电、路由、门禁、对外接口，很多关键东西都在这里集合。</p>
+      <p>所以这页不是“再多一个命令页”。它更像总值班手册，告诉你这台总机房怎么启动、怎么问状态、怎么远程连、怎么稳定值守。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合第一次真正把 OpenClaw 跑成长期在线服务的人</span>
+      <span>这页最重要的是分清：启动、查询、远程接入、长期托管，是四件不同的事</span>
+      <a href="https://docs.openclaw.ai/gateway" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🚀 <code>openclaw gateway</code> 就是在说：“把总机房电闸拉起来”</h2>
+    <p>官方开头先讲运行命令。不要把它想成普通子命令，它更像总服务启动按钮。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway</code></div>
+      <p>像把总机房直接开起来，并让它在前台工作。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway run</code></div>
+      <p>像同一件事的另一种叫法。前台运行，日志也会直接从眼前流出来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--allow-unconfigured</code></div>
+      <p>像你还没把正式规则都写好，但想先临时点亮机器看看。官方允许开发时这么干，但默认不会让你长期裸跑。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--force</code></div>
+      <p>像门口已经有人站着时，先把旧监听清掉，再强行把这次值班顶上去。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧰 启动选项别死背，把它们想成“门牌、开门方式、门票、调试灯”</h2>
+    <p>这页列了很多参数，其实分成几个抽屉记就够了。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🚪</span>
+      <h2><code>--port</code></h2>
+      <p>像决定总机房用哪个门牌号。默认常见是 <code>18789</code>。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧭</span>
+      <h2><code>--bind</code></h2>
+      <p>像决定门朝自己家开、朝局域网开，还是朝更远的地方开。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎟</span>
+      <h2><code>--auth</code> / <code>--token</code> / <code>--password</code></h2>
+      <p>像门禁规则和门票。门开得越外，这部分越不能偷懒。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">💡</span>
+      <h2><code>--verbose</code> / <code>--ws-log</code></h2>
+      <p>像把机房里更多监控灯打开，让你更清楚地看到里面在发生什么。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🔍 Query a running Gateway 这一段，是“别每次都重启，先学会问它现在怎样”</h2>
+    <p>很多人遇到问题第一反应就是重启。官方这里其实是在教你先开口问状态。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw gateway status</code></div>
+      <p>像去值班室窗口问：“你现在活着吗？是前台跑着，还是托管服务跑着？”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw gateway health</code></div>
+      <p>像让它交一份更像体检单的报告，看连通和健康快照。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--json</code></div>
+      <p>像不要彩色人话版，直接要一份机器好读的清单。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--url</code> 配了就自己带票</div>
+      <p>官方特地提醒：你一旦手填远端地址，就别指望它帮你猜 token。门牌你自己选了，门票也得你自己带。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🌉 远程访问这段，在讲“别把机房直接搬到大街上，先搭安全通道”</h2>
+    <p>官方偏爱的不是裸露公网，而是 Tailscale、VPN，或者至少 SSH tunnel。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">🧵 Tailscale / VPN</div>
+      <p>像给熟人修一条专用走廊，外人看不见，也挤不进来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>ssh -N -L 18789:127.0.0.1:18789 user@host</code></div>
+      <p>像在远端机房和你眼前电脑之间拉一根隐形管子。你本地连的是 <code>127.0.0.1:18789</code>，但消息会沿着管子送到远端去。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎟 隧道不等于免票</div>
+      <p>就算走了 SSH 这条暗管，Gateway 的 token 或 password 还是照样要验。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 一句话</div>
+      <p>安全通道负责把路修通，门禁规则还是门禁规则。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🛎 长期值守别靠手搓，交给 launchd / systemd 这种“正规物业”</h2>
+    <p>官方对生产风格的建议很一致：别手开一个窗口然后祈祷它别死，应该交给系统的服务托管来守。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🍎</span>
+      <h2>macOS</h2>
+      <p><code>openclaw gateway install</code> 像把机房正式登记给物业，让它开机自启、掉线拉起。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🐧</span>
+      <h2>Linux user service</h2>
+      <p><code>systemctl --user enable --now ...</code> 像给当前用户名下挂一个长期值班服务。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏢</span>
+      <h2>Linux system service</h2>
+      <p>像把它升级成整台机器级别的正式设施，多用户机器常这么干。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🩺</span>
+      <h2><code>openclaw doctor</code></h2>
+      <p>像巡检师傅，看看服务配置有没有歪、有没有掉队、要不要修。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🧱 多个 Gateway 不是多开几个窗口，而是“多栋楼，家当全分开”</h2>
+    <p>这页最后一段很值得记住。多实例不是随手复制一个命令就完事，而是每栋楼都要有自己的门牌、仓库和工作区。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🚪 不同端口</div>
+      <p>像每栋楼都得有不同门牌，不然门口直接撞车。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🗂 不同状态目录</div>
+      <p>像仓库要分开，别让两栋楼共用一堆钥匙和账本。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧑‍💻 不同工作区</div>
+      <p>像办公桌也要分开，不然记忆、会话、配置会互相踩。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>多开 Gateway 的本质不是复制窗口，而是复制一整套独立生活空间。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Gateway 这页压成一句话</h2>
+    <p>Gateway 就是 OpenClaw 的总机房：先把它点亮，再学会查状态，再决定怎么远程连，最后交给系统服务长期值守，别拿它当一次性小脚本。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/web/webchat</code>。因为知道总机房后，最容易理解的下一步，就是“哪些前台是直接连这台机房聊天的”。</p>
+  </div>
+</section>

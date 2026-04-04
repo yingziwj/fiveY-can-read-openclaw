@@ -3970,377 +3970,193 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>WebChat</h2>
-          <p>这一页像一本关于“WebChat”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：WebChat (门口的小门卫 WebSocket UI)。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/web/webchat</span>
-          <span>章节数量：7</span>
-          <a href="https://docs.openclaw.ai/web/webchat" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节主要在解释“Start Here”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Start Here”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“WebChat (门口的小门卫 WebSocket UI) Status: the macOS/iOS SwiftUI chat UI talks directly to the 门口的小门卫 WebSocket.”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“WebChat (门口的小门卫 WebSocket UI)”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># WebChat (Gateway WebSocket UI)</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Status: the macOS/iOS SwiftUI chat UI talks directly to the 门口的小门卫 WebSocket.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Status: the macOS/iOS SwiftUI chat UI talks directly to the Gateway WebSocket.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>What it is</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“What it is”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：A native chat UI for the 门口的小门卫 (no embed…、Uses the same sessions and routing rules…、Deterministic routing: replies always go…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>A native chat UI for the gateway (no embedded browser and no local static server).</li><li>Uses the same sessions and routing rules as other channels.</li><li>Deterministic routing: replies always go back to WebChat.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Quick start</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“1. Start the 门口的小门卫. 2. Open the WebChat UI (macOS/iOS app) or the Control UI chat tab. 3. Ensure 门口的小门卫 auth is 设置说明书u…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“1. Start the 门口的小门卫. 2. Open the WebChat UI (macOS/iOS app) or the Control UI chat tab. 3. Ensure 门口的小门卫 auth is 设置说明书u…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. Start the gateway. 2. Open the WebChat UI (macOS/iOS app) or the Control UI chat tab. 3. Ensure gateway auth is configured (required by default, even on loopback).</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>How it works (behavior)</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“How it works (behavior)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：The UI connects to the 门口的小门卫 WebSocket a…、chat.history is bounded for stability: 门口…、chat.inject appends an assistant note dir…、Aborted runs can keep partial assistant o…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>The UI connects to the Gateway WebSocket and uses <code>chat.history</code>, <code>chat.send</code>, and <code>chat.inject</code>.</li><li><code>chat.history</code> is bounded for stability: Gateway may truncate long text fields, omit heavy metadata, and replace oversized entries with <code>[chat.history omitted: message too large]</code>.</li><li><code>chat.inject</code> appends an assistant note directly to the transcript and broadcasts it to the UI (no agent run).</li><li>Aborted runs can keep partial assistant output visible in the UI.</li><li>Gateway persists aborted partial assistant text into transcript history when buffered output exists, and marks those entries with abort metadata.</li><li>History is always fetched from the gateway (no local file watching).</li><li>If the gateway is unreachable, WebChat is read-only.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Control UI 机器人朋友s 工具小帮手s panel</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“session can actually use at runtime, including core, 新本领插件, and 消息通道-owned 工具小帮手s. catalog semantics. **Available Right…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“session can actually use at runtime, including core, 新本领插件, and 消息通道-owned 工具小帮手s.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>session can actually use at runtime, including core, plugin, and channel-owned tools.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“catalog semantics.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>catalog semantics.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Available Right Now** list.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Available Right Now** list.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“precedence (allow/deny, per-机器人朋友 and provider/消息通道 overrides).”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>precedence (<code>allow</code>/<code>deny</code>, per-agent and provider/channel overrides).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Control UI agents tools panel”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：The Control UI /机器人朋友s 工具小帮手s panel has t…、**Available Right Now** uses 工具小帮手s.effec…、**工具小帮手 设置说明书uration** uses 工具小帮手s.catalo…、Runtime availability is session-scoped. S…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>The Control UI <code>/agents</code> Tools panel has two separate views:</li><li>**Available Right Now** uses <code>tools.effective(sessionKey=...)</code> and shows what the current</li><li>**Tool Configuration** uses <code>tools.catalog</code> and stays focused on profiles, overrides, and</li><li>Runtime availability is session-scoped. Switching sessions on the same agent can change the</li><li>The config editor does not imply runtime availability; effective access still follows policy</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Remote use</h2>
-            <p>这一节主要在解释“Remote use”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Remote use”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Remote use”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Remote mode tunnels the 门口的小门卫 WebSocket…、You do not need to run a separate WebChat…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Remote mode tunnels the gateway WebSocket over SSH/Tailscale.</li><li>You do not need to run a separate WebChat server.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>设置说明书uration reference (WebChat)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Full 设置说明书uration: 设置说明书uration 消息通道 options: Related global options:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Full 设置说明书uration: 设置说明书uration”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Full configuration: <a href="/gateway/configuration" target="_blank" rel="noreferrer">Configuration</a></p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“消息通道 options:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Channel options:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Configuration reference (WebChat)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：No dedicated webchat.* block. WebChat use…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>No dedicated <code>webchat.*</code> block. WebChat uses the gateway endpoint + auth settings below.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Related global options:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Related global options:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Configuration reference (WebChat)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：门口的小门卫.port, 门口的小门卫.bind: WebSocket host/…、门口的小门卫.auth.mode, 门口的小门卫.auth.token, 门口的小…、门口的小门卫.auth.mode: &quot;trusted-proxy&quot;: revers…、门口的小门卫.remote.url, 门口的小门卫.remote.token, 门…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>gateway.port</code>, <code>gateway.bind</code>: WebSocket host/port.</li><li><code>gateway.auth.mode</code>, <code>gateway.auth.token</code>, <code>gateway.auth.password</code>: WebSocket auth (token/password).</li><li><code>gateway.auth.mode: &quot;trusted-proxy&quot;</code>: reverse-proxy auth for browser clients (see <a href="/gateway/trusted-proxy-auth" target="_blank" rel="noreferrer">Trusted Proxy Auth</a>).</li><li><code>gateway.remote.url</code>, <code>gateway.remote.token</code>, <code>gateway.remote.password</code>: remote gateway target.</li><li><code>session.*</code>: session storage and main key defaults.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>💬 WebChat 像“直接坐到 Gateway 柜台前聊天”</h2>
+      <p>这页讲的不是某个第三方聊天软件接入，而是 OpenClaw 自己的一种聊天前台。你可以把它想成：总机房前面放了一个原生聊天窗口，你坐下来就能跟里面的人说话。</p>
+      <p>它最重要的特点不是好看，而是它不绕路。它直接连 Gateway WebSocket，用的也是同一套 session 和路由规则。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想在 macOS、iOS 或控制台里直接聊 OpenClaw 的人</span>
+      <span>这页最重要的是记住：WebChat 不是单独服务器，它只是 Gateway 的一个前台</span>
+      <a href="https://docs.openclaw.ai/web/webchat" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🪑 WebChat 到底是什么？就是“同一栋楼里的聊天柜台”</h2>
+    <p>官方开头讲得很直接：它是 native chat UI，直接走 Gateway WebSocket，不内嵌浏览器，也不用另起本地静态服务器。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🏢 同一栋楼</div>
+      <p>WebChat 不是楼外另搭的小棚子，它就在 Gateway 这栋楼里。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔌 直接接线</div>
+      <p>它不是先过浏览器壳子再绕一圈，而是直接连到 WebSocket 这根主线。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🎯 回复回到原柜台</div>
+      <p>官方说 deterministic routing，翻成人话就是：你从 WebChat 这个柜台说话，回信也会回这个柜台，不会乱跑到别的通道。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 一句话</div>
+      <p>WebChat 是 Gateway 自带的聊天前台，不是外接聊天平台。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🚀 Quick start 其实就是“三步坐到柜台前”</h2>
+    <p>官方 quick start 很短，因为这个前台本来就不想多绕弯。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>先启动 Gateway</h2>
+      <p>像先把整栋楼通电。柜台有人之前，后台得先活着。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>打开 WebChat UI</h2>
+      <p>像走到聊天柜台前坐下。你可以用 macOS / iOS app，也可以用 Control UI 的 chat 标签页。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>带上门票</h2>
+      <p>哪怕在 loopback，本页也提醒你要有 Gateway auth。柜台就在楼里，不代表谁都能直接坐下。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>先开楼，再坐到柜台前，再出示门票。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>📜 那几个接口名，翻成人话就是“翻聊天记录、递纸条、塞一张便签”</h2>
+    <p>官方在 behavior 里提了三个关键词：<code>chat.history</code>、<code>chat.send</code>、<code>chat.inject</code>。这三个特别值得记住。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>chat.history</code></div>
+      <p>像柜台阿姨帮你把聊天记录本翻出来，但太大的页会被裁掉一点，免得本子重得砸桌子。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>chat.send</code></div>
+      <p>像你真的把一张问题纸条交到后台，请 agent 去跑一轮正式处理。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>chat.inject</code></div>
+      <p>像工作人员直接往聊天本里塞一张便签，不重新叫 agent 出来开工。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">✂️ oversized history</div>
+      <p>官方说大块内容会被截短或替换成提示。翻成人话就是：为了让前台稳定，太重的旧记录不会原样全搬过来。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>✋ 中途打断时，为什么你还会看到半句话</h2>
+    <p>这一段很像真实使用体验说明。官方明确说，abort 过的运行，前台可能还会保留部分已经吐出来的助手文本。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🗣 已经说出口的半句</div>
+      <p>像工作人员刚说到一半你就喊停，但前面那半句你已经听到了，当然不会凭空消失。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧾 transcript history</div>
+      <p>如果 Gateway 已经缓冲到一部分输出，它也可能把这半段记进聊天本里，并标记“这是被中止的”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📚 没有本地私藏记录</div>
+      <p>历史总是从 Gateway 拿，不靠 WebChat 自己偷偷盯本地文件。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>你喊停以后，已经飘出来的字可能还留着，因为那是现场真实发生过的半句话。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧰 Tools panel 那段在说：配置清单，不等于现在这张桌子真能用</h2>
+    <p>Control UI 里的 Tools 面板有两个视图。官方写这段，其实是在提醒你别把“目录里有”误会成“此刻就能用”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">Available Right Now</div>
+      <p>像问“我现在坐的这张桌子上，此刻能摸到哪些工具”。它跟 session 紧紧绑定。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Tool Configuration</div>
+      <p>像看总仓库的目录、开关和规则，不代表全都已经摆在你眼前。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">换 session 会变</div>
+      <p>同一个 agent，不同 session 也像换了另一张桌子，手边工具可能不一样。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 一句话</div>
+      <p>“能配置” 和 “现在能用” 不是一回事。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🌍 Remote use 在讲：远程也只是把柜台搬远，不是再搭一套新服务器</h2>
+    <p>官方这句很重要：远程模式下，WebChat 还是通过 SSH / Tailscale 把 Gateway WebSocket 接过来。你不需要再单独跑一个 WebChat server。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧵 SSH / Tailscale</div>
+      <p>像把柜台和你之间修一条安全通道，让你在远处也能坐过来聊天。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚫 不用另起 WebChat server</div>
+      <p>像不用为了一个前台，再造一栋小楼。它还是吃 Gateway 这栋楼的电和线。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔐 还是那套 auth</div>
+      <p>不管本地还是远程，端点和认证规则仍然都看 Gateway 那边怎么设。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>远程 WebChat 只是把柜台搬远，不是再额外搭后台。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 WebChat 这页压成一句话</h2>
+    <p>WebChat 就是一个直接连 Gateway 的聊天柜台：翻记录、递消息、塞便签都在同一套机房规则里完成，远程时也只是把这张柜台通过安全通道搬到你面前。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议回头看 <code>/gateway/index</code> 或继续看 <code>/web/tui</code>。前者讲后台机房，后者讲另一种前台形态。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>
