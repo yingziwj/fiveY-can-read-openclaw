@@ -106,6 +106,8 @@ await copyDir(path.resolve("assets/icons"), path.join(DIST_DIR, "assets/icons"))
 
 const handcraftedPageMap = new Map([
   ["/cli/acp", path.resolve("content/handcrafted/cli.acp.zh.html")],
+  ["/cli/agent", path.resolve("content/handcrafted/cli.agent.zh.html")],
+  ["/cli/agents", path.resolve("content/handcrafted/cli.agents.zh.html")],
   ["/cli/browser", path.resolve("content/handcrafted/cli.browser.zh.html")],
   ["/cli/config", path.resolve("content/handcrafted/cli.config.zh.html")],
   ["/cli/configure", path.resolve("content/handcrafted/cli.configure.zh.html")],
@@ -114,8 +116,10 @@ const handcraftedPageMap = new Map([
   ["/cli/mcp", path.resolve("content/handcrafted/cli.mcp.zh.html")],
   ["/cli/node", path.resolve("content/handcrafted/cli.node.zh.html")],
   ["/cli/onboard", path.resolve("content/handcrafted/cli.onboard.zh.html")],
+  ["/cli/message", path.resolve("content/handcrafted/cli.message.zh.html")],
   ["/cli/status", path.resolve("content/handcrafted/cli.status.zh.html")],
   ["/cli/setup", path.resolve("content/handcrafted/cli.setup.zh.html")],
+  ["/cli/sessions", path.resolve("content/handcrafted/cli.sessions.zh.html")],
   ["/cli/tui", path.resolve("content/handcrafted/cli.tui.zh.html")],
   ["/cli/update", path.resolve("content/handcrafted/cli.update.zh.html")],
   ["/cli/logs", path.resolve("content/handcrafted/cli.logs.zh.html")],

@@ -1,0 +1,217 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧑‍🍳 <code>openclaw agents</code> 像“给每个小工位分房间、分名字、分门牌”</h2>
+      <p>这页讲的是怎么把 OpenClaw 分成一群小工位。每个工位可以住在自己的房间里，有自己的名字，也能接自己那一路消息。</p>
+      <p>你可以把它想成一排小桌子。桌子不只会坐人，还会收信、认门、换头像、换衣服。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想把不同任务拆给不同 agent 的人</span>
+      <span>这页最重要的是记住：agent 不只是一个名字，它还带 workspace、身份和路由</span>
+      <a href="https://docs.openclaw.ai/cli/agents" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🪑 先把桌子摆出来，再决定谁坐哪张</h2>
+    <p>官方最先给你的例子，基本都在做同一件事：新增、查看、删除、绑定、改身份。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📋</span>
+      <h2><code>openclaw agents list</code></h2>
+      <p>像先看看现在屋里已经摆了几张桌子。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">➕</span>
+      <h2><code>openclaw agents add work --workspace ...</code></h2>
+      <p>像给新工位再摆一张桌子，并把它放进自己的房间里。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪪</span>
+      <h2><code>openclaw agents set-identity</code></h2>
+      <p>像给这张桌子发名牌、贴头像、配主题色。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🗑</span>
+      <h2><code>openclaw agents delete work</code></h2>
+      <p>像把不用的桌子搬走，不让它继续占位置。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🏠 每个 agent 都有自己的小房间，房间里还会装自己的记忆和凭证</h2>
+    <p>官方说得很直白：这是 isolated agents。不是所有人挤在一个大屋里，而是各自有自己的空间。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🛏 workspace</div>
+      <p>像这位 agent 自己睡的小房间。它的配置、文件和节奏都可以单独放。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔐 auth</div>
+      <p>像房间门口自己的钥匙。不同 agent 可以用不同的门票和凭证。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧭 routing</div>
+      <p>像给门口贴路线牌，告诉外面的消息该进哪间房。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 一句话</div>
+      <p>agent 不是一张简单名单，它是一套独立小家当。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧷 Routing bindings 像“把某条门口小路钉到某一张桌子上”</h2>
+    <p>这部分是这页最核心的动作之一。你想让某个通道来的消息，直接去某个 agent，就要用 binding。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📍</span>
+      <h2><code>bind</code></h2>
+      <p>像在门口写：“这条路来的信，直接送到 work 桌。”</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧽</span>
+      <h2><code>unbind</code></h2>
+      <p>像把那张路线牌撕掉，别再往这里送。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">👀</span>
+      <h2><code>bindings</code></h2>
+      <p>像先看看现在门口都钉了哪些牌子。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话先记住</h2>
+      <p>binding 是给消息走路的，不是给 agent 起名字的。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🎯 accountId 这一段，像“同一扇门里还有不同小班次”</h2>
+    <p>官方特地提醒：一个 channel 里可能有默认账号，也可能有更细的账号 scope。没写清楚时，它会尽量帮你补默认值。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🔁 channel-only binding</div>
+      <p>像先钉一块大牌子：“这条通道来的信，先送给这张桌。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🏷 account-scoped binding</div>
+      <p>像再细一点，直接写到“这个频道里的哪一班车 / 哪一个账号”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>accountId: "*"</code></div>
+      <p>像一块“所有班次都算”的大篮子，但它不如明确账号那么具体。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>默认绑定像粗一点的路标，账号绑定像更细的门牌。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🪞 `IDENTITY.md` 这页像“工位自我介绍小卡片”</h2>
+    <p>每个 agent 工作区里都可以放一份自己的身份说明。它决定名字、主题、表情、头像。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📄</span>
+      <h2><code>IDENTITY.md</code></h2>
+      <p>像桌上贴的一张自我介绍卡：“我是谁，我长什么样，我是什么风格”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🖼</span>
+      <h2><code>avatar</code></h2>
+      <p>像头像牌。可以是工作区里的图、网址，或者直接的一张小图卡。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎨</span>
+      <h2><code>name</code> / <code>theme</code> / <code>emoji</code></h2>
+      <p>像给这个工位穿衣服、挑颜色、贴表情。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>身份不是装饰，它会让不同工位一眼就认出来。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🧾 `set-identity` 像“把名牌真的写进每张桌子的抽屉里”</h2>
+    <p>这条命令不是改外观那么简单，它会把身份字段写进配置里，成为以后一直能认出来的标签。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>--from-identity</code></div>
+      <p>像直接从 <code>IDENTITY.md</code> 抄一份到配置里，不用你手动一条条填。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--agent main</code></div>
+      <p>像只给主桌换名牌，不碰别的桌。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--name</code> / <code>--emoji</code> / <code>--avatar</code></div>
+      <p>像给这张桌子定名字、贴表情、挂头像。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>set-identity 不是改一句自我介绍，而是真的把身份写进家里。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第七站</p>
+    <h2>🧹 删除 agent 不是删掉一段记忆，而是把不用的桌子搬走</h2>
+    <p>官方给了 delete 作为最后一条常见动作。它是把不需要的工位从清单里移除，不让它继续参与路由。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw agents delete work</code></div>
+      <p>像把 work 这张桌子撤走，让房间里不再留它的位置。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧭 路由也会跟着变</div>
+      <p>桌子没了，门口那条路自然也不能再往它身上送。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">别和 unbind 混了</div>
+      <p>unbind 是拆路标，delete 是拆桌子。动作力度不一样。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>delete 是把工位从系统里移走，不是把名字随便擦一下。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw agents</code> 压成一句话</h2>
+    <p><code>openclaw agents</code> 就是在管一排独立小工位：建桌子、写名牌、绑门路、拆路标、搬走不用的桌子，让不同任务能在不同房间里各自安静地干活。</p>
+  </div>
+</section>

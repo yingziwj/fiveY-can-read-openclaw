@@ -1,0 +1,191 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📨 <code>openclaw message</code> 像“一个专门负责把信送出去的邮差”</h2>
+      <p>这页讲的是单次 outbound 动作。你要发消息、回消息、投票、点赞、删消息、拉群、改线程，它都能做。</p>
+      <p>你可以把它想成一个万能邮差。只是这位邮差会认不同门牌：WhatsApp、Telegram、Discord、Slack、Teams……每个门牌写法都不一样。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想从命令行直接给各个通道发消息的人</span>
+      <span>这页最重要的是记住：它先选通道，再选目标格式，再决定送什么动作</span>
+      <a href="https://docs.openclaw.ai/cli/message" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>📮 先选哪条路，再选往哪扇门送</h2>
+    <p>这页最容易乱的地方，就是通道名字和目标格式太多。但它们其实是两层东西。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2><code>--channel</code></h2>
+      <p>先决定这封信走哪条邮路。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2><code>--target</code></h2>
+      <p>再决定信要投进哪一扇门。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2><code>--account</code></h2>
+      <p>像同一个通道里还有不同班次和小账号，要时不时再细分。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2><code>--dry-run</code></h2>
+      <p>像先演一遍投递，不真的按门铃。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🚪 不同门牌长得不一样，所以目标写法也不一样</h2>
+    <p>官方把 WhatsApp、Telegram、Discord、Slack、Teams 的目标格式一个个列出来，就是为了告诉你：门牌不能乱填。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📱 WhatsApp</div>
+      <p>像直接写电话号码，或者某个群门牌。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">✈️ Telegram</div>
+      <p>像 chat id 或 @username，门牌可以是数字，也可以是昵称。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🎮 Discord / Slack</div>
+      <p>像频道门牌、用户门牌，还有 thread 这种小分房间。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🧩 Teams / Signal / iMessage</div>
+      <p>每种门都有自己的写法。你要送对，就得按它的规矩写。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🔐 SecretRef 这段，在说“邮差出门前先看这封信是不是机密邮件”</h2>
+    <p>发消息时，OpenClaw 会先把通道凭证找出来，再决定能不能送。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧾</span>
+      <h2>channel-scoped</h2>
+      <p>像先看这条邮路自己的钥匙够不够。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏷</span>
+      <h2>account-scoped</h2>
+      <p>像再看这个账号专用的小抽屉里有没有门票。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚫</span>
+      <h2>没拿到就失败</h2>
+      <p>如果那把钥匙真的拿不到，邮差不会假装已经送出去了。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>邮件能不能送，先看钥匙，再看门牌。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧸 `send`、`poll`、`react`，像三种最常见的“投递动作”</h2>
+    <p>这三种是最像日常动作的。一个是送信，一个是发投票，一个是回个表情。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>send</code></div>
+      <p>像把一张消息纸条投进对方门缝。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>poll</code></div>
+      <p>像发一个小投票箱，让大家在里面选。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>react</code></div>
+      <p>像在别人贴纸下面回一个小表情。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🧭 目标格式很重要</div>
+      <p>每种动作都得投到它能认的门牌上，不然就会送错门。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧵 `thread`、`pin`、`delete`、`edit`，像在聊天墙上整理贴纸</h2>
+    <p>这部分更像房间整理：有的消息要挂起来，有的要改，有的要删。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧷</span>
+      <h2><code>pin</code> / <code>unpin</code></h2>
+      <p>像把重要消息钉上墙，或者把它取下来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✏️</span>
+      <h2><code>edit</code></h2>
+      <p>像把写错的字改一改。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧽</span>
+      <h2><code>delete</code></h2>
+      <p>像把一张不该留的便条撕掉。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧵</span>
+      <h2><code>thread create</code> / <code>reply</code></h2>
+      <p>像给某条消息开一个小分支，让后续讨论不挤在主墙上。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🧷 Slack/Discord 的那些小动作，像给墙上贴更多小标签</h2>
+    <p>这页把很多 Discord/Slack 的次动作也列出来了。它们不是主线，但在实际工作里很常见。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🎯 `search`</div>
+      <p>像在大群房间里找某一句话。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🎉 `event create`</div>
+      <p>像在群里贴一张活动海报。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">⏳ `timeout` / `ban` / `kick`</div>
+      <p>像把捣乱的人请出去、暂时安静一下，或者直接拉黑。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 一句话</div>
+      <p>message 不只是发信，它是通道动作总开关。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw message</code> 压成一句话</h2>
+    <p><code>openclaw message</code> 就像一位懂很多门牌写法的邮差：先选通道，再选目标，再把消息、投票、表情、编辑和删除这些动作送到对的门上。</p>
+  </div>
+</section>

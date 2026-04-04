@@ -3970,360 +3970,172 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>sessions</h2>
-          <p>这一页像一本关于“sessions”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：openclaw sessions。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/cli/sessions</span>
-          <span>章节数量：2</span>
-          <a href="https://docs.openclaw.ai/cli/sessions" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“openclaw sessions List stored conversation sessions. Scope selection: openclaw sessions --all-机器人朋友s reads 设置说明书ured 机器…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“openclaw sessions”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># <code>openclaw sessions</code></p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“List stored conversation sessions.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>List stored conversation sessions.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw sessions”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw sessions --agent work”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw sessions --all-agents”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw sessions
-openclaw sessions --agent work
-openclaw sessions --all-agents
-openclaw sessions --active 120
-openclaw sessions --json</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Scope selection:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Scope selection:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：default: 设置说明书ured default 机器人朋友 store、--机器人朋友 &lt;id&gt;: one 设置说明书ured 机器人朋友 store、--all-机器人朋友s: aggregate all 设置说明书ured 机器人…、--store &lt;path&gt;: explicit store path (cann…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>default: configured default agent store</li><li><code>--agent &lt;id&gt;</code>: one configured agent store</li><li><code>--all-agents</code>: aggregate all configured agent stores</li><li><code>--store &lt;path&gt;</code>: explicit store path (cannot be combined with <code>--agent</code> or <code>--all-agents</code>)</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“openclaw sessions --all-机器人朋友s reads 设置说明书ured 机器人朋友 stores. 门口的小门卫 and ACP session discovery are broader: they also in…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>openclaw sessions --all-agents</code> reads configured agent stores. Gateway and ACP session discovery are broader: they also include disk-only stores found under the default <code>agents/</code> root or a templated <code>session.store</code> root. Those discovered stores must resolve to regular <code>sessions.json</code> files inside the agent root; symlinks and out-of-root paths are skipped.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“JSON examples:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>JSON examples:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“openclaw sessions --all-机器人朋友s --json:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>openclaw sessions --all-agents --json</code>:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“path”贴标签，意思是把它设置成“null”。</li><li>这里在给“stores”贴标签，意思是把它设置成“[”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{
-  &quot;path&quot;: null,
-  &quot;stores&quot;: [
-    { &quot;agentId&quot;: &quot;main&quot;, &quot;path&quot;: &quot;/home/user/.openclaw/agents/main/sessions/sessions.json&quot; },
-    { &quot;agentId&quot;: &quot;work&quot;, &quot;path&quot;: &quot;/home/user/.openclaw/agents/work/sessions/sessions.json&quot; }
-  ],
-  &quot;allAgents&quot;: true,
-  &quot;count&quot;: 2,
-  &quot;activeMinutes&quot;: null,
-  &quot;sessions&quot;: [
-    { &quot;agentId&quot;: &quot;main&quot;, &quot;key&quot;: &quot;agent:main:main&quot;, &quot;model&quot;: &quot;gpt-5&quot; },
-    { &quot;agentId&quot;: &quot;work&quot;, &quot;key&quot;: &quot;agent:work:main&quot;, &quot;model&quot;: &quot;claude-opus-4-6&quot; }
-  ]
-}</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Cleanup maintenance</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Run maintenance now (instead of waiting for the next write cycle): openclaw sessions cleanup uses session.maintenance s…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Run maintenance now (instead of waiting for the next write cycle):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Run maintenance now (instead of waiting for the next write cycle):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw sessions cleanup --dry-run”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw sessions cleanup --agent work --dry-run”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw sessions cleanup --all-agents --dry-run”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw sessions cleanup --dry-run
-openclaw sessions cleanup --agent work --dry-run
-openclaw sessions cleanup --all-agents --dry-run
-openclaw sessions cleanup --enforce
-openclaw sessions cleanup --enforce --active-key &quot;agent:main:telegram:direct:123&quot;
-openclaw sessions cleanup --json</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“openclaw sessions cleanup uses session.maintenance settings from 设置说明书:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>openclaw sessions cleanup</code> uses <code>session.maintenance</code> settings from config:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Cleanup maintenance”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Scope note: openclaw sessions cleanup mai…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Scope note: <code>openclaw sessions cleanup</code> maintains session stores/transcripts only. It does not prune cron run logs (<code>cron/runs/&lt;jobId&gt;.jsonl</code>), which are managed by <code>cron.runLog.maxBytes</code> and <code>cron.runLog.keepLines</code> in <a href="/automation/cron-jobs#configuration" target="_blank" rel="noreferrer">Cron configuration</a> and explained in <a href="/automation/cron-jobs#maintenance" target="_blank" rel="noreferrer">Cron maintenance</a>.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Cleanup maintenance”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：--dry-run: preview how many entries would…、In text mode, dry-run prints a per-sessio…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>--dry-run</code>: preview how many entries would be pruned/capped without writing.</li><li>In text mode, dry-run prints a per-session action table (<code>Action</code>, <code>Key</code>, <code>Age</code>, <code>Model</code>, <code>Flags</code>) so you can see what would be kept vs removed.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Cleanup maintenance”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：--enforce: apply maintenance even when se…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>--enforce</code>: apply maintenance even when <code>session.maintenance.mode</code> is <code>warn</code>.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Cleanup maintenance”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：--active-key &lt;key&gt;: protect a specific ac…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>--active-key &lt;key&gt;</code>: protect a specific active key from disk-budget eviction.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Cleanup maintenance”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：--机器人朋友 &lt;id&gt;: run cleanup for one 设置说明书ur…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>--agent &lt;id&gt;</code>: run cleanup for one configured agent store.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Cleanup maintenance”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：--all-机器人朋友s: run cleanup for all 设置说明书ur…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>--all-agents</code>: run cleanup for all configured agent stores.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Cleanup maintenance”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：--store &lt;path&gt;: run against a specific se…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>--store &lt;path&gt;</code>: run against a specific <code>sessions.json</code> file.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Cleanup maintenance”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：--json: print a JSON summary. With --all-…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>--json</code>: print a JSON summary. With <code>--all-agents</code>, output includes one summary per store.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“openclaw sessions cleanup --all-机器人朋友s --dry-run --json:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>openclaw sessions cleanup --all-agents --dry-run --json</code>:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“allAgents”贴标签，意思是把它设置成“true”。</li><li>这里在给“mode”贴标签，意思是把它设置成“warn”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{
-  &quot;allAgents&quot;: true,
-  &quot;mode&quot;: &quot;warn&quot;,
-  &quot;dryRun&quot;: true,
-  &quot;stores&quot;: [
-    {
-      &quot;agentId&quot;: &quot;main&quot;,
-      &quot;storePath&quot;: &quot;/home/user/.openclaw/agents/main/sessions/sessions.json&quot;,
-      &quot;beforeCount&quot;: 120,
-      &quot;afterCount&quot;: 80,
-      &quot;pruned&quot;: 40,
-      &quot;capped&quot;: 0
-    },
-    {
-      &quot;agentId&quot;: &quot;work&quot;,
-      &quot;storePath&quot;: &quot;/home/user/.openclaw/agents/work/sessions/sessions.json&quot;,
-      &quot;beforeCount&quot;: 18,
-      &quot;afterCount&quot;: 18,
-      &quot;pruned&quot;: 0,
-      &quot;capped&quot;: 0
-    }
-  ]
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Related:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Related:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Cleanup maintenance”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Session 设置说明书: 设置说明书uration reference。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Session config: <a href="/gateway/configuration-reference#session" target="_blank" rel="noreferrer">Configuration reference</a></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🗂 <code>openclaw sessions</code> 像“翻一排装着聊天故事的小抽屉”</h2>
+      <p>这页不是在管消息怎么发，而是在管聊天故事放在哪、放了多少、哪些还是热乎的。每个 session 像一个小抽屉，里面装着一段对话的时间线。</p>
+      <p>你可以把它想成文件柜。柜子里不是文件名乱飞，而是一格一格地躺着正在发生或已经发生过的会话。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想查看、整理、清理会话的人</span>
+      <span>这页最重要的是记住：sessions 是“存档和维护”，不是“发消息”</span>
+      <a href="https://docs.openclaw.ai/cli/sessions" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🪟 先看最常见的四种开抽屉方式</h2>
+    <p>官方例子很直接：单个 agent、所有 agent、最近活跃的、或者直接看 JSON。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧑</span>
+      <h2><code>openclaw sessions</code></h2>
+      <p>像默认翻当前这个工位的抽屉。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">👷</span>
+      <h2><code>--agent work</code></h2>
+      <p>像只看 work 这个桌子的抽屉。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏷</span>
+      <h2><code>--all-agents</code></h2>
+      <p>像把所有桌子的抽屉都翻出来，摆成一排看。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🕒</span>
+      <h2><code>--active 120</code></h2>
+      <p>像只看最近两小时还热着的抽屉。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🏠 agent store 像“每张桌子自己的文件夹”</h2>
+    <p>sessions 不只在一个大柜子里。它们可以按 agent 分开存，也可以从更大的范围里找出来。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📁 默认 store</div>
+      <p>像当前桌子的默认文件夹，最常见，也最容易先看。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--store &lt;path&gt;</code></div>
+      <p>像你自己指定一个更远的文件夹，不走默认路线。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--all-agents</code></div>
+      <p>像把所有工位的文件夹都拿出来，不漏一个。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 一句话</div>
+      <p>session 的位置可以很分散，但它们都还是小抽屉。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🔍 `--active` 像“只看最近还热着的聊天页”</h2>
+    <p>这个参数特别适合排查：你不想翻几百页，只想看最近还在动的那几个 session。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🔥</span>
+      <h2>最近活跃</h2>
+      <p>像只看刚刚有人坐过、椅子还是热的抽屉。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧊</span>
+      <h2>没那么活跃的</h2>
+      <p>像已经凉下来的旧抽屉，必要时再翻。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>很适合排障</h2>
+      <p>先看热的抽屉，常常能最快找到刚刚发生了什么。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>一句话</h2>
+      <p>active 是帮你缩小抽屉范围，不用整柜乱翻。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧹 `cleanup` 像“整理抽屉，不是删故事本身”</h2>
+    <p>官方给 sessions 还配了维护动作。它不是发消息，而是帮你清理、裁剪、收拾存档。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw sessions cleanup --dry-run</code></div>
+      <p>像先拿着扫帚比划一下，不真的扔东西。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--enforce</code></div>
+      <p>像说“这次别只提醒，真的照着收拾”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--active-key</code></div>
+      <p>像先保护一张你正在用的抽屉卡，别把它误收走。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>cleanup 是整理仓库，不是抹掉故事。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧾 JSON 输出像“把抽屉目录变成机器能数的表格”</h2>
+    <p>如果你不是人眼看，而是要给脚本或别的工具读，JSON 就很合适。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧮</span>
+      <h2><code>--json</code></h2>
+      <p>像把抽屉名单改成一张整齐的统计表。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📚</span>
+      <h2><code>sessions</code> 不是聊天本</h2>
+      <p>它更像仓库索引。真正聊天内容在抽屉里，它负责告诉你抽屉在哪里、还有几格。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>机器读起来更稳</h2>
+      <p>JSON 让工具更容易自动判断要不要清理、要不要保留。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>一句话</h2>
+      <p>要给机器看时，JSON 比人话更整齐。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw sessions</code> 压成一句话</h2>
+    <p><code>openclaw sessions</code> 就是翻会话抽屉的命令：看哪一柜、哪一格、哪一个最近还热着，再决定要不要清理或整理。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

@@ -3970,946 +3970,198 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>message</h2>
-          <p>这一页像一本关于“小纸条消息”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：openclaw 小纸条消息。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/cli/message</span>
-          <span>章节数量：13</span>
-          <a href="https://docs.openclaw.ai/cli/message" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“openclaw 小纸条消息 Single outbound 魔法口令 for sending 小纸条消息s and 消息通道 actions (Discord/Google Chat/Slack/Mattermost (新本领插件)/T…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“openclaw 小纸条消息”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># <code>openclaw message</code></p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Single outbound 魔法口令 for sending 小纸条消息s and 消息通道 actions (Discord/Google Chat/Slack/Mattermost (新本领插件)/Telegram/WhatsAp…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Single outbound command for sending messages and channel actions (Discord/Google Chat/Slack/Mattermost (plugin)/Telegram/WhatsApp/Signal/iMessage/Microsoft Teams).</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Usage</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“消息通道 selection: Target formats (--target): Name lookup:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw message &lt;subcommand&gt; [flags]”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">openclaw message &lt;subcommand&gt; [flags]</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“消息通道 selection:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Channel selection:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Usage”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：--消息通道 required if more than one 消息通道 is…、If exactly one 消息通道 is 设置说明书ured, it beco…、Values: whatsapp telegram discord googlec…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>--channel</code> required if more than one channel is configured.</li><li>If exactly one channel is configured, it becomes the default.</li><li>Values: <code>whatsapp|telegram|discord|googlechat|slack|mattermost|signal|imessage|msteams</code> (Mattermost requires plugin)</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Target formats (--target):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Target formats (<code>--target</code>):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Usage”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：WhatsApp: E.164 or 大家一起的房间 JID、Telegram: chat id or @username、Discord: 消息通道:&lt;id&gt; or user:&lt;id&gt; (or &lt;@id&gt;…、Google Chat: spaces/&lt;spaceId&gt; or users/&lt;u…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>WhatsApp: E.164 or group JID</li><li>Telegram: chat id or <code>@username</code></li><li>Discord: <code>channel:&lt;id&gt;</code> or <code>user:&lt;id&gt;</code> (or <code>&lt;@id&gt;</code> mention; raw numeric ids are treated as channels)</li><li>Google Chat: <code>spaces/&lt;spaceId&gt;</code> or <code>users/&lt;userId&gt;</code></li><li>Slack: <code>channel:&lt;id&gt;</code> or <code>user:&lt;id&gt;</code> (raw channel id is accepted)</li><li>Mattermost (plugin): <code>channel:&lt;id&gt;</code>, <code>user:&lt;id&gt;</code>, or <code>@username</code> (bare ids are treated as channels)</li><li>Signal: <code>+E.164</code>, <code>group:&lt;id&gt;</code>, <code>signal:+E.164</code>, <code>signal:group:&lt;id&gt;</code>, or <code>username:&lt;name&gt;</code>/<code>u:&lt;name&gt;</code></li><li>iMessage: handle, <code>chat_id:&lt;id&gt;</code>, <code>chat_guid:&lt;guid&gt;</code>, or <code>chat_identifier:&lt;id&gt;</code></li><li>Microsoft Teams: conversation id (<code>19:...@thread.tacv2</code>) or <code>conversation:&lt;id&gt;</code> or <code>user:&lt;aad-object-id&gt;</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Name lookup:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Name lookup:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Usage”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：For supported providers (Discord/Slack/et…、On cache miss, OpenClaw will attempt a li…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>For supported providers (Discord/Slack/etc), channel names like <code>Help</code> or <code>#help</code> are resolved via the directory cache.</li><li>On cache miss, OpenClaw will attempt a live directory lookup when the provider supports it.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Common flags</h2>
-            <p>这一节主要在解释“Common flags”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Common flags”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Common flags”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：--消息通道 &lt;name&gt;、--account &lt;id&gt;、--target &lt;dest&gt; (target 消息通道 or user for…、--targets &lt;name&gt; (repeat; broadcast only)。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>--channel &lt;name&gt;</code></li><li><code>--account &lt;id&gt;</code></li><li><code>--target &lt;dest&gt;</code> (target channel or user for send/poll/read/etc)</li><li><code>--targets &lt;name&gt;</code> (repeat; broadcast only)</li><li><code>--json</code></li><li><code>--dry-run</code></li><li><code>--verbose</code></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>SecretRef behavior</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“SecretRef behavior”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：openclaw 小纸条消息 resolves supported 消息通道 Se…、Resolution is scoped to the active action…、消息通道-scoped when --消息通道 is set (or inferr…、account-scoped when --account is set (消息通…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>openclaw message</code> resolves supported channel SecretRefs before running the selected action.</li><li>Resolution is scoped to the active action target when possible:</li><li>channel-scoped when <code>--channel</code> is set (or inferred from prefixed targets like <code>discord:...</code>)</li><li>account-scoped when <code>--account</code> is set (channel globals + selected account surfaces)</li><li>when <code>--account</code> is omitted, OpenClaw does not force a <code>default</code> account SecretRef scope</li><li>Unresolved SecretRefs on unrelated channels do not block a targeted message action.</li><li>If the selected channel/account SecretRef is unresolved, the command fails closed for that action.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Core</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Core”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：send、消息通道s: WhatsApp/Telegram/Discord/Google C…、Required: --target, plus --小纸条消息 or --med…、Optional: --media, --reply-to, --thread-i…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>send</code></li><li>Channels: WhatsApp/Telegram/Discord/Google Chat/Slack/Mattermost (plugin)/Signal/iMessage/Microsoft Teams</li><li>Required: <code>--target</code>, plus <code>--message</code> or <code>--media</code></li><li>Optional: <code>--media</code>, <code>--reply-to</code>, <code>--thread-id</code>, <code>--gif-playback</code></li><li>Telegram only: <code>--buttons</code> (requires <code>channels.telegram.capabilities.inlineButtons</code> to allow it)</li><li>Telegram only: <code>--force-document</code> (send images and GIFs as documents to avoid Telegram compression)</li><li>Telegram only: <code>--thread-id</code> (forum topic id)</li><li>Slack only: <code>--thread-id</code> (thread timestamp; <code>--reply-to</code> uses the same field)</li><li>WhatsApp only: <code>--gif-playback</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Core”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：poll、消息通道s: WhatsApp/Telegram/Discord/Matrix/M…、Required: --target, --poll-question, --po…、Optional: --poll-multi。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>poll</code></li><li>Channels: WhatsApp/Telegram/Discord/Matrix/Microsoft Teams</li><li>Required: <code>--target</code>, <code>--poll-question</code>, <code>--poll-option</code> (repeat)</li><li>Optional: <code>--poll-multi</code></li><li>Discord only: <code>--poll-duration-hours</code>, <code>--silent</code>, <code>--message</code></li><li>Telegram only: <code>--poll-duration-seconds</code> (5-600), <code>--silent</code>, <code>--poll-anonymous</code> / <code>--poll-public</code>, <code>--thread-id</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Core”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：react、消息通道s: Discord/Google Chat/Slack/Telegram…、Required: --小纸条消息-id, --target、Optional: --emoji, --remove, --participan…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>react</code></li><li>Channels: Discord/Google Chat/Slack/Telegram/WhatsApp/Signal</li><li>Required: <code>--message-id</code>, <code>--target</code></li><li>Optional: <code>--emoji</code>, <code>--remove</code>, <code>--participant</code>, <code>--from-me</code>, <code>--target-author</code>, <code>--target-author-uuid</code></li><li>Note: <code>--remove</code> requires <code>--emoji</code> (omit <code>--emoji</code> to clear own reactions where supported; see /tools/reactions)</li><li>WhatsApp only: <code>--participant</code>, <code>--from-me</code></li><li>Signal group reactions: <code>--target-author</code> or <code>--target-author-uuid</code> required</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Core”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：reactions、消息通道s: Discord/Google Chat/Slack、Required: --小纸条消息-id, --target、Optional: --limit。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>reactions</code></li><li>Channels: Discord/Google Chat/Slack</li><li>Required: <code>--message-id</code>, <code>--target</code></li><li>Optional: <code>--limit</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Core”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：read、消息通道s: Discord/Slack、Required: --target、Optional: --limit, --before, --after。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>read</code></li><li>Channels: Discord/Slack</li><li>Required: <code>--target</code></li><li>Optional: <code>--limit</code>, <code>--before</code>, <code>--after</code></li><li>Discord only: <code>--around</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Core”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：edit、消息通道s: Discord/Slack、Required: --小纸条消息-id, --小纸条消息, --target。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>edit</code></li><li>Channels: Discord/Slack</li><li>Required: <code>--message-id</code>, <code>--message</code>, <code>--target</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Core”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：delete、消息通道s: Discord/Slack/Telegram、Required: --小纸条消息-id, --target。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>delete</code></li><li>Channels: Discord/Slack/Telegram</li><li>Required: <code>--message-id</code>, <code>--target</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Core”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pin / unpin、消息通道s: Discord/Slack、Required: --小纸条消息-id, --target。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>pin</code> / <code>unpin</code></li><li>Channels: Discord/Slack</li><li>Required: <code>--message-id</code>, <code>--target</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Core”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：pins (list)、消息通道s: Discord/Slack、Required: --target。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>pins</code> (list)</li><li>Channels: Discord/Slack</li><li>Required: <code>--target</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Core”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：permissions、消息通道s: Discord、Required: --target。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>permissions</code></li><li>Channels: Discord</li><li>Required: <code>--target</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Core”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：search、消息通道s: Discord、Required: --guild-id, --query、Optional: --消息通道-id, --消息通道-ids (repeat),…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>search</code></li><li>Channels: Discord</li><li>Required: <code>--guild-id</code>, <code>--query</code></li><li>Optional: <code>--channel-id</code>, <code>--channel-ids</code> (repeat), <code>--author-id</code>, <code>--author-ids</code> (repeat), <code>--limit</code></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Threads</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Threads”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：thread create、消息通道s: Discord、Required: --thread-name, --target (消息通道 i…、Optional: --小纸条消息-id, --小纸条消息, --auto-arc…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>thread create</code></li><li>Channels: Discord</li><li>Required: <code>--thread-name</code>, <code>--target</code> (channel id)</li><li>Optional: <code>--message-id</code>, <code>--message</code>, <code>--auto-archive-min</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Threads”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：thread list、消息通道s: Discord、Required: --guild-id、Optional: --消息通道-id, --include-archived,…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>thread list</code></li><li>Channels: Discord</li><li>Required: <code>--guild-id</code></li><li>Optional: <code>--channel-id</code>, <code>--include-archived</code>, <code>--before</code>, <code>--limit</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Threads”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：thread reply、消息通道s: Discord、Required: --target (thread id), --小纸条消息、Optional: --media, --reply-to。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>thread reply</code></li><li>Channels: Discord</li><li>Required: <code>--target</code> (thread id), <code>--message</code></li><li>Optional: <code>--media</code>, <code>--reply-to</code></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Emojis</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Emojis”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：emoji list、Discord: --guild-id、Slack: no extra flags。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>emoji list</code></li><li>Discord: <code>--guild-id</code></li><li>Slack: no extra flags</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Emojis”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：emoji upload、消息通道s: Discord、Required: --guild-id, --emoji-name, --med…、Optional: --role-ids (repeat)。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>emoji upload</code></li><li>Channels: Discord</li><li>Required: <code>--guild-id</code>, <code>--emoji-name</code>, <code>--media</code></li><li>Optional: <code>--role-ids</code> (repeat)</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>Stickers</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Stickers”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：sticker send、消息通道s: Discord、Required: --target, --sticker-id (repeat)、Optional: --小纸条消息。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>sticker send</code></li><li>Channels: Discord</li><li>Required: <code>--target</code>, <code>--sticker-id</code> (repeat)</li><li>Optional: <code>--message</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Stickers”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：sticker upload、消息通道s: Discord、Required: --guild-id, --sticker-name, --s…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>sticker upload</code></li><li>Channels: Discord</li><li>Required: <code>--guild-id</code>, <code>--sticker-name</code>, <code>--sticker-desc</code>, <code>--sticker-tags</code>, <code>--media</code></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>Roles / 消息通道s / Members / Voice</h2>
-            <p>这一节主要在解释“Roles / 消息通道s / Members / Voice”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Roles / 消息通道s / Members / Voice”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Roles / Channels / Members / Voice”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：role info (Discord): --guild-id、role add / role remove (Discord): --guild…、消息通道 info (Discord): --target、消息通道 list (Discord): --guild-id。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>role info</code> (Discord): <code>--guild-id</code></li><li><code>role add</code> / <code>role remove</code> (Discord): <code>--guild-id</code>, <code>--user-id</code>, <code>--role-id</code></li><li><code>channel info</code> (Discord): <code>--target</code></li><li><code>channel list</code> (Discord): <code>--guild-id</code></li><li><code>member info</code> (Discord/Slack): <code>--user-id</code> (+ <code>--guild-id</code> for Discord)</li><li><code>voice status</code> (Discord): <code>--guild-id</code>, <code>--user-id</code></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>Events</h2>
-            <p>这一节主要在解释“Events”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Events”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Events”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：event list (Discord): --guild-id、event create (Discord): --guild-id, --eve…、Optional: --end-time, --desc, --消息通道-id,…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>event list</code> (Discord): <code>--guild-id</code></li><li><code>event create</code> (Discord): <code>--guild-id</code>, <code>--event-name</code>, <code>--start-time</code></li><li>Optional: <code>--end-time</code>, <code>--desc</code>, <code>--channel-id</code>, <code>--location</code>, <code>--event-type</code></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-11">
-          <div class="section-heading">
-            <p class="section-kicker">第 11 站</p>
-            <h2>Moderation (Discord)</h2>
-            <p>这一节主要在解释“Moderation (Discord)”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Moderation (Discord)”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Moderation (Discord)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：timeout: --guild-id, --user-id (optional…、kick: --guild-id, --user-id (+ --reason)、ban: --guild-id, --user-id (+ --delete-da…、timeout also supports --reason。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>timeout</code>: <code>--guild-id</code>, <code>--user-id</code> (optional <code>--duration-min</code> or <code>--until</code>; omit both to clear timeout)</li><li><code>kick</code>: <code>--guild-id</code>, <code>--user-id</code> (+ <code>--reason</code>)</li><li><code>ban</code>: <code>--guild-id</code>, <code>--user-id</code> (+ <code>--delete-days</code>, <code>--reason</code>)</li><li><code>timeout</code> also supports <code>--reason</code></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-12">
-          <div class="section-heading">
-            <p class="section-kicker">第 12 站</p>
-            <h2>Broadcast</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Broadcast”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：broadcast、消息通道s: any 设置说明书ured 消息通道; use --消息通道 all…、Required: --targets (repeat)、Optional: --小纸条消息, --media, --dry-run。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>broadcast</code></li><li>Channels: any configured channel; use <code>--channel all</code> to target all providers</li><li>Required: <code>--targets</code> (repeat)</li><li>Optional: <code>--message</code>, <code>--media</code>, <code>--dry-run</code></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-13">
-          <div class="section-heading">
-            <p class="section-kicker">第 13 站</p>
-            <h2>Examples</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Send a Discord reply: Send a Discord 小纸条消息 with components: See Discord components for the full schema. Create a Discor…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Send a Discord reply:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Send a Discord reply:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw message send --channel discord \”。你可以把它想成对机器人说的完整命令。</li><li>这里在给“--target channel”贴标签，意思是把它设置成“123 --message hi --reply-to 456”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">openclaw message send --channel discord \
-  --target channel:123 --message &quot;hi&quot; --reply-to 456</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Send a Discord 小纸条消息 with components:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Send a Discord message with components:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw message send --channel discord \”。你可以把它想成对机器人说的完整命令。</li><li>这里在给“--target channel”贴标签，意思是把它设置成“123 --message Choose: \”。</li><li>这里在给“--components {text”贴标签，意思是把它设置成“Choose a pathblocks:[{type:actionsbuttons:[{label:Approvestyle:success}{label:Declinestyle:danger}]}]}&#39;”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">openclaw message send --channel discord \
-  --target channel:123 --message &quot;Choose:&quot; \
-  --components &#39;{&quot;text&quot;:&quot;Choose a path&quot;,&quot;blocks&quot;:[{&quot;type&quot;:&quot;actions&quot;,&quot;buttons&quot;:[{&quot;label&quot;:&quot;Approve&quot;,&quot;style&quot;:&quot;success&quot;},{&quot;label&quot;:&quot;Decline&quot;,&quot;style&quot;:&quot;danger&quot;}]}]}&#39;</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“See Discord components for the full schema.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>See <a href="/channels/discord#interactive-components" target="_blank" rel="noreferrer">Discord components</a> for the full schema.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Create a Discord poll:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Create a Discord poll:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw message poll --channel discord \”。你可以把它想成对机器人说的完整命令。</li><li>这里在给“--target channel”贴标签，意思是把它设置成“123 \”。</li><li>这一行“--poll-question &quot;Snack?&quot; \”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">openclaw message poll --channel discord \
-  --target channel:123 \
-  --poll-question &quot;Snack?&quot; \
-  --poll-option Pizza --poll-option Sushi \
-  --poll-multi --poll-duration-hours 48</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Create a Telegram poll (auto-close in 2 minutes):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Create a Telegram poll (auto-close in 2 minutes):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw message poll --channel telegram \”。你可以把它想成对机器人说的完整命令。</li><li>这一行“--target @mychat \”是当前步骤要交给电脑的一小块提示。</li><li>这一行“--poll-question &quot;Lunch?&quot; \”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">openclaw message poll --channel telegram \
-  --target @mychat \
-  --poll-question &quot;Lunch?&quot; \
-  --poll-option Pizza --poll-option Sushi \
-  --poll-duration-seconds 120 --silent</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Send a Teams proactive 小纸条消息:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Send a Teams proactive message:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw message send --channel msteams \”。你可以把它想成对机器人说的完整命令。</li><li>这里在给“--target conversation”贴标签，意思是把它设置成“19:abc@thread.tacv2 --message hi”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">openclaw message send --channel msteams \
-  --target conversation:19:abc@thread.tacv2 --message &quot;hi&quot;</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Create a Teams poll:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Create a Teams poll:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw message poll --channel msteams \”。你可以把它想成对机器人说的完整命令。</li><li>这里在给“--target conversation”贴标签，意思是把它设置成“19:abc@thread.tacv2 \”。</li><li>这一行“--poll-question &quot;Lunch?&quot; \”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">openclaw message poll --channel msteams \
-  --target conversation:19:abc@thread.tacv2 \
-  --poll-question &quot;Lunch?&quot; \
-  --poll-option Pizza --poll-option Sushi</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“React in Slack:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>React in Slack:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw message react --channel slack \”。你可以把它想成对机器人说的完整命令。</li><li>这一行“--target C123 --message-id 456 --emoji &quot;✅&quot;”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">openclaw message react --channel slack \
-  --target C123 --message-id 456 --emoji &quot;✅&quot;</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“React in a Signal 大家一起的房间:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>React in a Signal group:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw message react --channel signal \”。你可以把它想成对机器人说的完整命令。</li><li>这里在给“--target signal”贴标签，意思是把它设置成“group:abc123 --message-id 1737630212345 \”。</li><li>这一行“--emoji &quot;✅&quot; --target-author-uuid 123e4567-e89b-12d3-a456-426614174000”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">openclaw message react --channel signal \
-  --target signal:group:abc123 --message-id 1737630212345 \
-  --emoji &quot;✅&quot; --target-author-uuid 123e4567-e89b-12d3-a456-426614174000</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Send Telegram inline buttons:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Send Telegram inline buttons:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这里在给“openclaw message send --channel telegram --target @mychat --message Choose”贴标签，意思是把它设置成“\”。</li><li>这里在给“--buttons [ [{text”贴标签，意思是把它设置成“Yescallback_data:cmd:yes}] [{text:Nocallback_data:cmd:no}] ]&#39;”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">openclaw message send --channel telegram --target @mychat --message &quot;Choose:&quot; \
-  --buttons &#39;[ [{&quot;text&quot;:&quot;Yes&quot;,&quot;callback_data&quot;:&quot;cmd:yes&quot;}], [{&quot;text&quot;:&quot;No&quot;,&quot;callback_data&quot;:&quot;cmd:no&quot;}] ]&#39;</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Send a Telegram image as a document to avoid compression:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Send a Telegram image as a document to avoid compression:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw message send --channel telegram --target @mychat \”。你可以把它想成对机器人说的完整命令。</li><li>这一行“--media ./diagram.png --force-document”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw message send --channel telegram --target @mychat \
-  --media ./diagram.png --force-document</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📨 <code>openclaw message</code> 像“一个专门负责把信送出去的邮差”</h2>
+      <p>这页讲的是单次 outbound 动作。你要发消息、回消息、投票、点赞、删消息、拉群、改线程，它都能做。</p>
+      <p>你可以把它想成一个万能邮差。只是这位邮差会认不同门牌：WhatsApp、Telegram、Discord、Slack、Teams……每个门牌写法都不一样。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想从命令行直接给各个通道发消息的人</span>
+      <span>这页最重要的是记住：它先选通道，再选目标格式，再决定送什么动作</span>
+      <a href="https://docs.openclaw.ai/cli/message" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>📮 先选哪条路，再选往哪扇门送</h2>
+    <p>这页最容易乱的地方，就是通道名字和目标格式太多。但它们其实是两层东西。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2><code>--channel</code></h2>
+      <p>先决定这封信走哪条邮路。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2><code>--target</code></h2>
+      <p>再决定信要投进哪一扇门。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2><code>--account</code></h2>
+      <p>像同一个通道里还有不同班次和小账号，要时不时再细分。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2><code>--dry-run</code></h2>
+      <p>像先演一遍投递，不真的按门铃。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🚪 不同门牌长得不一样，所以目标写法也不一样</h2>
+    <p>官方把 WhatsApp、Telegram、Discord、Slack、Teams 的目标格式一个个列出来，就是为了告诉你：门牌不能乱填。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📱 WhatsApp</div>
+      <p>像直接写电话号码，或者某个群门牌。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">✈️ Telegram</div>
+      <p>像 chat id 或 @username，门牌可以是数字，也可以是昵称。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🎮 Discord / Slack</div>
+      <p>像频道门牌、用户门牌，还有 thread 这种小分房间。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🧩 Teams / Signal / iMessage</div>
+      <p>每种门都有自己的写法。你要送对，就得按它的规矩写。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🔐 SecretRef 这段，在说“邮差出门前先看这封信是不是机密邮件”</h2>
+    <p>发消息时，OpenClaw 会先把通道凭证找出来，再决定能不能送。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧾</span>
+      <h2>channel-scoped</h2>
+      <p>像先看这条邮路自己的钥匙够不够。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏷</span>
+      <h2>account-scoped</h2>
+      <p>像再看这个账号专用的小抽屉里有没有门票。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚫</span>
+      <h2>没拿到就失败</h2>
+      <p>如果那把钥匙真的拿不到，邮差不会假装已经送出去了。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>邮件能不能送，先看钥匙，再看门牌。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧸 `send`、`poll`、`react`，像三种最常见的“投递动作”</h2>
+    <p>这三种是最像日常动作的。一个是送信，一个是发投票，一个是回个表情。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>send</code></div>
+      <p>像把一张消息纸条投进对方门缝。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>poll</code></div>
+      <p>像发一个小投票箱，让大家在里面选。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>react</code></div>
+      <p>像在别人贴纸下面回一个小表情。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🧭 目标格式很重要</div>
+      <p>每种动作都得投到它能认的门牌上，不然就会送错门。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧵 `thread`、`pin`、`delete`、`edit`，像在聊天墙上整理贴纸</h2>
+    <p>这部分更像房间整理：有的消息要挂起来，有的要改，有的要删。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧷</span>
+      <h2><code>pin</code> / <code>unpin</code></h2>
+      <p>像把重要消息钉上墙，或者把它取下来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✏️</span>
+      <h2><code>edit</code></h2>
+      <p>像把写错的字改一改。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧽</span>
+      <h2><code>delete</code></h2>
+      <p>像把一张不该留的便条撕掉。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧵</span>
+      <h2><code>thread create</code> / <code>reply</code></h2>
+      <p>像给某条消息开一个小分支，让后续讨论不挤在主墙上。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🧷 Slack/Discord 的那些小动作，像给墙上贴更多小标签</h2>
+    <p>这页把很多 Discord/Slack 的次动作也列出来了。它们不是主线，但在实际工作里很常见。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🎯 `search`</div>
+      <p>像在大群房间里找某一句话。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🎉 `event create`</div>
+      <p>像在群里贴一张活动海报。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">⏳ `timeout` / `ban` / `kick`</div>
+      <p>像把捣乱的人请出去、暂时安静一下，或者直接拉黑。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 一句话</div>
+      <p>message 不只是发信，它是通道动作总开关。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw message</code> 压成一句话</h2>
+    <p><code>openclaw message</code> 就像一位懂很多门牌写法的邮差：先选通道，再选目标，再把消息、投票、表情、编辑和删除这些动作送到对的门上。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

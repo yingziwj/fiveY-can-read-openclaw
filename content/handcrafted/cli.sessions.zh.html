@@ -1,0 +1,165 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🗂 <code>openclaw sessions</code> 像“翻一排装着聊天故事的小抽屉”</h2>
+      <p>这页不是在管消息怎么发，而是在管聊天故事放在哪、放了多少、哪些还是热乎的。每个 session 像一个小抽屉，里面装着一段对话的时间线。</p>
+      <p>你可以把它想成文件柜。柜子里不是文件名乱飞，而是一格一格地躺着正在发生或已经发生过的会话。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想查看、整理、清理会话的人</span>
+      <span>这页最重要的是记住：sessions 是“存档和维护”，不是“发消息”</span>
+      <a href="https://docs.openclaw.ai/cli/sessions" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🪟 先看最常见的四种开抽屉方式</h2>
+    <p>官方例子很直接：单个 agent、所有 agent、最近活跃的、或者直接看 JSON。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧑</span>
+      <h2><code>openclaw sessions</code></h2>
+      <p>像默认翻当前这个工位的抽屉。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">👷</span>
+      <h2><code>--agent work</code></h2>
+      <p>像只看 work 这个桌子的抽屉。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏷</span>
+      <h2><code>--all-agents</code></h2>
+      <p>像把所有桌子的抽屉都翻出来，摆成一排看。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🕒</span>
+      <h2><code>--active 120</code></h2>
+      <p>像只看最近两小时还热着的抽屉。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🏠 agent store 像“每张桌子自己的文件夹”</h2>
+    <p>sessions 不只在一个大柜子里。它们可以按 agent 分开存，也可以从更大的范围里找出来。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📁 默认 store</div>
+      <p>像当前桌子的默认文件夹，最常见，也最容易先看。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--store &lt;path&gt;</code></div>
+      <p>像你自己指定一个更远的文件夹，不走默认路线。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--all-agents</code></div>
+      <p>像把所有工位的文件夹都拿出来，不漏一个。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 一句话</div>
+      <p>session 的位置可以很分散，但它们都还是小抽屉。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🔍 `--active` 像“只看最近还热着的聊天页”</h2>
+    <p>这个参数特别适合排查：你不想翻几百页，只想看最近还在动的那几个 session。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🔥</span>
+      <h2>最近活跃</h2>
+      <p>像只看刚刚有人坐过、椅子还是热的抽屉。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧊</span>
+      <h2>没那么活跃的</h2>
+      <p>像已经凉下来的旧抽屉，必要时再翻。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>很适合排障</h2>
+      <p>先看热的抽屉，常常能最快找到刚刚发生了什么。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>一句话</h2>
+      <p>active 是帮你缩小抽屉范围，不用整柜乱翻。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧹 `cleanup` 像“整理抽屉，不是删故事本身”</h2>
+    <p>官方给 sessions 还配了维护动作。它不是发消息，而是帮你清理、裁剪、收拾存档。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw sessions cleanup --dry-run</code></div>
+      <p>像先拿着扫帚比划一下，不真的扔东西。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--enforce</code></div>
+      <p>像说“这次别只提醒，真的照着收拾”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--active-key</code></div>
+      <p>像先保护一张你正在用的抽屉卡，别把它误收走。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>cleanup 是整理仓库，不是抹掉故事。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧾 JSON 输出像“把抽屉目录变成机器能数的表格”</h2>
+    <p>如果你不是人眼看，而是要给脚本或别的工具读，JSON 就很合适。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧮</span>
+      <h2><code>--json</code></h2>
+      <p>像把抽屉名单改成一张整齐的统计表。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📚</span>
+      <h2><code>sessions</code> 不是聊天本</h2>
+      <p>它更像仓库索引。真正聊天内容在抽屉里，它负责告诉你抽屉在哪里、还有几格。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>机器读起来更稳</h2>
+      <p>JSON 让工具更容易自动判断要不要清理、要不要保留。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>一句话</h2>
+      <p>要给机器看时，JSON 比人话更整齐。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw sessions</code> 压成一句话</h2>
+    <p><code>openclaw sessions</code> 就是翻会话抽屉的命令：看哪一柜、哪一格、哪一个最近还热着，再决定要不要清理或整理。</p>
+  </div>
+</section>
