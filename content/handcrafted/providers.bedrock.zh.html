@@ -1,0 +1,78 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🪵 Amazon Bedrock 这页，其实是在讲：AWS 这栋大楼里，OpenClaw 怎么合法拿到模型通行证</h2>
+      <p>Bedrock 和普通 API key provider 最大不同，是它更像企业云大楼里的正式通道。你不只是填一个 key，还可能碰到区域、实例角色、IAM 这类 AWS 规则。</p>
+      <p>所以这页重点不是单个命令，而是“在 AWS 规矩里把模型访问权接好”。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合已经在 AWS 环境里的人</span>
+      <span>重点是角色、区域和自动发现</span>
+      <a href="https://docs.openclaw.ai/providers/bedrock" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧾 支持范围和自动发现，都是在先回答“这栋楼里哪些门能进”</h2>
+    <p>不是所有 AWS 上挂着的模型，都代表当前这套接法能直接用。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">支持范围</div>
+      <p>像楼层导览图，先告诉你哪些房间是真开放的，哪些还只是挂着牌子。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">自动发现</div>
+      <p>像让管理员先巡一圈，看当前 AWS 身份到底被允许访问哪些模型。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">为什么这步重要</div>
+      <p>企业云环境里最怕“理论支持，现实没权限”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>先确认能进哪些门，再选要找哪位老师。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🪪 EC2 Instance Roles 在讲“别总手拿钥匙，也可以靠身份卡刷门”</h2>
+    <p>AWS 世界里很常见的一件事，就是不用显式手填长期密钥，而是让机器自己带着被授权的身份。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">手填密钥</div>
+      <p>像你自己把钥匙放进抽屉里，简单直接，但更需要保管。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">实例角色</div>
+      <p>像这台机器本身就有门禁卡，只要卡上权限正确，OpenClaw 不用额外握长期钥匙。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Quick setup（AWS path）</div>
+      <p>就是把区域、凭据来源和默认 provider 拼成一条最短路。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 最后记一句</div>
+      <p>Bedrock 的关键不只是 provider 名字，而是 AWS 身份、区域和可见模型一起对上。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Bedrock 这页压成一句最好记的话</h2>
+    <p>在 AWS 世界里，模型访问权和机器身份常常绑在一起。先把这件事弄清，接入才会顺。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你所在环境已经是 AWS 正式部署，这页值得和认证页一起看。</p>
+  </div>
+</section>

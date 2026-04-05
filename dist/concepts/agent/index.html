@@ -3970,602 +3970,85 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Agent Runtime</h2>
-          <p>这一页像一本关于“机器人朋友 Runtime”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：机器人朋友 Runtime。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/concepts/agent</span>
-          <span>章节数量：10</span>
-          <a href="https://docs.openclaw.ai/concepts/agent" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节主要在解释“Start Here”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Start Here”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“机器人朋友 Runtime OpenClaw runs a single embedded 机器人朋友 runtime.”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“机器人朋友 Runtime”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Agent Runtime</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw runs a single embedded 机器人朋友 runtime.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw runs a single embedded agent runtime.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Workspace (required)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw uses a single 机器人朋友 workspace directory (机器人朋友s.defaults.workspace) as the 机器人朋友’s **only** working directory…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw uses a single 机器人朋友 workspace directory (机器人朋友s.defaults.workspace) as the 机器人朋友’s **only** working directory…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw uses a single agent workspace directory (<code>agents.defaults.workspace</code>) as the agent’s **only** working directory (<code>cwd</code>) for tools and context.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Recommended: use openclaw setup to create ~/.openclaw/openclaw.json if missing and initialize the workspace files.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Recommended: use <code>openclaw setup</code> to create <code>~/.openclaw/openclaw.json</code> if missing and initialize the workspace files.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Full workspace layout + backup guide: 机器人朋友 workspace”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Full workspace layout + backup guide: <a href="/concepts/agent-workspace" target="_blank" rel="noreferrer">Agent workspace</a></p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If 机器人朋友s.defaults.sandbox is enabled, non-main sessions can override this with per-session workspaces under 机器人朋友s.def…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If <code>agents.defaults.sandbox</code> is enabled, non-main sessions can override this with per-session workspaces under <code>agents.defaults.sandbox.workspaceRoot</code> (see <a href="/gateway/configuration" target="_blank" rel="noreferrer">Gateway configuration</a>).</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Bootstrap files (injected)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Inside 机器人朋友s.defaults.workspace, OpenClaw expects these user-editable files: On the first turn of a new session, OpenC…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Inside 机器人朋友s.defaults.workspace, OpenClaw expects these user-editable files:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Inside <code>agents.defaults.workspace</code>, OpenClaw expects these user-editable files:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Bootstrap files (injected)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：机器人朋友S.md — operating instructions + “mem…、SOUL.md — persona, boundaries, tone、工具小帮手S.md — user-maintained 工具小帮手 notes (…、BOOTSTRAP.md — one-time first-run ritual…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>AGENTS.md</code> — operating instructions + “memory”</li><li><code>SOUL.md</code> — persona, boundaries, tone</li><li><code>TOOLS.md</code> — user-maintained tool notes (e.g. <code>imsg</code>, <code>sag</code>, conventions)</li><li><code>BOOTSTRAP.md</code> — one-time first-run ritual (deleted after completion)</li><li><code>IDENTITY.md</code> — agent name/vibe/emoji</li><li><code>USER.md</code> — user profile + preferred address</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“On the first turn of a new session, OpenClaw injects the contents of these files directly into the 机器人朋友 context.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>On the first turn of a new session, OpenClaw injects the contents of these files directly into the agent context.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Blank files are skipped. Large files are trimmed and truncated with a marker so prompts stay lean (read the file for fu…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Blank files are skipped. Large files are trimmed and truncated with a marker so prompts stay lean (read the file for full content).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If a file is missing, OpenClaw injects a single “missing file” marker line (and openclaw setup will create a safe defau…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If a file is missing, OpenClaw injects a single “missing file” marker line (and <code>openclaw setup</code> will create a safe default template).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“BOOTSTRAP.md is only created for a **brand new workspace** (no other bootstrap files present). If you delete it after c…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>BOOTSTRAP.md</code> is only created for a **brand new workspace** (no other bootstrap files present). If you delete it after completing the ritual, it should not be recreated on later restarts.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“To disable bootstrap file creation entirely (for pre-seeded workspaces), set:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>To disable bootstrap file creation entirely (for pre-seeded workspaces), set:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{ agent: { skipBootstrap: true } }</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Built-in 工具小帮手s</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Core 工具小帮手s (read/exec/edit/write and related system 工具小帮手s) are always available, subject to 工具小帮手 policy. apply_patch…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Core 工具小帮手s (read/exec/edit/write and related system 工具小帮手s) are always available, subject to 工具小帮手 policy. apply_patch…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Core tools (read/exec/edit/write and related system tools) are always available, subject to tool policy. <code>apply_patch</code> is optional and gated by <code>tools.exec.applyPatch</code>. <code>TOOLS.md</code> does **not** control which tools exist; it’s guidance for how *you* want them used.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Skills</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw loads skills from three locations (workspace wins on name conflict): Skills can be gated by 设置说明书/env (see ski…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw loads skills from three locations (workspace wins on name conflict):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw loads skills from three locations (workspace wins on name conflict):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Skills”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Bundled (shipped with the install)、Managed/local: ~/.openclaw/skills、Workspace: &lt;workspace&gt;/skills。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Bundled (shipped with the install)</li><li>Managed/local: <code>~/.openclaw/skills</code></li><li>Workspace: <code>&lt;workspace&gt;/skills</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Skills can be gated by 设置说明书/env (see skills in 门口的小门卫 设置说明书uration).”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Skills can be gated by config/env (see <code>skills</code> in <a href="/gateway/configuration" target="_blank" rel="noreferrer">Gateway configuration</a>).</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Runtime boundaries</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The embedded 机器人朋友 runtime is built on the Pi 机器人朋友 core (聪明脑袋模型s, 工具小帮手s, and prompt pipeline). Session management, di…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The embedded 机器人朋友 runtime is built on the Pi 机器人朋友 core (聪明脑袋模型s, 工具小帮手s, and prompt pipeline). Session management, di…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The embedded agent runtime is built on the Pi agent core (models, tools, and prompt pipeline). Session management, discovery, tool wiring, and channel delivery are OpenClaw-owned layers on top of that core.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Sessions</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Session transcripts are stored as JSONL at: The session ID is stable and chosen by OpenClaw. Legacy session folders fro…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Session transcripts are stored as JSONL at:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Session transcripts are stored as JSONL at:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Sessions”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：~/.openclaw/机器人朋友s/&lt;机器人朋友Id&gt;/sessions/&lt;Se…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>~/.openclaw/agents/&lt;agentId&gt;/sessions/&lt;SessionId&gt;.jsonl</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The session ID is stable and chosen by OpenClaw. Legacy session folders from other 工具小帮手s are not read.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The session ID is stable and chosen by OpenClaw. Legacy session folders from other tools are not read.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>Steering while 一边说一边送ing</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When queue mode is steer, inbound 小纸条消息s are injected into the current run. Queued steering is delivered **after the cu…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When queue mode is steer, inbound 小纸条消息s are injected into the current run. Queued steering is delivered **after the cu…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When queue mode is <code>steer</code>, inbound messages are injected into the current run. Queued steering is delivered **after the current assistant turn finishes executing its tool calls**, before the next LLM call. Steering no longer skips remaining tool calls from the current assistant message; it injects the queued message at the next model boundary instead.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When queue mode is followup or collect, inbound 小纸条消息s are held until the current turn ends, then a new 机器人朋友 turn star…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When queue mode is <code>followup</code> or <code>collect</code>, inbound messages are held until the current turn ends, then a new agent turn starts with the queued payloads. See <a href="/concepts/queue" target="_blank" rel="noreferrer">Queue</a> for mode + debounce/cap behavior.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Block 一边说一边送ing sends completed assistant blocks as soon as they finish; it is **off by default** (机器人朋友s.defaults.bloc…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Block streaming sends completed assistant blocks as soon as they finish; it is **off by default** (<code>agents.defaults.blockStreamingDefault: &quot;off&quot;</code>). Tune the boundary via <code>agents.defaults.blockStreamingBreak</code> (<code>text_end</code> vs <code>message_end</code>; defaults to text\_end). Control soft block chunking with <code>agents.defaults.blockStreamingChunk</code> (defaults to 800–1200 chars; prefers paragraph breaks, then newlines; sentences last). Coalesce streamed chunks with <code>agents.defaults.blockStreamingCoalesce</code> to reduce single-line spam (idle-based merging before send). Non-Telegram channels require explicit <code>*.blockStreaming: true</code> to enable block replies. Verbose tool summaries are emitted at tool start (no debounce); Control UI streams tool output via agent events when available. More details: <a href="/concepts/streaming" target="_blank" rel="noreferrer">Streaming + chunking</a>.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>聪明脑袋模型 refs</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“聪明脑袋模型 refs in 设置说明书 (for example 机器人朋友s.defaults.聪明脑袋模型 and 机器人朋友s.defaults.聪明脑袋模型s) are parsed by splitting on the **…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“聪明脑袋模型 refs in 设置说明书 (for example 机器人朋友s.defaults.聪明脑袋模型 and 机器人朋友s.defaults.聪明脑袋模型s) are parsed by splitting on the **…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Model refs in config (for example <code>agents.defaults.model</code> and <code>agents.defaults.models</code>) are parsed by splitting on the **first** <code>/</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Model refs”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Use provider/聪明脑袋模型 when 设置说明书uring 聪明脑袋模…、If the 聪明脑袋模型 ID itself contains / (OpenR…、If you omit the provider, OpenClaw treats…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Use <code>provider/model</code> when configuring models.</li><li>If the model ID itself contains <code>/</code> (OpenRouter-style), include the provider prefix (example: <code>openrouter/moonshotai/kimi-k2</code>).</li><li>If you omit the provider, OpenClaw treats the input as an alias or a model for the **default provider** (only works when there is no <code>/</code> in the model ID).</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>设置说明书uration (minimal)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“At minimum, set: *** *Next: 大家一起的房间 Chats* 🦞”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“At minimum, set:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>At minimum, set:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Configuration (minimal)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：机器人朋友s.defaults.workspace、消息通道s.whatsapp.allowFrom (strongly recomm…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>agents.defaults.workspace</code></li><li><code>channels.whatsapp.allowFrom</code> (strongly recommended)</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“***”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>***</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“*Next: 大家一起的房间 Chats* 🦞”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>*Next: <a href="/channels/group-messages" target="_blank" rel="noreferrer">Group Chats</a>* 🦞</p>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🤖 Agent Runtime 这页，其实是在回答：一个 OpenClaw 助手平时靠什么活着</h2>
+      <p>它不是单纯一段提示词，也不是只会聊天的壳子。一个 agent 有自己的工作区、启动文件、工具箱、技能包、会话本和边界规则。</p>
+      <p>所以这页像一张“助手解剖图”，告诉你一位 agent 身上到底装了哪些器官。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想理解 agent 不是“昵称”的人</span>
+      <span>重点是工作区、工具、技能和边界</span>
+      <a href="https://docs.openclaw.ai/concepts/agent" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>📁 Workspace 是助手住的房间，不是随便一个文件夹</h2>
+    <p>官方一开始就强调 workspace required，是在告诉你：agent 进哪个房间，就按哪个房间的规矩说话和做事。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">房间里放什么</div>
+      <p>项目文件、规则文档、技能说明和长期记忆，很多线索都在这里。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">为什么不能忽视</div>
+      <p>因为 agent 不是悬空大脑。它必须站在某个具体房间里。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Bootstrap files</div>
+      <p>像房间门口贴着的入住手册，进门先看这些，再开始做事。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>没有 workspace，agent 就像没落地的脑袋。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧰 Built-in tools 和 skills，一个是手脚，一个是攻略卡</h2>
+    <p>工具负责真的去做动作，技能负责告诉它遇到某类问题该怎么安排动作顺序。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">Built-in tools</div>
+      <p>像读文件、执行命令、浏览网页这些手脚动作。没有它们，agent 只能嘴上说懂。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Skills</div>
+      <p>像贴在工具箱盖子上的使用说明：碰到某类问题先看什么、再做什么。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Runtime boundaries</div>
+      <p>再聪明的 agent 也不是无限自由，它始终活在工具权限、沙箱和审批规则里。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Sessions</div>
+      <p>像聊天本。它不只是记住说过的话，也影响后面回答的上下文形状。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Agent Runtime 压成一句最好记的话</h2>
+    <p>Agent Runtime 讲的不是一个模型参数，而是一个助手活着时整套房间、工具、会话和围栏怎么一起工作。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>接着看 <code>/concepts/agent-loop</code>，会更容易理解这些器官是按什么顺序动起来的。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

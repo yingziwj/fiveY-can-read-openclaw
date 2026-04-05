@@ -1,0 +1,78 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🎛 Models CLI 这页，其实是在讲：OpenClaw 到底怎样决定“这次请哪位模型老师出场”</h2>
+      <p>模型不是随口一喊就能上场。默认模型、允许名单、聊天中临时切换、图片模型和备用模型，都是一整套调度规则。</p>
+      <p>这页的价值，是把“模型为什么没响应”这类常见困惑一次讲清。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想搞清模型选择规则的人</span>
+      <span>重点是 allowlist、切换和默认策略</span>
+      <a href="https://docs.openclaw.ai/concepts/models" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧭 How model selection works，就是一套“先找谁、找不到怎么办”的规则</h2>
+    <p>它不是只看你最近说了哪个名字，而是要综合默认配置、允许名单和当前 provider 状态。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">默认模型</div>
+      <p>像班主任。大多数时候，系统先去找这位老师。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">allowlist</div>
+      <p>像校门口值班表。名字不在上面，再厉害也进不了教室。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Quick model policy</div>
+      <p>官方是在提醒你：先有一条稳的默认规则，再谈临时切换。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>模型选择不是点单，而是按一整套规则调度。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🚫 “Model is not allowed” 最值得读，因为它在解释为什么回答会直接停住</h2>
+    <p>很多人以为 provider 接通了，任何模型名都能用。实际上只要没被允许，就会被门口拦下。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">最常见原因</div>
+      <p>名字写错、没进允许名单、provider 不支持、当前 auth 没权限。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">聊天中切换</div>
+      <p><code>/model</code> 像现场换老师，但还是要先过门卫那关。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">CLI commands</div>
+      <p>这部分更像模型总控台：查看、切换、验证当前能用谁。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 最后记一句</div>
+      <p>模型能不能上场，不只看你想不想，还看当前规则和门票是否同意。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Models CLI 压成一句最好记的话</h2>
+    <p>这页讲的是模型调度规则，而不是一份模型名称表。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你正在配 provider，建议和 <code>/concepts/model-providers</code> 一起看。</p>
+  </div>
+</section>

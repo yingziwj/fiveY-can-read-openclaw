@@ -1,0 +1,78 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>⚙️ Configuration 这页，其实是在教你：总机房的总开关面板该怎么写</h2>
+      <p>如果说 Gateway 是总机房，那配置文件就是控制面板。端口、通道、模型、权限、热重载，很多行为都从这里发号施令。</p>
+      <p>这页不是让你把全部字段背熟，而是先建立写配置的正确顺序。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合开始正式写 Gateway 配置的人</span>
+      <span>重点是最小配置、热重载和重启边界</span>
+      <a href="https://docs.openclaw.ai/gateway/configuration" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧱 Minimal config 是“先把最少能亮灯的那几根线接上”</h2>
+    <p>官方先放最小配置，是在告诉你第一轮不要铺满整面墙，先让这台机房能亮起来。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">编辑配置</div>
+      <p>像在总控台上贴标签，告诉系统门牌、默认模型和关键规则。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Strict validation</div>
+      <p>像值班前先过一遍清单，避免你把明显错误的配置带上生产。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Common tasks</div>
+      <p>这一段更像“常做动作速查表”，方便你知道常见改动该落在哪。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>第一轮配置先求亮灯，再求漂亮。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>♨️ Hot reload 在讲“哪些按钮可以边运行边改，哪些必须停机再动”</h2>
+    <p>这部分最实用，因为很多人真正关心的是：我改完配置，到底要不要重启。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">Config hot reload</div>
+      <p>像值班中换一张部分规则卡，不一定要把整台机房关机。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Reload modes</div>
+      <p>不同类型的变更，允许的刷新力度不一样。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">What hot-applies</div>
+      <p>能即时生效的就像换灯泡，不用整栋楼停电。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">What needs restart</div>
+      <p>需要重启的更像拆主电箱，别指望边跑边硬改。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Configuration 压成一句最好记的话</h2>
+    <p>Gateway 配置最重要的不是字段多，而是先用最小配置亮灯，再搞清哪些修改能热更新、哪些必须重启。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>接下来如果只继续看一页，我建议看 <code>/gateway/configuration-reference</code>。</p>
+  </div>
+</section>

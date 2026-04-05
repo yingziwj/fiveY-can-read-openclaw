@@ -1,0 +1,78 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🏗 Gateway Architecture 这页，其实是在画 OpenClaw 整座城的总地图</h2>
+      <p>如果你一直分不清 gateway、client、node、webchat 到底谁是谁，这页就是总平面图。它不是某个小命令说明，而是整套系统里每个角色住在哪、走什么路。</p>
+      <p>读懂这一页，后面很多零散文档会突然对上号。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想真正理解整体架构的人</span>
+      <span>先认地图，再看街道细节</span>
+      <a href="https://docs.openclaw.ai/concepts/architecture" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🏢 Gateway 是总机房，Clients 是前台，Nodes 是现场小分身</h2>
+    <p>官方 overview 一整段，其实就在帮你把这几个角色分开，不让它们全部挤成“一个 OpenClaw”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🏢 Gateway</div>
+      <p>像总机房。权限、模型、通道、会话和对外接口，很多核心事情都在这里协调。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🖥 Clients</div>
+      <p>像前台窗口。CLI、mac app、web admin 都是来和总机房对话的前台。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📱 Nodes</div>
+      <p>像分散在外面的眼睛耳朵手脚。手机、macOS、Android、无头节点都属于这类。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">💬 WebChat</div>
+      <p>像专门给聊天场景开的前台窗口，本质上还是连着 Gateway 在说话。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔌 Connection lifecycle 在讲“前台和总机房怎么握手、怎么保持通路”</h2>
+    <p>不是每个组件都直接各玩各的。它们之间有一条明确的连接生命周期。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">连接建立</div>
+      <p>像前台先拿门票报到，告诉总机房自己是谁、准备做什么。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">持续会话</div>
+      <p>像值班期间保持对讲机一直连着，消息、状态和工具调用都沿这条线走。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Wire protocol</div>
+      <p>别被这个词吓到，它本质就是“双方说话用什么信封格式”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 最后记一句</div>
+      <p>Gateway Architecture 不是介绍新功能，而是在告诉你：OpenClaw 这座城，路是怎么修的。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Gateway Architecture 压成一句最好记的话</h2>
+    <p>OpenClaw 不是单块黑盒，而是一座有总机房、有前台、有节点分身的系统。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>接着看 <code>/gateway/configuration</code> 或 <code>/platforms/index</code>，会更容易把这张总地图落到实际部署里。</p>
+  </div>
+</section>

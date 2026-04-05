@@ -1,0 +1,78 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🔄 Agent Loop 这页，其实是在画“助手每接到一条任务，脑子里会走几圈”</h2>
+      <p>这不是数学循环课，而是 OpenClaw 的工作节奏图。消息从哪进来、排队怎么排、提示词怎么拼、钩子什么时候插手，都是在这里串起来的。</p>
+      <p>如果 Agent Runtime 是身体结构，Agent Loop 就是身体实际怎么动起来。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想理解一次任务从进入到完成全过程的人</span>
+      <span>重点是队列、提示词组装和钩子</span>
+      <a href="https://docs.openclaw.ai/concepts/agent-loop" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🚪 Entry points 很多，但最后都会汇进同一条工作流水线</h2>
+    <p>CLI、聊天通道、Web 界面、自动任务，表面入口不同，进入 loop 以后还是要按统一流程排队和处理。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">不同入口</div>
+      <p>像不同门口进楼的人，有的从大门，有的从侧门，但最后都要经过前台登记。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">统一处理</div>
+      <p>进入 loop 以后，系统开始按标准节奏走，不会因为入口不同就完全换脑回路。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">How it works</div>
+      <p>这一节就是整页的总导航图，告诉你接下来会依次经过哪些检查站。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>入口可以很多，主循环只有一套。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>📬 Queueing + concurrency 在讲“先排队，再决定能不能多开几张工位”</h2>
+    <p>这段很关键，因为它决定系统是稳稳地一条条处理，还是允许多件事并发推进。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">排队</div>
+      <p>像窗口前先拿号。先后顺序、会不会打架、会不会把同一个会话挤乱，都靠这里控制。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">并发</div>
+      <p>像多开几张工位一起干，但不是越多越好。开太多会把上下文和顺序搅乱。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Prompt assembly</div>
+      <p>像开工前把任务单、规则卡、上下文纸条和工具说明摊在桌上，再交给模型老师开始答。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 最后记一句</div>
+      <p>Agent Loop 决定消息进来以后，系统到底按什么节奏组织思考、工具和状态。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Agent Loop 压成一句最好记的话</h2>
+    <p>它讲的不是抽象循环，而是一次任务从进门、排队、拼提示词到被 hooks 观察和拦截的真实流水线。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你还想继续补一页，建议看 <code>/concepts/agent-workspace</code>。</p>
+  </div>
+</section>

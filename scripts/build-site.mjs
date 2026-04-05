@@ -205,7 +205,27 @@ const handcraftedPageMap = new Map([
   ["/web/dashboard", path.resolve("content/handcrafted/web.dashboard.zh.html")],
   ["/web/index", path.resolve("content/handcrafted/web.index.zh.html")],
   ["/web/tui", path.resolve("content/handcrafted/web.tui.zh.html")],
-  ["/web/webchat", path.resolve("content/handcrafted/web.webchat.zh.html")]
+  ["/web/webchat", path.resolve("content/handcrafted/web.webchat.zh.html")],
+  ["/providers/index", path.resolve("content/handcrafted/providers.index.zh.html")],
+  ["/providers/models", path.resolve("content/handcrafted/providers.models.zh.html")],
+  ["/providers/anthropic", path.resolve("content/handcrafted/providers.anthropic.zh.html")],
+  ["/providers/google", path.resolve("content/handcrafted/providers.google.zh.html")],
+  ["/providers/deepseek", path.resolve("content/handcrafted/providers.deepseek.zh.html")],
+  ["/providers/openrouter", path.resolve("content/handcrafted/providers.openrouter.zh.html")],
+  ["/providers/ollama", path.resolve("content/handcrafted/providers.ollama.zh.html")],
+  ["/providers/bedrock", path.resolve("content/handcrafted/providers.bedrock.zh.html")],
+  ["/concepts/architecture", path.resolve("content/handcrafted/concepts.architecture.zh.html")],
+  ["/concepts/agent", path.resolve("content/handcrafted/concepts.agent.zh.html")],
+  ["/concepts/agent-loop", path.resolve("content/handcrafted/concepts.agent-loop.zh.html")],
+  ["/concepts/agent-workspace", path.resolve("content/handcrafted/concepts.agent-workspace.zh.html")],
+  ["/concepts/model-providers", path.resolve("content/handcrafted/concepts.model-providers.zh.html")],
+  ["/concepts/models", path.resolve("content/handcrafted/concepts.models.zh.html")],
+  ["/gateway/configuration", path.resolve("content/handcrafted/gateway.configuration.zh.html")],
+  ["/gateway/configuration-reference", path.resolve("content/handcrafted/gateway.configuration-reference.zh.html")],
+  ["/gateway/authentication", path.resolve("content/handcrafted/gateway.authentication.zh.html")],
+  ["/help/index", path.resolve("content/handcrafted/help.index.zh.html")],
+  ["/help/faq", path.resolve("content/handcrafted/help.faq.zh.html")],
+  ["/platforms/index", path.resolve("content/handcrafted/platforms.index.zh.html")],
 ]);
 
 function asset(fileName) {

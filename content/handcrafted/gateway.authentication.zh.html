@@ -1,0 +1,78 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🔐 Authentication 这页，其实是在讲：总机房里模型门票到底放哪、谁先用谁的票</h2>
+      <p>Gateway 层的认证和单个 provider 页不一样。它站得更高，在讲推荐放法、状态检查，以及会话级、agent 级、网关级的覆盖顺序。</p>
+      <p>所以它不是只教你“填个 key”，而是在讲门票管理规则。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合准备把 Gateway 正式接上模型和会话的人</span>
+      <span>重点是推荐认证、状态检查和覆盖层级</span>
+      <a href="https://docs.openclaw.ai/gateway/authentication" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🪪 Recommended setup 就是在说：大门票先放在最稳的地方</h2>
+    <p>官方先讲推荐 setup，是因为大多数人真正需要的是“一套稳定、可长期值守的放票方式”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">API key（any provider）</div>
+      <p>像最通用的门票放法，清楚、直接、适合大多数 provider。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Anthropic subscription auth</div>
+      <p>像某些店家自己的特殊会员卡，不完全等同于普通 key。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Claude CLI migration</div>
+      <p>像旧票换新票的迁移说明，提醒你别把老路线和新路线混着用。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>认证这页真正重要的是“票放哪最稳”，不是只看哪种票存在。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔍 Checking auth status 和 override，在讲“现在谁的票生效”</h2>
+    <p>生产环境里最怕的是你以为有票，结果现场拿出来的不是那张。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">Checking model auth status</div>
+      <p>像去前台查值班表，看看当前模型到底吃哪张门票。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">API key rotation</div>
+      <p>像第一张票坏了，系统要不要自动换第二张继续值班。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Per-session override</div>
+      <p>像这次聊天临时刷另一张票。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Per-agent override</div>
+      <p>像给某位助手单独发自己的门卡，不走全楼公用那套。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Authentication 压成一句最好记的话</h2>
+    <p>它讲的不是“有没有票”，而是“票放哪、谁先用、坏了怎么换、现在到底哪张在生效”。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你正好在配模型，一起看 provider 页面会更顺。</p>
+  </div>
+</section>
