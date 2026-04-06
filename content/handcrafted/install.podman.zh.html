@@ -1,0 +1,123 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🦭 Podman 这页，其实是在教你“让 OpenClaw 住进一个 rootless 盒子里，但你还是用宿主机上的 CLI 当遥控器”</h2>
+      <p>它和 Docker 路线像亲戚，但气质不太一样。这里强调的是：容器由你当前这个普通用户管理，不额外搞一位专门的系统服务用户。</p>
+      <p>所以这条路最重要的一句话是：容器在里面跑，控制权在外面 host CLI 手里。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合 rootless 容器路线</span>
+      <span>重点是 setup 脚本、OPENCLAW_CONTAINER、Quadlet</span>
+      <a href="https://docs.openclaw.ai/install/podman" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🎮 先记住这条路线的世界观：盒子在跑，遥控器在你手上</h2>
+    <p>官方把 intended model 写得很清楚，翻成人话就是四句话。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2>Podman 跑容器</h2>
+      <p>Gateway 住在 rootless 盒子里。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎛️</span>
+      <h2>Host CLI 当控制台</h2>
+      <p>你平时还是用宿主机上的 <code>openclaw</code> 遥控它。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏠</span>
+      <h2>状态住在宿主机</h2>
+      <p><code>~/.openclaw</code> 才是家，容器只是值班箱。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚫</span>
+      <h2>不鼓励天天 podman exec</h2>
+      <p>官方希望你用正常 CLI，而不是把自己困在容器壳里手工敲。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🚀 Quick start 就是“三步点亮盒子，再把遥控器对准它”</h2>
+    <p>这条路线的命令都很像舞台指令。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>./scripts/podman/setup.sh</code></div>
+      <p>像先把盒子、初始配置、token、小环境都准备好。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>./scripts/run-openclaw-podman.sh launch</code></div>
+      <p>像正式把盒子启动，开始值班。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>./scripts/run-openclaw-podman.sh launch setup</code></div>
+      <p>像启动时顺手拉 onboarding 老师进来，带你做第一次布置。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>export OPENCLAW_CONTAINER=openclaw</code></div>
+      <p>像把遥控器默认频道调到这只盒子，以后普通 <code>openclaw</code> 命令就会自动朝它发。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧷 macOS Podman SSH tunnel 那段，是“因为盒子机房不在本机，所以要额外拉一根电话线”</h2>
+    <p>这是 Podman on macOS 最容易让人迷糊的点。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📌 为什么要隧道</div>
+      <p>Podman machine 会让浏览器看起来不像真正本地访问，所以控制台可能误判设备来源。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>ssh -N -L 28889:127.0.0.1:18789 ...</code></div>
+      <p>像重新拉一根更清楚的本地电话线，把容器里的控制台牵到你 Mac 上的 28889 端口。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>gateway.controlUi.allowedOrigins</code></div>
+      <p>像先把这条新电话线的门牌登记进白名单，免得控制台说“我不认识你”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>Podman on macOS 时，SSH 隧道不是多余动作，而是让“本地访问真的像本地访问”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧰 Quadlet 和配置存储，说白了就是“要不要让盒子开机自启，以及家当放哪”</h2>
+    <p>这也是 Podman 路线和 Docker 路线最像的一块。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>./scripts/podman/setup.sh --quadlet</code></div>
+      <p>像请 systemd 这位值班主任接手，负责以后自动叫醒这只盒子。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>~/.openclaw</code></div>
+      <p>真正的家在这里，配置、token、workspace 都靠它长期保存。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--userns=keep-id</code></div>
+      <p>像让容器里那位工人的身份尽量和外面这位主人对齐，少出权限扯皮。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 收尾一句</div>
+      <p>Podman 这条路的精髓，是“容器很隔离，操作却尽量像日常 CLI”。</p>
+    </div>
+  </div>
+</section>

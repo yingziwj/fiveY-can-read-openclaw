@@ -1,0 +1,123 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🇩🇪 Hetzner 这页，其实是在教你“租一台便宜但长期住人的欧洲小机房，把 OpenClaw 装成一台稳定箱子”</h2>
+      <p>它和 GCP 那页在思路上很像：Docker 跑 Gateway，宿主机保存家当，控制台通过 SSH 隧道安全访问。</p>
+      <p>不同的是，这页更像“简单、实惠、长期住”的传统 VPS 路线。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合低成本长期 VPS</span>
+      <span>重点是 root 机、持久目录、Docker 运行箱</span>
+      <a href="https://docs.openclaw.ai/install/hetzner" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🏠 这条路的核心就一句：把 Hetzner 当长期住的家，不是随手丢掉的一次性盒子</h2>
+    <p>官方专门写了“不要把它当 disposable infrastructure”，这句很重要。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🔑</span>
+      <h2>root 直连</h2>
+      <p>像你一开始直接拿着总钥匙进屋，先把基础设施搭好。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2>Docker 箱子</h2>
+      <p>Gateway 住箱子里，但它的家和工作台要放宿主机。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">💾</span>
+      <h2>持久目录</h2>
+      <p>像把重要家当存进固定储物间，不让容器换一次就失忆。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔌</span>
+      <h2>SSH tunnel</h2>
+      <p>默认还是建议走私人电话线，不急着对公网开大门。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧱 安装过程其实就是“先让 Docker 住进来，再给 OpenClaw 准备一间不会失忆的家”</h2>
+    <p>核心动作很朴素。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>ssh root@YOUR_VPS_IP</code></div>
+      <p>像第一次走进你租下的 Hetzner 小机房。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>curl -fsSL https://get.docker.com | sh</code></div>
+      <p>像先把大箱子工厂装进屋里。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>mkdir -p /root/.openclaw/workspace</code></div>
+      <p>像先腾出 OpenClaw 的家和工作间。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>chown -R 1000:1000 /root/.openclaw</code></div>
+      <p>像把这间屋子的使用权交给容器里真正干活的那位住户。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🗝️ <code>.env</code> 和 compose 文件，合起来就是“门票、门牌、住址和运行规则”</h2>
+    <p>这部分和 GCP 路线是同一家思路。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>OPENCLAW_GATEWAY_TOKEN</code></div>
+      <p>管理员门票，必须认真生成，别用示例值混过去。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>OPENCLAW_CONFIG_DIR</code></div>
+      <p>像告诉容器“真正的家在宿主机哪间房”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>OPENCLAW_WORKSPACE_DIR</code></div>
+      <p>像工作台位置，换容器也要跟着保留下来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--allow-unconfigured</code></div>
+      <p>先让灯亮起来，不代表正式入住规则已经写完。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧑‍💻 访问方式和 IaC 扩展，其实是在讲“你是手工管房，还是再请一个总包公司”</h2>
+    <p>Hetzner 这页还有一个社区 Terraform 方向。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>ssh -N -L 18789:127.0.0.1:18789 root@YOUR_VPS_IP</code></div>
+      <p>像继续用私人电话线，把控制台拖回本地浏览器。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧱 Terraform 方案</div>
+      <p>像再请一个“总包公司”来管地基、云机、防火墙和灾备，让基础设施也能版本化。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📌 官方态度</div>
+      <p>主文档给的是手工 Docker 主路，Terraform 是社区加成，不是唯一正解。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 收尾一句</div>
+      <p>Hetzner 这条路主打的不是花哨，而是“便宜、朴素、能长期住”。</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,123 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🔄 Updating 这页，其实是在教你“怎么给 OpenClaw 换新零件，同时别把值班室弄乱”</h2>
+      <p>更新不是简单地“装最新版”，而是要分清你现在是哪种安装路线、想走哪条更新车道、要不要先彩排。</p>
+      <p>所以官方把 <code>openclaw update</code> 放在最前面，是有原因的。它最像懂你当前安装方式的总维修师。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合所有已安装用户</span>
+      <span>重点是 update、channel、dry-run、doctor、restart</span>
+      <a href="https://docs.openclaw.ai/install/updating" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🛠️ <code>openclaw update</code> 就像“会先看你这台机器怎么装的，再决定怎么修”</h2>
+    <p>这也是它比手动 npm / git 更推荐的原因。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update</code></div>
+      <p>像总维修师先识别你是 npm 装的还是 git 装的，再按对应方式升级。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update --channel beta</code></div>
+      <p>像顺手把你以后要走的更新车道也改了。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update --tag main</code></div>
+      <p>像这次临时指定拿一班特定列车的零件。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update --dry-run</code></div>
+      <p>像先把维修工单打印给你看，不真的动扳手。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔁 其他更新法也能用，但更像“你自己拿扳手上”</h2>
+    <p>官方没有禁止，只是把它们放在后面。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🚚</span>
+      <h2>重跑安装器</h2>
+      <p>像再叫一次安装车来，尤其适合你本来就是走安装脚本路线。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2><code>npm i -g openclaw@latest</code></h2>
+      <p>像你自己去商店拿最新版零件，自己换上去。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2><code>pnpm add -g openclaw@latest</code></h2>
+      <p>也是自己换零件，只是用的工具箱不同。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>为什么不首推</h2>
+      <p>因为它们不如 <code>openclaw update</code> 那么懂你当前装法。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🤖 Auto-updater 那段，其实是在讲“要不要给值班室装一个自动换零件的小助手”</h2>
+    <p>默认是关的，这点很合理。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">✅ stable 自动更新</div>
+      <p>不是马上冲，而是会先等一段时间，再带点随机抖动分批推进，像错峰换件。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧪 beta 自动更新</div>
+      <p>更激进，像每小时都去前台问一句“有新测试件了吗？”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚫 dev 不自动装</div>
+      <p>这条轨道太像施工现场，所以官方让你自己手动决定。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>update.checkOnStart: false</code></div>
+      <p>像关掉开机时的“有新零件提醒小纸条”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🩺 更新后那三步，是“体检、重启、再确认灯亮了”</h2>
+    <p>这三条不要省。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw doctor</code></div>
+      <p>像维修后先请医生来体检，看配置迁移、DM 策略、网关健康有没有问题。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway restart</code></div>
+      <p>像让值班室重新上岗，别拿旧进程硬撑着用新零件。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw health</code></div>
+      <p>像最后再摸一把脉，确认这次换件不是只换了个样子。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 收尾一句</div>
+      <p>更新不是“装完就走”，而是“装完还要验货”。</p>
+    </div>
+  </div>
+</section>

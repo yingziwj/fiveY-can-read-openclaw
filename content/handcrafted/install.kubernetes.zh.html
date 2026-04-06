@@ -1,0 +1,119 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>☸️ Kubernetes 这页，其实是在教你“把 OpenClaw 放进一个很会管很多盒子的超级仓库里”</h2>
+      <p>官方一开始就很诚实：这不是完整生产方案，而是最小起步版。意思不是它不能用，而是它只先搭最核心的骨架，剩下的要你按自己环境再加。</p>
+      <p>所以这页更像一份“最小骨架图”，不是包治百病的成品模板。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合已经有 Kubernetes 集群的人</span>
+      <span>重点是最小资源集、Secret、PVC、port-forward</span>
+      <a href="https://docs.openclaw.ai/install/kubernetes" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🏗️ 为什么官方没先给 Helm？因为这页觉得“房间里的内容”比“房子模板”更重要</h2>
+    <p>官方这里的态度很明确，值得直接翻译成人话。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📦 OpenClaw 本体不复杂</div>
+      <p>单容器、少量配置文件，本体不像那种需要巨大模板系统的超级集群应用。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧩 真正常变的是内容</div>
+      <p>agent 文档、skills、配置覆盖这些东西，比基础资源模板更常改。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🪶 Kustomize 更轻</div>
+      <p>像用轻量叠层贴纸做变体，而不是先背一整本 Helm 法典。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>这页先给你骨架，不先给你一整套厚重模板机器。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🚀 Quick start 就是在说：“先把 provider 钥匙塞进环境，再让脚本把骨架架起来”</h2>
+    <p>比想象中简单。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>export &lt;PROVIDER&gt;_API_KEY=\"...\"</code></div>
+      <p>像先把模型商店钥匙塞进口袋，不然后面搭好的 Gateway 也只是空壳。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>./scripts/k8s/deploy.sh</code></div>
+      <p>像让脚手架队进场，一次把 Namespace、Deployment、Service、PVC、Secret 都立起来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>kubectl port-forward svc/openclaw 18789:18789 -n openclaw</code></div>
+      <p>像拉一条本地临时电话线，把集群里的控制台窗口牵到你眼前。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>kubectl get secret ... | base64 -d</code></div>
+      <p>像从集群保险柜里把 Gateway 门票取出来，粘贴到控制台登录框。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>📦 What gets deployed 那段，就是“仓库里到底立了哪些柜子”</h2>
+    <p>理解这一段以后，Kubernetes 就没那么像黑魔法。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🏷️</span>
+      <h2>Namespace</h2>
+      <p>像先给 OpenClaw 划出一个单独区域，别和别的应用混在一堆箱子里。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚚</span>
+      <h2>Deployment</h2>
+      <p>真正跑 Gateway 的那台工作车。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚪</span>
+      <h2>Service</h2>
+      <p>像集群内部固定门牌，别人要找它先走这里。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">💾</span>
+      <h2>PVC + Secret + ConfigMap</h2>
+      <p>一个管储物柜，一个管钥匙，一个管说明书。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧪 Kind 本地测试那段，是“先在自己电脑上搭一个迷你练习仓库”</h2>
+    <p>这对没现成集群的人很友好。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>./scripts/k8s/create-kind.sh</code></div>
+      <p>像先在本机摆一个小号练习场，给你排练整套部署动作。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>./scripts/k8s/create-kind.sh --delete</code></div>
+      <p>练完了就拆台，不留临时仓库占地。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 收尾一句</div>
+      <p>Kubernetes 这页的重点不是炫复杂，而是给你一副最小骨架，让你能先站起来。</p>
+    </div>
+  </div>
+</section>

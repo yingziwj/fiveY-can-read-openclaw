@@ -1,0 +1,123 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🟢 Node 这页，其实是在教你“先把发动机装对，不然 OpenClaw 这辆车根本开不顺”</h2>
+      <p>官方已经尽量帮你自动装 Node 了，所以你会看到它一开始就说：这页是给那些想自己装、自己核对 PATH、自己排版本问题的人看的。</p>
+      <p>把这页压成一句话就是：Node 24 最推荐，22.14+ 还能用，但别再往下了。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合手动安装 Node 的人</span>
+      <span>重点是版本、PATH、全局安装权限</span>
+      <a href="https://docs.openclaw.ai/install/node" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🔢 先看发动机型号对不对</h2>
+    <p>别一上来就怀疑 OpenClaw 本体，先确认 Node 版本。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>node -v</code></div>
+      <p>像先抬头看发动机铭牌。<code>v24.x.x</code> 最舒服，<code>v22.14+</code> 也还能开。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">✅ Node 24</div>
+      <p>官方现在默认推荐档位，文档、CI、发行流程都围着它转得更顺。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🟡 Node 22</div>
+      <p>还在支持，但更像“兼容通道”，不是最推荐的新发动机。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>Node 太旧时，别怪 OpenClaw 走不稳，是发动机先不合格。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🛠️ 安装方式其实只是“你习惯叫哪家修车师傅”</h2>
+    <p>不同系统只是找不同入口装同一台发动机。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🍺</span>
+      <h2>Homebrew / winget</h2>
+      <p>像从系统官方常用商店把 Node 装进来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🐧</span>
+      <h2>NodeSource</h2>
+      <p>Linux 常见路线，像请 Node 官方合作安装队来铺。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎚️</span>
+      <h2>fnm / nvm / mise</h2>
+      <p>像给你一个发动机切换架，方便在不同 Node 版本间换挡。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>重点不是哪家</h2>
+      <p>重点是装完以后，新终端也能认得它。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🛣️ <code>openclaw: command not found</code>，大多数时候不是车没装，而是路牌没挂好</h2>
+    <p>这页后半段几乎都在讲 PATH。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>npm prefix -g</code></div>
+      <p>像问系统：“全局工具架到底放哪儿了？”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>echo \"$PATH\"</code></div>
+      <p>像把地图摊开，看那只工具架是不是已经画在进门路线里。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>export PATH=\"$(npm prefix -g)/bin:$PATH\"</code></div>
+      <p>像把去工具架的路牌正式挂到门口，之后每个新终端都知道往哪找。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📌 版本管理器初始化</div>
+      <p>如果你用 fnm / nvm 这类切换架，却没在 shell 启动文件里初始化，它就像装了但没接电。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🔐 Linux 上 <code>EACCES</code>，其实是在说“你在碰一只不归你管的工具柜”</h2>
+    <p>这不是 OpenClaw 特有问题，是 npm 全局安装常见坑。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>mkdir -p \"$HOME/.npm-global\"</code></div>
+      <p>像先给自己单独准备一只可写的私人工具柜。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>npm config set prefix \"$HOME/.npm-global\"</code></div>
+      <p>像告诉 npm：“以后全局工具都放我自己的柜子里。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>export PATH=\"$HOME/.npm-global/bin:$PATH\"</code></div>
+      <p>然后别忘了再挂路牌，不然新柜子还是找不到。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 收尾一句</div>
+      <p>Node 这页的核心不是版本名词，而是“发动机对了、路牌也对了”。</p>
+    </div>
+  </div>
+</section>

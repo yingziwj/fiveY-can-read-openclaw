@@ -1,0 +1,123 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🪰 Fly.io 这页，其实是在教你“把 OpenClaw 装进一架会飞的小机器，再给它挂上持久行李箱”</h2>
+      <p>Fly 这条路既像云平台，又比普通按钮部署更偏工程一些。你要自己准备 <code>fly.toml</code>、volume、secrets，然后再把 Gateway 放上天。</p>
+      <p>官方最反复提醒你的，是两个词：<code>--bind lan</code> 和 persistent volume。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想在 Fly 上长期跑的人</span>
+      <span>重点是 fly.toml、volume、secrets、bind lan</span>
+      <a href="https://docs.openclaw.ai/install/fly" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>✈️ Beginner quick path 其实就是四步飞行计划</h2>
+    <p>先建 app，再建 volume，再放 secrets，最后 deploy。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2>fly apps create</h2>
+      <p>像先给你的飞行器起名字。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">💾</span>
+      <h2>fly volumes create</h2>
+      <p>像挂一个行李箱，不然容器换一架飞机就容易失忆。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔐</span>
+      <h2>fly secrets set</h2>
+      <p>像把门票、API key、通道钥匙塞进密封信封里。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚀</span>
+      <h2>fly deploy</h2>
+      <p>真正把这架机器推上天。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧾 <code>fly.toml</code> 那大段配置，翻成人话就是“告诉飞机怎么飞、往哪开门、家当放哪”</h2>
+    <p>看起来很长，其实每项都很具体。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>--bind lan</code></div>
+      <p>像告诉 Gateway：“你要对飞机里的外部代理开门，别只对自己房间说话。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>internal_port = 3000</code></div>
+      <p>像告诉 Fly 物业：“这台机器的接待窗口在 3000。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>OPENCLAW_STATE_DIR=/data</code></div>
+      <p>像把 OpenClaw 的家直接放到挂载的行李箱上。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>memory = \"2048mb\"</code></div>
+      <p>像给飞机配够燃料。512MB 太瘦，2GB 才比较稳。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🔑 Secrets 和 config file，是“两层不同的钥匙管理法”</h2>
+    <p>官方更推荐把真正敏感的钥匙放 secrets，不要乱塞进配置文件。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>fly secrets set OPENCLAW_GATEWAY_TOKEN=$(openssl rand -hex 32)</code></div>
+      <p>像先给总控室造一张随机管理员门票。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔐 Provider key 放 env</div>
+      <p>像把最敏感的钥匙塞进保险柜，而不是钉在墙上。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>fly ssh console</code></div>
+      <p>像你登上飞机内部维修通道，去补 <code>/data/openclaw.json</code> 这份正式配置。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>secrets 管钥匙，配置文件管房间布局，别把两者搅在一起。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🩺 排错那几段，基本都在围着“地址、端口、内存、锁文件”四件事转</h2>
+    <p>Fly 常见坑很集中。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📍 地址不对</div>
+      <p>如果没绑到 <code>0.0.0.0</code>，Fly 代理就像敲到一扇根本没开口的门。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚪 端口不对</div>
+      <p><code>internal_port</code> 和 Gateway 实际端口不一致，健康检查就会一直扑空。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧠 OOM</div>
+      <p>内存太少时，这架飞机会像飞到半空突然断气。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>rm -f /data/gateway.*.lock</code></div>
+      <p>像清掉上一次异常重启后遗留在门口的“我还在值班”纸条。</p>
+    </div>
+  </div>
+</section>

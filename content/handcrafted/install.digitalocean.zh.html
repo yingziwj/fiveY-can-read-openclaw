@@ -1,0 +1,123 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🌊 DigitalOcean 这页，其实是在教你“租一台干净的小云主机，让 OpenClaw 长住”</h2>
+      <p>这条路很像最朴素的 VPS 安装法：租 Droplet、SSH 上去、装 Node、装 OpenClaw、再把控制台安全地牵回自己电脑上。</p>
+      <p>官方反复强调“干净基础镜像”，意思很简单：别一开始就把来路不明的一键包当成地基。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合传统 VPS 路线</span>
+      <span>重点是干净镜像、swap、SSH 隧道、Tailscale</span>
+      <a href="https://docs.openclaw.ai/install/digitalocean" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🏠 先租一间干净小房子</h2>
+    <p>这页最想先拦住你的，是“别随手挑一个花里胡哨的 Marketplace 镜像”。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧼</span>
+      <h2>Ubuntu 24.04 LTS</h2>
+      <p>像干净毛坯房。最适合按官方步骤自己铺。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📍</span>
+      <h2>区域选近一点</h2>
+      <p>像把房子租在离你更近的区，平时进门会更利索。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔑</span>
+      <h2>SSH key 优先</h2>
+      <p>像用正经钥匙，不要只靠密码锁。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>一句话</h2>
+      <p>基础环境越干净，后面越少怀疑“到底是谁搞坏的”。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧰 安装阶段就是“先连上房子，再把发动机和 OpenClaw 搬进去”</h2>
+    <p>命令不难，难的是别把顺序乱了。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>ssh root@YOUR_DROPLET_IP</code></div>
+      <p>像你第一次拿着钥匙走进这间云房子。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>apt update && apt upgrade -y</code></div>
+      <p>像先清掉旧灰尘、补齐基础零件，再开始搬正式家具。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>curl -fsSL https://deb.nodesource.com/setup_24.x | bash -</code></div>
+      <p>像先把 Node 24 这台发动机的安装队叫进门。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>curl -fsSL https://openclaw.ai/install.sh | bash</code></div>
+      <p>然后才是把 OpenClaw 正式搬进来。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🛏️ 1GB Droplet 加 swap，那就是“给小房子多铺一张折叠床”</h2>
+    <p>官方单独点出这一段，是因为小机型最容易装到一半累趴。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>fallocate -l 2G /swapfile</code></div>
+      <p>像先腾一块临时休息垫，内存不够时顶一下。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>mkswap</code> + <code>swapon</code></div>
+      <p>像把那张备用床真正铺好、启用。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📌 为什么推荐做</div>
+      <p>不是为了跑本地大模型，而是为了让安装和后台值班别因为内存太瘦就突然倒下。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>小 Droplet 能跑，但最好给它一张备用床。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🖥️ 控制台访问那一段，其实是在给你三种进门法</h2>
+    <p>默认都比“直接把端口敞在公网上”更稳。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>ssh -L 18789:localhost:18789 root@YOUR_DROPLET_IP</code></div>
+      <p>像拉一根私人电话线，把云上控制台牵回你本地电脑。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>tailscale up</code> + <code>gateway.tailscale.mode serve</code></div>
+      <p>像另开一条尾网私人小路，让你在自己设备间更自然地访问。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>gateway.bind tailnet</code></div>
+      <p>像直接说：“这扇门只对 tailnet 里的人开。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 收尾一句</div>
+      <p>DigitalOcean 这条路最好把控制台“牵回来”，而不是“裸露出去”。</p>
+    </div>
+  </div>
+</section>

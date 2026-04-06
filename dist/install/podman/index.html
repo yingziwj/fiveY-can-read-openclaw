@@ -3970,1024 +3970,130 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Podman</h2>
-          <p>这一页像一本关于“Podman”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：Podman。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/install/podman</span>
-          <span>章节数量：10</span>
-          <a href="https://docs.openclaw.ai/install/podman" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Podman Run the OpenClaw 门口的小门卫 in a rootless Podman container, managed by your current non-root user. The intended 聪明脑袋…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Podman”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Podman</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Run the OpenClaw 门口的小门卫 in a rootless Podman container, managed by your current non-root user.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Run the OpenClaw Gateway in a rootless Podman container, managed by your current non-root user.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The intended 聪明脑袋模型 is:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The intended model is:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Podman runs the 门口的小门卫 container.、Your host openclaw CLI is the control pla…、Persistent state lives on the host under…、Day-to-day management uses openclaw --con…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Podman runs the gateway container.</li><li>Your host <code>openclaw</code> CLI is the control plane.</li><li>Persistent state lives on the host under <code>~/.openclaw</code> by default.</li><li>Day-to-day management uses <code>openclaw --container &lt;name&gt; ...</code> instead of <code>sudo -u openclaw</code>, <code>podman exec</code>, or a separate service user.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Prerequisites</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Prerequisites”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**Podman** in rootless mode、**OpenClaw CLI** installed on the host、**Optional:** systemd --user if you want…、**Optional:** sudo only if you want login…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Podman** in rootless mode</li><li>**OpenClaw CLI** installed on the host</li><li>**Optional:** <code>systemd --user</code> if you want Quadlet-managed auto-start</li><li>**Optional:** <code>sudo</code> only if you want <code>loginctl enable-linger &quot;$(whoami)&quot;</code> for boot persistence on a headless host</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Quick start</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Steps&gt; &lt;Step title=&quot;One-time setup&quot;&gt; From the repo root, run ./scripts/podman/setup.sh. &lt;/Step&gt; &lt;Step title=&quot;Start the…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Steps&gt; &lt;Step title=&quot;One-time setup&quot;&gt; From the repo root, run ./scripts/podman/setup.sh. &lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Steps&gt; &lt;Step title=&quot;One-time setup&quot;&gt; From the repo root, run <code>./scripts/podman/setup.sh</code>. &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Start the 门口的小门卫 container&quot;&gt; Start the container with ./scripts/run-openclaw-podman.sh launch. &lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Start the Gateway container&quot;&gt; Start the container with <code>./scripts/run-openclaw-podman.sh launch</code>. &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Run onboarding inside the container&quot;&gt; Run ./scripts/run-openclaw-podman.sh launch setup, then open http://…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Run onboarding inside the container&quot;&gt; Run <code>./scripts/run-openclaw-podman.sh launch setup</code>, then open <code>http://127.0.0.1:18789/</code>. &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Manage the running container from the host CLI&quot;&gt; Set OPENCLAW_CONTAINER=openclaw, then use normal openclaw…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Manage the running container from the host CLI&quot;&gt; Set <code>OPENCLAW_CONTAINER=openclaw</code>, then use normal <code>openclaw</code> commands from the host. &lt;/Step&gt; &lt;/Steps&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Setup details:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Setup details:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Quick start”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：./scripts/podman/setup.sh builds openclaw…、It creates ~/.openclaw/openclaw.json with…、It creates ~/.openclaw/.env with OPENCLAW…、For manual launches, the helper reads onl…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>./scripts/podman/setup.sh</code> builds <code>openclaw:local</code> in your rootless Podman store by default, or uses <code>OPENCLAW_IMAGE</code> / <code>OPENCLAW_PODMAN_IMAGE</code> if you set one.</li><li>It creates <code>~/.openclaw/openclaw.json</code> with <code>gateway.mode: &quot;local&quot;</code> if missing.</li><li>It creates <code>~/.openclaw/.env</code> with <code>OPENCLAW_GATEWAY_TOKEN</code> if missing.</li><li>For manual launches, the helper reads only a small allowlist of Podman-related keys from <code>~/.openclaw/.env</code> and passes explicit runtime env vars to the container; it does not hand the full env file to Podman.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Quadlet-managed setup:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Quadlet-managed setup:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
-        <ul class="code-steps">
-          <li>这一行“./scripts/podman/setup.sh --quadlet”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">./scripts/podman/setup.sh --quadlet</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Quadlet is a Linux-only option because it depends on systemd user services.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Quadlet is a Linux-only option because it depends on systemd user services.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“You can also set OPENCLAW_PODMAN_QUADLET=1.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>You can also set <code>OPENCLAW_PODMAN_QUADLET=1</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Optional build/setup env vars:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Optional build/setup env vars:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Quick start”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：OPENCLAW_IMAGE or OPENCLAW_PODMAN_IMAGE -…、OPENCLAW_DOCKER_APT_PACKAGES -- install e…、OPENCLAW_EXTENSIONS -- pre-install extens…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>OPENCLAW_IMAGE</code> or <code>OPENCLAW_PODMAN_IMAGE</code> -- use an existing/pulled image instead of building <code>openclaw:local</code></li><li><code>OPENCLAW_DOCKER_APT_PACKAGES</code> -- install extra apt packages during image build</li><li><code>OPENCLAW_EXTENSIONS</code> -- pre-install extension dependencies at build time</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Container start:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Container start:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
-        <ul class="code-steps">
-          <li>这一行“./scripts/run-openclaw-podman.sh launch”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">./scripts/run-openclaw-podman.sh launch</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The script starts the container as your current uid/gid with --userns=keep-id and bind-mounts your OpenClaw state into…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The script starts the container as your current uid/gid with <code>--userns=keep-id</code> and bind-mounts your OpenClaw state into the container.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Onboarding:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Onboarding:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
-        <ul class="code-steps">
-          <li>这一行“./scripts/run-openclaw-podman.sh launch setup”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">./scripts/run-openclaw-podman.sh launch setup</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Then open http://127.0.0.1:18789/ and use the token from ~/.openclaw/.env.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Then open <code>http://127.0.0.1:18789/</code> and use the token from <code>~/.openclaw/.env</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Host CLI default:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Host CLI default:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
-        <ul class="code-steps">
-          <li>这一行“export OPENCLAW_CONTAINER=openclaw”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">export OPENCLAW_CONTAINER=openclaw</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Then 魔法口令s such as these will run inside that container automatically:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Then commands such as these will run inside that container automatically:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw dashboard --no-open”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw gateway status --deep”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw doctor”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw dashboard --no-open
-openclaw gateway status --deep
-openclaw doctor
-openclaw channels login</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“On macOS, Podman machine may make the browser appear non-local to the 门口的小门卫. If the Control UI reports device-auth err…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>On macOS, Podman machine may make the browser appear non-local to the gateway. If the Control UI reports device-auth errors after launch, prefer the SSH tunnel flow in <a href="#macos-podman-ssh-tunnel" target="_blank" rel="noreferrer">macOS Podman SSH tunnel</a>. For remote HTTPS access, use the Tailscale guidance in <a href="#podman--tailscale" target="_blank" rel="noreferrer">Podman + Tailscale</a>.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>macOS Podman SSH tunnel</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“On macOS, Podman machine can make the browser appear non-local to the 门口的小门卫 even when the published port is only on 12…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“On macOS, Podman machine can make the browser appear non-local to the 门口的小门卫 even when the published port is only on 12…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>On macOS, Podman machine can make the browser appear non-local to the gateway even when the published port is only on <code>127.0.0.1</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For local browser access, use an SSH tunnel into the Podman VM and open the tunneled localhost port instead.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For local browser access, use an SSH tunnel into the Podman VM and open the tunneled localhost port instead.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Recommended local tunnel port:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Recommended local tunnel port:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“macOS Podman SSH tunnel”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：28889 on the Mac host、forwarded to 127.0.0.1:18789 inside the P…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>28889</code> on the Mac host</li><li>forwarded to <code>127.0.0.1:18789</code> inside the Podman VM</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Start the tunnel in a separate terminal:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Start the tunnel in a separate terminal:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
-        <ul class="code-steps">
-          <li>这一行“ssh -N \”是当前步骤要交给电脑的一小块提示。</li><li>这一行“-i ~/.local/share/containers/podman/machine/machine \”是当前步骤要交给电脑的一小块提示。</li><li>这一行“-p &lt;podman-vm-ssh-port&gt; \”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">ssh -N \
-  -i ~/.local/share/containers/podman/machine/machine \
-  -p &lt;podman-vm-ssh-port&gt; \
-  -L 28889:127.0.0.1:18789 \
-  core@127.0.0.1</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“In that 魔法口令, &lt;podman-vm-ssh-port&gt; is the Podman VM&#39;s SSH port on the Mac host. Check your current value with:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>In that command, <code>&lt;podman-vm-ssh-port&gt;</code> is the Podman VM&#39;s SSH port on the Mac host. Check your current value with:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
-        <ul class="code-steps">
-          <li>这一行“podman system connection list”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">podman system connection list</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Allow the tunneled browser origin once. This is required the first time you use the tunnel because the launcher can aut…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Allow the tunneled browser origin once. This is required the first time you use the tunnel because the launcher can auto-seed the Podman-published port, but it cannot infer your chosen browser tunnel port:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
-        <ul class="code-steps">
-          <li>这一行“OPENCLAW_CONTAINER=openclaw openclaw config set gateway.controlUi.allowedOrigins \”是当前步骤要交给电脑的一小块提示。</li><li>这里在给“[http”贴标签，意思是把它设置成“//127.0.0.1:18789http://localhost:18789http://127.0.0.1:28889http://localhost:28889]&#39; \”。</li><li>这一行“--strict-json”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">OPENCLAW_CONTAINER=openclaw openclaw config set gateway.controlUi.allowedOrigins \
-  &#39;[&quot;http://127.0.0.1:18789&quot;,&quot;http://localhost:18789&quot;,&quot;http://127.0.0.1:28889&quot;,&quot;http://localhost:28889&quot;]&#39; \
-  --strict-json
-podman restart openclaw</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“That is a one-time step for the default 28889 tunnel.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>That is a one-time step for the default <code>28889</code> tunnel.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Then open:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Then open:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像给机器人看的说明书，告诉它要按什么样子准备东西。</p>
-        <ul class="code-steps">
-          <li>这里在给“http”贴标签，意思是把它设置成“//127.0.0.1:28889/”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">http://127.0.0.1:28889/</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Notes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“macOS Podman SSH tunnel”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：18789 is usually already occupied on the…、If the UI asks for pairing approval, pref…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>18789</code> is usually already occupied on the Mac host by the Podman-published gateway port, so the tunnel uses <code>28889</code> as the local browser port.</li><li>If the UI asks for pairing approval, prefer explicit container-targeted or explicit-URL commands so the host CLI does not fall back to local pairing files:</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw --container openclaw devices list”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw --container openclaw devices approve --latest”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw --container openclaw devices list
-openclaw --container openclaw devices approve --latest</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“macOS Podman SSH tunnel”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Equivalent explicit-URL form:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Equivalent explicit-URL form:</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw devices list \”。你可以把它想成对机器人说的完整命令。</li><li>这里在给“--url ws”贴标签，意思是把它设置成“//127.0.0.1:28889 \”。</li><li>这一行“--token &quot;$(sed -n &#39;s/^OPENCLAW_GATEWAY_TOKEN=//p&#39; ~/.openclaw/.env | head -n1)&quot;”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw devices list \
-  --url ws://127.0.0.1:28889 \
-  --token &quot;$(sed -n &#39;s/^OPENCLAW_GATEWAY_TOKEN=//p&#39; ~/.openclaw/.env | head -n1)&quot;</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Podman + Tailscale</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For HTTPS or remote browser access, follow the main Tailscale docs. Podman-specific note: See:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For HTTPS or remote browser access, follow the main Tailscale docs.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For HTTPS or remote browser access, follow the main Tailscale docs.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Podman-specific note:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Podman-specific note:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Podman + Tailscale”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Keep the Podman publish host at 127.0.0.1.、Prefer host-managed tailscale serve over…、For local macOS browser access without HT…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Keep the Podman publish host at <code>127.0.0.1</code>.</li><li>Prefer host-managed <code>tailscale serve</code> over <code>openclaw gateway --tailscale serve</code>.</li><li>For local macOS browser access without HTTPS, prefer the SSH tunnel section above.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“See:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>See:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Podman + Tailscale”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Tailscale、Control UI。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><a href="/gateway/tailscale" target="_blank" rel="noreferrer">Tailscale</a></li><li><a href="/web/control-ui" target="_blank" rel="noreferrer">Control UI</a></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Systemd (Quadlet, optional)</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If you ran ./scripts/podman/setup.sh --quadlet, setup installs a Quadlet file at: Useful 魔法口令s: After editing the Quadl…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If you ran ./scripts/podman/setup.sh --quadlet, setup installs a Quadlet file at:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If you ran <code>./scripts/podman/setup.sh --quadlet</code>, setup installs a Quadlet file at:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
-        <ul class="code-steps">
-          <li>这一行“~/.config/containers/systemd/openclaw.container”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">~/.config/containers/systemd/openclaw.container</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Useful 魔法口令s:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Useful commands:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Systemd (Quadlet, optional)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**Start:** systemctl --user start opencla…、**Stop:** systemctl --user stop openclaw.…、**Status:** systemctl --user status openc…、**Logs:** journalctl --user -u openclaw.s…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Start:** <code>systemctl --user start openclaw.service</code></li><li>**Stop:** <code>systemctl --user stop openclaw.service</code></li><li>**Status:** <code>systemctl --user status openclaw.service</code></li><li>**Logs:** <code>journalctl --user -u openclaw.service -f</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“After editing the Quadlet file:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>After editing the Quadlet file:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
-        <ul class="code-steps">
-          <li>这一行“systemctl --user daemon-reload”是当前步骤要交给电脑的一小块提示。</li><li>这一行“systemctl --user restart openclaw.service”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">systemctl --user daemon-reload
-systemctl --user restart openclaw.service</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For boot persistence on SSH/headless hosts, enable lingering for your current user:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For boot persistence on SSH/headless hosts, enable lingering for your current user:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
-        <ul class="code-steps">
-          <li>这一行“sudo loginctl enable-linger &quot;$(whoami)&quot;”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">sudo loginctl enable-linger &quot;$(whoami)&quot;</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>设置说明书, env, and storage</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The launch script and Quadlet bind-mount host state into the container: By default those are host directories, not anon…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Config, env, and storage”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**设置说明书 dir:** ~/.openclaw、**Workspace dir:** ~/.openclaw/workspace、**Token file:** ~/.openclaw/.env、**Launch helper:** ./scripts/run-openclaw…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Config dir:** <code>~/.openclaw</code></li><li>**Workspace dir:** <code>~/.openclaw/workspace</code></li><li>**Token file:** <code>~/.openclaw/.env</code></li><li>**Launch helper:** <code>./scripts/run-openclaw-podman.sh</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The launch script and Quadlet bind-mount host state into the container:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The launch script and Quadlet bind-mount host state into the container:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Config, env, and storage”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：OPENCLAW_设置说明书_DIR -&gt; /home/node/.openclaw、OPENCLAW_WORKSPACE_DIR -&gt; /home/node/.ope…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>OPENCLAW_CONFIG_DIR</code> -&gt; <code>/home/node/.openclaw</code></li><li><code>OPENCLAW_WORKSPACE_DIR</code> -&gt; <code>/home/node/.openclaw/workspace</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“By default those are host directories, not anonymous container state, so 设置说明书 and workspace survive container replacem…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>By default those are host directories, not anonymous container state, so config and workspace survive container replacement. The Podman setup also seeds <code>gateway.controlUi.allowedOrigins</code> for <code>127.0.0.1</code> and <code>localhost</code> on the published gateway port so the local dashboard works with the container&#39;s non-loopback bind.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Useful env vars for the manual launcher:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Useful env vars for the manual launcher:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Config, env, and storage”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：OPENCLAW_PODMAN_CONTAINER -- container na…、OPENCLAW_PODMAN_IMAGE / OPENCLAW_IMAGE --…、OPENCLAW_PODMAN_门口的小门卫_HOST_PORT -- host…、OPENCLAW_PODMAN_BRIDGE_HOST_PORT -- host…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>OPENCLAW_PODMAN_CONTAINER</code> -- container name (<code>openclaw</code> by default)</li><li><code>OPENCLAW_PODMAN_IMAGE</code> / <code>OPENCLAW_IMAGE</code> -- image to run</li><li><code>OPENCLAW_PODMAN_GATEWAY_HOST_PORT</code> -- host port mapped to container <code>18789</code></li><li><code>OPENCLAW_PODMAN_BRIDGE_HOST_PORT</code> -- host port mapped to container <code>18790</code></li><li><code>OPENCLAW_PODMAN_PUBLISH_HOST</code> -- host interface for published ports; default is <code>127.0.0.1</code></li><li><code>OPENCLAW_GATEWAY_BIND</code> -- gateway bind mode inside the container; default is <code>lan</code></li><li><code>OPENCLAW_PODMAN_USERNS</code> -- <code>keep-id</code> (default), <code>auto</code>, or <code>host</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The manual launcher reads ~/.openclaw/.env before finalizing container/image defaults, so you can persist these there.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The manual launcher reads <code>~/.openclaw/.env</code> before finalizing container/image defaults, so you can persist these there.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If you use a non-default OPENCLAW_设置说明书_DIR or OPENCLAW_WORKSPACE_DIR, set the same variables for both ./scripts/podman…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If you use a non-default <code>OPENCLAW_CONFIG_DIR</code> or <code>OPENCLAW_WORKSPACE_DIR</code>, set the same variables for both <code>./scripts/podman/setup.sh</code> and later <code>./scripts/run-openclaw-podman.sh launch</code> commands. The repo-local launcher does not persist custom path overrides across shells.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Quadlet note:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Quadlet note:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Config, env, and storage”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：The generated Quadlet service intentional…、It still reads ~/.openclaw/.env for 门口的小门…、If you need custom publish ports, publish…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>The generated Quadlet service intentionally keeps a fixed, hardened default shape: <code>127.0.0.1</code> published ports, <code>--bind lan</code> inside the container, and <code>keep-id</code> user namespace.</li><li>It still reads <code>~/.openclaw/.env</code> for gateway runtime env such as <code>OPENCLAW_GATEWAY_TOKEN</code>, but it does not consume the manual launcher&#39;s Podman-specific override allowlist.</li><li>If you need custom publish ports, publish host, or other container-run flags, use the manual launcher or edit <code>~/.config/containers/systemd/openclaw.container</code> directly, then reload and restart the service.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>Useful 魔法口令s</h2>
-            <p>这一节主要在解释“Useful 魔法口令s”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Useful 魔法口令s”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Useful commands”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**Container logs:** podman logs -f opencl…、**Stop container:** podman stop openclaw、**Remove container:** podman rm -f opencl…、**Open dashboard URL from host CLI:** ope…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Container logs:** <code>podman logs -f openclaw</code></li><li>**Stop container:** <code>podman stop openclaw</code></li><li>**Remove container:** <code>podman rm -f openclaw</code></li><li>**Open dashboard URL from host CLI:** <code>openclaw dashboard --no-open</code></li><li>**Health/status via host CLI:** <code>openclaw gateway status --deep</code></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>Troubleshooting</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Troubleshooting”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**Permission denied (EACCES) on 设置说明书 or…、**门口的小门卫 start blocked (missing 门口的小门卫.mo…、**Container CLI 魔法口令s hit the wrong targe…、**openclaw update fails with --container:…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Permission denied (EACCES) on config or workspace:** The container runs with <code>--userns=keep-id</code> and <code>--user &lt;your uid&gt;:&lt;your gid&gt;</code> by default. Ensure the host config/workspace paths are owned by your current user.</li><li>**Gateway start blocked (missing <code>gateway.mode=local</code>):** Ensure <code>~/.openclaw/openclaw.json</code> exists and sets <code>gateway.mode=&quot;local&quot;</code>. <code>scripts/podman/setup.sh</code> creates this if missing.</li><li>**Container CLI commands hit the wrong target:** Use <code>openclaw --container &lt;name&gt; ...</code> explicitly, or export <code>OPENCLAW_CONTAINER=&lt;name&gt;</code> in your shell.</li><li>**<code>openclaw update</code> fails with <code>--container</code>:** Expected. Rebuild/pull the image, then restart the container or the Quadlet service.</li><li>**Quadlet service does not start:** Run <code>systemctl --user daemon-reload</code>, then <code>systemctl --user start openclaw.service</code>. On headless systems you may also need <code>sudo loginctl enable-linger &quot;$(whoami)&quot;</code>.</li><li>**SELinux blocks bind mounts:** Leave the default mount behavior alone; the launcher auto-adds <code>:Z</code> on Linux when SELinux is enforcing or permissive.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>Related</h2>
-            <p>这一节主要在解释“Related”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Related”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Related”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Docker、门口的小门卫 background process、门口的小门卫 troubleshooting。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><a href="/install/docker" target="_blank" rel="noreferrer">Docker</a></li><li><a href="/gateway/background-process" target="_blank" rel="noreferrer">Gateway background process</a></li><li><a href="/gateway/troubleshooting" target="_blank" rel="noreferrer">Gateway troubleshooting</a></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🦭 Podman 这页，其实是在教你“让 OpenClaw 住进一个 rootless 盒子里，但你还是用宿主机上的 CLI 当遥控器”</h2>
+      <p>它和 Docker 路线像亲戚，但气质不太一样。这里强调的是：容器由你当前这个普通用户管理，不额外搞一位专门的系统服务用户。</p>
+      <p>所以这条路最重要的一句话是：容器在里面跑，控制权在外面 host CLI 手里。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合 rootless 容器路线</span>
+      <span>重点是 setup 脚本、OPENCLAW_CONTAINER、Quadlet</span>
+      <a href="https://docs.openclaw.ai/install/podman" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🎮 先记住这条路线的世界观：盒子在跑，遥控器在你手上</h2>
+    <p>官方把 intended model 写得很清楚，翻成人话就是四句话。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2>Podman 跑容器</h2>
+      <p>Gateway 住在 rootless 盒子里。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎛️</span>
+      <h2>Host CLI 当控制台</h2>
+      <p>你平时还是用宿主机上的 <code>openclaw</code> 遥控它。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏠</span>
+      <h2>状态住在宿主机</h2>
+      <p><code>~/.openclaw</code> 才是家，容器只是值班箱。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚫</span>
+      <h2>不鼓励天天 podman exec</h2>
+      <p>官方希望你用正常 CLI，而不是把自己困在容器壳里手工敲。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🚀 Quick start 就是“三步点亮盒子，再把遥控器对准它”</h2>
+    <p>这条路线的命令都很像舞台指令。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>./scripts/podman/setup.sh</code></div>
+      <p>像先把盒子、初始配置、token、小环境都准备好。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>./scripts/run-openclaw-podman.sh launch</code></div>
+      <p>像正式把盒子启动，开始值班。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>./scripts/run-openclaw-podman.sh launch setup</code></div>
+      <p>像启动时顺手拉 onboarding 老师进来，带你做第一次布置。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>export OPENCLAW_CONTAINER=openclaw</code></div>
+      <p>像把遥控器默认频道调到这只盒子，以后普通 <code>openclaw</code> 命令就会自动朝它发。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧷 macOS Podman SSH tunnel 那段，是“因为盒子机房不在本机，所以要额外拉一根电话线”</h2>
+    <p>这是 Podman on macOS 最容易让人迷糊的点。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📌 为什么要隧道</div>
+      <p>Podman machine 会让浏览器看起来不像真正本地访问，所以控制台可能误判设备来源。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>ssh -N -L 28889:127.0.0.1:18789 ...</code></div>
+      <p>像重新拉一根更清楚的本地电话线，把容器里的控制台牵到你 Mac 上的 28889 端口。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>gateway.controlUi.allowedOrigins</code></div>
+      <p>像先把这条新电话线的门牌登记进白名单，免得控制台说“我不认识你”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>Podman on macOS 时，SSH 隧道不是多余动作，而是让“本地访问真的像本地访问”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧰 Quadlet 和配置存储，说白了就是“要不要让盒子开机自启，以及家当放哪”</h2>
+    <p>这也是 Podman 路线和 Docker 路线最像的一块。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>./scripts/podman/setup.sh --quadlet</code></div>
+      <p>像请 systemd 这位值班主任接手，负责以后自动叫醒这只盒子。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>~/.openclaw</code></div>
+      <p>真正的家在这里，配置、token、workspace 都靠它长期保存。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--userns=keep-id</code></div>
+      <p>像让容器里那位工人的身份尽量和外面这位主人对齐，少出权限扯皮。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 收尾一句</div>
+      <p>Podman 这条路的精髓，是“容器很隔离，操作却尽量像日常 CLI”。</p>
+    </div>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>
