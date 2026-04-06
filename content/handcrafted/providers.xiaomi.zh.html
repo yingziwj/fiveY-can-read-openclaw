@@ -1,1 +1,108 @@
-<section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>📱 Xiaomi MiMo 这页，其实是在讲“拿 Xiaomi MiMo 的 API key 去敲它那扇 OpenAI 兼容门”</h2><p>像给 MiMo 模型家族领一张入场券，再把默认模型挂到 agent 身上。</p></div><div class="overview-meta"><span>MiMo 模型门</span><span>重点是 XIAOMI_API_KEY 与 mimo-v2-* 模型</span><a href="https://docs.openclaw.ai/providers/xiaomi" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📱 Xiaomi MiMo 这页，就是“拿小米 MiMo 的 API key 去敲 OpenAI 兼容门”</h2>
+      <p>整体路线很直：去 MiMo 控制台拿 key，然后告诉 OpenClaw 默认请哪位 MiMo 老师上场。</p>
+      <p>真正值得看懂的，是三位老师的分工：快聊、深想、能看图。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想接 MiMo 模型的人</span>
+      <span>重点是 XIAOMI_API_KEY 和三款 mimo-v2 模型</span>
+      <a href="https://docs.openclaw.ai/providers/xiaomi" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一步</p>
+    <h2>🔑 先去 MiMo 控制台领钥匙</h2>
+    <p>这页最前面的动作没有弯弯绕，就是拿 key。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🪪</span>
+      <h2><code>XIAOMI_API_KEY</code></h2>
+      <p>像 MiMo 模型大厅的入场券。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🛠</span>
+      <h2><code>openclaw onboard --auth-choice xiaomi-api-key</code></h2>
+      <p>像让向导直接来收这张门票。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⚡</span>
+      <h2>非交互式模式</h2>
+      <p>长命令只是“别问我问题，我把门票直接贴给你”的脚本版。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏠</span>
+      <h2>后台也要看得到</h2>
+      <p>如果 Gateway 是后台值班员，这张门票也得放到后台抽屉里。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二步</p>
+    <h2>🧠 三款模型，像三位分工不同的老师</h2>
+    <p>官方给你的模型概览，翻成人话其实很好记。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>mimo-v2-flash</code></div>
+      <p>像快聊老师，速度优先，适合当默认文本模型。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>mimo-v2-pro</code></div>
+      <p>像戴思考帽的老师，擅长更重的推理任务，而且桌子也更长。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>mimo-v2-omni</code></div>
+      <p>像会看图的老师，除了文字，还能处理图片输入。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 先别被 token 数字吓到</div>
+      <p>看那些超长上下文数字时，把它想成“桌子有多长”就够了。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三步</p>
+    <h2>🏠 配置片段其实在说三件事：门牌号、说话口音、默认老师</h2>
+    <p>你看到那段配置，不用一行行背，只要认出这三件事。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>https://api.xiaomimimo.com/v1</code></div>
+      <p>像 MiMo 这栋楼的门牌号。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>api: openai-completions</code></div>
+      <p>像进门后统一讲 OpenAI 这套话。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>xiaomi/mimo-v2-flash</code></div>
+      <p>像告诉 OpenClaw：“默认先叫快聊老师来。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">reasoning / image</div>
+      <p>这些不是玄学标签，而是在告诉你这位老师会不会多想、能不能看图。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Xiaomi MiMo 这页压成一句最好记的话</h2>
+    <p>先领 MiMo 门票，再决定默认请快聊老师、深想老师，还是会看图的老师。整体走的是一扇标准 OpenAI 兼容门。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你现在在比“快聊”和“推理”两档模型，这页是个很清楚的样板：先看角色分工，再看参数。</p>
+  </div>
+</section>

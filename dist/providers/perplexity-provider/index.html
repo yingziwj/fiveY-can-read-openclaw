@@ -3970,7 +3970,110 @@
   
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🔎 Perplexity Provider 这页，其实是在讲“把 Perplexity 当成搜索服务商接进来”，不是把它当聊天主模型</h2><p>这页讲 provider 侧接法；真正怎么用搜索工具，要看 Perplexity tool 那页。</p></div><div class="overview-meta"><span>搜索服务商入口</span><span>重点是 pplx- 直连与 sk-or- 走 OpenRouter</span><a href="https://docs.openclaw.ai/providers/perplexity-provider" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🔎 这页讲的是“给 OpenClaw 装一个搜索供应商”，不是换聊天大脑</h2>
+      <p>Perplexity 在这里更像一位外聘资料员。你平时问问题时，代理需要上网查资料，就会把检索任务递给它。</p>
+      <p>所以别把它和聊天主模型 provider 混成一件事。它干的是搜资料，不是主脑推理。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想让代理上网搜资料的人</span>
+      <span>重点是 key 前缀决定走哪条搜索路</span>
+      <a href="https://docs.openclaw.ai/providers/perplexity-provider" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一步</p>
+    <h2>🛠 配置命令像“把资料员招聘进办公室”</h2>
+    <p>官方给了两种做法：用配置向导，或者直接把 key 填进那条很长的配置路径。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧭</span>
+      <h2><code>openclaw configure --section web</code></h2>
+      <p>像走带路老师模式，让它带你去“网页搜索”那间房间填表。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✍️</span>
+      <h2><code>openclaw config set ...apiKey ...</code></h2>
+      <p>像绕过前台，直接在总账本上写下资料员的工牌号。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏠</span>
+      <h2>后台也得看得到 key</h2>
+      <p>如果 Gateway 在后台跑，这把资料员工牌也得放到后台值班室。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>这页最重要的动作</h2>
+      <p>不是“手动调用 Perplexity”，而是把它配置成默认搜索供应商。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二步</p>
+    <h2>🪪 key 的前缀，就是在决定你到底走哪条搜索路线</h2>
+    <p>这一点是整页最关键的信息。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>pplx-...</code></div>
+      <p>像走 Perplexity 自家资料室，支持比较结构化的筛选和过滤。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>sk-or-...</code></div>
+      <p>像借 OpenRouter 的门去用 Perplexity Sonar，结果更像“AI 带引用的整理答案”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">为什么官方强调前缀</div>
+      <p>因为系统会根据前缀自动挑交通工具。你给哪种工牌，它就坐哪辆车去查资料。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三步</p>
+    <h2>🧺 过滤参数在说什么？像告诉资料员“去哪找、看哪种、别翻太多”</h2>
+    <p>这部分别当成参数森林，它其实很生活化。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">Country / Language</div>
+      <p>像告诉资料员：“优先去哪个国家、看哪种语言的资料。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Date range</div>
+      <p>像告诉它：“我只要最近一周，别把十年前的旧报纸也抱回来。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Domain allow / deny</div>
+      <p>像给资料员一张白名单和黑名单，哪些书店能进、哪些别去。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Content budget</div>
+      <p>像提醒它：“别把整座图书馆都搬回来，挑关键的就行。”</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Perplexity Provider 这页压成一句最好记的话</h2>
+    <p>这页不是换主脑，而是给代理招聘一位会上网查资料的资料员。你交哪种 key，它就走哪条搜索路线去帮你找资料。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你想看“代理实际怎么用这个资料员去搜”，接着看工具页；如果你只想完成招聘，这页已经够了。</p>
+  </div>
+</section>
 
 
       <footer class="page-footer">

@@ -3970,7 +3970,110 @@
   
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>⚡ MiniMax 这页，其实是在讲“MiniMax 既能走 OAuth 编码计划路线，也能走 API key 路线”</h2><p>官方更推荐 Coding Plan 的 OAuth 快速开局，因为少一层手动抄 key。</p></div><div class="overview-meta"><span>MiniMax 双路线</span><span>重点是 OAuth Coding Plan 与 API key 两套入口</span><a href="https://docs.openclaw.ai/providers/minimax" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>⚡ MiniMax 这页是在教你二选一：走 OAuth 快速门，还是走 API key 正规门</h2>
+      <p>它不是难在参数多，而是难在入口有两套。官方明显更偏向你先走 Coding Plan 的 OAuth 快速门，因为省得你自己抄 key。</p>
+      <p>如果你更想稳稳可控，那就走 API key 路线。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合要接 MiniMax M2.7 的人</span>
+      <span>重点是 OAuth 入口和 API key 入口的区别</span>
+      <a href="https://docs.openclaw.ai/providers/minimax" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一条路</p>
+    <h2>🚀 OAuth 快速门，像“先登录会员卡，再直接进场”</h2>
+    <p>如果你用的是 MiniMax Coding Plan，这条路最省事。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧩</span>
+      <h2><code>openclaw plugins enable minimax</code></h2>
+      <p>像先把 MiniMax 这块接待模块插到系统里。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔄</span>
+      <h2><code>openclaw gateway restart</code></h2>
+      <p>像让值班大厅重新开灯，好让新模块真的上岗。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪪</span>
+      <h2><code>openclaw onboard --auth-choice minimax-portal</code></h2>
+      <p>像正式走会员登录通道，不用你手抄 API key。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🌍</span>
+      <h2>Global / CN</h2>
+      <p>像先选你要去国际馆还是中国馆，两边的门牌号不同。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二条路</p>
+    <h2>🔑 API key 路线，像“我自己拿钥匙手动配门”</h2>
+    <p>如果你更想把一切写清楚、控得更细，这条路更适合你。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>MINIMAX_API_KEY</code></div>
+      <p>像你手里的正式钥匙，后面走的是 Anthropic 兼容接口。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>baseUrl: https://api.minimax.io/anthropic</code></div>
+      <p>像你告诉 OpenClaw：“MiniMax 这扇门在这里，不要敲错楼层。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>api: anthropic-messages</code></div>
+      <p>像规定双方说 Anthropic 这套话术，不要切成 OpenAI 那套口音。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>MiniMax-M2.7</code> / <code>-highspeed</code></div>
+      <p>一个像标准档，一个像快跑档。都是 M2.7 家族，只是节奏不同。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">补一个容易忽略的点</p>
+    <h2>🛟 “fallback 示例”其实是在教你：MiniMax 也可以当备份轮胎</h2>
+    <p>官方举这个例子，是想告诉你 MiniMax 不一定非得当主脑。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">主模型</div>
+      <p>像你平时最常开的那台主力车。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">MiniMax fallback</div>
+      <p>像后备箱里的备胎。主车有事，它顶上。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 这页真正想传达的事</div>
+      <p>MiniMax 不只是一扇能进的门，也是一块可以摆在模型阵容里的灵活拼图。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 MiniMax 这页压成一句最好记的话</h2>
+    <p>想快就走 OAuth 会员门，想稳就走 API key 手动门。接进来后，MiniMax 既能当主脑，也能当备胎。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你正在比较“订阅登录”和“传统 API key”两种风格，这页就是最典型的双路线样本。</p>
+  </div>
+</section>
 
 
       <footer class="page-footer">

@@ -3970,7 +3970,114 @@
   
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🪞 Claude Max API Proxy 这页，其实是在讲“把你的 Claude Max/Pro 订阅，套一个 OpenAI 兼容壳给别的工具用”</h2><p>好处是可能更省钱，风险是它属于技术兼容路线，不是最稳的官方生产路线。</p></div><div class="overview-meta"><span>订阅套壳路线</span><span>重点是 OpenAI 兼容代理、Claude CLI、订阅条款风险</span><a href="https://docs.openclaw.ai/providers/claude-max-api-proxy" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🪞 Claude Max API Proxy，就是给 Claude Max/Pro 订阅套一个“OpenAI 门脸”</h2>
+      <p>它的意思不是让你多买一个模型，而是把你已经有的 Claude 订阅，借一个代理翻译成很多工具都认识的 OpenAI 说话方式。</p>
+      <p>好处是个人开发时可能更省钱。风险也写得很直白：这条路偏技术兼容，不是最稳的官方生产路线。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合已经有 Claude Max/Pro 订阅的人</span>
+      <span>重点是代理、Claude CLI 登录状态、条款风险</span>
+      <a href="https://docs.openclaw.ai/providers/claude-max-api-proxy" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一步</p>
+    <h2>💸 为什么有人会走这条路？因为它像“包月卡”路线</h2>
+    <p>官方先把账本摊开给你看：按 token 计费像打车按里程收，Claude Max 则更像月卡。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧾 Anthropic API</div>
+      <p>更像标准售票口。清楚、正式、适合生产环境，但用得多时账单会跟着涨。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🎟 Claude Max 订阅</div>
+      <p>更像包月票。个人长期折腾时，可能比按次结账划算。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⚠ 官方的态度</div>
+      <p>官方没有把这条路说成“稳稳可生产”。它明确提醒你自己看清条款，再决定要不要用。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 先记一句</div>
+      <p>这页不是在卖新模型，而是在讲“怎么把订阅套成兼容接口”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二步</p>
+    <h2>🔁 那张流程图，其实是在说“门口加了一个翻译员”</h2>
+    <p>你的应用本来会说 OpenAI 语言，Claude CLI 会说另一种语言。代理就站在中间做翻译。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">你的 App</div>
+      <p>像顾客，拿着 OpenAI 格式的点单表来敲门。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>claude-max-api-proxy</code></div>
+      <p>像前台翻译，把点单表改写成 Claude Code CLI 听得懂的话。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Claude Code CLI</div>
+      <p>像后厨接单员，它会用你已经登录好的订阅身份去真正下单。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">回来的结果</div>
+      <p>代理再把结果翻回 OpenAI 格式，这样外面的工具就不用改嘴型。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三步</p>
+    <h2>🛠 安装和启动命令，像“先搭前台，再让翻译员上班”</h2>
+    <p>这里的命令不要死背，把它想成开店动作就好。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2><code>npm install -g claude-max-api-proxy</code></h2>
+      <p>像把这位翻译员请到机器里常驻待命。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪪</span>
+      <h2><code>claude --version</code></h2>
+      <p>表面是在看版本，实际上是在确认 Claude CLI 这个人已经在场，而且通常也顺带确认你装好了它。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚪</span>
+      <h2><code>claude-max-api</code></h2>
+      <p>像正式把翻译前台点亮。它会在本地开一个 <code>localhost:3456</code> 的门口。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🩺</span>
+      <h2><code>curl /health</code></h2>
+      <p>像敲一下前台玻璃：“有人在吗？”能回就说明门没死。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后提醒</p>
+    <h2>🎈 把这页压成一句最好记的话</h2>
+    <p>Claude Max API Proxy 是“订阅套 OpenAI 壳”的兼容路线，适合个人折腾省钱，但你要自己承担条款和稳定性判断，不要把它当成默认生产正道。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你想走更稳的正式路，就回到 Anthropic、OpenRouter 这类官方 API 入口页去选。</p>
+  </div>
+</section>
 
 
       <footer class="page-footer">

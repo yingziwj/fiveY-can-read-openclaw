@@ -3970,7 +3970,114 @@
   
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🌋 Volcengine 这页，其实是在讲“同一把 Volcano Engine key 能开普通模型窗口和 coding 模型窗口两扇门”</h2><p>一扇给 general，一扇给 coding，但钥匙是一把。</p></div><div class="overview-meta"><span>普通门 + 编码门</span><span>重点是 volcengine 与 volcengine-plan 双 provider</span><a href="https://docs.openclaw.ai/providers/volcengine" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🌋 Volcengine 像一把钥匙开两扇门：普通模型门和 coding 模型门</h2>
+      <p>这页最容易让人看晕的地方，是 provider 有两个：<code>volcengine</code> 和 <code>volcengine-plan</code>。但官方又说，它们其实共用同一把 <code>VOLCANO_ENGINE_API_KEY</code>。</p>
+      <p>所以记法很简单：一把钥匙，两扇门，一扇偏通用，一扇偏代码。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想接 Doubao 和 Volcano Engine 托管模型的人</span>
+      <span>重点是一把 key 开双门</span>
+      <a href="https://docs.openclaw.ai/providers/volcengine" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一步</p>
+    <h2>🔑 先把火山引擎钥匙交进去</h2>
+    <p>官方给的 onboarding 命令很直白，就是收钥匙。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🛠</span>
+      <h2><code>openclaw onboard --auth-choice volcengine-api-key</code></h2>
+      <p>像在前台登记这把火山引擎会员卡。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2><code>VOLCANO_ENGINE_API_KEY</code></h2>
+      <p>这就是那把钥匙，后面两扇门都会认它。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🤖</span>
+      <h2>默认模型可直接设</h2>
+      <p>像办完卡后，顺手告诉系统：“以后默认请这位 coding 老师先上场。”</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⚡</span>
+      <h2>非交互式模式</h2>
+      <p>那串长命令只是一次性把表单填完交上去，适合脚本，不是新手必背咒语。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二步</p>
+    <h2>🚪 两个 provider，其实是在区分“两栋业务窗口”</h2>
+    <p>官方把 endpoint 表列出来，就是为了让你不要搞混。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>volcengine</code></div>
+      <p>像普通业务大厅，主要放通用模型。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>volcengine-plan</code></div>
+      <p>像编程业务大厅，主要放 coding 模型。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">为什么要拆开</div>
+      <p>因为两扇门的地址不同，但门禁卡是同一张。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 最好记的话</div>
+      <p>provider 分成两扇门，auth 只有一把钥匙。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三步</p>
+    <h2>📚 模型名单像“这两栋楼里分别住着哪些老师”</h2>
+    <p>你不用一次全背，只要先知道自己是偏通用还是偏 coding。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">通用老师</div>
+      <p><code>doubao-seed-1-8</code> 更像大厅里的标准通用老师。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">编程老师</div>
+      <p><code>ark-code-latest</code>、<code>doubao-seed-code-preview</code> 更像代码训练营那边的老师。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">第三方老师</div>
+      <p>Kimi、GLM、DeepSeek 也可能住在这两栋楼里，但门牌仍然按 Volcengine 的楼号来写。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">后台环境提醒</div>
+      <p>Gateway 如果是后台值班，别忘了让它也能摸到这把火山引擎钥匙。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Volcengine 这页压成一句最好记的话</h2>
+    <p>Volcengine 像一把卡开两扇门：普通业务大厅和 coding 大厅。你先把卡放稳，再决定默认从哪扇门请老师上场。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你容易把“模型名字”和“平台门牌”弄混，这页正好练会“一把钥匙开双门”的思路。</p>
+  </div>
+</section>
 
 
       <footer class="page-footer">

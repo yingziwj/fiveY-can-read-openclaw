@@ -3970,7 +3970,110 @@
   
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🟢 NVIDIA 这页，其实是在讲“拿 NGC 的 API key 去敲 NVIDIA 的 OpenAI 兼容大门，跑 Nemotron / NeMo 这些模型”</h2><p>接法不绕，关键是 key 和 base URL 要对上。</p></div><div class="overview-meta"><span>NVIDIA OpenAI 兼容入口</span><span>重点是 NVIDIA_API_KEY 和 integrate.api.nvidia.com</span><a href="https://docs.openclaw.ai/providers/nvidia" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🟢 NVIDIA 这页很像“拿 NGC 门卡去开 OpenAI 兼容大门”</h2>
+      <p>它的接法并不花。重点就是：准备好 <code>NVIDIA_API_KEY</code>，再把默认模型切成 NVIDIA 那边的型号。</p>
+      <p>你可以把它想成“门长得像 OpenAI，但里面站着的是 NVIDIA 的模型”。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想接 Nemotron / NeMo 模型的人</span>
+      <span>重点是 NGC key、base URL、默认模型切换</span>
+      <a href="https://docs.openclaw.ai/providers/nvidia" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一步</p>
+    <h2>🔑 先准备 NGC 门卡，再让 OpenClaw 知道你要走 NVIDIA 这扇门</h2>
+    <p>官方推荐先用环境变量，不推荐把 token 直接塞进命令参数里到处留痕。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2><code>export NVIDIA_API_KEY="nvapi-..."</code></h2>
+      <p>像先把门卡放进口袋，而不是举在街上让每个人都看见。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚪</span>
+      <h2><code>openclaw onboard --auth-choice skip</code></h2>
+      <p>这里更像“跳过前台问答，后面自己直接设模型”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧠</span>
+      <h2><code>openclaw models set ...</code></h2>
+      <p>像把默认大脑正式换成 NVIDIA 那位老师。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⚠</span>
+      <h2>别把 token 硬塞进命令里</h2>
+      <p>官方专门提醒，是因为那样容易留在 shell 历史和进程列表里。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二步</p>
+    <h2>🏠 配置片段，其实只是把门牌号和默认老师写清楚</h2>
+    <p>配置看着长，翻成人话就是“这扇门在哪、说哪种话、默认请谁上场”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>https://integrate.api.nvidia.com/v1</code></div>
+      <p>像 NVIDIA 这栋楼的门牌号。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>api: openai-completions</code></div>
+      <p>像告诉 OpenClaw：“进去后，按 OpenAI 这套说话方式交流。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>nvidia/nvidia/llama-3.1-nemotron-70b-instruct</code></div>
+      <p>这串长名字就是完整路线图：先到 NVIDIA 商场，再找到具体柜台。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">自动启用</div>
+      <p>官方说得很省心：只要这把 key 在，provider 可以自动亮起来。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三步</p>
+    <h2>📚 那几条模型 ID，像“今天大厅里常见的几位老师”</h2>
+    <p>先不用全记，先知道默认老师是谁就够了。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">默认款</div>
+      <p><code>nvidia/llama-3.1-nemotron-70b-instruct</code> 像大厅正中间那位被默认安排上场的老师。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">可替换款</div>
+      <p><code>meta/llama-3.3-70b-instruct</code>、<code>nvidia/mistral-nemo-minitron-8b-8k-instruct</code> 像同一栋楼里的别的柜台。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 先别被列表吓到</div>
+      <p>先跑通一位老师，再慢慢换，不要一上来把整栋楼都背下来。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 NVIDIA 这页压成一句最好记的话</h2>
+    <p>这页最核心的动作就是：把 NGC 门卡放稳，指定 NVIDIA 模型，然后把 OpenClaw 带去那扇 OpenAI 兼容门口。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你也在用本地模型机房，那下一页更该对比 Ollama 和 SGLang，不要把远程大楼和本地机房混一起看。</p>
+  </div>
+</section>
 
 
       <footer class="page-footer">

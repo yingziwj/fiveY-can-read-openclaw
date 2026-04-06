@@ -1,1 +1,99 @@
-<section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🧱 SGLang 这页，其实是在讲“如果你有一台会说 OpenAI 兼容 HTTP 的 SGLang 服务器，OpenClaw 可以把它当模型后端接进来”</h2><p>重点是 `/v1` 门口和自动发现模型列表。</p></div><div class="overview-meta"><span>SGLang 后端接入</span><span>重点是 /v1/models 自动发现与显式配置</span><a href="https://docs.openclaw.ai/providers/sglang" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧱 SGLang 像你自己搭的一台模型服务器，只要它会说 OpenAI 兼容 HTTP，OpenClaw 就能接过去</h2>
+      <p>这页不是在讲某家云平台，而是在讲“你家里或机房里有一台 SGLang 服务端，怎么让 OpenClaw 去连它”。</p>
+      <p>能自动发现模型，是它最省心的地方之一。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合本地或自建 SGLang 服务</span>
+      <span>重点是 <code>/v1</code> 门口、自动发现、手写模型</span>
+      <a href="https://docs.openclaw.ai/providers/sglang" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一步</p>
+    <h2>🚪 先确认你的 SGLang 服务器门口带着 <code>/v1</code></h2>
+    <p>和 Ollama 正好相反，这里官方就是要你走带 <code>/v1</code> 的那扇门。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>http://127.0.0.1:30000/v1</code></div>
+      <p>像 SGLang 这栋小楼的常见门牌号。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>/v1/models</code></div>
+      <p>像门口的大厅目录牌，OpenClaw 可以去这里看今天有哪些模型在岗。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>/v1/chat/completions</code></div>
+      <p>像真正办业务的窗口，聊天请求会从这里进去。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二步</p>
+    <h2>🪪 <code>SGLANG_API_KEY</code> 有时更像“进门贴纸”，哪怕只是随便写一个值</h2>
+    <p>官方说得很实用：如果你的服务器没强制鉴权，任何值都能当 opt-in 信号。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🏷</span>
+      <h2><code>export SGLANG_API_KEY="sglang-local"</code></h2>
+      <p>像在门口贴一张“请启用 SGLang”小纸条，不一定是真的保安钥匙。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧭</span>
+      <h2><code>openclaw onboard</code></h2>
+      <p>像让带路老师自动去探测这台小楼里有哪些老师能上班。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧠</span>
+      <h2><code>sglang/your-model-id</code></h2>
+      <p>像选定目录牌上某位老师，告诉 OpenClaw 默认就找他。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三步</p>
+    <h2>📚 自动发现和手写配置，像“看大厅目录”与“自己做座位表”</h2>
+    <p>两种都能走，区别只是你要不要自己把模型资料填死。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">自动发现</div>
+      <p>像前台直接去 <code>/v1/models</code> 抄今天在岗名单，最省事。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">显式配置</div>
+      <p>像你自己做座位表，把 <code>contextWindow</code>、<code>maxTokens</code> 这些信息手写进去。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>curl /v1/models</code></div>
+      <p>像站在门口问一句：“今天到底谁在楼里值班？”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 什么时候用手写配置</div>
+      <p>当门牌号不是默认值、你想固定上下文长度，或者服务器确实要真 key 时，就自己做座位表。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 SGLang 这页压成一句最好记的话</h2>
+    <p>SGLang 像自建模型小楼。你先确认它的 <code>/v1</code> 门口能通，再决定是让 OpenClaw 自动看目录，还是你自己手写一张模型座位表。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你也在用 Ollama，记住两者最大的反差：SGLang 要带 <code>/v1</code>，Ollama 反而别带。</p>
+  </div>
+</section>

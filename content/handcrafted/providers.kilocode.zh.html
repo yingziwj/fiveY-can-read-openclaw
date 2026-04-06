@@ -1,1 +1,104 @@
-<section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🧾 Kilo Gateway 这页，其实是在讲“用一把 API key 去敲一个统一模型总前台，让它再帮你转接很多模型”</h2><p>它像模型商场总柜台，OpenAI 兼容是它最大的接入优势。</p></div><div class="overview-meta"><span>模型总前台</span><span>重点是 KILOCODE_API_KEY 与统一入口</span><a href="https://docs.openclaw.ai/providers/kilocode" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧾 Kilo Gateway 像一个模型总前台：一把钥匙，后面很多柜台</h2>
+      <p>你不用一家家模型厂商分别办卡，而是先在 Kilo 这里领一张总门卡。它再根据任务，把请求送去合适的模型。</p>
+      <p>所以它最有趣的地方，不是“又多了一个 provider”，而是“它会替你挑后厨”。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想少管模型路由的人</span>
+      <span>重点是 KILOCODE_API_KEY 和 <code>kilo/auto</code></span>
+      <a href="https://docs.openclaw.ai/providers/kilocode" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一步</p>
+    <h2>🔑 先领一把 Kilo 总门卡</h2>
+    <p>官方给你的动作非常直：去 Kilo 后台拿 key，然后交给 OpenClaw。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🛠</span>
+      <h2><code>openclaw onboard --kilocode-api-key &lt;key&gt;</code></h2>
+      <p>像把门卡直接递给新手向导。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2><code>KILOCODE_API_KEY</code></h2>
+      <p>像总前台通行证。它不是某个单独模型的小钥匙。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏠</span>
+      <h2>推荐放环境变量</h2>
+      <p>像把门卡放进值班室抽屉，Gateway 自己上班时也能摸到。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>这一页最先记住什么</h2>
+      <p>不是先选模型，而是先领总门卡。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二步</p>
+    <h2>🤖 <code>kilocode/kilo/auto</code> 为什么最特别？因为它像“自动分单员”</h2>
+    <p>官方默认不是随便给的，它代表一种自动路由思路。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>kilocode/kilo/auto</code></div>
+      <p>像总前台里的调度员，收到任务后会自己判断该往哪位老师那里送。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">规划 / 调试 / 编排</div>
+      <p>更像会被送去更擅长深度思考的那位老师。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">写代码 / 浏览 / 常规任务</div>
+      <p>更像会被送去更适合日常出手、速度更稳的那位老师。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 最值得懂的点</div>
+      <p>你不是在选“一个死模型”，而是在选“一个会自动转单的模型入口”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三步</p>
+    <h2>🏬 那串长模型名，像“商场 / 店铺 / 柜台”路线图</h2>
+    <p>看到 <code>kilocode/anthropic/claude-sonnet-4</code> 这种长名字时，不要慌，它只是在写清楚你最后会被送到哪。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>kilocode/anthropic/claude-sonnet-4</code></div>
+      <p>第一段是商场，第二段是哪家店，第三段才是具体柜台。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>/models kilocode</code></div>
+      <p>像问前台：“你们家今天都上了哪些老师？”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Bearer token</div>
+      <p>底层就是每次请求都拿着那张 Kilo 门卡去验票。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Kilo Gateway 这页压成一句最好记的话</h2>
+    <p>Kilo Gateway 像模型总前台。你交一把总门卡进去，既可以直接点具体柜台，也可以偷懒用 <code>kilocode/kilo/auto</code> 让它自动分单。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你更喜欢自己精确挑模型，而不是让总前台帮你转单，就去看普通 provider 的单店页面。</p>
+  </div>
+</section>

@@ -3970,7 +3970,110 @@
   
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🪪 OpenCode 这页，其实是在讲“同一把 OPENCODE_API_KEY 可以开两个模型货架：Zen 和 Go”</h2><p>虽然运行时 provider id 分开记，但对人来说它们更像同一家商场的两层楼。</p></div><div class="overview-meta"><span>一把钥匙开两层楼</span><span>重点是 Zen / Go 双目录</span><a href="https://docs.openclaw.ai/providers/opencode" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🪪 OpenCode 像一座两层楼的模型商场：Zen 一层，Go 一层</h2>
+      <p>两层楼用的是同一把门卡 <code>OPENCODE_API_KEY</code>，只是楼层编号不同，所以运行时 provider id 也分成了 <code>opencode</code> 和 <code>opencode-go</code>。</p>
+      <p>这页最需要看懂的，不是参数，而是“同一家商场，为什么要拆成两个门牌”。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想同时看多套模型目录的人</span>
+      <span>重点是 Zen / Go 双目录和同一把 API key</span>
+      <a href="https://docs.openclaw.ai/providers/opencode" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一眼</p>
+    <h2>🏬 为什么要分两层楼？因为它们卖的货架不一样</h2>
+    <p>对人来说，它们都叫 OpenCode；对系统来说，它们是不同货架，需要不同门牌号。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">Zen</div>
+      <p>更像综合馆，常见的是 Claude、GPT、Gemini 这种“多家混合货架”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Go</div>
+      <p>更像另一层精选馆，常见的是 Kimi、GLM、MiniMax 这排老师。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">为什么要拆 provider id</div>
+      <p>因为系统真正转单时，要知道你到底在 Zen 楼还是 Go 楼。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>一把钥匙，两层楼，门牌必须分清。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二步</p>
+    <h2>🔑 CLI setup 的两条命令，像“告诉前台你今天要先逛哪一层”</h2>
+    <p>虽然都是同一把钥匙，但 onboarding 还是要知道你当前先准备接哪一层。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧘</span>
+      <h2><code>--auth-choice opencode-zen</code></h2>
+      <p>像告诉前台：“我先去 Zen 楼逛。”</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏃</span>
+      <h2><code>--auth-choice opencode-go</code></h2>
+      <p>像告诉前台：“我先去 Go 楼逛。”</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪪</span>
+      <h2><code>OPENCODE_API_KEY</code></h2>
+      <p>不管你先去哪一层，兜里掏出来的都是同一张会员卡。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>为什么文档还提到别名 key</h2>
+      <p>像前台顺手告诉你：门卡也接受旧称呼，但你最好认主名。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三步</p>
+    <h2>🏷 配置片段在说“默认先让哪层楼的哪位老师上场”</h2>
+    <p><code>opencode/claude-opus-4-6</code> 这种名字本质上就是楼层 + 柜台号。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>opencode/claude-opus-4-6</code></div>
+      <p>像 Zen 楼里的一位高阶老师。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>opencode-go/glm-5</code></div>
+      <p>像 Go 楼里的一位老师，门牌不同，但商场还是同一家。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Billing 和货架</div>
+      <p>这些都在 OpenCode 自己的后台管理。OpenClaw 只负责拿着门卡去对的柜台。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 OpenCode 这页压成一句最好记的话</h2>
+    <p>OpenCode 像一座两层楼的模型商场。你用同一张会员卡进门，但点模型时要把楼层号写清楚，不然系统不知道该去哪层找老师。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你只想看 Go 那层，下一页的 OpenCode Go 会更聚焦，不用把两层楼一起背。</p>
+  </div>
+</section>
 
 
       <footer class="page-footer">

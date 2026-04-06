@@ -1,1 +1,104 @@
-<section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🎙️ Deepgram 这页，其实是在讲“让 Deepgram 充当 OpenClaw 的听写员，把语音先翻成字”</h2><p>它主要服务的是入站音频转写，不是聊天主模型。</p></div><div class="overview-meta"><span>语音转写员</span><span>重点是 DEEPGRAM_API_KEY、audio models、Transcript 注入</span><a href="https://docs.openclaw.ai/providers/deepgram" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🎙️ Deepgram 在 OpenClaw 里更像“听写员”，不是聊天大脑</h2>
+      <p>别人发来语音、语音留言、录好的音频时，OpenClaw 先把音频递给 Deepgram，等它听完写成字，再把这段字塞回后面的回复流程。</p>
+      <p>所以这页讲的是“怎么把声音翻成字”，不是“换聊天模型”。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合要处理语音消息的人</span>
+      <span>重点是 API key、audio 配置和转写注入</span>
+      <a href="https://docs.openclaw.ai/providers/deepgram" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一步</p>
+    <h2>🔑 先把听写员的工牌交进去</h2>
+    <p>没有 <code>DEEPGRAM_API_KEY</code>，OpenClaw 就算收到音频，也不知道该把录音带交给谁。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>DEEPGRAM_API_KEY=dg_...</code></div>
+      <p>像给听写员发工牌。工牌在，后面上传音频时它才肯接活。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">后台进程也要看得到</div>
+      <p>如果 Gateway 在后台值班，这把钥匙也得放到后台摸得到的地方，比如 <code>~/.openclaw/.env</code>。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>先发工牌，再谈转写质量。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二步</p>
+    <h2>🧰 那段 <code>tools.media.audio</code> 配置，其实是在打开“音频处理台”</h2>
+    <p>看起来像一大坨 JSON，翻成人话只是三件事：开机、选听写员、选听写模型。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">✅</span>
+      <h2><code>enabled: true</code></h2>
+      <p>像把音频处理台的电源拨到开。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">👂</span>
+      <h2><code>provider: deepgram</code></h2>
+      <p>像告诉前台：“今天负责听写的是 Deepgram。”</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📝</span>
+      <h2><code>model: nova-3</code></h2>
+      <p>像给听写员指定一支常用笔，官方默认就用这支。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📮</span>
+      <h2><code>{{Transcript}}</code> + <code>[Audio]</code></h2>
+      <p>意思是转写出来的字，会被塞进后面的回复管道，不会凭空消失。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三步</p>
+    <h2>🎛 那几个选项，都是在教听写员“要不要更聪明地整理稿子”</h2>
+    <p>这些开关不是玄学，它们就是整理文字的不同小帮手。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>language</code></div>
+      <p>像提前告诉它“这段大概是什么语言”，这样它更容易少听错。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>detect_language</code></div>
+      <p>像让它自己先猜这人到底在讲哪种语言。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>punctuate</code></div>
+      <p>像让它补逗号句号，不要把整段话写成一条长长面条。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>smart_format</code></div>
+      <p>像让它顺手把一些数字、时间、格式整理得更像人会写的样子。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Deepgram 这页压成一句最好记的话</h2>
+    <p>Deepgram 是 OpenClaw 的语音听写员。你给它工牌、打开音频处理台、选好模型，它就会把收到的声音先翻成字，再交给后面的聊天流程继续处理。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你现在看的不是语音，而是要选聊天主模型，就回到普通 provider 页去选大脑，不要把听写员和大脑混成一件事。</p>
+  </div>
+</section>
