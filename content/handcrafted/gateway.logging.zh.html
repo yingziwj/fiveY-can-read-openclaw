@@ -1,0 +1,164 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📝 <code>Logging</code> 像“Gateway 的黑匣子和现场广播”</h2>
+      <p>OpenClaw 不是只有一种日志。官方把它拆成两面：一面是你在终端里眼睛直接看到的现场广播，一面是落进文件里的黑匣子。</p>
+      <p>所以这页最关键的，不是背参数，而是先分清你现在到底是在看“现场喇叭”，还是在翻“事后记录本”。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合排错、看运行细节、想分清控制台和文件日志的人</span>
+      <span>这页最重要的是记住：<code>--verbose</code> 只会让现场更吵，不会自动把文件日志级别抬高</span>
+      <a href="https://docs.openclaw.ai/gateway/logging" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">先分家</p>
+    <h2>📣 控制台是现场广播，📦 文件日志是黑匣子</h2>
+    <p>只要先把这两面分开，后面所有“为什么我明明开了 verbose 还是没写进文件”之类的问题就不绕了。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📣</span>
+      <h2>Console output</h2>
+      <p>像现场广播喇叭。你盯着终端时，耳朵先听到的是这一面。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2>File logs</h2>
+      <p>像黑匣子，按天一行一行地记在文件里，适合事后翻。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📂</span>
+      <h2>默认位置</h2>
+      <p>官方默认把滚动日志放在 <code>/tmp/openclaw/</code> 下面，每天一份。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>一个给眼前看，一个给事后查。别把两本账混成一本。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最容易误会</p>
+    <h2>🔊 <code>--verbose</code> 不是“全世界都更详细”，它只是把现场喇叭拧大声</h2>
+    <p>官方这里说得非常直接，但很多人还是会误会。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>--verbose</code></div>
+      <p>像把现场广播喇叭音量调大，让你听到更多 WebSocket 来来回回的碎话。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>logging.level</code></div>
+      <p>像告诉黑匣子“你到底要记到多细”。如果不把它调到 <code>debug</code> 或 <code>trace</code>，文件里还是不会多出那些细碎细节。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">两套旋钮</div>
+      <p>一个旋钮管现场喇叭，一个旋钮管黑匣子录音，别以为拧一个就全都变。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 记一句</div>
+      <p><code>--verbose</code> 是“我现在想多听点”，不是“以后文件自动全记下来”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">命令翻译</p>
+    <h2>👀 这些查看动作，就像不同的看监控方式</h2>
+    <p>你是在站在现场看，还是调回放，要用的动作不一样。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw logs --follow</code></div>
+      <p>像站在监控室里盯着屏幕，看新的日志一条条滚出来。不是翻旧档案，而是看“现在正在发生什么”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway --verbose --ws-log compact</code></div>
+      <p>像让前台接线员把每次来电和回电成对地念给你听，但尽量别啰嗦到一帧一帧都念。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway --verbose --ws-log full</code></div>
+      <p>像你真的想看逐帧回放，于是把每一张小票都摊开检查。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Control UI Logs tab</div>
+      <p>像把黑匣子尾巴接到网页里，不用一直守终端也能看。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">格式和样式</p>
+    <h2>🎨 控制台样式、级别、子系统前缀，像“广播员穿什么衣服、用什么嗓门”</h2>
+    <p>官方这里其实是在帮日志变得更容易扫读。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🎙</span>
+      <h2><code>logging.consoleLevel</code></h2>
+      <p>像决定广播员平时说多大声，哪些小声嘀咕要不要放出来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧵</span>
+      <h2><code>pretty | compact | json</code></h2>
+      <p>像决定广播稿是彩色读稿、紧凑播报，还是直接交机器看得懂的原始格式。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏷</span>
+      <h2>Subsystem prefixes</h2>
+      <p>像每条广播前都先喊一句“我是 gateway 组”或“我是 tailscale 组”，免得你听半天不知道谁在说话。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🌈</span>
+      <h2>TTY-aware colors</h2>
+      <p>像在真终端里给不同广播员穿不同颜色马甲，更好扫。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">敏感信息</p>
+    <h2>🕶 Redaction 像“上镜前先给钥匙打码”</h2>
+    <p>官方这里很谨慎：某些 verbose 工具摘要在去控制台前可以先打码，但这不等于文件日志也会一起改写。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>logging.redactSensitive: tools</code></div>
+      <p>像规定“工具台上拿出来晃的钥匙，先戴个墨镜再上镜”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>logging.redactPatterns</code></div>
+      <p>像自己再补一张“哪些号码和票据上镜前必须遮住”的名单。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">只影响 tools-only console stream</div>
+      <p>像只给直播画面打码，不是回头把原始胶片也抹掉。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⚠️ 记一句</div>
+      <p>控制台打码不等于黑匣子自动打码。查问题时别把这两件事混掉。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把这页压成一句最短的话</h2>
+    <p>Logging 就像 Gateway 的现场广播和黑匣子：<code>--verbose</code> 只会让你眼前听得更细，真正写进文件多少，要看 <code>logging.level</code> 这只黑匣子旋钮。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你想看“整座 Gateway 的网络和门路到底怎么布”，下一页就去 <code>/gateway/network-model</code>。</p>
+  </div>
+</section>

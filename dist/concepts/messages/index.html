@@ -3970,674 +3970,245 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Messages</h2>
-          <p>这一页像一本关于“小纸条消息s”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：小纸条消息s。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/concepts/messages</span>
-          <span>章节数量：10</span>
-          <a href="https://docs.openclaw.ai/concepts/messages" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“小纸条消息s This page ties together how OpenClaw handles inbound 小纸条消息s, sessions, queueing, 一边说一边送ing, and reasoning visibi…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“小纸条消息s”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Messages</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“This page ties together how OpenClaw handles inbound 小纸条消息s, sessions, queueing, 一边说一边送ing, and reasoning visibility.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>This page ties together how OpenClaw handles inbound messages, sessions, queueing, streaming, and reasoning visibility.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>小纸条消息 flow (high level)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Key knobs live in 设置说明书uration: See 设置说明书uration for full schema.”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像给机器人看的说明书，告诉它要按什么样子准备东西。</p>
-        <ul class="code-steps">
-          <li>这一行“Inbound message”是当前步骤要交给电脑的一小块提示。</li><li>这一行“-&gt; routing/bindings -&gt; session key”是当前步骤要交给电脑的一小块提示。</li><li>这一行“-&gt; queue (if a run is active)”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">Inbound message
-  -&gt; routing/bindings -&gt; session key
-  -&gt; queue (if a run is active)
-  -&gt; agent run (streaming + tools)
-  -&gt; outbound replies (channel limits + chunking)</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Key knobs live in 设置说明书uration:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Key knobs live in configuration:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Message flow (high level)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：小纸条消息s.* for prefixes, queueing, and 大家一起…、机器人朋友s.defaults.* for block 一边说一边送ing and…、消息通道 overrides (消息通道s.whatsapp.*, 消息通道s.t…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>messages.*</code> for prefixes, queueing, and group behavior.</li><li><code>agents.defaults.*</code> for block streaming and chunking defaults.</li><li>Channel overrides (<code>channels.whatsapp.*</code>, <code>channels.telegram.*</code>, etc.) for caps and streaming toggles.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“See 设置说明书uration for full schema.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>See <a href="/gateway/configuration" target="_blank" rel="noreferrer">Configuration</a> for full schema.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Inbound dedupe</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“消息通道s can redeliver the same 小纸条消息 after reconnects. OpenClaw keeps a short-lived cache keyed by 消息通道/account/peer/sess…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“消息通道s can redeliver the same 小纸条消息 after reconnects. OpenClaw keeps a short-lived cache keyed by 消息通道/account/peer/sess…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Channels can redeliver the same message after reconnects. OpenClaw keeps a short-lived cache keyed by channel/account/peer/session/message id so duplicate deliveries do not trigger another agent run.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Inbound debouncing</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“R对话接口d consecutive 小纸条消息s from the **same sender** can be batched into a single 机器人朋友 turn via 小纸条消息s.inbound. Debounci…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“R对话接口d consecutive 小纸条消息s from the **same sender** can be batched into a single 机器人朋友 turn via 小纸条消息s.inbound. Debounci…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Rapid consecutive messages from the **same sender** can be batched into a single agent turn via <code>messages.inbound</code>. Debouncing is scoped per channel + conversation and uses the most recent message for reply threading/IDs.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“设置说明书 (global default + per-消息通道 overrides):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Config (global default + per-channel overrides):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“messages”贴标签，意思是把它设置成“{”。</li><li>这里在给“inbound”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  messages: {
-    inbound: {
-      debounceMs: 2000,
-      byChannel: {
-        whatsapp: 5000,
-        slack: 1500,
-        discord: 1500,
-      },
-    },
-  },
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Notes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Inbound debouncing”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Debounce applies to **text-only** 小纸条消息s;…、Control 魔法口令s bypass debouncing so they r…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Debounce applies to **text-only** messages; media/attachments flush immediately.</li><li>Control commands bypass debouncing so they remain standalone.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Sessions and devices</h2>
-            <p>这一节主要在解释“Sessions and devices”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Sessions and devices”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Sessions are owned by the 门口的小门卫, not by 来帮忙的小伙伴s. Multiple devices/消息通道s can map to the same session, but history is n…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Sessions are owned by the 门口的小门卫, not by 来帮忙的小伙伴s.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Sessions are owned by the gateway, not by clients.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Sessions and devices”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Direct chats collapse into the 机器人朋友 main…、大家一起的房间s/消息通道s get their own session keys.、The session store and transcripts live on…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Direct chats collapse into the agent main session key.</li><li>Groups/channels get their own session keys.</li><li>The session store and transcripts live on the gateway host.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Multiple devices/消息通道s can map to the same session, but history is not fully synced back to every 来帮忙的小伙伴. Recommendati…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Multiple devices/channels can map to the same session, but history is not fully synced back to every client. Recommendation: use one primary device for long conversations to avoid divergent context. The Control UI and TUI always show the gateway-backed session transcript, so they are the source of truth.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Details: Session management.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Details: <a href="/concepts/session" target="_blank" rel="noreferrer">Session management</a>.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Inbound bodies and history context</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw separates the **prompt body** from the **魔法口令 body**: optional history wrappers. When a 消息通道 supplies history,…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw separates the **prompt body** from the **魔法口令 body**:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw separates the **prompt body** from the **command body**:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“optional history wrappers.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>optional history wrappers.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Inbound bodies and history context”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Body: prompt text sent to the 机器人朋友. This…、魔法口令Body: raw user text for directive/魔法口…、RawBody: legacy alias for 魔法口令Body (kept…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>Body</code>: prompt text sent to the agent. This may include channel envelopes and</li><li><code>CommandBody</code>: raw user text for directive/command parsing.</li><li><code>RawBody</code>: legacy alias for <code>CommandBody</code> (kept for compatibility).</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When a 消息通道 supplies history, it uses a shared wrapper:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When a channel supplies history, it uses a shared wrapper:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Inbound bodies and history context”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：[Chat 小纸条消息s since your last reply - for…、[Current 小纸条消息 - respond to this]。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>[Chat messages since your last reply - for context]</code></li><li><code>[Current message - respond to this]</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For **non-direct chats** (大家一起的房间s/消息通道s/rooms), the **current 小纸条消息 body** is prefixed with the sender label (same sty…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For **non-direct chats** (groups/channels/rooms), the **current message body** is prefixed with the sender label (same style used for history entries). This keeps real-time and queued/history messages consistent in the agent prompt.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“History buffers are **pending-only**: they include 大家一起的房间 小纸条消息s that did *not* trigger a run (for example, mention-ga…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>History buffers are **pending-only**: they include group messages that did *not* trigger a run (for example, mention-gated messages) and **exclude** messages already in the session transcript.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Directive stripping only applies to the **current 小纸条消息** section so history remains intact. 消息通道s that wrap history sh…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Directive stripping only applies to the **current message** section so history remains intact. Channels that wrap history should set <code>CommandBody</code> (or <code>RawBody</code>) to the original message text and keep <code>Body</code> as the combined prompt. History buffers are configurable via <code>messages.groupChat.historyLimit</code> (global default) and per-channel overrides like <code>channels.slack.historyLimit</code> or <code>channels.telegram.accounts.&lt;id&gt;.historyLimit</code> (set <code>0</code> to disable).</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Queueing and followups</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If a run is already active, inbound 小纸条消息s can be queued, steered into the current run, or collected for a followup tur…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If a run is already active, inbound 小纸条消息s can be queued, steered into the current run, or collected for a followup tur…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If a run is already active, inbound messages can be queued, steered into the current run, or collected for a followup turn.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Queueing and followups”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：设置说明书ure via 小纸条消息s.queue (and 小纸条消息s.que…、Modes: interrupt, steer, followup, collec…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Configure via <code>messages.queue</code> (and <code>messages.queue.byChannel</code>).</li><li>Modes: <code>interrupt</code>, <code>steer</code>, <code>followup</code>, <code>collect</code>, plus backlog variants.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Details: Queueing.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Details: <a href="/concepts/queue" target="_blank" rel="noreferrer">Queueing</a>.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>一边说一边送ing, chunking, and batching</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Block 一边说一边送ing sends partial replies as the 聪明脑袋模型 produces text blocks. Chunking respects 消息通道 text limits and avoids…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Block 一边说一边送ing sends partial replies as the 聪明脑袋模型 produces text blocks. Chunking respects 消息通道 text limits and avoids…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Block streaming sends partial replies as the model produces text blocks. Chunking respects channel text limits and avoids splitting fenced code.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Key settings:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Key settings:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Streaming, chunking, and batching”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：机器人朋友s.defaults.block一边说一边送ingDefault (on…、机器人朋友s.defaults.block一边说一边送ingBreak (text…、机器人朋友s.defaults.block一边说一边送ingChunk (minC…、机器人朋友s.defaults.block一边说一边送ingCoalesce (i…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>agents.defaults.blockStreamingDefault</code> (<code>on|off</code>, default off)</li><li><code>agents.defaults.blockStreamingBreak</code> (<code>text_end|message_end</code>)</li><li><code>agents.defaults.blockStreamingChunk</code> (<code>minChars|maxChars|breakPreference</code>)</li><li><code>agents.defaults.blockStreamingCoalesce</code> (idle-based batching)</li><li><code>agents.defaults.humanDelay</code> (human-like pause between block replies)</li><li>Channel overrides: <code>*.blockStreaming</code> and <code>*.blockStreamingCoalesce</code> (non-Telegram channels require explicit <code>*.blockStreaming: true</code>)</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Details: 一边说一边送ing + chunking.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Details: <a href="/concepts/streaming" target="_blank" rel="noreferrer">Streaming + chunking</a>.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>Reasoning visibility and tokens</h2>
-            <p>这一节主要在解释“Reasoning visibility and tokens”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Reasoning visibility and tokens”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw can expose or hide 聪明脑袋模型 reasoning: Details: Thinking + reasoning directives and Token use.”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw can expose or hide 聪明脑袋模型 reasoning:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw can expose or hide model reasoning:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Reasoning visibility and tokens”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：/reasoning on off 一边说一边送 controls visibil…、Reasoning content still counts toward tok…、Telegram supports reasoning 一边说一边送 into t…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>/reasoning on|off|stream</code> controls visibility.</li><li>Reasoning content still counts toward token usage when produced by the model.</li><li>Telegram supports reasoning stream into the draft bubble.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Details: Thinking + reasoning directives and Token use.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Details: <a href="/tools/thinking" target="_blank" rel="noreferrer">Thinking + reasoning directives</a> and <a href="/reference/token-use" target="_blank" rel="noreferrer">Token use</a>.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>Prefixes, threading, and replies</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Outbound 小纸条消息 formatting is centralized in 小纸条消息s: Details: 设置说明书uration and 消息通道 docs.”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Outbound 小纸条消息 formatting is centralized in 小纸条消息s:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Outbound message formatting is centralized in <code>messages</code>:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Prefixes, threading, and replies”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：小纸条消息s.responsePrefix, 消息通道s.&lt;消息通道&gt;.respo…、Reply threading via replyToMode and per-消…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>messages.responsePrefix</code>, <code>channels.&lt;channel&gt;.responsePrefix</code>, and <code>channels.&lt;channel&gt;.accounts.&lt;id&gt;.responsePrefix</code> (outbound prefix cascade), plus <code>channels.whatsapp.messagePrefix</code> (WhatsApp inbound prefix)</li><li>Reply threading via <code>replyToMode</code> and per-channel defaults</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Details: 设置说明书uration and 消息通道 docs.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Details: <a href="/gateway/configuration-reference#messages" target="_blank" rel="noreferrer">Configuration</a> and channel docs.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📮 Messages 就是“消息怎么进门、怎么排队、怎么回家”</h2>
+      <p>这页把很多东西缝在一起：消息从哪儿来，来了以后怎么分给哪一本会话本，排队时怎么等，回答时怎么一小段一小段送出去，脑子里要不要把想法亮出来。</p>
+      <p>你可以把它想成一条邮局流水线。门口收信，柜台分信，车间干活，最后把回信送回去。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想看懂“消息来了以后到底发生什么”的人</span>
+      <span>这页最重要的是把 inbound、session、queue、streaming 放在同一条路上看</span>
+      <a href="https://docs.openclaw.ai/concepts/messages" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>📨 先想画面：一条消息从门口进来，不会直接冲进工厂</h2>
+    <p>它会先经过路由、会话键、队列，再进 agent run。最后才是回复。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">Inbound message</div>
+      <p>像一封刚进门的信，先放到前台，不是直接扔进后厨。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Routing / bindings</div>
+      <p>像门卫先看这封信该送去哪一间屋子。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Session key</div>
+      <p>像给这封信贴上一个“属于哪本聊天本”的书签。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Queue -> run -> replies</div>
+      <p>像先排队，再请工人处理，最后把回信分段送出去。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧷 重复投递不该让它重复开工，所以有个小记忆盒</h2>
+    <p>官方说得很实在：通道重连以后，同一条消息可能又来一次。OpenClaw 会先认出来，别让它重复跑一遍。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2>Inbound dedupe</h2>
+      <p>像门口放了一只短期记忆盒，同样的包裹再来时，会先认出它来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧾</span>
+      <h2>按 channel/account/peer/session/message id 认人</h2>
+      <p>像信封上写了很多标签，门卫就能更稳地判断是不是同一封信。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚫</span>
+      <h2>认出来就不重复开工</h2>
+      <p>不是冷漠，是为了不让同一件事被做两遍。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>重复投递应该像复印件，不该像新工单。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>⏳ 连续几封小纸条来了，它可以先抱成一团</h2>
+    <p>这就是 debouncing。意思是，连着来的几条消息，可以先稍微等一下，合成一次更像人话的回复。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>messages.inbound.debounceMs</code></div>
+      <p>像前台设一个小缓冲区：别一条条刚进来就急着喊工人，先等一小会儿看还有没有后续。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">按通道可以不同</div>
+      <p>WhatsApp 可以等久一点，Slack 和 Discord 可以短一点。像不同门口的人说话节奏不一样。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">text-only 才会等</div>
+      <p>纯文字会先等，图片和附件通常会立刻放行，不然用户会觉得机器人卡住了。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">控制命令直接过</div>
+      <p>像店长的手势，不需要跟普通闲聊一起凑热闹。</p>
+    </div>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">🛠 配置像在做什么</div>
+      <p><code>debounceMs: 2000</code> 就像说“先等两秒，看对方是不是还要接着说”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>byChannel</code></div>
+      <p>像不同门口有不同的等候时间表。WhatsApp 这扇门慢一点，Slack 那扇门快一点。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">一条消息变一轮</div>
+      <p>合并以后，OpenClaw 就拿一组更完整的话去想答案，而不是每个碎碎念都单独开工。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>debounce 不是拖延，是先听完再回。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🗂 Session 是门卫手里的那本“这位客人属于哪一间屋”的本子</h2>
+    <p>这页特别强调：会话是 gateway 的，不是客户端各自私藏的。控制台和 TUI 看到的，才是主本子。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🏠</span>
+      <h2>Direct chats</h2>
+      <p>直聊通常会折叠到主会话。像同一个人一直来前台，还是记在同一本聊天本上。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">👥</span>
+      <h2>Groups / channels</h2>
+      <p>群聊和频道通常会有自己的会话键。像每个房间都有自己的记录本。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔒</span>
+      <h2>Gateway 是总账本</h2>
+      <p>客户端只是来读，不是各写各的。真正的历史由 gateway host 负责保存。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>谁属于哪本本子，别让手机自己猜，交给 gateway 记。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🪧 prompt body 和 command body 不一样，像“给小工人的话”和“给门卫的原话”</h2>
+    <p>官方把这两层拆开，是为了让历史和命令解析都更稳。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>Body</code></div>
+      <p>像真正送进工人脑袋里的工作单，可能已经包好历史和外壳了。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>CommandBody</code></div>
+      <p>像门卫拿到的原话，专门用来识别是不是在下命令。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>RawBody</code></div>
+      <p>就是旧名字，像以前的老标签，还能认，但现在更推荐看 <code>CommandBody</code>。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">历史包裹怎么摆</div>
+      <p>群聊常会先放“从你上次回复之后发生了什么”的历史条，再放“这一次请直接回应”的当前消息条。这样工人不会把故事顺序搞乱。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>📣 队列不是一个总开关，它有几种排法</h2>
+    <p>如果工人正在干活，新来的消息可以马上插手、等下一轮、一起收拢，或者把旧排队再带一点回来。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">⚡</span>
+      <h2><code>interrupt</code></h2>
+      <p>像把正在说话的人打断，换成最新一封信先上。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧪</span>
+      <h2><code>steer</code></h2>
+      <p>像轻轻在工人耳边补一句：“方向往这边拐。”</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧺</span>
+      <h2><code>followup</code> / <code>collect</code></h2>
+      <p>像把后续纸条先收在篮子里，等当前这一轮做完再一起处理。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>一句话</h2>
+      <p>队列是在帮消息排队，不是在帮消息打架。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第七站</p>
+    <h2>🗣 说话方式也能调：边想边说，还是先想完再说</h2>
+    <p>官方这里讲 streaming、chunking、prefix、reply threading，还有 reasoning visibility。它们本质上都是“回信怎么摆出来”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>blockStreaming</code></div>
+      <p>像让工人边想边递草稿，不必等整篇写完再亮给你看。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>blockStreamingChunk</code></div>
+      <p>像决定草稿一口气递多大块，别把句子切得太碎。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>/reasoning on|off|stream</code></div>
+      <p>像决定脑内小火花要不要给你看，是全藏起来、全部关掉，还是边想边亮。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">消息前缀和线程</div>
+      <p><code>responsePrefix</code> 像回信前先加个称呼，<code>replyToMode</code> 像决定是不是把回信挂回原来那条线上。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把这页压成一句最短的话</h2>
+    <p>Messages 这页讲的是一条消息从门口进来、被认出是谁、是否先排队、怎么喂给工人、以及最后如何分段回家。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你想继续看“怎么让登录结果像一把稳定的小钥匙”，下一页就去 <code>/concepts/oauth</code>。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

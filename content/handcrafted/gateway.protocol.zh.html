@@ -1,0 +1,164 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🤝 <code>Gateway Protocol</code> 像“前台握手暗号和收发信格式”</h2>
+      <p>所有客户端连到 Gateway 时，不是闷头就开始说话。它们要先打招呼，报身份，报自己会什么，再按统一格式收发消息。</p>
+      <p>所以这页本质上讲的是：第一次见面怎么握手，后面纸条怎么写，谁能做什么事。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想看懂 CLI、Web、节点到底怎么和 Gateway 说话的人</span>
+      <span>这页最重要的是先分清：role 是你是谁，scope 是你被允许做什么</span>
+      <a href="https://docs.openclaw.ai/gateway/protocol" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一步</p>
+    <h2>🚪 第一个包必须是 <code>connect</code>，像进门先报到</h2>
+    <p>官方把这件事写得很严格：第一帧必须是 <code>connect</code>。不先报到，门就不会正式打开。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">Gateway 先发 challenge</div>
+      <p>像门卫先递出一张带时间戳和随机数的小纸片，确认你不是假冒来敲门。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Client 再回 <code>connect</code></div>
+      <p>像你把自己的身份、版本、角色、权限、设备签名都填在报到表上递回去。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>hello-ok</code></div>
+      <p>像门卫盖章：“好，进吧。你今天用协议 3，这里是值班规则。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 记一句</div>
+      <p>这不是“先随便连上再说”，而是“先过门卫，再拿通行牌”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">角色与权限</p>
+    <h2>🪪 <code>role</code> 像工种，<code>scope</code> 像门卡权限</h2>
+    <p>这是整页最核心的分野。只看一个不够，两个要一起看。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧑‍💼</span>
+      <h2><code>operator</code></h2>
+      <p>像控制台值班员，负责看面板、发命令、做管理动作。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📱</span>
+      <h2><code>node</code></h2>
+      <p>像带着摄像头、屏幕、定位这些能力在外面跑的小设备。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔑</span>
+      <h2><code>operator.read / write / admin / approvals / pairing</code></h2>
+      <p>像不同颜色的门卡。读得到，不一定写得到；能操作，不一定能批敏感动作。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧰</span>
+      <h2><code>caps / commands / permissions</code></h2>
+      <p>节点连进来时，会先报“我会什么”“我声称能做什么”“哪些开关已经打开”。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-heading">
+  <p class="section-kicker">消息格式</p>
+  <h2>✉️ 后面的纸条只有三种：请求、回应、广播</h2>
+  <p>官方把 framing 写成结构体。换成人话，就是三种信封。</p>
+</section>
+<section class="section-shell">
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>{type:"req"}</code></div>
+      <p>像“我要办一件事”的申请单。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>{type:"res"}</code></div>
+      <p>像门卫回你的回执：办成了还是没办成。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>{type:"event"}</code></div>
+      <p>像广播喇叭，不是你问了才说，而是系统主动告诉大家“发生了一件事”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">idempotency keys</div>
+      <p>副作用动作要带幂等钥匙，像在申请单上写唯一流水号，防止同一张单子被误办两次。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">命令翻译</p>
+    <h2>📦 那个长长的 <code>connect</code> JSON，到底在现场讲了什么？</h2>
+    <p>如果把字段逐个翻成人话，它就不再像一坨硬代码。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>minProtocol / maxProtocol</code></div>
+      <p>像说“我会的暗号版本最低到这里，最高到这里，你和我能不能对上号？”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>client.id / version / platform / mode</code></div>
+      <p>像在胸牌上写清“我是 CLI 还是 iOS 节点，我来自哪台机器，我今天是哪种模式上岗”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>auth.token</code></div>
+      <p>像把门卡递给门卫看一眼，没有它就别想过闸。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>device.publicKey / signature / nonce</code></div>
+      <p>像除了门卡，还要出示设备自己的身份证明，证明你真是那台已经登记过的设备。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">认证与设备令牌</p>
+    <h2>🎟 第一次过门后，Gateway 还会发你一张“设备专属回头票”</h2>
+    <p>官方这里很重要：配对后会发 device token。它像以后再次来访时更顺手的专属门票。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🎫</span>
+      <h2><code>hello-ok.auth.deviceToken</code></h2>
+      <p>像门卫说：“以后你这台设备再来，拿这张专属票就行。”</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔄</span>
+      <h2>rotate / revoke</h2>
+      <p>像门票丢了、要换新、或要作废时，可以专门去门卫室操作。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⚠️</span>
+      <h2>AUTH_TOKEN_MISMATCH</h2>
+      <p>像普通门卡不对时，可信客户端可以小心地再试一次自己留存的设备票，但不能无限乱撞。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>第一次是正式登记，以后则尽量靠设备专属回头票更顺地进门。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把这页压成一句最短的话</h2>
+    <p>Gateway Protocol 讲的就是门口怎么打招呼、纸条怎么写、门卡怎么验、以及不同工种到底被允许做什么：先握手，再报身份，再按统一信封格式收发消息。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你想看“门外这些客户端最终都怎么沿路回到总机房”，上一页就是 <code>/gateway/network-model</code>。</p>
+  </div>
+</section>

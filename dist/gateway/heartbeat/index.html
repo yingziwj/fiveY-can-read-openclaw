@@ -3970,1408 +3970,171 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Heartbeat</h2>
-          <p>这一页像一本关于“Heartbeat”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：Heartbeat (门口的小门卫)。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/gateway/heartbeat</span>
-          <span>章节数量：22</span>
-          <a href="https://docs.openclaw.ai/gateway/heartbeat" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Heartbeat (门口的小门卫) &gt; **Heartbeat vs Cron?** See Cron vs Heartbeat for guidance on when to use each. Heartbeat runs **pe…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Heartbeat (门口的小门卫)”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Heartbeat (Gateway)</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&gt; **Heartbeat vs Cron?** See Cron vs Heartbeat for guidance on when to use each.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&gt; **Heartbeat vs Cron?** See <a href="/automation/cron-vs-heartbeat" target="_blank" rel="noreferrer">Cron vs Heartbeat</a> for guidance on when to use each.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Heartbeat runs **periodic 机器人朋友 turns** in the main session so the 聪明脑袋模型 can surface anything that needs attention wit…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Heartbeat runs **periodic agent turns** in the main session so the model can surface anything that needs attention without spamming you.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Troubleshooting: /自动小闹钟/troubleshooting”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Troubleshooting: <a href="/automation/troubleshooting" target="_blank" rel="noreferrer">/automation/troubleshooting</a></p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Quick start (beginner)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“1. Leave heartbeats enabled (default is 30m, or 1h for Anthropic OAuth/setup-token) or set your own cadence. 2. Create…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“1. Leave heartbeats enabled (default is 30m, or 1h for Anthropic OAuth/setup-token) or set your own cadence. 2. Create…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. Leave heartbeats enabled (default is <code>30m</code>, or <code>1h</code> for Anthropic OAuth/setup-token) or set your own cadence. 2. Create a tiny <code>HEARTBEAT.md</code> checklist in the agent workspace (optional but recommended). 3. Decide where heartbeat messages should go (<code>target: &quot;none&quot;</code> is the default; set <code>target: &quot;last&quot;</code> to route to the last contact). 4. Optional: enable heartbeat reasoning delivery for transparency. 5. Optional: use lightweight bootstrap context if heartbeat runs only need <code>HEARTBEAT.md</code>. 6. Optional: enable isolated sessions to avoid sending full conversation history each heartbeat. 7. Optional: restrict heartbeats to active hours (local time).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Example 设置说明书:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Example config:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“agents”贴标签，意思是把它设置成“{”。</li><li>这里在给“defaults”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  agents: {
-    defaults: {
-      heartbeat: {
-        every: &quot;30m&quot;,
-        target: &quot;last&quot;, // explicit delivery to last contact (default is &quot;none&quot;)
-        directPolicy: &quot;allow&quot;, // default: allow direct/DM targets; set &quot;block&quot; to suppress
-        lightContext: true, // optional: only inject HEARTBEAT.md from bootstrap files
-        isolatedSession: true, // optional: fresh session each run (no conversation history)
-        // activeHours: { start: &quot;08:00&quot;, end: &quot;24:00&quot; },
-        // includeReasoning: true, // optional: send separate `Reasoning:` message too
-      },
-    },
-  },
-}</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Defaults</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior cha…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior cha…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.</code></p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“prompt includes a “Heartbeat” section and the run is flagged internally.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>prompt includes a “Heartbeat” section and the run is flagged internally.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Outside the window, heartbeats are skipped until the next tick inside the window.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Outside the window, heartbeats are skipped until the next tick inside the window.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Defaults”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Interval: 30m (or 1h when Anthropic OAuth…、Prompt body (设置说明书urable via 机器人朋友s.defau…、The heartbeat prompt is sent **verbatim**…、Active hours (heartbeat.activeHours) are…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Interval: <code>30m</code> (or <code>1h</code> when Anthropic OAuth/setup-token is the detected auth mode). Set <code>agents.defaults.heartbeat.every</code> or per-agent <code>agents.list[].heartbeat.every</code>; use <code>0m</code> to disable.</li><li>Prompt body (configurable via <code>agents.defaults.heartbeat.prompt</code>):</li><li>The heartbeat prompt is sent **verbatim** as the user message. The system</li><li>Active hours (<code>heartbeat.activeHours</code>) are checked in the configured timezone.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>What the heartbeat prompt is for</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The default prompt is intentionally broad: follow-ups (inbox, calendar, reminders, queued work) and surface anything ur…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The default prompt is intentionally broad:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The default prompt is intentionally broad:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“follow-ups (inbox, calendar, reminders, queued work) and surface anything urgent.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>follow-ups (inbox, calendar, reminders, queued work) and surface anything urgent.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“occasional lightweight “anything you need?” 小纸条消息, but avoids night-time spam by using your 设置说明书ured local timezone (s…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>occasional lightweight “anything you need?” message, but avoids night-time spam by using your configured local timezone (see <a href="/concepts/timezone" target="_blank" rel="noreferrer">/concepts/timezone</a>).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“What the heartbeat prompt is for”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**Background tasks**: “Consider outstandi…、**Human check-in**: “Checkup sometimes on…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Background tasks**: “Consider outstanding tasks” nudges the agent to review</li><li>**Human check-in**: “Checkup sometimes on your human during day time” nudges an</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If you want a heartbeat to do something very specific (e.g. “check Gmail PubSub stats” or “verify 门口的小门卫 health”), set…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If you want a heartbeat to do something very specific (e.g. “check Gmail PubSub stats” or “verify gateway health”), set <code>agents.defaults.heartbeat.prompt</code> (or <code>agents.list[].heartbeat.prompt</code>) to a custom body (sent verbatim).</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Response contract</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“at the **start or end** of the reply. The token is stripped and the reply is dropped if the remaining content is **≤ ac…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“at the **start or end** of the reply. The token is stripped and the reply is dropped if the remaining content is **≤ ac…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>at the **start or end** of the reply. The token is stripped and the reply is dropped if the remaining content is **≤ <code>ackMaxChars</code>** (default: 300).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“specially.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>specially.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Response contract”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：If nothing needs attention, reply with **…、During heartbeat runs, OpenClaw treats HE…、If HEARTBEAT_OK appears in the **middle**…、For alerts, **do not** include HEARTBEAT_…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>If nothing needs attention, reply with **<code>HEARTBEAT_OK</code>**.</li><li>During heartbeat runs, OpenClaw treats <code>HEARTBEAT_OK</code> as an ack when it appears</li><li>If <code>HEARTBEAT_OK</code> appears in the **middle** of a reply, it is not treated</li><li>For alerts, **do not** include <code>HEARTBEAT_OK</code>; return only the alert text.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Outside heartbeats, stray HEARTBEAT_OK at the start/end of a 小纸条消息 is stripped and logged; a 小纸条消息 that is only HEARTBE…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Outside heartbeats, stray <code>HEARTBEAT_OK</code> at the start/end of a message is stripped and logged; a message that is only <code>HEARTBEAT_OK</code> is dropped.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>设置说明书</h2>
-            <p>这一节主要在解释“设置说明书”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“设置说明书”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“agents”贴标签，意思是把它设置成“{”。</li><li>这里在给“defaults”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  agents: {
-    defaults: {
-      heartbeat: {
-        every: &quot;30m&quot;, // default: 30m (0m disables)
-        model: &quot;anthropic/claude-opus-4-6&quot;,
-        includeReasoning: false, // default: false (deliver separate Reasoning: message when available)
-        lightContext: false, // default: false; true keeps only HEARTBEAT.md from workspace bootstrap files
-        isolatedSession: false, // default: false; true runs each heartbeat in a fresh session (no conversation history)
-        target: &quot;last&quot;, // default: none | options: last | none | &lt;channel id&gt; (core or plugin, e.g. &quot;bluebubbles&quot;)
-        to: &quot;+15551234567&quot;, // optional channel-specific override
-        accountId: &quot;ops-bot&quot;, // optional multi-account channel id
-        prompt: &quot;Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.&quot;,
-        ackMaxChars: 300, // max chars allowed after HEARTBEAT_OK
-      },
-    },
-  },
-}</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Scope and precedence</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Scope and precedence”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：机器人朋友s.defaults.heartbeat sets global hea…、机器人朋友s.list[].heartbeat merges on top; if…、消息通道s.defaults.heartbeat sets visibility…、消息通道s.&lt;消息通道&gt;.heartbeat overrides 消息通道 def…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>agents.defaults.heartbeat</code> sets global heartbeat behavior.</li><li><code>agents.list[].heartbeat</code> merges on top; if any agent has a <code>heartbeat</code> block, **only those agents** run heartbeats.</li><li><code>channels.defaults.heartbeat</code> sets visibility defaults for all channels.</li><li><code>channels.&lt;channel&gt;.heartbeat</code> overrides channel defaults.</li><li><code>channels.&lt;channel&gt;.accounts.&lt;id&gt;.heartbeat</code> (multi-account channels) overrides per-channel settings.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>Per-机器人朋友 heartbeats</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If any 机器人朋友s.list[] entry includes a heartbeat block, **only those 机器人朋友s** run heartbeats. The per-机器人朋友 block merges…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If any 机器人朋友s.list[] entry includes a heartbeat block, **only those 机器人朋友s** run heartbeats. The per-机器人朋友 block merges…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If any <code>agents.list[]</code> entry includes a <code>heartbeat</code> block, **only those agents** run heartbeats. The per-agent block merges on top of <code>agents.defaults.heartbeat</code> (so you can set shared defaults once and override per agent).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Example: two 机器人朋友s, only the second 机器人朋友 runs heartbeats.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Example: two agents, only the second agent runs heartbeats.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“agents”贴标签，意思是把它设置成“{”。</li><li>这里在给“defaults”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  agents: {
-    defaults: {
-      heartbeat: {
-        every: &quot;30m&quot;,
-        target: &quot;last&quot;, // explicit delivery to last contact (default is &quot;none&quot;)
-      },
-    },
-    list: [
-      { id: &quot;main&quot;, default: true },
-      {
-        id: &quot;ops&quot;,
-        heartbeat: {
-          every: &quot;1h&quot;,
-          target: &quot;whatsapp&quot;,
-          to: &quot;+15551234567&quot;,
-          prompt: &quot;Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.&quot;,
-        },
-      },
-    ],
-  },
-}</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>Active hours example</h2>
-            <p>这一节主要在解释“Active hours example”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Active hours example”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Restrict heartbeats to business hours in a specific timezone: Outside this window (before 9am or after 10pm Eastern), h…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Restrict heartbeats to business hours in a specific timezone:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Restrict heartbeats to business hours in a specific timezone:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“agents”贴标签，意思是把它设置成“{”。</li><li>这里在给“defaults”贴标签，意思是把它设置成“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  agents: {
-    defaults: {
-      heartbeat: {
-        every: &quot;30m&quot;,
-        target: &quot;last&quot;, // explicit delivery to last contact (default is &quot;none&quot;)
-        activeHours: {
-          start: &quot;09:00&quot;,
-          end: &quot;22:00&quot;,
-          timezone: &quot;America/New_York&quot;, // optional; uses your userTimezone if set, otherwise host tz
-        },
-      },
-    },
-  },
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Outside this window (before 9am or after 10pm Eastern), heartbeats are skipped. The next scheduled tick inside the wind…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Outside this window (before 9am or after 10pm Eastern), heartbeats are skipped. The next scheduled tick inside the window will run normally.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>24/7 setup</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If you want heartbeats to run all day, use one of these patterns: Do not set the same start and end time (for example 0…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If you want heartbeats to run all day, use one of these patterns:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If you want heartbeats to run all day, use one of these patterns:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“24/7 setup”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Omit activeHours entirely (no time-window…、Set a full-day window: activeHours: { sta…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Omit <code>activeHours</code> entirely (no time-window restriction; this is the default behavior).</li><li>Set a full-day window: <code>activeHours: { start: &quot;00:00&quot;, end: &quot;24:00&quot; }</code>.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Do not set the same start and end time (for example 08:00 to 08:00). That is treated as a zero-width window, so heartbe…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Do not set the same <code>start</code> and <code>end</code> time (for example <code>08:00</code> to <code>08:00</code>). That is treated as a zero-width window, so heartbeats are always skipped.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-11">
-          <div class="section-heading">
-            <p class="section-kicker">第 11 站</p>
-            <h2>Multi account example</h2>
-            <p>这一节主要在解释“Multi account example”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Multi account example”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use accountId to target a specific account on multi-account 消息通道s like Telegram:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use accountId to target a specific account on multi-account 消息通道s like Telegram:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use <code>accountId</code> to target a specific account on multi-account channels like Telegram:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“agents”贴标签，意思是把它设置成“{”。</li><li>这里在给“list”贴标签，意思是把它设置成“[”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  agents: {
-    list: [
-      {
-        id: &quot;ops&quot;,
-        heartbeat: {
-          every: &quot;1h&quot;,
-          target: &quot;telegram&quot;,
-          to: &quot;12345678:topic:42&quot;, // optional: route to a specific topic/thread
-          accountId: &quot;ops-bot&quot;,
-        },
-      },
-    ],
-  },
-  channels: {
-    telegram: {
-      accounts: {
-        &quot;ops-bot&quot;: { botToken: &quot;YOUR_TELEGRAM_BOT_TOKEN&quot; },
-      },
-    },
-  },
-}</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-12">
-          <div class="section-heading">
-            <p class="section-kicker">第 12 站</p>
-            <h2>Field notes</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Field notes”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：every: heartbeat interval (duration strin…、聪明脑袋模型: optional 聪明脑袋模型 override for hear…、includeReasoning: when enabled, also deli…、lightContext: when true, heartbeat runs u…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>every</code>: heartbeat interval (duration string; default unit = minutes).</li><li><code>model</code>: optional model override for heartbeat runs (<code>provider/model</code>).</li><li><code>includeReasoning</code>: when enabled, also deliver the separate <code>Reasoning:</code> message when available (same shape as <code>/reasoning on</code>).</li><li><code>lightContext</code>: when true, heartbeat runs use lightweight bootstrap context and keep only <code>HEARTBEAT.md</code> from workspace bootstrap files.</li><li><code>isolatedSession</code>: when true, each heartbeat runs in a fresh session with no prior conversation history. Uses the same isolation pattern as cron <code>sessionTarget: &quot;isolated&quot;</code>. Dramatically reduces per-heartbeat token cost. Combine with <code>lightContext: true</code> for maximum savings. Delivery routing still uses the main session context.</li><li><code>session</code>: optional session key for heartbeat runs.</li><li><code>main</code> (default): agent main session.</li><li>Explicit session key (copy from <code>openclaw sessions --json</code> or the <a href="/cli/sessions" target="_blank" rel="noreferrer">sessions CLI</a>).</li><li>Session key formats: see <a href="/concepts/session" target="_blank" rel="noreferrer">Sessions</a> and <a href="/channels/groups" target="_blank" rel="noreferrer">Groups</a>.</li><li><code>target</code>:</li><li><code>last</code>: deliver to the last used external channel.</li><li>explicit channel: <code>whatsapp</code> / <code>telegram</code> / <code>discord</code> / <code>googlechat</code> / <code>slack</code> / <code>msteams</code> / <code>signal</code> / <code>imessage</code>.</li><li><code>none</code> (default): run the heartbeat but **do not deliver** externally.</li><li><code>directPolicy</code>: controls direct/DM delivery behavior:</li><li><code>allow</code> (default): allow direct/DM heartbeat delivery.</li><li><code>block</code>: suppress direct/DM delivery (<code>reason=dm-blocked</code>).</li><li><code>to</code>: optional recipient override (channel-specific id, e.g. E.164 for WhatsApp or a Telegram chat id). For Telegram topics/threads, use <code>&lt;chatId&gt;:topic:&lt;messageThreadId&gt;</code>.</li><li><code>accountId</code>: optional account id for multi-account channels. When <code>target: &quot;last&quot;</code>, the account id applies to the resolved last channel if it supports accounts; otherwise it is ignored. If the account id does not match a configured account for the resolved channel, delivery is skipped.</li><li><code>prompt</code>: overrides the default prompt body (not merged).</li><li><code>ackMaxChars</code>: max chars allowed after <code>HEARTBEAT_OK</code> before delivery.</li><li><code>suppressToolErrorWarnings</code>: when true, suppresses tool error warning payloads during heartbeat runs.</li><li><code>activeHours</code>: restricts heartbeat runs to a time window. Object with <code>start</code> (HH:MM, inclusive; use <code>00:00</code> for start-of-day), <code>end</code> (HH:MM exclusive; <code>24:00</code> allowed for end-of-day), and optional <code>timezone</code>.</li><li>Omitted or <code>&quot;user&quot;</code>: uses your <code>agents.defaults.userTimezone</code> if set, otherwise falls back to the host system timezone.</li><li><code>&quot;local&quot;</code>: always uses the host system timezone.</li><li>Any IANA identifier (e.g. <code>America/New_York</code>): used directly; if invalid, falls back to the <code>&quot;user&quot;</code> behavior above.</li><li><code>start</code> and <code>end</code> must not be equal for an active window; equal values are treated as zero-width (always outside the window).</li><li>Outside the active window, heartbeats are skipped until the next tick inside the window.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-13">
-          <div class="section-heading">
-            <p class="section-kicker">第 13 站</p>
-            <h2>Delivery behavior</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“or global when session.scope = &quot;global&quot;. Set session to override to a specific 消息通道 session (Discord/WhatsApp/etc.). ta…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“or global when session.scope = &quot;global&quot;. Set session to override to a specific 消息通道 session (Discord/WhatsApp/etc.).”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>or <code>global</code> when <code>session.scope = &quot;global&quot;</code>. Set <code>session</code> to override to a specific channel session (Discord/WhatsApp/etc.).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“target: &quot;last&quot;, delivery uses the last external 消息通道 for that session.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>target: &quot;last&quot;</code>, delivery uses the last external channel for that session.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“outbound 小纸条消息 is sent.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>outbound message is sent.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“is restored so idle expiry behaves normally.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>is restored so idle expiry behaves normally.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Delivery behavior”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Heartbeats run in the 机器人朋友’s main sessio…、session only affects the run context; del…、To deliver to a specific 消息通道/recipient,…、Heartbeat deliveries allow direct/DM targ…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Heartbeats run in the agent’s main session by default (<code>agent:&lt;id&gt;:&lt;mainKey&gt;</code>),</li><li><code>session</code> only affects the run context; delivery is controlled by <code>target</code> and <code>to</code>.</li><li>To deliver to a specific channel/recipient, set <code>target</code> + <code>to</code>. With</li><li>Heartbeat deliveries allow direct/DM targets by default. Set <code>directPolicy: &quot;block&quot;</code> to suppress direct-target sends while still running the heartbeat turn.</li><li>If the main queue is busy, the heartbeat is skipped and retried later.</li><li>If <code>target</code> resolves to no external destination, the run still happens but no</li><li>Heartbeat-only replies do **not** keep the session alive; the last <code>updatedAt</code></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-14">
-          <div class="section-heading">
-            <p class="section-kicker">第 14 站</p>
-            <h2>Visibility controls</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“By default, HEARTBEAT_OK acknowledgments are suppressed while alert content is delivered. You can adjust this per 消息通道…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“By default, HEARTBEAT_OK acknowledgments are suppressed while alert content is delivered. You can adjust this per 消息通道…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>By default, <code>HEARTBEAT_OK</code> acknowledgments are suppressed while alert content is delivered. You can adjust this per channel or per account:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像给机器人看的说明书，告诉它要按什么样子准备东西。</p>
-        <ul class="code-steps">
-          <li>这里在给“channels”贴标签，意思是把它设置成“”。</li><li>这里在给“defaults”贴标签，意思是把它设置成“”。</li><li>这里在给“heartbeat”贴标签，意思是把它设置成“”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-yaml">channels:
-  defaults:
-    heartbeat:
-      showOk: false # Hide HEARTBEAT_OK (default)
-      showAlerts: true # Show alert messages (default)
-      useIndicator: true # Emit indicator events (default)
-  telegram:
-    heartbeat:
-      showOk: true # Show OK acknowledgments on Telegram
-  whatsapp:
-    accounts:
-      work:
-        heartbeat:
-          showAlerts: false # Suppress alert delivery for this account</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Precedence: per-account → per-消息通道 → 消息通道 defaults → built-in defaults.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Precedence: per-account → per-channel → channel defaults → built-in defaults.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-15">
-          <div class="section-heading">
-            <p class="section-kicker">第 15 站</p>
-            <h2>What each flag does</h2>
-            <p>这一节主要在解释“What each flag does”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“What each flag does”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If **all three** are false, OpenClaw skips the heartbeat run entirely (no 聪明脑袋模型 call).”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“What each flag does”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：showOk: sends a HEARTBEAT_OK acknowledgme…、showAlerts: sends the alert content when…、useIndicator: emits indicator events for…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>showOk</code>: sends a <code>HEARTBEAT_OK</code> acknowledgment when the model returns an OK-only reply.</li><li><code>showAlerts</code>: sends the alert content when the model returns a non-OK reply.</li><li><code>useIndicator</code>: emits indicator events for UI status surfaces.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If **all three** are false, OpenClaw skips the heartbeat run entirely (no 聪明脑袋模型 call).”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If **all three** are false, OpenClaw skips the heartbeat run entirely (no model call).</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-16">
-          <div class="section-heading">
-            <p class="section-kicker">第 16 站</p>
-            <h2>Per-消息通道 vs per-account examples</h2>
-            <p>这一节主要在解释“Per-消息通道 vs per-account examples”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Per-消息通道 vs per-account examples”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像给机器人看的说明书，告诉它要按什么样子准备东西。</p>
-        <ul class="code-steps">
-          <li>这里在给“channels”贴标签，意思是把它设置成“”。</li><li>这里在给“defaults”贴标签，意思是把它设置成“”。</li><li>这里在给“heartbeat”贴标签，意思是把它设置成“”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-yaml">channels:
-  defaults:
-    heartbeat:
-      showOk: false
-      showAlerts: true
-      useIndicator: true
-  slack:
-    heartbeat:
-      showOk: true # all Slack accounts
-    accounts:
-      ops:
-        heartbeat:
-          showAlerts: false # suppress alerts for the ops account only
-  telegram:
-    heartbeat:
-      showOk: true</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-17">
-          <div class="section-heading">
-            <p class="section-kicker">第 17 站</p>
-            <h2>Common patterns</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Goal 设置说明书 ---------------------------------------- -------------------------------------------------------------------…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Goal 设置说明书 ---------------------------------------- -------------------------------------------------------------------…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>| Goal | Config | | ---------------------------------------- | ---------------------------------------------------------------------------------------- | | Default behavior (silent OKs, alerts on) | *(no config needed)* | | Fully silent (no messages, no indicator) | <code>channels.defaults.heartbeat: { showOk: false, showAlerts: false, useIndicator: false }</code> | | Indicator-only (no messages) | <code>channels.defaults.heartbeat: { showOk: false, showAlerts: false, useIndicator: true }</code> | | OKs in one channel only | <code>channels.telegram.heartbeat: { showOk: true }</code> |</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-18">
-          <div class="section-heading">
-            <p class="section-kicker">第 18 站</p>
-            <h2>HEARTBEAT.md (optional)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If a HEARTBEAT.md file exists in the workspace, the default prompt tells the 机器人朋友 to read it. Think of it as your “hea…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If a HEARTBEAT.md file exists in the workspace, the default prompt tells the 机器人朋友 to read it. Think of it as your “hea…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If a <code>HEARTBEAT.md</code> file exists in the workspace, the default prompt tells the agent to read it. Think of it as your “heartbeat checklist”: small, stable, and safe to include every 30 minutes.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If HEARTBEAT.md exists but is effectively empty (only blank lines and markdown headers like # Heading), OpenClaw skips…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If <code>HEARTBEAT.md</code> exists but is effectively empty (only blank lines and markdown headers like <code># Heading</code>), OpenClaw skips the heartbeat run to save API calls. If the file is missing, the heartbeat still runs and the model decides what to do.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Keep it tiny (short checklist or reminders) to avoid prompt bloat.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Keep it tiny (short checklist or reminders) to avoid prompt bloat.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Example HEARTBEAT.md:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Example <code>HEARTBEAT.md</code>:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像给机器人看的说明书，告诉它要按什么样子准备东西。</p>
-        <ul class="code-steps">
-          <li>这一行“# Heartbeat checklist”是当前步骤要交给电脑的一小块提示。</li><li>这里在给“- Quick scan”贴标签，意思是把它设置成“anything urgent in inboxes?”。</li><li>这一行“- If it’s daytime, do a lightweight check-in if nothing else is pending.”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-md"># Heartbeat checklist
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>💓 <code>Heartbeat</code> 像“定时出来巡一圈的小助手”</h2>
+      <p>它不是普通聊天，也不是固定闹钟广播。它更像 OpenClaw 每隔一段时间自己醒来一次，看看有没有事情需要提醒你，但又尽量别一直烦你。</p>
+      <p>所以这页真正讲的是三件事：多久巡一次、巡的时候看什么、没事时怎么安静退下。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想让 OpenClaw 定时帮你巡检和轻提醒的人</span>
+      <span>这页最重要的是记住：Heartbeat 是周期巡逻，不是 Cron 那种固定流程机</span>
+      <a href="https://docs.openclaw.ai/gateway/heartbeat" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
-- Quick scan: anything urgent in inboxes?
-- If it’s daytime, do a lightweight check-in if nothing else is pending.
-- If a task is blocked, write down _what is missing_ and ask Peter next time.</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-19">
-          <div class="section-heading">
-            <p class="section-kicker">第 19 站</p>
-            <h2>Can the 机器人朋友 update HEARTBEAT.md?</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Yes — if you ask it to. HEARTBEAT.md is just a normal file in the 机器人朋友 workspace, so you can tell the 机器人朋友 (in a norm…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Yes — if you ask it to.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Yes — if you ask it to.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“HEARTBEAT.md is just a normal file in the 机器人朋友 workspace, so you can tell the 机器人朋友 (in a normal chat) something like:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>HEARTBEAT.md</code> is just a normal file in the agent workspace, so you can tell the agent (in a normal chat) something like:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Can the agent update HEARTBEAT.md?”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：“Update HEARTBEAT.md to add a daily calen…、“Rewrite HEARTBEAT.md so it’s shorter and…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>“Update <code>HEARTBEAT.md</code> to add a daily calendar check.”</li><li>“Rewrite <code>HEARTBEAT.md</code> so it’s shorter and focused on inbox follow-ups.”</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If you want this to happen proactively, you can also include an explicit line in your heartbeat prompt like: “If the ch…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If you want this to happen proactively, you can also include an explicit line in your heartbeat prompt like: “If the checklist becomes stale, update HEARTBEAT.md with a better one.”</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Safety note: don’t put secrets (对话接口 keys, phone numbers, private tokens) into HEARTBEAT.md — it becomes part of the pr…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Safety note: don’t put secrets (API keys, phone numbers, private tokens) into <code>HEARTBEAT.md</code> — it becomes part of the prompt context.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-20">
-          <div class="section-heading">
-            <p class="section-kicker">第 20 站</p>
-            <h2>Manual wake (on-demand)</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“You can enqueue a system event and trigger an immediate heartbeat with: If multiple 机器人朋友s have heartbeat 设置说明书ured, a…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“You can enqueue a system event and trigger an immediate heartbeat with:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>You can enqueue a system event and trigger an immediate heartbeat with:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw system event --text &quot;Check for urgent follow-ups&quot; --mode now”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw system event --text &quot;Check for urgent follow-ups&quot; --mode now</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If multiple 机器人朋友s have heartbeat 设置说明书ured, a manual wake runs each of those 机器人朋友 heartbeats immediately.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If multiple agents have <code>heartbeat</code> configured, a manual wake runs each of those agent heartbeats immediately.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use --mode next-heartbeat to wait for the next scheduled tick.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use <code>--mode next-heartbeat</code> to wait for the next scheduled tick.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-21">
-          <div class="section-heading">
-            <p class="section-kicker">第 21 站</p>
-            <h2>Reasoning delivery (optional)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“By default, heartbeats deliver only the final “answer” payload. If you want transparency, enable: When enabled, heartbe…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“By default, heartbeats deliver only the final “answer” payload.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>By default, heartbeats deliver only the final “answer” payload.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If you want transparency, enable:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If you want transparency, enable:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Reasoning delivery (optional)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：机器人朋友s.defaults.heartbeat.includeReasonin…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>agents.defaults.heartbeat.includeReasoning: true</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When enabled, heartbeats will also deliver a separate 小纸条消息 prefixed Reasoning: (same shape as /reasoning on). This can…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When enabled, heartbeats will also deliver a separate message prefixed <code>Reasoning:</code> (same shape as <code>/reasoning on</code>). This can be useful when the agent is managing multiple sessions/codexes and you want to see why it decided to ping you — but it can also leak more internal detail than you want. Prefer keeping it off in group chats.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-22">
-          <div class="section-heading">
-            <p class="section-kicker">第 22 站</p>
-            <h2>Cost awareness</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Heartbeats run full 机器人朋友 turns. Shorter intervals burn more tokens. To reduce cost:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Heartbeats run full 机器人朋友 turns. Shorter intervals burn more tokens. To reduce cost:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Heartbeats run full agent turns. Shorter intervals burn more tokens. To reduce cost:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Cost awareness”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Use isolatedSession: true to avoid sendin…、Use lightContext: true to limit bootstrap…、Set a cheaper 聪明脑袋模型 (e.g. ollama/llama3.…、Keep HEARTBEAT.md small.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Use <code>isolatedSession: true</code> to avoid sending full conversation history (\~100K tokens down to \~2-5K per run).</li><li>Use <code>lightContext: true</code> to limit bootstrap files to just <code>HEARTBEAT.md</code>.</li><li>Set a cheaper <code>model</code> (e.g. <code>ollama/llama3.2:1b</code>).</li><li>Keep <code>HEARTBEAT.md</code> small.</li><li>Use <code>target: &quot;none&quot;</code> if you only want internal state updates.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一眼</p>
+    <h2>🕰 Heartbeat 和 Cron 不一样，一个像巡逻，一个像按时办事</h2>
+    <p>官方开头就把这个分野点出来了。Heartbeat 更像“看看有什么需要关注”，Cron 更像“按时去做那件固定事”。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">💓</span>
+      <h2>Heartbeat</h2>
+      <p>像助理隔一会儿出来巡一圈，看看你有没有漏掉的事，或者系统有没有该提醒的地方。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⏰</span>
+      <h2>Cron</h2>
+      <p>像定时工人，到点就干固定活，不太讲临场判断。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🤫</span>
+      <h2>不想吵人</h2>
+      <p>Heartbeat 的默认性格是“没事就安静一点”，不是每次都必须发很长一段话。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>Heartbeat 是会判断、会收敛的巡逻，不是死板的定时播报。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">快速上手</p>
+    <h2>🧭 官方那 7 步，其实就是“先定巡逻频率，再决定巡逻时带什么小纸条”</h2>
+    <p>这一段看着长，翻成动作后就很简单。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">1. 先决定多久巡一次</div>
+      <p>默认是 30 分钟一圈，某些 Anthropic 登录方式会变成 1 小时一圈。你也可以自己改。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">2. 可选放一张 <code>HEARTBEAT.md</code></div>
+      <p>像在巡逻员口袋里塞一张小清单，告诉它每次巡逻优先看什么。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">3. 决定提醒送到哪</div>
+      <p><code>target: "none"</code> 像“巡完先记着，不主动敲门”，<code>target: "last"</code> 像“去找最近联系的那个人”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">4. 可选开 reasoning、轻量上下文、独立会话、活动时间</div>
+      <p>这些都像给巡逻员换装备：要不要多讲一点、要不要轻装、要不要走单独巡逻本、要不要只在白天上班。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">命令与配置翻译</p>
+    <h2>🧾 这一段配置，不是在堆参数，而是在给巡逻员排班</h2>
+    <p>把配置块翻成人话后，就很像一份值班表。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>every: "30m"</code></div>
+      <p>像写在值班表上的“每 30 分钟出来巡一圈”。如果写成 <code>0m</code>，就等于今天不排班。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>target: "last"</code></div>
+      <p>像说“如果真有事，就去找上次联系的那个人”。默认的 <code>none</code> 则更保守。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>lightContext: true</code></div>
+      <p>像巡逻时只带一张最关键的小抄，不把整箱旧聊天记录都背在身上。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>isolatedSession: true</code></div>
+      <p>像每次巡逻都开一本新的巡逻记录本，不把之前长长的聊天故事又整本拖进来。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最重要的口令</p>
+    <h2>✅ <code>HEARTBEAT_OK</code> 像“巡逻完毕，一切正常”的回执章</h2>
+    <p>这块很关键。因为它决定了没事的时候，系统怎么优雅地安静下来。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🟢</span>
+      <h2><code>HEARTBEAT_OK</code></h2>
+      <p>像巡逻员回来说：“都正常。”如果只是这一句，OpenClaw 会把它当作安静确认，不再专门把它送出来吵你。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📏</span>
+      <h2><code>ackMaxChars</code></h2>
+      <p>像说“这张回执章后面最多还能跟多少小字”。太长就不算安静回执了。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚨</span>
+      <h2>真有事就别写它</h2>
+      <p>如果是警报，就直接说警报，不要再贴 <code>HEARTBEAT_OK</code> 这枚“没事”章。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>一句话</h2>
+      <p><code>HEARTBEAT_OK</code> 是安静退场口令，不是万能装饰词。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">高级排班</p>
+    <h2>🌞 活动时间、多账号、每个 agent 各自排班，都像更细的值班表</h2>
+    <p>官方把这些场景都展开了。看成排班表就很容易懂。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>activeHours</code></div>
+      <p>像规定巡逻员只在白天上班。夜里别乱敲门。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Per-agent heartbeat</div>
+      <p>像大楼里有好几个小助理，但只有某几个需要轮流巡逻。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>accountId</code></div>
+      <p>像多账号通道时，明确说“这次让哪位值班机器人去送提醒”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⚠️ 一个小坑</div>
+      <p>开始时间和结束时间别写成一样，不然就像排了一个宽度为零的班表，结果永远不上班。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把这页压成一句最短的话</h2>
+    <p>Heartbeat 就是 OpenClaw 的定时小巡逻：多久巡一次、巡逻时带什么小纸条、什么时候安静收工、什么时候把提醒送出来，全都靠这份排班表来定。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你想看“巡逻过程中留下的后台记录怎么查”，下一页可以去 <code>/gateway/logging</code>。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

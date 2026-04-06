@@ -1,0 +1,164 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>💓 <code>Heartbeat</code> 像“定时出来巡一圈的小助手”</h2>
+      <p>它不是普通聊天，也不是固定闹钟广播。它更像 OpenClaw 每隔一段时间自己醒来一次，看看有没有事情需要提醒你，但又尽量别一直烦你。</p>
+      <p>所以这页真正讲的是三件事：多久巡一次、巡的时候看什么、没事时怎么安静退下。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想让 OpenClaw 定时帮你巡检和轻提醒的人</span>
+      <span>这页最重要的是记住：Heartbeat 是周期巡逻，不是 Cron 那种固定流程机</span>
+      <a href="https://docs.openclaw.ai/gateway/heartbeat" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一眼</p>
+    <h2>🕰 Heartbeat 和 Cron 不一样，一个像巡逻，一个像按时办事</h2>
+    <p>官方开头就把这个分野点出来了。Heartbeat 更像“看看有什么需要关注”，Cron 更像“按时去做那件固定事”。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">💓</span>
+      <h2>Heartbeat</h2>
+      <p>像助理隔一会儿出来巡一圈，看看你有没有漏掉的事，或者系统有没有该提醒的地方。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⏰</span>
+      <h2>Cron</h2>
+      <p>像定时工人，到点就干固定活，不太讲临场判断。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🤫</span>
+      <h2>不想吵人</h2>
+      <p>Heartbeat 的默认性格是“没事就安静一点”，不是每次都必须发很长一段话。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>Heartbeat 是会判断、会收敛的巡逻，不是死板的定时播报。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">快速上手</p>
+    <h2>🧭 官方那 7 步，其实就是“先定巡逻频率，再决定巡逻时带什么小纸条”</h2>
+    <p>这一段看着长，翻成动作后就很简单。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">1. 先决定多久巡一次</div>
+      <p>默认是 30 分钟一圈，某些 Anthropic 登录方式会变成 1 小时一圈。你也可以自己改。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">2. 可选放一张 <code>HEARTBEAT.md</code></div>
+      <p>像在巡逻员口袋里塞一张小清单，告诉它每次巡逻优先看什么。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">3. 决定提醒送到哪</div>
+      <p><code>target: "none"</code> 像“巡完先记着，不主动敲门”，<code>target: "last"</code> 像“去找最近联系的那个人”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">4. 可选开 reasoning、轻量上下文、独立会话、活动时间</div>
+      <p>这些都像给巡逻员换装备：要不要多讲一点、要不要轻装、要不要走单独巡逻本、要不要只在白天上班。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">命令与配置翻译</p>
+    <h2>🧾 这一段配置，不是在堆参数，而是在给巡逻员排班</h2>
+    <p>把配置块翻成人话后，就很像一份值班表。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>every: "30m"</code></div>
+      <p>像写在值班表上的“每 30 分钟出来巡一圈”。如果写成 <code>0m</code>，就等于今天不排班。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>target: "last"</code></div>
+      <p>像说“如果真有事，就去找上次联系的那个人”。默认的 <code>none</code> 则更保守。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>lightContext: true</code></div>
+      <p>像巡逻时只带一张最关键的小抄，不把整箱旧聊天记录都背在身上。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>isolatedSession: true</code></div>
+      <p>像每次巡逻都开一本新的巡逻记录本，不把之前长长的聊天故事又整本拖进来。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最重要的口令</p>
+    <h2>✅ <code>HEARTBEAT_OK</code> 像“巡逻完毕，一切正常”的回执章</h2>
+    <p>这块很关键。因为它决定了没事的时候，系统怎么优雅地安静下来。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🟢</span>
+      <h2><code>HEARTBEAT_OK</code></h2>
+      <p>像巡逻员回来说：“都正常。”如果只是这一句，OpenClaw 会把它当作安静确认，不再专门把它送出来吵你。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📏</span>
+      <h2><code>ackMaxChars</code></h2>
+      <p>像说“这张回执章后面最多还能跟多少小字”。太长就不算安静回执了。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚨</span>
+      <h2>真有事就别写它</h2>
+      <p>如果是警报，就直接说警报，不要再贴 <code>HEARTBEAT_OK</code> 这枚“没事”章。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>一句话</h2>
+      <p><code>HEARTBEAT_OK</code> 是安静退场口令，不是万能装饰词。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">高级排班</p>
+    <h2>🌞 活动时间、多账号、每个 agent 各自排班，都像更细的值班表</h2>
+    <p>官方把这些场景都展开了。看成排班表就很容易懂。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>activeHours</code></div>
+      <p>像规定巡逻员只在白天上班。夜里别乱敲门。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Per-agent heartbeat</div>
+      <p>像大楼里有好几个小助理，但只有某几个需要轮流巡逻。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>accountId</code></div>
+      <p>像多账号通道时，明确说“这次让哪位值班机器人去送提醒”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⚠️ 一个小坑</div>
+      <p>开始时间和结束时间别写成一样，不然就像排了一个宽度为零的班表，结果永远不上班。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把这页压成一句最短的话</h2>
+    <p>Heartbeat 就是 OpenClaw 的定时小巡逻：多久巡一次、巡逻时带什么小纸条、什么时候安静收工、什么时候把提醒送出来，全都靠这份排班表来定。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你想看“巡逻过程中留下的后台记录怎么查”，下一页可以去 <code>/gateway/logging</code>。</p>
+  </div>
+</section>

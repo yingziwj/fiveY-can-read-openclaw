@@ -1,0 +1,194 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📡 Presence 就像“门口挂着一排小灯牌”</h2>
+      <p>这页讲的是：Gateway 自己、以及连上来的客户端，怎么被快速看见。它不是完整档案馆，只是一个轻量、尽力而为的现场名单。</p>
+      <p>你可以把它想成控制室墙上的状态板。谁在线、谁刚连上、谁还活着，先粗粗看一眼就够了。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想快速看懂“谁连着、谁在线”的人</span>
+      <span>这页最重要的是记住：presence 是轻量视图，不是完整会话历史</span>
+      <a href="https://docs.openclaw.ai/concepts/presence" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一眼</p>
+    <h2>💡 它先告诉你“谁在门口”，不是“每个人一生都干过什么”</h2>
+    <p>Presence 是一个很轻的视图。它主要给 macOS app 的 Instances tab 和运维看板用。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🏠</span>
+      <h2>Gateway 自己</h2>
+      <p>系统会先给自己挂一个灯牌，让你知道总机房活着。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🖥</span>
+      <h2>Connected clients</h2>
+      <p>mac app、WebChat、CLI、node 这些连上来的客人，也会被挂成一排状态卡。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📱</span>
+      <h2>Instances tab</h2>
+      <p>像运维一眼扫过大厅，先知道谁在场、谁刚走、谁还亮着灯。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>一句话</h2>
+      <p>它是现场名单，不是档案室。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">字段</p>
+    <h2>🧾 每张小卡片都会写几项简单信息</h2>
+    <p>这些字段不是为了炫技，而是为了让你一眼看懂“这是谁、在哪儿、什么状态”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>instanceId</code></div>
+      <p>像一张不容易变的工牌。最好有它，重连之后也更容易认出来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>host</code> / <code>ip</code></div>
+      <p>像写着这台设备的名字和门牌号。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>version</code></div>
+      <p>像胸牌上的版本号，告诉你这台设备现在穿的是哪套衣服。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>mode</code> / <code>reason</code></div>
+      <p>像状态灯和“为什么亮起来”的备注。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">怎么来的</p>
+    <h2>🚪 这些灯牌不是一个地方来的，而是几个门一起送来的</h2>
+    <p>官方把 producers 说得很清楚：Gateway 自己会有一张，客户端连上来会有一张，节点进来会有一张，后台 beacon 也会来补充。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>Gateway self entry</h2>
+      <p>开机时先给自己挂灯，免得大厅一开始像空屋子。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>WebSocket connect</h2>
+      <p>客户端进门时会先报到，成功后就把自己补进名单。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>system-event beacon</h2>
+      <p>像隔一会儿喊一声“我还在”，顺手带上 host、IP、lastInputSeconds。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>node connects</h2>
+      <p>节点连上来也会被登记，像又来了一位新的在场嘉宾。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">合并规则</p>
+    <h2>🧲 认人靠稳定工牌，不然就容易出现重复灯牌</h2>
+    <p>官方特别强调 instanceId。因为如果工牌不稳定，同一个人重连后就可能被挂成两张卡。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">稳定工牌</div>
+      <p>最好的 presence key 是能跨重连保持不变的 instanceId。这样灯牌不会乱长。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">case-insensitive</div>
+      <p>像门卫不太在乎大小写，只认是不是同一块牌。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">没有稳定工牌就可能重复</div>
+      <p>如果客户端不老实带同一张卡，它就可能在名单里出现两次。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 这节真正想告诉你</div>
+      <p>presence 不是数据库去重的终点，它只是一个尽量聪明的现场灯牌板。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">TTL</p>
+    <h2>⏳ 灯牌是会过期的，不是永远挂着</h2>
+    <p>Presence 是刻意做成短命的。它只想让你看现在，不想把大厅变成古董柜。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">5m</span>
+      <h2>TTL</h2>
+      <p>五分钟没更新的卡片，会被慢慢清掉。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">200</span>
+      <h2>Max entries</h2>
+      <p>最多只保留 200 张牌。旧的会先让路。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧺</span>
+      <h2>为什么这样</h2>
+      <p>这样名单才不会越堆越长，也不会让内存一直长胖。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>Presence 只负责“现在谁在”，不负责“永远都在”。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">一个小坑</p>
+    <h2>🪟 用 SSH 隧道时，127.0.0.1 可能会冒充来宾地址</h2>
+    <p>官方提醒得很细：有时客户端其实是远端来的，但 Gateway 看到的远端地址却像本地回环地址。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">loopback IP 可能是假信号</div>
+      <p>如果对方是通过隧道来的，<code>127.0.0.1</code> 不一定是真实来处，所以它会被忽略掉，避免把好数据覆盖坏。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">为什么要忽略</div>
+      <p>像门口门牌牌子有时候会写错，系统宁可少写一项，也不想把原本准确的地址改坏。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🛠 排查方式</div>
+      <p>如果名单里重复了，先看客户端有没有稳定 instanceId，再看 beacon 有没有一直用同一张工牌。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 记一句</div>
+      <p>Presence 看的是“现场谁在”，不是“谁从哪条隧道来的全部历史”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把这页压成一句最短的话</h2>
+    <p>Presence 就像门口的一排灯牌：Gateway 和客户端谁在线、谁刚连上、谁还在场，先轻轻看一眼就够了。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页想继续看“为什么有些动作会重试，而有些不会”，就去 <code>/concepts/retry</code>。</p>
+  </div>
+</section>

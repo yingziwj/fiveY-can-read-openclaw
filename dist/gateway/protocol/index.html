@@ -3970,1099 +3970,171 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Gateway Protocol</h2>
-          <p>这一页像一本关于“门口的小门卫 Protocol”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：门口的小门卫 protocol (WebSocket)。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/gateway/protocol</span>
-          <span>章节数量：18</span>
-          <a href="https://docs.openclaw.ai/gateway/protocol" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节主要在解释“Start Here”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Start Here”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“门口的小门卫 protocol (WebSocket) The 门口的小门卫 WS protocol is the **single control plane + node transport** for OpenClaw. All 来…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“门口的小门卫 protocol (WebSocket)”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Gateway protocol (WebSocket)</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The 门口的小门卫 WS protocol is the **single control plane + node transport** for OpenClaw. All 来帮忙的小伙伴s (CLI, web UI, macOS…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The Gateway WS protocol is the **single control plane + node transport** for OpenClaw. All clients (CLI, web UI, macOS app, iOS/Android nodes, headless nodes) connect over WebSocket and declare their **role** + **scope** at handshake time.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Transport</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Transport”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：WebSocket, text frames with JSON payloads.、First frame **must** be a connect request.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>WebSocket, text frames with JSON payloads.</li><li>First frame **must** be a <code>connect</code> request.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Handshake (connect)</h2>
-            <p>这一节主要在解释“Handshake (connect)”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Handshake (connect)”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“门口的小门卫 → 来帮忙的小伙伴 (pre-connect challenge): 来帮忙的小伙伴 → 门口的小门卫: 门口的小门卫 → 来帮忙的小伙伴: When a device token is issued, hello-ok a…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“门口的小门卫 → 来帮忙的小伙伴 (pre-connect challenge):”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Gateway → Client (pre-connect challenge):</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“type”贴标签，意思是把它设置成“event”。</li><li>这里在给“event”贴标签，意思是把它设置成“connect.challenge”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{
-  &quot;type&quot;: &quot;event&quot;,
-  &quot;event&quot;: &quot;connect.challenge&quot;,
-  &quot;payload&quot;: { &quot;nonce&quot;: &quot;…&quot;, &quot;ts&quot;: 1737264000000 }
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“来帮忙的小伙伴 → 门口的小门卫:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Client → Gateway:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“type”贴标签，意思是把它设置成“req”。</li><li>这里在给“id”贴标签，意思是把它设置成“…”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{
-  &quot;type&quot;: &quot;req&quot;,
-  &quot;id&quot;: &quot;…&quot;,
-  &quot;method&quot;: &quot;connect&quot;,
-  &quot;params&quot;: {
-    &quot;minProtocol&quot;: 3,
-    &quot;maxProtocol&quot;: 3,
-    &quot;client&quot;: {
-      &quot;id&quot;: &quot;cli&quot;,
-      &quot;version&quot;: &quot;1.2.3&quot;,
-      &quot;platform&quot;: &quot;macos&quot;,
-      &quot;mode&quot;: &quot;operator&quot;
-    },
-    &quot;role&quot;: &quot;operator&quot;,
-    &quot;scopes&quot;: [&quot;operator.read&quot;, &quot;operator.write&quot;],
-    &quot;caps&quot;: [],
-    &quot;commands&quot;: [],
-    &quot;permissions&quot;: {},
-    &quot;auth&quot;: { &quot;token&quot;: &quot;…&quot; },
-    &quot;locale&quot;: &quot;en-US&quot;,
-    &quot;userAgent&quot;: &quot;openclaw-cli/1.2.3&quot;,
-    &quot;device&quot;: {
-      &quot;id&quot;: &quot;device_fingerprint&quot;,
-      &quot;publicKey&quot;: &quot;…&quot;,
-      &quot;signature&quot;: &quot;…&quot;,
-      &quot;signedAt&quot;: 1737264000000,
-      &quot;nonce&quot;: &quot;…&quot;
-    }
-  }
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“门口的小门卫 → 来帮忙的小伙伴:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Gateway → Client:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“type”贴标签，意思是把它设置成“res”。</li><li>这里在给“id”贴标签，意思是把它设置成“…”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{
-  &quot;type&quot;: &quot;res&quot;,
-  &quot;id&quot;: &quot;…&quot;,
-  &quot;ok&quot;: true,
-  &quot;payload&quot;: { &quot;type&quot;: &quot;hello-ok&quot;, &quot;protocol&quot;: 3, &quot;policy&quot;: { &quot;tickIntervalMs&quot;: 15000 } }
-}</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When a device token is issued, hello-ok also includes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When a device token is issued, <code>hello-ok</code> also includes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“auth”贴标签，意思是把它设置成“{”。</li><li>这里在给“deviceToken”贴标签，意思是把它设置成“…”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{
-  &quot;auth&quot;: {
-    &quot;deviceToken&quot;: &quot;…&quot;,
-    &quot;role&quot;: &quot;operator&quot;,
-    &quot;scopes&quot;: [&quot;operator.read&quot;, &quot;operator.write&quot;]
-  }
-}</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Node example</h2>
-            <p>这一节主要在解释“Node example”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Node example”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。</p>
-        <ul class="code-steps">
-          <li>大括号像把同一组设置抱在一起，说“这些是一家的”。</li><li>这里在给“type”贴标签，意思是把它设置成“req”。</li><li>这里在给“id”贴标签，意思是把它设置成“…”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{
-  &quot;type&quot;: &quot;req&quot;,
-  &quot;id&quot;: &quot;…&quot;,
-  &quot;method&quot;: &quot;connect&quot;,
-  &quot;params&quot;: {
-    &quot;minProtocol&quot;: 3,
-    &quot;maxProtocol&quot;: 3,
-    &quot;client&quot;: {
-      &quot;id&quot;: &quot;ios-node&quot;,
-      &quot;version&quot;: &quot;1.2.3&quot;,
-      &quot;platform&quot;: &quot;ios&quot;,
-      &quot;mode&quot;: &quot;node&quot;
-    },
-    &quot;role&quot;: &quot;node&quot;,
-    &quot;scopes&quot;: [],
-    &quot;caps&quot;: [&quot;camera&quot;, &quot;canvas&quot;, &quot;screen&quot;, &quot;location&quot;, &quot;voice&quot;],
-    &quot;commands&quot;: [&quot;camera.snap&quot;, &quot;canvas.navigate&quot;, &quot;screen.record&quot;, &quot;location.get&quot;],
-    &quot;permissions&quot;: { &quot;camera.capture&quot;: true, &quot;screen.record&quot;: false },
-    &quot;auth&quot;: { &quot;token&quot;: &quot;…&quot; },
-    &quot;locale&quot;: &quot;en-US&quot;,
-    &quot;userAgent&quot;: &quot;openclaw-ios/1.2.3&quot;,
-    &quot;device&quot;: {
-      &quot;id&quot;: &quot;device_fingerprint&quot;,
-      &quot;publicKey&quot;: &quot;…&quot;,
-      &quot;signature&quot;: &quot;…&quot;,
-      &quot;signedAt&quot;: 1737264000000,
-      &quot;nonce&quot;: &quot;…&quot;
-    }
-  }
-}</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Framing</h2>
-            <p>这一节主要在解释“Framing”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Framing”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Side-effecting methods require **idempotency keys** (see schema).”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Framing”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**Request**: {type:&quot;req&quot;, id, method, par…、**Response**: {type:&quot;res&quot;, id, ok, payloa…、**Event**: {type:&quot;event&quot;, event, payload,…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Request**: <code>{type:&quot;req&quot;, id, method, params}</code></li><li>**Response**: <code>{type:&quot;res&quot;, id, ok, payload|error}</code></li><li>**Event**: <code>{type:&quot;event&quot;, event, payload, seq?, stateVersion?}</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Side-effecting methods require **idempotency keys** (see schema).”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Side-effecting methods require **idempotency keys** (see schema).</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Roles</h2>
-            <p>这一节主要在解释“Roles”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Roles”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Roles”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：operator = control plane 来帮忙的小伙伴 (CLI/UI/…、node = capability host (camera/screen/can…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>operator</code> = control plane client (CLI/UI/automation).</li><li><code>node</code> = capability host (camera/screen/canvas/system.run).</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Scopes (operator)</h2>
-            <p>这一节主要在解释“Scopes (operator)”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Scopes (operator)”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Common scopes: Method scope is only the first gate. Some slash 魔法口令s reached through chat.send apply stricter 魔法口令-leve…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Common scopes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Common scopes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Scopes (operator)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：operator.read、operator.write、operator.admin、operator.approvals。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>operator.read</code></li><li><code>operator.write</code></li><li><code>operator.admin</code></li><li><code>operator.approvals</code></li><li><code>operator.pairing</code></li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Method scope is only the first gate. Some slash 魔法口令s reached through chat.send apply stricter 魔法口令-level checks on top…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Method scope is only the first gate. Some slash commands reached through <code>chat.send</code> apply stricter command-level checks on top. For example, persistent <code>/config set</code> and <code>/config unset</code> writes require <code>operator.admin</code>.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>Caps/魔法口令s/permissions (node)</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Nodes declare capability claims at connect time: The 门口的小门卫 treats these as **claims** and enforces 大房子服务器-side allowli…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Nodes declare capability claims at connect time:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Nodes declare capability claims at connect time:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Caps/commands/permissions (node)”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：caps: high-level capability categories.、魔法口令s: 魔法口令 allowlist for invoke.、permissions: granular toggles (e.g. scree…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>caps</code>: high-level capability categories.</li><li><code>commands</code>: command allowlist for invoke.</li><li><code>permissions</code>: granular toggles (e.g. <code>screen.record</code>, <code>camera.capture</code>).</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The 门口的小门卫 treats these as **claims** and enforces 大房子服务器-side allowlists.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The Gateway treats these as **claims** and enforces server-side allowlists.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>Presence</h2>
-            <p>这一节主要在解释“Presence”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Presence”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“even when it connects as both **operator** and **node**.”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“even when it connects as both **operator** and **node**.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>even when it connects as both **operator** and **node**.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Presence”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：system-presence returns entries keyed by…、Presence entries include deviceId, roles,…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>system-presence</code> returns entries keyed by device identity.</li><li>Presence entries include <code>deviceId</code>, <code>roles</code>, and <code>scopes</code> so UIs can show a single row per device</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>Node helper methods</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“for auto-allow checks.”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“for auto-allow checks.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>for auto-allow checks.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Node helper methods”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Nodes may call skills.bins to fetch the c…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Nodes may call <code>skills.bins</code> to fetch the current list of skill executables</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-11">
-          <div class="section-heading">
-            <p class="section-kicker">第 11 站</p>
-            <h2>Operator helper methods</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“机器人朋友. The response includes 大家一起的房间ed 工具小帮手s and provenance metadata: inventory for a session. caller-supplied auth or…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“机器人朋友. The response includes 大家一起的房间ed 工具小帮手s and provenance metadata:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>agent. The response includes grouped tools and provenance metadata:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“inventory for a session.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>inventory for a session.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“caller-supplied auth or delivery context.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>caller-supplied auth or delivery context.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“including core, 新本领插件, and 消息通道 工具小帮手s.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>including core, plugin, and channel tools.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Operator helper methods”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Operators may call 工具小帮手s.catalog (operat…、source: core or 新本领插件、新本领插件Id: 新本领插件 owner when source=&quot;新本领插件&quot;、optional: whether a 新本领插件 工具小帮手 is option…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Operators may call <code>tools.catalog</code> (<code>operator.read</code>) to fetch the runtime tool catalog for an</li><li><code>source</code>: <code>core</code> or <code>plugin</code></li><li><code>pluginId</code>: plugin owner when <code>source=&quot;plugin&quot;</code></li><li><code>optional</code>: whether a plugin tool is optional</li><li>Operators may call <code>tools.effective</code> (<code>operator.read</code>) to fetch the runtime-effective tool</li><li><code>sessionKey</code> is required.</li><li>The gateway derives trusted runtime context from the session server-side instead of accepting</li><li>The response is session-scoped and reflects what the active conversation can use right now,</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-12">
-          <div class="section-heading">
-            <p class="section-kicker">第 12 站</p>
-            <h2>Exec approvals</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Exec approvals”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：When an exec request needs approval, the…、Operator 来帮忙的小伙伴s resolve by calling exec…、For host=node, exec.approval.request must…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>When an exec request needs approval, the gateway broadcasts <code>exec.approval.requested</code>.</li><li>Operator clients resolve by calling <code>exec.approval.resolve</code> (requires <code>operator.approvals</code> scope).</li><li>For <code>host=node</code>, <code>exec.approval.request</code> must include <code>systemRunPlan</code> (canonical <code>argv</code>/<code>cwd</code>/<code>rawCommand</code>/session metadata). Requests missing <code>systemRunPlan</code> are rejected.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-13">
-          <div class="section-heading">
-            <p class="section-kicker">第 13 站</p>
-            <h2>Versioning</h2>
-            <p>这一节主要在解释“Versioning”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Versioning”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Versioning”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：PROTOCOL_VERSION lives in src/门口的小门卫/prot…、来帮忙的小伙伴s send minProtocol + maxProtocol;…、Schemas + 聪明脑袋模型s are generated from Type…、pnpm protocol:gen。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>PROTOCOL_VERSION</code> lives in <code>src/gateway/protocol/schema.ts</code>.</li><li>Clients send <code>minProtocol</code> + <code>maxProtocol</code>; the server rejects mismatches.</li><li>Schemas + models are generated from TypeBox definitions:</li><li><code>pnpm protocol:gen</code></li><li><code>pnpm protocol:gen:swift</code></li><li><code>pnpm protocol:check</code></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-14">
-          <div class="section-heading">
-            <p class="section-kicker">第 14 站</p>
-            <h2>Auth</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“must match or the socket is closed. role + scopes. It is returned in hello-ok.auth.deviceToken and should be persisted…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“must match or the socket is closed.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>must match or the socket is closed.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“role + scopes. It is returned in hello-ok.auth.deviceToken and should be persisted by the 来帮忙的小伙伴 for future connects.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>role + scopes. It is returned in <code>hello-ok.auth.deviceToken</code> and should be persisted by the client for future connects.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“device.token.revoke (requires operator.pairing scope).”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>device.token.revoke</code> (requires <code>operator.pairing</code> scope).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Auth”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：If OPENCLAW_门口的小门卫_TOKEN (or --token) is…、After pairing, the 门口的小门卫 issues a **devi…、Device tokens can be rotated/revoked via…、Auth failures include error.details.code…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>If <code>OPENCLAW_GATEWAY_TOKEN</code> (or <code>--token</code>) is set, <code>connect.params.auth.token</code></li><li>After pairing, the Gateway issues a **device token** scoped to the connection</li><li>Device tokens can be rotated/revoked via <code>device.token.rotate</code> and</li><li>Auth failures include <code>error.details.code</code> plus recovery hints:</li><li><code>error.details.canRetryWithDeviceToken</code> (boolean)</li><li><code>error.details.recommendedNextStep</code> (<code>retry_with_device_token</code>, <code>update_auth_configuration</code>, <code>update_auth_credentials</code>, <code>wait_then_retry</code>, <code>review_auth_configuration</code>)</li><li>Client behavior for <code>AUTH_TOKEN_MISMATCH</code>:</li><li>Trusted clients may attempt one bounded retry with a cached per-device token.</li><li>If that retry fails, clients should stop automatic reconnect loops and surface operator action guidance.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-15">
-          <div class="section-heading">
-            <p class="section-kicker">第 15 站</p>
-            <h2>Device identity + pairing</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“keypair fingerprint. is enabled. (so same‑host tailnet binds can still auto‑approve). Control UI can omit it only in th…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“keypair fingerprint.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>keypair fingerprint.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“is enabled.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>is enabled.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“(so same‑host tailnet binds can still auto‑approve).”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>(so same‑host tailnet binds can still auto‑approve).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Control UI can omit it only in these modes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Control UI can omit it only in these modes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Device identity + pairing”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Nodes should include a stable device iden…、门口的小门卫s issue tokens per device + role.、Pairing approvals are required for new de…、**Local** connects include loopback and t…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Nodes should include a stable device identity (<code>device.id</code>) derived from a</li><li>Gateways issue tokens per device + role.</li><li>Pairing approvals are required for new device IDs unless local auto-approval</li><li>**Local** connects include loopback and the gateway host’s own tailnet address</li><li>All WS clients must include <code>device</code> identity during <code>connect</code> (operator + node).</li><li><code>gateway.controlUi.allowInsecureAuth=true</code> for localhost-only insecure HTTP compatibility.</li><li><code>gateway.controlUi.dangerouslyDisableDeviceAuth=true</code> (break-glass, severe security downgrade).</li><li>All connections must sign the server-provided <code>connect.challenge</code> nonce.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-16">
-          <div class="section-heading">
-            <p class="section-kicker">第 16 站</p>
-            <h2>Device auth migration diagnostics</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For legacy 来帮忙的小伙伴s that still use pre-challenge signing behavior, connect now returns DEVICE_AUTH_* detail codes under…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“For legacy 来帮忙的小伙伴s that still use pre-challenge signing behavior, connect now returns DEVICE_AUTH_* detail codes under…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For legacy clients that still use pre-challenge signing behavior, <code>connect</code> now returns <code>DEVICE_AUTH_*</code> detail codes under <code>error.details.code</code> with a stable <code>error.details.reason</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Common migration failures:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Common migration failures:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“小纸条消息 details.code details.reason Meaning --------------------------- -------------------------------- ----------------…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>| Message | details.code | details.reason | Meaning | | --------------------------- | -------------------------------- | ------------------------ | -------------------------------------------------- | | <code>device nonce required</code> | <code>DEVICE_AUTH_NONCE_REQUIRED</code> | <code>device-nonce-missing</code> | Client omitted <code>device.nonce</code> (or sent blank). | | <code>device nonce mismatch</code> | <code>DEVICE_AUTH_NONCE_MISMATCH</code> | <code>device-nonce-mismatch</code> | Client signed with a stale/wrong nonce. | | <code>device signature invalid</code> | <code>DEVICE_AUTH_SIGNATURE_INVALID</code> | <code>device-signature</code> | Signature payload does not match v2 payload. | | <code>device signature expired</code> | <code>DEVICE_AUTH_SIGNATURE_EXPIRED</code> | <code>device-signature-stale</code> | Signed timestamp is outside allowed skew. | | <code>device identity mismatch</code> | <code>DEVICE_AUTH_DEVICE_ID_MISMATCH</code> | <code>device-id-mismatch</code> | <code>device.id</code> does not match public key fingerprint. | | <code>device public key invalid</code> | <code>DEVICE_AUTH_PUBLIC_KEY_INVALID</code> | <code>device-public-key</code> | Public key format/canonicalization failed. |</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Migration target:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Migration target:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“in addition to device/来帮忙的小伙伴/role/scopes/token/nonce fields.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>in addition to device/client/role/scopes/token/nonce fields.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“metadata pinning still controls 魔法口令 policy on reconnect.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>metadata pinning still controls command policy on reconnect.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Device auth migration diagnostics”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Always wait for connect.challenge.、Sign the v2 payload that includes the 大房子…、Send the same nonce in connect.params.dev…、Preferred signature payload is v3, which…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Always wait for <code>connect.challenge</code>.</li><li>Sign the v2 payload that includes the server nonce.</li><li>Send the same nonce in <code>connect.params.device.nonce</code>.</li><li>Preferred signature payload is <code>v3</code>, which binds <code>platform</code> and <code>deviceFamily</code></li><li>Legacy <code>v2</code> signatures remain accepted for compatibility, but paired-device</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-17">
-          <div class="section-heading">
-            <p class="section-kicker">第 17 站</p>
-            <h2>TLS + pinning</h2>
-            <p>这一节主要在解释“TLS + pinning”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“TLS + pinning”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“设置说明书 plus 门口的小门卫.remote.tlsFingerprint or CLI --tls-fingerprint).”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“设置说明书 plus 门口的小门卫.remote.tlsFingerprint or CLI --tls-fingerprint).”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>config plus <code>gateway.remote.tlsFingerprint</code> or CLI <code>--tls-fingerprint</code>).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“TLS + pinning”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：TLS is supported for WS connections.、来帮忙的小伙伴s may optionally pin the 门口的小门卫 ce…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>TLS is supported for WS connections.</li><li>Clients may optionally pin the gateway cert fingerprint (see <code>gateway.tls</code></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-18">
-          <div class="section-heading">
-            <p class="section-kicker">第 18 站</p>
-            <h2>Scope</h2>
-            <p>这一节主要在解释“Scope”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Scope”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“This protocol exposes the **full 门口的小门卫 对话接口** (status, 消息通道s, 聪明脑袋模型s, chat, 机器人朋友, sessions, nodes, approvals, etc.).…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“This protocol exposes the **full 门口的小门卫 对话接口** (status, 消息通道s, 聪明脑袋模型s, chat, 机器人朋友, sessions, nodes, approvals, etc.).…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>This protocol exposes the **full gateway API** (status, channels, models, chat, agent, sessions, nodes, approvals, etc.). The exact surface is defined by the TypeBox schemas in <code>src/gateway/protocol/schema.ts</code>.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🤝 <code>Gateway Protocol</code> 像“前台握手暗号和收发信格式”</h2>
+      <p>所有客户端连到 Gateway 时，不是闷头就开始说话。它们要先打招呼，报身份，报自己会什么，再按统一格式收发消息。</p>
+      <p>所以这页本质上讲的是：第一次见面怎么握手，后面纸条怎么写，谁能做什么事。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想看懂 CLI、Web、节点到底怎么和 Gateway 说话的人</span>
+      <span>这页最重要的是先分清：role 是你是谁，scope 是你被允许做什么</span>
+      <a href="https://docs.openclaw.ai/gateway/protocol" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一步</p>
+    <h2>🚪 第一个包必须是 <code>connect</code>，像进门先报到</h2>
+    <p>官方把这件事写得很严格：第一帧必须是 <code>connect</code>。不先报到，门就不会正式打开。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">Gateway 先发 challenge</div>
+      <p>像门卫先递出一张带时间戳和随机数的小纸片，确认你不是假冒来敲门。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Client 再回 <code>connect</code></div>
+      <p>像你把自己的身份、版本、角色、权限、设备签名都填在报到表上递回去。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>hello-ok</code></div>
+      <p>像门卫盖章：“好，进吧。你今天用协议 3，这里是值班规则。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 记一句</div>
+      <p>这不是“先随便连上再说”，而是“先过门卫，再拿通行牌”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">角色与权限</p>
+    <h2>🪪 <code>role</code> 像工种，<code>scope</code> 像门卡权限</h2>
+    <p>这是整页最核心的分野。只看一个不够，两个要一起看。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧑‍💼</span>
+      <h2><code>operator</code></h2>
+      <p>像控制台值班员，负责看面板、发命令、做管理动作。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📱</span>
+      <h2><code>node</code></h2>
+      <p>像带着摄像头、屏幕、定位这些能力在外面跑的小设备。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔑</span>
+      <h2><code>operator.read / write / admin / approvals / pairing</code></h2>
+      <p>像不同颜色的门卡。读得到，不一定写得到；能操作，不一定能批敏感动作。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧰</span>
+      <h2><code>caps / commands / permissions</code></h2>
+      <p>节点连进来时，会先报“我会什么”“我声称能做什么”“哪些开关已经打开”。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-heading">
+  <p class="section-kicker">消息格式</p>
+  <h2>✉️ 后面的纸条只有三种：请求、回应、广播</h2>
+  <p>官方把 framing 写成结构体。换成人话，就是三种信封。</p>
+</section>
+<section class="section-shell">
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>{type:"req"}</code></div>
+      <p>像“我要办一件事”的申请单。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>{type:"res"}</code></div>
+      <p>像门卫回你的回执：办成了还是没办成。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>{type:"event"}</code></div>
+      <p>像广播喇叭，不是你问了才说，而是系统主动告诉大家“发生了一件事”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">idempotency keys</div>
+      <p>副作用动作要带幂等钥匙，像在申请单上写唯一流水号，防止同一张单子被误办两次。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">命令翻译</p>
+    <h2>📦 那个长长的 <code>connect</code> JSON，到底在现场讲了什么？</h2>
+    <p>如果把字段逐个翻成人话，它就不再像一坨硬代码。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>minProtocol / maxProtocol</code></div>
+      <p>像说“我会的暗号版本最低到这里，最高到这里，你和我能不能对上号？”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>client.id / version / platform / mode</code></div>
+      <p>像在胸牌上写清“我是 CLI 还是 iOS 节点，我来自哪台机器，我今天是哪种模式上岗”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>auth.token</code></div>
+      <p>像把门卡递给门卫看一眼，没有它就别想过闸。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>device.publicKey / signature / nonce</code></div>
+      <p>像除了门卡，还要出示设备自己的身份证明，证明你真是那台已经登记过的设备。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">认证与设备令牌</p>
+    <h2>🎟 第一次过门后，Gateway 还会发你一张“设备专属回头票”</h2>
+    <p>官方这里很重要：配对后会发 device token。它像以后再次来访时更顺手的专属门票。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🎫</span>
+      <h2><code>hello-ok.auth.deviceToken</code></h2>
+      <p>像门卫说：“以后你这台设备再来，拿这张专属票就行。”</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔄</span>
+      <h2>rotate / revoke</h2>
+      <p>像门票丢了、要换新、或要作废时，可以专门去门卫室操作。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⚠️</span>
+      <h2>AUTH_TOKEN_MISMATCH</h2>
+      <p>像普通门卡不对时，可信客户端可以小心地再试一次自己留存的设备票，但不能无限乱撞。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>第一次是正式登记，以后则尽量靠设备专属回头票更顺地进门。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把这页压成一句最短的话</h2>
+    <p>Gateway Protocol 讲的就是门口怎么打招呼、纸条怎么写、门卡怎么验、以及不同工种到底被允许做什么：先握手，再报身份，再按统一信封格式收发消息。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你想看“门外这些客户端最终都怎么沿路回到总机房”，上一页就是 <code>/gateway/network-model</code>。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>
