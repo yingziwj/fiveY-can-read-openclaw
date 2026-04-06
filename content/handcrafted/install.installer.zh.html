@@ -1,0 +1,149 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧰 Installer Internals 这页，其实是在掀开安装车的后盖，告诉你里面有哪几位师傅在干活</h2>
+      <p>这页不是教你“怎么装”，而是教你“安装脚本背后到底怎么想”。如果你只想装好，普通安装页就够了；如果你想搞懂安装车的内部流程，这页才有意义。</p>
+      <p>官方把安装器分成三位师傅：<code>install.sh</code>、<code>install-cli.sh</code>、<code>install.ps1</code>。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想读懂安装器内部逻辑的人</span>
+      <span>重点是三种脚本各管什么</span>
+      <a href="https://docs.openclaw.ai/install/installer" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧑‍🔧 三位安装师傅，分工其实很清楚</h2>
+    <p>别把三份脚本看成三套世界观，它们只是服务不同场景。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🐧</span>
+      <h2><code>install.sh</code></h2>
+      <p>macOS / Linux / WSL 的主力安装车。大多数人走它。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2><code>install-cli.sh</code></h2>
+      <p>像把 Node 和 OpenClaw 全塞进你自己的小柜子里，不去碰系统级安装。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪟</span>
+      <h2><code>install.ps1</code></h2>
+      <p>Windows 版安装车。会尽量帮你补 Node、补 PATH，再把 OpenClaw 装进去。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>一句话</h2>
+      <p>不是三套产品，而是三位面向不同地面的搬家师傅。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🚚 <code>install.sh</code> 这位师傅，最像“先检查你家有没有缺工具，再开始搬家”</h2>
+    <p>它是普通用户最常碰到的那位。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🔍 先看 Node 在不在</div>
+      <p>像搬家公司先检查你家电压够不够。缺了就帮你补。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📦 再决定 npm 还是 git</div>
+      <p>像决定是去正式商店搬整箱，还是直接去源码仓库拉最新零件。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧭 最后可顺手跑 onboarding</div>
+      <p>像家具搬完以后，顺手带你绕房子走一圈，把灯和门都试一遍。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>curl ... install.sh | bash -s -- --dry-run</code></div>
+      <p>像先让搬家公司把搬家清单念给你听，不真的下手搬。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🗄️ <code>install-cli.sh</code> 则像“我不要动整栋楼的公共设施，我要一套自己的小柜子”</h2>
+    <p>这就是它为什么特别强调本地 prefix。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📁 <code>~/.openclaw</code></div>
+      <p>像你自己房间里的一只柜子。Node、CLI、包装器都尽量放进来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚫 不靠 root</div>
+      <p>像不碰楼管钥匙，不去动系统全局安装区。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--prefix /opt/openclaw</code></div>
+      <p>像告诉搬家工“别放默认小柜子，搬到我指定的大柜子里”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--json</code></div>
+      <p>像让安装车边干边吐结构化播报，方便自动化系统记笔记。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🪟 Windows 那位师傅，也是在做同样的事，只是会先找哪条路能把 Node 搬进来</h2>
+    <p>官方写得很实在：它会先试 winget，再试 Chocolatey，再试 Scoop。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🪜 先找工具链</div>
+      <p>像搬家工先看看小区允许哪家货梯进门，哪条路通就走哪条。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🛣️ PATH 处理</div>
+      <p>装完以后还得把路牌挂上，不然你虽然搬进来了，系统却还是认不出 <code>openclaw</code>。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>iwr -useb https://openclaw.ai/install.ps1 | iex</code></div>
+      <p>像叫 Windows 版安装车直接开工。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>-DryRun</code></div>
+      <p>像先看工单，不下锤子。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🤖 CI and troubleshooting 那些段落，说白了就是“让安装车少聊天、可重复、好排错”</h2>
+    <p>这些内容特别适合自动化环境。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>--no-prompt --no-onboard</code></div>
+      <p>像告诉安装车：“别现场问我问题，按单子默默干完就行。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>OPENCLAW_INSTALL_METHOD=git</code></div>
+      <p>像在工单左上角先写好“今天走 git 仓库路线”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🪤 Git / PATH / EACCES</div>
+      <p>这些典型报错，不是 OpenClaw 自己在发疯，往往是系统级搬运环境没铺平。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 收尾一句</div>
+      <p>这页最值得记住的，不是参数表，而是三位安装师傅分别适合什么地面。</p>
+    </div>
+  </div>
+</section>

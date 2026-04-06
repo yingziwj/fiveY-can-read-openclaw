@@ -3970,513 +3970,156 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Raspberry Pi</h2>
-          <p>这一页像一本关于“Raspberry Pi”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：Raspberry Pi。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/install/raspberry-pi</span>
-          <span>章节数量：6</span>
-          <a href="https://docs.openclaw.ai/install/raspberry-pi" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节主要在解释“Start Here”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Start Here”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Raspberry Pi Run a persistent, always-on OpenClaw 门口的小门卫 on a Raspberry Pi. Since the Pi is just the 门口的小门卫 (聪明脑袋模型s ru…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Raspberry Pi”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Raspberry Pi</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Run a persistent, always-on OpenClaw 门口的小门卫 on a Raspberry Pi. Since the Pi is just the 门口的小门卫 (聪明脑袋模型s run in the clou…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Run a persistent, always-on OpenClaw Gateway on a Raspberry Pi. Since the Pi is just the gateway (models run in the cloud via API), even a modest Pi handles the workload well.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Prerequisites</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Prerequisites”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Raspberry Pi 4 or 5 with 2 GB+ RAM (4 GB…、MicroSD card (16 GB+) or USB SSD (better…、Official Pi power supply、Network connection (Ethernet or WiFi)。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Raspberry Pi 4 or 5 with 2 GB+ RAM (4 GB recommended)</li><li>MicroSD card (16 GB+) or USB SSD (better performance)</li><li>Official Pi power supply</li><li>Network connection (Ethernet or WiFi)</li><li>64-bit Raspberry Pi OS (required -- do not use 32-bit)</li><li>About 30 minutes</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Setup</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Steps&gt; &lt;Step title=&quot;Flash the OS&quot;&gt; Use **Raspberry Pi OS Lite (64-bit)** -- no desktop needed for a headless 大房子服务器. 1…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Steps&gt; &lt;Step title=&quot;Flash the OS&quot;&gt; Use **Raspberry Pi OS Lite (64-bit)** -- no desktop needed for a headless 大房子服务器.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Steps&gt; &lt;Step title=&quot;Flash the OS&quot;&gt; Use **Raspberry Pi OS Lite (64-bit)** -- no desktop needed for a headless server.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“1. Download Raspberry Pi Imager. 2. Choose OS: **Raspberry Pi OS Lite (64-bit)**. 3. In the settings dialog, pre-设置说明书u…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. Download <a href="https://www.raspberrypi.com/software/" target="_blank" rel="noreferrer">Raspberry Pi Imager</a>. 2. Choose OS: **Raspberry Pi OS Lite (64-bit)**. 3. In the settings dialog, pre-configure:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“4. Flash to your SD card or USB drive, insert it, and boot the Pi. &lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>4. Flash to your SD card or USB drive, insert it, and boot the Pi. &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Setup”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Hostname: 门口的小门卫-host、Enable SSH、Set username and 秘密口令、设置说明书ure WiFi (if not using Ethernet)。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Hostname: <code>gateway-host</code></li><li>Enable SSH</li><li>Set username and password</li><li>Configure WiFi (if not using Ethernet)</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Connect via SSH&quot;&gt; &lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Connect via SSH&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} ssh user@gateway-host </code>`` &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Update the system&quot;&gt; ```bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} sudo apt update &amp;&amp; sud…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Update the system&quot;&gt; ```bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} sudo apt update &amp;&amp; sudo apt upgrade -y sudo apt install -y git curl build-essential</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Set timezone (important for cron and reminders) sudo timedatectl set-timezone America/Chicago ``` &lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Set timezone (important for cron and reminders) sudo timedatectl set-timezone America/Chicago ``` &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Install Node.js 24&quot;&gt; &lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Install Node.js 24&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash - sudo apt install -y nodejs node --version </code>`` &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Add swap (important for 2 GB or less)&quot;&gt; ```bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} su…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Add swap (important for 2 GB or less)&quot;&gt; ```bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} sudo fallocate -l 2G /swapfile sudo chmod 600 /swapfile sudo mkswap /swapfile sudo swapon /swapfile echo &#39;/swapfile none swap sw 0 0&#39; | sudo tee -a /etc/fstab</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Reduce swappiness for low-RAM devices echo &#39;vm.swappiness=10&#39; sudo tee -a /etc/sysctl.conf sudo sysctl -p ``` &lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Reduce swappiness for low-RAM devices echo &#39;vm.swappiness=10&#39; | sudo tee -a /etc/sysctl.conf sudo sysctl -p ``` &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Install OpenClaw&quot;&gt; &lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Install OpenClaw&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} curl -fsSL https://openclaw.ai/install.sh | bash </code>`` &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Run onboarding&quot;&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Run onboarding&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw onboard --install-daemon </code>``</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Follow the wizard. 对话接口 keys are recommended over OAuth for headless devices. Telegram is the easiest 消息通道 to start wit…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Follow the wizard. API keys are recommended over OAuth for headless devices. Telegram is the easiest channel to start with. &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Verify&quot;&gt; &lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Verify&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw status sudo systemctl status openclaw journalctl -u openclaw -f </code>`` &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Access the Control UI&quot;&gt; On your computer, get a dashboard URL from the Pi:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Access the Control UI&quot;&gt; On your computer, get a dashboard URL from the Pi:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} ssh user@gateway-host &#39;openclaw dashboard --no-open&#39; </code>``</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Then create an SSH tunnel in another terminal:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Then create an SSH tunnel in another terminal:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} ssh -N -L 18789:127.0.0.1:18789 user@gateway-host </code>``</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Open the printed URL in your local browser. For always-on remote access, see Tailscale integration. &lt;/Step&gt; &lt;/Steps&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Open the printed URL in your local browser. For always-on remote access, see <a href="/gateway/tailscale" target="_blank" rel="noreferrer">Tailscale integration</a>. &lt;/Step&gt; &lt;/Steps&gt;</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Performance tips</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Use a USB SSD** -- SD cards are slow and wear out. A USB SSD dramatically improves performance. See the Pi USB boot g…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Use a USB SSD** -- SD cards are slow and wear out. A USB SSD dramatically improves performance. See the Pi USB boot g…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Use a USB SSD** -- SD cards are slow and wear out. A USB SSD dramatically improves performance. See the <a href="https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#usb-mass-storage-boot" target="_blank" rel="noreferrer">Pi USB boot guide</a>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Enable module compile cache** -- Speeds up repeated CLI invocations on lower-power Pi hosts:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Enable module compile cache** -- Speeds up repeated CLI invocations on lower-power Pi hosts:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
-        <ul class="code-steps">
-          <li>这里在给“grep -q NODE_COMPILE_CACHE=/var/tmp/openclaw-compile-cache ~/.bashrc || cat &gt;&gt; ~/.bashrc &lt;&lt;EOF # pragma”贴标签，意思是把它设置成“allowlist secret”。</li><li>这一行“export NODE_COMPILE_CACHE=/var/tmp/openclaw-compile-cache”是当前步骤要交给电脑的一小块提示。</li><li>这一行“mkdir -p /var/tmp/openclaw-compile-cache”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">grep -q &#39;NODE_COMPILE_CACHE=/var/tmp/openclaw-compile-cache&#39; ~/.bashrc || cat &gt;&gt; ~/.bashrc &lt;&lt;&#39;EOF&#39; # pragma: allowlist secret
-export NODE_COMPILE_CACHE=/var/tmp/openclaw-compile-cache
-mkdir -p /var/tmp/openclaw-compile-cache
-export OPENCLAW_NO_RESPAWN=1
-EOF
-source ~/.bashrc</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Reduce memory usage** -- For headless setups, free GPU memory and disable unused services:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Reduce memory usage** -- For headless setups, free GPU memory and disable unused services:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
-        <ul class="code-steps">
-          <li>这一行“echo &#39;gpu_mem=16&#39; | sudo tee -a /boot/config.txt”是当前步骤要交给电脑的一小块提示。</li><li>这一行“sudo systemctl disable bluetooth”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">echo &#39;gpu_mem=16&#39; | sudo tee -a /boot/config.txt
-sudo systemctl disable bluetooth</code></pre>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Troubleshooting</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Out of memory** -- Verify swap is active with free -h. Disable unused services (sudo systemctl disable cups bluetooth…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Out of memory** -- Verify swap is active with free -h. Disable unused services (sudo systemctl disable cups bluetooth…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Out of memory** -- Verify swap is active with <code>free -h</code>. Disable unused services (<code>sudo systemctl disable cups bluetooth avahi-daemon</code>). Use API-based models only.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Slow performance** -- Use a USB SSD instead of an SD card. Check for CPU throttling with vcgencmd get_throttled (shou…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Slow performance** -- Use a USB SSD instead of an SD card. Check for CPU throttling with <code>vcgencmd get_throttled</code> (should return <code>0x0</code>).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Service will not start** -- Check logs with journalctl -u openclaw --no-pager -n 100 and run openclaw doctor --non-in…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Service will not start** -- Check logs with <code>journalctl -u openclaw --no-pager -n 100</code> and run <code>openclaw doctor --non-interactive</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**ARM binary issues** -- If a skill fails with &quot;exec format error&quot;, check whether the binary has an ARM64 build. Verify…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**ARM binary issues** -- If a skill fails with &quot;exec format error&quot;, check whether the binary has an ARM64 build. Verify architecture with <code>uname -m</code> (should show <code>aarch64</code>).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**WiFi drops** -- Disable WiFi power management: sudo iw设置说明书 wlan0 power off.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**WiFi drops** -- Disable WiFi power management: <code>sudo iwconfig wlan0 power off</code>.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Next steps</h2>
-            <p>这一节主要在解释“Next steps”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Next steps”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Next steps”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：消息通道s -- connect Telegram, WhatsApp, Disc…、门口的小门卫 设置说明书uration -- all 设置说明书 options、Updating -- keep OpenClaw up to date。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><a href="/channels" target="_blank" rel="noreferrer">Channels</a> -- connect Telegram, WhatsApp, Discord, and more</li><li><a href="/gateway/configuration" target="_blank" rel="noreferrer">Gateway configuration</a> -- all config options</li><li><a href="/install/updating" target="_blank" rel="noreferrer">Updating</a> -- keep OpenClaw up to date</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🥧 Raspberry Pi 这页，其实是在教你“把 OpenClaw 养在家里一台一直开着的小盒子上”</h2>
+      <p>这条路很可爱，也很实用。因为 Pi 不负责本地跑大模型，它更像一位常驻门卫，负责挂着 Gateway、接通道、守着自动化任务。</p>
+      <p>所以官方最想告诉你的不是“Pi 很强”，而是“只要你把系统、Node、存储和散热照顾好，它完全够当一个长期在线的小值班员”。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合家庭常驻小主机</span>
+      <span>重点是 64 位系统、Node 24、swap、SSH 隧道</span>
+      <a href="https://docs.openclaw.ai/install/raspberry-pi" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧺 先把小盒子的生活用品备齐</h2>
+    <p>官方先列前置条件，不是在凑字数，而是在防止你后面装到一半才发现家当太少。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧠</span>
+      <h2>Pi 4 / 5，2GB 起步</h2>
+      <p>像这位小门卫至少得有张像样的桌子，4GB 会更舒服。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">💽</span>
+      <h2>存储别太抠</h2>
+      <p>SD 卡能用，但 USB SSD 更像正经衣柜，速度和寿命都更好。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">64</span>
+      <h2>必须 64 位系统</h2>
+      <p>这一条别糊弄。32 位就像给它穿错鞋，后面很多东西会别扭。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔌</span>
+      <h2>稳定供电</h2>
+      <p>小盒子最怕半夜饿晕，电源不稳会让你以为是软件坏了。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧭 Setup 那一长段，其实是在做“给小门卫穿衣、配钥匙、安排宿舍”</h2>
+    <p>一条条看就不乱了。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">💿 刷 Raspberry Pi OS Lite 64-bit</div>
+      <p>像先给它穿最轻便、最适合值班的制服，不带桌面，少吃资源。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>ssh user@gateway-host</code></div>
+      <p>像你第一次从自己的电脑走到这台小门卫的值班室门口。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>sudo apt update && sudo apt upgrade -y</code></div>
+      <p>像先把旧家具和旧螺丝全检查一遍，别带着过期零件开始上班。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -</code></div>
+      <p>像先把 Node 24 这台发动机的安装向导请进来。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🛏️ swap 那段，翻成人话就是“给记忆力不大的小门卫铺一张临时床”</h2>
+    <p>尤其 2GB 设备，这段很重要。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>sudo fallocate -l 2G /swapfile</code></div>
+      <p>像先腾出一块临时休息垫，内存不够时能顶一下。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>sudo swapon /swapfile</code></div>
+      <p>像正式把这张备用床铺投入使用。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>vm.swappiness=10</code></div>
+      <p>像告诉系统：“不到真需要的时候，别太依赖这张临时床。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📌 官方为什么特地点名这段</div>
+      <p>不是为了显得专业，而是因为小内存机器最容易在安装和构建时突然趴下。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🚀 安装 OpenClaw 后，再用 SSH 隧道把控制台牵回你自己的电脑上</h2>
+    <p>这就是 Pi 页里最有画面感的一段。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>curl -fsSL https://openclaw.ai/install.sh | bash</code></div>
+      <p>像把官方安装车直接开进 Pi 的值班室。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw onboard --install-daemon</code></div>
+      <p>像搬完家具后，顺手把后台值班制度也装好。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>ssh user@gateway-host 'openclaw dashboard --no-open'</code></div>
+      <p>像先让 Pi 报一下：“我的控制台门牌是多少？”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>ssh -N -L 18789:127.0.0.1:18789 user@gateway-host</code></div>
+      <p>像拉一根私人电话线，把 Pi 里的控制台窗口牵回你眼前这台电脑。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🩺 Performance 和 troubleshooting，都在教你怎么照顾这位小门卫别累坏</h2>
+    <p>Pi 路线要稳定，养护比炫参数更重要。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">💽 用 USB SSD</div>
+      <p>像把纸箱换成真正抽屉，系统和日志都会轻松很多。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧠 compile cache</div>
+      <p>像给它准备一个常用动作小抄本，下次启动不用再从头背。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🌡️ 看 throttling</div>
+      <p>如果它太热、被降速，就像门卫热得直喘气，工作自然慢。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 收尾一句</div>
+      <p>Raspberry Pi 路线的重点不是堆性能，而是把这位小值班员养得稳定、长久在线。</p>
+    </div>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

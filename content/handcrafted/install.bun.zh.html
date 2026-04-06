@@ -1,0 +1,119 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🍞 Bun 这页，其实是在提醒你：“这个新跑鞋可以试，但别穿它去正式跑马拉松”</h2>
+      <p>官方一开头就先拉警报，不是因为 Bun 不酷，而是因为它现在不适合拿来稳定跑 Gateway，尤其 Telegram 和 WhatsApp 这类通道会更容易出怪事。</p>
+      <p>所以这页最适合的场景不是生产部署，而是本地开发、试跑、看 TypeScript 直接执行得快不快。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合本地实验和开发</span>
+      <span>不适合正式 Gateway 值班</span>
+      <a href="https://docs.openclaw.ai/install/bun" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>⚠️ 先把最重要的一句贴脑门上</h2>
+    <p>这页不是“推荐安装路线”，而是“实验室侧门”。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧪</span>
+      <h2>适合 Bun 的场景</h2>
+      <p>本地开发、试脚本、想直接跑 TypeScript，不想每次都先编译。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚫</span>
+      <h2>不适合的场景</h2>
+      <p>生产 Gateway、重要通道、你不想碰到稀奇古怪兼容问题的时候。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2>pnpm 还是主角</h2>
+      <p>官方没有把 Bun 扶正成默认包管理器，仓库主线路还是 pnpm。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>一句话</h2>
+      <p>Bun 可以拿来试穿，不要先拿它当工作制服。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧰 安装那两条命令，翻成人话就是“先把零件拿进来，再看看机器能不能正常转”</h2>
+    <p>这页命令不多，反而好理解。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>bun install</code></div>
+      <p>像用 Bun 自己的搬运车把依赖全搬进来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>bun install --no-save</code></div>
+      <p>像说“只搬，不改仓库里的记录本”，避免留下额外锁文件痕迹。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>bun run build</code></div>
+      <p>像先把机器拼起来，确认它至少能顺利装完。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>bun run vitest run</code></div>
+      <p>像拉一轮测试裁判，看这台机器现在能不能过基本体检。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🚪 Lifecycle Scripts 那段，说白了就是“门卫会不会放这些包自带的小动作进来”</h2>
+    <p>Bun 比较谨慎，不会默认放开所有依赖包的安装脚本。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🛑 默认拦一下</div>
+      <p>像门卫先说：“这些包想在安装时自己动手干点活？先等等，我要确认。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📦 官方提到的两个包</div>
+      <p><code>@whiskeysockets/baileys</code> 和 <code>protobufjs</code> 这类脚本，通常不是你这仓库能不能工作的生死线。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>bun pm trust @whiskeysockets/baileys protobufjs</code></div>
+      <p>像你亲口跟门卫说：“这两个包的自带动作我同意放行。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 收住一句</div>
+      <p>这不是报错魔法，而是 Bun 在问：哪些安装脚本值得信任。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🪤 Caveats 那一小段，其实是在说：这条路还没铺平，很多地方仍然写着“请走 pnpm 正门”</h2>
+    <p>所以别拿 Bun 线路去要求整个仓库都无条件迁就它。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🛠 有些脚本仍写死 pnpm</div>
+      <p>像有些门锁还只认旧钥匙。比如文档构建、UI 流程、协议检查，暂时还是 pnpm 更稳。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📌 别误会“能跑”</div>
+      <p>Bun 能跑一部分流程，不等于它已经是全仓库正式主路。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 最后一句</div>
+      <p>如果你只是想把 OpenClaw 稳稳跑起来，请回 Node 正门；如果你是来试新跑鞋，Bun 可以玩。</p>
+    </div>
+  </div>
+</section>

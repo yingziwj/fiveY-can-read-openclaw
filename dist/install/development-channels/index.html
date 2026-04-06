@@ -3970,532 +3970,130 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Release Channels</h2>
-          <p>这一页像一本关于“Release 消息通道s”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：Development 消息通道s。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/install/development-channels</span>
-          <span>章节数量：8</span>
-          <a href="https://docs.openclaw.ai/install/development-channels" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Development 消息通道s OpenClaw ships three update 消息通道s: The main branch is for experimentation and active development. It…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Development 消息通道s”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Development channels</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw ships three update 消息通道s:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw ships three update channels:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The main branch is for experimentation and active development. It may contain incomplete features or breaking changes.…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The <code>main</code> branch is for experimentation and active development. It may contain incomplete features or breaking changes. Do not use it for production gateways.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Start Here”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**stable**: npm dist-tag latest. Recommen…、**beta**: npm dist-tag beta (builds under…、**dev**: moving head of main (git). npm d…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**stable**: npm dist-tag <code>latest</code>. Recommended for most users.</li><li>**beta**: npm dist-tag <code>beta</code> (builds under test).</li><li>**dev**: moving head of <code>main</code> (git). npm dist-tag: <code>dev</code> (when published).</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“We ship builds to **beta**, test them, then **promote a vetted build to latest** without changing the version number --…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>We ship builds to **beta**, test them, then **promote a vetted build to <code>latest</code>** without changing the version number -- dist-tags are the source of truth for npm installs.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Switching 消息通道s</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“--消息通道 persists your choice in 设置说明书 (update.消息通道) and aligns the install method: OPENCLAW_GIT_DIR), switches to main,…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw update --channel stable”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw update --channel beta”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw update --channel dev”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw update --channel stable
-openclaw update --channel beta
-openclaw update --channel dev</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“--消息通道 persists your choice in 设置说明书 (update.消息通道) and aligns the install method:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>--channel</code> persists your choice in config (<code>update.channel</code>) and aligns the install method:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OPENCLAW_GIT_DIR), switches to main, rebases on up一边说一边送, builds, and installs the global CLI from that checkout.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>OPENCLAW_GIT_DIR</code>), switches to <code>main</code>, rebases on upstream, builds, and installs the global CLI from that checkout.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Switching channels”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**stable/beta** (package installs): updat…、**stable/beta** (git installs): checks ou…、**dev**: ensures a git checkout (default…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**<code>stable</code>/<code>beta</code>** (package installs): updates via the matching npm dist-tag.</li><li>**<code>stable</code>/<code>beta</code>** (git installs): checks out the latest matching git tag.</li><li>**<code>dev</code>**: ensures a git checkout (default <code>~/openclaw</code>, override with</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Tip: if you want stable + dev in parallel, keep two clones and point your 门口的小门卫 at the stable one.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Tip: if you want stable + dev in parallel, keep two clones and point your gateway at the stable one.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>One-off version or tag targeting</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use --tag to target a specific dist-tag, version, or package spec for a single update **without** changing your persist…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Use --tag to target a specific dist-tag, version, or package spec for a single update **without** changing your persist…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use <code>--tag</code> to target a specific dist-tag, version, or package spec for a single update **without** changing your persisted channel:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
-        <ul class="code-steps">
-          <li>这一行“# Install a specific version”是当前步骤要交给电脑的一小块提示。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw update --tag 2026.3.28-beta.1”。你可以把它想成对机器人说的完整命令。</li><li>这一行“# Install from the beta dist-tag (one-off, does not persist)”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash"># Install a specific version
-openclaw update --tag 2026.3.28-beta.1
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🚦 Release Channels 这页，其实是在告诉你：“你要坐稳妥班车，还是试运行班车？”</h2>
+      <p>官方这里讲的不是功能，而是更新轨道。很多人看到 stable、beta、dev 会觉得像三个版本，其实更像三条车道。</p>
+      <p>你选哪条车道，决定的是以后 <code>openclaw update</code> 把你带到哪里。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想切换更新节奏的人</span>
+      <span>重点是 stable / beta / dev 三条车道</span>
+      <a href="https://docs.openclaw.ai/install/development-channels" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
-# Install from the beta dist-tag (one-off, does not persist)
-openclaw update --tag beta
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🛣️ 三条车道，别背英文，记感觉就够了</h2>
+    <p>这页最值得先记住的就是这三个角色分工。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">✅</span>
+      <h2>stable</h2>
+      <p>像正式班车。大多数人坐这条最省心。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧪</span>
+      <h2>beta</h2>
+      <p>像试运行班车。东西比 stable 新，但还在观察。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⚡</span>
+      <h2>dev</h2>
+      <p>像施工现场直通车。最快看到新东西，也最容易遇到半成品。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚫</span>
+      <h2><code>main</code> 分支</h2>
+      <p>更像实验工地，不适合正式 Gateway 值班。</p>
+    </article>
+  </div>
+</section>
 
-# Install from GitHub main branch (npm tarball)
-openclaw update --tag main
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔁 切换 channel，不是在“临时看看”，而是在“以后默认走这条路”</h2>
+    <p>所以 <code>--channel</code> 和 <code>--tag</code> 千万别混了。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update --channel stable</code></div>
+      <p>像对司机说：“以后都按正式班车时刻表接我。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update --channel beta</code></div>
+      <p>像改坐试运行班车，以后更新都会先朝 beta 轨道看。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update --channel dev</code></div>
+      <p>像正式签字进入开发快线，后面会盯着 git checkout 和 main 的最新动静。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p><code>--channel</code> 是改长期车道，不是一趟体验票。</p>
+    </div>
+  </div>
+</section>
 
-# Install a specific npm package spec
-openclaw update --tag openclaw@2026.3.28-beta.1</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Notes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Notes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“消息通道 as usual.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>channel as usual.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw prompts for confirmation (skip with --yes).”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw prompts for confirmation (skip with <code>--yes</code>).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“One-off version or tag targeting”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：--tag applies to **package (npm) installs…、The tag is not persisted. Your next openc…、Downgrade protection: if the target versi…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>--tag</code> applies to **package (npm) installs only**. Git installs ignore it.</li><li>The tag is not persisted. Your next <code>openclaw update</code> uses your configured</li><li>Downgrade protection: if the target version is older than your current version,</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Dry run</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Preview what openclaw update would do without making changes: The dry run shows the effective 消息通道, target version, pla…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Preview what openclaw update would do without making changes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Preview what <code>openclaw update</code> would do without making changes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw update --dry-run”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw update --channel beta --dry-run”。你可以把它想成对机器人说的完整命令。</li><li>这一句是在直接叫 OpenClaw 做事：“openclaw update --tag 2026.3.28-beta.1 --dry-run”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw update --dry-run
-openclaw update --channel beta --dry-run
-openclaw update --tag 2026.3.28-beta.1 --dry-run
-openclaw update --dry-run --json</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The dry run shows the effective 消息通道, target version, planned actions, and whether a downgrade confirmation would be re…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The dry run shows the effective channel, target version, planned actions, and whether a downgrade confirmation would be required.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>新本领插件s and 消息通道s</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When you switch 消息通道s with openclaw update, OpenClaw also syncs 新本领插件 sources:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“When you switch 消息通道s with openclaw update, OpenClaw also syncs 新本领插件 sources:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When you switch channels with <code>openclaw update</code>, OpenClaw also syncs plugin sources:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Plugins and channels”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：dev prefers bundled 新本领插件s from the git c…、stable and beta restore npm-installed 新本领…、npm-installed 新本领插件s are updated after th…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>dev</code> prefers bundled plugins from the git checkout.</li><li><code>stable</code> and <code>beta</code> restore npm-installed plugin packages.</li><li>npm-installed plugins are updated after the core update completes.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Checking current status</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Shows the active 消息通道, install kind (git or package), current version, and source (设置说明书, git tag, git branch, or defau…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 做事：“openclaw update status”。你可以把它想成对机器人说的完整命令。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw update status</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Shows the active 消息通道, install kind (git or package), current version, and source (设置说明书, git tag, git branch, or defau…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Shows the active channel, install kind (git or package), current version, and source (config, git tag, git branch, or default).</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Tagging best practices</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“vYYYY.M.D-beta.N for beta).”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“vYYYY.M.D-beta.N for beta).”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>vYYYY.M.D-beta.N</code> for beta).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Tagging best practices”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Tag releases you want git checkouts to la…、vYYYY.M.D.beta.N is also recognized for c…、Legacy vYYYY.M.D-&lt;patch&gt; tags are still r…、Keep tags immutable: never move or reuse…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Tag releases you want git checkouts to land on (<code>vYYYY.M.D</code> for stable,</li><li><code>vYYYY.M.D.beta.N</code> is also recognized for compatibility, but prefer <code>-beta.N</code>.</li><li>Legacy <code>vYYYY.M.D-&lt;patch&gt;</code> tags are still recognized as stable (non-beta).</li><li>Keep tags immutable: never move or reuse a tag.</li><li>npm dist-tags remain the source of truth for npm installs:</li><li><code>latest</code> -&gt; stable</li><li><code>beta</code> -&gt; candidate build</li><li><code>dev</code> -&gt; main snapshot (optional)</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>macOS app availability</h2>
-            <p>这一节主要在解释“macOS app availability”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“macOS app availability”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Beta and dev builds may **not** include a macOS app release. That is OK:”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Beta and dev builds may **not** include a macOS app release. That is OK:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Beta and dev builds may **not** include a macOS app release. That is OK:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“macOS app availability”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：The git tag and npm dist-tag can still be…、Call out &quot;no macOS build for this beta&quot; i…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>The git tag and npm dist-tag can still be published.</li><li>Call out &quot;no macOS build for this beta&quot; in release notes or changelog.</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🎟️ <code>--tag</code> 则像“这次我只想坐这班指定列车”</h2>
+    <p>它不会改你长期配置，这一点非常关键。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update --tag beta</code></div>
+      <p>像只想临时坐一次 beta 班车，看看风景，不改常驻路线。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update --tag 2026.3.28-beta.1</code></div>
+      <p>像点名说“我要这一班具体车次”，很适合回放、测试、对版本。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update --tag main</code></div>
+      <p>像这次临时抓 GitHub main 这趟车看看，但下一次默认路线还是按你之前的 channel。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📌 官方提醒</div>
+      <p><code>--tag</code> 只对包安装路线有用，git 安装不会听它。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🪞 dry-run 和 status，其实是在给你“先看路线图，再决定要不要上车”</h2>
+    <p>这两条命令很适合怕踩坑的人。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update --dry-run</code></div>
+      <p>像先让售票员把行程单打印出来，你只看不付款。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update --dry-run --json</code></div>
+      <p>像把路线单改成机器也能看的结构化清单，适合自动化系统自己读。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update status</code></div>
+      <p>像问一句：“我现在到底在哪条轨道上？现在坐的是包车还是 git 车？”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 收住一句</div>
+      <p>怕翻车时，先 <code>status</code>，再 <code>dry-run</code>，最后再真的更新。</p>
+    </div>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

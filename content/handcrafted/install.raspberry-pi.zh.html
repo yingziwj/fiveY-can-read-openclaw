@@ -1,0 +1,149 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🥧 Raspberry Pi 这页，其实是在教你“把 OpenClaw 养在家里一台一直开着的小盒子上”</h2>
+      <p>这条路很可爱，也很实用。因为 Pi 不负责本地跑大模型，它更像一位常驻门卫，负责挂着 Gateway、接通道、守着自动化任务。</p>
+      <p>所以官方最想告诉你的不是“Pi 很强”，而是“只要你把系统、Node、存储和散热照顾好，它完全够当一个长期在线的小值班员”。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合家庭常驻小主机</span>
+      <span>重点是 64 位系统、Node 24、swap、SSH 隧道</span>
+      <a href="https://docs.openclaw.ai/install/raspberry-pi" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧺 先把小盒子的生活用品备齐</h2>
+    <p>官方先列前置条件，不是在凑字数，而是在防止你后面装到一半才发现家当太少。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧠</span>
+      <h2>Pi 4 / 5，2GB 起步</h2>
+      <p>像这位小门卫至少得有张像样的桌子，4GB 会更舒服。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">💽</span>
+      <h2>存储别太抠</h2>
+      <p>SD 卡能用，但 USB SSD 更像正经衣柜，速度和寿命都更好。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">64</span>
+      <h2>必须 64 位系统</h2>
+      <p>这一条别糊弄。32 位就像给它穿错鞋，后面很多东西会别扭。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔌</span>
+      <h2>稳定供电</h2>
+      <p>小盒子最怕半夜饿晕，电源不稳会让你以为是软件坏了。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧭 Setup 那一长段，其实是在做“给小门卫穿衣、配钥匙、安排宿舍”</h2>
+    <p>一条条看就不乱了。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">💿 刷 Raspberry Pi OS Lite 64-bit</div>
+      <p>像先给它穿最轻便、最适合值班的制服，不带桌面，少吃资源。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>ssh user@gateway-host</code></div>
+      <p>像你第一次从自己的电脑走到这台小门卫的值班室门口。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>sudo apt update && sudo apt upgrade -y</code></div>
+      <p>像先把旧家具和旧螺丝全检查一遍，别带着过期零件开始上班。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -</code></div>
+      <p>像先把 Node 24 这台发动机的安装向导请进来。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🛏️ swap 那段，翻成人话就是“给记忆力不大的小门卫铺一张临时床”</h2>
+    <p>尤其 2GB 设备，这段很重要。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>sudo fallocate -l 2G /swapfile</code></div>
+      <p>像先腾出一块临时休息垫，内存不够时能顶一下。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>sudo swapon /swapfile</code></div>
+      <p>像正式把这张备用床铺投入使用。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>vm.swappiness=10</code></div>
+      <p>像告诉系统：“不到真需要的时候，别太依赖这张临时床。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📌 官方为什么特地点名这段</div>
+      <p>不是为了显得专业，而是因为小内存机器最容易在安装和构建时突然趴下。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🚀 安装 OpenClaw 后，再用 SSH 隧道把控制台牵回你自己的电脑上</h2>
+    <p>这就是 Pi 页里最有画面感的一段。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>curl -fsSL https://openclaw.ai/install.sh | bash</code></div>
+      <p>像把官方安装车直接开进 Pi 的值班室。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw onboard --install-daemon</code></div>
+      <p>像搬完家具后，顺手把后台值班制度也装好。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>ssh user@gateway-host 'openclaw dashboard --no-open'</code></div>
+      <p>像先让 Pi 报一下：“我的控制台门牌是多少？”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>ssh -N -L 18789:127.0.0.1:18789 user@gateway-host</code></div>
+      <p>像拉一根私人电话线，把 Pi 里的控制台窗口牵回你眼前这台电脑。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🩺 Performance 和 troubleshooting，都在教你怎么照顾这位小门卫别累坏</h2>
+    <p>Pi 路线要稳定，养护比炫参数更重要。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">💽 用 USB SSD</div>
+      <p>像把纸箱换成真正抽屉，系统和日志都会轻松很多。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧠 compile cache</div>
+      <p>像给它准备一个常用动作小抄本，下次启动不用再从头背。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🌡️ 看 throttling</div>
+      <p>如果它太热、被降速，就像门卫热得直喘气，工作自然慢。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 收尾一句</div>
+      <p>Raspberry Pi 路线的重点不是堆性能，而是把这位小值班员养得稳定、长久在线。</p>
+    </div>
+  </div>
+</section>

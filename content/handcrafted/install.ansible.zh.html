@@ -1,0 +1,149 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🛡️ Ansible 这页，其实是在教你“派一支装修队去服务器上，按同一张图纸装 OpenClaw”</h2>
+      <p>它不是给第一次试玩的人准备的，而是给“我要把 Gateway 稳稳放到正式服务器上”的人。重点不在炫技，而在少出事。</p>
+      <p>官方这页最想传达的只有一句：这不是把 OpenClaw 塞进 Docker 里乱跑，而是在主机上稳稳值班，同时用 Docker 给工具沙箱单独关进隔离房。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合正式服务器部署</span>
+      <span>重点是安全、自动化、可重复</span>
+      <a href="https://docs.openclaw.ai/install/ansible" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🏗️ 这一页给你的，不是一条命令，而是一整套“装修套餐”</h2>
+    <p>官方列的那些东西，看起来多，其实是在告诉你：这套安装会顺手把门锁、围墙、值班制度都一起搭好。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🔥</span>
+      <h2>UFW 防火墙</h2>
+      <p>像先把院墙砌起来，只留该开的门。默认只放 SSH 和 Tailscale 那条路。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🛣️</span>
+      <h2>Tailscale</h2>
+      <p>像给你和服务器拉一条私人小路，不把总控室直接摆到大街上。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2>Docker</h2>
+      <p>这里不是拿来跑 Gateway 本体，而是拿来关工具沙箱，像单独的实验箱。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧍</span>
+      <h2>systemd + openclaw 用户</h2>
+      <p>像给 OpenClaw 安排固定工位和固定值班员，重启后还能自己回来上班。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🚀 那条一键命令，翻成人话就是“把装修队直接叫到门口”</h2>
+    <p>第一次看 Ansible，别先盯着 playbook。官方已经给了最短入口。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>curl -fsSL https://raw.githubusercontent.com/openclaw/openclaw-ansible/main/install.sh | bash</code></div>
+      <p>像直接打电话叫官方装修队来。它会拉代码、装依赖、跑 playbook，把整套基础设施铺起来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🎁 你拿到什么</div>
+      <p>不是只装一个程序，而是连防火墙、VPN、Node、Docker、systemd 服务都一并安排好。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📌 最容易搞混的一句</div>
+      <p>Gateway 跑在主机上，Docker 只负责沙箱。别把“装了 Docker”误会成“Gateway 在容器里”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 最好记的话</div>
+      <p>Ansible 这一页卖的不是命令花样，而是“一次把正式环境搭稳”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🔐 安全架构那一大段，其实是在讲“四道门”</h2>
+    <p>官方说的 4-layer defense，不用背英文，记成四层门就够了。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🚪 第一层：防火墙</div>
+      <p>先把外面大门关好，只给 SSH 和 Tailscale 留口子。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🛤️ 第二层：VPN</div>
+      <p>Tailscale 像私人通道。就算你知道服务器在哪，也不代表你能直接闯进控制台。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧪 第三层：Docker 沙箱</div>
+      <p>工具执行被关进单独的实验房，不直接在大厅里乱跑。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧱 第四层：systemd 硬化</div>
+      <p>像给值班员套规则：少权限、少乱碰、少连带伤害。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧭 装完以后要做什么？其实就是“切到值班员账号，做最后验收”</h2>
+    <p>后面那几条命令，都是在验房，不是在重新装修。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>sudo -i -u openclaw</code></div>
+      <p>像切换到真正值班的那个人，不再用管理员本人乱操作。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw channels login</code></div>
+      <p>像把 Telegram、Signal、Discord 这些门一个个登记进总控室。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>sudo systemctl status openclaw</code></div>
+      <p>像看值班牌是不是亮着，确认服务真在岗。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>sudo journalctl -u openclaw -f</code></div>
+      <p>像站在值班室玻璃后面，看它实时上班有没有咳嗽。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🩺 Troubleshooting 那一段，其实都在问“哪扇门没开、哪把钥匙没对上”</h2>
+    <p>不用被排错列表吓住，最常见的问题就几类。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🚧 连不上</div>
+      <p>先想是不是你没走 Tailscale 这条私路。这个安装方案本来就不是让你把 Gateway 裸露到公网上。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">💤 服务起不来</div>
+      <p>先看 <code>journalctl</code>，再看目录权限。常常不是程序坏了，而是值班员碰不到该碰的文件。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📦 沙箱不工作</div>
+      <p>先确认 Docker 本人活着，再看沙箱镜像是不是已经准备好。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 收尾一句</div>
+      <p>Ansible 这条路像正式装修：前期重一点，但换来的是后面少翻车。</p>
+    </div>
+  </div>
+</section>

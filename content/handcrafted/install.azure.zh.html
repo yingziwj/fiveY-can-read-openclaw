@@ -1,0 +1,149 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>☁️ Azure 这页，其实是在教你“在云上租一间小机房，但别把后门直接对着大街”</h2>
+      <p>它不是简单的“开一台云主机”。官方这页更在意的是：你怎么把门禁、走廊和登录方式一起搭好，让这台机器既能上班，又别太容易被陌生人敲门。</p>
+      <p>所以这页真正的主角有三个：VM、NSG、Bastion。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想在 Azure 上长期跑 Gateway 的人</span>
+      <span>重点是 Bastion 进门，不给 VM 公网门牌</span>
+      <a href="https://docs.openclaw.ai/install/azure" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🏢 先分清这套房子里谁干什么</h2>
+    <p>把 Azure 名词压成人话，这页就不吓人了。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🖥️</span>
+      <h2>VM</h2>
+      <p>真正住 OpenClaw 的房间。Gateway 最后就是在这里上班。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚧</span>
+      <h2>NSG</h2>
+      <p>像楼道门禁规则。谁能敲哪扇门，先由它决定。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🛗</span>
+      <h2>Azure Bastion</h2>
+      <p>像官方电梯。你先走电梯进楼，再 SSH 进房间，不给 VM 自己挂公网门牌。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔑</span>
+      <h2>SSH Key</h2>
+      <p>你的进门钥匙。没它，后面再多资源都只是摆设。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧱 配置阶段那一串命令，翻成人话就是“先把地皮和门牌填好”</h2>
+    <p>Azure CLI 这段看起来长，其实是在给每样东西起名字。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>az login</code></div>
+      <p>像先去物业前台刷脸，告诉 Azure：“是我，我要开始租房了。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>az provider register ...</code></div>
+      <p>像提前开通“网络施工”和“算力施工”这两种工种，不然你下单时会被告知没权限。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">那一大串变量</div>
+      <p>像先把小区名、门牌号、子网编号、管理员名字写到纸上。后面命令都只是照着这张纸施工。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>SSH_PUB_KEY=...</code></div>
+      <p>像把你的钥匙纹路交给物业，之后它才知道谁是被允许进门的人。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🚪 NSG 规则那一长段，其实只在做一件事：只让电梯口的人能敲 SSH</h2>
+    <p>这就是官方为什么要连着写 Allow 和 Deny 三条规则。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">✅ AllowSshFromBastionSubnet</div>
+      <p>像写明“只有从官方电梯厅出来的人，可以按这间房的 22 号门铃”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">⛔ DenyInternetSsh</div>
+      <p>像告诉大街上的陌生人：别敲，这扇门不对外。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">⛔ DenyVnetSsh</div>
+      <p>像连同小区里其他楼的人也挡住，避免谁都能在内网里随便试门。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 这段一句话</div>
+      <p>SSH 不是彻底公开，而是只对 Bastion 这部安全电梯开放。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🛗 真正进门那一步，就是“坐 Bastion 电梯上楼，再让安装车开工”</h2>
+    <p>你会看到两条最关键的命令：一条负责进去，一条负责安装。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>az network bastion ssh ...</code></div>
+      <p>像不直接把房门对外，而是先从 Azure 官方电梯里穿过去，再进到 VM 里。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>curl -fsSL https://openclaw.ai/install.sh -o /tmp/install.sh</code></div>
+      <p>像先把安装车停到临时停车位，等会儿再正式开工。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>bash /tmp/install.sh</code></div>
+      <p>这一步才是让安装车真的开始搬家具、接电、开 onboarding。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway status</code></div>
+      <p>像装修完后去看总控灯牌有没有亮，确认机器不是只摆着好看。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>💸 成本和清理那段，其实是在提醒你：云上的电梯很贵，不用时记得关灯</h2>
+    <p>这页少见地把账单说得很直白，这反而很实用。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">💰 Bastion 很贵</div>
+      <p>官方直接说 Bastion 往往是大头，所以如果你不是天天 SSH，可以不用时拆掉。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>az vm deallocate</code></div>
+      <p>像把房间断电停用，计算费用先停下来，但磁盘这类家当还在。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>az group delete -n \"${RG}\" --yes --no-wait</code></div>
+      <p>像整栋房子连门禁带电梯一起打包退租。删掉资源组，就是整套一起清空。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 收尾一句</div>
+      <p>Azure 这条路的核心不是“开一台云机”，而是“开一台门禁做对的云机”。</p>
+    </div>
+  </div>
+</section>

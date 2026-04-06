@@ -1,0 +1,123 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🚦 Release Channels 这页，其实是在告诉你：“你要坐稳妥班车，还是试运行班车？”</h2>
+      <p>官方这里讲的不是功能，而是更新轨道。很多人看到 stable、beta、dev 会觉得像三个版本，其实更像三条车道。</p>
+      <p>你选哪条车道，决定的是以后 <code>openclaw update</code> 把你带到哪里。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想切换更新节奏的人</span>
+      <span>重点是 stable / beta / dev 三条车道</span>
+      <a href="https://docs.openclaw.ai/install/development-channels" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🛣️ 三条车道，别背英文，记感觉就够了</h2>
+    <p>这页最值得先记住的就是这三个角色分工。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">✅</span>
+      <h2>stable</h2>
+      <p>像正式班车。大多数人坐这条最省心。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧪</span>
+      <h2>beta</h2>
+      <p>像试运行班车。东西比 stable 新，但还在观察。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⚡</span>
+      <h2>dev</h2>
+      <p>像施工现场直通车。最快看到新东西，也最容易遇到半成品。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚫</span>
+      <h2><code>main</code> 分支</h2>
+      <p>更像实验工地，不适合正式 Gateway 值班。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔁 切换 channel，不是在“临时看看”，而是在“以后默认走这条路”</h2>
+    <p>所以 <code>--channel</code> 和 <code>--tag</code> 千万别混了。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update --channel stable</code></div>
+      <p>像对司机说：“以后都按正式班车时刻表接我。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update --channel beta</code></div>
+      <p>像改坐试运行班车，以后更新都会先朝 beta 轨道看。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update --channel dev</code></div>
+      <p>像正式签字进入开发快线，后面会盯着 git checkout 和 main 的最新动静。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p><code>--channel</code> 是改长期车道，不是一趟体验票。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🎟️ <code>--tag</code> 则像“这次我只想坐这班指定列车”</h2>
+    <p>它不会改你长期配置，这一点非常关键。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update --tag beta</code></div>
+      <p>像只想临时坐一次 beta 班车，看看风景，不改常驻路线。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update --tag 2026.3.28-beta.1</code></div>
+      <p>像点名说“我要这一班具体车次”，很适合回放、测试、对版本。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update --tag main</code></div>
+      <p>像这次临时抓 GitHub main 这趟车看看，但下一次默认路线还是按你之前的 channel。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📌 官方提醒</div>
+      <p><code>--tag</code> 只对包安装路线有用，git 安装不会听它。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🪞 dry-run 和 status，其实是在给你“先看路线图，再决定要不要上车”</h2>
+    <p>这两条命令很适合怕踩坑的人。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update --dry-run</code></div>
+      <p>像先让售票员把行程单打印出来，你只看不付款。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update --dry-run --json</code></div>
+      <p>像把路线单改成机器也能看的结构化清单，适合自动化系统自己读。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw update status</code></div>
+      <p>像问一句：“我现在到底在哪条轨道上？现在坐的是包车还是 git 车？”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 收住一句</div>
+      <p>怕翻车时，先 <code>status</code>，再 <code>dry-run</code>，最后再真的更新。</p>
+    </div>
+  </div>
+</section>

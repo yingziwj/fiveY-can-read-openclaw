@@ -3970,825 +3970,156 @@
   
       </div>
 
-      
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Azure</h2>
-          <p>这一页像一本关于“Azure”的小绘本，它先告诉我们这位机器人朋友会做什么，再一步一步解释什么时候该这样做。 你可以先把它想成：OpenClaw on Azure Linux VM。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/install/azure</span>
-          <span>章节数量：9</span>
-          <a href="https://docs.openclaw.ai/install/azure" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-    
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw on Azure Linux VM This guide sets up an Azure Linux VM with the Azure CLI, applies Network 安全守门员 大家一起的房间 (NSG)…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“OpenClaw on Azure Linux VM”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># OpenClaw on Azure Linux VM</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“This guide sets up an Azure Linux VM with the Azure CLI, applies Network 安全守门员 大家一起的房间 (NSG) hardening, 设置说明书ures Azure…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>This guide sets up an Azure Linux VM with the Azure CLI, applies Network Security Group (NSG) hardening, configures Azure Bastion for SSH access, and installs OpenClaw.</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>What you will do</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“What you will do”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Create Azure networking (VNet, subnets, N…、Apply Network 安全守门员 大家一起的房间 rules so VM S…、Use Azure Bastion for SSH access (no publ…、Install OpenClaw with the installer script。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Create Azure networking (VNet, subnets, NSG) and compute resources with the Azure CLI</li><li>Apply Network Security Group rules so VM SSH is allowed only from Azure Bastion</li><li>Use Azure Bastion for SSH access (no public IP on the VM)</li><li>Install OpenClaw with the installer script</li><li>Verify the Gateway</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>What you need</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“What you need”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：An Azure subscription with permission to…、Azure CLI installed (see Azure CLI instal…、An SSH key pair (the guide covers generat…、\~20-30 minutes。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>An Azure subscription with permission to create compute and network resources</li><li>Azure CLI installed (see <a href="https://learn.microsoft.com/cli/azure/install-azure-cli" target="_blank" rel="noreferrer">Azure CLI install steps</a> if needed)</li><li>An SSH key pair (the guide covers generating one if needed)</li><li>\~20-30 minutes</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>设置说明书ure deployment</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Steps&gt; &lt;Step title=&quot;Sign in to Azure CLI&quot;&gt; The ssh extension is required for Azure Bastion native SSH tunneling. &lt;/Ste…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Steps&gt; &lt;Step title=&quot;Sign in to Azure CLI&quot;&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Steps&gt; &lt;Step title=&quot;Sign in to Azure CLI&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} az login az extension add -n ssh </code>``</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The ssh extension is required for Azure Bastion native SSH tunneling. &lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The <code>ssh</code> extension is required for Azure Bastion native SSH tunneling. &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Register required resource providers (one-time)&quot;&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Register required resource providers (one-time)&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} az provider register --namespace Microsoft.Compute az provider register --namespace Microsoft.Network </code>``</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Verify registration. Wait until both show Registered.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Verify registration. Wait until both show <code>Registered</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} az provider show --namespace Microsoft.Compute --query registrationState -o tsv az provider show --namespace Microsoft.Network --query registrationState -o tsv </code>`` &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Set deployment variables&quot;&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Set deployment variables&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} RG=&quot;rg-openclaw&quot; LOCATION=&quot;westus2&quot; VNET_NAME=&quot;vnet-openclaw&quot; VNET_PREFIX=&quot;10.40.0.0/16&quot; VM_SUBNET_NAME=&quot;snet-openclaw-vm&quot; VM_SUBNET_PREFIX=&quot;10.40.2.0/24&quot; BASTION_SUBNET_PREFIX=&quot;10.40.1.0/26&quot; NSG_NAME=&quot;nsg-openclaw-vm&quot; VM_NAME=&quot;vm-openclaw&quot; ADMIN_USERNAME=&quot;openclaw&quot; BASTION_NAME=&quot;bas-openclaw&quot; BASTION_PIP_NAME=&quot;pip-openclaw-bastion&quot; </code>``</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Adjust names and CIDR ranges to fit your environment. The Bastion subnet must be at least /26. &lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Adjust names and CIDR ranges to fit your environment. The Bastion subnet must be at least <code>/26</code>. &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Select SSH key&quot;&gt; Use your existing public key if you have one:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Select SSH key&quot;&gt; Use your existing public key if you have one:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} SSH_PUB_KEY=&quot;$(cat ~/.ssh/id_ed25519.pub)&quot; </code>``</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“If you don&#39;t have an SSH key yet, generate one:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If you don&#39;t have an SSH key yet, generate one:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} ssh-keygen -t ed25519 -a 100 -f ~/.ssh/id_ed25519 -C &quot;you@example.com&quot; SSH_PUB_KEY=&quot;$(cat ~/.ssh/id_ed25519.pub)&quot; </code>`` &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Select VM size and OS disk size&quot;&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Select VM size and OS disk size&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} VM_SIZE=&quot;Standard_B2as_v2&quot; OS_DISK_SIZE_GB=64 </code>``</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Choose a VM size and OS disk size available in your subscription and region:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Choose a VM size and OS disk size available in your subscription and region:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Configure deployment”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Start smaller for light usage and scale u…、Use more vCPU/RAM/disk for heavier 自动小闹钟,…、If a VM size is unavailable in your regio…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Start smaller for light usage and scale up later</li><li>Use more vCPU/RAM/disk for heavier automation, more channels, or larger model/tool workloads</li><li>If a VM size is unavailable in your region or subscription quota, pick the closest available SKU</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“List VM sizes available in your target region:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>List VM sizes available in your target region:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} az vm list-skus --location &quot;${LOCATION}&quot; --resource-type virtualMachines -o table </code>``</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Check your current vCPU and disk usage/quota:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Check your current vCPU and disk usage/quota:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;/Step&gt; &lt;/Steps&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} az vm list-usage --location &quot;${LOCATION}&quot; -o table </code>`` &lt;/Step&gt; &lt;/Steps&gt;</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Deploy Azure resources</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Steps&gt; &lt;Step title=&quot;Create the resource 大家一起的房间&quot;&gt; &lt;/Step&gt; &lt;Step title=&quot;Create the network 安全守门员 大家一起的房间&quot;&gt; Create the N…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Steps&gt; &lt;Step title=&quot;Create the resource 大家一起的房间&quot;&gt; &lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Steps&gt; &lt;Step title=&quot;Create the resource group&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} az group create -n &quot;${RG}&quot; -l &quot;${LOCATION}&quot; </code>`` &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Create the network 安全守门员 大家一起的房间&quot;&gt; Create the NSG and add rules so only the Bastion subnet can SSH into th…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Create the network security group&quot;&gt; Create the NSG and add rules so only the Bastion subnet can SSH into the VM.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“```bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} az network nsg create \ -g &quot;${RG}&quot; -n &quot;${NSG_NAME}&quot; -l…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>```bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} az network nsg create \ -g &quot;${RG}&quot; -n &quot;${NSG_NAME}&quot; -l &quot;${LOCATION}&quot;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Allow SSH from the Bastion subnet only az network nsg rule create \ -g &quot;${RG}&quot; --nsg-name &quot;${NSG_NAME}&quot; \ -n AllowSshFr…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Allow SSH from the Bastion subnet only az network nsg rule create \ -g &quot;${RG}&quot; --nsg-name &quot;${NSG_NAME}&quot; \ -n AllowSshFromBastionSubnet --priority 100 \ --access Allow --direction Inbound --protocol Tcp \ --source-address-prefixes &quot;${BASTION_SUBNET_PREFIX}&quot; \ --destination-port-ranges 22</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Deny SSH from the public internet az network nsg rule create \ -g &quot;${RG}&quot; --nsg-name &quot;${NSG_NAME}&quot; \ -n DenyInternetSsh…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Deny SSH from the public internet az network nsg rule create \ -g &quot;${RG}&quot; --nsg-name &quot;${NSG_NAME}&quot; \ -n DenyInternetSsh --priority 110 \ --access Deny --direction Inbound --protocol Tcp \ --source-address-prefixes Internet \ --destination-port-ranges 22</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Deny SSH from other VNet sources az network nsg rule create \ -g &quot;${RG}&quot; --nsg-name &quot;${NSG_NAME}&quot; \ -n DenyVnetSsh --pr…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Deny SSH from other VNet sources az network nsg rule create \ -g &quot;${RG}&quot; --nsg-name &quot;${NSG_NAME}&quot; \ -n DenyVnetSsh --priority 120 \ --access Deny --direction Inbound --protocol Tcp \ --source-address-prefixes VirtualNetwork \ --destination-port-ranges 22 ```</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The rules are evaluated by priority (lowest number first): Bastion traffic is allowed at 100, then all other SSH is blo…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The rules are evaluated by priority (lowest number first): Bastion traffic is allowed at 100, then all other SSH is blocked at 110 and 120. &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Create the virtual network and subnets&quot;&gt; Create the VNet with the VM subnet (NSG attached), then add the B…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Create the virtual network and subnets&quot;&gt; Create the VNet with the VM subnet (NSG attached), then add the Bastion subnet.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“```bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} az network vnet create \ -g &quot;${RG}&quot; -n &quot;${VNET_NAME}&quot; -…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>```bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} az network vnet create \ -g &quot;${RG}&quot; -n &quot;${VNET_NAME}&quot; -l &quot;${LOCATION}&quot; \ --address-prefixes &quot;${VNET_PREFIX}&quot; \ --subnet-name &quot;${VM_SUBNET_NAME}&quot; \ --subnet-prefixes &quot;${VM_SUBNET_PREFIX}&quot;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Attach the NSG to the VM subnet az network vnet subnet update \ -g &quot;${RG}&quot; --vnet-name &quot;${VNET_NAME}&quot; \ -n &quot;${VM_SUBNET…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Attach the NSG to the VM subnet az network vnet subnet update \ -g &quot;${RG}&quot; --vnet-name &quot;${VNET_NAME}&quot; \ -n &quot;${VM_SUBNET_NAME}&quot; --nsg &quot;${NSG_NAME}&quot;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“AzureBastionSubnet — name is required by Azure az network vnet subnet create \ -g &quot;${RG}&quot; --vnet-name &quot;${VNET_NAME}&quot; \…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># AzureBastionSubnet — name is required by Azure az network vnet subnet create \ -g &quot;${RG}&quot; --vnet-name &quot;${VNET_NAME}&quot; \ -n AzureBastionSubnet \ --address-prefixes &quot;${BASTION_SUBNET_PREFIX}&quot; ``` &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Create the VM&quot;&gt; The VM has no public IP. SSH access is exclusively through Azure Bastion.”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Create the VM&quot;&gt; The VM has no public IP. SSH access is exclusively through Azure Bastion.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} az vm create \ -g &quot;${RG}&quot; -n &quot;${VM_NAME}&quot; -l &quot;${LOCATION}&quot; \ --image &quot;Canonical:ubuntu-24_04-lts:server:latest&quot; \ --size &quot;${VM_SIZE}&quot; \ --os-disk-size-gb &quot;${OS_DISK_SIZE_GB}&quot; \ --storage-sku StandardSSD_LRS \ --admin-username &quot;${ADMIN_USERNAME}&quot; \ --ssh-key-values &quot;${SSH_PUB_KEY}&quot; \ --vnet-name &quot;${VNET_NAME}&quot; \ --subnet &quot;${VM_SUBNET_NAME}&quot; \ --public-ip-address &quot;&quot; \ --nsg &quot;&quot; </code>``</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“--public-ip-address &quot;&quot; prevents a public IP from being assigned. --nsg &quot;&quot; skips creating a per-NIC NSG (the subnet-leve…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>--public-ip-address &quot;&quot;</code> prevents a public IP from being assigned. <code>--nsg &quot;&quot;</code> skips creating a per-NIC NSG (the subnet-level NSG handles security).</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“**Reproducibility:** The 魔法口令 above uses latest for the Ubuntu image. To pin a specific version, list available version…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Reproducibility:** The command above uses <code>latest</code> for the Ubuntu image. To pin a specific version, list available versions and replace <code>latest</code>:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;/Step&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} az vm image list \ --publisher Canonical --offer ubuntu-24_04-lts \ --sku server --all -o table </code>`` &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Create Azure Bastion&quot;&gt; Azure Bastion provides managed SSH access to the VM without exposing a public IP. S…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Create Azure Bastion&quot;&gt; Azure Bastion provides managed SSH access to the VM without exposing a public IP. Standard SKU with tunneling is required for CLI-based <code>az network bastion ssh</code>.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“```bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} az network public-ip create \ -g &quot;${RG}&quot; -n &quot;${BASTION_…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>```bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} az network public-ip create \ -g &quot;${RG}&quot; -n &quot;${BASTION_PIP_NAME}&quot; -l &quot;${LOCATION}&quot; \ --sku Standard --allocation-method Static</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“az network bastion create \ -g &quot;${RG}&quot; -n &quot;${BASTION_NAME}&quot; -l &quot;${LOCATION}&quot; \ --vnet-name &quot;${VNET_NAME}&quot; \ --public-ip…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>az network bastion create \ -g &quot;${RG}&quot; -n &quot;${BASTION_NAME}&quot; -l &quot;${LOCATION}&quot; \ --vnet-name &quot;${VNET_NAME}&quot; \ --public-ip-address &quot;${BASTION_PIP_NAME}&quot; \ --sku Standard --enable-tunneling true ```</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Bastion provisioning typically takes 5-10 minutes but can take up to 15-30 minutes in some regions. &lt;/Step&gt; &lt;/Steps&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Bastion provisioning typically takes 5-10 minutes but can take up to 15-30 minutes in some regions. &lt;/Step&gt; &lt;/Steps&gt;</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Install OpenClaw</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Steps&gt; &lt;Step title=&quot;SSH into the VM through Azure Bastion&quot;&gt; &lt;/Step&gt; &lt;Step title=&quot;Install OpenClaw (in the VM shell)&quot;&gt;…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Steps&gt; &lt;Step title=&quot;SSH into the VM through Azure Bastion&quot;&gt; ```bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-da…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Steps&gt; &lt;Step title=&quot;SSH into the VM through Azure Bastion&quot;&gt; ```bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} VM_ID=&quot;$(az vm show -g &quot;${RG}&quot; -n &quot;${VM_NAME}&quot; --query id -o tsv)&quot;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“az network bastion ssh \ --name &quot;${BASTION_NAME}&quot; \ --resource-大家一起的房间 &quot;${RG}&quot; \ --target-resource-id &quot;${VM_ID}&quot; \ --au…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>az network bastion ssh \ --name &quot;${BASTION_NAME}&quot; \ --resource-group &quot;${RG}&quot; \ --target-resource-id &quot;${VM_ID}&quot; \ --auth-type ssh-key \ --username &quot;${ADMIN_USERNAME}&quot; \ --ssh-key ~/.ssh/id_ed25519 ``` &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Install OpenClaw (in the VM shell)&quot;&gt;”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Install OpenClaw (in the VM shell)&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} curl -fsSL https://openclaw.ai/install.sh -o /tmp/install.sh bash /tmp/install.sh rm -f /tmp/install.sh </code>``</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“The installer installs Node LTS and dependencies if not already present, installs OpenClaw, and launches the onboarding…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The installer installs Node LTS and dependencies if not already present, installs OpenClaw, and launches the onboarding wizard. See <a href="/install" target="_blank" rel="noreferrer">Install</a> for details. &lt;/Step&gt;</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“&lt;Step title=&quot;Verify the 门口的小门卫&quot;&gt; After onboarding completes:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Verify the Gateway&quot;&gt; After onboarding completes:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw gateway status </code>``</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Most enterprise Azure teams already have GitHub Copilot licenses. If that is your case, we recommend choosing the GitHu…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Most enterprise Azure teams already have GitHub Copilot licenses. If that is your case, we recommend choosing the GitHub Copilot provider in the OpenClaw onboarding wizard. See <a href="/providers/github-copilot" target="_blank" rel="noreferrer">GitHub Copilot provider</a>. &lt;/Step&gt; &lt;/Steps&gt;</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Cost considerations</h2>
-            <p>这一节主要在解释“Cost considerations”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Cost considerations”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Azure Bastion Standard SKU runs approximately **\$140/month** and the VM (Standard\_B2as\_v2) runs approximately **\$55…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“Azure Bastion Standard SKU runs approximately **\$140/month** and the VM (Standard\_B2as\_v2) runs approximately **\$55…”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Azure Bastion Standard SKU runs approximately **\$140/month** and the VM (Standard\_B2as\_v2) runs approximately **\$55/month**.</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“To reduce costs:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>To reduce costs:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Cost considerations”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**Deallocate the VM** when not in use (st…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Deallocate the VM** when not in use (stops compute billing; disk charges remain). The OpenClaw Gateway will not be reachable while the VM is deallocated — restart it when you need it live again:</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} az vm deallocate -g &quot;${RG}&quot; -n &quot;${VM_NAME}&quot; az vm start -g &quot;${RG}&quot; -n &quot;${VM_NAME}&quot; # restart later </code>``</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Cost considerations”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**Delete Bastion when not needed** and re…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Delete Bastion when not needed** and recreate it when you need SSH access. Bastion is the largest cost component and takes only a few minutes to provision.</li></ul>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Cost considerations”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：**Use the Basic Bastion SKU** (\~\$38/mon…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Use the Basic Bastion SKU** (\~\$38/month) if you only need Portal-based SSH and don&#39;t require CLI tunneling (<code>az network bastion ssh</code>).</li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>Cleanup</h2>
-            <p>这一节主要在解释“Cleanup”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Cleanup”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“To delete all resources created by this guide: This removes the resource 大家一起的房间 and everything inside it (VM, VNet, NS…”。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“To delete all resources created by this guide:”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>To delete all resources created by this guide:</p>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。</p>
-        <ul class="code-steps">
-          <li>这一行“az group delete -n &quot;${RG}&quot; --yes --no-wait”是当前步骤要交给电脑的一小块提示。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">az group delete -n &quot;${RG}&quot; --yes --no-wait</code></pre>
-      </div>
-    
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“This removes the resource 大家一起的房间 and everything inside it (VM, VNet, NSG, Bastion, public IP).”。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>This removes the resource group and everything inside it (VM, VNet, NSG, Bastion, public IP).</p>
-      </div>
-    
-          </div>
-        </section>
-      
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>Next steps</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，提醒我们现在讲到哪一步了。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-            
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一组条目像“Next steps”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：Set up messaging 消息通道s: 消息通道s、Pair local devices as nodes: Nodes、设置说明书ure the 门口的小门卫: 门口的小门卫 设置说明书uration、For more details on OpenClaw Azure deploy…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Set up messaging channels: <a href="/channels" target="_blank" rel="noreferrer">Channels</a></li><li>Pair local devices as nodes: <a href="/nodes" target="_blank" rel="noreferrer">Nodes</a></li><li>Configure the Gateway: <a href="/gateway/configuration" target="_blank" rel="noreferrer">Gateway configuration</a></li><li>For more details on OpenClaw Azure deployment with the GitHub Copilot model provider: <a href="https://github.com/johnsonshi/openclaw-azure-github-copilot" target="_blank" rel="noreferrer">OpenClaw on Azure with GitHub Copilot</a></li></ul>
-      </div>
-    
-          </div>
-        </section>
-      
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
-  
+      <section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>☁️ Azure 这页，其实是在教你“在云上租一间小机房，但别把后门直接对着大街”</h2>
+      <p>它不是简单的“开一台云主机”。官方这页更在意的是：你怎么把门禁、走廊和登录方式一起搭好，让这台机器既能上班，又别太容易被陌生人敲门。</p>
+      <p>所以这页真正的主角有三个：VM、NSG、Bastion。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想在 Azure 上长期跑 Gateway 的人</span>
+      <span>重点是 Bastion 进门，不给 VM 公网门牌</span>
+      <a href="https://docs.openclaw.ai/install/azure" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🏢 先分清这套房子里谁干什么</h2>
+    <p>把 Azure 名词压成人话，这页就不吓人了。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🖥️</span>
+      <h2>VM</h2>
+      <p>真正住 OpenClaw 的房间。Gateway 最后就是在这里上班。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚧</span>
+      <h2>NSG</h2>
+      <p>像楼道门禁规则。谁能敲哪扇门，先由它决定。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🛗</span>
+      <h2>Azure Bastion</h2>
+      <p>像官方电梯。你先走电梯进楼，再 SSH 进房间，不给 VM 自己挂公网门牌。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔑</span>
+      <h2>SSH Key</h2>
+      <p>你的进门钥匙。没它，后面再多资源都只是摆设。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧱 配置阶段那一串命令，翻成人话就是“先把地皮和门牌填好”</h2>
+    <p>Azure CLI 这段看起来长，其实是在给每样东西起名字。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>az login</code></div>
+      <p>像先去物业前台刷脸，告诉 Azure：“是我，我要开始租房了。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>az provider register ...</code></div>
+      <p>像提前开通“网络施工”和“算力施工”这两种工种，不然你下单时会被告知没权限。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">那一大串变量</div>
+      <p>像先把小区名、门牌号、子网编号、管理员名字写到纸上。后面命令都只是照着这张纸施工。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>SSH_PUB_KEY=...</code></div>
+      <p>像把你的钥匙纹路交给物业，之后它才知道谁是被允许进门的人。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🚪 NSG 规则那一长段，其实只在做一件事：只让电梯口的人能敲 SSH</h2>
+    <p>这就是官方为什么要连着写 Allow 和 Deny 三条规则。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">✅ AllowSshFromBastionSubnet</div>
+      <p>像写明“只有从官方电梯厅出来的人，可以按这间房的 22 号门铃”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">⛔ DenyInternetSsh</div>
+      <p>像告诉大街上的陌生人：别敲，这扇门不对外。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">⛔ DenyVnetSsh</div>
+      <p>像连同小区里其他楼的人也挡住，避免谁都能在内网里随便试门。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 这段一句话</div>
+      <p>SSH 不是彻底公开，而是只对 Bastion 这部安全电梯开放。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🛗 真正进门那一步，就是“坐 Bastion 电梯上楼，再让安装车开工”</h2>
+    <p>你会看到两条最关键的命令：一条负责进去，一条负责安装。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>az network bastion ssh ...</code></div>
+      <p>像不直接把房门对外，而是先从 Azure 官方电梯里穿过去，再进到 VM 里。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>curl -fsSL https://openclaw.ai/install.sh -o /tmp/install.sh</code></div>
+      <p>像先把安装车停到临时停车位，等会儿再正式开工。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>bash /tmp/install.sh</code></div>
+      <p>这一步才是让安装车真的开始搬家具、接电、开 onboarding。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway status</code></div>
+      <p>像装修完后去看总控灯牌有没有亮，确认机器不是只摆着好看。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>💸 成本和清理那段，其实是在提醒你：云上的电梯很贵，不用时记得关灯</h2>
+    <p>这页少见地把账单说得很直白，这反而很实用。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">💰 Bastion 很贵</div>
+      <p>官方直接说 Bastion 往往是大头，所以如果你不是天天 SSH，可以不用时拆掉。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>az vm deallocate</code></div>
+      <p>像把房间断电停用，计算费用先停下来，但磁盘这类家当还在。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>az group delete -n \"${RG}\" --yes --no-wait</code></div>
+      <p>像整栋房子连门禁带电梯一起打包退租。删掉资源组，就是整套一起清空。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 收尾一句</div>
+      <p>Azure 这条路的核心不是“开一台云机”，而是“开一台门禁做对的云机”。</p>
+    </div>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

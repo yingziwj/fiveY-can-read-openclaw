@@ -1,0 +1,123 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🚂 Railway 这页，其实是在教你“把 OpenClaw 托管给一个会自己开机的云车站”</h2>
+      <p>它最大的卖点不是自由度，而是轻松。你不用自己 SSH 上服务器慢慢配，Railway 帮你把 Gateway 放到天上值班，你主要负责把门票、存储箱和控制台入口配好。</p>
+      <p>所以官方才会说：这是最适合“服务器上不碰终端”的路线。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想最快上云的人</span>
+      <span>重点是 Volume、变量、8080、控制台门票</span>
+      <a href="https://docs.openclaw.ai/install/railway" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧾 快速清单那几条，其实就是“四件绝不能漏的行李”</h2>
+    <p>如果你只看一段，先看这段。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2>Volume</h2>
+      <p>必须有，而且要挂在 <code>/data</code>。这像 OpenClaw 的行李箱，不然每次重部署都像失忆。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔑</span>
+      <h2>变量</h2>
+      <p>至少要有 <code>OPENCLAW_GATEWAY_PORT</code> 和 <code>OPENCLAW_GATEWAY_TOKEN</code>。一个管门牌，一个管门票。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🌐</span>
+      <h2>HTTP Proxy 8080</h2>
+      <p>像告诉 Railway：“这台机器的接待窗口在 8080。”</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🖥️</span>
+      <h2><code>/openclaw</code></h2>
+      <p>控制台入口在这里，不是根路径乱猜。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🚀 One-click deploy，说白了就是“让 Railway 帮你把站台先搭起来”</h2>
+    <p>一键部署不是魔法，只是把很多初始化动作打包了。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🏗️ 一键部署后会发生什么</div>
+      <p>Railway 会拿模板建服务、给你一个公开域名，然后等你把关键变量补齐。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔗 域名从哪找</div>
+      <p>去 Railway 的服务设置里看 Domains，像去前台领正式门牌。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>https://&lt;your-railway-domain&gt;/openclaw</code></div>
+      <p>这就是控制台门口，不是直接打开根域名就算完事。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>Railway 帮你搭站台，但行李和门票还得你自己放进去。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧳 Volume 和 Variables，合起来就是“家当”和“门禁”</h2>
+    <p>这是 Railway 页最重要的实操部分。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>/data</code></div>
+      <p>像 OpenClaw 的储物间。没有它，配置、凭据、工作区都可能在重部署后飞掉。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>OPENCLAW_GATEWAY_PORT=8080</code></div>
+      <p>像给接待窗口贴门牌，得和 Railway 外网代理的端口一致。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>OPENCLAW_GATEWAY_TOKEN</code></div>
+      <p>像总控室门票，拿着它的人基本就是管理员，所以要当成秘密钥匙看。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>OPENCLAW_STATE_DIR</code> / <code>OPENCLAW_WORKSPACE_DIR</code></div>
+      <p>像告诉 OpenClaw：“你的家和工作台都放到这只行李箱里。”</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>📲 接通道和做备份，分别像“装门”与“打包家当”</h2>
+    <p>平台搭完以后，真正好用还差两步。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📡 接通道</div>
+      <p>官方推荐从 Telegram 开始，因为它最像“交一把 bot token 就能开门”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🖥️ 也能从 Railway Shell 里跑 onboarding</div>
+      <p>像你偶尔还是能钻进后台值班室，做一些现场登记。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw backup create</code></div>
+      <p>像把当前房子的钥匙、清单、工作区打成一个搬家箱，方便以后迁走。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 最后一句</div>
+      <p>Railway 这条路主打的不是“最自由”，而是“最省手”。</p>
+    </div>
+  </div>
+</section>
