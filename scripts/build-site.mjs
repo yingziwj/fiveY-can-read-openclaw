@@ -337,7 +337,30 @@ const handcraftedPageMap = new Map([
   ["/nodes/media-understanding", path.resolve("content/handcrafted/nodes.media-understanding.zh.html")],
   ["/nodes/talk", path.resolve("content/handcrafted/nodes.talk.zh.html")],
   ["/nodes/troubleshooting", path.resolve("content/handcrafted/nodes.troubleshooting.zh.html")],
-  ["/nodes/voicewake", path.resolve("content/handcrafted/nodes.voicewake.zh.html")]
+  ["/nodes/voicewake", path.resolve("content/handcrafted/nodes.voicewake.zh.html")],
+  ["/platforms/index", path.resolve("content/handcrafted/platforms.index.zh.html")],
+  ["/platforms/android", path.resolve("content/handcrafted/platforms.android.zh.html")],
+  ["/platforms/ios", path.resolve("content/handcrafted/platforms.ios.zh.html")],
+  ["/platforms/linux", path.resolve("content/handcrafted/platforms.linux.zh.html")],
+  ["/platforms/macos", path.resolve("content/handcrafted/platforms.macos.zh.html")],
+  ["/platforms/windows", path.resolve("content/handcrafted/platforms.windows.zh.html")],
+  ["/platforms/mac/dev-setup", path.resolve("content/handcrafted/platforms.mac.dev-setup.zh.html")],
+  ["/platforms/mac/menu-bar", path.resolve("content/handcrafted/platforms.mac.menu-bar.zh.html")],
+  ["/platforms/mac/bundled-gateway", path.resolve("content/handcrafted/platforms.mac.bundled-gateway.zh.html")],
+  ["/platforms/mac/canvas", path.resolve("content/handcrafted/platforms.mac.canvas.zh.html")],
+  ["/platforms/mac/child-process", path.resolve("content/handcrafted/platforms.mac.child-process.zh.html")],
+  ["/platforms/mac/health", path.resolve("content/handcrafted/platforms.mac.health.zh.html")],
+  ["/platforms/mac/icon", path.resolve("content/handcrafted/platforms.mac.icon.zh.html")],
+  ["/platforms/mac/logging", path.resolve("content/handcrafted/platforms.mac.logging.zh.html")],
+  ["/platforms/mac/peekaboo", path.resolve("content/handcrafted/platforms.mac.peekaboo.zh.html")],
+  ["/platforms/mac/permissions", path.resolve("content/handcrafted/platforms.mac.permissions.zh.html")],
+  ["/platforms/mac/remote", path.resolve("content/handcrafted/platforms.mac.remote.zh.html")],
+  ["/platforms/mac/signing", path.resolve("content/handcrafted/platforms.mac.signing.zh.html")],
+  ["/platforms/mac/skills", path.resolve("content/handcrafted/platforms.mac.skills.zh.html")],
+  ["/platforms/mac/voice-overlay", path.resolve("content/handcrafted/platforms.mac.voice-overlay.zh.html")],
+  ["/platforms/mac/voicewake", path.resolve("content/handcrafted/platforms.mac.voicewake.zh.html")],
+  ["/platforms/mac/webchat", path.resolve("content/handcrafted/platforms.mac.webchat.zh.html")],
+  ["/platforms/mac/xpc", path.resolve("content/handcrafted/platforms.mac.xpc.zh.html")]
 ]);
 
 function asset(fileName) {
