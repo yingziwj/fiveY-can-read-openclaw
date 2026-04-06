@@ -1,0 +1,42 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧪 Pi Development Workflow，就是“改 Pi 相关代码时，先怎么检查、怎么测、怎么把桌面清空”</h2>
+      <p>这页是给开发者的操作顺序，不是给外人看的概念页。它告诉你先跑什么，后跑什么，出问题怎么把状态清掉重新来。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合要改 Pi 集成代码的人</span>
+      <span>先看 build/lint，再看测试命令，再看重置方法</span>
+      <a href="https://docs.openclaw.ai/pi-dev" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第一站</p><h2>🧰 先把门口几道检查跑完</h2><p>`pnpm build`、`pnpm lint`、`pnpm format` 这些是最基本的桌面整理。</p></div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>pnpm build</code></div><p>像把代码拼一遍，看会不会碎。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>pnpm lint</code></div><p>像让语法老师先挑毛病。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>pnpm format</code></div><p>像把桌面摆整齐。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第二站</p><h2>🎯 测试命令像分门别类的试卷</h2><p>Pi 相关测试集中跑，不代表全仓库一起跑。这样更快，也更聚焦。</p></div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>pnpm test -- ...</code></div><p>像把 Pi 相关试卷单独抽出来。</p></div>
+    <div class="source-card"><div class="story-card-label">live provider</div><p>像把真提供商也叫来做一次现场演练。</p></div>
+    <div class="source-card"><div class="story-card-label">manual flow</div><p>gateway dev、agent 直跑、TUI 交互，这几个是最实用的桌边检查。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第三站</p><h2>🧼 清空状态，是“把旧抽屉都关上”</h2><p>当你改坏了实验状态，直接重置比在坏状态上继续修更稳。</p></div>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-card-label">`~/.openclaw`</div><p>默认状态仓库。</p></div>
+    <div class="story-card"><div class="story-card-label">credentials / sessions</div><p>像把旧钥匙和旧会话都收回去。</p></div>
+    <div class="source-card"><div class="story-card-label">一句话</div><p>Pi dev 页是在告诉你：改代理集成时，怎么测得稳、清得干净。</p></div>
+  </div>
+</section>
+

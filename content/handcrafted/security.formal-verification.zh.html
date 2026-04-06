@@ -1,0 +1,42 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📐 Formal Verification 这页，就是“拿数学小尺子给安全规则量一量”</h2>
+      <p>它不是在说代码已经神奇无敌，而是在说：某些关键安全情景，我们可以先用模型跑一遍，看会不会出现反例。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想看机器可检查安全模型的人</span>
+      <span>先看模型在哪，再看 caveat，再看怎么复现</span>
+      <a href="https://docs.openclaw.ai/security/formal-verification" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第一站</p><h2>🧪 先把它当成“带攻击者视角的安全回归测试”</h2><p>这页写得很诚实：它是模型检查，不是终局证明。</p></div>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-card-label">TLA+/TLC</div><p>像把规则写成可跑的棋盘，看看会不会走出坏局面。</p></div>
+    <div class="story-card"><div class="story-card-label">negative model</div><p>像故意搭一条坏路，看机器能不能抓到反例。</p></div>
+    <div class="story-card"><div class="story-card-label">绿色不等于绝对安全</div><p>因为模型是有限棋盘，不是整个宇宙。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第二站</p><h2>📦 结果怎么跑出来</h2><p>官方建议你去单独的模型仓库里 clone，再用 TLC 和 make 复现。</p></div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>git clone https://github.com/vignesh07/openclaw-formal-models</code></div><p>像把模型沙盘搬回自己桌上。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>make &lt;target&gt;</code></div><p>像把某个安全场景单独拉出来跑一遍。</p></div>
+    <div class="source-card"><div class="story-card-label">Java 11+</div><p>像告诉你沙盘需要什么底座才能转起来。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第三站</p><h2>🔐 这页最值钱的是它挑的几个重点风险</h2><p>Gateway 暴露、nodes.run、错误配置，这些都是“模型里最容易翻车的门”。</p></div>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-card-label">Gateway exposure</div><p>像大门没锁好，远程风险直接变高。</p></div>
+    <div class="story-card"><div class="story-card-label">nodes.run</div><p>像最高风险的能力按钮，必须双重确认。</p></div>
+    <div class="source-card"><div class="story-card-label">一句话</div><p>这页的价值，是提前抓出“什么配置一错，安全边界就歪了”。</p></div>
+  </div>
+</section>
+

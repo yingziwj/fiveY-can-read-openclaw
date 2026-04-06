@@ -1,0 +1,42 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>⏰ Date & Time 这页，就是“谁的钟表拿来记时间、谁的时区拿来给人看”</h2>
+      <p>它的核心很简单：运输时间默认按主机本地时区，给人的说明文字则可以按用户时区来讲。别把它们混成一锅。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合排查时间戳和跨时区显示的人</span>
+      <span>先记 envelope，再记 user timezone，再看 examples</span>
+      <a href="https://docs.openclaw.ai/date-time" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第一站</p><h2>📦 消息外壳里的时间，默认用主机本地时间</h2><p>消息到 Gateway 时会套一个时间外壳，默认就是主机本地时区，不会自动改成提供商的时区。</p></div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label">host-local</div><p>像用这台机器自己的表来打包。</p></div>
+    <div class="source-card"><div class="story-card-label">provider timestamp preserved</div><p>像保留原消息自带的原始时间印记。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>session_status</code></div><p>像随时能问当前时间的总时钟。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第二站</p><h2>🧩 配置项像几个不同的时间滤镜</h2><p>你可以让时间外壳换成 UTC、local、user 或固定 IANA 时区。</p></div>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-card-label"><code>envelopeTimezone</code></div><p>像决定这封包裹票据上写的是哪个时区。</p></div>
+    <div class="story-card"><div class="story-card-label"><code>envelopeTimestamp</code></div><p>像决定票据上要不要印绝对时间。</p></div>
+    <div class="story-card"><div class="story-card-label"><code>envelopeElapsed</code></div><p>像决定要不要再附上一段“过了多久”的小尾巴。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第三站</p><h2>🗣 系统提示词里的 user timezone，才是“说给人听”的那个时区</h2><p>官方把“机器传输时间”和“人读到的时间”分开，就是怕你误会系统什么时候在讲谁的钟。</p></div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label">默认运输</div><p>按主机本地。</p></div>
+    <div class="source-card"><div class="story-card-label">人类说明</div><p>按用户时区讲故事。</p></div>
+    <div class="source-card"><div class="story-card-label">一句话</div><p>一个是机器记账，一个是人类读说明，别混淆。</p></div>
+  </div>
+</section>
+

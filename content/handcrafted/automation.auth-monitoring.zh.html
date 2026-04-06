@@ -1,0 +1,38 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🔑 Auth monitoring 这页，就是“定时摸一摸钥匙还在不在口袋里”</h2>
+      <p>它在看 OAuth 证书会不会过期。先看 CLI 的健康检查，再看脚本怎么把提醒送到手机或运维工具里。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合给自动化和告警系统接一个健康哨兵</span>
+      <span>先看 `openclaw models status --check`，脚本只是附加工具</span>
+      <a href="https://docs.openclaw.ai/automation/auth-monitoring" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第一站</p><h2>🩺 先用一条命令做体检</h2><p>官方把 `openclaw models status --check` 放在最前面，是因为它最稳、最通用，也最适合给 cron 或 systemd 直接调用。</p></div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>openclaw models status --check</code></div><p>像拿体温计扫一眼，马上知道钥匙是正常、快过期，还是已经失效。</p></div>
+    <div class="story-card"><div class="story-card-label">返回码</div><p><code>0</code> 代表正常，<code>1</code> 代表坏了，<code>2</code> 代表快到期了。</p></div>
+    <div class="story-card"><div class="story-card-label">为什么好用</div><p>因为它不依赖额外脚本，放进任何定时器里都很顺手。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第二站</p><h2>📲 脚本是“额外的提醒器”，不是主角</h2><p>官方把 `scripts/` 里的脚本叫 optional，就是怕你把健康检查和通知系统混成一锅粥。</p></div>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-card-label">`auth-monitor.sh`</div><p>像定时巡逻员，发现钥匙异常就发通知。</p></div>
+    <div class="story-card"><div class="story-card-label">`mobile-reauth.sh`</div><p>像给手机端的你铺一条重登路线。</p></div>
+    <div class="story-card"><div class="story-card-label">`termux-quick-auth.sh`</div><p>像一键弹出的快捷门卡。</p></div>
+    <div class="source-card"><div class="story-card-label">核心思路</div><p>脚本负责“提醒和补救”，CLI 负责“判断当前状态”。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">最后总结</p><h2>🎈 这页就一件事：别等钥匙坏了才发现</h2><p>把状态检查塞进定时任务里，才是这页真正的价值。</p></div>
+</section>
+

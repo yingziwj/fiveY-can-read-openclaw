@@ -1,0 +1,42 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🪵 Logging 这页，就是“OpenClaw 的日记本放哪儿、怎么翻、怎么只看重点”</h2>
+      <p>它讲两种日记：文件里的 JSONL 日记和终端/控制台里流出来的现场记录。你要的不是一堆术语，而是知道去哪儿看、怎么跟踪。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合排障、监控、接告警的人</span>
+      <span>先看文件位置，再看 `openclaw logs --follow`，最后看 UI 和过滤</span>
+      <a href="https://docs.openclaw.ai/logging" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第一站</p><h2>📍 日记本放在哪儿</h2><p>默认日志会写到 `/tmp/openclaw/openclaw-YYYY-MM-DD.log`，像每天换一页日记纸。</p></div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label">默认路径</div><p>像系统自动在临时文件夹里开了一本当天专页。</p></div>
+    <div class="source-card"><div class="story-card-label">自定义路径</div><p>在 `~/.openclaw/openclaw.json` 里把 `logging.file` 指到别处，就像把日记本搬进自己的抽屉。</p></div>
+    <div class="source-card"><div class="story-card-label">日期用 host 本地时区</div><p>日记页怎么切页，按主机自己的本地钟走。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第二站</p><h2>👀 最推荐的看法，是实时追着看</h2><p>官方把 `openclaw logs --follow` 放在最前面，因为它最像“边写边看”。</p></div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>openclaw logs --follow</code></div><p>像搬一把小椅子坐到机房窗边，日志一行行往外冒。</p></div>
+    <div class="story-card"><div class="story-card-label">TTY / 非 TTY</div><p>终端环境下会更漂亮，管道里则自动变成朴素文本。</p></div>
+    <div class="story-card"><div class="story-card-label"><code>--json</code></div><p>像把日记改成标准表格，给机器继续处理。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第三站</p><h2>🧰 控制台和日志过滤，是“找重点”不是“全翻完”</h2><p>这页后半段就是在教你别被日志海淹没。</p></div>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-card-label">Control UI 日志页</div><p>像网页里的观察窗，直接看同一份日记。</p></div>
+    <div class="story-card"><div class="story-card-label">channel-only logs</div><p>像只翻某一类门口的记录本，比如只看 Telegram 或 WhatsApp。</p></div>
+    <div class="source-card"><div class="story-card-label">`openclaw doctor`</div><p>如果日志拉不出来，先让医生帮你看基础环境是不是坏了。</p></div>
+  </div>
+</section>
+

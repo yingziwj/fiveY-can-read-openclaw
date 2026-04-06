@@ -1,0 +1,43 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🤖 Pi 这页，就是“OpenClaw 怎么把一个 AI 代理直接装进自己的消息机房里”</h2>
+      <p>它不是把 Pi 当黑盒 subprocess 跑，而是直接嵌进去，自己掌控会话、工具、记忆和多代理路由。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想理解 AI 代理架构的人</span>
+      <span>先看为什么嵌入，再看依赖，再看文件结构</span>
+      <a href="https://docs.openclaw.ai/pi" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第一站</p><h2>🧱 先认出这不是“外接 API”，而是“直接住进来”</h2><p>OpenClaw 直接创建 `AgentSession`，所以它能自己管生命周期和事件。</p></div>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-card-label">嵌入式</div><p>像把一个小 AI 住进自己的楼里，而不是每天去隔壁敲门。</p></div>
+    <div class="story-card"><div class="story-card-label">会话生命周期</div><p>像你能自己决定它什么时候起床、什么时候睡觉。</p></div>
+    <div class="story-card"><div class="story-card-label">工具注入</div><p>像给它随时递上新道具。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第二站</p><h2>📦 依赖包各管一摊</h2><p>这页把 `pi-ai`、`pi-agent-core`、`pi-coding-agent`、`pi-tui` 分得很清楚。</p></div>
+  <div class="home-grid">
+    <article class="home-card"><span class="home-card-index">1</span><h2>`pi-ai`</h2><p>像最底层的脑力工厂。</p></article>
+    <article class="home-card"><span class="home-card-index">2</span><h2>`pi-agent-core`</h2><p>像负责干活和跑回路的骨架。</p></article>
+    <article class="home-card"><span class="home-card-index">3</span><h2>`pi-coding-agent`</h2><p>像把会话、模型、认证、内置工具打包起来。</p></article>
+    <article class="home-card"><span class="home-card-index">4</span><h2>`pi-tui`</h2><p>像终端里的前台窗口。</p></article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第三站</p><h2>🗂 文件结构，是给想改代码的人看的地图</h2><p>官方把 `src/agents/pi-embedded-runner/` 这些目录列出来，是告诉你从哪儿钻进去最合适。</p></div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label">run / compact / history</div><p>像会话执行、压缩、历史管理这几根主线。</p></div>
+    <div class="source-card"><div class="story-card-label">google / images</div><p>像为多模态和模型顺序修的小道。</p></div>
+    <div class="source-card"><div class="story-card-label">一句话</div><p>Pi 页是在讲“代理内嵌”这件事怎么落到真代码里。</p></div>
+  </div>
+</section>
+

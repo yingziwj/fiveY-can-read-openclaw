@@ -1,0 +1,42 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🏗 CI Pipeline 这页，就是“每次提交后，工厂会按顺序做哪些验货”</h2>
+      <p>它不是在讲炫技自动化，而是在讲怎么先跑便宜检查，再跑重检查，别把时间和算力烧在不该烧的地方。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合看提交后会发生什么的人</span>
+      <span>先看 job 表，再看 fail-fast 顺序，再看本地等价命令</span>
+      <a href="https://docs.openclaw.ai/ci" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第一站</p><h2>🧪 先跑便宜的，再跑贵的</h2><p>CI 的逻辑很朴素：先把最省钱的门槛拦住，再让重活上场。</p></div>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-card-label">docs-scope / changed-scope</div><p>像先问“你改的是不是文档？”、“到底改了哪块地板？”</p></div>
+    <div class="story-card"><div class="story-card-label">check / secrets</div><p>像先做类型、格式和漏密钥检查。</p></div>
+    <div class="story-card"><div class="story-card-label">build-artifacts / release-check</div><p>像最后才把成品装箱验货。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第二站</p><h2>🚦 Fail-fast 的意思，就是“早点坏早点停”</h2><p>这不是脾气差，而是省时间。</p></div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label">第一层</div><p>cheap gates 并行跑，先把明显不对的提交拦住。</p></div>
+    <div class="source-card"><div class="story-card-label">第二层</div><p>再跑节点、macOS、Android、Windows 这些重活。</p></div>
+    <div class="source-card"><div class="story-card-label">第三层</div><p>主分支再做发布和兼容性检查。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第三站</p><h2>🧭 本地等价命令，就是把工厂流程搬回桌面</h2><p>官方把 `pnpm check`、`pnpm test`、`pnpm release:check` 这些列出来，是方便你本地先过一遍。</p></div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>pnpm check</code></div><p>像先做体检和整理。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>pnpm test</code></div><p>像跑一轮单元和集成测试。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>pnpm release:check</code></div><p>像检查打包箱子里装的是不是你要的东西。</p></div>
+  </div>
+</section>
+

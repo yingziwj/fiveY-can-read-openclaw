@@ -1,0 +1,43 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🏳 Diagnostics Flags，就是“只把某个角落的灯打开，不把整栋楼都照亮”</h2>
+      <p>它让你在不打开全局 verbose 的情况下，单独盯住某个子系统。想看 Telegram、Gateway、别的模块，都能单独点灯。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合做定位诊断的人</span>
+      <span>先看 flags 规则，再看 config/env，再看日志在哪儿</span>
+      <a href="https://docs.openclaw.ai/diagnostics/flags" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第一站</p><h2>💡 Flags 像开小灯，不像开探照灯</h2><p>它们是大小写不敏感的字符串，带通配符。</p></div>
+  <div class="home-grid">
+    <article class="home-card"><span class="home-card-index">1</span><h2><code>telegram.http</code></h2><p>像只照 Telegram 的 HTTP 小路。</p></article>
+    <article class="home-card"><span class="home-card-index">2</span><h2><code>telegram.*</code></h2><p>像把 Telegram 这一整排灯都打开。</p></article>
+    <article class="home-card"><span class="home-card-index">3</span><h2><code>*</code></h2><p>像整栋楼全亮，适合最后兜底，不适合日常。</p></article>
+    <article class="home-card"><span class="home-card-index">⭐</span><h2>一句话</h2><p>Flags 是定点照明，不是全楼开大灯。</p></article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第二站</p><h2>🧩 配置和环境变量，两条路都能点灯</h2><p>官方给你的是“写进配置”或“临时从环境变量打开”，按场景选就行。</p></div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label">config</div><p>像在灯控面板上永久设定。</p></div>
+    <div class="source-card"><div class="story-card-label">env override</div><p>像临时拿手电筒照一下。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>OPENCLAW_DIAGNOSTICS=0</code></div><p>像立刻把灯全关掉。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第三站</p><h2>🪵 灯亮了以后，日志会去标准日志文件里等你</h2><p>再配合 `logging.file` 或默认路径，你就能把这盏灯照出的信息抓出来。</p></div>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-card-label">默认落点</div><p>还是那本滚动日志。</p></div>
+    <div class="story-card"><div class="story-card-label">提取日志</div><p>像把当天那页日记拎出来单独看。</p></div>
+    <div class="source-card"><div class="story-card-label">一句话</div><p>诊断标志的价值，是让你只照问题所在的那一小块。</p></div>
+  </div>
+</section>
+

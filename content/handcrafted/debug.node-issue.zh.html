@@ -1,0 +1,42 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🐛 这页就是“Node + tsx 一启动就摔跤，帮你找到是哪根脚绊了自己”</h2>
+      <p>它把一个真实崩溃拆成了：现象、环境、复现、怀疑点、绕路方案。读它不是为了学 bug 口味，而是为了少踩一次坑。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合遇到 `__name is not a function` 的人</span>
+      <span>先看复现，再看版本差异，再看临时绕路</span>
+      <a href="https://docs.openclaw.ai/debug/node-issue" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第一站</p><h2>💥 先看现象：它不是慢，是直接倒了</h2><p>错误点很明确：`createSubsystemLogger` 里撞上了 `__name is not a function`。</p></div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label">摘要</div><p>启动 CLI 时，函数名辅助器出了事。</p></div>
+    <div class="source-card"><div class="story-card-label">环境</div><p>Node 25、tsx 4.21.0、macOS 都在表里。</p></div>
+    <div class="source-card"><div class="story-card-label">关键线索</div><p>问题是从 Bun 切到 tsx 之后开始的。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第二站</p><h2>🔁 复现步骤像一条最短回家路</h2><p>这页给的命令很少，但每条都指向同一个目的：把问题稳定打出来。</p></div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>node --import tsx src/entry.ts status</code></div><p>像直接拿 Node 拉起入口，看它当场会不会摔。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>node --import tsx scripts/repro/tsx-name-repro.ts</code></div><p>像拿更小的沙盘做最短复现。</p></div>
+    <div class="source-card"><div class="story-card-label">Node 24 / 22</div><p>像在不同脚底下试鞋，看看是不是只有某一双鞋不对。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading"><p class="section-kicker">第三站</p><h2>🧰 绕路方案，是“先把车开走”，不是把车修好</h2><p>官方给的 workaround 很务实：先用 Bun，或者先编译再跑。</p></div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label">Bun 回退</div><p>像把车换回上一辆能跑的。</p></div>
+    <div class="source-card"><div class="story-card-label">`tsc` + `node`</div><p>像先把零件烤好，再用普通发动机启动。</p></div>
+    <div class="source-card"><div class="story-card-label">一句话</div><p>这页不是教你修 esbuild，而是教你先不被它卡住。</p></div>
+  </div>
+</section>
+
