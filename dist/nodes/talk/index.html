@@ -2099,7 +2099,11 @@
     <main class="main">
       <header class="hero">
         <div class="hero-topbar">
-          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">菜单</button>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="打开菜单">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <div class="hero-actions">
             <a class="source-link" href="/theme-icons/">图标样例</a>
             <a class="source-link" href="https://docs.openclaw.ai" target="_blank" rel="noreferrer">原始文档</a>
@@ -2117,8 +2121,14 @@
         </div>
       </header>
 
-      <div id="mobile-nav" class="mobile-nav">
-        
+      <div class="mobile-nav-shell" data-mobile-shell>
+        <button class="mobile-nav-backdrop" type="button" aria-label="关闭菜单" data-mobile-close></button>
+        <div id="mobile-nav" class="mobile-nav" role="dialog" aria-modal="true" aria-label="站点菜单">
+          <div class="mobile-nav-head">
+            <strong>站点菜单</strong>
+            <button class="mobile-nav-close" type="button" aria-label="关闭菜单" data-mobile-close>关闭</button>
+          </div>
+          
     <nav class="sidebar-nav">
       
             <details class="sidebar-group">
@@ -4178,6 +4188,7 @@
           
     </nav>
   
+        </div>
       </div>
 
       <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🗣️ Talk Mode 这页，其实是在讲“让 OpenClaw 进入连续语音对话循环，像真的在跟你面对面聊天”</h2><p>它会一直听、转写、发给模型、等回复、再读出来，然后继续等你下一句。</p><p>所以这是一个循环，不是按一下按钮只说一句。</p></div><div class="overview-meta"><span>连续语音对话</span><span>重点是 listen → think → speak、打断、语音指令 JSON</span><a href="https://docs.openclaw.ai/nodes/talk" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>

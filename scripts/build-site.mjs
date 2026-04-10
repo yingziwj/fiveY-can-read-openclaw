@@ -831,7 +831,11 @@ function renderPageLayout({ title, description, pathname, heroEyebrow, heroTitle
     <main class="main">
       <header class="hero">
         <div class="hero-topbar">
-          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">菜单</button>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="打开菜单">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <div class="hero-actions">
             <a class="source-link" href="/theme-icons/">图标样例</a>
             <a class="source-link" href="https://docs.openclaw.ai" target="_blank" rel="noreferrer">原始文档</a>
@@ -849,8 +853,15 @@ function renderPageLayout({ title, description, pathname, heroEyebrow, heroTitle
         </div>
       </header>
 
-      <div id="mobile-nav" class="mobile-nav">
-        ${renderSidebar(navigation, pathname)}
+      <div class="mobile-nav-shell" data-mobile-shell>
+        <button class="mobile-nav-backdrop" type="button" aria-label="关闭菜单" data-mobile-close></button>
+        <div id="mobile-nav" class="mobile-nav" role="dialog" aria-modal="true" aria-label="站点菜单">
+          <div class="mobile-nav-head">
+            <strong>站点菜单</strong>
+            <button class="mobile-nav-close" type="button" aria-label="关闭菜单" data-mobile-close>关闭</button>
+          </div>
+          ${renderSidebar(navigation, pathname)}
+        </div>
       </div>
 
       ${content}
@@ -1338,6 +1349,37 @@ code, pre {
   font: inherit;
 }
 
+.nav-toggle {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.nav-toggle span {
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 .hero-eyebrow,
 .section-kicker {
   margin: 0 0 12px;
@@ -1378,9 +1420,48 @@ code, pre {
   background: rgba(255, 255, 255, 0.18);
 }
 
+.mobile-nav-shell {
+  display: none;
+}
+
+.mobile-nav-backdrop {
+  display: none;
+}
+
 .mobile-nav {
   display: none;
-  margin-top: 20px;
+}
+
+.mobile-nav-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 18px 14px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid rgba(113, 93, 180, 0.14);
+}
+
+.mobile-nav-head strong {
+  font-size: 1rem;
+  color: #3a3551;
+}
+
+.mobile-nav-close {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: rgba(102, 126, 234, 0.12);
+  color: #514a72;
+  font: inherit;
+}
+
+.mobile-nav .sidebar-nav {
+  padding: 14px;
+}
+
+.mobile-nav .sidebar-group {
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .section-shell {
@@ -1629,12 +1710,61 @@ code, pre {
     display: none;
   }
 
-  .mobile-nav {
-    display: none;
+  .mobile-nav-shell {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    pointer-events: none;
   }
 
-  .mobile-nav.is-open {
+  .mobile-nav-shell.is-open {
     display: block;
+    pointer-events: auto;
+  }
+
+  .mobile-nav-shell.is-open .mobile-nav-backdrop {
+    display: block;
+    position: absolute;
+    inset: 0;
+    border: 0;
+    background: rgba(32, 19, 50, 0.46);
+  }
+
+  .mobile-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: min(86vw, 360px);
+    margin: 0;
+    padding: 14px 0 18px;
+    border-radius: 0 28px 28px 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(250, 246, 255, 0.96);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 24px 60px rgba(30, 20, 53, 0.22);
+    transform: translateX(-100%);
+    transition: transform 220ms ease;
+    overflow: auto;
+  }
+
+  .mobile-nav-shell.is-open .mobile-nav {
+    transform: translateX(0);
+  }
+
+  .hero-topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+
+  .nav-toggle,
+  .hero-actions .source-link {
+    min-height: 44px;
   }
 
   .spotlight-card,
@@ -1648,6 +1778,21 @@ code, pre {
 @media (max-width: 720px) {
   .main {
     padding: 18px 14px 38px;
+  }
+
+  .brand {
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .brand-mark {
+    width: 48px;
+    height: 48px;
+  }
+
+  .brand-mark img {
+    width: 34px;
+    height: 34px;
   }
 
   .hero,
@@ -1664,9 +1809,86 @@ code, pre {
     font-size: 1rem;
   }
 
+  .hero-actions,
+  .hero-pills,
+  .overview-meta,
+  .footer-links {
+    gap: 8px;
+  }
+
+  .hero-actions .source-link,
+  .nav-toggle {
+    min-height: 44px;
+  }
+
+  .mobile-nav-head {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-pills span,
+  .overview-meta span,
+  .overview-meta a {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .stat-grid,
+  .home-grid,
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .source-card pre {
+    font-size: 0.92rem;
+    padding: 16px;
+  }
+
   .page-footer {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 540px) {
+  .hero-topbar {
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 9vw, 2.35rem);
+  }
+
+  .hero-copy,
+  .section-heading p,
+  .spotlight-card p,
+  .overview-card p,
+  .story-card p,
+  .source-card p,
+  .ad-placeholder p {
+    line-height: 1.65;
+  }
+
+  .sidebar-group summary,
+  .sidebar-link {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .mobile-nav {
+    width: min(90vw, 340px);
+    border-radius: 0 24px 24px 0;
+  }
+
+  .mobile-nav-head {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .mobile-nav-close {
+    padding: 9px 12px;
   }
 }
 `;
@@ -1674,11 +1896,33 @@ code, pre {
 const js = `
 const toggle = document.querySelector(".nav-toggle");
 const mobileNav = document.querySelector("#mobile-nav");
+const mobileShell = document.querySelector("[data-mobile-shell]");
+const closeButtons = document.querySelectorAll("[data-mobile-close]");
 
-if (toggle && mobileNav) {
-  toggle.addEventListener("click", () => {
-    const isOpen = mobileNav.classList.toggle("is-open");
+if (toggle && mobileNav && mobileShell) {
+  const setOpen = (isOpen) => {
+    mobileShell.classList.toggle("is-open", isOpen);
     toggle.setAttribute("aria-expanded", String(isOpen));
+    toggle.setAttribute("aria-label", isOpen ? "关闭菜单" : "打开菜单");
+    document.body.style.overflow = isOpen ? "hidden" : "";
+  };
+
+  toggle.addEventListener("click", () => {
+    setOpen(toggle.getAttribute("aria-expanded") !== "true");
+  });
+
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", () => setOpen(false));
+  });
+
+  mobileNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setOpen(false);
+    }
   });
 }
 `;

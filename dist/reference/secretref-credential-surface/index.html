@@ -2099,7 +2099,11 @@
     <main class="main">
       <header class="hero">
         <div class="hero-topbar">
-          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">菜单</button>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="打开菜单">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <div class="hero-actions">
             <a class="source-link" href="/theme-icons/">图标样例</a>
             <a class="source-link" href="https://docs.openclaw.ai" target="_blank" rel="noreferrer">原始文档</a>
@@ -2117,8 +2121,14 @@
         </div>
       </header>
 
-      <div id="mobile-nav" class="mobile-nav">
-        
+      <div class="mobile-nav-shell" data-mobile-shell>
+        <button class="mobile-nav-backdrop" type="button" aria-label="关闭菜单" data-mobile-close></button>
+        <div id="mobile-nav" class="mobile-nav" role="dialog" aria-modal="true" aria-label="站点菜单">
+          <div class="mobile-nav-head">
+            <strong>站点菜单</strong>
+            <button class="mobile-nav-close" type="button" aria-label="关闭菜单" data-mobile-close>关闭</button>
+          </div>
+          
     <nav class="sidebar-nav">
       
             <details class="sidebar-group">
@@ -4178,6 +4188,7 @@
           
     </nav>
   
+        </div>
       </div>
 
       <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🗝️ SecretRef Credential Surface 这页，其实是在划线：哪些凭据能交给 SecretRef 管，哪些不能</h2><p>它像一张“这类钥匙能进保险箱，那类钥匙不归这里管”的边界图。</p></div><div class="overview-meta"><span>SecretRef 凭据边界</span><span>重点是 in scope / out of scope</span><a href="https://docs.openclaw.ai/reference/secretref-credential-surface" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
