@@ -844,13 +844,6 @@ function renderPageLayout({ title, description, pathname, heroEyebrow, heroTitle
         <p class="hero-eyebrow">${escapeHtml(heroEyebrow)}</p>
         <h1>${escapeHtml(heroTitle)}</h1>
         <p class="hero-copy">${escapeHtml(heroText)}</p>
-        <div class="hero-pills">
-          <span>${escapeHtml(selectedTheme.chineseName)}主题</span>
-          <span>逐节讲解</span>
-          <span>代码也讲故事</span>
-          <span>SEO 友好</span>
-          <span>Cloudflare Pages</span>
-        </div>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -870,11 +863,6 @@ function renderPageLayout({ title, description, pathname, heroEyebrow, heroTitle
         <div>
           <strong>${escapeHtml(SITE_NAME)}</strong>
           <p>同步时间：${escapeHtml(formatDate(siteData.generatedAt))}</p>
-        </div>
-        <div class="footer-links">
-          <a href="/sitemap.xml">Sitemap</a>
-          <a href="/robots.txt">Robots</a>
-          <a href="/ads.txt">Ads.txt</a>
         </div>
       </footer>
     </main>
@@ -1402,14 +1390,6 @@ code, pre {
   line-height: 1.8;
 }
 
-.hero-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.hero-pills span,
 .overview-meta span,
 .overview-meta a {
   display: inline-flex;
@@ -1695,12 +1675,6 @@ code, pre {
   color: var(--soft-ink);
 }
 
-.footer-links {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
 @media (max-width: 1080px) {
   .page-shell {
     grid-template-columns: 1fr;
@@ -1810,9 +1784,7 @@ code, pre {
   }
 
   .hero-actions,
-  .hero-pills,
-  .overview-meta,
-  .footer-links {
+  .overview-meta {
     gap: 8px;
   }
 
@@ -1826,7 +1798,6 @@ code, pre {
     padding-right: 16px;
   }
 
-  .hero-pills span,
   .overview-meta span,
   .overview-meta a {
     width: 100%;
