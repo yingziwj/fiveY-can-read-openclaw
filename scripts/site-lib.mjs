@@ -356,9 +356,11 @@ export function softenTerms(value = "") {
 export function storyLead(title, description) {
   const softenedTitle = softenTerms(title);
   const softenedDescription = softenTerms(description);
-  return toSentence(
-    `先别急着背术语。这页真正想让你看懂的是“${softenedTitle}”到底管哪件事、什么时候该用、以及最容易在哪一步搞混。${softenedDescription ? ` 原文里真正关键的一句是在说：${excerpt(softenedDescription, 96)}` : ""}`
-  );
+  if (!softenedDescription) {
+    return toSentence(`把“${softenedTitle}”想成一扇平时不太显眼、但你早晚会走到的门。这页就是带你凑近看门牌，弄清它到底通向哪里。`);
+  }
+
+  return toSentence(`这一页不是在堆术语，它像把“${softenedTitle}”这台小机器搬到桌上，当着你的面拆开给你看。你先不用全记住，先抓住它到底在忙什么：${excerpt(softenedDescription, 96)}`);
 }
 
 function heroDetail(description = "") {
@@ -367,7 +369,7 @@ function heroDetail(description = "") {
     return "";
   }
 
-  return `原文最想强调的那句话，可以先抓成：${excerpt(softened, 88)}。`;
+  return `原文最响的一记鼓点，其实是：${excerpt(softened, 88)}。`;
 }
 
 export function buildDocHeroTitle(page) {
@@ -375,48 +377,48 @@ export function buildDocHeroTitle(page) {
 
   switch (page.sectionKey) {
     case "channels":
-      return `${title}：先看这扇消息门怎么接`;
+      return `${title}：消息从哪扇门跑进来`;
     case "providers":
-      return `${title}：先搞清这家模型入口怎么开`;
+      return `${title}：模型入口要怎么敲门`;
     case "tools":
-      return `${title}：先弄明白它到底替你做哪一步`;
+      return `${title}：它会替你伸哪只手`;
     case "concepts":
-      return `${title}：先把这条底层规则想明白`;
+      return `${title}：先把底下那条暗线看见`;
     case "install":
-      return `${title}：先选对这条安装路`;
+      return `${title}：先把这条路走顺`;
     case "automation":
-      return `${title}：先看它会怎么自己跑`;
+      return `${title}：它会在什么时候自己动起来`;
     case "cli":
-      return `${title}：先把这颗命令按钮认清`;
+      return `${title}：命令行这颗按钮到底按哪儿`;
     case "plugins":
-      return `${title}：先看这块外挂积木怎么插`;
+      return `${title}：这块新积木往哪儿卡`;
     case "platforms":
-      return `${title}：先看这个平台版本到底管哪些事`;
+      return `${title}：换到这个平台后会变什么`;
     case "gateway":
-      return `${title}：先看总控室这一层在管什么`;
+      return `${title}：总控室这一层在盯什么`;
     case "web":
-      return `${title}：先看这个网页面板到底帮你干嘛`;
+      return `${title}：这个网页面板会替你看哪一面`;
     case "reference":
-      return `${title}：把它当成字典看就不容易晕`;
+      return `${title}：把它当成随手翻的小字典`;
     case "help":
-      return `${title}：先看它到底在帮你排什么雷`;
+      return `${title}：这回它在替你排哪颗雷`;
     case "nodes":
-      return `${title}：先看这只感官小帮手能做什么`;
+      return `${title}：这只外接小帮手能看见什么`;
     case "security":
-      return `${title}：先看守门规则到底防什么`;
+      return `${title}：先看门锁到底拦谁`;
     case "logging":
-      return `${title}：先看日志到底记了哪些事`;
+      return `${title}：系统把脚印记在了哪里`;
     case "network":
-      return `${title}：先看消息和请求到底怎么跑`;
+      return `${title}：消息和请求是怎么穿门过巷的`;
     case "debug":
     case "diagnostics":
-      return `${title}：先看这类毛病该从哪里下手查`;
+      return `${title}：这类毛病先从哪儿摸`;
     case "start":
-      return `${title}：先把第一圈路走明白`;
+      return `${title}：先把第一圈路认熟`;
     case "index":
-      return `${title}：先看 OpenClaw 整体像什么`;
+      return `${title}：先看 OpenClaw 整体像个什么家伙`;
     default:
-      return `${title}：先抓住它最核心的那件事`;
+      return `${title}：先抓住它真正发力的那一下`;
   }
 }
 
@@ -426,46 +428,46 @@ export function buildDocHeroText(page) {
 
   switch (page.sectionKey) {
     case "channels":
-      return toSentence(`这页不是只在报配置名。它真正要帮你看懂的是：${title} 这扇门怎么连上 OpenClaw，要交哪把钥匙，什么消息会进来，以及哪些坑最容易把人绊住。${detail}`);
+      return toSentence(`${title} 像一扇接消息的门。你要看清门铃装在哪、钥匙交给谁、什么人能进来，以及门口最容易被绊一跤的是哪块砖。${detail}`);
     case "providers":
-      return toSentence(`先别急着填 key。这页真正要讲的是：${title} 这家入口走哪种认证、默认该请哪位模型老师、哪些地址和模式一填错就会整页失灵。${detail}`);
+      return toSentence(`${title} 这一页像在认一家新店的门头。先别急着掏 key，先看它认哪种证件、默认会叫谁出场、哪几个地址一写歪整条路就黑掉。${detail}`);
     case "tools":
-      return toSentence(`这页重点不是术语，而是动作。它会讲清楚 ${title} 会在什么时候出手、吃进去什么、吐出来什么，以及命令和参数在现场到底像哪个按钮。${detail}`);
+      return toSentence(`${title} 不是名词卡片，而是一只会伸出来帮忙的手。你要看清它什么时候出手、抓进去什么、递回来什么，还有每个参数到底像哪颗按钮。${detail}`);
     case "concepts":
-      return toSentence(`这页不是教你按按钮，而是在补脑内地图。看完你应该知道 ${title} 在系统里到底管什么、为什么会影响后面的行为，以及不理解它时最容易把哪几件事看反。${detail}`);
+      return toSentence(`${title} 这页在补地图，不是在发操作说明。看完你应该能指出它埋在系统哪一层、为什么会牵动后面的动作，以及最容易把哪几件事想反。${detail}`);
     case "install":
-      return toSentence(`这页真正想解决的是：${title} 这条装法适合谁、要先准备什么、装完后怎么验活，以及哪些命令只是搬东西、哪些命令才是真正开机。${detail}`);
+      return toSentence(`${title} 这条路像进场搭台。你先看谁适合走这条路、包里要先带什么、做完后现场该亮起哪盏灯，以及哪些命令只是搬箱子、哪些才是真正开机。${detail}`);
     case "automation":
-      return toSentence(`这页重点不是“自动化”四个字，而是边界：${title} 什么时候会自己启动、会留下什么记录、和 cron、heartbeat、tasks 这些近亲到底怎么分工。${detail}`);
+      return toSentence(`${title} 讲的不是“自动”两个字有多神，而是它什么时候会自己醒来、醒来后会留下什么脚印、又和 cron、heartbeat、tasks 这些近亲怎么分工。${detail}`);
     case "cli":
-      return toSentence(`这页要帮你把命令行里的这颗按钮认清：它解决什么问题、常见命令各自是在按哪一下、出了错时该先看哪类反馈。${detail}`);
+      return toSentence(`命令行里的 ${title} 像一排小开关。你要先认清哪一颗是开门、哪一颗是查看、哪一颗是修理，出错时又该先听哪一种回声。${detail}`);
     case "plugins":
-      return toSentence(`这页讲的是插件这块积木怎么接进系统。你应该先搞清楚它负责哪段能力、配置写在哪里、外部系统怎样通过它进来，以及哪些 secret、route 或 manifest 最不能配错。${detail}`);
+      return toSentence(`${title} 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。${detail}`);
     case "platforms":
-      return toSentence(`这页不是单纯介绍平台名，而是在讲这个平台版本能做什么、受哪些系统限制、要开哪些权限，以及日常最常见的掉链子点在哪里。${detail}`);
+      return toSentence(`${title} 这页在告诉你：OpenClaw 换到这个平台后，哪些手脚能伸开，哪些地方会被系统拽住，还要额外领哪些通行证。${detail}`);
     case "gateway":
-      return toSentence(`这页讲的是网关总控室的一块。你先要看懂它在整套系统里卡在哪一层、会影响哪些客户端和工具、配置改动会落到哪里，然后再去看命令。${detail}`);
+      return toSentence(`${title} 属于网关总控室里的一角。先看它卡在哪个位置、会拨动哪些客户端和工具、旋钮一拧会影响哪片区域，然后再看命令细节。${detail}`);
     case "web":
-      return toSentence(`这页主要在讲网页这一层到底能替你看见什么、控制什么、哪些设置只该在这里动，以及它和网关、通道、配对流程怎么串起来。${detail}`);
+      return toSentence(`${title} 这一层像一面透明控制台。你要看清它替你看见什么、能从这里碰哪些开关、又和网关、通道、配对这些路线怎么串起来。${detail}`);
     case "reference":
-      return toSentence(`这页更像参考字典。先别试图整页背下来，先抓住它在回答哪类具体问题、适合什么时候回来翻、哪些字段和表格是拿来当场查的。${detail}`);
+      return toSentence(`${title} 更像一册放在手边的小字典。别想着一口吞下去，先知道它专门回答哪类小问题、什么时候该回来看、哪些表格是现场查门牌用的。${detail}`);
     case "help":
-      return toSentence(`这页属于排雷手册。重点是先看症状，再看该查哪条命令或日志，最后才决定要不要改配置，不要一上来就乱动系统。${detail}`);
+      return toSentence(`${title} 像排雷图。先认症状，再找该翻哪条命令或日志，最后才决定要不要动配置，不要一上来就把整面墙都拆了。${detail}`);
     case "nodes":
-      return toSentence(`这页讲的是 OpenClaw 接在外面的感官或动作小帮手。你要先看它能接什么输入、会产出什么结果、以及和主会话是怎么搭桥的。${detail}`);
+      return toSentence(`${title} 这页讲的是接在 OpenClaw 外面的眼睛、耳朵或小手。你先看它能接住什么输入、会吐出什么结果、以及怎样和主会话搭桥。${detail}`);
     case "security":
-      return toSentence(`这页不是在吓人，而是在画边界。它要你先看清系统到底防谁、信谁、哪条路默认放行、哪条路必须多加一道锁。${detail}`);
+      return toSentence(`${title} 不是吓人故事，而是在画围栏。你要先看系统默认信谁、提防谁、哪条路是敞开的、哪条路必须再上第二把锁。${detail}`);
     case "logging":
-      return toSentence(`这页讲的是系统把事情记到哪里、出了问题先该翻哪本记录本，以及哪些日志是现场看、哪些日志适合事后复盘。${detail}`);
+      return toSentence(`${title} 这页像在找脚印。你会知道系统把事情记在哪本簿子上、出事时先翻哪页、哪些日志适合当场看、哪些适合事后倒回去复盘。${detail}`);
     case "network":
-      return toSentence(`这页讲的是请求和消息在系统里怎么走。先把路由看懂，后面很多“为什么连不上”或“为什么回不来”的问题就不会全靠猜。${detail}`);
+      return toSentence(`${title} 这页是在画路。消息和请求从哪儿出发、拐过哪些巷子、最后在哪儿落脚，路一旦看清，很多“怎么没回音”就不用靠猜。${detail}`);
     case "debug":
     case "diagnostics":
-      return toSentence(`这页是查毛病路线图。重点不是记结论，而是先学会从什么现象切进去、第一步看哪里、第二步怎么缩小范围。${detail}`);
+      return toSentence(`${title} 像一张查毛病地图。别急着背答案，先学会看见什么症状该从哪条岔路进去，怎么一步步把范围缩小。${detail}`);
     case "start":
-      return toSentence(`这页属于第一圈导览，重点是别一上来被零件名淹没。你先要知道这一步在整套上手路线里排第几、做完后应该看到什么结果。${detail}`);
+      return toSentence(`${title} 属于第一圈导览。先别被零件名冲散，先记住这一步在整条上手路线里排第几，走完后你眼前应该亮起什么结果。${detail}`);
     case "index":
-      return toSentence(`这页更像总地图。先把 OpenClaw 整体想成哪些房间拼在一起、你第一次读应该先进哪间房、不同房间分别解决什么问题。${detail}`);
+      return toSentence(`这页像总地图。先把 OpenClaw 看成一栋有很多房间的屋子，第一次进门该先去哪间、不同房间各管什么，一下就会清楚很多。${detail}`);
     default:
       return storyLead(page.title || "", page.description || "");
   }
@@ -474,12 +476,10 @@ export function buildDocHeroText(page) {
 export function storyForParagraph(text) {
   const softened = softenTerms(stripMarkdown(text));
   if (!softened) {
-    return "这一小段像旁白，提醒我们现在讲到哪一步了。";
+    return "这一小段像旁白，在提醒我们镜头已经切到下一站。";
   }
 
-  return toSentence(
-    `把它讲给 5 岁小朋友听，就是：先认识这里出现的几个角色和规则，再按顺序照着做。这里最重要的意思是“${excerpt(softened, 120)}”`
-  );
+  return toSentence(`如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：${excerpt(softened, 120)}`);
 }
 
 export function storyForList(items, sectionTitle) {
@@ -488,25 +488,23 @@ export function storyForList(items, sectionTitle) {
     .map((item) => excerpt(softenTerms(item), 42))
     .join("、");
 
-  return toSentence(
-    `这一组条目像“${sectionTitle || "准备清单"}”的小卡片，告诉我们要准备哪些东西、哪些规则不能漏掉。先记住这几个重点：${summary}`
-  );
+  return toSentence(`这一串条目别硬背，把它当成“${sectionTitle || "准备清单"}”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：${summary}`);
 }
 
 export function storyForCode(code, language) {
   const lines = code.split("\n").map((line) => line.trim()).filter(Boolean);
   const firstLine = lines[0] || "";
   const lowered = firstLine.toLowerCase();
-  let framing = "这段像给机器人看的说明书，告诉它要按什么样子准备东西。";
+  let framing = "这段像放在桌上的操作卡，谁来照着做，现场就会动起来。";
 
   if (lowered.startsWith("openclaw ")) {
-    framing = "这是一句直接对 OpenClaw 说的话，就像对小助手下达任务。";
+    framing = "这是一句直接对 OpenClaw 说的话，像你把任务清清楚楚塞到它手里。";
   } else if (language === "json" || language === "json5" || firstLine.startsWith("{")) {
-    framing = "这段不是故事对白，而是设置卡片，像在给机器人贴名字、地址和规则标签。";
+    framing = "这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。";
   } else if (language === "bash" || lowered.startsWith("curl ") || lowered.startsWith("npm ")) {
-    framing = "这是一串终端魔法口令，像按步骤按下几个按钮，让电脑开始干活。";
+    framing = "这是一串终端口令，像你站在控制台前，一下下按按钮让机器醒过来。";
   } else if (language === "xml" || language === "html") {
-    framing = "这段像在搭一个小房子的骨架，每个标签都在告诉电脑东西要摆在哪里。";
+    framing = "这段像在搭一个页面骨架，每个标签都在指挥东西该站在哪一格。";
   }
 
   const steps = lines.slice(0, 3).map((line) => explainCodeLine(line));
@@ -519,31 +517,31 @@ export function storyForCode(code, language) {
 export function explainCodeLine(line = "") {
   const cleaned = line.trim();
   if (!cleaned) {
-    return "空白这一行像换气，告诉我们下一步要开始了。";
+    return "空白这一行像停半秒喘口气，下一步马上接上。";
   }
 
   if (cleaned.startsWith("{") || cleaned.startsWith("}")) {
-    return "大括号像把同一组设置抱在一起，说“这些是一家的”。";
+    return "大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。";
   }
 
   if (cleaned.includes(":")) {
     const [key, ...rest] = cleaned.split(":");
-    return `这里在给“${key.replace(/["',]/g, "").trim()}”贴标签，意思是把它设置成“${rest.join(":").replace(/[",]/g, "").trim()}”。`;
+    return `这里在给“${key.replace(/["',]/g, "").trim()}”挂牌子，告诉系统它该指向“${rest.join(":").replace(/[",]/g, "").trim()}”。`;
   }
 
   if (cleaned.startsWith("openclaw ")) {
-    return `这一句是在直接叫 OpenClaw 做事：“${cleaned}”。你可以把它想成对机器人说的完整命令。`;
+    return `这一句是在直接叫 OpenClaw 动起来：“${cleaned}”。你可以把它想成一句说出口就要执行的差事。`;
   }
 
   if (cleaned.startsWith("curl ") || cleaned.startsWith("npm ") || cleaned.startsWith("pnpm ")) {
-    return `这一句是在终端里按下开始按钮：“${cleaned}”。它会让电脑去请求、安装或构建东西。`;
+    return `这一句像在终端上按下启动钮：“${cleaned}”。它会让电脑去请求、安装或者把东西搭起来。`;
   }
 
   if (cleaned.startsWith("<") && cleaned.endsWith(">")) {
-    return `这个尖括号标签“${cleaned}”像拼积木时的一块边框，告诉页面结构怎么搭。`;
+    return `这个尖括号标签“${cleaned}”像一块结构积木，专门拿来把页面骨架卡稳。`;
   }
 
-  return `这一行“${cleaned}”是当前步骤要交给电脑的一小块提示。`;
+  return `这一行“${cleaned}”是在给电脑递一张小纸条，告诉它眼下该做哪一步。`;
 }
 
 export function detectLanguage(fenceInfo = "") {

@@ -1,0 +1,203 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧠 Active Memory 像“回复前先翻一下旧笔记”的小助手</h2>
+      <p>普通 memory 往往要等模型主动想起去查，或者等用户说“你还记得吗”。Active Memory 不等到那一步，它会在主回复生成前，给系统一次有限的机会去找相关记忆。</p>
+      <p>它不是默认永远开着的魔法。它是一个可选插件，只在符合条件的交互式、持久会话里运行，而且如果找不到有用记忆，就应该安静返回 <code>NONE</code>。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想让长期偏好和上下文自然浮现的人</span>
+      <span>重点是配置开关、会话资格、queryMode、promptStyle 和调试方式</span>
+      <a href="https://docs.openclaw.ai/concepts/active-memory" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧩 它在主回复前只插一小步</h2>
+    <p>Active Memory 的工作很克制：先根据当前对话做一次记忆查询，找到就把摘要塞进隐藏上下文，找不到就不打扰主回复。</p>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">运行形状</div>
+    <pre><code class="language-text">User Message
+→ Build Memory Query
+→ Active Memory blocking memory sub-agent
+→ NONE 或 relevant summary
+→ Main Reply</code></pre>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">只给一次机会</div>
+      <p>它不是循环查很久，而是在回复前给记忆系统一次有限尝试。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">只能用两把工具</div>
+      <p>blocking memory sub-agent 只用 <code>memory_search</code> 和 <code>memory_get</code>，工具面很窄。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">看不见原始标签</div>
+      <p>正常客户端不会显示原始 <code>&lt;active_memory_plugin&gt;</code> 标签，只会影响模型输入。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">什么时候适合</div>
+      <p>适合长期偏好、反复出现的习惯、需要连续性的用户上下文；不适合一次性 API 任务和后台自动化。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔧 安全起步：只给一个 agent、只开 direct</h2>
+    <p>第一次配置时，最好小范围打开。先让 <code>main</code> agent 在 direct 会话里试跑，日志开着，调稳后再扩大。</p>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">推荐起步配置</div>
+    <pre><code class="language-json5">{
+  plugins: {
+    entries: {
+      "active-memory": {
+        enabled: true,
+        config: {
+          enabled: true,
+          agents: ["main"],
+          allowedChatTypes: ["direct"],
+          modelFallback: "google/gemini-3-flash",
+          queryMode: "recent",
+          promptStyle: "balanced",
+          timeoutMs: 15000,
+          maxSummaryChars: 220,
+          persistTranscripts: false,
+          logging: true,
+        },
+      },
+    },
+  },
+}</code></pre>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">✅</span>
+      <h2><code>enabled</code></h2>
+      <p>插件本体和 config 都要开，才有机会运行。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">👤</span>
+      <h2><code>agents</code></h2>
+      <p>只让指定 agent 使用，避免所有 agent 一起翻记忆。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">💬</span>
+      <h2><code>allowedChatTypes</code></h2>
+      <p>默认 direct 最稳；group、channel 要明确 opt in。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⏱️</span>
+      <h2><code>timeoutMs</code></h2>
+      <p>它跑在回复路径里，超时要克制，否则用户会等很久。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🚦 两道门都开，它才会动</h2>
+    <p>很多“为什么没跑”的问题，其实都是没过门槛。配置门和运行时门缺一个，它都会安静跳过。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">配置门</div>
+      <p>插件启用，当前 agent id 在 <code>config.agents</code> 里，聊天类型在 <code>allowedChatTypes</code> 里。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">运行时门</div>
+      <p>会话必须是交互式、持久的聊天会话；headless one-shot、heartbeat、内部 helper execution 都不跑。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">规则压缩成一行</div>
+      <pre><code class="language-text">plugin enabled
++ agent id targeted
++ allowed chat type
++ eligible interactive persistent chat session
+= active memory runs</code></pre>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">临时开关</div>
+      <p><code>/active-memory off</code>、<code>on</code>、<code>status</code> 只影响当前会话；带 <code>--global</code> 才写全局 config。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>⚖️ <code>queryMode</code> 和 <code>promptStyle</code> 决定“翻多少、翻多积极”</h2>
+    <p>一个管给记忆 sub-agent 看多少对话，一个管它多愿意返回记忆。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2><code>message</code></h2>
+      <p>只看最新用户消息，最快，适合偏稳定偏好的召回。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2><code>recent</code></h2>
+      <p>看最新消息加一点最近对话，速度和上下文比较均衡。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2><code>full</code></h2>
+      <p>看完整对话，最重，只有真的需要远处上下文时再用。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎚️</span>
+      <h2><code>promptStyle</code></h2>
+      <p><code>strict</code> 更保守，<code>contextual</code> 更重连续性，<code>preference-only</code> 更偏长期喜好。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🔍 调试时看状态线，不要猜</h2>
+    <p>官方给了很明确的调试路线：开 verbose、开 trace、看 gateway log，再用 memory status 深查。</p>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">会话里先这样看</div>
+    <pre><code class="language-text">/verbose on
+/trace on
+what should I order?</code></pre>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>/verbose on</code></div>
+      <p>能看到类似 <code>Active Memory: status=ok elapsed=842ms</code> 的状态线。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>/trace on</code></div>
+      <p>能看到给人读的 Active Memory debug summary，帮助你判断召回是否合理。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>memory status --deep</code></div>
+      <p>如果召回慢、空、报 provider 错，先检查 memory-search 后端和索引健康。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Provider 选择要明确</div>
+      <p>如果你依赖 embedding 召回，建议显式 pin <code>agents.defaults.memorySearch.provider</code>，不要让环境里“刚好可用”的 provider 随机改变结果。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Active Memory 压成一句话</h2>
+    <p>Active Memory 是一个可选的回复前记忆召回插件：只在符合条件的持久聊天里运行，找到有用记忆就加进隐藏上下文，找不到就安静让主回复继续。</p>
+  </div>
+</section>

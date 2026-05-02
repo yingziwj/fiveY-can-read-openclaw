@@ -1,0 +1,124 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧷 Rich Output Protocol 像给助手消息贴“怎么送、怎么显示”的小标签</h2>
+      <p>助手输出不只有文字。有时它还要递附件、提示音频怎么播放、标记回复的是哪条消息，或者在 Control UI 里嵌入一块网页渲染的小面板。</p>
+      <p>这页最重要的规则是：这些指令各管各的。<code>MEDIA:</code>、语音标签、reply 标签是 delivery metadata；<code>[embed ...]</code> 才是网页 rich render 路线。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合实现或调试助手富输出、Control UI embed 渲染的人</span>
+      <span>重点是不要把 <code>MEDIA:</code> 和 <code>[embed ...]</code> 混用</span>
+      <a href="https://docs.openclaw.ai/reference/rich-output-protocol" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🏷️ 先把四类标签分清</h2>
+    <p>它们都写在助手输出附近，但作用完全不同。分清以后，这页就很短。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📎</span>
+      <h2><code>MEDIA:</code></h2>
+      <p>用于附件投递，像告诉客户端“这里有文件要送”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔊</span>
+      <h2><code>[[audio_as_voice]]</code></h2>
+      <p>用于音频展示提示，像说“这段音频请按语音消息处理”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">↩️</span>
+      <h2><code>[[reply_to_current]]</code></h2>
+      <p>用于回复元数据，像在信封上写“回上一条”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🖼️</span>
+      <h2><code>[embed ...]</code></h2>
+      <p>用于 Control UI 的网页 rich rendering，是这页唯一的 agent-facing rich render 语法。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧱 <code>[embed ...]</code> 只负责网页内嵌渲染</h2>
+    <p>如果你想在 Control UI 的 assistant message surface 里显示一个 URL-backed embed，就用这个短码。</p>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">自闭合写法</div>
+    <pre><code class="language-text">[embed ref="cv_123" title="Status" /]</code></pre>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>[view ...]</code> 不再是新写法</div>
+      <p>新输出不要再用 <code>[view ...]</code>。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">只渲染 URL-backed embed</div>
+      <p>使用 <code>ref="..."</code> 或 <code>url="..."</code>，让前端能找到真正要打开的页面。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">短码会从可见文字里拿掉</div>
+      <p>Web UI 会剥掉短码本身，在消息里原地渲染 embed。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">别混用</div>
+      <p><code>MEDIA:</code> 不是 embed alias。要递附件用 <code>MEDIA:</code>，要网页内嵌显示用 <code>[embed ...]</code>。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🗂 存起来以后，它会变成 <code>canvas</code> 结构</h2>
+    <p>前端最终认的不是一句短码，而是标准化后的结构化内容块。</p>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">Stored rendering shape</div>
+    <pre><code class="language-json">{
+  "type": "canvas",
+  "preview": {
+    "kind": "canvas",
+    "surface": "assistant_message",
+    "render": "url",
+    "viewId": "cv_123",
+    "url": "/__openclaw__/canvas/documents/cv_123/index.html",
+    "title": "Status",
+    "preferredHeight": 320
+  }
+}</code></pre>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>surface</code></div>
+      <p>说明这块内容放在 assistant message 里。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>render: "url"</code></div>
+      <p>说明它通过 URL 加载和渲染。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>viewId</code> 和 <code>url</code></div>
+      <p>一个像编号，一个像地址，前端靠它们找到要显示的内容。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">别写旧形状</div>
+      <p><code>present_view</code> 不被识别。存储和渲染请走 <code>canvas</code> shape。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Rich Output Protocol 压成一句话</h2>
+    <p>富输出指令要分工明确：附件、语音和回复标签管投递元数据；Control UI 的内嵌网页展示只用 <code>[embed ...]</code>，最终存成 <code>canvas</code> 内容块。</p>
+  </div>
+</section>

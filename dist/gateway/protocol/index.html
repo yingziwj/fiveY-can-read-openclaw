@@ -4,24 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gateway Protocol | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Gateway protocol (WebSocket)">
+  <meta name="description" content="Gateway Protocol是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Gateway Protocol | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Gateway protocol (WebSocket)">
+  <meta property="og:description" content="Gateway Protocol是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/gateway/protocol/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
+  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Gateway Protocol | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Gateway protocol (WebSocket)">
+  <meta name="twitter:description" content="Gateway Protocol是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
+  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/gateway/protocol/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Gateway Protocol","description":"Gateway protocol (WebSocket)","url":"https://fivey-can-read-openclaw.pages.dev/gateway/protocol/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Gateway Protocol","description":"Gateway Protocol是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/protocol/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Gateway","item":"https://fivey-can-read-openclaw.pages.dev/gateway/protocol/"}]}</script>
 </head>
 <body>
@@ -178,6 +182,11 @@
                 <a class="sidebar-link " href="/install/hetzner/">
                   <span>Hetzner 安装</span>
                   <small>Hetzner</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/hostinger/">
+                  <span>Hostinger 安装</span>
+                  <small>Hostinger</small>
                 </a>
               
                 <a class="sidebar-link " href="/install/">
@@ -420,6 +429,11 @@
             <details class="sidebar-group">
               <summary>核心概念</summary>
               <div class="sidebar-links">
+                <a class="sidebar-link " href="/concepts/active-memory/">
+                  <span>Active 记忆</span>
+                  <small>Active Memory</small>
+                </a>
+              
                 <a class="sidebar-link " href="/concepts/agent/">
                   <span>代理运行时</span>
                   <small>Agent Runtime</small>
@@ -461,8 +475,13 @@
                 </a>
               
                 <a class="sidebar-link " href="/concepts/dreaming/">
-                  <span>Dreaming（experimental）</span>
-                  <small>Dreaming (experimental)</small>
+                  <span>Dreaming</span>
+                  <small>Dreaming</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/experimental-features/">
+                  <span>实验版 Features</span>
+                  <small>Experimental Features</small>
                 </a>
               
                 <a class="sidebar-link " href="/concepts/features/">
@@ -605,11 +624,6 @@
                   <small>Tools and Plugins</small>
                 </a>
               
-                <a class="sidebar-link " href="/tools/plugin/">
-                  <span>插件</span>
-                  <small>Plugins</small>
-                </a>
-              
                 <a class="sidebar-link " href="/tools/acp-agents/">
                   <span>ACP Agents 工具</span>
                   <small>ACP Agents</small>
@@ -745,6 +759,11 @@
                   <small>Media Overview</small>
                 </a>
               
+                <a class="sidebar-link " href="/tools/minimax-search/">
+                  <span>MiniMax 搜索</span>
+                  <small>MiniMax Search</small>
+                </a>
+              
                 <a class="sidebar-link " href="/tools/multi-agent-sandbox-tools/">
                   <span>Multi-Agent 沙箱 &amp; 工具</span>
                   <small>Multi-Agent Sandbox &amp; Tools</small>
@@ -768,6 +787,11 @@
                 <a class="sidebar-link " href="/tools/perplexity-search/">
                   <span>Perplexity 搜索</span>
                   <small>Perplexity Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/plugin/">
+                  <span>插件</span>
+                  <small>Plugins</small>
                 </a>
               
                 <a class="sidebar-link " href="/tools/reactions/">
@@ -835,16 +859,6 @@
             <details class="sidebar-group">
               <summary>插件扩展</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/plugins/bundles/">
-                  <span>插件捆绑包</span>
-                  <small>Plugin Bundles</small>
-                </a>
-              
-                <a class="sidebar-link " href="/plugins/community/">
-                  <span>社区插件</span>
-                  <small>Community Plugins</small>
-                </a>
-              
                 <a class="sidebar-link " href="/plugins/architecture/">
                   <span>插件内部机制</span>
                   <small>Plugin Internals</small>
@@ -855,9 +869,34 @@
                   <small>Building Plugins</small>
                 </a>
               
+                <a class="sidebar-link " href="/plugins/bundles/">
+                  <span>插件捆绑包</span>
+                  <small>Plugin Bundles</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/codex-harness/">
+                  <span>Codex Harness 插件</span>
+                  <small>Codex Harness</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/community/">
+                  <span>社区插件</span>
+                  <small>Community Plugins</small>
+                </a>
+              
                 <a class="sidebar-link " href="/plugins/manifest/">
                   <span>插件清单</span>
                   <small>Plugin Manifest</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/memory-wiki/">
+                  <span>记忆 Wiki</span>
+                  <small>Memory Wiki</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-agent-harness/">
+                  <span>Agent Harness 插件</span>
+                  <small>Agent Harness Plugins</small>
                 </a>
               
                 <a class="sidebar-link " href="/plugins/sdk-channel-plugins/">
@@ -908,6 +947,11 @@
                 <a class="sidebar-link " href="/plugins/webhooks/">
                   <span>Webhooks 插件</span>
                   <small>Webhooks Plugin</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/zalouser/">
+                  <span>Zalo Personal 插件</span>
+                  <small>Zalo Personal Plugin</small>
                 </a>
               </div>
             </details>
@@ -966,13 +1010,18 @@
                 </a>
               
                 <a class="sidebar-link " href="/providers/deepseek/">
-                  <span>Deepseek 提供商</span>
-                  <small>Deepseek</small>
+                  <span>DeepSeek 提供商</span>
+                  <small>DeepSeek</small>
                 </a>
               
                 <a class="sidebar-link " href="/providers/fal/">
                   <span>fal 提供商</span>
                   <small>fal</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/fireworks/">
+                  <span>Fireworks 提供商</span>
+                  <small>Fireworks</small>
                 </a>
               
                 <a class="sidebar-link " href="/providers/github-copilot/">
@@ -981,8 +1030,8 @@
                 </a>
               
                 <a class="sidebar-link " href="/providers/glm/">
-                  <span>GLM 模型</span>
-                  <small>GLM Models</small>
+                  <span>GLM（Zhipu）</span>
+                  <small>GLM (Zhipu)</small>
                 </a>
               
                 <a class="sidebar-link " href="/providers/google/">
@@ -1005,14 +1054,24 @@
                   <small>Provider Directory</small>
                 </a>
               
+                <a class="sidebar-link " href="/providers/inferrs/">
+                  <span>inferrs 提供商</span>
+                  <small>inferrs</small>
+                </a>
+              
                 <a class="sidebar-link " href="/providers/kilocode/">
-                  <span>Kilo Gateway 提供商</span>
-                  <small>Kilo Gateway</small>
+                  <span>Kilocode 提供商</span>
+                  <small>Kilocode</small>
                 </a>
               
                 <a class="sidebar-link " href="/providers/litellm/">
                   <span>LiteLLM 提供商</span>
                   <small>LiteLLM</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/lmstudio/">
+                  <span>LM Studio 提供商</span>
+                  <small>LM Studio</small>
                 </a>
               
                 <a class="sidebar-link " href="/providers/minimax/">
@@ -1066,8 +1125,8 @@
                 </a>
               
                 <a class="sidebar-link " href="/providers/perplexity-provider/">
-                  <span>Perplexity（提供商）</span>
-                  <small>Perplexity (Provider)</small>
+                  <span>Perplexity 提供商</span>
+                  <small>Perplexity</small>
                 </a>
               
                 <a class="sidebar-link " href="/providers/qianfan/">
@@ -1445,56 +1504,6 @@
             <details class="sidebar-group">
               <summary>命令行</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/cli/backup/">
-                  <span>backup 命令</span>
-                  <small>backup</small>
-                </a>
-              
-                <a class="sidebar-link " href="/cli/daemon/">
-                  <span>daemon 命令</span>
-                  <small>daemon</small>
-                </a>
-              
-                <a class="sidebar-link " href="/cli/doctor/">
-                  <span>doctor 命令</span>
-                  <small>doctor</small>
-                </a>
-              
-                <a class="sidebar-link " href="/cli/gateway/">
-                  <span>gateway 命令</span>
-                  <small>gateway</small>
-                </a>
-              
-                <a class="sidebar-link " href="/cli/health/">
-                  <span>health 命令</span>
-                  <small>health</small>
-                </a>
-              
-                <a class="sidebar-link " href="/cli/">
-                  <span>CLI 参考</span>
-                  <small>CLI Reference</small>
-                </a>
-              
-                <a class="sidebar-link " href="/cli/logs/">
-                  <span>logs 命令</span>
-                  <small>logs</small>
-                </a>
-              
-                <a class="sidebar-link " href="/cli/onboard/">
-                  <span>onboard 命令</span>
-                  <small>onboard</small>
-                </a>
-              
-                <a class="sidebar-link " href="/cli/reset/">
-                  <span>reset 命令</span>
-                  <small>reset</small>
-                </a>
-              
-                <a class="sidebar-link " href="/cli/secrets/">
-                  <span>secrets 命令</span>
-                  <small>secrets</small>
-                </a>
-              
                 <a class="sidebar-link " href="/cli/acp/">
                   <span>acp 命令</span>
                   <small>acp</small>
@@ -1513,6 +1522,11 @@
                 <a class="sidebar-link " href="/cli/approvals/">
                   <span>approvals 命令</span>
                   <small>approvals</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/backup/">
+                  <span>backup 命令</span>
+                  <small>backup</small>
                 </a>
               
                 <a class="sidebar-link " href="/cli/browser/">
@@ -1550,6 +1564,11 @@
                   <small>cron</small>
                 </a>
               
+                <a class="sidebar-link " href="/cli/daemon/">
+                  <span>daemon 命令</span>
+                  <small>daemon</small>
+                </a>
+              
                 <a class="sidebar-link " href="/cli/dashboard/">
                   <span>dashboard 命令</span>
                   <small>dashboard</small>
@@ -1575,14 +1594,44 @@
                   <small>docs</small>
                 </a>
               
+                <a class="sidebar-link " href="/cli/doctor/">
+                  <span>doctor 命令</span>
+                  <small>doctor</small>
+                </a>
+              
                 <a class="sidebar-link " href="/cli/flows/">
                   <span>flows（redirect）</span>
                   <small>flows (redirect)</small>
                 </a>
               
+                <a class="sidebar-link " href="/cli/gateway/">
+                  <span>gateway 命令</span>
+                  <small>gateway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/health/">
+                  <span>health 命令</span>
+                  <small>health</small>
+                </a>
+              
                 <a class="sidebar-link " href="/cli/hooks/">
                   <span>hooks 命令</span>
                   <small>hooks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/">
+                  <span>CLI 参考</span>
+                  <small>CLI Reference</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/infer/">
+                  <span>Inference CLI 命令</span>
+                  <small>Inference CLI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/logs/">
+                  <span>logs 命令</span>
+                  <small>logs</small>
                 </a>
               
                 <a class="sidebar-link " href="/cli/mcp/">
@@ -1615,6 +1664,11 @@
                   <small>nodes</small>
                 </a>
               
+                <a class="sidebar-link " href="/cli/onboard/">
+                  <span>onboard 命令</span>
+                  <small>onboard</small>
+                </a>
+              
                 <a class="sidebar-link " href="/cli/pairing/">
                   <span>pairing 命令</span>
                   <small>pairing</small>
@@ -1630,9 +1684,19 @@
                   <small>qr</small>
                 </a>
               
+                <a class="sidebar-link " href="/cli/reset/">
+                  <span>reset 命令</span>
+                  <small>reset</small>
+                </a>
+              
                 <a class="sidebar-link " href="/cli/sandbox/">
                   <span>沙箱 CLI</span>
                   <small>Sandbox CLI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/secrets/">
+                  <span>secrets 命令</span>
+                  <small>secrets</small>
                 </a>
               
                 <a class="sidebar-link " href="/cli/security/">
@@ -1688,6 +1752,11 @@
                 <a class="sidebar-link " href="/cli/webhooks/">
                   <span>webhooks 命令</span>
                   <small>webhooks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/wiki/">
+                  <span>wiki 命令</span>
+                  <small>wiki</small>
                 </a>
               </div>
             </details>
@@ -1745,14 +1814,14 @@
                   <small>Web</small>
                 </a>
               
-                <a class="sidebar-link " href="/web/tui/">
-                  <span>TUI</span>
-                  <small>TUI</small>
-                </a>
-              
                 <a class="sidebar-link " href="/web/webchat/">
                   <span>WebChat</span>
                   <small>WebChat</small>
+                </a>
+              
+                <a class="sidebar-link " href="/web/tui/">
+                  <span>TUI</span>
+                  <small>TUI</small>
                 </a>
               </div>
             </details>
@@ -1963,6 +2032,11 @@
                 <a class="sidebar-link " href="/reference/prompt-caching/">
                   <span>提示缓存</span>
                   <small>Prompt Caching</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/rich-output-protocol/">
+                  <span>Rich output protocol</span>
+                  <small>Rich output protocol</small>
                 </a>
               
                 <a class="sidebar-link " href="/reference/rpc/">
@@ -2267,6 +2341,11 @@
                   <small>Hetzner</small>
                 </a>
               
+                <a class="sidebar-link " href="/install/hostinger/">
+                  <span>Hostinger 安装</span>
+                  <small>Hostinger</small>
+                </a>
+              
                 <a class="sidebar-link " href="/install/">
                   <span>安装</span>
                   <small>Install</small>
@@ -2507,6 +2586,11 @@
             <details class="sidebar-group">
               <summary>核心概念</summary>
               <div class="sidebar-links">
+                <a class="sidebar-link " href="/concepts/active-memory/">
+                  <span>Active 记忆</span>
+                  <small>Active Memory</small>
+                </a>
+              
                 <a class="sidebar-link " href="/concepts/agent/">
                   <span>代理运行时</span>
                   <small>Agent Runtime</small>
@@ -2548,8 +2632,13 @@
                 </a>
               
                 <a class="sidebar-link " href="/concepts/dreaming/">
-                  <span>Dreaming（experimental）</span>
-                  <small>Dreaming (experimental)</small>
+                  <span>Dreaming</span>
+                  <small>Dreaming</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/experimental-features/">
+                  <span>实验版 Features</span>
+                  <small>Experimental Features</small>
                 </a>
               
                 <a class="sidebar-link " href="/concepts/features/">
@@ -2692,11 +2781,6 @@
                   <small>Tools and Plugins</small>
                 </a>
               
-                <a class="sidebar-link " href="/tools/plugin/">
-                  <span>插件</span>
-                  <small>Plugins</small>
-                </a>
-              
                 <a class="sidebar-link " href="/tools/acp-agents/">
                   <span>ACP Agents 工具</span>
                   <small>ACP Agents</small>
@@ -2832,6 +2916,11 @@
                   <small>Media Overview</small>
                 </a>
               
+                <a class="sidebar-link " href="/tools/minimax-search/">
+                  <span>MiniMax 搜索</span>
+                  <small>MiniMax Search</small>
+                </a>
+              
                 <a class="sidebar-link " href="/tools/multi-agent-sandbox-tools/">
                   <span>Multi-Agent 沙箱 &amp; 工具</span>
                   <small>Multi-Agent Sandbox &amp; Tools</small>
@@ -2855,6 +2944,11 @@
                 <a class="sidebar-link " href="/tools/perplexity-search/">
                   <span>Perplexity 搜索</span>
                   <small>Perplexity Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/plugin/">
+                  <span>插件</span>
+                  <small>Plugins</small>
                 </a>
               
                 <a class="sidebar-link " href="/tools/reactions/">
@@ -2922,16 +3016,6 @@
             <details class="sidebar-group">
               <summary>插件扩展</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/plugins/bundles/">
-                  <span>插件捆绑包</span>
-                  <small>Plugin Bundles</small>
-                </a>
-              
-                <a class="sidebar-link " href="/plugins/community/">
-                  <span>社区插件</span>
-                  <small>Community Plugins</small>
-                </a>
-              
                 <a class="sidebar-link " href="/plugins/architecture/">
                   <span>插件内部机制</span>
                   <small>Plugin Internals</small>
@@ -2942,9 +3026,34 @@
                   <small>Building Plugins</small>
                 </a>
               
+                <a class="sidebar-link " href="/plugins/bundles/">
+                  <span>插件捆绑包</span>
+                  <small>Plugin Bundles</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/codex-harness/">
+                  <span>Codex Harness 插件</span>
+                  <small>Codex Harness</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/community/">
+                  <span>社区插件</span>
+                  <small>Community Plugins</small>
+                </a>
+              
                 <a class="sidebar-link " href="/plugins/manifest/">
                   <span>插件清单</span>
                   <small>Plugin Manifest</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/memory-wiki/">
+                  <span>记忆 Wiki</span>
+                  <small>Memory Wiki</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-agent-harness/">
+                  <span>Agent Harness 插件</span>
+                  <small>Agent Harness Plugins</small>
                 </a>
               
                 <a class="sidebar-link " href="/plugins/sdk-channel-plugins/">
@@ -2995,6 +3104,11 @@
                 <a class="sidebar-link " href="/plugins/webhooks/">
                   <span>Webhooks 插件</span>
                   <small>Webhooks Plugin</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/zalouser/">
+                  <span>Zalo Personal 插件</span>
+                  <small>Zalo Personal Plugin</small>
                 </a>
               </div>
             </details>
@@ -3053,13 +3167,18 @@
                 </a>
               
                 <a class="sidebar-link " href="/providers/deepseek/">
-                  <span>Deepseek 提供商</span>
-                  <small>Deepseek</small>
+                  <span>DeepSeek 提供商</span>
+                  <small>DeepSeek</small>
                 </a>
               
                 <a class="sidebar-link " href="/providers/fal/">
                   <span>fal 提供商</span>
                   <small>fal</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/fireworks/">
+                  <span>Fireworks 提供商</span>
+                  <small>Fireworks</small>
                 </a>
               
                 <a class="sidebar-link " href="/providers/github-copilot/">
@@ -3068,8 +3187,8 @@
                 </a>
               
                 <a class="sidebar-link " href="/providers/glm/">
-                  <span>GLM 模型</span>
-                  <small>GLM Models</small>
+                  <span>GLM（Zhipu）</span>
+                  <small>GLM (Zhipu)</small>
                 </a>
               
                 <a class="sidebar-link " href="/providers/google/">
@@ -3092,14 +3211,24 @@
                   <small>Provider Directory</small>
                 </a>
               
+                <a class="sidebar-link " href="/providers/inferrs/">
+                  <span>inferrs 提供商</span>
+                  <small>inferrs</small>
+                </a>
+              
                 <a class="sidebar-link " href="/providers/kilocode/">
-                  <span>Kilo Gateway 提供商</span>
-                  <small>Kilo Gateway</small>
+                  <span>Kilocode 提供商</span>
+                  <small>Kilocode</small>
                 </a>
               
                 <a class="sidebar-link " href="/providers/litellm/">
                   <span>LiteLLM 提供商</span>
                   <small>LiteLLM</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/lmstudio/">
+                  <span>LM Studio 提供商</span>
+                  <small>LM Studio</small>
                 </a>
               
                 <a class="sidebar-link " href="/providers/minimax/">
@@ -3153,8 +3282,8 @@
                 </a>
               
                 <a class="sidebar-link " href="/providers/perplexity-provider/">
-                  <span>Perplexity（提供商）</span>
-                  <small>Perplexity (Provider)</small>
+                  <span>Perplexity 提供商</span>
+                  <small>Perplexity</small>
                 </a>
               
                 <a class="sidebar-link " href="/providers/qianfan/">
@@ -3532,56 +3661,6 @@
             <details class="sidebar-group">
               <summary>命令行</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/cli/backup/">
-                  <span>backup 命令</span>
-                  <small>backup</small>
-                </a>
-              
-                <a class="sidebar-link " href="/cli/daemon/">
-                  <span>daemon 命令</span>
-                  <small>daemon</small>
-                </a>
-              
-                <a class="sidebar-link " href="/cli/doctor/">
-                  <span>doctor 命令</span>
-                  <small>doctor</small>
-                </a>
-              
-                <a class="sidebar-link " href="/cli/gateway/">
-                  <span>gateway 命令</span>
-                  <small>gateway</small>
-                </a>
-              
-                <a class="sidebar-link " href="/cli/health/">
-                  <span>health 命令</span>
-                  <small>health</small>
-                </a>
-              
-                <a class="sidebar-link " href="/cli/">
-                  <span>CLI 参考</span>
-                  <small>CLI Reference</small>
-                </a>
-              
-                <a class="sidebar-link " href="/cli/logs/">
-                  <span>logs 命令</span>
-                  <small>logs</small>
-                </a>
-              
-                <a class="sidebar-link " href="/cli/onboard/">
-                  <span>onboard 命令</span>
-                  <small>onboard</small>
-                </a>
-              
-                <a class="sidebar-link " href="/cli/reset/">
-                  <span>reset 命令</span>
-                  <small>reset</small>
-                </a>
-              
-                <a class="sidebar-link " href="/cli/secrets/">
-                  <span>secrets 命令</span>
-                  <small>secrets</small>
-                </a>
-              
                 <a class="sidebar-link " href="/cli/acp/">
                   <span>acp 命令</span>
                   <small>acp</small>
@@ -3600,6 +3679,11 @@
                 <a class="sidebar-link " href="/cli/approvals/">
                   <span>approvals 命令</span>
                   <small>approvals</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/backup/">
+                  <span>backup 命令</span>
+                  <small>backup</small>
                 </a>
               
                 <a class="sidebar-link " href="/cli/browser/">
@@ -3637,6 +3721,11 @@
                   <small>cron</small>
                 </a>
               
+                <a class="sidebar-link " href="/cli/daemon/">
+                  <span>daemon 命令</span>
+                  <small>daemon</small>
+                </a>
+              
                 <a class="sidebar-link " href="/cli/dashboard/">
                   <span>dashboard 命令</span>
                   <small>dashboard</small>
@@ -3662,14 +3751,44 @@
                   <small>docs</small>
                 </a>
               
+                <a class="sidebar-link " href="/cli/doctor/">
+                  <span>doctor 命令</span>
+                  <small>doctor</small>
+                </a>
+              
                 <a class="sidebar-link " href="/cli/flows/">
                   <span>flows（redirect）</span>
                   <small>flows (redirect)</small>
                 </a>
               
+                <a class="sidebar-link " href="/cli/gateway/">
+                  <span>gateway 命令</span>
+                  <small>gateway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/health/">
+                  <span>health 命令</span>
+                  <small>health</small>
+                </a>
+              
                 <a class="sidebar-link " href="/cli/hooks/">
                   <span>hooks 命令</span>
                   <small>hooks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/">
+                  <span>CLI 参考</span>
+                  <small>CLI Reference</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/infer/">
+                  <span>Inference CLI 命令</span>
+                  <small>Inference CLI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/logs/">
+                  <span>logs 命令</span>
+                  <small>logs</small>
                 </a>
               
                 <a class="sidebar-link " href="/cli/mcp/">
@@ -3702,6 +3821,11 @@
                   <small>nodes</small>
                 </a>
               
+                <a class="sidebar-link " href="/cli/onboard/">
+                  <span>onboard 命令</span>
+                  <small>onboard</small>
+                </a>
+              
                 <a class="sidebar-link " href="/cli/pairing/">
                   <span>pairing 命令</span>
                   <small>pairing</small>
@@ -3717,9 +3841,19 @@
                   <small>qr</small>
                 </a>
               
+                <a class="sidebar-link " href="/cli/reset/">
+                  <span>reset 命令</span>
+                  <small>reset</small>
+                </a>
+              
                 <a class="sidebar-link " href="/cli/sandbox/">
                   <span>沙箱 CLI</span>
                   <small>Sandbox CLI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/secrets/">
+                  <span>secrets 命令</span>
+                  <small>secrets</small>
                 </a>
               
                 <a class="sidebar-link " href="/cli/security/">
@@ -3775,6 +3909,11 @@
                 <a class="sidebar-link " href="/cli/webhooks/">
                   <span>webhooks 命令</span>
                   <small>webhooks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/wiki/">
+                  <span>wiki 命令</span>
+                  <small>wiki</small>
                 </a>
               </div>
             </details>
@@ -3832,14 +3971,14 @@
                   <small>Web</small>
                 </a>
               
-                <a class="sidebar-link " href="/web/tui/">
-                  <span>TUI</span>
-                  <small>TUI</small>
-                </a>
-              
                 <a class="sidebar-link " href="/web/webchat/">
                   <span>WebChat</span>
                   <small>WebChat</small>
+                </a>
+              
+                <a class="sidebar-link " href="/web/tui/">
+                  <span>TUI</span>
+                  <small>TUI</small>
                 </a>
               </div>
             </details>
@@ -4052,6 +4191,11 @@
                   <small>Prompt Caching</small>
                 </a>
               
+                <a class="sidebar-link " href="/reference/rich-output-protocol/">
+                  <span>Rich output protocol</span>
+                  <small>Rich output protocol</small>
+                </a>
+              
                 <a class="sidebar-link " href="/reference/rpc/">
                   <span>RPC 适配器</span>
                   <small>RPC Adapters</small>
@@ -4184,176 +4328,210 @@
         </div>
       </div>
 
+      
       <section class="section-shell">
-  <div class="overview-card">
-    <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🤝 <code>Gateway Protocol</code> 像“前台握手暗号和收发信格式”</h2>
-      <p>所有客户端连到 Gateway 时，不是闷头就开始说话。它们要先打招呼，报身份，报自己会什么，再按统一格式收发消息。</p>
-      <p>所以这页本质上讲的是：第一次见面怎么握手，后面纸条怎么写，谁能做什么事。</p>
-    </div>
-    <div class="overview-meta">
-      <span>适合想看懂 CLI、Web、节点到底怎么和 Gateway 说话的人</span>
-      <span>这页最重要的是先分清：role 是你是谁，scope 是你被允许做什么</span>
-      <a href="https://docs.openclaw.ai/gateway/protocol" target="_blank" rel="noreferrer">查看官方原文</a>
-    </div>
-  </div>
-</section>
-
-<section class="section-shell">
-  <div class="section-heading">
-    <p class="section-kicker">第一步</p>
-    <h2>🚪 第一个包必须是 <code>connect</code>，像进门先报到</h2>
-    <p>官方把这件事写得很严格：第一帧必须是 <code>connect</code>。不先报到，门就不会正式打开。</p>
-  </div>
-  <div class="story-grid">
-    <div class="story-card">
-      <div class="story-card-label">Gateway 先发 challenge</div>
-      <p>像门卫先递出一张带时间戳和随机数的小纸片，确认你不是假冒来敲门。</p>
-    </div>
-    <div class="story-card">
-      <div class="story-card-label">Client 再回 <code>connect</code></div>
-      <p>像你把自己的身份、版本、角色、权限、设备签名都填在报到表上递回去。</p>
-    </div>
-    <div class="story-card">
-      <div class="story-card-label"><code>hello-ok</code></div>
-      <p>像门卫盖章：“好，进吧。你今天用协议 3，这里是值班规则。”</p>
-    </div>
-    <div class="source-card">
-      <div class="story-card-label">🎈 记一句</div>
-      <p>这不是“先随便连上再说”，而是“先过门卫，再拿通行牌”。</p>
-    </div>
-  </div>
-</section>
-
-<section class="section-shell">
-  <div class="section-heading">
-    <p class="section-kicker">角色与权限</p>
-    <h2>🪪 <code>role</code> 像工种，<code>scope</code> 像门卡权限</h2>
-    <p>这是整页最核心的分野。只看一个不够，两个要一起看。</p>
-  </div>
-  <div class="home-grid">
-    <article class="home-card">
-      <span class="home-card-index">🧑‍💼</span>
-      <h2><code>operator</code></h2>
-      <p>像控制台值班员，负责看面板、发命令、做管理动作。</p>
-    </article>
-    <article class="home-card">
-      <span class="home-card-index">📱</span>
-      <h2><code>node</code></h2>
-      <p>像带着摄像头、屏幕、定位这些能力在外面跑的小设备。</p>
-    </article>
-    <article class="home-card">
-      <span class="home-card-index">🔑</span>
-      <h2><code>operator.read / write / admin / approvals / pairing</code></h2>
-      <p>像不同颜色的门卡。读得到，不一定写得到；能操作，不一定能批敏感动作。</p>
-    </article>
-    <article class="home-card">
-      <span class="home-card-index">🧰</span>
-      <h2><code>caps / commands / permissions</code></h2>
-      <p>节点连进来时，会先报“我会什么”“我声称能做什么”“哪些开关已经打开”。</p>
-    </article>
-  </div>
-</section>
-
-<section class="section-heading">
-  <p class="section-kicker">消息格式</p>
-  <h2>✉️ 后面的纸条只有三种：请求、回应、广播</h2>
-  <p>官方把 framing 写成结构体。换成人话，就是三种信封。</p>
-</section>
-<section class="section-shell">
-  <div class="story-grid">
-    <div class="story-card">
-      <div class="story-card-label"><code>{type:"req"}</code></div>
-      <p>像“我要办一件事”的申请单。</p>
-    </div>
-    <div class="story-card">
-      <div class="story-card-label"><code>{type:"res"}</code></div>
-      <p>像门卫回你的回执：办成了还是没办成。</p>
-    </div>
-    <div class="story-card">
-      <div class="story-card-label"><code>{type:"event"}</code></div>
-      <p>像广播喇叭，不是你问了才说，而是系统主动告诉大家“发生了一件事”。</p>
-    </div>
-    <div class="source-card">
-      <div class="story-card-label">idempotency keys</div>
-      <p>副作用动作要带幂等钥匙，像在申请单上写唯一流水号，防止同一张单子被误办两次。</p>
-    </div>
-  </div>
-</section>
-
-<section class="section-shell">
-  <div class="section-heading">
-    <p class="section-kicker">命令翻译</p>
-    <h2>📦 那个长长的 <code>connect</code> JSON，到底在现场讲了什么？</h2>
-    <p>如果把字段逐个翻成人话，它就不再像一坨硬代码。</p>
-  </div>
-  <div class="story-grid">
-    <div class="source-card">
-      <div class="story-card-label"><code>minProtocol / maxProtocol</code></div>
-      <p>像说“我会的暗号版本最低到这里，最高到这里，你和我能不能对上号？”</p>
-    </div>
-    <div class="source-card">
-      <div class="story-card-label"><code>client.id / version / platform / mode</code></div>
-      <p>像在胸牌上写清“我是 CLI 还是 iOS 节点，我来自哪台机器，我今天是哪种模式上岗”。</p>
-    </div>
-    <div class="source-card">
-      <div class="story-card-label"><code>auth.token</code></div>
-      <p>像把门卡递给门卫看一眼，没有它就别想过闸。</p>
-    </div>
-    <div class="source-card">
-      <div class="story-card-label"><code>device.publicKey / signature / nonce</code></div>
-      <p>像除了门卡，还要出示设备自己的身份证明，证明你真是那台已经登记过的设备。</p>
-    </div>
-  </div>
-</section>
-
-<section class="section-shell">
-  <div class="section-heading">
-    <p class="section-kicker">认证与设备令牌</p>
-    <h2>🎟 第一次过门后，Gateway 还会发你一张“设备专属回头票”</h2>
-    <p>官方这里很重要：配对后会发 device token。它像以后再次来访时更顺手的专属门票。</p>
-  </div>
-  <div class="home-grid">
-    <article class="home-card">
-      <span class="home-card-index">🎫</span>
-      <h2><code>hello-ok.auth.deviceToken</code></h2>
-      <p>像门卫说：“以后你这台设备再来，拿这张专属票就行。”</p>
-    </article>
-    <article class="home-card">
-      <span class="home-card-index">🔄</span>
-      <h2>rotate / revoke</h2>
-      <p>像门票丢了、要换新、或要作废时，可以专门去门卫室操作。</p>
-    </article>
-    <article class="home-card">
-      <span class="home-card-index">⚠️</span>
-      <h2>AUTH_TOKEN_MISMATCH</h2>
-      <p>像普通门卡不对时，可信客户端可以小心地再试一次自己留存的设备票，但不能无限乱撞。</p>
-    </article>
-    <article class="home-card">
-      <span class="home-card-index">📌</span>
-      <h2>一句话</h2>
-      <p>第一次是正式登记，以后则尽量靠设备专属回头票更顺地进门。</p>
-    </article>
-  </div>
-</section>
-
-<section class="section-shell">
-  <div class="section-heading">
-    <p class="section-kicker">最后总结</p>
-    <h2>🎈 把这页压成一句最短的话</h2>
-    <p>Gateway Protocol 讲的就是门口怎么打招呼、纸条怎么写、门卡怎么验、以及不同工种到底被允许做什么：先握手，再报身份，再按统一信封格式收发消息。</p>
-  </div>
-  <div class="ad-placeholder">
-    <p>如果你想看“门外这些客户端最终都怎么沿路回到总机房”，上一页就是 <code>/gateway/network-model</code>。</p>
-  </div>
-</section>
-
+        <div class="overview-card">
+          <div>
+            <p class="section-kicker">AI 绘本解读版</p>
+            <h2>Gateway 的门怎么开？一句话讲完连接、身份与权限</h2>
+            <p>所有客户端——不管是命令行、网页、手机还是树莓派——都走同一个 WebSocket 门进来。进门第一步，必须自报家门：你是谁、要干什么、权限多大。</p>
+          </div>
+          <div class="overview-meta">
+            <span>原始路径：/gateway/protocol</span>
+            <span>故事卡片：7 张</span>
+            <a href="https://docs.openclaw.ai/gateway/protocol" target="_blank" rel="noreferrer">查看官方原文</a>
+          </div>
+        </div>
+      </section>
+      
+          <section class="section-shell" id="section-1">
+            <div class="section-heading">
+              <p class="section-kicker">第 1 站</p>
+              <h2>进门先亮身份牌</h2>
+              <p>每个客户端连上 Gateway 后，第一条消息必须是 connect 请求，就像在门口递出门牌。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>不亮牌，门不会开。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>Gateway 先丢一个挑战码（nonce）过来，像门卫扔给你一个数字题。</li><li>客户端必须把挑战码签好名再还回去，证明自己不是冒牌货。</li><li>还回去的消息里要写清楚：最低协议版本、最高协议版本、客户端 ID、版本号、平台、模式。</li><li>模式分两种：operator（管事的）和 node（干活的）。</li><li>node 模式还要额外声明自己能干什么：摄像头、屏幕、画布、系统命令……</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
+              <ul><li>Gateway 发来的挑战长这样：{&quot;type&quot;:&quot;event&quot;,&quot;event&quot;:&quot;connect.challenge&quot;,&quot;payload&quot;:{&quot;nonce&quot;:&quot;...&quot;,&quot;ts&quot;:1737264000000}}</li><li>客户端回复的 connect 请求要带上签名后的 nonce，以及 minProtocol、maxProtocol、client 信息。</li><li>node 模式的 connect 里还要加上 caps、commands、permissions 三个字段，告诉 Gateway 你有哪些本事。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>connect 就是进门的第一张名片，写错一个字门就关上了。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-2">
+            <div class="section-heading">
+              <p class="section-kicker">第 2 站</p>
+              <h2>消息长什么样：三种信封</h2>
+              <p>所有消息都装进 JSON 信封，分三种：请求、响应、事件。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>看懂信封，就知道谁在说话、该听谁的。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>请求（req）必须带一个唯一 id，Gateway 回复时用同一个 id 配对。</li><li>响应（res）里有个 ok 字段，true 表示成功，false 表示失败，失败时 payload 换成 error。</li><li>事件（event）是 Gateway 主动推给客户端的，不需要回复，像门卫广播通知。</li><li>会改变系统状态的方法必须带幂等键，防止重复执行——就像同一个钥匙只能开一次门。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
+              <ul><li>请求格式：{&quot;type&quot;:&quot;req&quot;,&quot;id&quot;:&quot;abc123&quot;,&quot;method&quot;:&quot;connect&quot;,&quot;params&quot;:{...}}</li><li>响应格式：{&quot;type&quot;:&quot;res&quot;,&quot;id&quot;:&quot;abc123&quot;,&quot;ok&quot;:true,&quot;payload&quot;:{...}}</li><li>事件格式：{&quot;type&quot;:&quot;event&quot;,&quot;event&quot;:&quot;node.status&quot;,&quot;payload&quot;:{...}}</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>请求带编号，响应对编号，事件没编号——三种信封别搞混。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-3">
+            <div class="section-heading">
+              <p class="section-kicker">第 3 站</p>
+              <h2>管事的能干什么：权限范围</h2>
+              <p>operator 模式的客户端可以申请不同的 scope，就像门禁卡上印着不同的楼层。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>不给够权限，操作会被拦住；给太多权限，不安全。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>常见 scope 有读、写、管理、审批、配对、查看密钥等。</li><li>读取配置时如果想看密钥，必须额外申请 operator.talk.secrets 或 operator.admin。</li><li>一些核心管理方法（如 config.*、exec.approvals.*）只能由 operator.admin 调用，普通权限进不去。</li><li>插件也可以注册自己的 scope，但核心管理前缀永远归 admin 管。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>scope 就是门禁卡的楼层权限，写错了就上不去。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-4">
+            <div class="section-heading">
+              <p class="section-kicker">第 4 站</p>
+              <h2>干活的能干什么：能力声明</h2>
+              <p>node 模式在连接时就要说清楚自己能干什么，Gateway 会检查允许列表。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>Gateway 要确保 node 不会乱干超出权限的事。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>node 声明三个东西：caps（能力大类）、commands（可执行命令列表）、permissions（细粒度开关）。</li><li>比如一个 node 说它能录屏，但 Gateway 的服务器端允许列表里没有，那这个声明就无效。</li><li>Gateway 把 node 的声明当“声称”来对待，最终谁说了算由服务器端规则决定。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>node 吹牛没用，Gateway 说了算。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-5">
+            <div class="section-heading">
+              <p class="section-kicker">第 5 站</p>
+              <h2>设备身份证与配对</h2>
+              <p>每个设备都有自己的密钥对指纹，就像身份证号。配对流程确保只有信任的设备能进门。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>防止陌生设备混进来偷数据。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>设备身份靠密钥对指纹识别，不是靠 IP 或名字。</li><li>配对需要管理员审批，或者通过共享密钥的辅助流程。</li><li>旧版客户端如果没有正确发送 nonce，会收到 DEVICE_AUTH_* 错误码，告诉它哪里写错了。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
+              <ul><li>连接失败时，error.details.code 可能是 DEVICE_AUTH_NONCE_REQUIRED 或 DEVICE_AUTH_NONCE_MISMATCH。</li><li>error.details.reason 会给出更具体的描述，比如 &#39;device-nonce-missing&#39;。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>设备认指纹，不认脸；nonce 写错，门不开。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-6">
+            <div class="section-heading">
+              <p class="section-kicker">第 6 站</p>
+              <h2>安全通道与证书锁定</h2>
+              <p>WebSocket 走 TLS 加密，客户端还可以锁定 Gateway 的证书指纹，防止中间人。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>不让别人在中间偷听或篡改。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>TLS 是可选但强烈推荐的，不加密就像在明信片上写密码。</li><li>证书锁定（certificate pinning）让客户端只认特定的证书指纹。</li><li>锁定指纹可以在配置里指定 gateway.remote.tlsFingerprint，或者命令行加 --tls-fingerprint。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>TLS 加密是基础，证书锁定是保险。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-7">
+            <div class="section-heading">
+              <p class="section-kicker">第 7 站</p>
+              <h2>这套协议管什么</h2>
+              <p>Gateway 协议暴露了完整的 API，包括状态、频道、模型、聊天、节点、审批等等。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>知道协议能干什么，才能决定怎么用。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>协议覆盖了 OpenClaw 的所有核心功能：查看状态、管理频道、调用模型、发起聊天、控制节点、审批操作……</li><li>具体有哪些方法，定义在 TypeBox 模式文件中（src/gateway/protocol/schema.ts）。</li><li>如果你要开发新客户端，必须参考那个模式文件，否则可能漏掉关键参数。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>协议就是 Gateway 的完整菜单，所有操作都通过它来点单。</p>
+              </div>
+            </div>
+          </section>
+        
+      <section class="section-shell">
+        <div class="ad-placeholder">
+          <p>这里预留给未来的 Google AdSense 模块。</p>
+          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
+        </div>
+      </section>
+    
 
       <footer class="page-footer">
         <div>
           <strong>Fivey Can Read OpenClaw</strong>
-          <p>同步时间：2026年4月7日 13:05</p>
+          <p>同步时间：2026年4月16日 22:31</p>
         </div>
       </footer>
     </main>

@@ -1,0 +1,164 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧰 <code>openclaw infer</code> 像一张“推理任务菜单”</h2>
+      <p>这页讲的不是一个小命令，而是一整排入口。你想让模型回答文字、生成图片、听音频、说语音、查网页、做向量，都先从 <code>openclaw infer</code> 这张菜单里点。</p>
+      <p>它故意不让你直接记底层 RPC 名字，也不让你追着每个工具 ID 跑。你只要说清“我要做哪类推理”，OpenClaw 再去找已经配置好的 provider 和 model。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想用命令行跑模型、图片、音频、网页搜索和 embedding 的人</span>
+      <span>重点是能力入口、<code>--json</code>、以及 <code>provider/model</code> 写法</span>
+      <a href="https://docs.openclaw.ai/cli/infer" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧭 先把命令树看成“选门牌”</h2>
+    <p><code>infer</code> 下面不是随便堆命令，而是按能力分门牌：文字模型走 <code>model</code>，图片走 <code>image</code>，音频转文字走 <code>audio</code>，文本转语音走 <code>tts</code>。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">💬</span>
+      <h2><code>model run</code></h2>
+      <p>像把一句提示交给文本模型，让它直接回答。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🖼️</span>
+      <h2><code>image generate</code> / <code>edit</code></h2>
+      <p>一个从文字画图，一个从已有图片继续改图，别把两扇门走混。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎙️</span>
+      <h2><code>audio transcribe</code> / <code>tts convert</code></h2>
+      <p>前者把声音写成字，后者把文字读成声音。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔎</span>
+      <h2><code>web</code> / <code>embedding</code></h2>
+      <p>一个负责搜和取网页，一个负责把文字变成能做相似度搜索的向量。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧪 常用动作可以先记这几条</h2>
+    <p>不用把整棵树背下来。先会这几条，日常就能开跑。</p>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">命令像在做什么</div>
+    <pre><code class="language-bash">openclaw infer model run --prompt "Reply with exactly: smoke-ok" --json
+openclaw infer image generate --prompt "a tidy product photo" --json
+openclaw infer audio transcribe --file ./memo.m4a --model openai/whisper-1 --json
+openclaw infer tts convert --text "Your build is complete" --output ./speech.mp3 --json
+openclaw infer web search --query "OpenClaw docs" --json
+openclaw infer embedding create --text "customer support ticket" --json</code></pre>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>--json</code></div>
+      <p>像让命令把结果装进固定表格，脚本和自动化流程就不用猜。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--provider</code></div>
+      <p>像指定“这次去哪个服务商窗口排队”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>--model provider/model</code></div>
+      <p>像同时写清“哪家店”和“哪台机器”。有些命令必须写全，不能只写模型名。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">本地还是 Gateway</div>
+      <p>普通无状态推理多走本地路径；像 <code>tts status</code> 这类要看 Gateway 管理状态的命令，会偏向 Gateway。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>📦 JSON 输出是一只固定信封</h2>
+    <p>官方强调统一输出，是因为这页不只给人敲，也给脚本、自动化和 agent 接着处理。</p>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">稳定字段长这样</div>
+    <pre><code class="language-json">{
+  "ok": true,
+  "capability": "image.generate",
+  "transport": "local",
+  "provider": "openai",
+  "model": "gpt-image-1",
+  "attempts": [],
+  "outputs": []
+}</code></pre>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">✅</span>
+      <h2><code>ok</code></h2>
+      <p>这次成功没有。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧩</span>
+      <h2><code>capability</code></h2>
+      <p>这次到底在用哪种能力。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚪</span>
+      <h2><code>transport</code></h2>
+      <p>消息走本地还是 Gateway。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📤</span>
+      <h2><code>outputs</code></h2>
+      <p>真正产出的文字、文件或其他结果会放在这里。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>⚠️ 两个坑最容易摔</h2>
+    <p>这页最后的“坏例子 / 好例子”很实用，因为它们都是命令行里一眼看不出来的小错。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">别多写一层</div>
+      <pre><code class="language-bash"># 错
+openclaw infer media image generate --prompt "..."
+
+# 对
+openclaw infer image generate --prompt "..."</code></pre>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">模型名要写全</div>
+      <pre><code class="language-bash"># 错
+openclaw infer audio transcribe --file ./memo.m4a --model whisper-1 --json
+
+# 对
+openclaw infer audio transcribe --file ./memo.m4a --model openai/whisper-1 --json</code></pre>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">记一句</div>
+      <p><code>infer</code> 后面直接跟能力名；需要模型时，优先写 <code>provider/model</code>。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">还有一个别名</div>
+      <p><code>openclaw capability ...</code> 是 <code>openclaw infer ...</code> 的别名。看到它们，不要以为是两套系统。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>infer</code> 压成一句话</h2>
+    <p><code>openclaw infer</code> 是 OpenClaw 的推理总入口：按能力选子命令，用 <code>--json</code> 给自动化稳定结果，需要指定模型时把 <code>provider/model</code> 写完整。</p>
+  </div>
+</section>
