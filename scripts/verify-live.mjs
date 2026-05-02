@@ -3,7 +3,7 @@ const siteUrl = process.env.SITE_URL || "https://fivey-can-read-openclaw.pages.d
 const checks = [
   { path: "/", expect: "Fivey Can Read OpenClaw" },
   { path: "/theme-icons/", expect: "Theme Icons" },
-  { path: "/tools/", expect: "Tools and Plugins" },
+  { path: "/tools/", expect: "OpenClaw 的工具" },
   { path: "/sitemap.xml", expect: "<urlset" },
   { path: "/robots.txt", expect: "Sitemap:" },
   { path: "/ads.txt", expect: "google.com" },
