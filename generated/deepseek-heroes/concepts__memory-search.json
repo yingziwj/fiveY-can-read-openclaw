@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:48:04.311Z",
+  "generatedAt": "2026-05-06T15:05:12.688Z",
   "pathname": "/concepts/memory-search",
   "title": "Memory Search",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "内存搜索：如何从笔记中智能查找内容",
-    "heroSummary": "这页讲的是OpenClaw如何通过向量和关键词两种方式，从你的记忆文件中找到相关笔记，即使查询的措辞与原文不同。配置时最该先看provider设置，明确要填哪个API提供商或本地选项；最容易错的地方是以为所有provider都能自动检测，实际上像ollama和local这类本地选项需要手动指定。"
+    "heroTitle": "记忆搜索：用语义找笔记，不靠关键词死磕",
+    "heroSummary": "`memory_search` 同时跑向量搜索和 BM25 关键词搜索，合并结果返回最相关的笔记。先确认你配了 OpenAI、Gemini 等任一 provider，否则默认用 GitHub Copilot；本地无 API 密钥时设 `provider: \"local\"`，但需装 node-llama-cpp。注意：向量搜索找“意思相近”，关键词找“字面匹配”，两者互补，缺一不可。"
   }
 }

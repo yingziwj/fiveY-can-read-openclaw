@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nodes | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Nodes是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="节点通过 WebSocket 以 role: node 身份连接网关，暴露 canvas.*、camera.* 等命令供 node.invoke 调用。配对时用设备身份，需用 openclaw devices approve 批准请求；若节点重连时认证信息变化，旧请求会被取代，批准前务必重新 list。最容易搞错的是…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Nodes | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Nodes是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="节点通过 WebSocket 以 role: node 身份连接网关，暴露 canvas.*、camera.* 等命令供 node.invoke 调用。配对时用设备身份，需用 openclaw devices approve 批准请求；若节点重连时认证信息变化，旧请求会被取代，批准前务必重新 list。最容易搞错的是…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/nodes/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Nodes | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Nodes是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="节点通过 WebSocket 以 role: node 身份连接网关，暴露 canvas.*、camera.* 等命令供 node.invoke 调用。配对时用设备身份，需用 openclaw devices approve 批准请求；若节点重连时认证信息变化，旧请求会被取代，批准前务必重新 list。最容易搞错的是…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/nodes/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Nodes","description":"Nodes是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/nodes/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Nodes","description":"节点通过 WebSocket 以 role: node 身份连接网关，暴露 canvas.*、camera.* 等命令供 node.invoke 调用。配对时用设备身份，需用 openclaw devices approve 批准请求；若节点重连时认证信息变化，旧请求会被取代，批准前务必重新 list。最容易搞错的是…","url":"https://fivey-can-read-openclaw.pages.dev/nodes/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Nodes","item":"https://fivey-can-read-openclaw.pages.dev/nodes/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Nodes 导读</p>
-        <h1>节点设备连接与命令执行指南</h1>
-        <p class="hero-copy">这页说明如何将手机、电脑等设备作为节点连接到网关，并通过WebSocket暴露canvas、camera等命令接口。配置时需注意节点是外围设备而非网关，所有消息仍由网关处理，配对后需通过CLI批准设备请求。最容易出错的是节点重连时认证信息变更会导致旧请求失效，必须重新列出设备ID再批准。</p>
+        <h1>节点不是网关，是外围设备——先分清谁管消息、谁执行命令</h1>
+        <p class="hero-copy">节点通过 WebSocket 以 `role: node` 身份连接网关，暴露 `canvas.*`、`camera.*` 等命令供 `node.invoke` 调用。配对时用设备身份，需用 `openclaw devices approve` 批准请求；若节点重连时认证信息变化，旧请求会被取代，批准前务必重新 `list`。最容易搞错的是：消息（Telegram/WhatsApp 等）落在网关，不会到达节点；节点只负责执行命令，不运行网关服务。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🛰️ Nodes 这页，其实是在讲“给 Gateway 接上一堆会动手的外设小伙伴”</h2><p>Gateway 像总指挥，node 像身边的摄像头、手机、麦克风、执行机。</p><p>它们不是第二个 Gateway，而是被总指挥调度的外围设备。</p></div><div class="overview-meta"><span>外围设备，不是第二个网关</span><span>重点是 pairing、status、node.invoke</span><a href="https://docs.openclaw.ai/nodes/index" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:nodes.index.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>节点不是网关，是外围设备——先分清谁管消息、谁执行命令</h2>
+      <p>节点通过 WebSocket 以 `role: node` 身份连接网关，暴露 `canvas.*`、`camera.*` 等命令供 `node.invoke` 调用。配对时用设备身份，需用 `openclaw devices approve` 批准请求；若节点重连时认证信息变化，旧请求会被取代，批准前务必重新 `list`。最容易搞错的是：消息（Telegram/WhatsApp 等）落在网关，不会到达节点；节点只负责执行命令，不运行网关服务。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 24 节，先看 Start Here</span>
+      <span>路径：/nodes/index</span>
+      <a href="https://docs.openclaw.ai/nodes/index" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>🔌 Node 最像“插在 Gateway 身边的一只工具手臂”</h2><p>消息还是先进 Gateway，再由 Gateway 决定要不要叫某个 node 出手。</p></div><div class="home-grid"><article class="home-card"><span class="home-card-index">🧠</span><h2>Gateway</h2><p>负责收消息、跑模型、发号施令。</p></article><article class="home-card"><span class="home-card-index">🤖</span><h2>Node</h2><p>负责拍照、录音、执行本机命令、弹通知这些“动手型”工作。</p></article><article class="home-card"><span class="home-card-index">📡</span><h2>WebSocket</h2><p>Node 通过 Gateway 的 WS 口连进来，像挂上一根长线听调度。</p></article><article class="home-card"><span class="home-card-index">🧰</span><h2><code>node.invoke</code></h2><p>这是总指挥给 node 下动作指令的总入口。</p></article></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第二站</p><h2>🪪 先配对，再看状态，再决定能不能真正干活</h2><p>官方把“能连上”和“被批准上岗”分开了。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label"><code>openclaw devices list</code></div><p>像翻设备候审名单，看看谁正在门口等审批。</p></div><div class="source-card"><div class="story-card-label"><code>openclaw devices approve &lt;requestId&gt;</code></div><p>像给某台设备发正式工牌，让它能以 node 身份入场。</p></div><div class="source-card"><div class="story-card-label"><code>openclaw nodes status</code></div><p>像看值班板，确认哪些 node 现在在线、已配对、可调度。</p></div><div class="source-card"><div class="story-card-label"><code>openclaw nodes describe --node ...</code></div><p>像打开某台设备的详细档案，看它会哪些本领。</p></div></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第三站</p><h2>🏃 如果要在别的机器上跑命令，就把那个机器当成 node host</h2><p>模型仍然只和 Gateway 说话，只是 Gateway 会把执行任务转发给远程 node 主机。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label">Gateway host</div><p>像总调度室，负责决定“现在该干什么”。</p></div><div class="source-card"><div class="story-card-label">Node host</div><p>像远程执行车间，真正去跑 <code>system.run</code> 之类动作。</p></div><div class="source-card"><div class="story-card-label">Approvals</div><p>执行审批是卡在 node host 上的，不是随便转过去就能跑。</p></div><div class="source-card"><div class="story-card-label">🎈 最后记一句</div><p>Node 是外设，不是分身网关。它负责出手，不负责总指挥。</p></div></div></section>

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:57.202Z",
+  "generatedAt": "2026-05-06T15:08:07.927Z",
   "pathname": "/providers/volcengine",
   "title": "Volcengine (Doubao)",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "接入火山引擎（豆包）模型服务",
-    "heroSummary": "这页说明如何配置OpenClaw来使用火山引擎托管的豆包模型和第三方模型，包括通用和编程两类工作负载。你需要先设置VOLCANO_ENGINE_API_KEY环境变量，然后通过openclaw onboard命令完成认证。最容易搞错的是区分volcengine（通用模型）和volcengine-plan（编程模型）两个不同的提供者端点，虽然它们共享同一个API密钥，但用途和模型列表不同。"
+    "heroTitle": "一个 API Key 同时接入通用和编程模型",
+    "heroSummary": "Volcengine 提供两个 provider：通用（volcengine）和编程专用（volcengine-plan），共享同一个 API Key。先跑 onboard 命令自动注册，再选默认模型——注意默认会设成编程模型 ark-code-latest。如果以守护进程运行，务必把 VOLCANO_ENGINE_API_KEY 写进 .env 文件，否则会找不到。"
   }
 }

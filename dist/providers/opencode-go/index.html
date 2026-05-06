@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenCode Go 提供商：OpenCode Go | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="OpenCode Go 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>OpenCode Go | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="OpenCode Go 是 OpenCode 下的 Go 模型目录，与 Zen 目录共用同一个 OPENCODE_API_KEY，但运行时 provider id 保持为 opencode-go，确保上游按模型正确路由。配置时先执行 openclaw onboard --auth-choice opencode-go…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="OpenCode Go 提供商：OpenCode Go | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="OpenCode Go 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="OpenCode Go | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="OpenCode Go 是 OpenCode 下的 Go 模型目录，与 Zen 目录共用同一个 OPENCODE_API_KEY，但运行时 provider id 保持为 opencode-go，确保上游按模型正确路由。配置时先执行 openclaw onboard --auth-choice opencode-go…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/providers/opencode-go/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="OpenCode Go 提供商：OpenCode Go | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="OpenCode Go 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="OpenCode Go | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="OpenCode Go 是 OpenCode 下的 Go 模型目录，与 Zen 目录共用同一个 OPENCODE_API_KEY，但运行时 provider id 保持为 opencode-go，确保上游按模型正确路由。配置时先执行 openclaw onboard --auth-choice opencode-go…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/providers/opencode-go/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"OpenCode Go 提供商：OpenCode Go","description":"OpenCode Go 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/providers/opencode-go/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"OpenCode Go","description":"OpenCode Go 是 OpenCode 下的 Go 模型目录，与 Zen 目录共用同一个 OPENCODE_API_KEY，但运行时 provider id 保持为 opencode-go，确保上游按模型正确路由。配置时先执行 openclaw onboard --auth-choice opencode-go…","url":"https://fivey-can-read-openclaw.pages.dev/providers/opencode-go/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Providers","item":"https://fivey-can-read-openclaw.pages.dev/providers/opencode-go/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Providers 导读</p>
-        <h1>OpenCode Go 提供商的配置与接入指南</h1>
-        <p class="hero-copy">这页详细说明如何接入 OpenCode Go 提供商，它使用与 Zen 目录相同的 API 密钥，但保持独立的运行时提供商 ID。配置时需在环境变量中设置 OPENCODE_API_KEY，并注意模型引用必须使用 opencode-go/ 前缀才能触发自动路由。</p>
+        <h1>OpenCode Go 接入：一个 API Key 通两个目录</h1>
+        <p class="hero-copy">OpenCode Go 是 OpenCode 下的 Go 模型目录，与 Zen 目录共用同一个 `OPENCODE_API_KEY`，但运行时 provider id 保持为 `opencode-go`，确保上游按模型正确路由。配置时先执行 `openclaw onboard --auth-choice opencode-go` 或直接传 key，然后设置默认模型即可。最容易忽略的是：虽然 key 相同，但模型引用必须用 `opencode-go/...` 前缀，否则路由会错。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:providers.opencode-go.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🚪 OpenCode Go，就是 OpenCode 商场里专门给 Kimi / GLM / MiniMax 准备的那层楼</h2>
-      <p>它和 Zen 不是两套账户，而是同一家商场里的另一层货架。钥匙还是 <code>OPENCODE_API_KEY</code>，只是模型名前缀换成了 <code>opencode-go/</code>。</p>
-      <p>所以这页最重要的不是“再申请一把 key”，而是“记住楼层号变了”。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>OpenCode Go 接入：一个 API Key 通两个目录</h2>
+      <p>OpenCode Go 是 OpenCode 下的 Go 模型目录，与 Zen 目录共用同一个 `OPENCODE_API_KEY`，但运行时 provider id 保持为 `opencode-go`，确保上游按模型正确路由。配置时先执行 `openclaw onboard --auth-choice opencode-go` 或直接传 key，然后设置默认模型即可。最容易忽略的是：虽然 key 相同，但模型引用必须用 `opencode-go/...` 前缀，否则路由会错。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想用 OpenCode Go 目录的人</span>
-      <span>重点是同一把 key、不同的模型前缀</span>
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/providers/opencode-go</span>
       <a href="https://docs.openclaw.ai/providers/opencode-go" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

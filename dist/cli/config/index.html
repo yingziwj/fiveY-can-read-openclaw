@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>config 命令：config | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="config 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>config | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="openclaw config 让你在脚本或终端里直接 get/set/unset 配置项，路径用点号或方括号（如 agents.list[0].id）。最常用的场景是快速改一个值：openclaw config set agents.defaults.heartbeat.every &quot;2h&quot;。注意值默认按 JSON…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="config 命令：config | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="config 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="config | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="openclaw config 让你在脚本或终端里直接 get/set/unset 配置项，路径用点号或方括号（如 agents.list[0].id）。最常用的场景是快速改一个值：openclaw config set agents.defaults.heartbeat.every &quot;2h&quot;。注意值默认按 JSON…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/config/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="config 命令：config | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="config 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="config | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="openclaw config 让你在脚本或终端里直接 get/set/unset 配置项，路径用点号或方括号（如 agents.list[0].id）。最常用的场景是快速改一个值：openclaw config set agents.defaults.heartbeat.every &quot;2h&quot;。注意值默认按 JSON…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/config/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"config 命令：config","description":"config 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/config/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"config","description":"openclaw config 让你在脚本或终端里直接 get/set/unset 配置项，路径用点号或方括号（如 agents.list[0].id）。最常用的场景是快速改一个值：openclaw config set agents.defaults.heartbeat.every \"2h\"。注意值默认按 JSON…","url":"https://fivey-can-read-openclaw.pages.dev/cli/config/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/config/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>openclaw config 命令详解</h1>
-        <p class="hero-copy">这页讲解如何用命令行工具直接读写 openclaw.json 配置文件，包括获取、设置、验证配置项和查看结构。最该先看的是 config 命令的基本用法和路径语法，因为这是所有操作的基础。最容易搞错的地方是设置值时，如果不加 --strict-json 参数，系统会尝试用 JSON5 解析，否则当字符串处理，这可能导致非预期的配置值。</p>
+        <h1>用命令行改配置，不用进交互向导</h1>
+        <p class="hero-copy">`openclaw config` 让你在脚本或终端里直接 get/set/unset 配置项，路径用点号或方括号（如 `agents.list[0].id`）。最常用的场景是快速改一个值：`openclaw config set agents.defaults.heartbeat.every &quot;2h&quot;`。注意值默认按 JSON5 解析，字符串要加引号，否则可能被当成变量。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.config.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧰 <code>openclaw config</code> 就像“拿着小镊子改总账本”</h2>
-      <p>如果 <code>openclaw configure</code> 像一位带路老师，<code>openclaw config</code> 就像你自己坐到桌前，翻开 <code>openclaw.json</code> 这本总账本，一格一格地改。</p>
-      <p>它不陪你闲聊，也不带你逛全屋。它只做一件事：你指哪里，它就改哪里。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用命令行改配置，不用进交互向导</h2>
+      <p>`openclaw config` 让你在脚本或终端里直接 get/set/unset 配置项，路径用点号或方括号（如 `agents.list[0].id`）。最常用的场景是快速改一个值：`openclaw config set agents.defaults.heartbeat.every &quot;2h&quot;`。注意值默认按 JSON5 解析，字符串要加引号，否则可能被当成变量。</p>
     </div>
     <div class="overview-meta">
-      <span>适合已经知道自己要改哪一格的人</span>
-      <span>这页最要紧的是看懂：路径是门牌，值是你要放进去的新东西</span>
+      <span>原文共 11 节，先看 Start Here</span>
+      <span>路径：/cli/config</span>
       <a href="https://docs.openclaw.ai/cli/config" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

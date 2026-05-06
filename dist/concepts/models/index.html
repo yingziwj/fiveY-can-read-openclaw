@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>模式ls CLI：Models CLI | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="模式ls CLI是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Models CLI | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="OpenClaw 按 primary → fallbacks → provider auth failover 的顺序选模型。先配好 agents.defaults.model.primary 和 fallbacks，再通过 agents.defaults.models 做白名单。容易漏的是：image、pdf、生成…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="模式ls CLI：Models CLI | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="模式ls CLI是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Models CLI | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="OpenClaw 按 primary → fallbacks → provider auth failover 的顺序选模型。先配好 agents.defaults.model.primary 和 fallbacks，再通过 agents.defaults.models 做白名单。容易漏的是：image、pdf、生成…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/models/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="模式ls CLI：Models CLI | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="模式ls CLI是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Models CLI | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="OpenClaw 按 primary → fallbacks → provider auth failover 的顺序选模型。先配好 agents.defaults.model.primary 和 fallbacks，再通过 agents.defaults.models 做白名单。容易漏的是：image、pdf、生成…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/models/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"模式ls CLI：Models CLI","description":"模式ls CLI是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/models/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Models CLI","description":"OpenClaw 按 primary → fallbacks → provider auth failover 的顺序选模型。先配好 agents.defaults.model.primary 和 fallbacks，再通过 agents.defaults.models 做白名单。容易漏的是：image、pdf、生成…","url":"https://fivey-can-read-openclaw.pages.dev/concepts/models/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/models/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>OpenClaw模型配置：主模型、备用模型与专用模型设置</h1>
-        <p class="hero-copy">这页详细说明了OpenClaw如何按主模型→备用模型→提供商内部故障转移的顺序选择模型，并列出所有模型相关的配置键。配置时最容易混淆的是不同任务类型（图像、PDF、生成等）有独立的模型设置，如果省略，系统会按默认规则推断。建议先运行`openclaw onboard`命令快速设置常见提供商，然后根据任务需求调整主模型和备用模型策略。</p>
+        <h1>模型选择顺序与配置要点</h1>
+        <p class="hero-copy">OpenClaw 按 primary → fallbacks → provider auth failover 的顺序选模型。先配好 agents.defaults.model.primary 和 fallbacks，再通过 agents.defaults.models 做白名单。容易漏的是：image、pdf、生成类模型都有独立配置，不设时会自动推断，但推断逻辑依赖 provider 注册顺序和 auth，不如显式指定可靠。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.models.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🎛 <code>Models</code> 像“给 OpenClaw 排主脑、备胎脑和图片脑的控制台”</h2>
-      <p>这页最重要的不是模型名字，而是顺序。谁先上场，谁在后面候补，遇到图片时换谁，这些都在这里讲。</p>
-      <p>你可以把它想成脑子调度台。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>模型选择顺序与配置要点</h2>
+      <p>OpenClaw 按 primary → fallbacks → provider auth failover 的顺序选模型。先配好 agents.defaults.model.primary 和 fallbacks，再通过 agents.defaults.models 做白名单。容易漏的是：image、pdf、生成类模型都有独立配置，不设时会自动推断，但推断逻辑依赖 provider 注册顺序和 auth，不如显式指定可靠。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想真正配清主模型、fallback 和 allowlist 的人</span>
-      <span>这页最重要的是记住：主脑、后备脑、图片脑是三条不同线</span>
+      <span>原文共 13 节，先看 Start Here</span>
+      <span>路径：/concepts/models</span>
       <a href="https://docs.openclaw.ai/concepts/models" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

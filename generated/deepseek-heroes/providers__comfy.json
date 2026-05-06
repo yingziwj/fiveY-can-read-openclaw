@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:49:49.705Z",
+  "generatedAt": "2026-05-06T15:06:17.939Z",
   "pathname": "/providers/comfy",
   "title": "ComfyUI",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "配置OpenClaw与ComfyUI的对接方式",
-    "heroSummary": "这页详细说明了如何配置OpenClaw的comfy插件来连接本地或云端ComfyUI，并运行图像、视频、音频生成工作流。配置时最关键的是为每个功能（image/video/music）分别指定workflow文件路径和promptNodeId，最容易出错的地方是混淆新旧配置格式或忘记设置outputNodeId导致无法获取生成结果。"
+    "heroTitle": "ComfyUI 接入：填好 workflow 路径和节点 ID 就能跑",
+    "heroSummary": "OpenClaw 通过 workflow JSON 驱动 ComfyUI，不映射通用参数。最核心的配置是每个能力（image/video/music）下的 workflowPath、promptNodeId 和 outputNodeId。本地模式默认连 127.0.0.1:8188，云模式需配 COMFY_CLOUD_API_KEY，注意 cloud 模式下默认禁止私有网络地址。"
   }
 }

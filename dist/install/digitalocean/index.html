@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DigitalOcean 安装：DigitalOcean | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="DigitalOcean 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>DigitalOcean | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="先准备好SSH密钥，选Ubuntu 24.04 LTS纯净镜像，最低1 vCPU/1 GB内存的Droplet就够了。最容易踩坑的是用了第三方Marketplace镜像，里面可能自带防火墙规则或启动脚本干扰安装，务必选官方基础镜像。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="DigitalOcean 安装：DigitalOcean | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="DigitalOcean 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="DigitalOcean | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="先准备好SSH密钥，选Ubuntu 24.04 LTS纯净镜像，最低1 vCPU/1 GB内存的Droplet就够了。最容易踩坑的是用了第三方Marketplace镜像，里面可能自带防火墙规则或启动脚本干扰安装，务必选官方基础镜像。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/install/digitalocean/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DigitalOcean 安装：DigitalOcean | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="DigitalOcean 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="DigitalOcean | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="先准备好SSH密钥，选Ubuntu 24.04 LTS纯净镜像，最低1 vCPU/1 GB内存的Droplet就够了。最容易踩坑的是用了第三方Marketplace镜像，里面可能自带防火墙规则或启动脚本干扰安装，务必选官方基础镜像。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/install/digitalocean/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"DigitalOcean 安装：DigitalOcean","description":"DigitalOcean 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/install/digitalocean/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"DigitalOcean","description":"先准备好SSH密钥，选Ubuntu 24.04 LTS纯净镜像，最低1 vCPU/1 GB内存的Droplet就够了。最容易踩坑的是用了第三方Marketplace镜像，里面可能自带防火墙规则或启动脚本干扰安装，务必选官方基础镜像。","url":"https://fivey-can-read-openclaw.pages.dev/install/digitalocean/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Install","item":"https://fivey-can-read-openclaw.pages.dev/install/digitalocean/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Install 导读</p>
-        <h1>在DigitalOcean上部署OpenClaw网关</h1>
-        <p class="hero-copy">这页指导你在DigitalOcean Droplet上安装OpenClaw网关，需要准备账户、SSH密钥和约20分钟。创建Droplet时务必选择Ubuntu 24.04 LTS基础镜像，避免使用第三方市场镜像，否则可能因启动脚本或防火墙默认设置导致问题。安装后若网关无法启动，先用openclaw doctor检查，内存不足时需启用交换空间或升级到2GB Droplet。</p>
+        <h1>20分钟在DigitalOcean上跑起持久网关</h1>
+        <p class="hero-copy">先准备好SSH密钥，选Ubuntu 24.04 LTS纯净镜像，最低1 vCPU/1 GB内存的Droplet就够了。最容易踩坑的是用了第三方Marketplace镜像，里面可能自带防火墙规则或启动脚本干扰安装，务必选官方基础镜像。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:install.digitalocean.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🌊 DigitalOcean 这页，其实是在教你“租一台干净的小云主机，让 OpenClaw 长住”</h2>
-      <p>这条路很像最朴素的 VPS 安装法：租 Droplet、SSH 上去、装 Node、装 OpenClaw、再把控制台安全地牵回自己电脑上。</p>
-      <p>官方反复强调“干净基础镜像”，意思很简单：别一开始就把来路不明的一键包当成地基。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>20分钟在DigitalOcean上跑起持久网关</h2>
+      <p>先准备好SSH密钥，选Ubuntu 24.04 LTS纯净镜像，最低1 vCPU/1 GB内存的Droplet就够了。最容易踩坑的是用了第三方Marketplace镜像，里面可能自带防火墙规则或启动脚本干扰安装，务必选官方基础镜像。</p>
     </div>
     <div class="overview-meta">
-      <span>适合传统 VPS 路线</span>
-      <span>重点是干净镜像、swap、SSH 隧道、Tailscale</span>
+      <span>原文共 5 节，先看 Start Here</span>
+      <span>路径：/install/digitalocean</span>
       <a href="https://docs.openclaw.ai/install/digitalocean" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

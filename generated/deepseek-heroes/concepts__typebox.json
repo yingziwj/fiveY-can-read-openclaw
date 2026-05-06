@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:54:13.652Z",
+  "generatedAt": "2026-05-06T15:08:58.283Z",
   "pathname": "/concepts/typebox",
   "title": "TypeBox",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "TypeBox：网关WebSocket协议的唯一数据源",
-    "heroSummary": "这页解释TypeBox如何作为网关WebSocket协议（握手、请求/响应、服务器事件）的唯一数据源，驱动运行时验证、JSON Schema导出和macOS应用的Swift代码生成。读这页前，应先了解网关架构的整体背景，因为TypeBox定义的是底层协议格式。最容易搞错的是：协议生成管道（如`pnpm protocol:gen`）会输出JSON Schema和Swift模型，但服务器端的功能发现列表（`features.methods`和`features.events`）并非所有可调用方法的完整生成转储，而是保守的广告列表，一些辅助RPC未包含在内。"
+    "heroTitle": "TypeBox 是 Gateway WebSocket 协议的“唯一真相”",
+    "heroSummary": "所有 WS 消息（请求/响应/事件）的 schema 都定义在 TypeBox 里，驱动运行时校验、JSON Schema 导出和 Swift 代码生成。先看 `src/gateway/protocol/schema.ts`，再跑 `pnpm protocol:gen` 生成产物。注意：feature discovery 列表不是自动扫出来的，需要手动维护在 `server-methods-list.ts` 里。"
   }
 }

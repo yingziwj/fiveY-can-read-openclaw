@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:51:19.771Z",
+  "generatedAt": "2026-05-06T15:08:37.090Z",
   "pathname": "/cli/gateway",
   "title": "gateway",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Gateway CLI 命令详解与配置要点",
-    "heroSummary": "这页详细说明了 OpenClaw 网关服务器的命令行操作，包括启动、配置选项和查询命令。启动网关时，必须先确保配置文件中的 gateway.mode=local 已设置，否则需要使用 --allow-unconfigured 参数。使用 --url 参数连接远程网关时，必须同时提供 --token 或 --password 凭证，否则会报错。"
+    "heroTitle": "启动 Gateway 前必须搞懂的三件事",
+    "heroSummary": "Gateway 是 OpenClaw 的 WebSocket 服务器，管理通道、节点、会话和钩子。首次启动前先确认 `gateway.mode=local` 已写入配置，否则必须加 `--allow-unconfigured` 才能跑起来。绑定非回环地址时默认禁止无认证连接，这是安全护栏，别硬关。"
   }
 }

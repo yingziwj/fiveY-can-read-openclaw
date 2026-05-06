@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:51.777Z",
+  "generatedAt": "2026-05-06T15:08:05.567Z",
   "pathname": "/providers/synthetic",
   "title": "Synthetic",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Synthetic 提供商接入指南",
-    "heroSummary": "这页教你如何配置 Synthetic 提供商，它通过 Anthropic 兼容接口提供多种开源模型。先设置 SYNTHETIC_API_KEY 环境变量并运行 onboarding 命令，注意 baseUrl 必须用 https://api.synthetic.new/anthropic，OpenClaw 会自动补上 /v1。"
+    "heroTitle": "用 Synthetic 接入开源模型，先拿 API Key 再跑 onboard",
+    "heroSummary": "Synthetic 提供兼容 Anthropic 的端点，OpenClaw 通过 `synthetic` provider 调用。最容易踩的坑是 base URL 末尾不要加 `/v1`，OpenClaw 会自动补上。配置时记得在 `agents.defaults.models` 里放行你要用的模型，否则会被隐藏。"
   }
 }

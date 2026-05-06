@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web 搜索：Web Search | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Web 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Web Search | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="web_search 是一个轻量 HTTP 工具，不是浏览器自动化，别指望它渲染 JS 或处理登录。先挑供应商：DuckDuckGo 免密钥可直接用，Brave、Exa 等需要 API 密钥。配置时用 openclaw configure --section web 或直接设环境变量。结果默认缓存 15 分钟，可调整。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Web 搜索：Web Search | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Web 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Web Search | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="web_search 是一个轻量 HTTP 工具，不是浏览器自动化，别指望它渲染 JS 或处理登录。先挑供应商：DuckDuckGo 免密钥可直接用，Brave、Exa 等需要 API 密钥。配置时用 openclaw configure --section web 或直接设环境变量。结果默认缓存 15 分钟，可调整。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/tools/web/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Web 搜索：Web Search | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Web 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Web Search | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="web_search 是一个轻量 HTTP 工具，不是浏览器自动化，别指望它渲染 JS 或处理登录。先挑供应商：DuckDuckGo 免密钥可直接用，Brave、Exa 等需要 API 密钥。配置时用 openclaw configure --section web 或直接设环境变量。结果默认缓存 15 分钟，可调整。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/tools/web/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Web 搜索：Web Search","description":"Web 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/tools/web/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Web Search","description":"web_search 是一个轻量 HTTP 工具，不是浏览器自动化，别指望它渲染 JS 或处理登录。先挑供应商：DuckDuckGo 免密钥可直接用，Brave、Exa 等需要 API 密钥。配置时用 openclaw configure --section web 或直接设环境变量。结果默认缓存 15 分钟，可调整。","url":"https://fivey-can-read-openclaw.pages.dev/tools/web/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://fivey-can-read-openclaw.pages.dev/tools/web/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Tools 导读</p>
-        <h1>配置和使用 web_search 工具</h1>
-        <p class="hero-copy">这页教你如何配置和使用 web_search 工具进行网络搜索，包括选择提供商和设置凭证。首先要配置一个搜索提供商，比如 Brave 或 DuckDuckGo，并设置相应的 API 密钥或环境变量。最容易搞错的是把 web_search 当成浏览器自动化工具，它其实是轻量级 HTTP 工具，不适合处理需要登录或大量 JavaScript 的网站。</p>
+        <h1>选一个搜索供应商，配好密钥，就能让 Agent 联网查东西</h1>
+        <p class="hero-copy">`web_search` 是一个轻量 HTTP 工具，不是浏览器自动化，别指望它渲染 JS 或处理登录。先挑供应商：DuckDuckGo 免密钥可直接用，Brave、Exa 等需要 API 密钥。配置时用 `openclaw configure --section web` 或直接设环境变量。结果默认缓存 15 分钟，可调整。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:tools.web.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🌍 Web Search 就像给 OpenClaw 发了一位“会出去打听消息的外勤同学”</h2>
-      <p>如果浏览器工具像亲自走进一家店里翻抽屉、点按钮，那 <code>web_search</code> 更像先派一个外勤出去打听：“这件事网上都怎么说？有哪些靠谱线索？”</p>
-      <p>它不负责登录网站，不负责点复杂页面，也不是完整浏览器。它做的事更轻：出去搜、带回结果、顺手整理一点线索给你。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>选一个搜索供应商，配好密钥，就能让 Agent 联网查东西</h2>
+      <p>`web_search` 是一个轻量 HTTP 工具，不是浏览器自动化，别指望它渲染 JS 或处理登录。先挑供应商：DuckDuckGo 免密钥可直接用，Brave、Exa 等需要 API 密钥。配置时用 `openclaw configure --section web` 或直接设环境变量。结果默认缓存 15 分钟，可调整。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想给 OpenClaw 配网页搜索的人</span>
-      <span>这页最重要的是分清：<code>web_search</code> 不是浏览器自动化，<code>web_fetch</code> 也不是搜索</span>
+      <span>原文共 16 节，先看 Start Here</span>
+      <span>路径：/tools/web</span>
       <a href="https://docs.openclaw.ai/tools/web" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:47:20.420Z",
+  "generatedAt": "2026-05-06T15:04:45.169Z",
   "pathname": "/channels/imessage",
   "title": "iMessage",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "iMessage 旧版集成配置与权限设置",
-    "heroSummary": "这页详细说明了如何通过 imsg 命令行工具将 iMessage 接入系统，但请注意这是旧版方案，新部署应优先使用 BlueBubbles。配置时需重点设置 cliPath 和 dbPath，并确保在 macOS 上正确授予全磁盘访问和自动化权限，否则消息收发会失败。"
+    "heroTitle": "iMessage 接入：旧通道，新用户请走 BlueBubbles",
+    "heroSummary": "这是基于 `imsg` 的旧版 iMessage 通道，新部署请直接用 BlueBubbles。配置核心是填对 `cliPath` 和 `dbPath`，首次配对需在 1 小时内用 `openclaw pairing approve` 批准。最容易踩坑的是 macOS 权限：必须给运行 gateway 的进程上下文授予“完全磁盘访问”和“自动化”权限，且需在相同上下文先跑一次 `imsg chats --limit 1` 触发授权弹窗。"
   }
 }

@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>通道位置解析：Channel Location Parsing | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="通道位置解析是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Channel Location Parsing | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Telegram、WhatsApp、Matrix 发来的位置会变成两样东西：一行带图标的可读文字（追加到消息正文），以及一组 ctx 字段（Lat/Lon/Name/Address/Source）。最该先看“Context fields”小节，那里列出了你能在自动回复里直接引用的字段名。容易搞错的是：Telegram…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="通道位置解析：Channel Location Parsing | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="通道位置解析是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Channel Location Parsing | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Telegram、WhatsApp、Matrix 发来的位置会变成两样东西：一行带图标的可读文字（追加到消息正文），以及一组 ctx 字段（Lat/Lon/Name/Address/Source）。最该先看“Context fields”小节，那里列出了你能在自动回复里直接引用的字段名。容易搞错的是：Telegram…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/channels/location/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="通道位置解析：Channel Location Parsing | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="通道位置解析是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Channel Location Parsing | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Telegram、WhatsApp、Matrix 发来的位置会变成两样东西：一行带图标的可读文字（追加到消息正文），以及一组 ctx 字段（Lat/Lon/Name/Address/Source）。最该先看“Context fields”小节，那里列出了你能在自动回复里直接引用的字段名。容易搞错的是：Telegram…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/channels/location/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"通道位置解析：Channel Location Parsing","description":"通道位置解析是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/channels/location/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Channel Location Parsing","description":"Telegram、WhatsApp、Matrix 发来的位置会变成两样东西：一行带图标的可读文字（追加到消息正文），以及一组 ctx 字段（Lat/Lon/Name/Address/Source）。最该先看“Context fields”小节，那里列出了你能在自动回复里直接引用的字段名。容易搞错的是：Telegram…","url":"https://fivey-can-read-openclaw.pages.dev/channels/location/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Channels","item":"https://fivey-can-read-openclaw.pages.dev/channels/location/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Channels 导读</p>
-        <h1>聊天位置消息的标准化解析</h1>
-        <p class="hero-copy">这页说明OpenClaw如何将Telegram、WhatsApp、Matrix等聊天渠道的位置消息（包括固定地点、场所和实时位置）统一解析为可读文本和结构化数据。最该先看支持的渠道列表，确认你的渠道是否在内。最容易搞错的是不同渠道的字段映射，比如Telegram的场所名称和WhatsApp的评论处理方式不同。</p>
+        <h1>位置消息怎么拆成文字和结构化字段</h1>
+        <p class="hero-copy">Telegram、WhatsApp、Matrix 发来的位置会变成两样东西：一行带图标的可读文字（追加到消息正文），以及一组 ctx 字段（Lat/Lon/Name/Address/Source）。最该先看“Context fields”小节，那里列出了你能在自动回复里直接引用的字段名。容易搞错的是：Telegram 的 venue 会填 LocationName 和 LocationAddress，而 Matrix 的 geo_uri 没有 live 状态。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:channels.location.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>📍 这页不是在教你“发地图”，而是在教 OpenClaw 怎么把别人丢来的位置消息翻成人能看懂的话</h2>
-      <p>别人发来的可能只是一个定位点、一个地点名，或者一段正在移动的实时位置。</p>
-      <p>OpenClaw 做的事很像小秘书：一边把它改写成聊天里好读的文字，一边把经纬度这些信息偷偷塞进上下文，方便后面继续用。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>位置消息怎么拆成文字和结构化字段</h2>
+      <p>Telegram、WhatsApp、Matrix 发来的位置会变成两样东西：一行带图标的可读文字（追加到消息正文），以及一组 ctx 字段（Lat/Lon/Name/Address/Source）。最该先看“Context fields”小节，那里列出了你能在自动回复里直接引用的字段名。容易搞错的是：Telegram 的 venue 会填 LocationName 和 LocationAddress，而 Matrix 的 geo_uri 没有 live 状态。</p>
     </div>
     <div class="overview-meta">
-      <span>适用于 Telegram / WhatsApp / Matrix</span>
-      <span>重点是显示方式和上下文字段</span>
+      <span>原文共 4 节，先看 Start Here</span>
+      <span>路径：/channels/location</span>
       <a href="https://docs.openclaw.ai/channels/location" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

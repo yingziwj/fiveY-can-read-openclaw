@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tailscale | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Tailscale是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="OpenClaw 能自动配置 Tailscale Serve（仅 tailnet）或 Funnel（公网 HTTPS），让网关始终绑定在 loopback，由 Tailscale 处理 HTTPS 和路由。选 Serve 模式时，控制台和 WebSocket 可以免 token 直接用 Tailscale 身份头认证…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Tailscale | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Tailscale是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="OpenClaw 能自动配置 Tailscale Serve（仅 tailnet）或 Funnel（公网 HTTPS），让网关始终绑定在 loopback，由 Tailscale 处理 HTTPS 和路由。选 Serve 模式时，控制台和 WebSocket 可以免 token 直接用 Tailscale 身份头认证…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/gateway/tailscale/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tailscale | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Tailscale是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="OpenClaw 能自动配置 Tailscale Serve（仅 tailnet）或 Funnel（公网 HTTPS），让网关始终绑定在 loopback，由 Tailscale 处理 HTTPS 和路由。选 Serve 模式时，控制台和 WebSocket 可以免 token 直接用 Tailscale 身份头认证…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/gateway/tailscale/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Tailscale","description":"Tailscale是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/tailscale/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Tailscale","description":"OpenClaw 能自动配置 Tailscale Serve（仅 tailnet）或 Funnel（公网 HTTPS），让网关始终绑定在 loopback，由 Tailscale 处理 HTTPS 和路由。选 Serve 模式时，控制台和 WebSocket 可以免 token 直接用 Tailscale 身份头认证…","url":"https://fivey-can-read-openclaw.pages.dev/gateway/tailscale/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Gateway","item":"https://fivey-can-read-openclaw.pages.dev/gateway/tailscale/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Gateway 导读</p>
-        <h1>配置 Tailscale 接入网关控制面板</h1>
-        <p class="hero-copy">这页教你如何通过 Tailscale 的 Serve 或 Funnel 模式，安全地将网关控制面板和 WebSocket 端口暴露给内网或公网。配置时，首先要根据需求在 `tailscale.mode` 中选择 `serve`（仅限 Tailnet 访问）或 `funnel`（公网 HTTPS 访问）。最容易出错的地方是身份验证设置：如果使用 `serve` 模式并启用了 `gateway.auth.allowTailscale`，网关会依赖 Tailscale 的身份头进行免令牌认证，但必须确保网关主机本身是可信的，否则应禁用此选项并改用令牌或密码验证。</p>
+        <h1>Tailscale Serve/Funnel 一键配好，网关不用暴露端口</h1>
+        <p class="hero-copy">OpenClaw 能自动配置 Tailscale Serve（仅 tailnet）或 Funnel（公网 HTTPS），让网关始终绑定在 loopback，由 Tailscale 处理 HTTPS 和路由。选 Serve 模式时，控制台和 WebSocket 可以免 token 直接用 Tailscale 身份头认证，但 API 端点仍走普通共享密钥认证——注意这个信任假设，如果宿主机上可能运行不可信代码，记得关掉 allowTailscale 强制用 token。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:gateway.tailscale.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🛡 Tailscale 这页，其实是在教你：怎么给 Gateway 搭一条安全接驳车，而不是把大门直接暴露在外面</h2>
-      <p>官方想做的事很简单：Gateway 继续老老实实待在本机回环口，外面那层 HTTPS、路由和身份识别，交给 Tailscale 来接。</p>
-      <p>所以这一页最重要的不是命令本身，而是先分清三种模式：<code>serve</code>、<code>funnel</code>、<code>off</code>。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Tailscale Serve/Funnel 一键配好，网关不用暴露端口</h2>
+      <p>OpenClaw 能自动配置 Tailscale Serve（仅 tailnet）或 Funnel（公网 HTTPS），让网关始终绑定在 loopback，由 Tailscale 处理 HTTPS 和路由。选 Serve 模式时，控制台和 WebSocket 可以免 token 直接用 Tailscale 身份头认证，但 API 端点仍走普通共享密钥认证——注意这个信任假设，如果宿主机上可能运行不可信代码，记得关掉 allowTailscale 强制用 token。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想远程访问 Gateway 的人</span>
-      <span>先分清尾网专用接驳车和公开展台</span>
+      <span>原文共 11 节，先看 Start Here</span>
+      <span>路径：/gateway/tailscale</span>
       <a href="https://docs.openclaw.ai/gateway/tailscale" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

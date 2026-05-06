@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pi 集成架构：Pi Integration Architecture | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Pi 集成架构是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Pi Integration Architecture | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页讲的是 OpenClaw 通过直接调用 pi 的 createAgentSession() 将 AI 编码智能体嵌入到消息网关中，而不是作为子进程或 RPC 运行。重点看 runEmbeddedPiAgent() 的入参，尤其是 sessionKey、onBlockReply 和 provider/model…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Pi 集成架构：Pi Integration Architecture | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Pi 集成架构是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Pi Integration Architecture | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页讲的是 OpenClaw 通过直接调用 pi 的 createAgentSession() 将 AI 编码智能体嵌入到消息网关中，而不是作为子进程或 RPC 运行。重点看 runEmbeddedPiAgent() 的入参，尤其是 sessionKey、onBlockReply 和 provider/model…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/pi/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Pi 集成架构：Pi Integration Architecture | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Pi 集成架构是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Pi Integration Architecture | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页讲的是 OpenClaw 通过直接调用 pi 的 createAgentSession() 将 AI 编码智能体嵌入到消息网关中，而不是作为子进程或 RPC 运行。重点看 runEmbeddedPiAgent() 的入参，尤其是 sessionKey、onBlockReply 和 provider/model…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/pi/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Pi 集成架构：Pi Integration Architecture","description":"Pi 集成架构是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/pi/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Pi Integration Architecture","description":"这一页讲的是 OpenClaw 通过直接调用 pi 的 createAgentSession() 将 AI 编码智能体嵌入到消息网关中，而不是作为子进程或 RPC 运行。重点看 runEmbeddedPiAgent() 的入参，尤其是 sessionKey、onBlockReply 和 provider/model…","url":"https://fivey-can-read-openclaw.pages.dev/pi/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Pi","item":"https://fivey-can-read-openclaw.pages.dev/pi/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Pi 导读</p>
-        <h1>OpenClaw如何嵌入pi AI代理实现代码能力</h1>
-        <p class="hero-copy">这页讲OpenClaw直接导入pi的AgentSession来嵌入AI代理，而不是通过子进程或RPC。最该先看runEmbeddedPiAgent()的调用参数，特别是sessionId和provider配置。最容易错的是把工具文件放错位置——现在各插件的运行时文件都在自己的扩展目录里，不在统一的src/agents/tools下。</p>
+        <h1>OpenClaw 如何把 pi 智能体嵌入消息网关</h1>
+        <p class="hero-copy">这一页讲的是 OpenClaw 通过直接调用 pi 的 createAgentSession() 将 AI 编码智能体嵌入到消息网关中，而不是作为子进程或 RPC 运行。重点看 runEmbeddedPiAgent() 的入参，尤其是 sessionKey、onBlockReply 和 provider/model 的配置方式。最容易出错的是：session 文件路径和 workspace 目录必须正确，否则会话无法持久化；provider 和 model 名称必须与 pi 的 ModelRegistry 中注册的一致。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,16 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:pi.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🤖 Pi 这页，就是“OpenClaw 怎么把一个 AI 代理直接装进自己的消息机房里”</h2>
-      <p>它不是把 Pi 当黑盒 subprocess 跑，而是直接嵌进去，自己掌控会话、工具、记忆和多代理路由。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>OpenClaw 如何把 pi 智能体嵌入消息网关</h2>
+      <p>这一页讲的是 OpenClaw 通过直接调用 pi 的 createAgentSession() 将 AI 编码智能体嵌入到消息网关中，而不是作为子进程或 RPC 运行。重点看 runEmbeddedPiAgent() 的入参，尤其是 sessionKey、onBlockReply 和 provider/model 的配置方式。最容易出错的是：session 文件路径和 workspace 目录必须正确，否则会话无法持久化；provider 和 model 名称必须与 pi 的 ModelRegistry 中注册的一致。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想理解 AI 代理架构的人</span>
-      <span>先看为什么嵌入，再看依赖，再看文件结构</span>
+      <span>原文共 35 节，先看 Start Here</span>
+      <span>路径：/pi</span>
       <a href="https://docs.openclaw.ai/pi" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

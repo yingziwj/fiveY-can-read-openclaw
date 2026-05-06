@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>system 命令：system | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="system 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>system | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="所有子命令都走 Gateway RPC，必须先配好 --url 和 --token。最常用的 system event 能把自定义文本注入下一次心跳的 System 行，--mode now 可立即触发。system presence 列出当前所有在线节点，排查连接问题时优先看它。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="system 命令：system | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="system 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="system | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="所有子命令都走 Gateway RPC，必须先配好 --url 和 --token。最常用的 system event 能把自定义文本注入下一次心跳的 System 行，--mode now 可立即触发。system presence 列出当前所有在线节点，排查连接问题时优先看它。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/system/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="system 命令：system | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="system 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="system | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="所有子命令都走 Gateway RPC，必须先配好 --url 和 --token。最常用的 system event 能把自定义文本注入下一次心跳的 System 行，--mode now 可立即触发。system presence 列出当前所有在线节点，排查连接问题时优先看它。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/system/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"system 命令：system","description":"system 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/system/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"system","description":"所有子命令都走 Gateway RPC，必须先配好 --url 和 --token。最常用的 system event 能把自定义文本注入下一次心跳的 System 行，--mode now 可立即触发。system presence 列出当前所有在线节点，排查连接问题时优先看它。","url":"https://fivey-can-read-openclaw.pages.dev/cli/system/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/system/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>Gateway系统级命令：事件、心跳与状态管理</h1>
-        <p class="hero-copy">这页介绍openclaw system命令，用于通过Gateway RPC管理系统事件、控制心跳机制和查看运行状态。最该先看system event命令，它能让系统事件立即或在下个心跳周期注入提示行。最容易错的是忘记配置--url和--token等共享RPC参数，导致连接失败。</p>
+        <h1>用 CLI 控制 Gateway 心跳、事件与节点状态</h1>
+        <p class="hero-copy">所有子命令都走 Gateway RPC，必须先配好 `--url` 和 `--token`。最常用的 `system event` 能把自定义文本注入下一次心跳的 System 行，`--mode now` 可立即触发。`system presence` 列出当前所有在线节点，排查连接问题时优先看它。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.system.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>💓 <code>openclaw system</code> 像“给 Gateway 塞一张系统纸条、看心跳有没有跳、再看看屋里现在谁在场”</h2>
-      <p>这页讲的是 system-level helpers。翻成人话，就是你可以给系统主会话塞一句提醒，控制心跳开关，再看看当前有哪些节点、实例、状态线正在出现。</p>
-      <p>它不像普通聊天命令，更像总控室里的几只按钮：递纸条、查上次心跳、开关心跳、看现场值班牌。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用 CLI 控制 Gateway 心跳、事件与节点状态</h2>
+      <p>所有子命令都走 Gateway RPC，必须先配好 `--url` 和 `--token`。最常用的 `system event` 能把自定义文本注入下一次心跳的 System 行，`--mode now` 可立即触发。`system presence` 列出当前所有在线节点，排查连接问题时优先看它。</p>
     </div>
     <div class="overview-meta">
-      <span>适合要给系统注入提醒、调心跳、看 Presence 状态的人</span>
-      <span>这页最重要的是记住：system 是总控室按钮，不是发给用户看的普通消息</span>
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/cli/system</span>
       <a href="https://docs.openclaw.ai/cli/system" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

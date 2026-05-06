@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hugging Face（Inference）：Hugging Face (Inference) | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Hugging Face（Inference）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Hugging Face (Inference) | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页教你用 Hugging Face 的 Inference Providers 路由，一个 token 就能用 DeepSeek、Llama、Qwen 等模型。先创建带「Make calls to Inference Providers」权限的 fine-grained token，然后运行 openclaw o…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Hugging Face（Inference）：Hugging Face (Inference) | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Hugging Face（Inference）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Hugging Face (Inference) | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页教你用 Hugging Face 的 Inference Providers 路由，一个 token 就能用 DeepSeek、Llama、Qwen 等模型。先创建带「Make calls to Inference Providers」权限的 fine-grained token，然后运行 openclaw o…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/providers/huggingface/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hugging Face（Inference）：Hugging Face (Inference) | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Hugging Face（Inference）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Hugging Face (Inference) | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页教你用 Hugging Face 的 Inference Providers 路由，一个 token 就能用 DeepSeek、Llama、Qwen 等模型。先创建带「Make calls to Inference Providers」权限的 fine-grained token，然后运行 openclaw o…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/providers/huggingface/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Hugging Face（Inference）：Hugging Face (Inference)","description":"Hugging Face（Inference）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/providers/huggingface/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Hugging Face (Inference)","description":"这一页教你用 Hugging Face 的 Inference Providers 路由，一个 token 就能用 DeepSeek、Llama、Qwen 等模型。先创建带「Make calls to Inference Providers」权限的 fine-grained token，然后运行 openclaw o…","url":"https://fivey-can-read-openclaw.pages.dev/providers/huggingface/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Providers","item":"https://fivey-can-read-openclaw.pages.dev/providers/huggingface/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Providers 导读</p>
-        <h1>接入Hugging Face推理服务</h1>
-        <p class="hero-copy">这页教你如何配置OpenClaw使用Hugging Face的统一推理API来调用DeepSeek、Llama等模型。最关键的一步是创建并配置一个具有“调用推理服务”权限的细粒度令牌。最容易出错的地方是忘记为后台运行的Gateway进程设置环境变量，导致令牌无法生效。</p>
+        <h1>用一张 Hugging Face Token 调用几十种模型</h1>
+        <p class="hero-copy">这一页教你用 Hugging Face 的 Inference Providers 路由，一个 token 就能用 DeepSeek、Llama、Qwen 等模型。先创建带「Make calls to Inference Providers」权限的 fine-grained token，然后运行 `openclaw onboard` 选择 Hugging Face 并输入 token。最容易错的是 token 权限没勾对，API 会直接拒绝。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🤗 Hugging Face 这页像“一个大模型超市”，一张票能逛很多货架</h2><p>这页不是在介绍某个单独模型，而是在介绍 Hugging Face 的统一路由入口。你拿一张 HF token，就能通过同一个前台逛 DeepSeek、Qwen、Llama、Kimi 这些不同货架。</p><p>它最值得你看懂的地方，是“模型是怎么被发现的”，以及那个很像超市标签的后缀：<code>:fastest</code>、<code>:cheapest</code>、<code>:provider</code>。</p></div><div class="overview-meta"><span>适合想一张票接很多开源模型的人</span><span>重点是统一路由、模型发现、后缀策略</span><a href="https://docs.openclaw.ai/providers/huggingface" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:providers.huggingface.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用一张 Hugging Face Token 调用几十种模型</h2>
+      <p>这一页教你用 Hugging Face 的 Inference Providers 路由，一个 token 就能用 DeepSeek、Llama、Qwen 等模型。先创建带「Make calls to Inference Providers」权限的 fine-grained token，然后运行 `openclaw onboard` 选择 Hugging Face 并输入 token。最容易错的是 token 权限没勾对，API 会直接拒绝。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/providers/huggingface</span>
+      <a href="https://docs.openclaw.ai/providers/huggingface" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一步</p><h2>🎟 先去拿 HF token，这张票要带“能调用推理服务”的权限</h2><p>这页不是让你随便拿个 token 来试，而是要拿对那种带 Inference Providers 调用权限的票。</p></div><div class="home-grid"><article class="home-card"><span class="home-card-index">🧾</span><h2>fine-grained token</h2><p>像一张可以细分权限的会员卡，不是随便的通票。</p></article><article class="home-card"><span class="home-card-index">🛠</span><h2><code>openclaw onboard --auth-choice huggingface-api-key</code></h2><p>像在前台登记：“我要进 Hugging Face 模型超市，这是我的会员卡。”</p></article><article class="home-card"><span class="home-card-index">📦</span><h2><code>HUGGINGFACE_HUB_TOKEN</code> / <code>HF_TOKEN</code></h2><p>这两个像同一张会员卡的两个常见标签。</p></article><article class="home-card"><span class="home-card-index">🎈</span><h2>一句话</h2><p>先拿对票，后面超市货架才会真的向你打开。</p></article></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第二步</p><h2>🛒 模型发现像“进超市后先看今天上架了哪些货”</h2><p>官方这页花了很多字讲 <code>GET /v1/models</code>。翻成人话，其实就是商品目录刷新。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label"><code>GET https://router.huggingface.co/v1/models</code></div><p>像 OpenClaw 先去看超市今天货架上到底摆了什么，而不是盲猜。</p></div><div class="source-card"><div class="story-card-label">为什么 onboarding 里会有下拉框</div><p>因为它已经先去拿了一次货架清单，所以能让你直接选默认商品。</p></div><div class="source-card"><div class="story-card-label">请求失败怎么办</div><p>像今天超市目录机坏了，那就先用内建的小目录，不至于完全摸黑。</p></div><div class="source-card"><div class="story-card-label">🎈 一句话</div><p>HF 的模型列表不是写死的，像会刷新的商品货架。</p></div></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第三步</p><h2>🏷 <code>:fastest</code>、<code>:cheapest</code>、<code>:provider</code> 像“买同一件货时的购物策略标签”</h2><p>这是这页最容易看晕、但其实最好玩的地方。</p></div><div class="story-grid"><div class="story-card"><div class="story-card-label"><code>:fastest</code></div><p>像你告诉超市：“我不挑哪家仓库发货，反正给我最快送到。”</p></div><div class="story-card"><div class="story-card-label"><code>:cheapest</code></div><p>像说：“同样这件货，谁家最便宜就从谁家拿。”</p></div><div class="story-card"><div class="story-card-label"><code>:provider</code></div><p>像你点名：“这件货我就要这家供货商发，别帮我自动挑。”</p></div><div class="source-card"><div class="story-card-label">📌 为什么官方说 provider choice 会被锁住</div><p>因为你已经贴了 <code>:fastest</code> 或 <code>:cheapest</code>，那就等于你把“具体哪家发货”这件事交给路由器决定了。</p></div></div></section>

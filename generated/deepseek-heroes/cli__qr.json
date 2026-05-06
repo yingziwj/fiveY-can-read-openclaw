@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:53:51.757Z",
+  "generatedAt": "2026-05-06T15:08:47.667Z",
   "pathname": "/cli/qr",
   "title": "qr",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "生成移动设备配对二维码与设置码",
-    "heroSummary": "此命令基于当前网关配置生成用于移动设备配对的二维码和设置码。使用前需确认网关认证模式（token或password）已正确设置，否则可能因模式冲突导致生成失败。特别注意，若网关配置了远程URL或使用Tailscale Serve/Funnel，需使用--remote选项来确保生成正确的配对信息。"
+    "heroTitle": "手机配对二维码怎么生成？先搞清 token 和 password 只能二选一",
+    "heroSummary": "`openclaw qr` 从当前网关配置生成手机配对二维码和设置码。最容易踩的坑是 `--token` 和 `--password` 不能同时用，且当网关同时配置了 token 和 password 且未显式指定模式时，设置码生成会直接失败。如果只需设置码不要二维码，加 `--setup-code-only`。"
   }
 }

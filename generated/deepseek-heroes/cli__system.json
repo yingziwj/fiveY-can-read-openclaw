@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:54:01.521Z",
+  "generatedAt": "2026-05-06T15:08:52.749Z",
   "pathname": "/cli/system",
   "title": "system",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Gateway系统级命令：事件、心跳与状态管理",
-    "heroSummary": "这页介绍openclaw system命令，用于通过Gateway RPC管理系统事件、控制心跳机制和查看运行状态。最该先看system event命令，它能让系统事件立即或在下个心跳周期注入提示行。最容易错的是忘记配置--url和--token等共享RPC参数，导致连接失败。"
+    "heroTitle": "用 CLI 控制 Gateway 心跳、事件与节点状态",
+    "heroSummary": "所有子命令都走 Gateway RPC，必须先配好 `--url` 和 `--token`。最常用的 `system event` 能把自定义文本注入下一次心跳的 System 行，`--mode now` 可立即触发。`system presence` 列出当前所有在线节点，排查连接问题时优先看它。"
   }
 }

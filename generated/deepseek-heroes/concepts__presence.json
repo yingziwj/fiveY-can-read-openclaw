@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:48:10.146Z",
+  "generatedAt": "2026-05-06T15:05:16.108Z",
   "pathname": "/concepts/presence",
   "title": "Presence",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw Presence：网关与客户端连接状态的轻量视图",
-    "heroSummary": "这页解释OpenClaw的Presence机制，它负责追踪网关自身和所有连接客户端的实时状态，主要用于在macOS应用的Instances标签页中展示。阅读时先关注Presence包含哪些字段（如instanceId、host、mode），这些字段决定了状态信息的完整性和准确性。最容易出错的地方是instanceId字段——虽然可选但强烈建议设置，它用于稳定标识客户端身份，如果缺失可能导致状态追踪混乱。"
+    "heroTitle": "Presence 不是实时在线，而是“谁连过、现在大概在哪”",
+    "heroSummary": "Presence 是 OpenClaw 的轻量、尽力而为的可见性视图，主要用来渲染 macOS 的 Instances 标签页。它显示 Gateway 自身和已连接的客户端（mac app、WebChat、CLI 等），但请注意：这是“尽力而为”的，不是精确的在线状态。最容易搞错的是把 presence 当实时心跳用——它不会保证每个连接都实时更新，字段如 lastInputSeconds 可能缺失。"
   }
 }

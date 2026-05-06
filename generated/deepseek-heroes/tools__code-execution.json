@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:50:33.764Z",
+  "generatedAt": "2026-05-06T15:06:39.523Z",
   "pathname": "/tools/code-execution",
   "title": "Code Execution",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "远程Python代码执行工具配置与使用",
-    "heroSummary": "这页讲解如何在xAI的远程沙箱中运行Python代码进行数据分析，与本地exec工具区分使用场景。配置时需要提供xAI API密钥，最容易错在误用它访问本地文件或设备。使用时应明确分析意图，将完整请求和数据一次性发送给agent。"
+    "heroTitle": "在 xAI 远程沙箱里跑 Python，别跟本地 exec 搞混",
+    "heroSummary": "这页讲的是 `code_execution` 工具，它让你在 xAI 的远程沙箱里执行 Python 代码，适合做计算、统计、图表分析，尤其适合搭配 `x_search` 或 `web_search` 处理搜索回来的数据。最容易搞错的是：它跟本地 `exec` 完全不同——`exec` 跑在你的机器上，能访问本地文件和 shell；`code_execution` 跑在 xAI 的沙箱里，不能碰你本地的任何东西。配置时记得在 `plugins.entries.xai.config.codeExecution` 里设好 `enabled: true` 和模型名，缺了 API key 或没开开关，工具就用不了。"
   }
 }

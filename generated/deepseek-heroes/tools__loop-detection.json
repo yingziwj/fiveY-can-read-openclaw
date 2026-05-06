@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:50:50.761Z",
+  "generatedAt": "2026-05-06T15:06:50.669Z",
   "pathname": "/tools/loop-detection",
   "title": "Tool-loop detection",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "工具循环检测配置指南",
-    "heroSummary": "这页教你如何配置OpenClaw的循环检测功能，防止AI代理陷入重复调用工具的无限循环。先看配置块中的默认设置，了解每个字段的作用和默认值。最容易出错的地方是阈值设置顺序，必须保持warningThreshold小于criticalThreshold小于globalCircuitBreakerThreshold，否则检测逻辑会失效。"
+    "heroTitle": "防工具循环死锁：默认关闭，按需开启",
+    "heroSummary": "OpenClaw 默认不拦截重复工具调用，需手动开启。先配全局开关和阈值（warning < critical < circuit breaker），再按需为特定 agent 覆盖。最容易踩的坑：阈值设太严会误杀合法重复调用（如轮询），建议从默认值开始，遇误报再调高阈值或关闭特定检测器。"
   }
 }

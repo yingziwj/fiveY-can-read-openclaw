@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:47:16.278Z",
+  "generatedAt": "2026-05-06T15:04:42.636Z",
   "pathname": "/channels/group-messages",
   "title": "Group Messages",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "配置 WhatsApp 群组消息的触发与响应",
-    "heroSummary": "这页说明如何让 Clawd 在 WhatsApp 群聊中工作，包括设置触发方式（被@才响应或总是响应）和群组会话管理。配置时需注意 `mentionPatterns` 正则表达式和 `groupPolicy` 权限控制，避免群组消息被错误拦截或触发。"
+    "heroTitle": "让 Clawd 在 WhatsApp 群里只被 @ 时才回应，且不干扰私聊",
+    "heroSummary": "配置 `channels.whatsapp.groups` 和 `agents.list[].groupChat.mentionPatterns` 来定义触发规则；默认 `mention` 模式需要 @ 或匹配正则才唤醒。注意 `channels.whatsapp.groupPolicy` 默认是 `allowlist`，不添加发送者就会静默忽略所有群消息。"
   }
 }

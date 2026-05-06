@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>代理工作区：Agent Workspace | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="代理工作区是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Agent Workspace | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Workspace 是 agent 的默认工作目录和记忆空间，但默认没有隔离能力——绝对路径仍可访问宿主机，需要隔离请配 sandbox。先搞清 workspace 和 ~/.openclaw/ 的分工：前者放行为文件（AGENTS.md、SOUL.md 等），后者放配置、凭据和会话。最容易踩的坑是保留多个 work…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="代理工作区：Agent Workspace | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="代理工作区是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Agent Workspace | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Workspace 是 agent 的默认工作目录和记忆空间，但默认没有隔离能力——绝对路径仍可访问宿主机，需要隔离请配 sandbox。先搞清 workspace 和 ~/.openclaw/ 的分工：前者放行为文件（AGENTS.md、SOUL.md 等），后者放配置、凭据和会话。最容易踩的坑是保留多个 work…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/agent-workspace/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="代理工作区：Agent Workspace | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="代理工作区是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Agent Workspace | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Workspace 是 agent 的默认工作目录和记忆空间，但默认没有隔离能力——绝对路径仍可访问宿主机，需要隔离请配 sandbox。先搞清 workspace 和 ~/.openclaw/ 的分工：前者放行为文件（AGENTS.md、SOUL.md 等），后者放配置、凭据和会话。最容易踩的坑是保留多个 work…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/agent-workspace/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"代理工作区：Agent Workspace","description":"代理工作区是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/agent-workspace/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Agent Workspace","description":"Workspace 是 agent 的默认工作目录和记忆空间，但默认没有隔离能力——绝对路径仍可访问宿主机，需要隔离请配 sandbox。先搞清 workspace 和 ~/.openclaw/ 的分工：前者放行为文件（AGENTS.md、SOUL.md 等），后者放配置、凭据和会话。最容易踩的坑是保留多个 work…","url":"https://fivey-can-read-openclaw.pages.dev/concepts/agent-workspace/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/agent-workspace/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>Agent 工作空间详解：文件存放位置与安全须知</h1>
-        <p class="hero-copy">这页讲的是 Agent 用来存放运行文件（如 AGENTS.md、SOUL.md）的工作目录，它默认位于 ~/.openclaw/workspace，是文件工具和上下文的唯一工作目录。最该先看的是“默认位置”部分，了解如何设置和覆盖工作空间路径。最容易搞错的是误以为工作空间是硬隔离的沙盒——它只是默认工作目录，工具仍可通过绝对路径访问主机其他位置，除非启用 sandbox 配置。</p>
+        <h1>Agent 的工作目录：不是沙箱，也不是配置文件夹</h1>
+        <p class="hero-copy">Workspace 是 agent 的默认工作目录和记忆空间，但默认没有隔离能力——绝对路径仍可访问宿主机，需要隔离请配 sandbox。先搞清 workspace 和 `~/.openclaw/` 的分工：前者放行为文件（AGENTS.md、SOUL.md 等），后者放配置、凭据和会话。最容易踩的坑是保留多个 workspace 导致状态漂移，用 `openclaw doctor` 检查。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.agent-workspace.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🏡 <code>Agent Workspace</code> 像“小工人的家和书桌”</h2>
-      <p>OpenClaw 不是把东西乱塞在天上。它给小工人一个真正住的地方，让它平时读文件、记东西、找线索，都先从这里出发。</p>
-      <p>这页讲的，就是这个家该怎么摆、哪些东西属于家里、哪些东西根本不该塞进来。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Agent 的工作目录：不是沙箱，也不是配置文件夹</h2>
+      <p>Workspace 是 agent 的默认工作目录和记忆空间，但默认没有隔离能力——绝对路径仍可访问宿主机，需要隔离请配 sandbox。先搞清 workspace 和 `~/.openclaw/` 的分工：前者放行为文件（AGENTS.md、SOUL.md 等），后者放配置、凭据和会话。最容易踩的坑是保留多个 workspace 导致状态漂移，用 `openclaw doctor` 检查。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想搞懂工作区到底放什么、不放什么的人</span>
-      <span>这页最重要的是记住：工作区是家，不是保险箱；但它也要尽量私密</span>
+      <span>原文共 13 节，先看 Start Here</span>
+      <span>路径：/concepts/agent-workspace</span>
       <a href="https://docs.openclaw.ai/concepts/agent-workspace" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

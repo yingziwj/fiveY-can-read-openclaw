@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>工具和插件：Tools and Plugins | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="工具和插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Tools and Plugins | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Agent 除了生成文本之外的一切行为——读文件、跑命令、浏览网页、发消息——都通过工具完成。先分清三层结构：工具是 agent 调用的函数，技能是教它何时用、怎么用的 Markdown 指令，插件是把工具、技能、通道等打包在一起的发布单元。配置时注意 deny 优先级高于 allow，且使用非默认的图像/音乐/视频…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="工具和插件：Tools and Plugins | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="工具和插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Tools and Plugins | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Agent 除了生成文本之外的一切行为——读文件、跑命令、浏览网页、发消息——都通过工具完成。先分清三层结构：工具是 agent 调用的函数，技能是教它何时用、怎么用的 Markdown 指令，插件是把工具、技能、通道等打包在一起的发布单元。配置时注意 deny 优先级高于 allow，且使用非默认的图像/音乐/视频…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/tools/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="工具和插件：Tools and Plugins | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="工具和插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Tools and Plugins | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Agent 除了生成文本之外的一切行为——读文件、跑命令、浏览网页、发消息——都通过工具完成。先分清三层结构：工具是 agent 调用的函数，技能是教它何时用、怎么用的 Markdown 指令，插件是把工具、技能、通道等打包在一起的发布单元。配置时注意 deny 优先级高于 allow，且使用非默认的图像/音乐/视频…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/tools/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"工具和插件：Tools and Plugins","description":"工具和插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/tools/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Tools and Plugins","description":"Agent 除了生成文本之外的一切行为——读文件、跑命令、浏览网页、发消息——都通过工具完成。先分清三层结构：工具是 agent 调用的函数，技能是教它何时用、怎么用的 Markdown 指令，插件是把工具、技能、通道等打包在一起的发布单元。配置时注意 deny 优先级高于 allow，且使用非默认的图像/音乐/视频…","url":"https://fivey-can-read-openclaw.pages.dev/tools/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://fivey-can-read-openclaw.pages.dev/tools/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Tools 导读</p>
-        <h1>工具与插件：让智能体执行文本之外的操作</h1>
-        <p class="hero-copy">本页介绍智能体如何通过工具执行文件读写、命令运行、网页浏览等操作，以及工具、技能、插件三者的协作关系。建议先了解内置工具列表，它们无需安装即可使用。配置工具允许/拒绝列表时，需注意拒绝规则优先级高于允许规则。</p>
+        <h1>Agent 的双手：工具、技能与插件</h1>
+        <p class="hero-copy">Agent 除了生成文本之外的一切行为——读文件、跑命令、浏览网页、发消息——都通过工具完成。先分清三层结构：工具是 agent 调用的函数，技能是教它何时用、怎么用的 Markdown 指令，插件是把工具、技能、通道等打包在一起的发布单元。配置时注意 deny 优先级高于 allow，且使用非默认的图像/音乐/视频提供方前必须先配好对应的认证和 API 密钥。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,18 +4324,18 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:tools.index.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>OpenClaw 的工具，到底是什么？</h2>
-      <p>把 OpenClaw 想成一个很聪明、但没有手脚的小助手。它能不能真的帮你干活，不取决于它会不会聊天，而取决于它有没有“工具”。工具就是它的手、脚、眼睛、耳朵。没有工具，它最多只能说“我知道”；有了工具，它才能真的去读文件、改代码、开浏览器、搜索网页、发消息、定时做事。</p>
-      <p>所以这页不是在列一堆抽象名词，而是在告诉你：OpenClaw 到底靠什么从“会回答问题”变成“真的能做事情”。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Agent 的双手：工具、技能与插件</h2>
+      <p>Agent 除了生成文本之外的一切行为——读文件、跑命令、浏览网页、发消息——都通过工具完成。先分清三层结构：工具是 agent 调用的函数，技能是教它何时用、怎么用的 Markdown 指令，插件是把工具、技能、通道等打包在一起的发布单元。配置时注意 deny 优先级高于 allow，且使用非默认的图像/音乐/视频提供方前必须先配好对应的认证和 API 密钥。</p>
     </div>
     <div class="overview-meta">
-      <span>适合第一次读 OpenClaw 的人</span>
-      <span>这页建议先读完再点具体工具页</span>
-      <a href="https://docs.openclaw.ai/tools" target="_blank" rel="noreferrer">查看官方原文</a>
+      <span>原文共 8 节，先看 Start Here</span>
+      <span>路径：/tools/index</span>
+      <a href="https://docs.openclaw.ai/tools/index" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>
 </section>

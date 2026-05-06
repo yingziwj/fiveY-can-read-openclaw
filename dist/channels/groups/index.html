@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>群组：Groups | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="群组是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Groups | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="群聊默认是白名单模式，只有被允许的人通过@提及才能触发回复。注意区分“谁可以触发”和“谁的消息能被引用进上下文”——后者目前按渠道各有不同，未来会收紧。如果想把个人DM和公开群聊隔离到不同执行环境，单agent配合sandbox的non-main模式就能做到。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="群组：Groups | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="群组是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Groups | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="群聊默认是白名单模式，只有被允许的人通过@提及才能触发回复。注意区分“谁可以触发”和“谁的消息能被引用进上下文”——后者目前按渠道各有不同，未来会收紧。如果想把个人DM和公开群聊隔离到不同执行环境，单agent配合sandbox的non-main模式就能做到。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/channels/groups/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="群组：Groups | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="群组是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Groups | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="群聊默认是白名单模式，只有被允许的人通过@提及才能触发回复。注意区分“谁可以触发”和“谁的消息能被引用进上下文”——后者目前按渠道各有不同，未来会收紧。如果想把个人DM和公开群聊隔离到不同执行环境，单agent配合sandbox的non-main模式就能做到。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/channels/groups/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"群组：Groups","description":"群组是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/channels/groups/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Groups","description":"群聊默认是白名单模式，只有被允许的人通过@提及才能触发回复。注意区分“谁可以触发”和“谁的消息能被引用进上下文”——后者目前按渠道各有不同，未来会收紧。如果想把个人DM和公开群聊隔离到不同执行环境，单agent配合sandbox的non-main模式就能做到。","url":"https://fivey-can-read-openclaw.pages.dev/channels/groups/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Channels","item":"https://fivey-can-read-openclaw.pages.dev/channels/groups/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Channels 导读</p>
-        <h1>群聊配置与安全控制</h1>
-        <p class="hero-copy">这页详细说明OpenClaw在Discord、WhatsApp等平台处理群聊消息的权限设置和会话管理。你需要先配置groupPolicy和allowlist来决定哪些群组和成员能触发AI响应。最容易搞错的是群聊会话使用独立的session key，与私聊会话完全隔离，这会影响工具权限和沙箱执行环境。</p>
+        <h1>群聊权限与触发：谁能在群里叫醒机器人</h1>
+        <p class="hero-copy">群聊默认是白名单模式，只有被允许的人通过@提及才能触发回复。注意区分“谁可以触发”和“谁的消息能被引用进上下文”——后者目前按渠道各有不同，未来会收紧。如果想把个人DM和公开群聊隔离到不同执行环境，单agent配合sandbox的non-main模式就能做到。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:channels.groups.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>👥 Groups 这页，其实是在教你“群聊不是随便进门就能把 OpenClaw 叫醒，它更像一间有人看门的大厅”</h2>
-      <p>新手最容易误会的一点是：只要 OpenClaw 在群里，它就会对所有话自动开口。不是。默认它对群聊很谨慎，通常既要过门禁，还要被点名。</p>
-      <p>所以这页真正讲的是三件事：群能不能进、谁能触发、没有被点名时消息会被怎么处理。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>群聊权限与触发：谁能在群里叫醒机器人</h2>
+      <p>群聊默认是白名单模式，只有被允许的人通过@提及才能触发回复。注意区分“谁可以触发”和“谁的消息能被引用进上下文”——后者目前按渠道各有不同，未来会收紧。如果想把个人DM和公开群聊隔离到不同执行环境，单agent配合sandbox的non-main模式就能做到。</p>
     </div>
     <div class="overview-meta">
-      <span>适合理解群聊默认规则</span>
-      <span>重点是 groupPolicy、allowlist、requireMention</span>
+      <span>原文共 14 节，先看 Start Here</span>
+      <span>路径：/channels/groups</span>
       <a href="https://docs.openclaw.ai/channels/groups" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

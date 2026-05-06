@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>macOS 应用：macOS App | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="OpenClaw macOS Companion (menu bar + gateway broker)">
+  <title>macOS App | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这页讲的是 OpenClaw macOS 桌面应用，它不是一个独立网关，而是菜单栏里的权限管家 + 网关连接器。先搞懂“本地模式”和“远程模式”的区别：本地模式附到本地网关，远程模式通过 SSH/Tailscale 连远程网关，且远程模式会启动 launchd 节点服务。最容易踩坑的是 TCC 权限——麦克风、屏幕录…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="macOS 应用：macOS App | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="OpenClaw macOS Companion (menu bar + gateway broker)">
+  <meta property="og:title" content="macOS App | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这页讲的是 OpenClaw macOS 桌面应用，它不是一个独立网关，而是菜单栏里的权限管家 + 网关连接器。先搞懂“本地模式”和“远程模式”的区别：本地模式附到本地网关，远程模式通过 SSH/Tailscale 连远程网关，且远程模式会启动 launchd 节点服务。最容易踩坑的是 TCC 权限——麦克风、屏幕录…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/platforms/macos/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="macOS 应用：macOS App | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="OpenClaw macOS Companion (menu bar + gateway broker)">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="macOS App | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这页讲的是 OpenClaw macOS 桌面应用，它不是一个独立网关，而是菜单栏里的权限管家 + 网关连接器。先搞懂“本地模式”和“远程模式”的区别：本地模式附到本地网关，远程模式通过 SSH/Tailscale 连远程网关，且远程模式会启动 launchd 节点服务。最容易踩坑的是 TCC 权限——麦克风、屏幕录…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/platforms/macos/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"macOS 应用：macOS App","description":"OpenClaw macOS Companion (menu bar + gateway broker)","url":"https://fivey-can-read-openclaw.pages.dev/platforms/macos/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"macOS App","description":"这页讲的是 OpenClaw macOS 桌面应用，它不是一个独立网关，而是菜单栏里的权限管家 + 网关连接器。先搞懂“本地模式”和“远程模式”的区别：本地模式附到本地网关，远程模式通过 SSH/Tailscale 连远程网关，且远程模式会启动 launchd 节点服务。最容易踩坑的是 TCC 权限——麦克风、屏幕录…","url":"https://fivey-can-read-openclaw.pages.dev/platforms/macos/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Platforms","item":"https://fivey-can-read-openclaw.pages.dev/platforms/macos/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Platforms 导读</p>
-        <h1>macOS 菜单栏应用：权限管理与网关连接</h1>
-        <p class="hero-copy">这页讲的是 OpenClaw 在 macOS 上的菜单栏应用，它负责处理系统权限（如通知、辅助功能）并连接本地或远程网关。最该先看的是应用在“本地”和“远程”两种模式下如何启动网关服务，这决定了你的 Mac 是否能被远程访问。最容易搞错的是 LaunchAgent 的标签名，使用 `--profile` 参数时标签会变成 `ai.openclaw.&lt;profile&gt;`，手动操作时若写错会导致服务无法控制。</p>
+        <h1>macOS 菜单栏伴侣：权限、网关、节点能力一把抓</h1>
+        <p class="hero-copy">这页讲的是 OpenClaw macOS 桌面应用，它不是一个独立网关，而是菜单栏里的权限管家 + 网关连接器。先搞懂“本地模式”和“远程模式”的区别：本地模式附到本地网关，远程模式通过 SSH/Tailscale 连远程网关，且远程模式会启动 launchd 节点服务。最容易踩坑的是 TCC 权限——麦克风、屏幕录制、辅助功能这些必须通过这个应用授权，否则节点能力（如 screen.record、system.run）会静默失败。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🍎 macOS 这页，其实是在讲“OpenClaw 在 Mac 上不只是一个窗口，而是一位有权限、有菜单栏、有 node 能力的总助手”</h2><p>它既能管理本地 Gateway，也能连远程 Gateway，还能把 Mac 自己的能力暴露给 agent。</p></div><div class="overview-meta"><span>macOS 伴侣 app</span><span>重点是 menu bar、Gateway broker、local/remote 两种模式</span><a href="https://docs.openclaw.ai/platforms/macos" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:platforms.macos.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>macOS 菜单栏伴侣：权限、网关、节点能力一把抓</h2>
+      <p>这页讲的是 OpenClaw macOS 桌面应用，它不是一个独立网关，而是菜单栏里的权限管家 + 网关连接器。先搞懂“本地模式”和“远程模式”的区别：本地模式附到本地网关，远程模式通过 SSH/Tailscale 连远程网关，且远程模式会启动 launchd 节点服务。最容易踩坑的是 TCC 权限——麦克风、屏幕录制、辅助功能这些必须通过这个应用授权，否则节点能力（如 screen.record、system.run）会静默失败。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 15 节，先看 Start Here</span>
+      <span>路径：/platforms/macos</span>
+      <a href="https://docs.openclaw.ai/platforms/macos" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>🧩 它最像“菜单栏总控台 + 权限代理 + Mac 节点外设”三合一</h2><p>不是单纯聊天窗，也不是只会开 Gateway 的启动器。</p></div><div class="home-grid"><article class="home-card"><span class="home-card-index">🔔</span><h2>菜单栏状态</h2><p>能看通知、健康、工作状态。</p></article><article class="home-card"><span class="home-card-index">🔐</span><h2>TCC 权限拥有者</h2><p>屏幕录制、麦克风、自动化这些 Mac 权限都得由它来扛。</p></article><article class="home-card"><span class="home-card-index">🤖</span><h2>Mac 节点能力</h2><p>Canvas、Camera、system.run 这些 Mac 特有能力都能暴露给 agent。</p></article><article class="home-card"><span class="home-card-index">🌉</span><h2>Gateway broker</h2><p>本地模式下管 launchd，远程模式下管 SSH / Tailscale 这类连接桥。</p></article></div></section>
 
 

@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OpenResponses API | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="OpenResponses API是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="默认关闭，要先在配置里打开 gateway.http.endpoints.responses.enabled。认证方式与 OpenAI Chat Completions 一致，但注意 token 和 password 模式下会忽略 x-openclaw-scopes，强制恢复完整操作员权限。请求默认无状态，传 use…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="OpenResponses API | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="OpenResponses API是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="默认关闭，要先在配置里打开 gateway.http.endpoints.responses.enabled。认证方式与 OpenAI Chat Completions 一致，但注意 token 和 password 模式下会忽略 x-openclaw-scopes，强制恢复完整操作员权限。请求默认无状态，传 use…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/gateway/openresponses-http-api/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="OpenResponses API | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="OpenResponses API是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="默认关闭，要先在配置里打开 gateway.http.endpoints.responses.enabled。认证方式与 OpenAI Chat Completions 一致，但注意 token 和 password 模式下会忽略 x-openclaw-scopes，强制恢复完整操作员权限。请求默认无状态，传 use…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/gateway/openresponses-http-api/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"OpenResponses API","description":"OpenResponses API是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/openresponses-http-api/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"OpenResponses API","description":"默认关闭，要先在配置里打开 gateway.http.endpoints.responses.enabled。认证方式与 OpenAI Chat Completions 一致，但注意 token 和 password 模式下会忽略 x-openclaw-scopes，强制恢复完整操作员权限。请求默认无状态，传 use…","url":"https://fivey-can-read-openclaw.pages.dev/gateway/openresponses-http-api/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Gateway","item":"https://fivey-can-read-openclaw.pages.dev/gateway/openresponses-http-api/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Gateway 导读</p>
-        <h1>配置 OpenResponses API 端点</h1>
-        <p class="hero-copy">这页教你如何启用并配置 Gateway 的 OpenResponses 兼容端点，默认是关闭的，需要先在配置中开启。配置时最容易搞错的是身份验证模式：共享密钥模式会忽略 x-openclaw-scopes 头，而可信代理模式则会尊重它，这直接影响操作权限。</p>
+        <h1>在 Gateway 上开一个 OpenResponses 兼容接口</h1>
+        <p class="hero-copy">默认关闭，要先在配置里打开 `gateway.http.endpoints.responses.enabled`。认证方式与 OpenAI Chat Completions 一致，但注意 `token` 和 `password` 模式下会忽略 `x-openclaw-scopes`，强制恢复完整操作员权限。请求默认无状态，传 `user` 字段才能让多次调用共享会话。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,8 +4324,21 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>📦 OpenResponses HTTP API 这页，其实是在讲“把 Gateway 再装成一个 Responses 风格入口”</h2><p>它默认每次调用像新开一轮会话，但你也能用 <code>user</code> 让它稳定复用会话键。</p></div><div class="overview-meta"><span>Responses 兼容门面</span><span>重点是 item-based input、session behavior、同样的 operator 边界</span><a href="https://docs.openclaw.ai/gateway/openresponses-http-api" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-
+      <!-- handcrafted-source:gateway.openresponses-http-api.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>在 Gateway 上开一个 OpenResponses 兼容接口</h2>
+      <p>默认关闭，要先在配置里打开 `gateway.http.endpoints.responses.enabled`。认证方式与 OpenAI Chat Completions 一致，但注意 `token` 和 `password` 模式下会忽略 `x-openclaw-scopes`，强制恢复完整操作员权限。请求默认无状态，传 `user` 字段才能让多次调用共享会话。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 15 节，先看 Start Here</span>
+      <span>路径：/gateway/openresponses-http-api</span>
+      <a href="https://docs.openclaw.ai/gateway/openresponses-http-api" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
       <footer class="page-footer">
         <div>

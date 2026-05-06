@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discord 通道：Discord | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Discord 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Discord | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这页教你把 Discord Bot 接入 OpenClaw，核心三步：创建应用、启用 Message Content Intent、配对。最容易漏的是没开 Message Content Intent 导致收不到消息；另外群组 DM 默认关闭，需要手动开启。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Discord 通道：Discord | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Discord 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Discord | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这页教你把 Discord Bot 接入 OpenClaw，核心三步：创建应用、启用 Message Content Intent、配对。最容易漏的是没开 Message Content Intent 导致收不到消息；另外群组 DM 默认关闭，需要手动开启。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/channels/discord/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Discord 通道：Discord | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Discord 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Discord | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这页教你把 Discord Bot 接入 OpenClaw，核心三步：创建应用、启用 Message Content Intent、配对。最容易漏的是没开 Message Content Intent 导致收不到消息；另外群组 DM 默认关闭，需要手动开启。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/channels/discord/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Discord 通道：Discord","description":"Discord 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/channels/discord/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Discord","description":"这页教你把 Discord Bot 接入 OpenClaw，核心三步：创建应用、启用 Message Content Intent、配对。最容易漏的是没开 Message Content Intent 导致收不到消息；另外群组 DM 默认关闭，需要手动开启。","url":"https://fivey-can-read-openclaw.pages.dev/channels/discord/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Channels","item":"https://fivey-can-read-openclaw.pages.dev/channels/discord/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Channels 导读</p>
-        <h1>Discord 频道接入配置与运行模型</h1>
-        <p class="hero-copy">这页详细说明了如何将 Discord 机器人接入 OpenClaw，并解释了其消息路由和会话隔离机制。配置时务必在 Discord 开发者门户中启用 Message Content Intent 等特权网关意图，否则机器人无法读取消息内容。在服务器（Guild）中，默认需要 @提及机器人才能触发响应，若想取消此限制，需在配置中明确设置。</p>
+        <h1>Discord 接入：先拿 Token，再配频道，最后决定谁 @ 你</h1>
+        <p class="hero-copy">这页教你把 Discord Bot 接入 OpenClaw，核心三步：创建应用、启用 Message Content Intent、配对。最容易漏的是没开 Message Content Intent 导致收不到消息；另外群组 DM 默认关闭，需要手动开启。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:channels.discord.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🐙 Discord 通道，其实就是给 OpenClaw 发一张“能进服务器上班”的工牌</h2>
-      <p>这页看起来在讲 token、intents、invite URL 和 guild，其实是在讲一件很具体的事：怎样把 OpenClaw 接进 Discord，让它能在私聊里回话，也能在服务器频道里工作。</p>
-      <p>第一次看这页，别把它当说明书。把它当成“先造机器人、再把它请进服务器、最后给它定门禁”的小剧情，就好懂多了。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Discord 接入：先拿 Token，再配频道，最后决定谁 @ 你</h2>
+      <p>这页教你把 Discord Bot 接入 OpenClaw，核心三步：创建应用、启用 Message Content Intent、配对。最容易漏的是没开 Message Content Intent 导致收不到消息；另外群组 DM 默认关闭，需要手动开启。</p>
     </div>
     <div class="overview-meta">
-      <span>适合第一次把 OpenClaw 接入 Discord 的人</span>
-      <span>这页最容易卡住的是 token、权限和频道门禁</span>
+      <span>原文共 19 节，先看 Start Here</span>
+      <span>路径：/channels/discord</span>
       <a href="https://docs.openclaw.ai/channels/discord" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

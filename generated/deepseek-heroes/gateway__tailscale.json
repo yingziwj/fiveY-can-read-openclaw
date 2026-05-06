@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:05.151Z",
+  "generatedAt": "2026-05-06T15:07:25.537Z",
   "pathname": "/gateway/tailscale",
   "title": "Tailscale",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "配置 Tailscale 接入网关控制面板",
-    "heroSummary": "这页教你如何通过 Tailscale 的 Serve 或 Funnel 模式，安全地将网关控制面板和 WebSocket 端口暴露给内网或公网。配置时，首先要根据需求在 `tailscale.mode` 中选择 `serve`（仅限 Tailnet 访问）或 `funnel`（公网 HTTPS 访问）。最容易出错的地方是身份验证设置：如果使用 `serve` 模式并启用了 `gateway.auth.allowTailscale`，网关会依赖 Tailscale 的身份头进行免令牌认证，但必须确保网关主机本身是可信的，否则应禁用此选项并改用令牌或密码验证。"
+    "heroTitle": "Tailscale Serve/Funnel 一键配好，网关不用暴露端口",
+    "heroSummary": "OpenClaw 能自动配置 Tailscale Serve（仅 tailnet）或 Funnel（公网 HTTPS），让网关始终绑定在 loopback，由 Tailscale 处理 HTTPS 和路由。选 Serve 模式时，控制台和 WebSocket 可以免 token 直接用 Tailscale 身份头认证，但 API 端点仍走普通共享密钥认证——注意这个信任假设，如果宿主机上可能运行不可信代码，记得关掉 allowTailscale 强制用 token。"
   }
 }

@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>网关锁：Gateway Lock | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="网关锁是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Gateway Lock | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="网关启动时立刻绑定 WebSocket 端口（默认 18789），端口被占就报错退出，不用锁文件，进程挂了系统自动释放。最容易踩的坑是 macOS 应用有 PID 守卫但运行时锁靠端口绑定，两个机制别搞混。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="网关锁：Gateway Lock | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="网关锁是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Gateway Lock | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="网关启动时立刻绑定 WebSocket 端口（默认 18789），端口被占就报错退出，不用锁文件，进程挂了系统自动释放。最容易踩的坑是 macOS 应用有 PID 守卫但运行时锁靠端口绑定，两个机制别搞混。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/gateway/gateway-lock/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="网关锁：Gateway Lock | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="网关锁是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Gateway Lock | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="网关启动时立刻绑定 WebSocket 端口（默认 18789），端口被占就报错退出，不用锁文件，进程挂了系统自动释放。最容易踩的坑是 macOS 应用有 PID 守卫但运行时锁靠端口绑定，两个机制别搞混。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/gateway/gateway-lock/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"网关锁：Gateway Lock","description":"网关锁是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/gateway-lock/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Gateway Lock","description":"网关启动时立刻绑定 WebSocket 端口（默认 18789），端口被占就报错退出，不用锁文件，进程挂了系统自动释放。最容易踩的坑是 macOS 应用有 PID 守卫但运行时锁靠端口绑定，两个机制别搞混。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/gateway-lock/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Gateway","item":"https://fivey-can-read-openclaw.pages.dev/gateway/gateway-lock/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Gateway 导读</p>
-        <h1>网关端口独占锁机制</h1>
-        <p class="hero-copy">这页解释网关如何通过独占WebSocket端口来防止同一主机上多个实例冲突。启动时若端口被占会立即报错，无需手动清理锁文件。注意错误信息会区分端口被占和其他绑定失败的情况。</p>
+        <h1>网关锁：同一台机器只能跑一个网关实例</h1>
+        <p class="hero-copy">网关启动时立刻绑定 WebSocket 端口（默认 18789），端口被占就报错退出，不用锁文件，进程挂了系统自动释放。最容易踩的坑是 macOS 应用有 PID 守卫但运行时锁靠端口绑定，两个机制别搞混。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:gateway.gateway-lock.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🔒 Gateway Lock 在讲：一扇门口，不能站两个门卫</h2>
-      <p>这页名字看起来很硬，其实意思很简单。OpenClaw 的 Gateway 启动时，会先去抢自己的门口位置，也就是那个端口。</p>
-      <p>如果那个门口已经有人站着了，它就不会假装没事继续开工，而是立刻喊停。因为两个人守同一扇门，现场一定会乱。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>网关锁：同一台机器只能跑一个网关实例</h2>
+      <p>网关启动时立刻绑定 WebSocket 端口（默认 18789），端口被占就报错退出，不用锁文件，进程挂了系统自动释放。最容易踩的坑是 macOS 应用有 PID 守卫但运行时锁靠端口绑定，两个机制别搞混。</p>
     </div>
     <div class="overview-meta">
-      <span>适合遇到“为什么启动就报端口被占用”的时候看</span>
-      <span>这页最重要的是记住：它不是文件锁，而是直接用端口占位当门锁</span>
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/gateway/gateway-lock</span>
       <a href="https://docs.openclaw.ai/gateway/gateway-lock" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

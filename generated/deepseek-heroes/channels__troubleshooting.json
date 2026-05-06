@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:47:38.700Z",
+  "generatedAt": "2026-05-06T15:04:57.814Z",
   "pathname": "/channels/troubleshooting",
   "title": "Channel Troubleshooting",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "通道连接异常排查指南",
-    "heroSummary": "当通道已连接但行为异常时，按顺序执行命令梯子快速定位问题。重点关注WhatsApp、Telegram、Discord的典型故障特征，如私聊无响应、群组消息被忽略或随机断开循环。"
+    "heroTitle": "先跑这5条命令，再查症状表",
+    "heroSummary": "Channel 连上了但行为不对？别翻日志，先按顺序跑 `openclaw status` → `gateway status` → `logs --follow` → `doctor` → `channels status --probe`，确认 `Runtime: running` 和 `RPC probe: ok`。如果基础正常，直接对号入座查 WhatsApp、Telegram、Discord 的故障签名表——比如群消息被忽略，多半是 `requireMention` 或隐私模式没关。"
   }
 }

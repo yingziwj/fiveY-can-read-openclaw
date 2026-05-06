@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Signal 通道：Signal | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Signal 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Signal | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页是 Signal 通道的接入指南，核心是让 Gateway 通过 signal-cli 的 HTTP JSON-RPC 收发消息。先选注册路径（QR 链接或短信验证），然后配置账号、cliPath 和 dmPolicy，最后用 openclaw pairing approve 批准第一个 DM 发送者。最容易踩…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Signal 通道：Signal | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Signal 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Signal | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页是 Signal 通道的接入指南，核心是让 Gateway 通过 signal-cli 的 HTTP JSON-RPC 收发消息。先选注册路径（QR 链接或短信验证），然后配置账号、cliPath 和 dmPolicy，最后用 openclaw pairing approve 批准第一个 DM 发送者。最容易踩…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/channels/signal/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Signal 通道：Signal | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Signal 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Signal | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页是 Signal 通道的接入指南，核心是让 Gateway 通过 signal-cli 的 HTTP JSON-RPC 收发消息。先选注册路径（QR 链接或短信验证），然后配置账号、cliPath 和 dmPolicy，最后用 openclaw pairing approve 批准第一个 DM 发送者。最容易踩…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/channels/signal/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Signal 通道：Signal","description":"Signal 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/channels/signal/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Signal","description":"这一页是 Signal 通道的接入指南，核心是让 Gateway 通过 signal-cli 的 HTTP JSON-RPC 收发消息。先选注册路径（QR 链接或短信验证），然后配置账号、cliPath 和 dmPolicy，最后用 openclaw pairing approve 批准第一个 DM 发送者。最容易踩…","url":"https://fivey-can-read-openclaw.pages.dev/channels/signal/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Channels","item":"https://fivey-can-read-openclaw.pages.dev/channels/signal/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Channels 导读</p>
-        <h1>Signal 通道配置与接入指南</h1>
-        <p class="hero-copy">本页详细说明如何通过 signal-cli 将 OpenClaw 接入 Signal 平台，重点在于配置账户、选择注册路径并设置配对策略。配置时需注意 account 字段必须填写完整的 Signal 电话号码，且 dmPolicy 设为 &#39;pairing&#39; 才能启用私聊功能。</p>
+        <h1>Signal 通道：用 signal-cli 接机器人，先搞定注册和配对</h1>
+        <p class="hero-copy">这一页是 Signal 通道的接入指南，核心是让 Gateway 通过 signal-cli 的 HTTP JSON-RPC 收发消息。先选注册路径（QR 链接或短信验证），然后配置账号、cliPath 和 dmPolicy，最后用 openclaw pairing approve 批准第一个 DM 发送者。最容易踩的坑是：机器人必须用独立 Signal 号码，且 dmPolicy 设为 pairing 时，只有 allowFrom 列表里的号码才能触发配对流程。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:channels.signal.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>📡 Signal 通道，就是给 OpenClaw 配一根“会收信也会回信”的专线</h2>
-      <p>这页看起来很长，其实只是在讲一件事：怎么让 OpenClaw 通过 signal-cli 收到 Signal 的消息，再把回复原路送回去。</p>
-      <p>你可以把它想成一条专线电话。线路通了，机器人才能听见；门禁开对了，它才知道该听谁的话。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Signal 通道：用 signal-cli 接机器人，先搞定注册和配对</h2>
+      <p>这一页是 Signal 通道的接入指南，核心是让 Gateway 通过 signal-cli 的 HTTP JSON-RPC 收发消息。先选注册路径（QR 链接或短信验证），然后配置账号、cliPath 和 dmPolicy，最后用 openclaw pairing approve 批准第一个 DM 发送者。最容易踩的坑是：机器人必须用独立 Signal 号码，且 dmPolicy 设为 pairing 时，只有 allowFrom 列表里的号码才能触发配对流程。</p>
     </div>
     <div class="overview-meta">
-      <span>适合第一次把 OpenClaw 接到 Signal 的人</span>
-      <span>这页最容易踩坑的是账号、配对、群规则和 daemon 模式</span>
+      <span>原文共 19 节，先看 Start Here</span>
+      <span>路径：/channels/signal</span>
       <a href="https://docs.openclaw.ai/channels/signal" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

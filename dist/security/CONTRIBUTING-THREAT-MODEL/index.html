@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contributing to the Threat 模式l：Contributing to the Threat Model | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Contributing to the Threat 模式l是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Contributing to the Threat Model | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="发现攻击路径或风险？直接开 issue 描述场景就行，不需要懂框架或填满所有字段。提缓解方案时，具体可执行的例子（比如“在网关上限制每发送方 10 条/分钟”）比空泛建议更有用。注意：这是补充威胁模型，不是报告漏洞——漏洞请走 trust.openclaw.ai 的负责任披露流程。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Contributing to the Threat 模式l：Contributing to the Threat Model | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Contributing to the Threat 模式l是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Contributing to the Threat Model | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="发现攻击路径或风险？直接开 issue 描述场景就行，不需要懂框架或填满所有字段。提缓解方案时，具体可执行的例子（比如“在网关上限制每发送方 10 条/分钟”）比空泛建议更有用。注意：这是补充威胁模型，不是报告漏洞——漏洞请走 trust.openclaw.ai 的负责任披露流程。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/security/CONTRIBUTING-THREAT-MODEL/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Contributing to the Threat 模式l：Contributing to the Threat Model | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Contributing to the Threat 模式l是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Contributing to the Threat Model | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="发现攻击路径或风险？直接开 issue 描述场景就行，不需要懂框架或填满所有字段。提缓解方案时，具体可执行的例子（比如“在网关上限制每发送方 10 条/分钟”）比空泛建议更有用。注意：这是补充威胁模型，不是报告漏洞——漏洞请走 trust.openclaw.ai 的负责任披露流程。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/security/CONTRIBUTING-THREAT-MODEL/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Contributing to the Threat 模式l：Contributing to the Threat Model","description":"Contributing to the Threat 模式l是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/security/CONTRIBUTING-THREAT-MODEL/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Contributing to the Threat Model","description":"发现攻击路径或风险？直接开 issue 描述场景就行，不需要懂框架或填满所有字段。提缓解方案时，具体可执行的例子（比如“在网关上限制每发送方 10 条/分钟”）比空泛建议更有用。注意：这是补充威胁模型，不是报告漏洞——漏洞请走 trust.openclaw.ai 的负责任披露流程。","url":"https://fivey-can-read-openclaw.pages.dev/security/CONTRIBUTING-THREAT-MODEL/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Security","item":"https://fivey-can-read-openclaw.pages.dev/security/CONTRIBUTING-THREAT-MODEL/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Security 导读</p>
-        <h1>如何为OpenClaw威胁模型贡献内容</h1>
-        <p class="hero-copy">这页说明如何提交新的安全威胁、缓解措施或攻击链，帮助完善OpenClaw的安全文档。最该先看“添加威胁”部分，了解如何用简单描述提交潜在风险。最容易搞错的是将威胁模型贡献与实时漏洞报告混淆——发现可被利用的漏洞应通过Trust页面报告。</p>
+        <h1>给 OpenClaw 威胁模型提贡献，不用是安全专家</h1>
+        <p class="hero-copy">发现攻击路径或风险？直接开 issue 描述场景就行，不需要懂框架或填满所有字段。提缓解方案时，具体可执行的例子（比如“在网关上限制每发送方 10 条/分钟”）比空泛建议更有用。注意：这是补充威胁模型，不是报告漏洞——漏洞请走 trust.openclaw.ai 的负责任披露流程。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,16 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:security.CONTRIBUTING-THREAT-MODEL.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🛡️ 贡献威胁模型这页，就是“你发现哪里危险了，来这里递小纸条”</h2>
-      <p>它不是漏洞举报热线，而是一个让大家一起补安全地图的入口。你说场景、影响和可能的修法，维护者来补结构和编号。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>给 OpenClaw 威胁模型提贡献，不用是安全专家</h2>
+      <p>发现攻击路径或风险？直接开 issue 描述场景就行，不需要懂框架或填满所有字段。提缓解方案时，具体可执行的例子（比如“在网关上限制每发送方 10 条/分钟”）比空泛建议更有用。注意：这是补充威胁模型，不是报告漏洞——漏洞请走 trust.openclaw.ai 的负责任披露流程。</p>
     </div>
     <div class="overview-meta">
-      <span>适合发现风险、想补安全文档的人</span>
-      <span>先提场景，再提影响，再提可能修法</span>
+      <span>原文共 12 节，先看 Start Here</span>
+      <span>路径：/security/CONTRIBUTING-THREAT-MODEL</span>
       <a href="https://docs.openclaw.ai/security/CONTRIBUTING-THREAT-MODEL" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:48:00.130Z",
+  "generatedAt": "2026-05-06T15:05:12.750Z",
   "pathname": "/concepts/memory-qmd",
   "title": "QMD Memory Engine",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "如何启用并配置 QMD 本地增强搜索",
-    "heroSummary": "本页介绍如何将 QMD 作为 OpenClaw 的本地搜索增强引擎，它通过整合 BM25、向量搜索和重排序来提升记忆检索的召回率。配置时，你需要在 `memory.backend` 中指定 `\"qmd\"`，并确保 QMD 已安装且位于网关的 `PATH` 中。首次搜索会较慢，因为 QMD 需要自动下载约 2GB 的 GGUF 模型文件用于重排序和查询扩展。"
+    "heroTitle": "用 QMD 给 OpenClaw 装上本地搜索加速器",
+    "heroSummary": "QMD 是一个本地优先的搜索侧车，把 BM25、向量搜索和重排序打包成一个二进制，能索引工作区之外的项目文档、团队笔记甚至聊天记录。启用只需在配置里把 memory.backend 改成 qmd，但前提是系统装了 QMD 且 SQLite 支持扩展——macOS 和 Linux 开箱即用，Windows 推荐 WSL2。首次搜索会慢，因为要自动下载约 2GB 的 GGUF 模型用于重排序和查询扩展。"
   }
 }

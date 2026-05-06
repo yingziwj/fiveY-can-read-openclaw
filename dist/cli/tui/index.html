@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>tui 命令：tui | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="tui 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>tui | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="执行 openclaw tui 即可启动连接到 Gateway 的终端界面，无需手动拼 URL 或 token——它会自动解析配置中的 SecretRef（支持 env/file/exec 三种 provider）。如果你在 agent 工作目录下运行，还会自动选中当前 agent 作为默认会话，省去 --sessi…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="tui 命令：tui | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="tui 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="tui | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="执行 openclaw tui 即可启动连接到 Gateway 的终端界面，无需手动拼 URL 或 token——它会自动解析配置中的 SecretRef（支持 env/file/exec 三种 provider）。如果你在 agent 工作目录下运行，还会自动选中当前 agent 作为默认会话，省去 --sessi…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/tui/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="tui 命令：tui | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="tui 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="tui | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="执行 openclaw tui 即可启动连接到 Gateway 的终端界面，无需手动拼 URL 或 token——它会自动解析配置中的 SecretRef（支持 env/file/exec 三种 provider）。如果你在 agent 工作目录下运行，还会自动选中当前 agent 作为默认会话，省去 --sessi…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/tui/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"tui 命令：tui","description":"tui 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/tui/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"tui","description":"执行 openclaw tui 即可启动连接到 Gateway 的终端界面，无需手动拼 URL 或 token——它会自动解析配置中的 SecretRef（支持 env/file/exec 三种 provider）。如果你在 agent 工作目录下运行，还会自动选中当前 agent 作为默认会话，省去 --sessi…","url":"https://fivey-can-read-openclaw.pages.dev/cli/tui/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/tui/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>启动终端界面连接网关</h1>
-        <p class="hero-copy">运行 openclaw tui 命令启动终端界面，连接到网关进行交互操作。在已配置的代理工作空间目录中运行时，会自动选择该代理作为会话默认值，无需手动指定。注意该命令会尝试解析网关认证的 SecretRefs 配置，支持环境变量、文件和执行命令三种方式获取令牌或密码。</p>
+        <h1>一条命令打开终端 UI，自动帮你填好认证和会话</h1>
+        <p class="hero-copy">执行 `openclaw tui` 即可启动连接到 Gateway 的终端界面，无需手动拼 URL 或 token——它会自动解析配置中的 SecretRef（支持 env/file/exec 三种 provider）。如果你在 agent 工作目录下运行，还会自动选中当前 agent 作为默认会话，省去 `--session` 参数。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.tui.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>⌨️ `openclaw tui` 像把 OpenClaw 的总控室搬进终端里</h2>
-      <p>如果说浏览器里的 Dashboard 像大房间里的总控制台，那 TUI 就像把同一套常用按钮缩小，放进你现在这扇终端门后面。</p>
-      <p>你不用切去网页，也能看见会话、换会话、发消息、切 deliver、调 session。它不是另一个聊天玩具，而是一张在终端里工作的驾驶舱。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>一条命令打开终端 UI，自动帮你填好认证和会话</h2>
+      <p>执行 `openclaw tui` 即可启动连接到 Gateway 的终端界面，无需手动拼 URL 或 token——它会自动解析配置中的 SecretRef（支持 env/file/exec 三种 provider）。如果你在 agent 工作目录下运行，还会自动选中当前 agent 作为默认会话，省去 `--session` 参数。</p>
     </div>
     <div class="overview-meta">
-      <span>适合喜欢终端、想少开一个网页的人</span>
-      <span>这页最重要的是记住：TUI 不是本地自娱自乐，它连的还是 Gateway</span>
+      <span>原文共 2 节，先看 Start Here</span>
+      <span>路径：/cli/tui</span>
       <a href="https://docs.openclaw.ai/cli/tui" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

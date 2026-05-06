@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:48:14.243Z",
+  "generatedAt": "2026-05-06T15:05:19.127Z",
   "pathname": "/concepts/session-pruning",
   "title": "Session Pruning",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "会话修剪：自动清理工具结果以节省成本",
-    "heroSummary": "这页解释会话修剪如何自动移除旧工具结果来减少上下文膨胀，特别适合Anthropic提示缓存场景。最该先看它如何通过软修剪和硬清除两步操作保留对话文本。最容易搞错的是它只影响内存中的上下文，不会修改磁盘上的完整会话记录。"
+    "heroTitle": "自动裁剪旧工具结果，省上下文窗口、降缓存成本",
+    "heroSummary": "Session Pruning 在每次 LLM 调用前自动删除过时的工具输出（如执行结果、文件读取），只保留最近 3 轮完整对话。它不会动磁盘上的会话记录，但能显著减少上下文膨胀，尤其适合 Anthropic 的 prompt caching——缓存过期后重新写入时，裁剪过的 prompt 更小，直接省钱。"
   }
 }

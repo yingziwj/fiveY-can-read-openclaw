@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Retry Policy | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Retry Policy是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="先看默认值：最多重试3次，最大延迟30秒，抖动10%。Discord仅在429时重试，Telegram重试更多错误但Markdown解析失败不重试。最容易搞错的是重试粒度——它只重试当前失败的HTTP请求，不会回退到流程开头。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Retry Policy | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Retry Policy是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="先看默认值：最多重试3次，最大延迟30秒，抖动10%。Discord仅在429时重试，Telegram重试更多错误但Markdown解析失败不重试。最容易搞错的是重试粒度——它只重试当前失败的HTTP请求，不会回退到流程开头。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/retry/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Retry Policy | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Retry Policy是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="先看默认值：最多重试3次，最大延迟30秒，抖动10%。Discord仅在429时重试，Telegram重试更多错误但Markdown解析失败不重试。最容易搞错的是重试粒度——它只重试当前失败的HTTP请求，不会回退到流程开头。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/retry/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Retry Policy","description":"Retry Policy是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/retry/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Retry Policy","description":"先看默认值：最多重试3次，最大延迟30秒，抖动10%。Discord仅在429时重试，Telegram重试更多错误但Markdown解析失败不重试。最容易搞错的是重试粒度——它只重试当前失败的HTTP请求，不会回退到流程开头。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/retry/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/retry/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>重试策略：如何配置请求失败后的自动重试</h1>
-        <p class="hero-copy">这页详细说明了系统在HTTP请求失败时的重试机制，包括默认参数和不同服务商（如Discord、Telegram）的特殊规则。你应该先看“Defaults”部分了解基础配置，再根据实际使用的服务商查看对应章节。最容易搞错的是：系统按单个请求重试而非整个流程，且非幂等操作不会被重复执行，配置时需特别注意这一点。</p>
+        <h1>重试只针对单次HTTP请求，不重跑整个流程</h1>
+        <p class="hero-copy">先看默认值：最多重试3次，最大延迟30秒，抖动10%。Discord仅在429时重试，Telegram重试更多错误但Markdown解析失败不重试。最容易搞错的是重试粒度——它只重试当前失败的HTTP请求，不会回退到流程开头。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.retry.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🔁 Retry 就像“敲门没人应时，再轻轻敲几次”</h2>
-      <p>这页讲的是：当通道发消息、传图片、打反应、发投票时，如果路上有点小卡住，OpenClaw 会不会再试一次。</p>
-      <p>它不是无脑狂敲门，而是只在合适的时候，带着节奏、带着间隔，重试当前那一步。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>重试只针对单次HTTP请求，不重跑整个流程</h2>
+      <p>先看默认值：最多重试3次，最大延迟30秒，抖动10%。Discord仅在429时重试，Telegram重试更多错误但Markdown解析失败不重试。最容易搞错的是重试粒度——它只重试当前失败的HTTP请求，不会回退到流程开头。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想弄懂“为什么有些发送会重来一次”的人</span>
-      <span>这页最重要的是记住：retry 是按单步重试，不是整个流程翻拍</span>
+      <span>原文共 7 节，先看 Start Here</span>
+      <span>路径：/concepts/retry</span>
       <a href="https://docs.openclaw.ai/concepts/retry" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

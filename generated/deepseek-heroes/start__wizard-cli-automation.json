@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:49:06.364Z",
+  "generatedAt": "2026-05-06T15:05:48.701Z",
   "pathname": "/start/wizard-cli-automation",
   "title": "CLI Automation",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "用命令行自动化配置OpenClaw",
-    "heroSummary": "这页教你如何用`--non-interactive`参数在脚本中自动运行`openclaw onboard`命令，跳过交互式向导。先看基础示例，了解必须填写的参数如`--mode`、`--auth-choice`和API密钥。最容易错的是混淆`--json`和`--non-interactive`：`--json`只输出JSON，不启用非交互模式，脚本中必须同时用`--non-interactive`（和`--workspace`）来避免提示。"
+    "heroTitle": "一行命令完成自动化配置，跳过交互向导",
+    "heroSummary": "核心就是给 `openclaw onboard` 加上 `--non-interactive` 标志，然后一次性传完所有参数。最容易踩坑的是 `--json` 并不等于非交互模式，必须显式加上 `--non-interactive` 才能在脚本里跑。如果要用环境变量引用密钥（`--secret-input-mode ref`），记得先设好对应的环境变量，否则会直接报错。"
   }
 }

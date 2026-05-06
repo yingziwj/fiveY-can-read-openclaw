@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mistral 提供商：Mistral | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Mistral 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Mistral | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="先拿 MISTRAL_API_KEY 跑 onboard，再在 agents.defaults.model.primary 里设默认模型。注意 mistral-small-latest 支持可调推理力度，但 magistral 系列才是原生推理模型。Voxtral 转写走 /v1/audio/transcriptio…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Mistral 提供商：Mistral | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Mistral 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Mistral | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="先拿 MISTRAL_API_KEY 跑 onboard，再在 agents.defaults.model.primary 里设默认模型。注意 mistral-small-latest 支持可调推理力度，但 magistral 系列才是原生推理模型。Voxtral 转写走 /v1/audio/transcriptio…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/providers/mistral/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Mistral 提供商：Mistral | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Mistral 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Mistral | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="先拿 MISTRAL_API_KEY 跑 onboard，再在 agents.defaults.model.primary 里设默认模型。注意 mistral-small-latest 支持可调推理力度，但 magistral 系列才是原生推理模型。Voxtral 转写走 /v1/audio/transcriptio…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/providers/mistral/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Mistral 提供商：Mistral","description":"Mistral 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/providers/mistral/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Mistral","description":"先拿 MISTRAL_API_KEY 跑 onboard，再在 agents.defaults.model.primary 里设默认模型。注意 mistral-small-latest 支持可调推理力度，但 magistral 系列才是原生推理模型。Voxtral 转写走 /v1/audio/transcriptio…","url":"https://fivey-can-read-openclaw.pages.dev/providers/mistral/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Providers","item":"https://fivey-can-read-openclaw.pages.dev/providers/mistral/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Providers 导读</p>
-        <h1>接入 Mistral 模型与语音转录</h1>
-        <p class="hero-copy">这页说明如何在 OpenClaw 中配置 Mistral 作为文本/图像模型路由和语音转录（Voxtral）的提供方。先通过 CLI 或环境变量设置 API 密钥，再在配置中指定模型引用。注意模型引用格式为 `mistral/模型名`，且语音转录需在 `tools.media.audio` 中单独启用。</p>
+        <h1>Mistral 接入：API Key、模型路由与 Voxtral 转写</h1>
+        <p class="hero-copy">先拿 MISTRAL_API_KEY 跑 onboard，再在 agents.defaults.model.primary 里设默认模型。注意 mistral-small-latest 支持可调推理力度，但 magistral 系列才是原生推理模型。Voxtral 转写走 /v1/audio/transcriptions，默认模型 voxtral-mini-latest。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🌬 Mistral 这页其实是在说：同一家门口，不只接文字老师，还接听写员和记忆贴纸机</h2><p>Mistral 在 OpenClaw 里不只是普通 LLM。官方顺手把三种活都挂在这里了：文本/图片回答、音频转写、记忆向量。</p></div><div class="overview-meta"><span>适合想把 Mistral 一家多用的人</span><span>重点是文本、Voxtral 转写、embeddings</span><a href="https://docs.openclaw.ai/providers/mistral" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:providers.mistral.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Mistral 接入：API Key、模型路由与 Voxtral 转写</h2>
+      <p>先拿 MISTRAL_API_KEY 跑 onboard，再在 agents.defaults.model.primary 里设默认模型。注意 mistral-small-latest 支持可调推理力度，但 magistral 系列才是原生推理模型。Voxtral 转写走 /v1/audio/transcriptions，默认模型 voxtral-mini-latest。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/providers/mistral</span>
+      <a href="https://docs.openclaw.ai/providers/mistral" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一步</p><h2>🔑 基础接法很直：给 <code>MISTRAL_API_KEY</code>，默认请大老师值班</h2><p>这里没太多花样，主路就是 API key。</p></div><div class="home-grid"><article class="home-card"><span class="home-card-index">🛠</span><h2><code>openclaw onboard --auth-choice mistral-api-key</code></h2><p>像在前台说：“我要接 Mistral，请收钥匙。”</p></article><article class="home-card"><span class="home-card-index">⚡</span><h2><code>--mistral-api-key "$MISTRAL_API_KEY"</code></h2><p>像你已经把钥匙拿在手里，直接塞进去。</p></article><article class="home-card"><span class="home-card-index">🧠</span><h2><code>mistral/mistral-large-latest</code></h2><p>像默认先请一位大老师坐班。</p></article><article class="home-card"><span class="home-card-index">🎈</span><h2>一句话</h2><p>基础接法很短，重点在后面的多功能用法。</p></article></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第二步</p><h2>🎧 Voxtral 像 Mistral 家的“听写员”</h2><p>官方专门给了音频转写示例，就是在告诉你：Mistral 不只会答字，还能先听音频。</p></div><div class="ad-placeholder"><p><code>tools.media.audio.models: [{ provider: "mistral", model: "voxtral-mini-latest" }]</code> 这段配置，像把一位名叫 Voxtral 的听写员安排在门口，遇到语音消息先抄成文字，再交给后面的老师处理。</p></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第三步</p><h2>🧠 embeddings 路线，像“给记忆盒贴坐标标签”</h2><p>官方最后一句提到 memory embeddings。翻成人话，就是把内容压成便于检索的小坐标。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label"><code>memorySearch.provider = "mistral"</code></div><p>像告诉记忆管理员：“以后给记忆卡片贴标签，用 Mistral 这套贴纸机。”</p></div><div class="source-card"><div class="story-card-label"><code>mistral-embed</code></div><p>像这台贴纸机的默认型号。</p></div></div></section>

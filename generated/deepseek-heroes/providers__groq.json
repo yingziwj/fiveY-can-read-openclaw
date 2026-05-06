@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:49:57.891Z",
+  "generatedAt": "2026-05-06T15:06:23.718Z",
   "pathname": "/providers/groq",
   "title": "Groq",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "接入Groq：配置API密钥与默认模型",
-    "heroSummary": "这页指导如何将OpenClaw连接到Groq的OpenAI兼容API，以使用其高速推理服务。首先获取GROQ_API_KEY并设置默认模型，配置时最容易忽略的是在守护进程环境中确保环境变量可访问。"
+    "heroTitle": "接入 Groq：先拿 API Key，再配默认模型",
+    "heroSummary": "Groq 用自研 LPU 芯片跑开源模型，推理极快，API 兼容 OpenAI。先到 console.groq.com/keys 拿 Key，设成环境变量 GROQ_API_KEY，然后在 agent 默认模型里写 groq/llama-3.3-70b-versatile 就能用。注意：如果网关以守护进程运行，Key 必须写在 ~/.openclaw/.env 或 env.shellEnv 里，否则进程读不到。"
   }
 }

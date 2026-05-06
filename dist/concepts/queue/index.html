@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Command Queue | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Command Queue是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="自动回复的 LLM 调用很贵，多条消息同时进来会抢资源、超限。这个队列按会话和全局两层串行化，默认主线程并发 4、子代理 8，每个会话同一时间只跑一个 run。最容易搞错的是消息模式：steer 会打断当前 run 插入新消息，collect 把多条合并成一次回复，steer-backlog 则既插入又保留后续回复，…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Command Queue | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Command Queue是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="自动回复的 LLM 调用很贵，多条消息同时进来会抢资源、超限。这个队列按会话和全局两层串行化，默认主线程并发 4、子代理 8，每个会话同一时间只跑一个 run。最容易搞错的是消息模式：steer 会打断当前 run 插入新消息，collect 把多条合并成一次回复，steer-backlog 则既插入又保留后续回复，…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/queue/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Command Queue | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Command Queue是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="自动回复的 LLM 调用很贵，多条消息同时进来会抢资源、超限。这个队列按会话和全局两层串行化，默认主线程并发 4、子代理 8，每个会话同一时间只跑一个 run。最容易搞错的是消息模式：steer 会打断当前 run 插入新消息，collect 把多条合并成一次回复，steer-backlog 则既插入又保留后续回复，…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/queue/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Command Queue","description":"Command Queue是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/queue/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Command Queue","description":"自动回复的 LLM 调用很贵，多条消息同时进来会抢资源、超限。这个队列按会话和全局两层串行化，默认主线程并发 4、子代理 8，每个会话同一时间只跑一个 run。最容易搞错的是消息模式：steer 会打断当前 run 插入新消息，collect 把多条合并成一次回复，steer-backlog 则既插入又保留后续回复，…","url":"https://fivey-can-read-openclaw.pages.dev/concepts/queue/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/queue/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>命令队列：如何管理多消息并发避免冲突</h1>
-        <p class="hero-copy">这页讲的是系统如何通过队列机制处理同时到达的自动回复请求，防止多个代理运行相互干扰。你应该先看“队列模式”部分，了解不同渠道如何配置消息处理方式。最容易搞错的是steer-backlog模式，它会在当前运行后保留消息进行后续回复，可能导致流式界面出现重复响应。</p>
+        <h1>多消息并发时，队列如何保证不打架</h1>
+        <p class="hero-copy">自动回复的 LLM 调用很贵，多条消息同时进来会抢资源、超限。这个队列按会话和全局两层串行化，默认主线程并发 4、子代理 8，每个会话同一时间只跑一个 run。最容易搞错的是消息模式：`steer` 会打断当前 run 插入新消息，`collect` 把多条合并成一次回复，`steer-backlog` 则既插入又保留后续回复，容易造成重复响应。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.queue.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🪢 Queue 就是 OpenClaw 的“排队绳”</h2>
-      <p>如果很多消息一股脑同时涌进来，OpenClaw 不能每条都立刻抢着处理，不然会互相撞车。Queue 这页，就是在讲它怎么把大家先排好队。</p>
-      <p>它的目标很朴素：别让同一个会话里同时跑两次，别把日志和状态踩乱，但也别让所有事情都慢吞吞排成一条老长队。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>多消息并发时，队列如何保证不打架</h2>
+      <p>自动回复的 LLM 调用很贵，多条消息同时进来会抢资源、超限。这个队列按会话和全局两层串行化，默认主线程并发 4、子代理 8，每个会话同一时间只跑一个 run。最容易搞错的是消息模式：`steer` 会打断当前 run 插入新消息，`collect` 把多条合并成一次回复，`steer-backlog` 则既插入又保留后续回复，容易造成重复响应。</p>
     </div>
     <div class="overview-meta">
-      <span>适合总在想“为什么消息有时会等一下”的人</span>
-      <span>这页最重要的是先分清 steer、followup、collect</span>
+      <span>原文共 8 节，先看 Start Here</span>
+      <span>路径：/concepts/queue</span>
       <a href="https://docs.openclaw.ai/concepts/queue" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

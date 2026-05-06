@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:50:07.988Z",
+  "generatedAt": "2026-05-06T15:07:55.626Z",
   "pathname": "/providers/moonshot",
   "title": "Moonshot AI",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "配置 Moonshot AI (Kimi) 接入",
-    "heroSummary": "这页教你如何配置 Moonshot AI 的 Kimi API 和 Kimi Coding，包括设置 API 密钥、选择模型和配置网络搜索。先看 Start Here 部分了解基本模型 ID 和配置结构，最容易错的是混淆 moonshot/ 和 kimi/ 前缀的模型引用，以及选错 API 端点（国际版或中国版）。"
+    "heroTitle": "Moonshot 和 Kimi Coding 是两套独立的 provider，API Key 和模型 ref 都不互通",
+    "heroSummary": "配置 Moonshot 时，先选好国际版或国内版 endpoint，然后通过 `openclaw onboard --auth-choice` 完成接入。Kimi K2.5 是默认模型，但如果你要用 Kimi Coding，记得切到 `kimi/` 前缀的 provider。最容易踩的坑：Moonshot 和 Kimi Coding 的 key 不能混用，endpoint 也不同。"
   }
 }

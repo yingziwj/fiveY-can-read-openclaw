@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:51:43.601Z",
+  "generatedAt": "2026-05-06T15:07:13.627Z",
   "pathname": "/gateway/index",
   "title": "Gateway Runbook",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Gateway 服务启动与运维手册",
-    "heroSummary": "这页是 Gateway 服务的操作手册，包含首次启动、日常运维和故障排查的完整流程。最该先看“5分钟本地启动”部分，按步骤执行命令就能让服务跑起来。最容易搞错的是端口绑定和认证设置，特别是非回环地址的反向代理场景需要手动配置 `gateway.auth.mode: \"trusted-proxy\"`。"
+    "heroTitle": "Gateway 启动与运维速查：5 分钟本地跑通 + 关键配置陷阱",
+    "heroSummary": "先按“5-minute local startup”三步跑通服务，用 `openclaw gateway status` 确认 `Runtime: running` 和 `RPC probe: ok` 才算健康。最容易踩的坑是端口冲突：`--force` 会强杀旧进程再启动；配置热加载默认是 hybrid 模式，改完配置后会自动原子替换内存快照，不用重启。"
   }
 }

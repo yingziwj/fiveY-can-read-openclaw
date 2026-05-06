@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:03.663Z",
+  "generatedAt": "2026-05-06T15:07:28.742Z",
   "pathname": "/gateway/troubleshooting",
   "title": "Troubleshooting",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "网关故障排查手册",
-    "heroSummary": "这页是网关问题的深度排查指南，提供从基础状态检查到特定错误（如429长上下文限制、无回复、控制面板连接失败）的完整诊断流程。首先运行命令梯子中的状态检查命令，确认网关和通道的基本运行状态。最容易出错的地方是忽略配对审批、群组提及规则或长上下文API权限等配置细节，导致问题定位困难。"
+    "heroTitle": "先跑这 5 条命令，再查具体症状",
+    "heroSummary": "页面按“命令梯子→常见故障”组织，最优先跑 `openclaw status` → `gateway status` → `logs` → `doctor` → `channels status --probe` 确认健康状态。最容易踩的坑是“群消息没人回”时别急着重连，先查配对状态和 @提及策略。"
   }
 }

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:47:44.360Z",
+  "generatedAt": "2026-05-06T15:05:03.342Z",
   "pathname": "/concepts/agent-loop",
   "title": "Agent Loop",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Agent Loop 完整执行流程详解",
-    "heroSummary": "这页详细拆解了 Agent 从接收消息到生成回复的完整执行链路，包括输入、上下文组装、模型推理、工具调用等核心环节。你应该先看‘Entry points’部分，了解如何通过 Gateway RPC 或 CLI 命令触发一个 Loop 运行。最容易搞错的地方是队列并发机制，它通过会话级和全局队列来序列化运行，防止工具调用和会话状态出现竞争，这是保持会话历史一致性的关键。"
+    "heroTitle": "一次 Agent 调用背后：从消息到回复的完整链路",
+    "heroSummary": "Agent Loop 是 OpenClaw 中一次真实 Agent 运行的完整路径，包含消息接收、上下文组装、模型推理、工具执行、流式回复和持久化。理解这条链路，才能看懂 session 状态如何保持、工具调用如何串行、以及队列如何防止竞态。"
   }
 }

@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>status 命令：status | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="status 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>status | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="openclaw status 是诊断通道和会话的入口，直接跑就能看到各通道是否在线、配额还剩多少。最该先试 --deep 做一次真实探活，别只看缓存状态。注意配额显示：MiniMax 的原始字段是剩余量，OpenClaw 已帮你反转成“已用百分比”，但优先以 count 类字段为准。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="status 命令：status | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="status 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="status | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="openclaw status 是诊断通道和会话的入口，直接跑就能看到各通道是否在线、配额还剩多少。最该先试 --deep 做一次真实探活，别只看缓存状态。注意配额显示：MiniMax 的原始字段是剩余量，OpenClaw 已帮你反转成“已用百分比”，但优先以 count 类字段为准。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/status/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="status 命令：status | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="status 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="status | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="openclaw status 是诊断通道和会话的入口，直接跑就能看到各通道是否在线、配额还剩多少。最该先试 --deep 做一次真实探活，别只看缓存状态。注意配额显示：MiniMax 的原始字段是剩余量，OpenClaw 已帮你反转成“已用百分比”，但优先以 count 类字段为准。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/status/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"status 命令：status","description":"status 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/status/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"status","description":"openclaw status 是诊断通道和会话的入口，直接跑就能看到各通道是否在线、配额还剩多少。最该先试 --deep 做一次真实探活，别只看缓存状态。注意配额显示：MiniMax 的原始字段是剩余量，OpenClaw 已帮你反转成“已用百分比”，但优先以 count 类字段为准。","url":"https://fivey-can-read-openclaw.pages.dev/cli/status/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/status/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>openclaw status 命令：查看通道与会话诊断信息</h1>
-        <p class="hero-copy">这页详细说明 openclaw status 命令的用法，用于检查各通信通道（如 WhatsApp、Telegram）的实时状态和会话数据。最该先看命令的几种调用方式（如 --deep 进行实时探测、--usage 显示配额余量），了解不同参数的具体作用。最容易搞错的是配额显示逻辑：MiniMax 提供商的原始数据是剩余配额，OpenClaw 会进行反转显示，且当存在计数型字段时优先使用；此外，当当前会话数据不完整时，status 会从最近的转录日志中回填令牌和缓存计数，但现有非零实时值仍优先于回填值。</p>
+        <h1>一眼看穿所有通道状态，不用挨个查</h1>
+        <p class="hero-copy">`openclaw status` 是诊断通道和会话的入口，直接跑就能看到各通道是否在线、配额还剩多少。最该先试 `--deep` 做一次真实探活，别只看缓存状态。注意配额显示：MiniMax 的原始字段是剩余量，OpenClaw 已帮你反转成“已用百分比”，但优先以 count 类字段为准。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.status.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🩺 <code>openclaw status</code> 像“先别猜，先看总体检单”</h2>
-      <p>这页最朴素，也最重要。很多人一出问题就先脑补。官方这页其实是在说：不要靠猜，先把总状态单拉出来。</p>
-      <p>它会帮你看通道、会话、Gateway、节点、更新信息。就像医生先给你量体温、听心跳、看有没有明显红灯，而不是一上来就开刀。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>一眼看穿所有通道状态，不用挨个查</h2>
+      <p>`openclaw status` 是诊断通道和会话的入口，直接跑就能看到各通道是否在线、配额还剩多少。最该先试 `--deep` 做一次真实探活，别只看缓存状态。注意配额显示：MiniMax 的原始字段是剩余量，OpenClaw 已帮你反转成“已用百分比”，但优先以 count 类字段为准。</p>
     </div>
     <div class="overview-meta">
-      <span>适合任何“它今天是不是不太对劲”的时刻</span>
-      <span>这页最重要的是分清：普通看一眼、完整展开、深度探测，是三档不同力度</span>
+      <span>原文共 1 节，先看 Start Here</span>
+      <span>路径：/cli/status</span>
       <a href="https://docs.openclaw.ai/cli/status" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

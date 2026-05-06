@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>browser 命令：browser | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="browser 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>browser | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="先跑 openclaw browser profiles 看可用配置，再用 --browser-profile 指定一个来执行 start、open、snapshot 等动作。最容易踩的坑是：start 失败通常是 CDP 未就绪，而 open 失败多半是导航被 SSRF 策略拦截，不是控制面坏了。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="browser 命令：browser | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="browser 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="browser | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="先跑 openclaw browser profiles 看可用配置，再用 --browser-profile 指定一个来执行 start、open、snapshot 等动作。最容易踩的坑是：start 失败通常是 CDP 未就绪，而 open 失败多半是导航被 SSRF 策略拦截，不是控制面坏了。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/browser/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="browser 命令：browser | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="browser 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="browser | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="先跑 openclaw browser profiles 看可用配置，再用 --browser-profile 指定一个来执行 start、open、snapshot 等动作。最容易踩的坑是：start 失败通常是 CDP 未就绪，而 open 失败多半是导航被 SSRF 策略拦截，不是控制面坏了。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/browser/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"browser 命令：browser","description":"browser 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/browser/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"browser","description":"先跑 openclaw browser profiles 看可用配置，再用 --browser-profile 指定一个来执行 start、open、snapshot 等动作。最容易踩的坑是：start 失败通常是 CDP 未就绪，而 open 失败多半是导航被 SSRF 策略拦截，不是控制面坏了。","url":"https://fivey-can-read-openclaw.pages.dev/cli/browser/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/browser/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>OpenClaw浏览器命令行操作指南</h1>
-        <p class="hero-copy">这页详细说明如何使用openclaw browser命令控制浏览器生命周期、配置文件和页面操作。最该先看Quick start部分，通过几个示例命令快速上手浏览器管理。最容易搞错的是配置文件权限设置，如果命令缺失需要检查plugins.allow配置是否包含browser插件。</p>
+        <h1>用 openclaw browser 控制浏览器：启动、开标签、截图、调试</h1>
+        <p class="hero-copy">先跑 `openclaw browser profiles` 看可用配置，再用 `--browser-profile` 指定一个来执行 start、open、snapshot 等动作。最容易踩的坑是：start 失败通常是 CDP 未就绪，而 open 失败多半是导航被 SSRF 策略拦截，不是控制面坏了。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.browser.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧭 `openclaw browser` 像“给 OpenClaw 配一只会看网页的眼睛”</h2>
-      <p>这页不是在讲普通浏览器，而是在讲一个能被 OpenClaw 指挥的浏览器小助手。它可以开标签、看页面、拍快照、点按钮、打字，像一个坐在电脑前认真干活的小帮手。</p>
-      <p>你可以把它想成：OpenClaw 不只是会聊天，它还会派出一只手，去网页里做事。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用 openclaw browser 控制浏览器：启动、开标签、截图、调试</h2>
+      <p>先跑 `openclaw browser profiles` 看可用配置，再用 `--browser-profile` 指定一个来执行 start、open、snapshot 等动作。最容易踩的坑是：start 失败通常是 CDP 未就绪，而 open 失败多半是导航被 SSRF 策略拦截，不是控制面坏了。</p>
     </div>
     <div class="overview-meta">
-      <span>适合要让机器人自己打开网页、看网页、操作网页的人</span>
-      <span>这页最重要的是分清：profile 是“哪只眼睛”，tab 是“看哪一页”</span>
+      <span>原文共 13 节，先看 Start Here</span>
+      <span>路径：/cli/browser</span>
       <a href="https://docs.openclaw.ai/cli/browser" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

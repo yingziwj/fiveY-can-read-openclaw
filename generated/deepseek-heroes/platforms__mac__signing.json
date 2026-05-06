@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:37.962Z",
+  "generatedAt": "2026-05-06T15:07:49.109Z",
   "pathname": "/platforms/mac/signing",
   "title": "macOS Signing",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "macOS调试版签名配置与权限保持",
-    "heroSummary": "本页说明如何配置macOS调试版应用的签名，确保系统权限（如通知、屏幕录制）在多次构建后不会丢失。首先设置SIGN_IDENTITY环境变量或使用ALLOW_ADHOC_SIGNING=1启用临时签名，但注意临时签名会禁用强化运行时并导致权限不稳定。最容易出错的是未正确配置签名身份导致构建失败，或使用临时签名时忽略权限持久化问题。"
+    "heroTitle": "macOS 签名：让权限记住你，别每次重编都弹窗",
+    "heroSummary": "这页讲的是如何给 macOS 调试构建签名，核心目的是让 TCC 权限（通知、录屏、麦克风等）在每次重编后不丢失。先配好 `SIGN_IDENTITY` 环境变量（真实证书或 ad-hoc），然后跑 `scripts/package-mac-app.sh`；最容易踩的坑是 ad-hoc 签名会禁用 Hardened Runtime，导致 Sparkle 等框架崩溃，而且权限不会持久化。"
   }
 }

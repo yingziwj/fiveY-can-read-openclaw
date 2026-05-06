@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:49:25.398Z",
+  "generatedAt": "2026-05-06T15:06:00.725Z",
   "pathname": "/plugins/manifest",
   "title": "Plugin Manifest",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw 插件清单文件详解",
-    "heroSummary": "这页讲的是 OpenClaw 原生插件的核心配置文件 openclaw.plugin.json，它定义了插件在加载前的元数据和行为。你应该先看‘Top-level field reference’表格，了解每个字段的用途和必填项。最容易错的是混淆不同插件格式的清单文件，比如 Codex 或 Claude 插件用的是别的文件，而 OpenClaw 原生插件必须用这个。"
+    "heroTitle": "插件启动前，OpenClaw 先读这个文件",
+    "heroSummary": "`openclaw.plugin.json` 是 OpenClaw 加载插件代码前必须读的元数据文件。先看 `id` 和 `configSchema`，这是唯二必填字段；最容易漏的是 `providerAuthEnvVars` 和 `providerAuthAliases`——它们让 OpenClaw 在没加载插件代码时就能知道环境变量和认证关系，不配好会导致启动时认证失败。"
   }
 }

@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>记忆搜索：Memory Search | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="记忆搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Memory Search | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="memory_search 同时跑向量搜索和 BM25 关键词搜索，合并结果返回最相关的笔记。先确认你配了 OpenAI、Gemini 等任一 provider，否则默认用 GitHub Copilot；本地无 API 密钥时设 provider: &quot;local&quot;，但需装 node-llama-cpp。注意：向量搜索…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="记忆搜索：Memory Search | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="记忆搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Memory Search | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="memory_search 同时跑向量搜索和 BM25 关键词搜索，合并结果返回最相关的笔记。先确认你配了 OpenAI、Gemini 等任一 provider，否则默认用 GitHub Copilot；本地无 API 密钥时设 provider: &quot;local&quot;，但需装 node-llama-cpp。注意：向量搜索…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/memory-search/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="记忆搜索：Memory Search | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="记忆搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Memory Search | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="memory_search 同时跑向量搜索和 BM25 关键词搜索，合并结果返回最相关的笔记。先确认你配了 OpenAI、Gemini 等任一 provider，否则默认用 GitHub Copilot；本地无 API 密钥时设 provider: &quot;local&quot;，但需装 node-llama-cpp。注意：向量搜索…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/memory-search/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"记忆搜索：Memory Search","description":"记忆搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/memory-search/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Memory Search","description":"memory_search 同时跑向量搜索和 BM25 关键词搜索，合并结果返回最相关的笔记。先确认你配了 OpenAI、Gemini 等任一 provider，否则默认用 GitHub Copilot；本地无 API 密钥时设 provider: \"local\"，但需装 node-llama-cpp。注意：向量搜索…","url":"https://fivey-can-read-openclaw.pages.dev/concepts/memory-search/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/memory-search/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>内存搜索：如何从笔记中智能查找内容</h1>
-        <p class="hero-copy">这页讲的是OpenClaw如何通过向量和关键词两种方式，从你的记忆文件中找到相关笔记，即使查询的措辞与原文不同。配置时最该先看provider设置，明确要填哪个API提供商或本地选项；最容易错的地方是以为所有provider都能自动检测，实际上像ollama和local这类本地选项需要手动指定。</p>
+        <h1>记忆搜索：用语义找笔记，不靠关键词死磕</h1>
+        <p class="hero-copy">`memory_search` 同时跑向量搜索和 BM25 关键词搜索，合并结果返回最相关的笔记。先确认你配了 OpenAI、Gemini 等任一 provider，否则默认用 GitHub Copilot；本地无 API 密钥时设 `provider: &quot;local&quot;`，但需装 node-llama-cpp。注意：向量搜索找“意思相近”，关键词找“字面匹配”，两者互补，缺一不可。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.memory-search.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🔍 Memory Search 像一把会找“意思”的记忆小铲子</h2>
-      <p>它不是只按原句找，而是把记忆切成小块后，靠关键词、向量，或者两条路一起找。</p>
-      <p>所以它更像“我记得大概意思”的时候用的工具。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>记忆搜索：用语义找笔记，不靠关键词死磕</h2>
+      <p>`memory_search` 同时跑向量搜索和 BM25 关键词搜索，合并结果返回最相关的笔记。先确认你配了 OpenAI、Gemini 等任一 provider，否则默认用 GitHub Copilot；本地无 API 密钥时设 `provider: &quot;local&quot;`，但需装 node-llama-cpp。注意：向量搜索找“意思相近”，关键词找“字面匹配”，两者互补，缺一不可。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想让代理记忆检索更像人脑的人</span>
-      <span>重点是 keyword / vector / hybrid 三条路</span>
+      <span>原文共 12 节，先看 Start Here</span>
+      <span>路径：/concepts/memory-search</span>
       <a href="https://docs.openclaw.ai/concepts/memory-search" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

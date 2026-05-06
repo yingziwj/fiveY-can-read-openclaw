@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:48:09.606Z",
+  "generatedAt": "2026-05-06T15:05:18.780Z",
   "pathname": "/concepts/session",
   "title": "Session Management",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "会话管理：消息如何分组与隔离",
-    "heroSummary": "这页解释OpenClaw如何根据消息来源（私聊、群聊、定时任务等）将对话分组到不同会话中。最关键的是私聊隔离配置，多人使用时必须设置`dmScope: \"per-channel-peer\"`，否则所有用户的私聊会共享上下文。会话会按每日重置或空闲超时自动清理，状态数据存储在网关本地文件中。"
+    "heroTitle": "一条消息怎么找到它的会话？",
+    "heroSummary": "OpenClaw 按来源（私聊、群聊、定时任务等）把消息分到不同会话。多人私聊同一个 agent 时务必开启 DM 隔离，否则所有人的对话会混在一起。会话每天凌晨 4 点自动重置，也可以设置空闲超时或手动输入 /new 来重置。"
   }
 }

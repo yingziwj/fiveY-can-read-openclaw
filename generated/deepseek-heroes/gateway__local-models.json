@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:51:43.527Z",
+  "generatedAt": "2026-05-06T15:07:13.351Z",
   "pathname": "/gateway/local-models",
   "title": "Local Models",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "本地模型部署指南：硬件要求与配置要点",
-    "heroSummary": "这页详细说明如何在本地运行大型语言模型，重点在于硬件配置和安全性设置。首先需要确认你的硬件至少达到两台顶配Mac Studio或同等GPU设备（约3万美元以上），否则可能因上下文截断导致安全风险。配置时最容易出错的地方是选择了过度量化的小型模型变体，这会显著增加提示注入攻击的风险，务必使用你能运行的最大完整模型版本。"
+    "heroTitle": "本地模型：先算清硬件账，再动手配",
+    "heroSummary": "本地跑模型不是不行，但OpenClaw要求大上下文和强抗注入能力，小卡截断上下文且增加安全风险。先确认你的GPU至少24GB显存（推荐两台顶配Mac Studio或等效设备），然后从LM Studio或Ollama开始，用`openclaw onboard`快速接入。配置时务必用最大模型变体，避免量化版本；若用混合模式，记得设`models.mode: \"merge\"`让托管模型作为降级兜底。"
   }
 }

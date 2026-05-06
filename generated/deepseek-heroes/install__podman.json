@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:48:51.160Z",
+  "generatedAt": "2026-05-06T15:05:38.971Z",
   "pathname": "/install/podman",
   "title": "Podman",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "用 Podman 无根容器部署 OpenClaw 网关",
-    "heroSummary": "这页教你如何以非 root 用户身份，在 Podman 无根容器中运行 OpenClaw 网关，并通过主机上的 CLI 进行管理。先运行 `./scripts/podman/setup.sh` 完成一次性设置，然后使用 `./scripts/run-openclaw-podman.sh launch` 启动容器。注意，日常管理应使用 `openclaw --container <name> ...` 命令，而不是直接操作容器或使用 `sudo`。"
+    "heroTitle": "用 rootless Podman 跑网关，主机 CLI 当控制面板",
+    "heroSummary": "先跑 `./scripts/podman/setup.sh` 完成一次性构建和配置，再 `./scripts/run-openclaw-podman.sh launch` 启动容器。日常管理用 `openclaw --container openclaw` 命令，不需要 `sudo` 或 `podman exec`。最容易漏的是：setup 脚本不会把整个 `.env` 传给 Podman，只读白名单里的变量，自定义环境变量要显式传。"
   }
 }

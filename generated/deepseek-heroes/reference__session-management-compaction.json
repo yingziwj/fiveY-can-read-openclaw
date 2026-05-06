@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:54:42.034Z",
+  "generatedAt": "2026-05-06T15:09:15.067Z",
   "pathname": "/reference/session-management-compaction",
   "title": "Session Management Deep Dive",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw会话管理与压缩机制详解",
-    "heroSummary": "本页详细解析OpenClaw会话从路由到持久化的完整流程，重点说明会话存储(sessions.json)与对话记录(*.jsonl)的双层结构。阅读时应先理解Gateway作为唯一状态源的核心地位，避免在远程模式下误查本地文件。最需注意的是磁盘空间控制机制，当启用enforce模式时系统会按特定顺序清理文件，可能影响会话数据的保留。"
+    "heroTitle": "会话管理：Gateway 是唯一真相源，别去翻本地文件",
+    "heroSummary": "这一页讲透 OpenClaw 会话的完整生命周期：从消息路由到 sessionKey，到 sessions.json 和 .jsonl 双持久层，再到自动压缩和磁盘维护。最该先看的是 Gateway 进程——它是会话状态的唯一拥有者，远程模式下查本地 Mac 文件毫无意义。容易搞错的是 maintenance 的 warn 与 enforce 模式：warn 只报告不执行，别以为它会自动清理。"
   }
 }

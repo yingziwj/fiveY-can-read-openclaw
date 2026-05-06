@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gateway Runbook | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Gateway Runbook是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="先按“5-minute local startup”三步跑通服务，用 openclaw gateway status 确认 Runtime: running 和 RPC probe: ok 才算健康。最容易踩的坑是端口冲突：--force 会强杀旧进程再启动；配置热加载默认是 hybrid 模式，改完配置后会自动原子…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Gateway Runbook | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Gateway Runbook是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="先按“5-minute local startup”三步跑通服务，用 openclaw gateway status 确认 Runtime: running 和 RPC probe: ok 才算健康。最容易踩的坑是端口冲突：--force 会强杀旧进程再启动；配置热加载默认是 hybrid 模式，改完配置后会自动原子…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/gateway/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Gateway Runbook | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Gateway Runbook是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="先按“5-minute local startup”三步跑通服务，用 openclaw gateway status 确认 Runtime: running 和 RPC probe: ok 才算健康。最容易踩的坑是端口冲突：--force 会强杀旧进程再启动；配置热加载默认是 hybrid 模式，改完配置后会自动原子…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/gateway/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Gateway Runbook","description":"Gateway Runbook是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Gateway Runbook","description":"先按“5-minute local startup”三步跑通服务，用 openclaw gateway status 确认 Runtime: running 和 RPC probe: ok 才算健康。最容易踩的坑是端口冲突：--force 会强杀旧进程再启动；配置热加载默认是 hybrid 模式，改完配置后会自动原子…","url":"https://fivey-can-read-openclaw.pages.dev/gateway/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Gateway","item":"https://fivey-can-read-openclaw.pages.dev/gateway/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Gateway 导读</p>
-        <h1>Gateway 服务启动与运维手册</h1>
-        <p class="hero-copy">这页是 Gateway 服务的操作手册，包含首次启动、日常运维和故障排查的完整流程。最该先看“5分钟本地启动”部分，按步骤执行命令就能让服务跑起来。最容易搞错的是端口绑定和认证设置，特别是非回环地址的反向代理场景需要手动配置 `gateway.auth.mode: &quot;trusted-proxy&quot;`。</p>
+        <h1>Gateway 启动与运维速查：5 分钟本地跑通 + 关键配置陷阱</h1>
+        <p class="hero-copy">先按“5-minute local startup”三步跑通服务，用 `openclaw gateway status` 确认 `Runtime: running` 和 `RPC probe: ok` 才算健康。最容易踩的坑是端口冲突：`--force` 会强杀旧进程再启动；配置热加载默认是 hybrid 模式，改完配置后会自动原子替换内存快照，不用重启。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,18 +4324,18 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:gateway.index.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🏢 Gateway 这页其实在讲：OpenClaw 的总机房，到底怎么开、怎么查、怎么守</h2>
-      <p>如果说 channels 是一扇扇门，agents 是楼里的工作人员，那 Gateway 就像整栋楼的总机房。电、路由、门禁、对外接口，很多关键东西都在这里集合。</p>
-      <p>所以这页不是“再多一个命令页”。它更像总值班手册，告诉你这台总机房怎么启动、怎么问状态、怎么远程连、怎么稳定值守。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Gateway 启动与运维速查：5 分钟本地跑通 + 关键配置陷阱</h2>
+      <p>先按“5-minute local startup”三步跑通服务，用 `openclaw gateway status` 确认 `Runtime: running` 和 `RPC probe: ok` 才算健康。最容易踩的坑是端口冲突：`--force` 会强杀旧进程再启动；配置热加载默认是 hybrid 模式，改完配置后会自动原子替换内存快照，不用重启。</p>
     </div>
     <div class="overview-meta">
-      <span>适合第一次真正把 OpenClaw 跑成长期在线服务的人</span>
-      <span>这页最重要的是分清：启动、查询、远程接入、长期托管，是四件不同的事</span>
-      <a href="https://docs.openclaw.ai/gateway" target="_blank" rel="noreferrer">查看官方原文</a>
+      <span>原文共 18 节，先看 Start Here</span>
+      <span>路径：/gateway/index</span>
+      <a href="https://docs.openclaw.ai/gateway/index" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>
 </section>

@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Talk 模式：Talk Mode | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Talk 模式是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Talk Mode | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Talk Mode 开启后，设备会持续监听、发送转录、等待回复并朗读。配置时务必填对 voiceId 和 apiKey，否则无法发声；最容易忽略的是 silenceTimeoutMs 默认值因平台而异（macOS 700ms，Android 700ms，iOS 900ms），调整不当会导致对话节奏异常。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Talk 模式：Talk Mode | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Talk 模式是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Talk Mode | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Talk Mode 开启后，设备会持续监听、发送转录、等待回复并朗读。配置时务必填对 voiceId 和 apiKey，否则无法发声；最容易忽略的是 silenceTimeoutMs 默认值因平台而异（macOS 700ms，Android 700ms，iOS 900ms），调整不当会导致对话节奏异常。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/nodes/talk/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Talk 模式：Talk Mode | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Talk 模式是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Talk Mode | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Talk Mode 开启后，设备会持续监听、发送转录、等待回复并朗读。配置时务必填对 voiceId 和 apiKey，否则无法发声；最容易忽略的是 silenceTimeoutMs 默认值因平台而异（macOS 700ms，Android 700ms，iOS 900ms），调整不当会导致对话节奏异常。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/nodes/talk/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Talk 模式：Talk Mode","description":"Talk 模式是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/nodes/talk/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Talk Mode","description":"Talk Mode 开启后，设备会持续监听、发送转录、等待回复并朗读。配置时务必填对 voiceId 和 apiKey，否则无法发声；最容易忽略的是 silenceTimeoutMs 默认值因平台而异（macOS 700ms，Android 700ms，iOS 900ms），调整不当会导致对话节奏异常。","url":"https://fivey-can-read-openclaw.pages.dev/nodes/talk/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Nodes","item":"https://fivey-can-read-openclaw.pages.dev/nodes/talk/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Nodes 导读</p>
-        <h1>Talk Mode 语音对话配置与行为详解</h1>
-        <p class="hero-copy">本页详细说明如何配置 Talk Mode 实现连续语音对话，包括监听、转录、回复和语音播放的完整流程。配置时需特别注意 silenceTimeoutMs 和 interruptOnSpeech 参数，它们直接影响对话的响应速度和打断行为。页面还解释了如何在助理回复中通过 JSON 行动态控制语音参数，如切换音色或调整语速。</p>
+        <h1>Talk Mode：连续语音对话的配置与行为</h1>
+        <p class="hero-copy">Talk Mode 开启后，设备会持续监听、发送转录、等待回复并朗读。配置时务必填对 `voiceId` 和 `apiKey`，否则无法发声；最容易忽略的是 `silenceTimeoutMs` 默认值因平台而异（macOS 700ms，Android 700ms，iOS 900ms），调整不当会导致对话节奏异常。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🗣️ Talk Mode 这页，其实是在讲“让 OpenClaw 进入连续语音对话循环，像真的在跟你面对面聊天”</h2><p>它会一直听、转写、发给模型、等回复、再读出来，然后继续等你下一句。</p><p>所以这是一个循环，不是按一下按钮只说一句。</p></div><div class="overview-meta"><span>连续语音对话</span><span>重点是 listen → think → speak、打断、语音指令 JSON</span><a href="https://docs.openclaw.ai/nodes/talk" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:nodes.talk.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Talk Mode：连续语音对话的配置与行为</h2>
+      <p>Talk Mode 开启后，设备会持续监听、发送转录、等待回复并朗读。配置时务必填对 `voiceId` 和 `apiKey`，否则无法发声；最容易忽略的是 `silenceTimeoutMs` 默认值因平台而异（macOS 700ms，Android 700ms，iOS 900ms），调整不当会导致对话节奏异常。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/nodes/talk</span>
+      <a href="https://docs.openclaw.ai/nodes/talk" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>🔄 整个 Talk 模式就像一条小环线：听见你说，想一下，再把答案念出来</h2><p>官方把这条链路写得很清楚。</p></div><div class="home-grid"><article class="home-card"><span class="home-card-index">👂</span><h2>Listening</h2><p>先持续听用户讲话。</p></article><article class="home-card"><span class="home-card-index">🧠</span><h2>Thinking</h2><p>短暂停顿后，把转写内容送给模型开始想。</p></article><article class="home-card"><span class="home-card-index">🔊</span><h2>Speaking</h2><p>拿到回复后走 ElevenLabs 之类 TTS 流式播报。</p></article><article class="home-card"><span class="home-card-index">♻️</span><h2>再回到听</h2><p>播完不是结束，而是继续等你下一句。</p></article></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第二站</p><h2>✋ interrupt on speech 像“你一开口，我就闭嘴听你说”</h2><p>这是这页最像真人对话礼貌的一部分。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label"><code>interruptOnSpeech: true</code></div><p>默认开。用户重新说话时，OpenClaw 会停掉当前播报，先把耳朵让出来。</p></div><div class="source-card"><div class="story-card-label"><code>silenceTimeoutMs</code></div><p>这像判断“你真的说完了吗”的停顿窗口，太短会急，太长会拖。</p></div><div class="source-card"><div class="story-card-label">Overlay phases</div><p>macOS 会把 Listening、Thinking、Speaking 做成明显状态变化，像会呼吸的小状态灯。</p></div><div class="source-card"><div class="story-card-label">WebChat 同步</div><p>语音回复也会写进 WebChat，不会只在耳机里念完就没痕迹。</p></div></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第三站</p><h2>🎭 回复最前面那行 JSON，像是对 TTS 说的幕后舞台指令</h2><p>它不是给用户看的正文，而是在悄悄告诉播报系统这次用什么声音、要不要只生效一次。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label"><code>{\"voice\":\"...\",\"once\":true}</code></div><p>像“这句临时换个声线说完就恢复”。</p></div><div class="source-card"><div class="story-card-label">Without <code>once</code></div><p>那就不是临时演出，而是把默认声线也改掉。</p></div><div class="source-card"><div class="story-card-label"><code>voiceId / modelId / speed</code></div><p>这些都像舞台音响师的控制杆，调谁来念、念多快、风格多稳。</p></div><div class="source-card"><div class="story-card-label">🎈 最后记一句</div><p>Talk mode 不是“语音输入”，而是“持续对话循环”。</p></div></div></section>

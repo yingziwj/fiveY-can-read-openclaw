@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:33.010Z",
+  "generatedAt": "2026-05-06T15:07:46.452Z",
   "pathname": "/platforms/mac/logging",
   "title": "macOS Logging",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "macOS日志配置与调试文件管理",
-    "heroSummary": "这页详细说明如何在macOS上配置OpenClaw的日志系统，包括启用本地滚动诊断日志和设置统一日志的隐私数据可见性。先看如何启用调试面板中的滚动日志文件，这是捕获持久日志的关键步骤。最容易错的是忘记在调试后关闭隐私数据可见性，这可能导致敏感信息泄露。"
+    "heroTitle": "macOS 日志：先开开关，再装 plist，最后记得关",
+    "heroSummary": "这页讲两件事：一是通过 Debug 面板启用本地滚动日志文件（默认关闭，用完即关），二是让 macOS 统一日志系统显示隐私数据——需要以 root 安装一个 plist 文件到 /Library/Preferences/Logging/Subsystems/，且只对新日志生效。最容易漏的是：装 plist 前先确认子系统名是 ai.openclaw，调试完后必须删掉 plist，否则日志里会持续包含手机号等敏感内容。"
   }
 }

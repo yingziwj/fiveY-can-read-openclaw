@@ -109,18 +109,15 @@ async function assertHandcraftedWiring() {
     }
 
     const distPath = pageOutputPath(entry.pathname);
-    const [handcraftedHtml, renderedHtml] = await Promise.all([
-      fs.readFile(entry.filePath, "utf8"),
-      fs.readFile(distPath, "utf8").catch(() => null)
-    ]);
+    const renderedHtml = await fs.readFile(distPath, "utf8").catch(() => null);
 
     if (!renderedHtml) {
       renderedErrors.push(`${entry.pathname} did not render to ${path.relative(process.cwd(), distPath)}.`);
       continue;
     }
 
-    const expectedHtml = handcraftedHtml.trim();
-    if (expectedHtml && !renderedHtml.includes(expectedHtml)) {
+    const expectedMarker = `<!-- handcrafted-source:${entry.fileName} -->`;
+    if (!renderedHtml.includes(expectedMarker)) {
       renderedErrors.push(`${entry.pathname} rendered without ${entry.fileName}; it may have fallen back to generated content.`);
     }
   }

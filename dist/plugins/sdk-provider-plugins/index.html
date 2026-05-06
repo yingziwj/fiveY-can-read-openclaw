@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>构建提供商插件：Building Provider Plugins | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="构建提供商插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Building Provider Plugins | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="从 package.json 的 provider 声明、openclaw.plugin.json 里的认证变量，到用 definePluginEntry 注册 provider，每一步都有代码和说明。最容易漏的是 manifest 里 providerAuthEnvVars 和 modelSupport 的配置——…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="构建提供商插件：Building Provider Plugins | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="构建提供商插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Building Provider Plugins | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="从 package.json 的 provider 声明、openclaw.plugin.json 里的认证变量，到用 definePluginEntry 注册 provider，每一步都有代码和说明。最容易漏的是 manifest 里 providerAuthEnvVars 和 modelSupport 的配置——…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/plugins/sdk-provider-plugins/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="构建提供商插件：Building Provider Plugins | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="构建提供商插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Building Provider Plugins | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="从 package.json 的 provider 声明、openclaw.plugin.json 里的认证变量，到用 definePluginEntry 注册 provider，每一步都有代码和说明。最容易漏的是 manifest 里 providerAuthEnvVars 和 modelSupport 的配置——…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/plugins/sdk-provider-plugins/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"构建提供商插件：Building Provider Plugins","description":"构建提供商插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-provider-plugins/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Building Provider Plugins","description":"从 package.json 的 provider 声明、openclaw.plugin.json 里的认证变量，到用 definePluginEntry 注册 provider，每一步都有代码和说明。最容易漏的是 manifest 里 providerAuthEnvVars 和 modelSupport 的配置——…","url":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-provider-plugins/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Plugins","item":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-provider-plugins/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Plugins 导读</p>
-        <h1>为 OpenClaw 构建模型提供商插件</h1>
-        <p class="hero-copy">本页指导你如何构建一个插件，将新的 AI 模型提供商（如 Acme AI）接入 OpenClaw 系统。你需要先配置插件清单（openclaw.plugin.json）来声明提供商 ID、API 密钥环境变量和模型前缀。最容易出错的地方是混淆发布命令，务必使用 `clawhub package publish` 而非旧版别名。</p>
+        <h1>给 OpenClaw 加一个新模型供应商，照着这个流程走</h1>
+        <p class="hero-copy">从 package.json 的 provider 声明、openclaw.plugin.json 里的认证变量，到用 definePluginEntry 注册 provider，每一步都有代码和说明。最容易漏的是 manifest 里 providerAuthEnvVars 和 modelSupport 的配置——前者让 OpenClaw 在加载插件前就能识别密钥，后者支持用简写模型 ID 自动匹配供应商。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:plugins.sdk-provider-plugins.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧠 Building Provider Plugins，就是给 OpenClaw 再接一台“新大脑供应机”</h2>
-      <p>这页讲的是怎么让 OpenClaw 认识新的模型提供商。</p>
-      <p>像给机器人接一条新电源线：它还是那个机器人，但现在能从另一台机器那里拿到思考力。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>给 OpenClaw 加一个新模型供应商，照着这个流程走</h2>
+      <p>从 package.json 的 provider 声明、openclaw.plugin.json 里的认证变量，到用 definePluginEntry 注册 provider，每一步都有代码和说明。最容易漏的是 manifest 里 providerAuthEnvVars 和 modelSupport 的配置——前者让 OpenClaw 在加载插件前就能识别密钥，后者支持用简写模型 ID 自动匹配供应商。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想接新模型供应商的人</span>
-      <span>重点是 provider 如何注册、如何拿模型、如何配置</span>
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/plugins/sdk-provider-plugins</span>
       <a href="https://docs.openclaw.ai/plugins/sdk-provider-plugins" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

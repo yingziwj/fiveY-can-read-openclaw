@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>配置示例：Configuration Examples | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="配置示例是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Configuration Examples | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="先复制「绝对最小配置」让 bot 能收私信，再按「推荐起步」加上身份和模型。注意 expanded 例子里 auth 密钥是单独文件，别把 secret 写进主配置。技能基线用 defaults.skills 统一，单个 agent 的 skills 会完全替换它，不是合并。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="配置示例：Configuration Examples | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="配置示例是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Configuration Examples | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="先复制「绝对最小配置」让 bot 能收私信，再按「推荐起步」加上身份和模型。注意 expanded 例子里 auth 密钥是单独文件，别把 secret 写进主配置。技能基线用 defaults.skills 统一，单个 agent 的 skills 会完全替换它，不是合并。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/gateway/configuration-examples/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="配置示例：Configuration Examples | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="配置示例是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Configuration Examples | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="先复制「绝对最小配置」让 bot 能收私信，再按「推荐起步」加上身份和模型。注意 expanded 例子里 auth 密钥是单独文件，别把 secret 写进主配置。技能基线用 defaults.skills 统一，单个 agent 的 skills 会完全替换它，不是合并。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/gateway/configuration-examples/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"配置示例：Configuration Examples","description":"配置示例是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/configuration-examples/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Configuration Examples","description":"先复制「绝对最小配置」让 bot 能收私信，再按「推荐起步」加上身份和模型。注意 expanded 例子里 auth 密钥是单独文件，别把 secret 写进主配置。技能基线用 defaults.skills 统一，单个 agent 的 skills 会完全替换它，不是合并。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/configuration-examples/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Gateway","item":"https://fivey-can-read-openclaw.pages.dev/gateway/configuration-examples/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Gateway 导读</p>
-        <h1>网关配置示例：从最简到推荐配置</h1>
-        <p class="hero-copy">这页提供OpenClaw网关的JSON5配置示例，从最简配置到推荐的多功能配置。先看“推荐入门配置”，它包含了身份、模型和频道设置，能快速启动一个功能完整的机器人。注意配置中channels.whatsapp.allowFrom字段必须填写允许的号码，否则机器人无法接收消息。</p>
+        <h1>从零配置到多 agent 技能覆盖：直接抄这 5 个 JSON 片段</h1>
+        <p class="hero-copy">先复制「绝对最小配置」让 bot 能收私信，再按「推荐起步」加上身份和模型。注意 expanded 例子里 auth 密钥是单独文件，别把 secret 写进主配置。技能基线用 defaults.skills 统一，单个 agent 的 skills 会完全替换它，不是合并。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:gateway.configuration-examples.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🏠 <code>Configuration Examples</code> 像“样板房大街”：不是让你全搬，而是教你怎么抄得聪明</h2>
-      <p>这一页不是定义字典，也不是概念课。它就是在给你看几套现成装修样板：最小能住版、推荐起步版、展开全配版，以及几个常见场景版。</p>
-      <p>所以这页的正确读法不是从头背到尾，而是先找“哪一套最像我家”，然后先抄一小块，再慢慢改。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>从零配置到多 agent 技能覆盖：直接抄这 5 个 JSON 片段</h2>
+      <p>先复制「绝对最小配置」让 bot 能收私信，再按「推荐起步」加上身份和模型。注意 expanded 例子里 auth 密钥是单独文件，别把 secret 写进主配置。技能基线用 defaults.skills 统一，单个 agent 的 skills 会完全替换它，不是合并。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想直接抄配置的人</span>
-      <span>把样板房当模板，不要当圣经整本照抄</span>
+      <span>原文共 11 节，先看 Start Here</span>
+      <span>路径：/gateway/configuration-examples</span>
       <a href="https://docs.openclaw.ai/gateway/configuration-examples" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

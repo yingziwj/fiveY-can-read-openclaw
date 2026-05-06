@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:51:10.068Z",
+  "generatedAt": "2026-05-06T15:07:01.536Z",
   "pathname": "/tools/web-fetch",
   "title": "Web Fetch",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Web Fetch 工具：快速获取网页内容",
-    "heroSummary": "这页介绍 web_fetch 工具，它通过 HTTP GET 获取网页内容并自动提取可读文本（HTML 转 Markdown 或纯文本），但不会执行 JavaScript。使用前需注意：对于依赖 JavaScript 或需要登录的页面，应改用 Web Browser 工具；配置时，关键参数是 url（必填，仅支持 http/https）和 extractMode（默认 markdown），最容易出错的是误用该工具处理动态页面。"
+    "heroTitle": "零配置抓网页，但别指望它跑JS",
+    "heroSummary": "`web_fetch` 默认启用，直接传 URL 就能拿到 Markdown 或纯文本内容。它不做 JS 渲染，遇到动态页面或需要登录的网站，换成 Web Browser 工具。最常踩的坑是以为它能像浏览器一样加载页面，其实它只做一次 HTTP GET 然后提取正文。"
   }
 }

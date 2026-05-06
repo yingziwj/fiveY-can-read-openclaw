@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kimi 搜索：Kimi Search | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Kimi 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Kimi Search | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="OpenClaw 把 Kimi 当作 web_search 供应商，走 Moonshot 的搜索接口返回带引用的 AI 合成答案。配置时最容易踩的坑是 API 区域：如果聊天用了国内节点（api.moonshot.cn），搜索默认复用同一地址，不用再设 baseUrl；否则手动指定国际地址（api.moonshot.…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Kimi 搜索：Kimi Search | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Kimi 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Kimi Search | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="OpenClaw 把 Kimi 当作 web_search 供应商，走 Moonshot 的搜索接口返回带引用的 AI 合成答案。配置时最容易踩的坑是 API 区域：如果聊天用了国内节点（api.moonshot.cn），搜索默认复用同一地址，不用再设 baseUrl；否则手动指定国际地址（api.moonshot.…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/tools/kimi-search/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Kimi 搜索：Kimi Search | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Kimi 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Kimi Search | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="OpenClaw 把 Kimi 当作 web_search 供应商，走 Moonshot 的搜索接口返回带引用的 AI 合成答案。配置时最容易踩的坑是 API 区域：如果聊天用了国内节点（api.moonshot.cn），搜索默认复用同一地址，不用再设 baseUrl；否则手动指定国际地址（api.moonshot.…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/tools/kimi-search/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Kimi 搜索：Kimi Search","description":"Kimi 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/tools/kimi-search/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Kimi Search","description":"OpenClaw 把 Kimi 当作 web_search 供应商，走 Moonshot 的搜索接口返回带引用的 AI 合成答案。配置时最容易踩的坑是 API 区域：如果聊天用了国内节点（api.moonshot.cn），搜索默认复用同一地址，不用再设 baseUrl；否则手动指定国际地址（api.moonshot.…","url":"https://fivey-can-read-openclaw.pages.dev/tools/kimi-search/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://fivey-can-read-openclaw.pages.dev/tools/kimi-search/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Tools 导读</p>
-        <h1>配置 Kimi 搜索：获取 API 密钥与避免 401 错误</h1>
-        <p class="hero-copy">这页教你如何在 OpenClaw 中接入 Kimi 作为网页搜索工具，核心是获取 Moonshot API 密钥并正确配置。配置时最容易出错的是 API 端点（baseUrl）选择不当导致 401 错误，需注意中国区与国际区端点的区别。</p>
+        <h1>用 Kimi 做联网搜索：先拿 API Key，再配好区域</h1>
+        <p class="hero-copy">OpenClaw 把 Kimi 当作 web_search 供应商，走 Moonshot 的搜索接口返回带引用的 AI 合成答案。配置时最容易踩的坑是 API 区域：如果聊天用了国内节点（api.moonshot.cn），搜索默认复用同一地址，不用再设 baseUrl；否则手动指定国际地址（api.moonshot.ai）避免 401。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:tools.kimi-search.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🌙 Kimi Search 像一位“拿着 Moonshot 参考书的答案小助手”</h2>
-      <p>这页讲的是 Kimi 在 OpenClaw 里的搜索路线。它走的是 Moonshot web search，输出的也是带引用的答案，不只是蓝色链接列表。</p>
-      <p>你可以把它想成一个安静但很会整理笔记的小助手。你问它问题，它先去找，再把结果收拾成一段能读懂的话。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用 Kimi 做联网搜索：先拿 API Key，再配好区域</h2>
+      <p>OpenClaw 把 Kimi 当作 web_search 供应商，走 Moonshot 的搜索接口返回带引用的 AI 合成答案。配置时最容易踩的坑是 API 区域：如果聊天用了国内节点（api.moonshot.cn），搜索默认复用同一地址，不用再设 baseUrl；否则手动指定国际地址（api.moonshot.ai）避免 401。</p>
     </div>
     <div class="overview-meta">
-      <span>适合已经在用 Moonshot / Kimi 生态的人</span>
-      <span>这页最重要的是看懂 Kimi、Moonshot API key、以及答案型搜索的关系</span>
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/tools/kimi-search</span>
       <a href="https://docs.openclaw.ai/tools/kimi-search" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

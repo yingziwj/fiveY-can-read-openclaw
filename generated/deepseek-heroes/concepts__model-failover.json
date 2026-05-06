@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:49:20.316Z",
+  "generatedAt": "2026-05-06T15:05:55.066Z",
   "pathname": "/concepts/model-failover",
   "title": "Model Failover",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw 模型故障转移机制详解",
-    "heroSummary": "本页详细解释了 OpenClaw 在模型调用失败时的两阶段处理流程：先在同一提供商内轮换认证配置，再按配置顺序切换到备用模型。配置 `agents.defaults.model.fallbacks` 时需注意，系统会严格按顺序尝试，并在失败时持久化回退选择以确保会话一致性。"
+    "heroTitle": "模型请求失败后，OpenClaw 如何自动切换？",
+    "heroSummary": "OpenClaw 的故障处理分两层：先在同一 provider 内轮换 auth profile，再按 `fallbacks` 列表降级到下一个模型。最容易搞错的是：降级时只持久化模型选择字段，不会保存整个 session；另外，auth profile 的轮换顺序默认按类型（OAuth 优先于 API key）和最后使用时间排序，而非配置顺序。"
   }
 }

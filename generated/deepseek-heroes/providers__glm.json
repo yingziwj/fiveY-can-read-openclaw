@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:49:59.006Z",
+  "generatedAt": "2026-05-06T15:06:20.726Z",
   "pathname": "/providers/glm",
-  "title": "GLM Models",
+  "title": "GLM (Zhipu)",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "接入GLM模型：配置Z.AI平台模型到OpenClaw",
-    "heroSummary": "这页教你如何通过zai provider在OpenClaw中使用GLM系列模型，重点是配置API密钥和选择正确的区域端点。先运行onboard命令设置认证方式，注意区分通用API和Coding Plan的不同密钥选项。最容易错的是选错区域导致连接失败，特别是中国区用户要明确指定zai-cn或zai-coding-cn。"
+    "heroTitle": "GLM 模型接入：先选对认证方式，再设模型 ID",
+    "heroSummary": "GLM 是 Z.AI 平台上的模型族，通过 `zai` provider 使用，模型 ID 格式为 `zai/glm-5.1`。开始前先执行 `openclaw onboard --auth-choice zai-api-key` 自动检测端点，或用区域专用选项固定端点。最容易错的是混淆认证方式：`zai-api-key` 自动匹配，而 `zai-coding-global` 等会强制指定 Coding Plan 或区域，选错可能导致 API 调用失败。"
   }
 }

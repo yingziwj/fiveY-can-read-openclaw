@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:49:53.538Z",
+  "generatedAt": "2026-05-06T15:06:20.115Z",
   "pathname": "/providers/fal",
   "title": "fal",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "配置fal提供商进行图像和视频生成",
-    "heroSummary": "这页说明如何在OpenClaw中设置和使用fal提供商来生成图像和视频。首先需要设置FAL_KEY环境变量，然后配置默认的图像或视频模型。注意fal的图像编辑端点目前不支持某些功能，视频生成采用队列提交方式处理长时间任务。"
+    "heroTitle": "用 fal 跑图片和视频生成：先配好 FAL_KEY，再选模型",
+    "heroSummary": "OpenClaw 内置了 fal provider，支持图片和视频生成。第一步是用 `openclaw onboard --auth-choice fal-api-key` 设置 API 密钥，然后在 agent 默认配置里指定模型。注意图片编辑不支持 `aspectRatio` 覆盖，视频生成是队列式的异步任务。"
   }
 }

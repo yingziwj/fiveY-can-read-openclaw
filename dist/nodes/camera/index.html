@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camera Capture | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Camera Capture是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="通过 node.invoke 发送 camera.snap 或 camera.clip 即可在 iOS、Android、macOS 节点上拍照或录短视频（含音频）。注意：摄像头权限默认开启，但用户可在设置中关闭；iOS 节点必须在前台运行才能调用摄像头。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Camera Capture | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Camera Capture是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="通过 node.invoke 发送 camera.snap 或 camera.clip 即可在 iOS、Android、macOS 节点上拍照或录短视频（含音频）。注意：摄像头权限默认开启，但用户可在设置中关闭；iOS 节点必须在前台运行才能调用摄像头。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/nodes/camera/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Camera Capture | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Camera Capture是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="通过 node.invoke 发送 camera.snap 或 camera.clip 即可在 iOS、Android、macOS 节点上拍照或录短视频（含音频）。注意：摄像头权限默认开启，但用户可在设置中关闭；iOS 节点必须在前台运行才能调用摄像头。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/nodes/camera/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Camera Capture","description":"Camera Capture是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/nodes/camera/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Camera Capture","description":"通过 node.invoke 发送 camera.snap 或 camera.clip 即可在 iOS、Android、macOS 节点上拍照或录短视频（含音频）。注意：摄像头权限默认开启，但用户可在设置中关闭；iOS 节点必须在前台运行才能调用摄像头。","url":"https://fivey-can-read-openclaw.pages.dev/nodes/camera/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Nodes","item":"https://fivey-can-read-openclaw.pages.dev/nodes/camera/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Nodes 导读</p>
-        <h1>iOS/Android/macOS设备通过Gateway调用摄像头拍照或录视频</h1>
-        <p class="hero-copy">这页详细说明如何通过node.invoke命令控制iOS、Android、macOS设备的摄像头进行拍照(jpg)或录制短视频(mp4)。使用前必须先检查用户设置中的Camera权限是否开启，否则会返回CAMERA_DISABLED错误。iOS设备只能在应用前台执行camera.*命令，后台调用会失败。</p>
+        <h1>用手机或电脑摄像头拍照、录视频，一条命令搞定</h1>
+        <p class="hero-copy">通过 `node.invoke` 发送 `camera.snap` 或 `camera.clip` 即可在 iOS、Android、macOS 节点上拍照或录短视频（含音频）。注意：摄像头权限默认开启，但用户可在设置中关闭；iOS 节点必须在前台运行才能调用摄像头。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>📷 Camera 这页，其实是在讲“让远程节点替你拍照或录一小段视频”</h2><p>iOS、Android、macOS 节点都能当远程镜头，但前提是用户真的给了相机权限，而且很多时候节点得在前台。</p><p>它不是后台偷偷拍，而是受用户设置和系统权限双重约束。</p></div><div class="overview-meta"><span>远程相机抓拍与短视频</span><span>重点是权限、foreground、nodes camera CLI</span><a href="https://docs.openclaw.ai/nodes/camera" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:nodes.camera.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用手机或电脑摄像头拍照、录视频，一条命令搞定</h2>
+      <p>通过 `node.invoke` 发送 `camera.snap` 或 `camera.clip` 即可在 iOS、Android、macOS 节点上拍照或录短视频（含音频）。注意：摄像头权限默认开启，但用户可在设置中关闭；iOS 节点必须在前台运行才能调用摄像头。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 14 节，先看 Start Here</span>
+      <span>路径：/nodes/camera</span>
+      <a href="https://docs.openclaw.ai/nodes/camera" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>🔒 第一件事不是拍，而是问“这台设备允许不允许你开镜头”</h2><p>官方把相机访问摆得很靠前，说明它是硬门槛。</p></div><div class="home-grid"><article class="home-card"><span class="home-card-index">✅</span><h2><code>camera.enabled</code></h2><p>这是用户自己的总开关，关了就直接返回 <code>CAMERA_DISABLED</code>。</p></article><article class="home-card"><span class="home-card-index">📱</span><h2>前台限制</h2><p>像 iOS 节点很多时候必须把 app 放在前台，后台会被拒。</p></article><article class="home-card"><span class="home-card-index">🎙️</span><h2>录视频带音频</h2><p>如果录 clip 还带音频，就不只要相机，还要麦克风许可。</p></article><article class="home-card"><span class="home-card-index">🧭</span><h2><code>camera.list</code></h2><p>先看这台设备身上到底有哪些镜头可选，别闭眼乱点。</p></article></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第二站</p><h2>🛠️ 这些命令其实就是“列镜头、拍一张、录一段”</h2><p>把它当成远程摄影助手就好理解了。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label"><code>openclaw nodes camera snap --node &lt;id&gt;</code></div><p>像远程喊一声“拍照”。默认甚至会把前后镜头都各拍一张给你。</p></div><div class="source-card"><div class="story-card-label"><code>--facing front</code></div><p>这句像告诉摄影师“只用前置镜头”。</p></div><div class="source-card"><div class="story-card-label"><code>openclaw nodes camera clip --duration 3000</code></div><p>像说“录 3 秒小短片”，不是长录像机模式。</p></div><div class="source-card"><div class="story-card-label"><code>MEDIA:&lt;path&gt;</code></div><p>CLI 帮手会把拍到的媒体先落成临时文件，再把路径打印给后续流程接力。</p></div></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第三站</p><h2>🎈 真正容易踩坑的不是拍照参数，而是“设备在不在前台、权限给没给”</h2><p>如果你看见 <code>NODE_BACKGROUND_UNAVAILABLE</code>，别先怀疑命令写错，先看节点是不是退到后台了。</p></div></section>

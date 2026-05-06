@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:53:18.711Z",
+  "generatedAt": "2026-05-06T15:08:21.749Z",
   "pathname": "/cli/acp",
   "title": "acp",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw ACP 桥接命令：连接 IDE 与网关的会话转发器",
-    "heroSummary": "此命令在 IDE 与 OpenClaw 网关之间建立 ACP 协议桥接，负责会话映射和提示转发。最需注意它与 ACP 原生运行时的区别：它仅作桥接，不支持客户端文件系统或终端方法，且会话历史重建功能有限。配置时需明确指定网关 URL 和令牌，并注意 `--session` 参数用于绑定现有会话。"
+    "heroTitle": "用 IDE 通过 ACP 连接 Gateway，别搞混成启动外部 Agent",
+    "heroSummary": "`openclaw acp` 在 stdio 上启动一个 ACP 桥，让 IDE 或 ACP 客户端能把提示词通过 WebSocket 转发给 Gateway。最容易搞错的是：这不是用来启动 Codex 或 Claude 等外部 Agent 的——那是 `/acp spawn` 和 ACP Agents 页的事。先确认你的场景：客户端要连 OpenClaw 就走 `openclaw acp`；要让 OpenClaw 启动外部 Agent 就走 ACP Agents。"
   }
 }

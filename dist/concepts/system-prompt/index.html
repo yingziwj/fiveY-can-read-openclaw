@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>System Prompt | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="System Prompt是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="每个agent运行时，OpenClaw都会生成一份专属的系统提示词，且不使用pi-coding-agent的默认提示词。Provider插件只能通过替换命名核心段（如interaction_style）、注入稳定前缀或动态后缀来影响提示词，但无法替换整个OpenClaw拥有的提示词主体。最容易搞错的是：provide…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="System Prompt | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="System Prompt是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="每个agent运行时，OpenClaw都会生成一份专属的系统提示词，且不使用pi-coding-agent的默认提示词。Provider插件只能通过替换命名核心段（如interaction_style）、注入稳定前缀或动态后缀来影响提示词，但无法替换整个OpenClaw拥有的提示词主体。最容易搞错的是：provide…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/system-prompt/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="System Prompt | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="System Prompt是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="每个agent运行时，OpenClaw都会生成一份专属的系统提示词，且不使用pi-coding-agent的默认提示词。Provider插件只能通过替换命名核心段（如interaction_style）、注入稳定前缀或动态后缀来影响提示词，但无法替换整个OpenClaw拥有的提示词主体。最容易搞错的是：provide…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/system-prompt/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"System Prompt","description":"System Prompt是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/system-prompt/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"System Prompt","description":"每个agent运行时，OpenClaw都会生成一份专属的系统提示词，且不使用pi-coding-agent的默认提示词。Provider插件只能通过替换命名核心段（如interaction_style）、注入稳定前缀或动态后缀来影响提示词，但无法替换整个OpenClaw拥有的提示词主体。最容易搞错的是：provide…","url":"https://fivey-can-read-openclaw.pages.dev/concepts/system-prompt/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/system-prompt/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>OpenClaw 系统提示的结构与注入机制</h1>
-        <p class="hero-copy">本页详解 OpenClaw 如何为每次代理运行构建专属的系统提示，该提示由 OpenClaw 拥有，而非使用默认模板。你应首先了解提示的固定结构，包括工具、安全、工作区等核心部分。最需注意的是，Provider 插件只能通过替换特定命名区块或注入前缀/后缀来提供缓存感知的指导，无法完全覆盖 OpenClaw 自有的提示内容，错误地尝试完全替换会导致配置失效。</p>
+        <h1>系统提示词由OpenClaw全权组装，provider只能插片，不能换芯</h1>
+        <p class="hero-copy">每个agent运行时，OpenClaw都会生成一份专属的系统提示词，且不使用pi-coding-agent的默认提示词。Provider插件只能通过替换命名核心段（如interaction_style）、注入稳定前缀或动态后缀来影响提示词，但无法替换整个OpenClaw拥有的提示词主体。最容易搞错的是：provider的修改范围是受限的，并非所有部分都可替换。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.system-prompt.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧠 System Prompt，就是 OpenClaw 每次开工前塞给小工人的“总说明卡”</h2>
-      <p>很多人会把 system prompt 想成一段神秘咒语。其实它更像上岗前发的总说明卡：你是谁、手里有什么工具、今天在哪工作、有什么边界、该去哪里查资料。</p>
-      <p>这张卡不是模型自己带来的，而是 OpenClaw 每次开工前亲手组装好，再塞进去的。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>系统提示词由OpenClaw全权组装，provider只能插片，不能换芯</h2>
+      <p>每个agent运行时，OpenClaw都会生成一份专属的系统提示词，且不使用pi-coding-agent的默认提示词。Provider插件只能通过替换命名核心段（如interaction_style）、注入稳定前缀或动态后缀来影响提示词，但无法替换整个OpenClaw拥有的提示词主体。最容易搞错的是：provider的修改范围是受限的，并非所有部分都可替换。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想看懂模型开工前到底先看了什么的人</span>
-      <span>这页最重要的是记住：system prompt 是 OpenClaw 自己拼出来的，不是默认照搬别人的</span>
+      <span>原文共 7 节，先看 Start Here</span>
+      <span>路径：/concepts/system-prompt</span>
       <a href="https://docs.openclaw.ai/concepts/system-prompt" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

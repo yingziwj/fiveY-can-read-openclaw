@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Z.AI 提供商：Z.AI | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Z.AI 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Z.AI | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Z.AI 是智谱 GLM 模型的 API 平台，OpenClaw 通过 zai provider 接入。先到 Z.AI 控制台创建 API Key，然后运行 openclaw onboard --auth-choice zai-api-key 完成初始化。默认模型是 zai/glm-5.1，支持自动检测端点或手动指定…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Z.AI 提供商：Z.AI | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Z.AI 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Z.AI | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Z.AI 是智谱 GLM 模型的 API 平台，OpenClaw 通过 zai provider 接入。先到 Z.AI 控制台创建 API Key，然后运行 openclaw onboard --auth-choice zai-api-key 完成初始化。默认模型是 zai/glm-5.1，支持自动检测端点或手动指定…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/providers/zai/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Z.AI 提供商：Z.AI | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Z.AI 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Z.AI | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Z.AI 是智谱 GLM 模型的 API 平台，OpenClaw 通过 zai provider 接入。先到 Z.AI 控制台创建 API Key，然后运行 openclaw onboard --auth-choice zai-api-key 完成初始化。默认模型是 zai/glm-5.1，支持自动检测端点或手动指定…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/providers/zai/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Z.AI 提供商：Z.AI","description":"Z.AI 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/providers/zai/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Z.AI","description":"Z.AI 是智谱 GLM 模型的 API 平台，OpenClaw 通过 zai provider 接入。先到 Z.AI 控制台创建 API Key，然后运行 openclaw onboard --auth-choice zai-api-key 完成初始化。默认模型是 zai/glm-5.1，支持自动检测端点或手动指定…","url":"https://fivey-can-read-openclaw.pages.dev/providers/zai/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Providers","item":"https://fivey-can-read-openclaw.pages.dev/providers/zai/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Providers 导读</p>
-        <h1>Z.AI 接入配置指南</h1>
-        <p class="hero-copy">这页说明如何将 Z.AI 的 GLM 模型接入 OpenClaw，核心是配置 API 密钥和选择正确的区域端点。配置时最容易出错的是混淆通用 API 与 Coding Plan 的密钥类型，导致认证失败。</p>
+        <h1>接入智谱 GLM，只需一个 API Key</h1>
+        <p class="hero-copy">Z.AI 是智谱 GLM 模型的 API 平台，OpenClaw 通过 `zai` provider 接入。先到 Z.AI 控制台创建 API Key，然后运行 `openclaw onboard --auth-choice zai-api-key` 完成初始化。默认模型是 `zai/glm-5.1`，支持自动检测端点或手动指定区域端点；注意工具调用流式默认开启，如需关闭需在配置中设置 `tool_stream: false`。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🧪 Z.AI 这页，其实就是 GLM 的“官方卖票处”</h2><p>如果说 GLM 是模型家族名字，那 Z.AI 就像这家模型的官方售票平台。你去 Z.AI 办 API key，再让 OpenClaw 以 <code>zai/...</code> 这种前缀去叫模型。</p></div><div class="overview-meta"><span>适合想正式接 GLM 家族的人</span><span>重点是四个 auth choice、GLM 模型前缀、tool_stream</span><a href="https://docs.openclaw.ai/providers/zai" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:providers.zai.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>接入智谱 GLM，只需一个 API Key</h2>
+      <p>Z.AI 是智谱 GLM 模型的 API 平台，OpenClaw 通过 `zai` provider 接入。先到 Z.AI 控制台创建 API Key，然后运行 `openclaw onboard --auth-choice zai-api-key` 完成初始化。默认模型是 `zai/glm-5.1`，支持自动检测端点或手动指定区域端点；注意工具调用流式默认开启，如需关闭需在配置中设置 `tool_stream: false`。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 5 节，先看 Start Here</span>
+      <span>路径：/providers/zai</span>
+      <a href="https://docs.openclaw.ai/providers/zai" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一步</p><h2>🛣 四条 onboarding 命令，其实还是“地区 + 计划类型”四个窗口</h2><p>跟阿里那页有点像，你先别背名字，先懂分类。</p></div><div class="story-grid"><div class="story-card"><div class="story-card-label">🌍 <code>zai-coding-global</code></div><p>像国际区 Coding Plan 窗口。</p></div><div class="story-card"><div class="story-card-label">🇨🇳 <code>zai-coding-cn</code></div><p>像中国区 Coding Plan 窗口。</p></div><div class="story-card"><div class="story-card-label">🧾 <code>zai-global</code> / <code>zai-cn</code></div><p>像国际区和中国区的普通 API 窗口。</p></div><div class="source-card"><div class="story-card-label">🎈 一句话</div><p>别死记命令，记住它们是四个售票窗口。</p></div></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第二步</p><h2>🧠 <code>zai/glm-5</code> 这种名字，像“售票平台 / 具体车型号”</h2><p>官方给的默认例子非常简单，就是告诉你模型前缀怎么写。</p></div><div class="ad-placeholder"><p>你可以把 <code>zai</code> 想成售票平台名字，把 <code>glm-5</code> 想成具体车次。以后要换 GLM 版本，本质上就是换后面那节车厢名。</p></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第三步</p><h2>🌊 <code>tool_stream</code> 默认开着，像“工具回执会边走边播报”</h2><p>官方特意提这句，说明它是这家 provider 的一个风格特征。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label"><code>tool_stream</code></div><p>像工具动作不是等全部做完才汇报，而是边执行边往回播报进展。</p></div><div class="source-card"><div class="story-card-label">关掉它意味着什么</div><p>像你不想听现场播报，只想等最后总结果，那就把这个开关关掉。</p></div></div></section>

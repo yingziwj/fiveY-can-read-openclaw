@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:49:25.831Z",
+  "generatedAt": "2026-05-06T15:05:57.906Z",
   "pathname": "/concepts/models",
   "title": "Models CLI",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw模型配置：主模型、备用模型与专用模型设置",
-    "heroSummary": "这页详细说明了OpenClaw如何按主模型→备用模型→提供商内部故障转移的顺序选择模型，并列出所有模型相关的配置键。配置时最容易混淆的是不同任务类型（图像、PDF、生成等）有独立的模型设置，如果省略，系统会按默认规则推断。建议先运行`openclaw onboard`命令快速设置常见提供商，然后根据任务需求调整主模型和备用模型策略。"
+    "heroTitle": "模型选择顺序与配置要点",
+    "heroSummary": "OpenClaw 按 primary → fallbacks → provider auth failover 的顺序选模型。先配好 agents.defaults.model.primary 和 fallbacks，再通过 agents.defaults.models 做白名单。容易漏的是：image、pdf、生成类模型都有独立配置，不设时会自动推断，但推断逻辑依赖 provider 注册顺序和 auth，不如显式指定可靠。"
   }
 }

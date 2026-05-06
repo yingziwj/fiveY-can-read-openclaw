@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:51:43.562Z",
+  "generatedAt": "2026-05-06T15:07:16.373Z",
   "pathname": "/gateway/logging",
   "title": "Gateway Logging",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "网关日志配置与查看指南",
-    "heroSummary": "这页详细说明OpenClaw网关的日志系统，包括文件日志位置、控制台输出配置和敏感信息脱敏。首先要配置~/.openclaw/openclaw.json中的logging.file和logging.level来设置日志路径和级别。最容易错的是混淆consoleLevel（控制台输出）和fileLevel（文件记录），以及忘记工具摘要脱敏只影响控制台而不影响文件日志。"
+    "heroTitle": "日志分两路：终端看什么，文件记什么，各自怎么调",
+    "heroSummary": "这一页把日志拆成“控制台输出”和“文件日志”两条线，各自独立控制级别和格式。最该先看的是 `logging.file` 和 `logging.consoleLevel` 两个配置，一个管文件路径和级别，一个管终端啰嗦程度。容易搞错的是：敏感信息脱敏只影响控制台，不碰文件日志；文件日志默认在 `/tmp/openclaw/`，别去别处找。"
   }
 }

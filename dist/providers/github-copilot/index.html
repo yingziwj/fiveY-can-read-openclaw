@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitHub Copilot 提供商：GitHub Copilot | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="GitHub Copilot 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>GitHub Copilot | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="内置 provider 走设备登录流程，终端里输一条命令就能拿 token，不需要 VS Code。另一条路是通过 VS Code 的 Copilot token 接入，适合已有 VS Code 登录态的用户。最容易踩的坑是：设备登录必须在交互式终端里跑，不能在 CI 或脚本里用。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="GitHub Copilot 提供商：GitHub Copilot | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="GitHub Copilot 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="GitHub Copilot | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="内置 provider 走设备登录流程，终端里输一条命令就能拿 token，不需要 VS Code。另一条路是通过 VS Code 的 Copilot token 接入，适合已有 VS Code 登录态的用户。最容易踩的坑是：设备登录必须在交互式终端里跑，不能在 CI 或脚本里用。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/providers/github-copilot/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GitHub Copilot 提供商：GitHub Copilot | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="GitHub Copilot 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="GitHub Copilot | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="内置 provider 走设备登录流程，终端里输一条命令就能拿 token，不需要 VS Code。另一条路是通过 VS Code 的 Copilot token 接入，适合已有 VS Code 登录态的用户。最容易踩的坑是：设备登录必须在交互式终端里跑，不能在 CI 或脚本里用。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/providers/github-copilot/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"GitHub Copilot 提供商：GitHub Copilot","description":"GitHub Copilot 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/providers/github-copilot/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"GitHub Copilot","description":"内置 provider 走设备登录流程，终端里输一条命令就能拿 token，不需要 VS Code。另一条路是通过 VS Code 的 Copilot token 接入，适合已有 VS Code 登录态的用户。最容易踩的坑是：设备登录必须在交互式终端里跑，不能在 CI 或脚本里用。","url":"https://fivey-can-read-openclaw.pages.dev/providers/github-copilot/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Providers","item":"https://fivey-can-read-openclaw.pages.dev/providers/github-copilot/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Providers 导读</p>
-        <h1>GitHub Copilot 接入配置指南</h1>
-        <p class="hero-copy">这页详细说明如何在 OpenClaw 中接入 GitHub Copilot 作为 AI 模型提供者，提供两种具体接入方式。最该先看默认的 `github-copilot` 内置接入方式，它通过设备登录流程获取令牌，无需 VS Code 即可使用。最容易搞错的地方是选择第二种代理插件方式时，必须确保 VS Code 扩展持续运行，否则连接会中断。</p>
+        <h1>用 GitHub Copilot 当模型源：两种接入方式，一种免 VS Code</h1>
+        <p class="hero-copy">内置 provider 走设备登录流程，终端里输一条命令就能拿 token，不需要 VS Code。另一条路是通过 VS Code 的 Copilot token 接入，适合已有 VS Code 登录态的用户。最容易踩的坑是：设备登录必须在交互式终端里跑，不能在 CI 或脚本里用。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🐙 GitHub Copilot 这页，其实是在教你“拿 GitHub 账号做设备登录”</h2><p>它不是让你找 API key，而是让你走一次 GitHub 设备登录流程，拿到一张跟你 GitHub 计划绑定的 Copilot 入场票。</p></div><div class="overview-meta"><span>适合想用 GitHub 账号直接接 Copilot 的人</span><span>重点是设备登录和两条接入路线</span><a href="https://docs.openclaw.ai/providers/github-copilot" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:providers.github-copilot.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用 GitHub Copilot 当模型源：两种接入方式，一种免 VS Code</h2>
+      <p>内置 provider 走设备登录流程，终端里输一条命令就能拿 token，不需要 VS Code。另一条路是通过 VS Code 的 Copilot token 接入，适合已有 VS Code 登录态的用户。最容易踩的坑是：设备登录必须在交互式终端里跑，不能在 CI 或脚本里用。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 8 节，先看 Start Here</span>
+      <span>路径：/providers/github-copilot</span>
+      <a href="https://docs.openclaw.ai/providers/github-copilot" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一步</p><h2>🛣 先分两条路：原生 Copilot，还是 VS Code 代理桥</h2><p>官方开头就把这两条路分开了。大多数人直接走原生 provider 就行。</p></div><div class="story-grid"><div class="story-card"><div class="story-card-label">1. 原生 <code>github-copilot</code></div><p>像直接去 GitHub 官方柜台办证，不需要 VS Code 帮你转交。</p></div><div class="story-card"><div class="story-card-label">2. Copilot Proxy</div><p>像你已经在 VS Code 里搭了一个本地中转桥，OpenClaw 只是通过这座桥去说话。</p></div><div class="source-card"><div class="story-card-label">🎈 实际建议</div><p>没特殊需求，就走原生内建路线，少一层桥就少一层故障点。</p></div></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第二步</p><h2>📺 <code>openclaw models auth login-github-copilot</code> 像“终端给你一张临时代码，你去网页确认领票”</h2><p>这条命令最关键的不是拼写，而是现场动作。</p></div><div class="home-grid"><article class="home-card"><span class="home-card-index">🖥</span><h2>终端弹出一次性代码</h2><p>像窗口先打印一张小纸条，让你拿着去官网登录处。</p></article><article class="home-card"><span class="home-card-index">🌐</span><h2>去 GitHub 页面确认</h2><p>像你去前台刷脸，告诉 GitHub “是我本人在申请这张 Copilot 票”。</p></article><article class="home-card"><span class="home-card-index">⏳</span><h2>终端别关</h2><p>因为它还在门口等回执。你中途把窗口关了，就像领票流程被你掐断了。</p></article><article class="home-card"><span class="home-card-index">🎈</span><h2>一句话</h2><p>这是一场设备登录，不是手填 API key。</p></article></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第三步</p><h2>🏷 计划决定你能领哪些模型票</h2><p>官方专门提醒了：Copilot 能用哪些模型，不只取决于 OpenClaw，也取决于你的 GitHub 计划。</p></div><div class="ad-placeholder"><p>所以如果 <code>github-copilot/gpt-4o</code> 不让你进，不一定是配置错了，也可能是你手上的 Copilot 套餐本来就没这张票。这时就换一个你计划里真正能用的模型试。</p></div></section>

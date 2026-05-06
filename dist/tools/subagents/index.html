@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sub-Agents 工具：Sub-Agents | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Sub-Agents 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Sub-Agents | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Sub-agent 是从当前 agent run 派生的后台 run，独立 session，跑完后自动把结果 announce 回请求者的聊天频道。最该先看 /subagents spawn 命令和 sessions_spawn 工具的参数，尤其是 mode、thread、cleanup 的默认行为——mode: &quot;…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Sub-Agents 工具：Sub-Agents | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Sub-Agents 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Sub-Agents | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Sub-agent 是从当前 agent run 派生的后台 run，独立 session，跑完后自动把结果 announce 回请求者的聊天频道。最该先看 /subagents spawn 命令和 sessions_spawn 工具的参数，尤其是 mode、thread、cleanup 的默认行为——mode: &quot;…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/tools/subagents/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sub-Agents 工具：Sub-Agents | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Sub-Agents 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Sub-Agents | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Sub-agent 是从当前 agent run 派生的后台 run，独立 session，跑完后自动把结果 announce 回请求者的聊天频道。最该先看 /subagents spawn 命令和 sessions_spawn 工具的参数，尤其是 mode、thread、cleanup 的默认行为——mode: &quot;…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/tools/subagents/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Sub-Agents 工具：Sub-Agents","description":"Sub-Agents 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/tools/subagents/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Sub-Agents","description":"Sub-agent 是从当前 agent run 派生的后台 run，独立 session，跑完后自动把结果 announce 回请求者的聊天频道。最该先看 /subagents spawn 命令和 sessions_spawn 工具的参数，尤其是 mode、thread、cleanup 的默认行为——mode: \"…","url":"https://fivey-can-read-openclaw.pages.dev/tools/subagents/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://fivey-can-read-openclaw.pages.dev/tools/subagents/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Tools 导读</p>
-        <h1>子代理命令与工具详解</h1>
-        <p class="hero-copy">这页详细说明了如何通过 `/subagents` 命令和 `sessions_spawn` 工具来创建、管理和监控后台运行的子代理。使用 `/subagents spawn` 命令时，务必注意它是一次性运行模式，若需创建持久线程绑定的会话，应改用 `sessions_spawn` 并设置 `thread: true` 和 `mode: &quot;session&quot;`。每个子代理都会独立计费，对于繁重任务，建议通过配置为子代理指定成本更低的模型。</p>
+        <h1>Sub-Agents：让主 Agent 派后台分身干活，结果自动回传</h1>
+        <p class="hero-copy">Sub-agent 是从当前 agent run 派生的后台 run，独立 session，跑完后自动把结果 announce 回请求者的聊天频道。最该先看 `/subagents spawn` 命令和 `sessions_spawn` 工具的参数，尤其是 `mode`、`thread`、`cleanup` 的默认行为——`mode: &quot;run&quot;` 是一次性任务，`thread: true` 且 `mode` 省略时默认变成 `session`。注意 sub-agent 默认不继承 session tools，且每个 sub-agent 独立计费，建议给子任务配更便宜的模型。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:tools.subagents.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧑‍🤝‍🧑 Sub-agents 就是“主代理叫来几个小帮手去分头干活”</h2>
-      <p>你可以把主代理想成一个总工头。它本来自己也能做事，但有些任务太长、太慢、太适合拆开，于是它会再叫几个小工出去单干。</p>
-      <p>这些小工就是 sub-agents。它们不是聊天分身，不是同一个脑袋的回音，而是各自带着自己会话、自己上下文、自己账单去后台做工，做完再回来报结果。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Sub-Agents：让主 Agent 派后台分身干活，结果自动回传</h2>
+      <p>Sub-agent 是从当前 agent run 派生的后台 run，独立 session，跑完后自动把结果 announce 回请求者的聊天频道。最该先看 `/subagents spawn` 命令和 `sessions_spawn` 工具的参数，尤其是 `mode`、`thread`、`cleanup` 的默认行为——`mode: &quot;run&quot;` 是一次性任务，`thread: true` 且 `mode` 省略时默认变成 `session`。注意 sub-agent 默认不继承 session tools，且每个 sub-agent 独立计费，建议给子任务配更便宜的模型。</p>
     </div>
     <div class="overview-meta">
-      <span>适合开始做并行研究、长任务拆分、后台调度的人</span>
-      <span>这页最重要的是先看懂“子代理是独立会话，不是主代理脑中多开一个窗口”</span>
+      <span>原文共 19 节，先看 Start Here</span>
+      <span>路径：/tools/subagents</span>
       <a href="https://docs.openclaw.ai/tools/subagents" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

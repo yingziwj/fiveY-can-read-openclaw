@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:54:36.603Z",
+  "generatedAt": "2026-05-06T15:09:12.300Z",
   "pathname": "/reference/prompt-caching",
   "title": "Prompt Caching",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Prompt缓存配置与监控",
-    "heroSummary": "这页详细说明如何通过cacheRetention等参数控制提示前缀的复用，直接影响API调用成本和响应速度。配置时需注意Anthropic模型默认使用short缓存，而long缓存仅对直接API主机生效。当会话元数据丢失时，/status页面会从最近的日志中恢复缓存计数器显示。"
+    "heroTitle": "缓存省多少，全看这三个旋钮",
+    "heroSummary": "Prompt caching 让重复的系统指令不再每次都付全价。先调 `cacheRetention` 决定缓存时长（none/short/long），再配 `contextPruning.mode: \"cache-ttl\"` 防止过期上下文占坑，最后用 heartbeat 保活。最容易翻车的是 Anthropic 的 long 只在直连 api.anthropic.com 时才生效，走代理或第三方网关时 long 可能退化成 short。"
   }
 }

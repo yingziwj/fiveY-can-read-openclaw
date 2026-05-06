@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:51:47.512Z",
+  "generatedAt": "2026-05-06T15:07:19.057Z",
   "pathname": "/gateway/openshell",
   "title": "OpenShell",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenShell 沙盒后端配置指南",
-    "heroSummary": "这页教你如何配置 OpenClaw 使用 OpenShell 作为远程沙盒后端，替代本地 Docker 容器。首先要设置插件启用和沙盒后端参数，最容易错的是 workspaceAccess 权限和 mirror 模式的选择，这会影响本地与远程文件的同步逻辑。"
+    "heroTitle": "OpenShell：把沙箱搬到远程，本地只留一份源码",
+    "heroSummary": "OpenShell 让 OpenClaw 不再在本地跑 Docker，而是通过 openshell CLI 在远端创建沙箱，所有命令走 SSH 执行。配置时最关键的决策是 workspace 模式：选 mirror 则本地目录是唯一真相，每次执行前后自动双向同步；选其他模式则远程文件可能不回写。先装好 openshell CLI 并确保在 PATH 上，然后在插件配置里把 sandbox.backend 设为 openshell 即可。"
   }
 }

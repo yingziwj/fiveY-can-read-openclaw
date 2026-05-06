@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:54:18.185Z",
+  "generatedAt": "2026-05-06T15:09:00.833Z",
   "pathname": "/concepts/usage-tracking",
   "title": "Usage Tracking",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw 用量追踪机制详解",
-    "heroSummary": "本页详细解释了 OpenClaw 如何从上游 API 获取并展示用量与配额信息，包括配额消耗、剩余量或原始计数。配置时需注意，不同提供商（如 MiniMax、Anthropic）的认证方式和数据字段（如 `usage_percent` 表示剩余配额）存在差异，错误理解可能导致显示异常。当实时会话数据稀疏时，系统会回退到最近的用量记录来填充缺失的令牌或缓存计数器。"
+    "heroTitle": "用量跟踪：谁还剩多少，怎么查，哪里容易看错",
+    "heroSummary": "这一页告诉你 OpenClaw 怎么从各上游 API 拉取配额/剩余量，并统一显示成“X% 剩余”。最该先看“Where it shows up”小节，那里列出了聊天、CLI、菜单栏所有能看到用量的入口。最容易搞错的是 MiniMax 的 raw 字段表示剩余而非已用，系统会帮你反转，但如果你自己读原始数据要小心。"
   }
 }

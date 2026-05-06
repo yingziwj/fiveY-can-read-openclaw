@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>形式化验证（安全模式ls）：Formal Verification (Security Models) | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="形式化验证（安全模式ls）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Formal Verification (Security Models) | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这页不是文档，而是一套可运行的 TLA+ 模型，用于验证授权、会话隔离、工具门控和配置安全等安全属性。先跑 make gateway-exposure-v2 等目标，看绿色通过和红色反例；注意模型与 TypeScript 实现可能存在偏差，通过不代表实际系统绝对安全。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="形式化验证（安全模式ls）：Formal Verification (Security Models) | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="形式化验证（安全模式ls）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Formal Verification (Security Models) | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这页不是文档，而是一套可运行的 TLA+ 模型，用于验证授权、会话隔离、工具门控和配置安全等安全属性。先跑 make gateway-exposure-v2 等目标，看绿色通过和红色反例；注意模型与 TypeScript 实现可能存在偏差，通过不代表实际系统绝对安全。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/security/formal-verification/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="形式化验证（安全模式ls）：Formal Verification (Security Models) | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="形式化验证（安全模式ls）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Formal Verification (Security Models) | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这页不是文档，而是一套可运行的 TLA+ 模型，用于验证授权、会话隔离、工具门控和配置安全等安全属性。先跑 make gateway-exposure-v2 等目标，看绿色通过和红色反例；注意模型与 TypeScript 实现可能存在偏差，通过不代表实际系统绝对安全。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/security/formal-verification/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"形式化验证（安全模式ls）：Formal Verification (Security Models)","description":"形式化验证（安全模式ls）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/security/formal-verification/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Formal Verification (Security Models)","description":"这页不是文档，而是一套可运行的 TLA+ 模型，用于验证授权、会话隔离、工具门控和配置安全等安全属性。先跑 make gateway-exposure-v2 等目标，看绿色通过和红色反例；注意模型与 TypeScript 实现可能存在偏差，通过不代表实际系统绝对安全。","url":"https://fivey-can-read-openclaw.pages.dev/security/formal-verification/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Security","item":"https://fivey-can-read-openclaw.pages.dev/security/formal-verification/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Security 导读</p>
-        <h1>OpenClaw安全模型的形式化验证</h1>
-        <p class="hero-copy">这页记录了OpenClaw用TLA+/TLC编写的可执行安全模型，用于验证授权、会话隔离等核心安全策略。模型与代码可能存在差异，验证结果受限于状态空间边界和明确的环境假设。</p>
+        <h1>形式化验证：OpenClaw 安全策略的机器可检查证明</h1>
+        <p class="hero-copy">这页不是文档，而是一套可运行的 TLA+ 模型，用于验证授权、会话隔离、工具门控和配置安全等安全属性。先跑 `make gateway-exposure-v2` 等目标，看绿色通过和红色反例；注意模型与 TypeScript 实现可能存在偏差，通过不代表实际系统绝对安全。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,16 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:security.formal-verification.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>📐 Formal Verification 这页，就是“拿数学小尺子给安全规则量一量”</h2>
-      <p>它不是在说代码已经神奇无敌，而是在说：某些关键安全情景，我们可以先用模型跑一遍，看会不会出现反例。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>形式化验证：OpenClaw 安全策略的机器可检查证明</h2>
+      <p>这页不是文档，而是一套可运行的 TLA+ 模型，用于验证授权、会话隔离、工具门控和配置安全等安全属性。先跑 `make gateway-exposure-v2` 等目标，看绿色通过和红色反例；注意模型与 TypeScript 实现可能存在偏差，通过不代表实际系统绝对安全。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想看机器可检查安全模型的人</span>
-      <span>先看模型在哪，再看 caveat，再看怎么复现</span>
+      <span>原文共 13 节，先看 Start Here</span>
+      <span>路径：/security/formal-verification</span>
       <a href="https://docs.openclaw.ai/security/formal-verification" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

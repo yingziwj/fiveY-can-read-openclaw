@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Windows 平台：Windows | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Windows 平台是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Windows | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="WSL2 是最稳的路径，CLI、Gateway 和工具链都在 Linux 里跑，体验完整。原生 Windows 可以跑核心 CLI 和 Gateway，但注意 Scheduled Task 权限问题——如果创建被拒，会自动降级到登录启动项。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Windows 平台：Windows | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Windows 平台是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Windows | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="WSL2 是最稳的路径，CLI、Gateway 和工具链都在 Linux 里跑，体验完整。原生 Windows 可以跑核心 CLI 和 Gateway，但注意 Scheduled Task 权限问题——如果创建被拒，会自动降级到登录启动项。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/platforms/windows/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Windows 平台：Windows | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Windows 平台是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Windows | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="WSL2 是最稳的路径，CLI、Gateway 和工具链都在 Linux 里跑，体验完整。原生 Windows 可以跑核心 CLI 和 Gateway，但注意 Scheduled Task 权限问题——如果创建被拒，会自动降级到登录启动项。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/platforms/windows/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Windows 平台：Windows","description":"Windows 平台是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/platforms/windows/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Windows","description":"WSL2 是最稳的路径，CLI、Gateway 和工具链都在 Linux 里跑，体验完整。原生 Windows 可以跑核心 CLI 和 Gateway，但注意 Scheduled Task 权限问题——如果创建被拒，会自动降级到登录启动项。","url":"https://fivey-can-read-openclaw.pages.dev/platforms/windows/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Platforms","item":"https://fivey-can-read-openclaw.pages.dev/platforms/windows/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Platforms 导读</p>
-        <h1>Windows平台支持说明：原生与WSL2对比</h1>
-        <p class="hero-copy">这页详细说明OpenClaw在Windows上的两种运行方式：推荐使用WSL2以获得完整功能，原生Windows支持核心CLI但有特定限制。最该先看WSL2的安装步骤，因为这是最稳定的路径。最容易搞错的是在原生Windows上运行网关服务时，如果计划任务创建失败，系统会回退到启动文件夹方式，这可能导致不同的监控状态。</p>
+        <h1>Windows 上跑 OpenClaw：首选 WSL2，原生能用但有限制</h1>
+        <p class="hero-copy">WSL2 是最稳的路径，CLI、Gateway 和工具链都在 Linux 里跑，体验完整。原生 Windows 可以跑核心 CLI 和 Gateway，但注意 Scheduled Task 权限问题——如果创建被拒，会自动降级到登录启动项。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🪟 Windows 这页，其实是在讲“能跑，但要想更稳更完整，还是优先走 WSL2”</h2><p>官方没有说 native Windows 不能用，只是很坦白地告诉你：WSL2 这条路更顺。</p></div><div class="overview-meta"><span>Windows 支持</span><span>重点是 WSL2 优先、原生可用但有边角</span><a href="https://docs.openclaw.ai/platforms/windows" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:platforms.windows.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Windows 上跑 OpenClaw：首选 WSL2，原生能用但有限制</h2>
+      <p>WSL2 是最稳的路径，CLI、Gateway 和工具链都在 Linux 里跑，体验完整。原生 Windows 可以跑核心 CLI 和 Gateway，但注意 Scheduled Task 权限问题——如果创建被拒，会自动降级到登录启动项。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 15 节，先看 Start Here</span>
+      <span>路径：/platforms/windows</span>
+      <a href="https://docs.openclaw.ai/platforms/windows" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>🧱 WSL2 像先在 Windows 里搭一间 Linux 机房，再把 OpenClaw 放进去</h2><p>这样 CLI、Gateway、工具链会少掉很多兼容别扭。</p></div><div class="home-grid"><article class="home-card"><span class="home-card-index">✅</span><h2>WSL2</h2><p>官方推荐路径，兼容更完整。</p></article><article class="home-card"><span class="home-card-index">🛠️</span><h2>Native Windows</h2><p>基本 CLI 和 Gateway 已经能用，但有些流程还不如 WSL2 稳。</p></article><article class="home-card"><span class="home-card-index">📋</span><h2>安装脚本</h2><p><code>install.ps1</code> 这类原生入口已经能跑起来。</p></article><article class="home-card"><span class="home-card-index">🧷</span><h2>服务安装</h2><p>会优先尝试 Scheduled Tasks，失败再退回 Startup folder，不会一直卡死在那里。</p></article></div></section>
 
 

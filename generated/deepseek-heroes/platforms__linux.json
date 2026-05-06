@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:23.947Z",
+  "generatedAt": "2026-05-06T15:07:40.486Z",
   "pathname": "/platforms/linux",
   "title": "Linux App",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Linux 环境部署 OpenClaw 网关",
-    "heroSummary": "这页指导如何在 Linux 系统上安装和运行 OpenClaw 网关，推荐使用 Node 24 作为运行时。最该先看“Beginner quick path (VPS)”部分，按步骤安装 Node、OpenClaw 并设置端口转发。最容易搞错的是运行时选择：不要用 Bun，它可能导致 WhatsApp/Telegram 相关错误。"
+    "heroTitle": "Linux 上跑 Gateway：Node 是首选，Bun 有坑",
+    "heroSummary": "本页给出 Linux 部署 Gateway 的快速路径：先装 Node 24 或 Node 22.14+，再用 `openclaw onboard --install-daemon` 一键安装守护进程。注意：Bun 会导致 WhatsApp/Telegram 异常，不要用；首次认证默认走 token，若改密码需在配置中设 `gateway.auth.mode: \"password\"`。"
   }
 }

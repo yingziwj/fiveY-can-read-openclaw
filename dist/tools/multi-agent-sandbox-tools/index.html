@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Multi-Agent 沙箱 &amp; 工具：Multi-Agent Sandbox &amp; Tools | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Multi-Agent 沙箱 &amp; 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Multi-Agent Sandbox &amp; Tools | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="先看“优先级规则”：Agent 级配置 &gt; 全局默认值。最容易搞错的是 auth 凭证不共享——每个 agent 读自己的 auth-profiles.json，别复用 agentDir。想给不同 agent 分配不同工具集（如 coding vs messaging），直接在 agents.list 里写 tool…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Multi-Agent 沙箱 &amp; 工具：Multi-Agent Sandbox &amp; Tools | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Multi-Agent 沙箱 &amp; 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Multi-Agent Sandbox &amp; Tools | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="先看“优先级规则”：Agent 级配置 &gt; 全局默认值。最容易搞错的是 auth 凭证不共享——每个 agent 读自己的 auth-profiles.json，别复用 agentDir。想给不同 agent 分配不同工具集（如 coding vs messaging），直接在 agents.list 里写 tool…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/tools/multi-agent-sandbox-tools/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Multi-Agent 沙箱 &amp; 工具：Multi-Agent Sandbox &amp; Tools | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Multi-Agent 沙箱 &amp; 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Multi-Agent Sandbox &amp; Tools | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="先看“优先级规则”：Agent 级配置 &gt; 全局默认值。最容易搞错的是 auth 凭证不共享——每个 agent 读自己的 auth-profiles.json，别复用 agentDir。想给不同 agent 分配不同工具集（如 coding vs messaging），直接在 agents.list 里写 tool…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/tools/multi-agent-sandbox-tools/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Multi-Agent 沙箱 & 工具：Multi-Agent Sandbox & Tools","description":"Multi-Agent 沙箱 & 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/tools/multi-agent-sandbox-tools/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Multi-Agent Sandbox & Tools","description":"先看“优先级规则”：Agent 级配置 > 全局默认值。最容易搞错的是 auth 凭证不共享——每个 agent 读自己的 auth-profiles.json，别复用 agentDir。想给不同 agent 分配不同工具集（如 coding vs messaging），直接在 agents.list 里写 tool…","url":"https://fivey-can-read-openclaw.pages.dev/tools/multi-agent-sandbox-tools/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://fivey-can-read-openclaw.pages.dev/tools/multi-agent-sandbox-tools/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Tools 导读</p>
-        <h1>多代理沙盒与工具配置详解</h1>
-        <p class="hero-copy">这页教你如何为每个代理单独配置沙盒和工具权限，覆盖全局设置。先看代理认证配置，每个代理有独立的认证文件，绝不能跨代理共享。最容易错的是误用agentDir导致认证泄露，或混淆全局与代理级配置的优先级。</p>
+        <h1>每个 Agent 的沙箱和工具策略可以单独覆盖，优先级比全局配置高</h1>
+        <p class="hero-copy">先看“优先级规则”：Agent 级配置 &gt; 全局默认值。最容易搞错的是 auth 凭证不共享——每个 agent 读自己的 auth-profiles.json，别复用 agentDir。想给不同 agent 分配不同工具集（如 coding vs messaging），直接在 agents.list 里写 tools.profile 覆盖。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,8 +4324,21 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🏗️ Multi-Agent Sandbox & Tools 这页，其实是在讲“每个 agent 都能有自己的围栏和工具箱”</h2><p>不是所有 agent 都必须继承同一套全局规则。</p></div><div class="overview-meta"><span>多 agent 独立围栏</span><span>重点是 per-agent sandbox / tools override</span><a href="https://docs.openclaw.ai/tools/multi-agent-sandbox-tools" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-
+      <!-- handcrafted-source:tools.multi-agent-sandbox-tools.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>每个 Agent 的沙箱和工具策略可以单独覆盖，优先级比全局配置高</h2>
+      <p>先看“优先级规则”：Agent 级配置 &gt; 全局默认值。最容易搞错的是 auth 凭证不共享——每个 agent 读自己的 auth-profiles.json，别复用 agentDir。想给不同 agent 分配不同工具集（如 coding vs messaging），直接在 agents.list 里写 tools.profile 覆盖。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 18 节，先看 Start Here</span>
+      <span>路径：/tools/multi-agent-sandbox-tools</span>
+      <a href="https://docs.openclaw.ai/tools/multi-agent-sandbox-tools" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
       <footer class="page-footer">
         <div>

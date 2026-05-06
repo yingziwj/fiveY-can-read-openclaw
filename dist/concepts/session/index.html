@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>会话管理：Session Management | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="会话管理是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Session Management | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="OpenClaw 按来源（私聊、群聊、定时任务等）把消息分到不同会话。多人私聊同一个 agent 时务必开启 DM 隔离，否则所有人的对话会混在一起。会话每天凌晨 4 点自动重置，也可以设置空闲超时或手动输入 /new 来重置。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="会话管理：Session Management | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="会话管理是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Session Management | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="OpenClaw 按来源（私聊、群聊、定时任务等）把消息分到不同会话。多人私聊同一个 agent 时务必开启 DM 隔离，否则所有人的对话会混在一起。会话每天凌晨 4 点自动重置，也可以设置空闲超时或手动输入 /new 来重置。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/session/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="会话管理：Session Management | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="会话管理是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Session Management | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="OpenClaw 按来源（私聊、群聊、定时任务等）把消息分到不同会话。多人私聊同一个 agent 时务必开启 DM 隔离，否则所有人的对话会混在一起。会话每天凌晨 4 点自动重置，也可以设置空闲超时或手动输入 /new 来重置。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/session/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"会话管理：Session Management","description":"会话管理是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/session/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Session Management","description":"OpenClaw 按来源（私聊、群聊、定时任务等）把消息分到不同会话。多人私聊同一个 agent 时务必开启 DM 隔离，否则所有人的对话会混在一起。会话每天凌晨 4 点自动重置，也可以设置空闲超时或手动输入 /new 来重置。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/session/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/session/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>会话管理：消息如何分组与隔离</h1>
-        <p class="hero-copy">这页解释OpenClaw如何根据消息来源（私聊、群聊、定时任务等）将对话分组到不同会话中。最关键的是私聊隔离配置，多人使用时必须设置`dmScope: &quot;per-channel-peer&quot;`，否则所有用户的私聊会共享上下文。会话会按每日重置或空闲超时自动清理，状态数据存储在网关本地文件中。</p>
+        <h1>一条消息怎么找到它的会话？</h1>
+        <p class="hero-copy">OpenClaw 按来源（私聊、群聊、定时任务等）把消息分到不同会话。多人私聊同一个 agent 时务必开启 DM 隔离，否则所有人的对话会混在一起。会话每天凌晨 4 点自动重置，也可以设置空闲超时或手动输入 /new 来重置。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.session.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>📒 Session 不是一个抽象词，它更像 OpenClaw 的“聊天本”</h2>
-      <p>你跟 OpenClaw 每聊一次，不是说完就没了。它会把这段对话记进一本聊天本里，下次再聊时，就能接着前面的话往下说。</p>
-      <p>这页看起来像在讲 key、reset、dmScope、cleanup，其实是在讲三件事：聊天本怎么分、什么时候换新本、旧本怎么收拾。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>一条消息怎么找到它的会话？</h2>
+      <p>OpenClaw 按来源（私聊、群聊、定时任务等）把消息分到不同会话。多人私聊同一个 agent 时务必开启 DM 隔离，否则所有人的对话会混在一起。会话每天凌晨 4 点自动重置，也可以设置空闲超时或手动输入 /new 来重置。</p>
     </div>
     <div class="overview-meta">
-      <span>适合第一次想弄懂“OpenClaw 怎么把不同聊天分开记”的人</span>
-      <span>这页最重要的是先分清私聊、群聊和主会话</span>
+      <span>原文共 8 节，先看 Start Here</span>
+      <span>路径：/concepts/session</span>
       <a href="https://docs.openclaw.ai/concepts/session" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

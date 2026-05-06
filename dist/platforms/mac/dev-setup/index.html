@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>macOS 开发设置：macOS Dev Setup | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="macOS 开发设置是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>macOS Dev Setup | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="先装 Xcode 26.2+ 和 Node 24，然后 pnpm install，最后跑 package-mac-app.sh 打包。最容易翻车的是 ad-hoc 签名导致的安全弹窗或 Abort trap 6，直接去 Troubleshooting 查。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="macOS 开发设置：macOS Dev Setup | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="macOS 开发设置是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="macOS Dev Setup | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="先装 Xcode 26.2+ 和 Node 24，然后 pnpm install，最后跑 package-mac-app.sh 打包。最容易翻车的是 ad-hoc 签名导致的安全弹窗或 Abort trap 6，直接去 Troubleshooting 查。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/platforms/mac/dev-setup/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="macOS 开发设置：macOS Dev Setup | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="macOS 开发设置是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="macOS Dev Setup | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="先装 Xcode 26.2+ 和 Node 24，然后 pnpm install，最后跑 package-mac-app.sh 打包。最容易翻车的是 ad-hoc 签名导致的安全弹窗或 Abort trap 6，直接去 Troubleshooting 查。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/platforms/mac/dev-setup/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"macOS 开发设置：macOS Dev Setup","description":"macOS 开发设置是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/platforms/mac/dev-setup/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"macOS Dev Setup","description":"先装 Xcode 26.2+ 和 Node 24，然后 pnpm install，最后跑 package-mac-app.sh 打包。最容易翻车的是 ad-hoc 签名导致的安全弹窗或 Abort trap 6，直接去 Troubleshooting 查。","url":"https://fivey-can-read-openclaw.pages.dev/platforms/mac/dev-setup/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Platforms","item":"https://fivey-can-read-openclaw.pages.dev/platforms/mac/dev-setup/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Platforms 导读</p>
-        <h1>macOS开发环境搭建指南</h1>
-        <p class="hero-copy">这页详细说明如何在macOS上从源码构建和运行OpenClaw应用。先检查Xcode和Node.js版本是否满足要求，然后按步骤安装依赖、打包应用。特别注意脚本默认使用ad-hoc签名，可能导致安全提示或应用崩溃，需要查看故障排除部分。</p>
+        <h1>macOS 开发者：从源码跑起 OpenClaw 的完整步骤</h1>
+        <p class="hero-copy">先装 Xcode 26.2+ 和 Node 24，然后 pnpm install，最后跑 package-mac-app.sh 打包。最容易翻车的是 ad-hoc 签名导致的安全弹窗或 Abort trap 6，直接去 Troubleshooting 查。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🛠️ macOS Dev Setup 这页，其实是在教开发者“怎么从源码把 Mac app 拼出来”</h2><p>不是给普通安装用户看的，而是给要自己编、自己打包、自己调试的人。</p></div><div class="overview-meta"><span>Mac 开发者搭建</span><span>重点是 Xcode、Node、pnpm、打包脚本</span><a href="https://docs.openclaw.ai/platforms/mac/dev-setup" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:platforms.mac.dev-setup.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>macOS 开发者：从源码跑起 OpenClaw 的完整步骤</h2>
+      <p>先装 Xcode 26.2+ 和 Node 24，然后 pnpm install，最后跑 package-mac-app.sh 打包。最容易翻车的是 ad-hoc 签名导致的安全弹窗或 Abort trap 6，直接去 Troubleshooting 查。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 8 节，先看 Start Here</span>
+      <span>路径：/platforms/mac/dev-setup</span>
+      <a href="https://docs.openclaw.ai/platforms/mac/dev-setup" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>🧰 先把两套工具箱准备好：Swift 那边的，和 Node 那边的</h2><p>因为 Mac app 和 Gateway/CLI 不是同一种技术栈。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label">Xcode 26.2+</div><p>像搭 Swift 施工现场的主工具箱。</p></div><div class="source-card"><div class="story-card-label">Node 24 + pnpm</div><p>这是另一边的工具箱，给 Gateway、CLI、打包脚本用。</p></div><div class="source-card"><div class="story-card-label"><code>pnpm install</code></div><p>先把整个仓库的零件都装齐。</p></div><div class="source-card"><div class="story-card-label"><code>./scripts/package-mac-app.sh</code></div><p>像按下“开始拼装并打包成 OpenClaw.app”的大按钮。</p></div></div></section>
 
 

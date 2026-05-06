@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Node.js 安装：Node.js | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Node.js 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Node.js | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="OpenClaw 强制要求 Node 22.14+，推荐用 Node 24。装完后第一件事：跑 node -v 确认版本。如果 openclaw 命令找不到，99% 是 npm 全局 bin 没在 PATH 里，按页内三步排查法修复。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Node.js 安装：Node.js | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Node.js 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Node.js | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="OpenClaw 强制要求 Node 22.14+，推荐用 Node 24。装完后第一件事：跑 node -v 确认版本。如果 openclaw 命令找不到，99% 是 npm 全局 bin 没在 PATH 里，按页内三步排查法修复。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/install/node/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Node.js 安装：Node.js | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Node.js 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Node.js | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="OpenClaw 强制要求 Node 22.14+，推荐用 Node 24。装完后第一件事：跑 node -v 确认版本。如果 openclaw 命令找不到，99% 是 npm 全局 bin 没在 PATH 里，按页内三步排查法修复。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/install/node/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Node.js 安装：Node.js","description":"Node.js 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/install/node/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Node.js","description":"OpenClaw 强制要求 Node 22.14+，推荐用 Node 24。装完后第一件事：跑 node -v 确认版本。如果 openclaw 命令找不到，99% 是 npm 全局 bin 没在 PATH 里，按页内三步排查法修复。","url":"https://fivey-can-read-openclaw.pages.dev/install/node/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Install","item":"https://fivey-can-read-openclaw.pages.dev/install/node/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Install 导读</p>
-        <h1>安装 Node.js 并配置环境</h1>
-        <p class="hero-copy">这页指导你为 OpenClaw 安装 Node.js 22.14 或更新版本，并确保全局安装路径正确配置。先运行 node -v 检查版本，如果版本不符或遇到 &#39;openclaw: command not found&#39; 错误，按步骤调整 PATH 或 npm 全局前缀。</p>
+        <h1>Node 版本不对、PATH 没配好？先看这里</h1>
+        <p class="hero-copy">OpenClaw 强制要求 Node 22.14+，推荐用 Node 24。装完后第一件事：跑 `node -v` 确认版本。如果 `openclaw` 命令找不到，99% 是 npm 全局 bin 没在 PATH 里，按页内三步排查法修复。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:install.node.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🟢 Node 这页，其实是在教你“先把发动机装对，不然 OpenClaw 这辆车根本开不顺”</h2>
-      <p>官方已经尽量帮你自动装 Node 了，所以你会看到它一开始就说：这页是给那些想自己装、自己核对 PATH、自己排版本问题的人看的。</p>
-      <p>把这页压成一句话就是：Node 24 最推荐，22.14+ 还能用，但别再往下了。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Node 版本不对、PATH 没配好？先看这里</h2>
+      <p>OpenClaw 强制要求 Node 22.14+，推荐用 Node 24。装完后第一件事：跑 `node -v` 确认版本。如果 `openclaw` 命令找不到，99% 是 npm 全局 bin 没在 PATH 里，按页内三步排查法修复。</p>
     </div>
     <div class="overview-meta">
-      <span>适合手动安装 Node 的人</span>
-      <span>重点是版本、PATH、全局安装权限</span>
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/install/node</span>
       <a href="https://docs.openclaw.ai/install/node" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

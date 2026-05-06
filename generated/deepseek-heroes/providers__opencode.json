@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:50:11.727Z",
+  "generatedAt": "2026-05-06T15:07:58.630Z",
   "pathname": "/providers/opencode",
   "title": "OpenCode",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenCode 接入配置指南",
-    "heroSummary": "这页说明如何在 OpenClaw 中接入 OpenCode 的两个托管目录（Zen 和 Go），它们共享同一个 API 密钥。配置时最容易混淆的是 Zen 和 Go 目录的运行时提供者 ID 不同，但 API 密钥只需设置一次。"
+    "heroTitle": "OpenCode 两个目录共用一个 API Key，但运行时 provider 是分开的",
+    "heroSummary": "OpenCode 提供 Zen 和 Go 两个目录，分别对应 opencode 和 opencode-go 两个运行时 provider，但共用同一个 API Key。配置时只需设置一次 OPENCODE_API_KEY，然后通过模型前缀（opencode/ 或 opencode-go/）区分路由。最容易搞错的是：虽然 onboarding 和文档把两者当一套处理，但 OpenClaw 内部用 provider id 分开，所以模型列表和默认模型配置时要写对前缀。"
   }
 }

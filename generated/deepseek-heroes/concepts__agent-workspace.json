@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:47:49.799Z",
+  "generatedAt": "2026-05-06T15:05:03.205Z",
   "pathname": "/concepts/agent-workspace",
   "title": "Agent Workspace",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Agent 工作空间详解：文件存放位置与安全须知",
-    "heroSummary": "这页讲的是 Agent 用来存放运行文件（如 AGENTS.md、SOUL.md）的工作目录，它默认位于 ~/.openclaw/workspace，是文件工具和上下文的唯一工作目录。最该先看的是“默认位置”部分，了解如何设置和覆盖工作空间路径。最容易搞错的是误以为工作空间是硬隔离的沙盒——它只是默认工作目录，工具仍可通过绝对路径访问主机其他位置，除非启用 sandbox 配置。"
+    "heroTitle": "Agent 的工作目录：不是沙箱，也不是配置文件夹",
+    "heroSummary": "Workspace 是 agent 的默认工作目录和记忆空间，但默认没有隔离能力——绝对路径仍可访问宿主机，需要隔离请配 sandbox。先搞清 workspace 和 `~/.openclaw/` 的分工：前者放行为文件（AGENTS.md、SOUL.md 等），后者放配置、凭据和会话。最容易踩的坑是保留多个 workspace 导致状态漂移，用 `openclaw doctor` 检查。"
   }
 }

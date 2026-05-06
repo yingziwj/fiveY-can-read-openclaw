@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>模式l 提供商s：Model Providers | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="模式l 提供商s是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Model Providers | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页只讲 LLM 供应商（如 OpenAI、Anthropic），不是 WhatsApp/Telegram 这类聊天通道。配置时先确认模型选择规则在另一页 /concepts/models，这里重点看 provider 的 API key 轮换机制和插件如何接管供应商逻辑。最容易搞错的是把 provider 的 c…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="模式l 提供商s：Model Providers | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="模式l 提供商s是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Model Providers | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页只讲 LLM 供应商（如 OpenAI、Anthropic），不是 WhatsApp/Telegram 这类聊天通道。配置时先确认模型选择规则在另一页 /concepts/models，这里重点看 provider 的 API key 轮换机制和插件如何接管供应商逻辑。最容易搞错的是把 provider 的 c…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/model-providers/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="模式l 提供商s：Model Providers | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="模式l 提供商s是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Model Providers | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页只讲 LLM 供应商（如 OpenAI、Anthropic），不是 WhatsApp/Telegram 这类聊天通道。配置时先确认模型选择规则在另一页 /concepts/models，这里重点看 provider 的 API key 轮换机制和插件如何接管供应商逻辑。最容易搞错的是把 provider 的 c…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/model-providers/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"模式l 提供商s：Model Providers","description":"模式l 提供商s是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/model-providers/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Model Providers","description":"这一页只讲 LLM 供应商（如 OpenAI、Anthropic），不是 WhatsApp/Telegram 这类聊天通道。配置时先确认模型选择规则在另一页 /concepts/models，这里重点看 provider 的 API key 轮换机制和插件如何接管供应商逻辑。最容易搞错的是把 provider 的 c…","url":"https://fivey-can-read-openclaw.pages.dev/concepts/model-providers/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/model-providers/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>模型提供商的配置与轮换机制</h1>
-        <p class="hero-copy">这页详细说明了如何配置不同AI模型提供商（如OpenAI、Anthropic）的API密钥，并实现密钥轮换以应对限流。配置时需注意`models.providers.*.models[].contextTokens`是实际生效的上下文长度上限，而密钥轮换仅在收到限流错误（如429）时才会触发，其他错误会立即失败。</p>
+        <h1>模型供应商：分清谁管模型，谁管聊天</h1>
+        <p class="hero-copy">这一页只讲 LLM 供应商（如 OpenAI、Anthropic），不是 WhatsApp/Telegram 这类聊天通道。配置时先确认模型选择规则在另一页 /concepts/models，这里重点看 provider 的 API key 轮换机制和插件如何接管供应商逻辑。最容易搞错的是把 provider 的 contextTokens 当成建议值——它实际上是运行时的硬上限。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.model-providers.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🏬 <code>Model providers</code> 像“脑子供应商、货架规则和插头接口说明书”</h2>
-      <p>这页不是在教你怎么聊天，而是在解释 OpenClaw 和不同模型供应商之间到底怎么对接、怎么轮换、怎么让插件把新货架插进来。</p>
-      <p>如果把 OpenClaw 想成一间脑子装配厂，这页就是供应链说明书。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>模型供应商：分清谁管模型，谁管聊天</h2>
+      <p>这一页只讲 LLM 供应商（如 OpenAI、Anthropic），不是 WhatsApp/Telegram 这类聊天通道。配置时先确认模型选择规则在另一页 /concepts/models，这里重点看 provider 的 API key 轮换机制和插件如何接管供应商逻辑。最容易搞错的是把 provider 的 contextTokens 当成建议值——它实际上是运行时的硬上限。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想弄懂 provider 体系和扩展方式的人</span>
-      <span>这页最重要的是记住：provider 不只是模型名，还包含认证、目录、运行时行为</span>
+      <span>原文共 30 节，先看 Start Here</span>
+      <span>路径：/concepts/model-providers</span>
       <a href="https://docs.openclaw.ai/concepts/model-providers" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

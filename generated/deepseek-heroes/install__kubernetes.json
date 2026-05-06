@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:48:40.911Z",
+  "generatedAt": "2026-05-06T15:05:32.679Z",
   "pathname": "/install/kubernetes",
   "title": "Kubernetes",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "在Kubernetes上部署OpenClaw的快速指南",
-    "heroSummary": "这页提供在Kubernetes上运行OpenClaw的最小化部署方案，不是生产就绪的配置。部署前需要准备好Kubernetes集群、kubectl工具和至少一个模型提供商的API密钥。最容易出错的地方是忘记设置API密钥环境变量，这会导致部署后无法正常连接AI模型服务。"
+    "heroTitle": "K8s 部署：一条命令拉起 OpenClaw，先配好 API Key",
+    "heroSummary": "这页不是生产级部署，而是让你在已有集群上快速跑起来的最小配置。先执行 `./scripts/k8s/deploy.sh` 并设置好模型提供商的 API Key，部署后记得用 `kubectl get secret` 拿 Control UI 的共享密钥，默认开启了 token 认证。"
   }
 }

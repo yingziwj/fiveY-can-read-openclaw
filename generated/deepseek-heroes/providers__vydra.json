@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:57.352Z",
+  "generatedAt": "2026-05-06T15:08:12.172Z",
   "pathname": "/providers/vydra",
   "title": "Vydra",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Vydra 插件配置与使用要点",
-    "heroSummary": "这页说明如何接入 Vydra 插件，它提供图像、视频生成和语音合成功能，使用同一个 API 密钥。配置时务必使用 `https://www.vydra.ai/api/v1` 作为基础 URL，避免因重定向导致认证失败。视频生成时需注意 `vydra/kling` 模型仅支持远程图片 URL，且当前插件未开放分辨率等高级参数设置。"
+    "heroTitle": "一个 API Key 管三种生成，但 base URL 写错会静默失败",
+    "heroSummary": "Vydra 插件同时支持图片（grok-imagine）、视频（veo3/kling）和语音合成（ElevenLabs 路由），三个能力共用同一个 VYDRA_API_KEY。最坑的是 base URL 必须写成 https://www.vydra.ai/api/v1，如果漏了 www，跨域重定向会吞掉 Authorization 头，导致 Key 明明有效却报错。配置时先跑 openclaw onboard --auth-choice vydra-api-key 或直接 export 环境变量，然后到 agent defaults 里把 imageGenerationModel 设成 vydra/grok-imagine 就能用。"
   }
 }

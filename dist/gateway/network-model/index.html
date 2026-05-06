@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Network model | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Network model是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="所有流量都经过 Gateway 这个长进程，它独占 WhatsApp Web 会话——一台主机只跑一个 Gateway，否则会掉线。先配好 gateway.auth 和 canvasHost，非回环访问必须用 token 或 trusted-proxy，别裸奔。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Network model | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Network model是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="所有流量都经过 Gateway 这个长进程，它独占 WhatsApp Web 会话——一台主机只跑一个 Gateway，否则会掉线。先配好 gateway.auth 和 canvasHost，非回环访问必须用 token 或 trusted-proxy，别裸奔。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/gateway/network-model/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Network model | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Network model是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="所有流量都经过 Gateway 这个长进程，它独占 WhatsApp Web 会话——一台主机只跑一个 Gateway，否则会掉线。先配好 gateway.auth 和 canvasHost，非回环访问必须用 token 或 trusted-proxy，别裸奔。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/gateway/network-model/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Network model","description":"Network model是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/network-model/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Network model","description":"所有流量都经过 Gateway 这个长进程，它独占 WhatsApp Web 会话——一台主机只跑一个 Gateway，否则会掉线。先配好 gateway.auth 和 canvasHost，非回环访问必须用 token 或 trusted-proxy，别裸奔。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/network-model/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Gateway","item":"https://fivey-can-read-openclaw.pages.dev/gateway/network-model/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Gateway 导读</p>
-        <h1>网关网络模型：连接节点与外部服务的核心架构</h1>
-        <p class="hero-copy">这页详细说明OpenClaw网关如何管理节点连接、WebSocket控制平面及Canvas主机服务，是理解整个系统通信基础的关键。配置网关时，最需要关注的是认证设置和端口绑定规则，特别是非本地回环访问时的安全要求。最容易出错的地方是误将网关暴露在非受信网络而不配置正确的认证方式，或混淆网关端口与Canvas服务的端口关系。</p>
+        <h1>Gateway 是唯一主人，别让第二个进程抢 WhatsApp 会话</h1>
+        <p class="hero-copy">所有流量都经过 Gateway 这个长进程，它独占 WhatsApp Web 会话——一台主机只跑一个 Gateway，否则会掉线。先配好 `gateway.auth` 和 `canvasHost`，非回环访问必须用 token 或 trusted-proxy，别裸奔。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:gateway.network-model.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🌐 <code>Network Model</code> 像“OpenClaw 的总机房和门口小路图”</h2>
-      <p>这页讲的是：谁是总机房，哪些门平时该走本地回路，哪些情况要走尾网、SSH 或远程通道。</p>
-      <p>如果把 OpenClaw 想成一栋楼，那 Gateway 就是总机房，节点、网页和聊天通道都在往它这儿汇。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Gateway 是唯一主人，别让第二个进程抢 WhatsApp 会话</h2>
+      <p>所有流量都经过 Gateway 这个长进程，它独占 WhatsApp Web 会话——一台主机只跑一个 Gateway，否则会掉线。先配好 `gateway.auth` 和 `canvasHost`，非回环访问必须用 token 或 trusted-proxy，别裸奔。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想看懂 Gateway 在网络里扮演什么角色的人</span>
-      <span>这页最重要的是记住：大多数路都先经过 Gateway，这是一栋楼的总机房</span>
+      <span>原文共 2 节，先看 Start Here</span>
+      <span>路径：/gateway/network-model</span>
       <a href="https://docs.openclaw.ai/gateway/network-model" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

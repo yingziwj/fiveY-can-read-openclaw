@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SecretRef 凭证范围：SecretRef Credential Surface | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="SecretRef 凭证范围是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>SecretRef Credential Surface | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="页面列出了 openclaw.json 和 auth-profiles.json 中所有支持 SecretRef 的字段路径，以及明确不支持的范围。配置前先对照清单确认你的密钥字段是否在支持列表内，避免无效配置。特别注意：OAuth 模式的 auth-profile 不能与 SecretRef 混用，否则启动即报错。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="SecretRef 凭证范围：SecretRef Credential Surface | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="SecretRef 凭证范围是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="SecretRef Credential Surface | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="页面列出了 openclaw.json 和 auth-profiles.json 中所有支持 SecretRef 的字段路径，以及明确不支持的范围。配置前先对照清单确认你的密钥字段是否在支持列表内，避免无效配置。特别注意：OAuth 模式的 auth-profile 不能与 SecretRef 混用，否则启动即报错。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/reference/secretref-credential-surface/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SecretRef 凭证范围：SecretRef Credential Surface | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="SecretRef 凭证范围是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="SecretRef Credential Surface | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="页面列出了 openclaw.json 和 auth-profiles.json 中所有支持 SecretRef 的字段路径，以及明确不支持的范围。配置前先对照清单确认你的密钥字段是否在支持列表内，避免无效配置。特别注意：OAuth 模式的 auth-profile 不能与 SecretRef 混用，否则启动即报错。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/reference/secretref-credential-surface/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"SecretRef 凭证范围：SecretRef Credential Surface","description":"SecretRef 凭证范围是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/reference/secretref-credential-surface/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"SecretRef Credential Surface","description":"页面列出了 openclaw.json 和 auth-profiles.json 中所有支持 SecretRef 的字段路径，以及明确不支持的范围。配置前先对照清单确认你的密钥字段是否在支持列表内，避免无效配置。特别注意：OAuth 模式的 auth-profile 不能与 SecretRef 混用，否则启动即报错。","url":"https://fivey-can-read-openclaw.pages.dev/reference/secretref-credential-surface/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Reference","item":"https://fivey-can-read-openclaw.pages.dev/reference/secretref-credential-surface/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Reference 导读</p>
-        <h1>SecretRef 凭证配置字段清单</h1>
-        <p class="hero-copy">这页列出了所有支持通过 SecretRef 方式配置的凭证字段，包括 openclaw.json 和 auth-profiles.json 中的具体路径。配置时最容易错的是 OAuth 模式下的字段冲突，以及 web search 在自动模式下只有第一个有效密钥会被激活。</p>
+        <h1>哪些配置字段能走 SecretRef 注入？一张清单定边界</h1>
+        <p class="hero-copy">页面列出了 openclaw.json 和 auth-profiles.json 中所有支持 SecretRef 的字段路径，以及明确不支持的范围。配置前先对照清单确认你的密钥字段是否在支持列表内，避免无效配置。特别注意：OAuth 模式的 auth-profile 不能与 SecretRef 混用，否则启动即报错。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,8 +4324,21 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🗝️ SecretRef Credential Surface 这页，其实是在划线：哪些凭据能交给 SecretRef 管，哪些不能</h2><p>它像一张“这类钥匙能进保险箱，那类钥匙不归这里管”的边界图。</p></div><div class="overview-meta"><span>SecretRef 凭据边界</span><span>重点是 in scope / out of scope</span><a href="https://docs.openclaw.ai/reference/secretref-credential-surface" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-
+      <!-- handcrafted-source:reference.secretref-credential-surface.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>哪些配置字段能走 SecretRef 注入？一张清单定边界</h2>
+      <p>页面列出了 openclaw.json 和 auth-profiles.json 中所有支持 SecretRef 的字段路径，以及明确不支持的范围。配置前先对照清单确认你的密钥字段是否在支持列表内，避免无效配置。特别注意：OAuth 模式的 auth-profile 不能与 SecretRef 混用，否则启动即报错。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 4 节，先看 Start Here</span>
+      <span>路径：/reference/secretref-credential-surface</span>
+      <a href="https://docs.openclaw.ai/reference/secretref-credential-surface" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
       <footer class="page-footer">
         <div>

@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HEARTBEAT.md 模板：HEARTBEAT.md Template | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="HEARTBEAT.md 模板是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>HEARTBEAT.md Template | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="HEARTBEAT.md 是控制 agent 是否定期执行心跳检查的开关。文件为空或只有注释时，心跳 API 调用被跳过；只有当你往里面写入具体任务时，agent 才会按周期去执行。最容易搞错的是：不要误以为必须写内容才能运行——空文件恰恰是“关闭心跳”的正确写法。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="HEARTBEAT.md 模板：HEARTBEAT.md Template | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="HEARTBEAT.md 模板是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="HEARTBEAT.md Template | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="HEARTBEAT.md 是控制 agent 是否定期执行心跳检查的开关。文件为空或只有注释时，心跳 API 调用被跳过；只有当你往里面写入具体任务时，agent 才会按周期去执行。最容易搞错的是：不要误以为必须写内容才能运行——空文件恰恰是“关闭心跳”的正确写法。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/reference/templates/HEARTBEAT/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="HEARTBEAT.md 模板：HEARTBEAT.md Template | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="HEARTBEAT.md 模板是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="HEARTBEAT.md Template | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="HEARTBEAT.md 是控制 agent 是否定期执行心跳检查的开关。文件为空或只有注释时，心跳 API 调用被跳过；只有当你往里面写入具体任务时，agent 才会按周期去执行。最容易搞错的是：不要误以为必须写内容才能运行——空文件恰恰是“关闭心跳”的正确写法。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/reference/templates/HEARTBEAT/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"HEARTBEAT.md 模板：HEARTBEAT.md Template","description":"HEARTBEAT.md 模板是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/reference/templates/HEARTBEAT/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"HEARTBEAT.md Template","description":"HEARTBEAT.md 是控制 agent 是否定期执行心跳检查的开关。文件为空或只有注释时，心跳 API 调用被跳过；只有当你往里面写入具体任务时，agent 才会按周期去执行。最容易搞错的是：不要误以为必须写内容才能运行——空文件恰恰是“关闭心跳”的正确写法。","url":"https://fivey-can-read-openclaw.pages.dev/reference/templates/HEARTBEAT/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Reference","item":"https://fivey-can-read-openclaw.pages.dev/reference/templates/HEARTBEAT/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Reference 导读</p>
-        <h1>HEARTBEAT.md 心跳文件配置模板</h1>
-        <p class="hero-copy">这页提供心跳文件的模板，用于控制代理的周期性检查任务。文件留空或只写注释可跳过心跳调用，添加任务则让代理定期执行检查。配置时注意：文件内容直接影响心跳行为，误填任务可能导致不必要的资源消耗。</p>
+        <h1>心跳文件：空文件跳过心跳，加任务才触发检查</h1>
+        <p class="hero-copy">HEARTBEAT.md 是控制 agent 是否定期执行心跳检查的开关。文件为空或只有注释时，心跳 API 调用被跳过；只有当你往里面写入具体任务时，agent 才会按周期去执行。最容易搞错的是：不要误以为必须写内容才能运行——空文件恰恰是“关闭心跳”的正确写法。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,8 +4324,21 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>💓 Template HEARTBEAT 这页，其实是在讲“如果你想让 agent 定期巡逻，就把巡逻任务写在 HEARTBEAT.md；不想巡逻就留空”</h2><p>它像定时广播清单。</p></div><div class="overview-meta"><span>定时巡逻模板</span><span>重点是留空=不打心跳，写任务=定期检查</span><a href="https://docs.openclaw.ai/reference/templates/HEARTBEAT" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-
+      <!-- handcrafted-source:reference.templates.HEARTBEAT.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>心跳文件：空文件跳过心跳，加任务才触发检查</h2>
+      <p>HEARTBEAT.md 是控制 agent 是否定期执行心跳检查的开关。文件为空或只有注释时，心跳 API 调用被跳过；只有当你往里面写入具体任务时，agent 才会按周期去执行。最容易搞错的是：不要误以为必须写内容才能运行——空文件恰恰是“关闭心跳”的正确写法。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 1 节，先看 Start Here</span>
+      <span>路径：/reference/templates/HEARTBEAT</span>
+      <a href="https://docs.openclaw.ai/reference/templates/HEARTBEAT" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
       <footer class="page-footer">
         <div>

@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Slash Commands 工具：Slash Commands | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Slash Commands 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Slash Commands | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="斜杠命令分三类：独立命令（如 /new）、内联快捷指令（如 /help）和指令（如 /think）。配置时最易搞混的是 commands.allowFrom 与 channel 白名单的关系——一旦设置了 allowFrom，就只有它说了算。想开 /bash 或 /config 这类敏感命令，记得先配 tools.e…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Slash Commands 工具：Slash Commands | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Slash Commands 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Slash Commands | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="斜杠命令分三类：独立命令（如 /new）、内联快捷指令（如 /help）和指令（如 /think）。配置时最易搞混的是 commands.allowFrom 与 channel 白名单的关系——一旦设置了 allowFrom，就只有它说了算。想开 /bash 或 /config 这类敏感命令，记得先配 tools.e…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/tools/slash-commands/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Slash Commands 工具：Slash Commands | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Slash Commands 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Slash Commands | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="斜杠命令分三类：独立命令（如 /new）、内联快捷指令（如 /help）和指令（如 /think）。配置时最易搞混的是 commands.allowFrom 与 channel 白名单的关系——一旦设置了 allowFrom，就只有它说了算。想开 /bash 或 /config 这类敏感命令，记得先配 tools.e…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/tools/slash-commands/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Slash Commands 工具：Slash Commands","description":"Slash Commands 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/tools/slash-commands/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Slash Commands","description":"斜杠命令分三类：独立命令（如 /new）、内联快捷指令（如 /help）和指令（如 /think）。配置时最易搞混的是 commands.allowFrom 与 channel 白名单的关系——一旦设置了 allowFrom，就只有它说了算。想开 /bash 或 /config 这类敏感命令，记得先配 tools.e…","url":"https://fivey-can-read-openclaw.pages.dev/tools/slash-commands/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://fivey-can-read-openclaw.pages.dev/tools/slash-commands/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Tools 导读</p>
-        <h1>斜杠命令配置与使用指南</h1>
-        <p class="hero-copy">这页详细列出了所有可用的斜杠命令，并解释了如何通过配置控制命令的启用和授权。配置时最需注意 `commands.allowFrom` 会完全覆盖其他授权来源，一旦设置，通道白名单和 `commands.useAccessGroups` 将失效。命令分为独立消息和行内快捷方式两种，行内快捷方式会在模型处理前被剥离，不影响后续对话流。</p>
+        <h1>斜杠命令：哪些能用、谁能用、怎么配</h1>
+        <p class="hero-copy">斜杠命令分三类：独立命令（如 /new）、内联快捷指令（如 /help）和指令（如 /think）。配置时最易搞混的是 commands.allowFrom 与 channel 白名单的关系——一旦设置了 allowFrom，就只有它说了算。想开 /bash 或 /config 这类敏感命令，记得先配 tools.elevated 或 ownerAllowFrom。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:tools.slash-commands.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🪄 Slash Commands 不是聊天内容，它更像你对 OpenClaw 说的“舞台指令”</h2>
-      <p>平常聊天时，你是在告诉 OpenClaw“我想做什么”。但发斜杠命令时，你更像是在对后台喊：“切模型、停一下、给我看状态、去开个子代理、把这次回复改成快一点。”</p>
-      <p>所以这页不是普通对话指南，而是一张“遥控器说明书”。你不是在写作文，你是在按按钮。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>斜杠命令：哪些能用、谁能用、怎么配</h2>
+      <p>斜杠命令分三类：独立命令（如 /new）、内联快捷指令（如 /help）和指令（如 /think）。配置时最易搞混的是 commands.allowFrom 与 channel 白名单的关系——一旦设置了 allowFrom，就只有它说了算。想开 /bash 或 /config 这类敏感命令，记得先配 tools.elevated 或 ownerAllowFrom。</p>
     </div>
     <div class="overview-meta">
-      <span>适合已经在用 OpenClaw 聊天，想开始用命令遥控它的人</span>
-      <span>这页最重要的是先分清 commands、directives、inline shortcuts 三种东西</span>
+      <span>原文共 17 节，先看 Start Here</span>
+      <span>路径：/tools/slash-commands</span>
       <a href="https://docs.openclaw.ai/tools/slash-commands" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

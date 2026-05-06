@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Threat 模式l（MITRE ATLAS）：Threat Model (MITRE ATLAS) | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Threat 模式l（MITRE ATLAS）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Threat Model (MITRE ATLAS) | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页是 OpenClaw 平台和 ClawHub 技能市场的安全基线，基于 MITRE ATLAS 框架梳理 AI 系统特有的攻击手法。想参与威胁报告或更新攻击链，先看 CONTRIBUTING-THREAT-MODEL 的提交流程。容易忽略的是：ATLAS 不是通用威胁模型，它专门针对 AI/ML 系统的对抗行为…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Threat 模式l（MITRE ATLAS）：Threat Model (MITRE ATLAS) | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Threat 模式l（MITRE ATLAS）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Threat Model (MITRE ATLAS) | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页是 OpenClaw 平台和 ClawHub 技能市场的安全基线，基于 MITRE ATLAS 框架梳理 AI 系统特有的攻击手法。想参与威胁报告或更新攻击链，先看 CONTRIBUTING-THREAT-MODEL 的提交流程。容易忽略的是：ATLAS 不是通用威胁模型，它专门针对 AI/ML 系统的对抗行为…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/security/THREAT-MODEL-ATLAS/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Threat 模式l（MITRE ATLAS）：Threat Model (MITRE ATLAS) | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Threat 模式l（MITRE ATLAS）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Threat Model (MITRE ATLAS) | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页是 OpenClaw 平台和 ClawHub 技能市场的安全基线，基于 MITRE ATLAS 框架梳理 AI 系统特有的攻击手法。想参与威胁报告或更新攻击链，先看 CONTRIBUTING-THREAT-MODEL 的提交流程。容易忽略的是：ATLAS 不是通用威胁模型，它专门针对 AI/ML 系统的对抗行为…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/security/THREAT-MODEL-ATLAS/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Threat 模式l（MITRE ATLAS）：Threat Model (MITRE ATLAS)","description":"Threat 模式l（MITRE ATLAS）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/security/THREAT-MODEL-ATLAS/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Threat Model (MITRE ATLAS)","description":"这一页是 OpenClaw 平台和 ClawHub 技能市场的安全基线，基于 MITRE ATLAS 框架梳理 AI 系统特有的攻击手法。想参与威胁报告或更新攻击链，先看 CONTRIBUTING-THREAT-MODEL 的提交流程。容易忽略的是：ATLAS 不是通用威胁模型，它专门针对 AI/ML 系统的对抗行为…","url":"https://fivey-can-read-openclaw.pages.dev/security/THREAT-MODEL-ATLAS/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Security","item":"https://fivey-can-read-openclaw.pages.dev/security/THREAT-MODEL-ATLAS/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Security 导读</p>
-        <h1>OpenClaw AI平台威胁模型（基于MITRE ATLAS框架）</h1>
-        <p class="hero-copy">这页详细说明了OpenClaw AI平台和ClawHub技能市场面临的对抗性威胁，采用专门为AI/ML系统设计的MITRE ATLAS框架进行记录。建议先了解该威胁模型如何基于ATLAS框架构建，并注意这是由社区维护的动态文档，可贡献新威胁或缓解措施。</p>
+        <h1>OpenClaw 威胁模型：用 MITRE ATLAS 看清 AI 系统攻击面</h1>
+        <p class="hero-copy">这一页是 OpenClaw 平台和 ClawHub 技能市场的安全基线，基于 MITRE ATLAS 框架梳理 AI 系统特有的攻击手法。想参与威胁报告或更新攻击链，先看 CONTRIBUTING-THREAT-MODEL 的提交流程。容易忽略的是：ATLAS 不是通用威胁模型，它专门针对 AI/ML 系统的对抗行为，比如模型投毒、提示注入。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,16 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:security.THREAT-MODEL-ATLAS.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧭 Threat Model v1.0 这页，就是“把 OpenClaw 可能遇到的坏事，按 ATLAS 地图一格一格摆出来”</h2>
-      <p>它不是在吓人，而是在给攻击故事贴标签。这样你就知道威胁从哪里来、会打到哪里、应该怎么防。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>OpenClaw 威胁模型：用 MITRE ATLAS 看清 AI 系统攻击面</h2>
+      <p>这一页是 OpenClaw 平台和 ClawHub 技能市场的安全基线，基于 MITRE ATLAS 框架梳理 AI 系统特有的攻击手法。想参与威胁报告或更新攻击链，先看 CONTRIBUTING-THREAT-MODEL 的提交流程。容易忽略的是：ATLAS 不是通用威胁模型，它专门针对 AI/ML 系统的对抗行为，比如模型投毒、提示注入。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想看完整威胁地图的人</span>
-      <span>先看框架，再看范围，再看威胁编号和贡献方式</span>
+      <span>原文共 42 节，先看 Start Here</span>
+      <span>路径：/security/THREAT-MODEL-ATLAS</span>
       <a href="https://docs.openclaw.ai/security/THREAT-MODEL-ATLAS" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Web是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="这一页讲的是 Gateway 的 Web 面——控制 UI 默认在 18789 端口同服提供，支持 loopback 或 tailnet 绑定，以及可选的 basePath 前缀。如果要用 token 鉴权或启用 Webhook，先看 Config 和 Integrated Serve 两段，最容易漏的是 baseP…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Web | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Web是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="这一页讲的是 Gateway 的 Web 面——控制 UI 默认在 18789 端口同服提供，支持 loopback 或 tailnet 绑定，以及可选的 basePath 前缀。如果要用 token 鉴权或启用 Webhook，先看 Config 和 Integrated Serve 两段，最容易漏的是 baseP…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/web/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Web | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Web是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="这一页讲的是 Gateway 的 Web 面——控制 UI 默认在 18789 端口同服提供，支持 loopback 或 tailnet 绑定，以及可选的 basePath 前缀。如果要用 token 鉴权或启用 Webhook，先看 Config 和 Integrated Serve 两段，最容易漏的是 baseP…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/web/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Web","description":"Web是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/web/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Web","description":"这一页讲的是 Gateway 的 Web 面——控制 UI 默认在 18789 端口同服提供，支持 loopback 或 tailnet 绑定，以及可选的 basePath 前缀。如果要用 token 鉴权或启用 Webhook，先看 Config 和 Integrated Serve 两段，最容易漏的是 baseP…","url":"https://fivey-can-read-openclaw.pages.dev/web/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Web","item":"https://fivey-can-read-openclaw.pages.dev/web/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Web 导读</p>
-        <h1>网关Web界面配置与访问指南</h1>
-        <p class="hero-copy">这页详细说明如何配置和访问网关的Web控制界面，包括默认启用设置、绑定模式选择和访问路径。配置时需注意区分loopback和tailnet两种绑定模式，它们决定了访问地址和安全性设置。最容易出错的地方是忘记设置basePath或混淆不同绑定模式下的访问URL格式。</p>
+        <h1>Web 页面：控制 UI 与 Webhook 的绑定、安全与暴露方式</h1>
+        <p class="hero-copy">这一页讲的是 Gateway 的 Web 面——控制 UI 默认在 18789 端口同服提供，支持 loopback 或 tailnet 绑定，以及可选的 basePath 前缀。如果要用 token 鉴权或启用 Webhook，先看 Config 和 Integrated Serve 两段，最容易漏的是 basePath 配置和 loopback 下必须配合 Tailscale Serve 才能从外部访问。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,18 +4324,18 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:web.index.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🌐 Web 这页其实在讲：OpenClaw 这栋楼，门开在哪、谁能进、该走哪条安全走廊</h2>
-      <p>你已经知道 Dashboard 是总控室了。这一页不是再重复控制台按钮，而是在讲整栋楼怎么对外开门：默认门牌、basePath、Tailscale、Funnel、allowedOrigins，这些都属于“楼体规则”。</p>
-      <p>所以你可以把它当成建筑说明书。不是看房间里摆了什么，而是看大门朝哪开、哪条走廊是安全的、哪条开法太危险。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Web 页面：控制 UI 与 Webhook 的绑定、安全与暴露方式</h2>
+      <p>这一页讲的是 Gateway 的 Web 面——控制 UI 默认在 18789 端口同服提供，支持 loopback 或 tailnet 绑定，以及可选的 basePath 前缀。如果要用 token 鉴权或启用 Webhook，先看 Config 和 Integrated Serve 两段，最容易漏的是 basePath 配置和 loopback 下必须配合 Tailscale Serve 才能从外部访问。</p>
     </div>
     <div class="overview-meta">
-      <span>适合要让 Control UI 对外可达，但又不想把安全做烂的人</span>
-      <span>这页最重要的是分清：loopback、tailnet、funnel 是三种完全不同的开门方式</span>
-      <a href="https://docs.openclaw.ai/web" target="_blank" rel="noreferrer">查看官方原文</a>
+      <span>原文共 8 节，先看 Start Here</span>
+      <span>路径：/web/index</span>
+      <a href="https://docs.openclaw.ai/web/index" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>
 </section>

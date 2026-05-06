@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Honcho 记忆：Honcho Memory | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Honcho 记忆是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Honcho Memory | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Honcho 为 OpenClaw 添加持久化记忆层，每次对话后自动保存，跨重置、压缩、切换频道都不丢失。先跑 openclaw honcho setup 填入 API 凭证或指向自托管地址，最易错的是自托管时务必删掉 apiKey 字段。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Honcho 记忆：Honcho Memory | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Honcho 记忆是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Honcho Memory | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Honcho 为 OpenClaw 添加持久化记忆层，每次对话后自动保存，跨重置、压缩、切换频道都不丢失。先跑 openclaw honcho setup 填入 API 凭证或指向自托管地址，最易错的是自托管时务必删掉 apiKey 字段。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/memory-honcho/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Honcho 记忆：Honcho Memory | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Honcho 记忆是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Honcho Memory | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Honcho 为 OpenClaw 添加持久化记忆层，每次对话后自动保存，跨重置、压缩、切换频道都不丢失。先跑 openclaw honcho setup 填入 API 凭证或指向自托管地址，最易错的是自托管时务必删掉 apiKey 字段。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/memory-honcho/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Honcho 记忆：Honcho Memory","description":"Honcho 记忆是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/memory-honcho/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Honcho Memory","description":"Honcho 为 OpenClaw 添加持久化记忆层，每次对话后自动保存，跨重置、压缩、切换频道都不丢失。先跑 openclaw honcho setup 填入 API 凭证或指向自托管地址，最易错的是自托管时务必删掉 apiKey 字段。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/memory-honcho/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/memory-honcho/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>Honcho 内存：为 OpenClaw 添加跨会话 AI 记忆</h1>
-        <p class="hero-copy">这页介绍如何通过 Honcho 插件为 OpenClaw 配置持久化内存服务，让 AI 助手能记住跨会话的对话历史和用户偏好。配置时需注意区分托管 API 和自托管模式，`apiKey` 和 `baseUrl` 的设置容易出错。</p>
+        <h1>让 AI 记住跨会话的用户画像与对话历史</h1>
+        <p class="hero-copy">Honcho 为 OpenClaw 添加持久化记忆层，每次对话后自动保存，跨重置、压缩、切换频道都不丢失。先跑 `openclaw honcho setup` 填入 API 凭证或指向自托管地址，最易错的是自托管时务必删掉 `apiKey` 字段。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.memory-honcho.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧑‍✈️ Honcho Memory 像给 OpenClaw 配了一个跨会话管家</h2>
-      <p>它不只记当前这段聊天，还把对话长期存起来，慢慢长出用户模型和代理模型。</p>
-      <p>所以它更像“会陪你很多天的管家”，不是一次性的会话备忘录。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>让 AI 记住跨会话的用户画像与对话历史</h2>
+      <p>Honcho 为 OpenClaw 添加持久化记忆层，每次对话后自动保存，跨重置、压缩、切换频道都不丢失。先跑 `openclaw honcho setup` 填入 API 凭证或指向自托管地址，最易错的是自托管时务必删掉 `apiKey` 字段。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想让记忆跨会话的人</span>
-      <span>重点是 user model、agent model、semantic search</span>
+      <span>原文共 10 节，先看 Start Here</span>
+      <span>路径：/concepts/memory-honcho</span>
       <a href="https://docs.openclaw.ai/concepts/memory-honcho" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>后台 Exec 与进程工具：Background Exec and Process Tool | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="后台 Exec 与进程工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Background Exec and Process Tool | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="exec 负责跑命令，yieldMs 超时后自动转入后台；process 负责查输出、写输入、杀进程。最容易忘的是：想确认无输出的命令是否完成，必须用 process 的 poll 或 log 来查，exec 不会主动通知。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="后台 Exec 与进程工具：Background Exec and Process Tool | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="后台 Exec 与进程工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Background Exec and Process Tool | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="exec 负责跑命令，yieldMs 超时后自动转入后台；process 负责查输出、写输入、杀进程。最容易忘的是：想确认无输出的命令是否完成，必须用 process 的 poll 或 log 来查，exec 不会主动通知。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/gateway/background-process/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="后台 Exec 与进程工具：Background Exec and Process Tool | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="后台 Exec 与进程工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Background Exec and Process Tool | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="exec 负责跑命令，yieldMs 超时后自动转入后台；process 负责查输出、写输入、杀进程。最容易忘的是：想确认无输出的命令是否完成，必须用 process 的 poll 或 log 来查，exec 不会主动通知。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/gateway/background-process/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"后台 Exec 与进程工具：Background Exec and Process Tool","description":"后台 Exec 与进程工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/background-process/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Background Exec and Process Tool","description":"exec 负责跑命令，yieldMs 超时后自动转入后台；process 负责查输出、写输入、杀进程。最容易忘的是：想确认无输出的命令是否完成，必须用 process 的 poll 或 log 来查，exec 不会主动通知。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/background-process/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Gateway","item":"https://fivey-can-read-openclaw.pages.dev/gateway/background-process/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Gateway 导读</p>
-        <h1>后台命令执行与会话管理工具详解</h1>
-        <p class="hero-copy">本页详细说明如何使用 exec 工具执行 shell 命令并管理后台进程，以及如何通过 process 工具监控和操作这些后台会话。配置时需特别注意 yieldMs 和 timeout 参数，避免进程意外终止或资源泄漏。使用 process 工具进行轮询和日志读取是监控长时间运行任务的关键操作。</p>
+        <h1>后台任务：exec 发命令，process 管会话</h1>
+        <p class="hero-copy">exec 负责跑命令，yieldMs 超时后自动转入后台；process 负责查输出、写输入、杀进程。最容易忘的是：想确认无输出的命令是否完成，必须用 process 的 poll 或 log 来查，exec 不会主动通知。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:gateway.background-process.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🚂 <code>Background Exec + Process Tool</code> 像“后台小火车和它的站台”</h2>
-      <p>这页讲的是：命令怎么跑、什么时候会自己躲到后台、后台的活儿怎么被看见、又怎么被叫停。</p>
-      <p>可以把 <code>exec</code> 想成开火车，<code>process</code> 想成站台上的调度员。一个负责跑，一个负责看、等、写、停、清理。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>后台任务：exec 发命令，process 管会话</h2>
+      <p>exec 负责跑命令，yieldMs 超时后自动转入后台；process 负责查输出、写输入、杀进程。最容易忘的是：想确认无输出的命令是否完成，必须用 process 的 poll 或 log 来查，exec 不会主动通知。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想理解长任务、后台会话和输出缓存的人</span>
-      <span>这页最重要的是先分清：exec 在开车，process 在照看车次</span>
+      <span>原文共 5 节，先看 Start Here</span>
+      <span>路径：/gateway/background-process</span>
       <a href="https://docs.openclaw.ai/gateway/background-process" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

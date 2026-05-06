@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:51:05.076Z",
+  "generatedAt": "2026-05-06T15:06:58.665Z",
   "pathname": "/tools/skills-config",
   "title": "Skills Config",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "配置技能加载与安装",
-    "heroSummary": "这页说明如何通过 `~/.openclaw/openclaw.json` 中的 `skills` 字段管理技能，包括允许加载哪些技能、从哪些目录加载，以及安装时使用哪个包管理器。最容易搞错的是：在沙盒环境中，技能进程不继承主机的环境变量，必须通过 `agents.defaults.sandbox.docker.env` 单独配置。"
+    "heroTitle": "技能配置：先分清全局加载与每个Agent的可见列表",
+    "heroSummary": "技能加载和安装配置集中在 `~/.openclaw/openclaw.json` 的 `skills` 字段下，而每个Agent能看到哪些技能则由 `agents.defaults.skills` 和 `agents.list[].skills` 控制。最容易搞错的是：`agents.list[].skills` 会完全替换默认列表，而不是合并。另外，沙箱环境不继承宿主环境变量，需通过 `sandbox.docker.env` 单独传递。"
   }
 }

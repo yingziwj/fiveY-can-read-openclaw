@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:54:12.143Z",
+  "generatedAt": "2026-05-06T15:08:58.095Z",
   "pathname": "/concepts/markdown-formatting",
   "title": "Markdown Formatting",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Markdown格式转换的内部流程",
-    "heroSummary": "这页解释OpenClaw如何将Markdown转换为中间表示（IR），再适配不同聊天平台。先看IR如何保持文本完整并携带样式链接信息，这是理解后续渲染流程的关键。注意IR使用UTF-16偏移量来对齐Signal API，且表格转换只在启用时进行，这是容易忽略的配置点。"
+    "heroTitle": "Markdown 格式化：一次解析，多平台渲染",
+    "heroSummary": "OpenClaw 将 Markdown 转为中间表示（IR），再分块并适配各平台语法。先理解 IR 结构（文本+样式/链接偏移），再关注分块规则——内联格式不会跨块分割，这是避免渲染错位的关键。"
   }
 }

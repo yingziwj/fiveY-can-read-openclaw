@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:54:17.226Z",
+  "generatedAt": "2026-05-06T15:09:00.531Z",
   "pathname": "/date-time",
   "title": "Date and Time",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "消息时间戳与系统时区配置",
-    "heroSummary": "这页说明OpenClaw如何处理消息时间戳和系统提示中的时区，默认使用主机本地时间。配置时要注意envelopeTimezone参数，它控制消息信封的时区显示，容易误设导致时间显示错误。系统提示只包含时区信息，获取当前时间需使用session_status工具。"
+    "heroTitle": "时间戳用谁的时区？默认是主机本地，但可以改",
+    "heroSummary": "消息信封和系统事件的时间戳默认取主机本地时间，不跟随用户或 provider。如果你想让时间戳显示用户时区或固定 UTC，在 agents.defaults 里配 envelopeTimezone。注意：系统提示里只放时区名不放具体时间，要拿当前时间得调 session_status 工具。"
   }
 }

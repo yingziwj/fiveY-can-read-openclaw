@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Streaming and Chunking | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Streaming and Chunking是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="OpenClaw 的 streaming 分两层：block streaming 把助手写完的整块内容发到频道，preview streaming 在 Telegram/Discord/Slack 上临时更新一条预览消息。没有真正的 token 级流式输出到频道。配置时先搞清楚你要的是“边写边发完整段落”还是“生成完…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Streaming and Chunking | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Streaming and Chunking是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="OpenClaw 的 streaming 分两层：block streaming 把助手写完的整块内容发到频道，preview streaming 在 Telegram/Discord/Slack 上临时更新一条预览消息。没有真正的 token 级流式输出到频道。配置时先搞清楚你要的是“边写边发完整段落”还是“生成完…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/streaming/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Streaming and Chunking | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Streaming and Chunking是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="OpenClaw 的 streaming 分两层：block streaming 把助手写完的整块内容发到频道，preview streaming 在 Telegram/Discord/Slack 上临时更新一条预览消息。没有真正的 token 级流式输出到频道。配置时先搞清楚你要的是“边写边发完整段落”还是“生成完…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/streaming/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Streaming and Chunking","description":"Streaming and Chunking是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/streaming/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Streaming and Chunking","description":"OpenClaw 的 streaming 分两层：block streaming 把助手写完的整块内容发到频道，preview streaming 在 Telegram/Discord/Slack 上临时更新一条预览消息。没有真正的 token 级流式输出到频道。配置时先搞清楚你要的是“边写边发完整段落”还是“生成完…","url":"https://fivey-can-read-openclaw.pages.dev/concepts/streaming/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/streaming/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>OpenClaw 流式输出与分块机制详解</h1>
-        <p class="hero-copy">本页详细说明 OpenClaw 如何将 AI 生成内容分块发送到不同渠道，以及如何配置分块大小、合并规则和发送节奏。配置时需注意区分块流（channel messages）和预览流（Telegram/Discord/Slack），并正确设置 blockStreamingBreak 参数控制分块时机。</p>
+        <h1>Streaming 不是逐字推送，是“写完一段发一段”</h1>
+        <p class="hero-copy">OpenClaw 的 streaming 分两层：block streaming 把助手写完的整块内容发到频道，preview streaming 在 Telegram/Discord/Slack 上临时更新一条预览消息。没有真正的 token 级流式输出到频道。配置时先搞清楚你要的是“边写边发完整段落”还是“生成完再发最终结果”，block streaming 默认关闭，需在 agents.defaults.blockStreamingDefault 或频道覆盖中开启。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.streaming.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🌊 Streaming 不是“真正在一个字一个字流出来”，它更像 OpenClaw 边想边分段往外递小纸条</h2>
-      <p>这页最容易让人误会的地方，就是一看到 streaming 就以为像打字机那样每个字都实时蹦出来。OpenClaw 这里不是那种玩法。</p>
-      <p>它更像：先攒成一小块，再发出去；或者先用一个预览气泡不停更新，最后再换成正式答案。原文整页，就是在讲这两种“看起来在流”的方式。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Streaming 不是逐字推送，是“写完一段发一段”</h2>
+      <p>OpenClaw 的 streaming 分两层：block streaming 把助手写完的整块内容发到频道，preview streaming 在 Telegram/Discord/Slack 上临时更新一条预览消息。没有真正的 token 级流式输出到频道。配置时先搞清楚你要的是“边写边发完整段落”还是“生成完再发最终结果”，block streaming 默认关闭，需在 agents.defaults.blockStreamingDefault 或频道覆盖中开启。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想弄懂“为什么不同渠道的流式感觉不一样”的人</span>
-      <span>这页重点是先分清 block streaming 和 preview streaming</span>
+      <span>原文共 10 节，先看 Start Here</span>
+      <span>路径：/concepts/streaming</span>
       <a href="https://docs.openclaw.ai/concepts/streaming" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

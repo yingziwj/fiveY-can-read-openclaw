@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:28.516Z",
+  "generatedAt": "2026-05-06T15:07:40.425Z",
   "pathname": "/platforms/mac/canvas",
   "title": "Canvas",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "macOS应用中的Canvas面板配置与API使用",
-    "heroSummary": "这页详细说明macOS应用中Canvas面板的文件存储位置、URL访问方式和通过Gateway WebSocket控制的API接口。最该先看Canvas状态文件存储在Application Support目录下的具体路径和自定义URL scheme的映射规则。最容易搞错的是canvas.navigate命令接受的路径类型，它支持本地canvas路径、http(s)和file://三种格式，如果传递\"/\"会显示本地脚手架或index.html。"
+    "heroTitle": "Canvas 面板：代理能直接操作的轻量可视化工作区",
+    "heroSummary": "Canvas 是一个由 WKWebView 驱动的独立面板，代理可以通过 Gateway WebSocket 控制它显示、导航、执行 JS 甚至截图。所有文件存储在 ~/Library/Application Support/OpenClaw/canvas/ 下，通过 openclaw-canvas:// 自定义协议访问。最容易忽略的是：Canvas 可在设置中关闭，关闭后所有 canvas 命令都会返回 CANVAS_DISABLED，调试前先确认开关状态。"
   }
 }

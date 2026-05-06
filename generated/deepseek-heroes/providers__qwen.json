@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:50:17.908Z",
+  "generatedAt": "2026-05-06T15:08:02.388Z",
   "pathname": "/providers/qwen",
   "title": "Qwen",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "配置Qwen提供商：API密钥、端点选择与兼容性说明",
-    "heroSummary": "这页详细说明如何在OpenClaw中配置Qwen提供商，包括四种不同计费方案和区域的API密钥设置方法。首先要根据你的计费方案（标准按量付费或Coding订阅计划）和区域（中国或全球）选择正确的`--auth-choice`参数。最容易出错的是混淆不同方案的端点配置，特别是使用`qwen3.6-plus`模型时必须选择标准按量付费端点，否则可能无法正常工作。"
+    "heroTitle": "Qwen 接入：选对套餐和端点，别踩 OAuth 已失效的坑",
+    "heroSummary": "Qwen 现在是 OpenClaw 内建的一等 provider，配置时先选套餐（标准按量付费用 DashScope，Coding Plan 用订阅端点），然后从 home.qwencloud.com 拿 API Key。最易错的是旧版 OAuth 已废弃，别再用 portal.qwen.ai；另外 qwen3.6-plus 在 Coding Plan 上可能滞后，建议用标准端点。"
   }
 }

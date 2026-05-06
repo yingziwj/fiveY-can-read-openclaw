@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>cron 命令：cron | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="cron 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>cron | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="新增的孤立 cron job 默认会通过 --announce 推送结果，想静默执行必须加 --no-deliver。编辑任务时用 --channel 和 --to 指定推送目标，--deliver 已废弃，改用 --announce。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="cron 命令：cron | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="cron 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="cron | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="新增的孤立 cron job 默认会通过 --announce 推送结果，想静默执行必须加 --no-deliver。编辑任务时用 --channel 和 --to 指定推送目标，--deliver 已废弃，改用 --announce。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/cron/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="cron 命令：cron | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="cron 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="cron | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="新增的孤立 cron job 默认会通过 --announce 推送结果，想静默执行必须加 --no-deliver。编辑任务时用 --channel 和 --to 指定推送目标，--deliver 已废弃，改用 --announce。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/cron/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"cron 命令：cron","description":"cron 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/cron/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"cron","description":"新增的孤立 cron job 默认会通过 --announce 推送结果，想静默执行必须加 --no-deliver。编辑任务时用 --channel 和 --to 指定推送目标，--deliver 已废弃，改用 --announce。","url":"https://fivey-can-read-openclaw.pages.dev/cli/cron/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/cron/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>管理 Gateway 调度器的定时任务</h1>
-        <p class="hero-copy">这页教你用 openclaw cron 命令添加、编辑和运行定时任务。先看 Start Here 了解基本用法和默认的 --announce 交付设置。最容易错的是忘记用 --no-deliver 来关闭任务输出，或者混淆了 --announce 和已弃用的 --deliver 参数。</p>
+        <h1>用 openclaw cron 管理定时任务，先搞懂 delivery 默认行为</h1>
+        <p class="hero-copy">新增的孤立 cron job 默认会通过 --announce 推送结果，想静默执行必须加 --no-deliver。编辑任务时用 --channel 和 --to 指定推送目标，--deliver 已废弃，改用 --announce。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.cron.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>⏰ <code>openclaw cron</code> 像“给 Gateway 养一群会按时响铃的小广播员”</h2>
-      <p>这页讲的是定时任务。翻成人话，就是你提前写好一句话、挑好时间、决定要不要把结果送出去，然后让 Gateway 的小广播员按点去做。</p>
-      <p>它不像普通命令那样“现在立刻跑一次”，更像在日历上贴便利贴：明早 7 点提醒、每小时跑一次、出错了隔多久再试。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用 openclaw cron 管理定时任务，先搞懂 delivery 默认行为</h2>
+      <p>新增的孤立 cron job 默认会通过 --announce 推送结果，想静默执行必须加 --no-deliver。编辑任务时用 --channel 和 --to 指定推送目标，--deliver 已废弃，改用 --announce。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想做定时简报、自动巡检、定点提醒的人</span>
-      <span>这页最重要的是记住：cron 管的是“以后按时做”，不是“现在立刻做”</span>
+      <span>原文共 3 节，先看 Start Here</span>
+      <span>路径：/cli/cron</span>
       <a href="https://docs.openclaw.ai/cli/cron" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

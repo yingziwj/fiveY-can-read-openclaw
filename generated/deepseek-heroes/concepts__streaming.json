@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:48:14.556Z",
+  "generatedAt": "2026-05-06T15:05:21.852Z",
   "pathname": "/concepts/streaming",
   "title": "Streaming and Chunking",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw 流式输出与分块机制详解",
-    "heroSummary": "本页详细说明 OpenClaw 如何将 AI 生成内容分块发送到不同渠道，以及如何配置分块大小、合并规则和发送节奏。配置时需注意区分块流（channel messages）和预览流（Telegram/Discord/Slack），并正确设置 blockStreamingBreak 参数控制分块时机。"
+    "heroTitle": "Streaming 不是逐字推送，是“写完一段发一段”",
+    "heroSummary": "OpenClaw 的 streaming 分两层：block streaming 把助手写完的整块内容发到频道，preview streaming 在 Telegram/Discord/Slack 上临时更新一条预览消息。没有真正的 token 级流式输出到频道。配置时先搞清楚你要的是“边写边发完整段落”还是“生成完再发最终结果”，block streaming 默认关闭，需在 agents.defaults.blockStreamingDefault 或频道覆盖中开启。"
   }
 }

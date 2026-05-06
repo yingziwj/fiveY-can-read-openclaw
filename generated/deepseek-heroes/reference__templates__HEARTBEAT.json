@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:54:46.131Z",
+  "generatedAt": "2026-05-06T15:09:17.681Z",
   "pathname": "/reference/templates/HEARTBEAT",
   "title": "HEARTBEAT.md Template",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "HEARTBEAT.md 心跳文件配置模板",
-    "heroSummary": "这页提供心跳文件的模板，用于控制代理的周期性检查任务。文件留空或只写注释可跳过心跳调用，添加任务则让代理定期执行检查。配置时注意：文件内容直接影响心跳行为，误填任务可能导致不必要的资源消耗。"
+    "heroTitle": "心跳文件：空文件跳过心跳，加任务才触发检查",
+    "heroSummary": "HEARTBEAT.md 是控制 agent 是否定期执行心跳检查的开关。文件为空或只有注释时，心跳 API 调用被跳过；只有当你往里面写入具体任务时，agent 才会按周期去执行。最容易搞错的是：不要误以为必须写内容才能运行——空文件恰恰是“关闭心跳”的正确写法。"
   }
 }

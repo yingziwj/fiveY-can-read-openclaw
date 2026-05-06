@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Peekaboo Bridge 平台：Peekaboo Bridge | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Peekaboo Bridge 平台是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Peekaboo Bridge | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="打开 OpenClaw 设置里的开关就能启动本地 UNIX socket，让 peekaboo CLI 走你的 TCC 授权干活。客户端发现顺序是 Peekaboo.app → Claude.app → OpenClaw.app，想指定就用环境变量 PEEKABOO_BRIDGE_SOCKET。桥接会校验调用方 Te…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Peekaboo Bridge 平台：Peekaboo Bridge | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Peekaboo Bridge 平台是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Peekaboo Bridge | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="打开 OpenClaw 设置里的开关就能启动本地 UNIX socket，让 peekaboo CLI 走你的 TCC 授权干活。客户端发现顺序是 Peekaboo.app → Claude.app → OpenClaw.app，想指定就用环境变量 PEEKABOO_BRIDGE_SOCKET。桥接会校验调用方 Te…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/platforms/mac/peekaboo/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Peekaboo Bridge 平台：Peekaboo Bridge | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Peekaboo Bridge 平台是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Peekaboo Bridge | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="打开 OpenClaw 设置里的开关就能启动本地 UNIX socket，让 peekaboo CLI 走你的 TCC 授权干活。客户端发现顺序是 Peekaboo.app → Claude.app → OpenClaw.app，想指定就用环境变量 PEEKABOO_BRIDGE_SOCKET。桥接会校验调用方 Te…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/platforms/mac/peekaboo/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Peekaboo Bridge 平台：Peekaboo Bridge","description":"Peekaboo Bridge 平台是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/platforms/mac/peekaboo/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Peekaboo Bridge","description":"打开 OpenClaw 设置里的开关就能启动本地 UNIX socket，让 peekaboo CLI 走你的 TCC 授权干活。客户端发现顺序是 Peekaboo.app → Claude.app → OpenClaw.app，想指定就用环境变量 PEEKABOO_BRIDGE_SOCKET。桥接会校验调用方 Te…","url":"https://fivey-can-read-openclaw.pages.dev/platforms/mac/peekaboo/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Platforms","item":"https://fivey-can-read-openclaw.pages.dev/platforms/mac/peekaboo/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Platforms 导读</p>
-        <h1>在OpenClaw中启用Peekaboo Bridge进行macOS UI自动化</h1>
-        <p class="hero-copy">本页说明如何将OpenClaw应用配置为Peekaboo Bridge的轻量级代理主机，以便复用其TCC权限进行UI自动化。首先需要在OpenClaw的设置中启用此功能，然后使用`peekaboo`命令行工具连接。最需要注意的点是，启用后OpenClaw会启动本地UNIX套接字服务器，如果禁用，客户端将回退到其他可用主机。</p>
+        <h1>用 OpenClaw 当 Peekaboo 的本地桥接代理，复用 macOS 权限</h1>
+        <p class="hero-copy">打开 OpenClaw 设置里的开关就能启动本地 UNIX socket，让 peekaboo CLI 走你的 TCC 授权干活。客户端发现顺序是 Peekaboo.app → Claude.app → OpenClaw.app，想指定就用环境变量 PEEKABOO_BRIDGE_SOCKET。桥接会校验调用方 TeamID，权限缺失会直接报错，不会弹系统设置。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,8 +4324,21 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🪟 Peekaboo 这页，其实是在讲“把 Mac UI 自动化这件事，交给 Peekaboo CLI 来做，而 OpenClaw.app 负责借出权限和本地桥”</h2><p>它不是替代 Peekaboo，而是给 Peekaboo 当有权限的落脚点。</p></div><div class="overview-meta"><span>Peekaboo Bridge</span><span>重点是 OpenClaw 只当 host</span><a href="https://docs.openclaw.ai/platforms/mac/peekaboo" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-
+      <!-- handcrafted-source:platforms.mac.peekaboo.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用 OpenClaw 当 Peekaboo 的本地桥接代理，复用 macOS 权限</h2>
+      <p>打开 OpenClaw 设置里的开关就能启动本地 UNIX socket，让 peekaboo CLI 走你的 TCC 授权干活。客户端发现顺序是 Peekaboo.app → Claude.app → OpenClaw.app，想指定就用环境变量 PEEKABOO_BRIDGE_SOCKET。桥接会校验调用方 TeamID，权限缺失会直接报错，不会弹系统设置。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 7 节，先看 Start Here</span>
+      <span>路径：/platforms/mac/peekaboo</span>
+      <a href="https://docs.openclaw.ai/platforms/mac/peekaboo" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
       <footer class="page-footer">
         <div>

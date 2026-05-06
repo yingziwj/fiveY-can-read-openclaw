@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:23.723Z",
+  "generatedAt": "2026-05-06T15:07:37.394Z",
   "pathname": "/platforms/android",
   "title": "Android App",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Android节点应用配置与连接指南",
-    "heroSummary": "本页详细说明如何为Android设备配置OpenClaw节点应用，并建立与网关的稳定连接。首先需要确保网关已在其他系统上运行，然后重点关注Android应用与网关之间的WebSocket连接方式，特别是不同网络环境下的安全配置。最容易出错的地方是跨网络连接时未使用安全的wss协议，导致连接失败。"
+    "heroTitle": "Android 端只当“副手”，不跑网关",
+    "heroSummary": "Android 应用是 companion node，必须依赖一台运行在 macOS/Linux/Windows 上的 Gateway。先配好 Gateway，再用 Pairing 流程把手机连上去。最容易踩的坑是：手机通过 Tailscale 或公网连接时，不能用裸 IP 的 ws://，必须用 Tailscale Serve 或真实 TLS 证书的 wss://。"
   }
 }

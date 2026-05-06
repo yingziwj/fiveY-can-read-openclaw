@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:09.233Z",
+  "generatedAt": "2026-05-06T15:07:31.053Z",
   "pathname": "/nodes/audio",
   "title": "Audio and Voice Notes",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "音频转录节点配置与自动检测机制",
-    "heroSummary": "本页详细说明音频/语音笔记节点的处理流程、自动检测顺序以及配置方法。配置时需明确指定模型顺序，并注意自动检测会按优先级尝试首个可用选项。最容易出错的地方是CLI路径设置和文件大小限制，需确保命令可执行且音频不超过maxBytes限制。"
+    "heroTitle": "音频转文字：先配模型，再设权限，最后调回退",
+    "heroSummary": "OpenClaw 自动检测音频模型顺序：回复模型 → 本地 CLI → Gemini → 提供商。若不想自动，手动配置 `tools.media.audio.models` 并注意 CLI 必须在 PATH 上。最易错的是 `maxBytes` 限制和回退逻辑——第一个模型失败或超时才会用下一个。"
   }
 }

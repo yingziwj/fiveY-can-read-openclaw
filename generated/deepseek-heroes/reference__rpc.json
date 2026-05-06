@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:54:41.574Z",
+  "generatedAt": "2026-05-06T15:09:15.069Z",
   "pathname": "/reference/rpc",
   "title": "RPC Adapters",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "RPC适配器：两种外部CLI集成模式详解",
-    "heroSummary": "本页说明OpenClaw通过JSON-RPC集成外部命令行工具的两种具体模式：HTTP守护进程（如signal-cli）和stdio子进程（如旧版iMessage）。阅读时先关注你使用的工具对应哪种模式，这决定了配置方式（如端口设置或进程管理）。最容易混淆的是两种模式的生命周期管理不同——HTTP模式可自动启动，而stdio模式需网关直接控制进程。"
+    "heroTitle": "两种 RPC 模式，决定你的 CLI 怎么接入 OpenClaw",
+    "heroSummary": "这页是给想通过 JSON-RPC 把外部 CLI 接进 OpenClaw 的人看的。先分清你的 CLI 是 HTTP daemon 模式（如 signal-cli）还是 stdio 子进程模式（如旧版 iMessage），前者要配自动启动和健康检查，后者要处理行分隔的 JSON 流。最容易错的是：新 iMessage 别再用 stdio 模式，改用 BlueBubbles。"
   }
 }

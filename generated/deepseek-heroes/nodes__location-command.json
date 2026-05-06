@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:13.794Z",
+  "generatedAt": "2026-05-06T15:07:33.831Z",
   "pathname": "/nodes/location-command",
   "title": "Location Command",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Location命令配置与权限映射",
-    "heroSummary": "这页详细说明如何通过node.invoke调用location.get命令，以及对应的系统权限设置模型。配置时需注意Android应用默认关闭位置服务，需在应用内选择“使用期间”模式来请求前台权限。最容易出错的是iOS/Android的精确位置是独立开关，与基础位置权限分开管理，系统实际授权可能与应用请求不一致。"
+    "heroTitle": "location.get 权限不是开关，是三层博弈",
+    "heroSummary": "先搞清楚：你调的是 node.invoke('location.get')，但真正决定能不能拿到位置的是 OS 权限模型。页面里最关键的是那个选择器——Off / While Using，不是简单的开关。最容易踩的坑：你选了 While Using，系统可能只给一次授权，或者根本不给；Precise Location 是独立开关，iOS 14+ 和 Android 的 fine/coarse 各管各的。"
   }
 }

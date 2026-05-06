@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zalo 通道：Zalo | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Zalo 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Zalo | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这页教你让 OpenClaw 网关连上 Zalo Bot API，实现 1 对 1 消息收发。最要紧的是先拿到 bot token（格式是 numeric_id:secret），然后配好 dmPolicy（默认 pairing 模式需要用户首次发消息时确认配对）。注意 Zalo 官方账号（OA）的 bot 走的是另一…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Zalo 通道：Zalo | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Zalo 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Zalo | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这页教你让 OpenClaw 网关连上 Zalo Bot API，实现 1 对 1 消息收发。最要紧的是先拿到 bot token（格式是 numeric_id:secret），然后配好 dmPolicy（默认 pairing 模式需要用户首次发消息时确认配对）。注意 Zalo 官方账号（OA）的 bot 走的是另一…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/channels/zalo/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Zalo 通道：Zalo | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Zalo 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Zalo | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这页教你让 OpenClaw 网关连上 Zalo Bot API，实现 1 对 1 消息收发。最要紧的是先拿到 bot token（格式是 numeric_id:secret），然后配好 dmPolicy（默认 pairing 模式需要用户首次发消息时确认配对）。注意 Zalo 官方账号（OA）的 bot 走的是另一…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/channels/zalo/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Zalo 通道：Zalo","description":"Zalo 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/channels/zalo/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Zalo","description":"这页教你让 OpenClaw 网关连上 Zalo Bot API，实现 1 对 1 消息收发。最要紧的是先拿到 bot token（格式是 numeric_id:secret），然后配好 dmPolicy（默认 pairing 模式需要用户首次发消息时确认配对）。注意 Zalo 官方账号（OA）的 bot 走的是另一…","url":"https://fivey-can-read-openclaw.pages.dev/channels/zalo/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Channels","item":"https://fivey-can-read-openclaw.pages.dev/channels/zalo/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Channels 导读</p>
-        <h1>Zalo Bot API 通道配置指南</h1>
-        <p class="hero-copy">这页教你如何为越南通讯应用 Zalo 配置 Bot API 通道，实现一对一对话机器人。配置时需先获取 Zalo Bot Platform 的 bot token，然后通过环境变量或配置文件设置。特别注意当前仅支持 Marketplace 类型的机器人，与 Zalo Official Account 机器人行为不同，配置时容易混淆。</p>
+        <h1>Zalo 接入：先拿 token，再配配对</h1>
+        <p class="hero-copy">这页教你让 OpenClaw 网关连上 Zalo Bot API，实现 1 对 1 消息收发。最要紧的是先拿到 bot token（格式是 numeric_id:secret），然后配好 dmPolicy（默认 pairing 模式需要用户首次发消息时确认配对）。注意 Zalo 官方账号（OA）的 bot 走的是另一套接口，别混用。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:channels.zalo.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>💙 Zalo 这页，其实是在教你“拿到 Bot Token，让 OpenClaw 变成一个能在 Zalo 私聊里回话的小机器人”</h2>
-      <p>它走的是 Zalo Bot API 这条官方机器人路，不是个人号模拟登录。</p>
-      <p>所以这页最重要的三件事很直接：装插件、拿 token、决定陌生人第一次来敲门时怎么审核。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Zalo 接入：先拿 token，再配配对</h2>
+      <p>这页教你让 OpenClaw 网关连上 Zalo Bot API，实现 1 对 1 消息收发。最要紧的是先拿到 bot token（格式是 numeric_id:secret），然后配好 dmPolicy（默认 pairing 模式需要用户首次发消息时确认配对）。注意 Zalo 官方账号（OA）的 bot 走的是另一套接口，别混用。</p>
     </div>
     <div class="overview-meta">
-      <span>实验性插件</span>
-      <span>重点是 Bot Token、pairing、长轮询 / webhook</span>
+      <span>原文共 17 节，先看 Start Here</span>
+      <span>路径：/channels/zalo</span>
       <a href="https://docs.openclaw.ai/channels/zalo" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

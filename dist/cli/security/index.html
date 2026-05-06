@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>security 命令：security | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="security 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>security | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="运行 openclaw security audit 检查多用户会话、webhook 注入、沙箱逃逸等隐患，--fix 自动收紧群组策略和文件权限。注意审计不会轮换密钥或禁用工具，且 --deep 模式需提供密码或 token 才能深入探测。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="security 命令：security | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="security 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="security | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="运行 openclaw security audit 检查多用户会话、webhook 注入、沙箱逃逸等隐患，--fix 自动收紧群组策略和文件权限。注意审计不会轮换密钥或禁用工具，且 --deep 模式需提供密码或 token 才能深入探测。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/security/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="security 命令：security | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="security 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="security | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="运行 openclaw security audit 检查多用户会话、webhook 注入、沙箱逃逸等隐患，--fix 自动收紧群组策略和文件权限。注意审计不会轮换密钥或禁用工具，且 --deep 模式需提供密码或 token 才能深入探测。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/security/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"security 命令：security","description":"security 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/security/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"security","description":"运行 openclaw security audit 检查多用户会话、webhook 注入、沙箱逃逸等隐患，--fix 自动收紧群组策略和文件权限。注意审计不会轮换密钥或禁用工具，且 --deep 模式需提供密码或 token 才能深入探测。","url":"https://fivey-can-read-openclaw.pages.dev/cli/security/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/security/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>OpenClaw 安全审计命令详解</h1>
-        <p class="hero-copy">这页讲解 `openclaw security audit` 命令，用于检查配置中的安全风险并提供自动修复选项。运行命令前，先确认是否需要 `--deep` 参数来深度扫描敏感数据，并注意 `--fix` 仅执行安全且确定性的修复，不会自动轮换密钥或禁用核心工具。</p>
+        <h1>安全审计：一键扫描配置漏洞，自动修复常见风险</h1>
+        <p class="hero-copy">运行 `openclaw security audit` 检查多用户会话、webhook 注入、沙箱逃逸等隐患，`--fix` 自动收紧群组策略和文件权限。注意审计不会轮换密钥或禁用工具，且 `--deep` 模式需提供密码或 token 才能深入探测。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.security.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🛡️ <code>openclaw security</code> 像“给 OpenClaw 做体检，还顺手把危险的抽屉关好”</h2>
-      <p>这页不是在吓人，它是在帮你看哪里可能漏风。哪些消息门开得太大，哪些钥匙放得太松，哪些群组像敞着门的客厅，它都会提醒你。</p>
-      <p>你可以把它想成一位很认真、但不凶的安全医生：先检查，再提醒，再给你几个能马上修的动作。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>安全审计：一键扫描配置漏洞，自动修复常见风险</h2>
+      <p>运行 `openclaw security audit` 检查多用户会话、webhook 注入、沙箱逃逸等隐患，`--fix` 自动收紧群组策略和文件权限。注意审计不会轮换密钥或禁用工具，且 `--deep` 模式需提供密码或 token 才能深入探测。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想先检查风险，再考虑修复的人</span>
-      <span>这页最重要的是记住：`audit` 是检查，`fix` 是收拾</span>
+      <span>原文共 4 节，先看 Start Here</span>
+      <span>路径：/cli/security</span>
       <a href="https://docs.openclaw.ai/cli/security" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

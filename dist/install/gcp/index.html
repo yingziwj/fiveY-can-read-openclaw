@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GCP 安装：GCP | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="OpenClaw on GCP Compute Engine (Docker, Production VPS Guide)">
+  <title>GCP | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="本页带你从零在 GCP Compute Engine 上部署一个 24/7 运行的 OpenClaw 网关，核心是挂载宿主机的 ~/.openclaw 目录来持久化配置和 workspace，确保重启或重建容器后状态不丢。新手先看“What are we doing”的步骤清单，老手直接跳“Quick path”。最…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="GCP 安装：GCP | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="OpenClaw on GCP Compute Engine (Docker, Production VPS Guide)">
+  <meta property="og:title" content="GCP | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="本页带你从零在 GCP Compute Engine 上部署一个 24/7 运行的 OpenClaw 网关，核心是挂载宿主机的 ~/.openclaw 目录来持久化配置和 workspace，确保重启或重建容器后状态不丢。新手先看“What are we doing”的步骤清单，老手直接跳“Quick path”。最…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/install/gcp/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GCP 安装：GCP | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="OpenClaw on GCP Compute Engine (Docker, Production VPS Guide)">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="GCP | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="本页带你从零在 GCP Compute Engine 上部署一个 24/7 运行的 OpenClaw 网关，核心是挂载宿主机的 ~/.openclaw 目录来持久化配置和 workspace，确保重启或重建容器后状态不丢。新手先看“What are we doing”的步骤清单，老手直接跳“Quick path”。最…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/install/gcp/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"GCP 安装：GCP","description":"OpenClaw on GCP Compute Engine (Docker, Production VPS Guide)","url":"https://fivey-can-read-openclaw.pages.dev/install/gcp/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"GCP","description":"本页带你从零在 GCP Compute Engine 上部署一个 24/7 运行的 OpenClaw 网关，核心是挂载宿主机的 ~/.openclaw 目录来持久化配置和 workspace，确保重启或重建容器后状态不丢。新手先看“What are we doing”的步骤清单，老手直接跳“Quick path”。最…","url":"https://fivey-can-read-openclaw.pages.dev/install/gcp/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Install","item":"https://fivey-can-read-openclaw.pages.dev/install/gcp/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Install 导读</p>
-        <h1>在GCP虚拟机部署OpenClaw网关的完整指南</h1>
-        <p class="hero-copy">这页详细指导如何在Google Cloud的Compute Engine虚拟机上，通过Docker部署可持久运行的OpenClaw网关。你需要先准备好GCP项目、虚拟机、Docker环境，然后配置持久化目录和访问方式。最容易出错的地方是忘记将~/.openclaw目录挂载到主机，导致重启后状态丢失。</p>
+        <h1>GCP 上跑 OpenClaw：持久化、低成本的 Docker 部署方案</h1>
+        <p class="hero-copy">本页带你从零在 GCP Compute Engine 上部署一个 24/7 运行的 OpenClaw 网关，核心是挂载宿主机的 `~/.openclaw` 目录来持久化配置和 workspace，确保重启或重建容器后状态不丢。新手先看“What are we doing”的步骤清单，老手直接跳“Quick path”。最容易翻车的是忘记挂载持久化目录，导致容器重启后所有配置丢失。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:install.gcp.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🌤️ GCP 这页，其实是在教你“在 Google Cloud 上租一台 Docker 云机，把 OpenClaw 装成一台耐重启的值班箱”</h2>
-      <p>这条路很像正式 VPS 运维方案。不是点个按钮就完，而是你要自己建 VM、装 Docker、准备持久目录、写好 <code>.env</code> 和 <code>docker-compose.yml</code>。</p>
-      <p>官方一直在提醒两个重点：持久化目录别放错，SSH 隧道比直接公网暴露更稳。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>GCP 上跑 OpenClaw：持久化、低成本的 Docker 部署方案</h2>
+      <p>本页带你从零在 GCP Compute Engine 上部署一个 24/7 运行的 OpenClaw 网关，核心是挂载宿主机的 `~/.openclaw` 目录来持久化配置和 workspace，确保重启或重建容器后状态不丢。新手先看“What are we doing”的步骤清单，老手直接跳“Quick path”。最容易翻车的是忘记挂载持久化目录，导致容器重启后所有配置丢失。</p>
     </div>
     <div class="overview-meta">
-      <span>适合 Docker 云主机部署</span>
-      <span>重点是 e2-small 起步、持久目录、SSH 隧道</span>
+      <span>原文共 8 节，先看 Start Here</span>
+      <span>路径：/install/gcp</span>
       <a href="https://docs.openclaw.ai/install/gcp" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

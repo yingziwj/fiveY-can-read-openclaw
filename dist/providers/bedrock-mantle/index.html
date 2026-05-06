@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amazon Bedrock Mantle 提供商：Amazon Bedrock Mantle | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Amazon Bedrock Mantle 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Amazon Bedrock Mantle | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Mantle 是 Bedrock 托管的 OpenAI 兼容端点，提供 GPT-OSS、Qwen 等模型。先设置环境变量 AWS_BEARER_TOKEN_BEDROCK（或依赖 IAM 自动生成），OpenClaw 会自动发现模型列表。注意 token 与标准 Bedrock provider 共用，区域默认 us…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Amazon Bedrock Mantle 提供商：Amazon Bedrock Mantle | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Amazon Bedrock Mantle 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Amazon Bedrock Mantle | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Mantle 是 Bedrock 托管的 OpenAI 兼容端点，提供 GPT-OSS、Qwen 等模型。先设置环境变量 AWS_BEARER_TOKEN_BEDROCK（或依赖 IAM 自动生成），OpenClaw 会自动发现模型列表。注意 token 与标准 Bedrock provider 共用，区域默认 us…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/providers/bedrock-mantle/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Amazon Bedrock Mantle 提供商：Amazon Bedrock Mantle | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Amazon Bedrock Mantle 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Amazon Bedrock Mantle | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Mantle 是 Bedrock 托管的 OpenAI 兼容端点，提供 GPT-OSS、Qwen 等模型。先设置环境变量 AWS_BEARER_TOKEN_BEDROCK（或依赖 IAM 自动生成），OpenClaw 会自动发现模型列表。注意 token 与标准 Bedrock provider 共用，区域默认 us…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/providers/bedrock-mantle/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Amazon Bedrock Mantle 提供商：Amazon Bedrock Mantle","description":"Amazon Bedrock Mantle 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/providers/bedrock-mantle/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Amazon Bedrock Mantle","description":"Mantle 是 Bedrock 托管的 OpenAI 兼容端点，提供 GPT-OSS、Qwen 等模型。先设置环境变量 AWS_BEARER_TOKEN_BEDROCK（或依赖 IAM 自动生成），OpenClaw 会自动发现模型列表。注意 token 与标准 Bedrock provider 共用，区域默认 us…","url":"https://fivey-can-read-openclaw.pages.dev/providers/bedrock-mantle/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Providers","item":"https://fivey-can-read-openclaw.pages.dev/providers/bedrock-mantle/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Providers 导读</p>
-        <h1>配置 Amazon Bedrock Mantle 提供商</h1>
-        <p class="hero-copy">这页说明如何在 OpenClaw 中接入 Amazon Bedrock Mantle 服务，该服务通过 OpenAI 兼容接口提供多种开源模型。你需要设置 AWS 认证方式（显式令牌或 IAM 凭证）并指定区域，系统会自动发现可用模型。最容易出错的是认证配置，如果使用 IAM 凭证，系统会自动生成并每小时刷新令牌，但必须确保凭证链可访问；如果手动配置，需准确填写 baseUrl 和模型参数。</p>
+        <h1>接 Amazon Bedrock Mantle 只需一个 token，模型自动发现</h1>
+        <p class="hero-copy">Mantle 是 Bedrock 托管的 OpenAI 兼容端点，提供 GPT-OSS、Qwen 等模型。先设置环境变量 AWS_BEARER_TOKEN_BEDROCK（或依赖 IAM 自动生成），OpenClaw 会自动发现模型列表。注意 token 与标准 Bedrock provider 共用，区域默认 us-east-1。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:providers.bedrock-mantle.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🪵 Bedrock Mantle 像 AWS 里的一扇模型大门</h2>
-      <p>它走的是 OpenAI 兼容接口，但钥匙来自 AWS 身份链或者显式 bearer token。你可以把它理解成“Bedrock 里面多了一层 Mantle 门厅”。</p>
-      <p>这页最重要的是：先把 AWS 认证链打通，再让 OpenClaw 自动发现模型。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>接 Amazon Bedrock Mantle 只需一个 token，模型自动发现</h2>
+      <p>Mantle 是 Bedrock 托管的 OpenAI 兼容端点，提供 GPT-OSS、Qwen 等模型。先设置环境变量 AWS_BEARER_TOKEN_BEDROCK（或依赖 IAM 自动生成），OpenClaw 会自动发现模型列表。注意 token 与标准 Bedrock provider 共用，区域默认 us-east-1。</p>
     </div>
     <div class="overview-meta">
-      <span>适合 AWS 里跑模型的人</span>
-      <span>重点是 bearer token、region、自动发现</span>
+      <span>原文共 7 节，先看 Start Here</span>
+      <span>路径：/providers/bedrock-mantle</span>
       <a href="https://docs.openclaw.ai/providers/bedrock-mantle" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

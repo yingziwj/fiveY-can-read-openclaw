@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>网关架构：Gateway Architecture | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="网关架构是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Gateway Architecture | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="整个系统只有一个 Gateway 进程，它独占 WhatsApp 会话，所有消息表面（WhatsApp、Telegram、Slack 等）都挂在它下面。控制面客户端（mac 应用、CLI、Web UI）和节点设备（手机、电脑、无头设备）都通过 WebSocket 连到同一个端口（默认 18789），但角色不同：客户端…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="网关架构：Gateway Architecture | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="网关架构是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Gateway Architecture | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="整个系统只有一个 Gateway 进程，它独占 WhatsApp 会话，所有消息表面（WhatsApp、Telegram、Slack 等）都挂在它下面。控制面客户端（mac 应用、CLI、Web UI）和节点设备（手机、电脑、无头设备）都通过 WebSocket 连到同一个端口（默认 18789），但角色不同：客户端…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/architecture/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="网关架构：Gateway Architecture | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="网关架构是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Gateway Architecture | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="整个系统只有一个 Gateway 进程，它独占 WhatsApp 会话，所有消息表面（WhatsApp、Telegram、Slack 等）都挂在它下面。控制面客户端（mac 应用、CLI、Web UI）和节点设备（手机、电脑、无头设备）都通过 WebSocket 连到同一个端口（默认 18789），但角色不同：客户端…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/architecture/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"网关架构：Gateway Architecture","description":"网关架构是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/architecture/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Gateway Architecture","description":"整个系统只有一个 Gateway 进程，它独占 WhatsApp 会话，所有消息表面（WhatsApp、Telegram、Slack 等）都挂在它下面。控制面客户端（mac 应用、CLI、Web UI）和节点设备（手机、电脑、无头设备）都通过 WebSocket 连到同一个端口（默认 18789），但角色不同：客户端…","url":"https://fivey-can-read-openclaw.pages.dev/concepts/architecture/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/architecture/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>网关架构：一个中心连接所有消息平台和设备</h1>
-        <p class="hero-copy">这页讲的是系统如何通过一个网关（Gateway）统一管理WhatsApp、Telegram等消息服务，并通过WebSocket连接控制端（如macOS应用）和设备节点（如手机）。最该先看网关如何作为唯一中心，负责所有外部消息连接和会话。最容易搞错的是节点（Nodes）虽然也连同一个WebSocket，但需要声明`role: node`并提供设备身份，其配对是基于设备的。</p>
+        <h1>一张图看懂 Gateway：谁连谁、谁管谁、谁开 WhatsApp 会话</h1>
+        <p class="hero-copy">整个系统只有一个 Gateway 进程，它独占 WhatsApp 会话，所有消息表面（WhatsApp、Telegram、Slack 等）都挂在它下面。控制面客户端（mac 应用、CLI、Web UI）和节点设备（手机、电脑、无头设备）都通过 WebSocket 连到同一个端口（默认 18789），但角色不同：客户端发请求、订阅事件，节点声明 `role: node` 并暴露设备命令。最容易搞错的是——节点配对基于设备身份，配对审批存在设备配对存储里，不是 Gateway 管的。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.architecture.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🏢 <code>Gateway Architecture</code> 像“OpenClaw 整栋楼的总机房图”</h2>
-      <p>这页不是在讲一个孤零零的程序，而是在讲一整栋楼怎么搭起来、谁住哪、谁从哪条门口小路进来。</p>
-      <p>如果你只记一句话，就记：Gateway 是总机房，别的客户端和节点都要沿着它安排好的路走。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>一张图看懂 Gateway：谁连谁、谁管谁、谁开 WhatsApp 会话</h2>
+      <p>整个系统只有一个 Gateway 进程，它独占 WhatsApp 会话，所有消息表面（WhatsApp、Telegram、Slack 等）都挂在它下面。控制面客户端（mac 应用、CLI、Web UI）和节点设备（手机、电脑、无头设备）都通过 WebSocket 连到同一个端口（默认 18789），但角色不同：客户端发请求、订阅事件，节点声明 `role: node` 并暴露设备命令。最容易搞错的是——节点配对基于设备身份，配对审批存在设备配对存储里，不是 Gateway 管的。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想从系统全景上理解 OpenClaw 的人</span>
-      <span>这页最重要的是：Gateway 不是配角，它是整栋楼的中枢</span>
+      <span>原文共 14 节，先看 Start Here</span>
+      <span>路径：/concepts/architecture</span>
       <a href="https://docs.openclaw.ai/concepts/architecture" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

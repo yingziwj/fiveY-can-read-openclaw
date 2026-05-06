@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>浏览器（OpenClaw 托管）：Browser (OpenClaw-managed) | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="浏览器（OpenClaw 托管）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Browser (OpenClaw-managed) | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="OpenClaw 会启动一个名为 openclaw 的专用浏览器配置文件，与你的日常浏览器完全隔离。先运行 openclaw browser --browser-profile openclaw start 启动它，如果命令不可用，检查 plugins.allow 是否包含 browser。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="浏览器（OpenClaw 托管）：Browser (OpenClaw-managed) | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="浏览器（OpenClaw 托管）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Browser (OpenClaw-managed) | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="OpenClaw 会启动一个名为 openclaw 的专用浏览器配置文件，与你的日常浏览器完全隔离。先运行 openclaw browser --browser-profile openclaw start 启动它，如果命令不可用，检查 plugins.allow 是否包含 browser。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/tools/browser/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="浏览器（OpenClaw 托管）：Browser (OpenClaw-managed) | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="浏览器（OpenClaw 托管）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Browser (OpenClaw-managed) | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="OpenClaw 会启动一个名为 openclaw 的专用浏览器配置文件，与你的日常浏览器完全隔离。先运行 openclaw browser --browser-profile openclaw start 启动它，如果命令不可用，检查 plugins.allow 是否包含 browser。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/tools/browser/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"浏览器（OpenClaw 托管）：Browser (OpenClaw-managed)","description":"浏览器（OpenClaw 托管）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/tools/browser/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Browser (OpenClaw-managed)","description":"OpenClaw 会启动一个名为 openclaw 的专用浏览器配置文件，与你的日常浏览器完全隔离。先运行 openclaw browser --browser-profile openclaw start 启动它，如果命令不可用，检查 plugins.allow 是否包含 browser。","url":"https://fivey-can-read-openclaw.pages.dev/tools/browser/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://fivey-can-read-openclaw.pages.dev/tools/browser/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Tools 导读</p>
-        <h1>OpenClaw管理的独立浏览器配置与使用</h1>
-        <p class="hero-copy">这页详细说明如何配置和使用OpenClaw管理的独立浏览器环境，该环境与您的个人浏览器完全隔离。首先检查配置文件中的browser.enabled设置和plugins.allow列表，确保浏览器功能已启用。最容易出错的地方是插件配置冲突，如果同时存在多个提供browser工具的插件，必须先禁用默认插件才能安装替代方案。</p>
+        <h1>给Agent一个独立的浏览器，不碰你的个人资料</h1>
+        <p class="hero-copy">OpenClaw 会启动一个名为 openclaw 的专用浏览器配置文件，与你的日常浏览器完全隔离。先运行 `openclaw browser --browser-profile openclaw start` 启动它，如果命令不可用，检查 `plugins.allow` 是否包含 `browser`。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:tools.browser.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🌐 Browser 工具，就是给 OpenClaw 一台“它自己的专用浏览器”</h2>
-      <p>这页不是在讲普通网页浏览，而是在讲：OpenClaw 能不能有一台专门给它用的浏览器，进去开网页、点按钮、输入文字、截图、看页面。</p>
-      <p>重点是“专用”。它默认用的不是你日常那台浏览器，而是一台隔离出来、专门给代理操控的小浏览器。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>给Agent一个独立的浏览器，不碰你的个人资料</h2>
+      <p>OpenClaw 会启动一个名为 openclaw 的专用浏览器配置文件，与你的日常浏览器完全隔离。先运行 `openclaw browser --browser-profile openclaw start` 启动它，如果命令不可用，检查 `plugins.allow` 是否包含 `browser`。</p>
     </div>
     <div class="overview-meta">
-      <span>适合第一次准备让 OpenClaw 操作网页的人</span>
-      <span>这页最重要的是先分清 openclaw profile、user profile、remote CDP</span>
+      <span>原文共 34 节，先看 Start Here</span>
+      <span>路径：/tools/browser</span>
       <a href="https://docs.openclaw.ai/tools/browser" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

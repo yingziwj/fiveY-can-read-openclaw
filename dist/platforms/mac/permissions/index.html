@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>macOS 权限：macOS Permissions | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="macOS 权限是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>macOS Permissions | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="macOS 的 TCC 权限和 App 的签名、路径、Bundle ID 绑定，任何一个变了权限就会消失。如果权限提示不出现，先检查签名是否为真证书，再按恢复清单操作：退出 App → 清除系统设置中的条目 → 用 tccutil 重置。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="macOS 权限：macOS Permissions | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="macOS 权限是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="macOS Permissions | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="macOS 的 TCC 权限和 App 的签名、路径、Bundle ID 绑定，任何一个变了权限就会消失。如果权限提示不出现，先检查签名是否为真证书，再按恢复清单操作：退出 App → 清除系统设置中的条目 → 用 tccutil 重置。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/platforms/mac/permissions/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="macOS 权限：macOS Permissions | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="macOS 权限是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="macOS Permissions | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="macOS 的 TCC 权限和 App 的签名、路径、Bundle ID 绑定，任何一个变了权限就会消失。如果权限提示不出现，先检查签名是否为真证书，再按恢复清单操作：退出 App → 清除系统设置中的条目 → 用 tccutil 重置。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/platforms/mac/permissions/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"macOS 权限：macOS Permissions","description":"macOS 权限是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/platforms/mac/permissions/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"macOS Permissions","description":"macOS 的 TCC 权限和 App 的签名、路径、Bundle ID 绑定，任何一个变了权限就会消失。如果权限提示不出现，先检查签名是否为真证书，再按恢复清单操作：退出 App → 清除系统设置中的条目 → 用 tccutil 重置。","url":"https://fivey-can-read-openclaw.pages.dev/platforms/mac/permissions/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Platforms","item":"https://fivey-can-read-openclaw.pages.dev/platforms/mac/permissions/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Platforms 导读</p>
-        <h1>macOS权限配置与故障恢复指南</h1>
-        <p class="hero-copy">本页详细说明macOS权限(TCC)的稳定配置要求，包括应用签名、路径和标识符的一致性。开发者应优先检查应用签名和路径是否稳定，这是权限丢失最常见的原因。特别注意临时签名每次构建都会生成新身份，导致系统遗忘已授权限且不再弹出提示。</p>
+        <h1>macOS 权限一换路径就丢，恢复步骤在这里</h1>
+        <p class="hero-copy">macOS 的 TCC 权限和 App 的签名、路径、Bundle ID 绑定，任何一个变了权限就会消失。如果权限提示不出现，先检查签名是否为真证书，再按恢复清单操作：退出 App → 清除系统设置中的条目 → 用 tccutil 重置。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🔐 Permissions 这页，其实是在讲“为什么 Mac 权限会突然失忆，以及怎样别把它惹毛”</h2><p>macOS 的 TCC 很记仇：签名、bundle id、安装路径，只要你换了，它就可能把你当成陌生新 app。</p></div><div class="overview-meta"><span>macOS TCC 权限</span><span>重点是固定路径、稳定签名、bundle id 一致</span><a href="https://docs.openclaw.ai/platforms/mac/permissions" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:platforms.mac.permissions.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>macOS 权限一换路径就丢，恢复步骤在这里</h2>
+      <p>macOS 的 TCC 权限和 App 的签名、路径、Bundle ID 绑定，任何一个变了权限就会消失。如果权限提示不出现，先检查签名是否为真证书，再按恢复清单操作：退出 App → 清除系统设置中的条目 → 用 tccutil 重置。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 4 节，先看 Start Here</span>
+      <span>路径：/platforms/mac/permissions</span>
+      <a href="https://docs.openclaw.ai/platforms/mac/permissions" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>🪪 TCC 认的是“你是谁、你住哪儿、你签名是不是同一个人”</h2><p>三样里随便换一样，系统都可能把你当新人。</p></div><div class="home-grid"><article class="home-card"><span class="home-card-index">📍</span><h2>固定路径</h2><p>最好一直从同一个 <code>dist/OpenClaw.app</code> 路径跑。</p></article><article class="home-card"><span class="home-card-index">🏷️</span><h2>固定 bundle id</h2><p>换 bundle id 就像改身份证号，旧授权不一定还认你。</p></article><article class="home-card"><span class="home-card-index">✍️</span><h2>稳定签名</h2><p>ad-hoc 签名最容易让权限记忆丢光，不适合拿来测试权限持久性。</p></article><article class="home-card"><span class="home-card-index">♻️</span><h2>失忆时恢复</h2><p>删旧授权、重启 app、必要时用 <code>tccutil reset</code> 清表再来。</p></article></div></section>
 
 

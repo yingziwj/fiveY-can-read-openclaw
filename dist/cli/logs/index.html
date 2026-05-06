@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>logs 命令：logs | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="logs 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>logs | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="openclaw logs 通过 RPC 实时 tail 远程 Gateway 的日志文件，支持 --follow 持续追踪和 --json 结构化输出。最易踩的坑是：一旦手动传了 --url，CLI 就不会自动读取本地配置或环境变量，必须同时显式提供 --token。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="logs 命令：logs | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="logs 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="logs | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="openclaw logs 通过 RPC 实时 tail 远程 Gateway 的日志文件，支持 --follow 持续追踪和 --json 结构化输出。最易踩的坑是：一旦手动传了 --url，CLI 就不会自动读取本地配置或环境变量，必须同时显式提供 --token。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/logs/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="logs 命令：logs | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="logs 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="logs | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="openclaw logs 通过 RPC 实时 tail 远程 Gateway 的日志文件，支持 --follow 持续追踪和 --json 结构化输出。最易踩的坑是：一旦手动传了 --url，CLI 就不会自动读取本地配置或环境变量，必须同时显式提供 --token。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/logs/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"logs 命令：logs","description":"logs 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/logs/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"logs","description":"openclaw logs 通过 RPC 实时 tail 远程 Gateway 的日志文件，支持 --follow 持续追踪和 --json 结构化输出。最易踩的坑是：一旦手动传了 --url，CLI 就不会自动读取本地配置或环境变量，必须同时显式提供 --token。","url":"https://fivey-can-read-openclaw.pages.dev/cli/logs/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/logs/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>用 openclaw logs 实时查看网关日志</h1>
-        <p class="hero-copy">这页教你如何通过 RPC 远程查看网关文件日志，支持实时跟随和多种输出格式。先看 --follow 选项来启动实时日志流，最容易错的是用 --url 指定远程网关时忘记同时提供 --token 进行认证。</p>
+        <h1>远程拉日志，一条命令搞定</h1>
+        <p class="hero-copy">`openclaw logs` 通过 RPC 实时 tail 远程 Gateway 的日志文件，支持 `--follow` 持续追踪和 `--json` 结构化输出。最易踩的坑是：一旦手动传了 `--url`，CLI 就不会自动读取本地配置或环境变量，必须同时显式提供 `--token`。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.logs.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧾 `openclaw logs` 像趴在门缝边，听 Gateway 里的小声音</h2>
-      <p>这页不是在讲“怎么开日志开关”。它讲的是：当 Gateway 已经在远处跑着时，你怎么把那边的文件日志拉回来，一行一行看清楚。</p>
-      <p>你可以把它想成一条小传送带。日志在 Gateway 那头往前跑，你站在这头接住它，想看最新一口气，就用 `--follow`。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>远程拉日志，一条命令搞定</h2>
+      <p>`openclaw logs` 通过 RPC 实时 tail 远程 Gateway 的日志文件，支持 `--follow` 持续追踪和 `--json` 结构化输出。最易踩的坑是：一旦手动传了 `--url`，CLI 就不会自动读取本地配置或环境变量，必须同时显式提供 `--token`。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想看 Gateway 远端日志、又不想手动去服务器翻文件的人</span>
-      <span>这页最重要的是记住：它走 RPC，所以远程模式也能看</span>
+      <span>原文共 5 节，先看 Start Here</span>
+      <span>路径：/cli/logs</span>
       <a href="https://docs.openclaw.ai/cli/logs" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

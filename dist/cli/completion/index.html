@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>completion 命令：completion | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="completion 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>completion | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="运行 openclaw completion 生成补全脚本，加 --install 自动写入 shell 配置文件，之后按 Tab 就能补全子命令。默认生成 zsh 补全，其他 shell 用 --shell 指定。不传 --install 或 --write-state 时只会打印到终端，不会生效。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="completion 命令：completion | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="completion 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="completion | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="运行 openclaw completion 生成补全脚本，加 --install 自动写入 shell 配置文件，之后按 Tab 就能补全子命令。默认生成 zsh 补全，其他 shell 用 --shell 指定。不传 --install 或 --write-state 时只会打印到终端，不会生效。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/completion/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="completion 命令：completion | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="completion 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="completion | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="运行 openclaw completion 生成补全脚本，加 --install 自动写入 shell 配置文件，之后按 Tab 就能补全子命令。默认生成 zsh 补全，其他 shell 用 --shell 指定。不传 --install 或 --write-state 时只会打印到终端，不会生效。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/completion/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"completion 命令：completion","description":"completion 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/completion/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"completion","description":"运行 openclaw completion 生成补全脚本，加 --install 自动写入 shell 配置文件，之后按 Tab 就能补全子命令。默认生成 zsh 补全，其他 shell 用 --shell 指定。不传 --install 或 --write-state 时只会打印到终端，不会生效。","url":"https://fivey-can-read-openclaw.pages.dev/cli/completion/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/completion/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>生成并安装 OpenClaw 命令行自动补全脚本</h1>
-        <p class="hero-copy">这页教你用 `openclaw completion` 命令为 bash、zsh、fish 或 PowerShell 生成自动补全脚本，并可选地安装到你的 shell 配置文件中。最该先看 `--install` 选项，它能自动把补全脚本添加到你的 shell 配置文件里，省去手动操作的麻烦。最容易搞错的是，如果不加 `--install` 或 `--write-state`，命令只会把脚本打印到终端，不会保存或安装，很多人以为运行完就生效了，结果发现补全没起作用。</p>
+        <h1>一键让终端记住 openclaw 所有子命令</h1>
+        <p class="hero-copy">运行 openclaw completion 生成补全脚本，加 --install 自动写入 shell 配置文件，之后按 Tab 就能补全子命令。默认生成 zsh 补全，其他 shell 用 --shell 指定。不传 --install 或 --write-state 时只会打印到终端，不会生效。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.completion.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>⌨️ <code>openclaw completion</code> 像“给你的命令行贴一张自动提示条，让它帮你把半句话补完”</h2>
-      <p>这页讲的不是新功能能力，而是命令行用起来顺不顺手。你可以把 completion 想成打字时旁边冒出来的小纸条：你才敲了前半截，它已经把后半截选项递到你面前。</p>
-      <p>所以这页的重点不是 OpenClaw 会做什么，而是你以后敲 OpenClaw 时，会不会更少手抖、更少记参数。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>一键让终端记住 openclaw 所有子命令</h2>
+      <p>运行 openclaw completion 生成补全脚本，加 --install 自动写入 shell 配置文件，之后按 Tab 就能补全子命令。默认生成 zsh 补全，其他 shell 用 --shell 指定。不传 --install 或 --write-state 时只会打印到终端，不会生效。</p>
     </div>
     <div class="overview-meta">
-      <span>适合常在终端里用 OpenClaw、想让输入更顺的人</span>
-      <span>这页最重要的是记住：completion 是在给 shell 装提示条，不是在改 OpenClaw 本体功能</span>
+      <span>原文共 4 节，先看 Start Here</span>
+      <span>路径：/cli/completion</span>
       <a href="https://docs.openclaw.ai/cli/completion" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

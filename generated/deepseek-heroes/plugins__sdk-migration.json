@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:49:31.080Z",
+  "generatedAt": "2026-05-06T15:06:03.491Z",
   "pathname": "/plugins/sdk-migration",
   "title": "Plugin SDK Migration",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "插件SDK迁移指南：替换废弃导入，避免未来中断",
-    "heroSummary": "本页指导如何将旧版插件从废弃的兼容层迁移到新的模块化SDK。首先应使用grep命令查找并替换`plugin-sdk/compat`和`openclaw/extension-api`这两个废弃的导入路径。迁移时最容易出错的地方是Windows包装器回退行为，未显式设置`allowShellFallback: true`将导致失败。"
+    "heroTitle": "旧插件SDK即将移除，你的插件需要迁移到新的按需导入架构",
+    "heroSummary": "旧版 `openclaw/plugin-sdk/compat` 和 `openclaw/extension-api` 已弃用，未来大版本将彻底移除。先对照“常见导入路径表”找到你当前使用的旧路径，替换为对应的新子路径（如 `plugin-sdk/channel-core`）。注意：不要使用表中未列出的渠道品牌路径（如 `plugin-sdk/slack`），它们只是内部快捷方式，不是稳定API。"
   }
 }

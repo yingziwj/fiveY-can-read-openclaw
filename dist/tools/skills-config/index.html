@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>技能配置：Skills Config | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="技能配置是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Skills Config | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="技能加载和安装配置集中在 ~/.openclaw/openclaw.json 的 skills 字段下，而每个Agent能看到哪些技能则由 agents.defaults.skills 和 agents.list[].skills 控制。最容易搞错的是：agents.list[].skills 会完全替换默认列表，而…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="技能配置：Skills Config | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="技能配置是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Skills Config | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="技能加载和安装配置集中在 ~/.openclaw/openclaw.json 的 skills 字段下，而每个Agent能看到哪些技能则由 agents.defaults.skills 和 agents.list[].skills 控制。最容易搞错的是：agents.list[].skills 会完全替换默认列表，而…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/tools/skills-config/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="技能配置：Skills Config | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="技能配置是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Skills Config | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="技能加载和安装配置集中在 ~/.openclaw/openclaw.json 的 skills 字段下，而每个Agent能看到哪些技能则由 agents.defaults.skills 和 agents.list[].skills 控制。最容易搞错的是：agents.list[].skills 会完全替换默认列表，而…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/tools/skills-config/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"技能配置：Skills Config","description":"技能配置是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/tools/skills-config/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Skills Config","description":"技能加载和安装配置集中在 ~/.openclaw/openclaw.json 的 skills 字段下，而每个Agent能看到哪些技能则由 agents.defaults.skills 和 agents.list[].skills 控制。最容易搞错的是：agents.list[].skills 会完全替换默认列表，而…","url":"https://fivey-can-read-openclaw.pages.dev/tools/skills-config/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://fivey-can-read-openclaw.pages.dev/tools/skills-config/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Tools 导读</p>
-        <h1>配置技能加载与安装</h1>
-        <p class="hero-copy">这页说明如何通过 `~/.openclaw/openclaw.json` 中的 `skills` 字段管理技能，包括允许加载哪些技能、从哪些目录加载，以及安装时使用哪个包管理器。最容易搞错的是：在沙盒环境中，技能进程不继承主机的环境变量，必须通过 `agents.defaults.sandbox.docker.env` 单独配置。</p>
+        <h1>技能配置：先分清全局加载与每个Agent的可见列表</h1>
+        <p class="hero-copy">技能加载和安装配置集中在 `~/.openclaw/openclaw.json` 的 `skills` 字段下，而每个Agent能看到哪些技能则由 `agents.defaults.skills` 和 `agents.list[].skills` 控制。最容易搞错的是：`agents.list[].skills` 会完全替换默认列表，而不是合并。另外，沙箱环境不继承宿主环境变量，需通过 `sandbox.docker.env` 单独传递。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,8 +4324,21 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>⚙️ Skills Config 这页，其实是在讲“技能仓库从哪几层货架装货、要不要盯着变化、优先走哪条安装路”</h2><p>所有 skill 相关配置都挂在 <code>skills</code> 下面。</p></div><div class="overview-meta"><span>技能仓库配置</span><span>重点是 extraDirs、watch、install、entries 覆盖</span><a href="https://docs.openclaw.ai/tools/skills-config" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-
+      <!-- handcrafted-source:tools.skills-config.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>技能配置：先分清全局加载与每个Agent的可见列表</h2>
+      <p>技能加载和安装配置集中在 `~/.openclaw/openclaw.json` 的 `skills` 字段下，而每个Agent能看到哪些技能则由 `agents.defaults.skills` 和 `agents.list[].skills` 控制。最容易搞错的是：`agents.list[].skills` 会完全替换默认列表，而不是合并。另外，沙箱环境不继承宿主环境变量，需通过 `sandbox.docker.env` 单独传递。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 5 节，先看 Start Here</span>
+      <span>路径：/tools/skills-config</span>
+      <a href="https://docs.openclaw.ai/tools/skills-config" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
       <footer class="page-footer">
         <div>

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:47:48.880Z",
+  "generatedAt": "2026-05-06T15:05:05.836Z",
   "pathname": "/concepts/context",
   "title": "Context",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Context：模型运行时的完整输入内容",
-    "heroSummary": "这页讲的是OpenClaw每次运行模型时，会塞进模型“上下文窗口”里的所有内容，包括系统提示、对话历史、工具调用结果等。最该先看的是如何用/status和/context list命令快速检查当前窗口占用情况，避免超出令牌限制。最容易搞错的是把Context和“记忆”混为一谈——Context只在当前窗口内有效，不会自动保存到磁盘。"
+    "heroTitle": "Context 不是记忆，是模型当前窗口里装的所有东西",
+    "heroSummary": "Context 包含系统提示词、对话历史、工具调用结果和附件，它受模型上下文窗口（token 限制）约束。想快速查看窗口有多满，用 /status；想看具体塞了哪些文件，用 /context list。最容易混淆的是：Context 是当前会话的瞬时状态，而 memory 可以存盘跨会话复用。"
   }
 }

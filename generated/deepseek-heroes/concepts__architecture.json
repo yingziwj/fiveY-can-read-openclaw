@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:47:49.242Z",
+  "generatedAt": "2026-05-06T15:05:03.527Z",
   "pathname": "/concepts/architecture",
   "title": "Gateway Architecture",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "网关架构：一个中心连接所有消息平台和设备",
-    "heroSummary": "这页讲的是系统如何通过一个网关（Gateway）统一管理WhatsApp、Telegram等消息服务，并通过WebSocket连接控制端（如macOS应用）和设备节点（如手机）。最该先看网关如何作为唯一中心，负责所有外部消息连接和会话。最容易搞错的是节点（Nodes）虽然也连同一个WebSocket，但需要声明`role: node`并提供设备身份，其配对是基于设备的。"
+    "heroTitle": "一张图看懂 Gateway：谁连谁、谁管谁、谁开 WhatsApp 会话",
+    "heroSummary": "整个系统只有一个 Gateway 进程，它独占 WhatsApp 会话，所有消息表面（WhatsApp、Telegram、Slack 等）都挂在它下面。控制面客户端（mac 应用、CLI、Web UI）和节点设备（手机、电脑、无头设备）都通过 WebSocket 连到同一个端口（默认 18789），但角色不同：客户端发请求、订阅事件，节点声明 `role: node` 并暴露设备命令。最容易搞错的是——节点配对基于设备身份，配对审批存在设备配对存储里，不是 Gateway 管的。"
   }
 }

@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Session Pruning | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Session Pruning是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="Session Pruning 在每次 LLM 调用前自动删除过时的工具输出（如执行结果、文件读取），只保留最近 3 轮完整对话。它不会动磁盘上的会话记录，但能显著减少上下文膨胀，尤其适合 Anthropic 的 prompt caching——缓存过期后重新写入时，裁剪过的 prompt 更小，直接省钱。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Session Pruning | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Session Pruning是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="Session Pruning 在每次 LLM 调用前自动删除过时的工具输出（如执行结果、文件读取），只保留最近 3 轮完整对话。它不会动磁盘上的会话记录，但能显著减少上下文膨胀，尤其适合 Anthropic 的 prompt caching——缓存过期后重新写入时，裁剪过的 prompt 更小，直接省钱。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/session-pruning/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Session Pruning | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Session Pruning是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="Session Pruning 在每次 LLM 调用前自动删除过时的工具输出（如执行结果、文件读取），只保留最近 3 轮完整对话。它不会动磁盘上的会话记录，但能显著减少上下文膨胀，尤其适合 Anthropic 的 prompt caching——缓存过期后重新写入时，裁剪过的 prompt 更小，直接省钱。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/session-pruning/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Session Pruning","description":"Session Pruning是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/session-pruning/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Session Pruning","description":"Session Pruning 在每次 LLM 调用前自动删除过时的工具输出（如执行结果、文件读取），只保留最近 3 轮完整对话。它不会动磁盘上的会话记录，但能显著减少上下文膨胀，尤其适合 Anthropic 的 prompt caching——缓存过期后重新写入时，裁剪过的 prompt 更小，直接省钱。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/session-pruning/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/session-pruning/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>会话修剪：自动清理工具结果以节省成本</h1>
-        <p class="hero-copy">这页解释会话修剪如何自动移除旧工具结果来减少上下文膨胀，特别适合Anthropic提示缓存场景。最该先看它如何通过软修剪和硬清除两步操作保留对话文本。最容易搞错的是它只影响内存中的上下文，不会修改磁盘上的完整会话记录。</p>
+        <h1>自动裁剪旧工具结果，省上下文窗口、降缓存成本</h1>
+        <p class="hero-copy">Session Pruning 在每次 LLM 调用前自动删除过时的工具输出（如执行结果、文件读取），只保留最近 3 轮完整对话。它不会动磁盘上的会话记录，但能显著减少上下文膨胀，尤其适合 Anthropic 的 prompt caching——缓存过期后重新写入时，裁剪过的 prompt 更小，直接省钱。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.session-pruning.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>✂️ <code>Session Pruning</code> 像“只剪旧工具纸，不剪整本故事书”</h2>
-      <p>这页讲的是一件很细的事：每次模型要开工前，OpenClaw 会把老旧的工具结果先收一收，别让眼前那一页太鼓。</p>
-      <p>它不是把整段历史删掉，而是只在模型真正要看的那一瞬间，把太重的旧工具纸裁一裁。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>自动裁剪旧工具结果，省上下文窗口、降缓存成本</h2>
+      <p>Session Pruning 在每次 LLM 调用前自动删除过时的工具输出（如执行结果、文件读取），只保留最近 3 轮完整对话。它不会动磁盘上的会话记录，但能显著减少上下文膨胀，尤其适合 Anthropic 的 prompt caching——缓存过期后重新写入时，裁剪过的 prompt 更小，直接省钱。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想省 Anthropic 缓存成本、又不想删掉历史的人</span>
-      <span>这页最重要的是：pruning 是临时裁纸，不是把 JSONL 历史改写掉</span>
+      <span>原文共 8 节，先看 Start Here</span>
+      <span>路径：/concepts/session-pruning</span>
       <a href="https://docs.openclaw.ai/concepts/session-pruning" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

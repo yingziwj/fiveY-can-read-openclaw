@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:48:32.180Z",
+  "generatedAt": "2026-05-06T15:05:27.516Z",
   "pathname": "/install/docker-vm-runtime",
   "title": "Docker VM Runtime",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "在虚拟机中安装Docker版OpenClaw的配置要点",
-    "heroSummary": "这页详细说明在GCP、Hetzner等虚拟机环境中部署Docker版OpenClaw时，如何正确安装外部二进制文件并配置持久化存储。最该先看的是'Bake required binaries into the image'部分，了解为什么必须在镜像构建时安装gog、goplaces等二进制文件，而不是在容器运行时安装。最容易搞错的是内存不足导致构建失败，以及混淆容器内临时文件与主机持久化卷的存储位置。"
+    "heroTitle": "Docker VM 安装：哪些东西重启会丢，哪些不会",
+    "heroSummary": "本页是 GCP、Hetzner 等 VPS 上 Docker 部署的共享步骤。先看“Bake required binaries into the image”——所有技能依赖的外部二进制（如 gog、wacli）必须在构建镜像时安装，运行时安装会在容器重启后丢失。最容易搞错的是“What persists where”表格：配置、认证、工作区等通过宿主机卷挂载持久化，而二进制和运行时文件只存在于镜像中，重启后必须重新构建。"
   }
 }

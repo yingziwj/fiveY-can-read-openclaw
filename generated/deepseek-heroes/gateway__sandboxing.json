@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:51:56.990Z",
+  "generatedAt": "2026-05-06T15:07:22.864Z",
   "pathname": "/gateway/sandboxing",
   "title": "Sandboxing",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "配置OpenClaw沙盒隔离工具执行",
-    "heroSummary": "这页讲解如何通过配置让工具在沙盒中运行，以限制模型误操作时的文件系统和进程访问范围。你需要先设置`agents.defaults.sandbox.mode`决定何时启用沙盒，并注意`tools.elevated`工具会绕过沙盒直接在主机上执行。"
+    "heroTitle": "沙箱隔离：哪些工具进沙箱，哪些留在宿主机",
+    "heroSummary": "沙箱不是安全边界，但能限制模型误操作对文件系统和进程的破坏。配置入口在 `agents.defaults.sandbox`，默认关闭；开启后工具执行和可选浏览器进沙箱，但 Gateway 和 elevated 工具始终在宿主机。最容易搞错的是 `mode` 和 `scope`：`non-main` 模式只隔离非主会话（比如群聊），`scope` 决定每个 agent、每个 session 还是所有会话共用一个容器。"
   }
 }

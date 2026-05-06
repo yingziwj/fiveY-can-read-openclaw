@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:48:20.639Z",
+  "generatedAt": "2026-05-06T15:05:21.716Z",
   "pathname": "/concepts/system-prompt",
   "title": "System Prompt",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw 系统提示的结构与注入机制",
-    "heroSummary": "本页详解 OpenClaw 如何为每次代理运行构建专属的系统提示，该提示由 OpenClaw 拥有，而非使用默认模板。你应首先了解提示的固定结构，包括工具、安全、工作区等核心部分。最需注意的是，Provider 插件只能通过替换特定命名区块或注入前缀/后缀来提供缓存感知的指导，无法完全覆盖 OpenClaw 自有的提示内容，错误地尝试完全替换会导致配置失效。"
+    "heroTitle": "系统提示词由OpenClaw全权组装，provider只能插片，不能换芯",
+    "heroSummary": "每个agent运行时，OpenClaw都会生成一份专属的系统提示词，且不使用pi-coding-agent的默认提示词。Provider插件只能通过替换命名核心段（如interaction_style）、注入稳定前缀或动态后缀来影响提示词，但无法替换整个OpenClaw拥有的提示词主体。最容易搞错的是：provider的修改范围是受限的，并非所有部分都可替换。"
   }
 }

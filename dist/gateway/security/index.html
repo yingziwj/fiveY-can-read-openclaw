@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>安全：Security | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="安全是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Security | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页假设每个 Gateway 只有一个可信操作者（个人助手模型），不支持多租户对抗。最该先跑一遍 openclaw security audit 检查常见漏洞，尤其注意共享 Slack 频道里任何人都能调用工具的风险。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="安全：Security | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="安全是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Security | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页假设每个 Gateway 只有一个可信操作者（个人助手模型），不支持多租户对抗。最该先跑一遍 openclaw security audit 检查常见漏洞，尤其注意共享 Slack 频道里任何人都能调用工具的风险。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/gateway/security/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="安全：Security | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="安全是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Security | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页假设每个 Gateway 只有一个可信操作者（个人助手模型），不支持多租户对抗。最该先跑一遍 openclaw security audit 检查常见漏洞，尤其注意共享 Slack 频道里任何人都能调用工具的风险。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/gateway/security/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"安全：Security","description":"安全是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/security/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Security","description":"这一页假设每个 Gateway 只有一个可信操作者（个人助手模型），不支持多租户对抗。最该先跑一遍 openclaw security audit 检查常见漏洞，尤其注意共享 Slack 频道里任何人都能调用工具的风险。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/security/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Gateway","item":"https://fivey-can-read-openclaw.pages.dev/gateway/security/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Gateway 导读</p>
-        <h1>OpenClaw安全配置：个人助理模型下的防护要点</h1>
-        <p class="hero-copy">这页详细说明OpenClaw在个人助理部署模型下的安全配置，核心是每个网关对应一个可信操作者边界。首先要运行`openclaw security audit`命令快速检查常见风险点，特别注意共享Slack工作区中多人使用同一工具化代理时，任何授权发送者都能调用该代理的全部工具权限。</p>
+        <h1>OpenClaw 安全模型：先搞清楚谁信谁，再谈加固</h1>
+        <p class="hero-copy">这一页假设每个 Gateway 只有一个可信操作者（个人助手模型），不支持多租户对抗。最该先跑一遍 `openclaw security audit` 检查常见漏洞，尤其注意共享 Slack 频道里任何人都能调用工具的风险。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,8 +4324,21 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🛡️ Gateway Security 这页，其实是在先划边界：OpenClaw 默认是“个人助手信任模型”，不是“敌对多人共住一栋楼”的安全系统</h2><p>先承认支持的安全模型，后面所有加固建议才不会读歪。</p></div><div class="overview-meta"><span>个人助手安全边界</span><span>重点是 one trusted operator boundary 与 security audit</span><a href="https://docs.openclaw.ai/gateway/security/index" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-
+      <!-- handcrafted-source:gateway.security.index.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>OpenClaw 安全模型：先搞清楚谁信谁，再谈加固</h2>
+      <p>这一页假设每个 Gateway 只有一个可信操作者（个人助手模型），不支持多租户对抗。最该先跑一遍 `openclaw security audit` 检查常见漏洞，尤其注意共享 Slack 频道里任何人都能调用工具的风险。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 69 节，先看 Start Here</span>
+      <span>路径：/gateway/security/index</span>
+      <a href="https://docs.openclaw.ai/gateway/security/index" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
       <footer class="page-footer">
         <div>

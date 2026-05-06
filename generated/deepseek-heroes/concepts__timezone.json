@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:54:11.827Z",
+  "generatedAt": "2026-05-06T15:08:57.787Z",
   "pathname": "/concepts/timezone",
   "title": "Timezones",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "配置消息信封和系统提示的时区",
-    "heroSummary": "这页讲解如何设置消息信封的时区格式和系统提示中的用户时区。先看 envelopeTimezone 配置项，它决定信封时间戳是本地、UTC、用户时区还是固定时区。最容易错的是未设置 userTimezone 时，系统会动态使用主机时区，可能导致时间显示不一致。"
+    "heroTitle": "时区统一：信封时间戳、工具时间戳、系统提示时间",
+    "heroSummary": "OpenClaw 把消息时间戳统一为“信封本地时间”，默认用主机时区，可全局改为 UTC、用户时区或固定 IANA 时区。工具调用返回原始提供者时间戳，同时附加 UTC 毫秒和 ISO 字符串。别忘了设 `userTimezone`，否则模型不知道用户在哪。"
   }
 }

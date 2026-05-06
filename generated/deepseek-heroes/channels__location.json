@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:47:25.295Z",
+  "generatedAt": "2026-05-06T15:04:49.076Z",
   "pathname": "/channels/location",
   "title": "Channel Location Parsing",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "聊天位置消息的标准化解析",
-    "heroSummary": "这页说明OpenClaw如何将Telegram、WhatsApp、Matrix等聊天渠道的位置消息（包括固定地点、场所和实时位置）统一解析为可读文本和结构化数据。最该先看支持的渠道列表，确认你的渠道是否在内。最容易搞错的是不同渠道的字段映射，比如Telegram的场所名称和WhatsApp的评论处理方式不同。"
+    "heroTitle": "位置消息怎么拆成文字和结构化字段",
+    "heroSummary": "Telegram、WhatsApp、Matrix 发来的位置会变成两样东西：一行带图标的可读文字（追加到消息正文），以及一组 ctx 字段（Lat/Lon/Name/Address/Source）。最该先看“Context fields”小节，那里列出了你能在自动回复里直接引用的字段名。容易搞错的是：Telegram 的 venue 会填 LocationName 和 LocationAddress，而 Matrix 的 geo_uri 没有 live 状态。"
   }
 }

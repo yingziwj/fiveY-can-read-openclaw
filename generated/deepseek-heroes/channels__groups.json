@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:47:16.320Z",
+  "generatedAt": "2026-05-06T15:04:42.622Z",
   "pathname": "/channels/groups",
   "title": "Groups",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "群聊配置与安全控制",
-    "heroSummary": "这页详细说明OpenClaw在Discord、WhatsApp等平台处理群聊消息的权限设置和会话管理。你需要先配置groupPolicy和allowlist来决定哪些群组和成员能触发AI响应。最容易搞错的是群聊会话使用独立的session key，与私聊会话完全隔离，这会影响工具权限和沙箱执行环境。"
+    "heroTitle": "群聊权限与触发：谁能在群里叫醒机器人",
+    "heroSummary": "群聊默认是白名单模式，只有被允许的人通过@提及才能触发回复。注意区分“谁可以触发”和“谁的消息能被引用进上下文”——后者目前按渠道各有不同，未来会收紧。如果想把个人DM和公开群聊隔离到不同执行环境，单agent配合sandbox的non-main模式就能做到。"
   }
 }

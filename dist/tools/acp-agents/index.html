@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ACP Agents 工具：ACP Agents | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="ACP Agents 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>ACP Agents | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="ACP 代理页解决的是“如何让 OpenClaw 充当调度器，把任务派给 Codex、Claude Code、Gemini CLI 等外部编码工具”。最该先看的是“Which page do I want?”表格，它帮你分清 ACP 代理、openclaw acp 桥接模式、CLI 后端三者的区别。最容易搞错的是：A…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="ACP Agents 工具：ACP Agents | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="ACP Agents 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="ACP Agents | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="ACP 代理页解决的是“如何让 OpenClaw 充当调度器，把任务派给 Codex、Claude Code、Gemini CLI 等外部编码工具”。最该先看的是“Which page do I want?”表格，它帮你分清 ACP 代理、openclaw acp 桥接模式、CLI 后端三者的区别。最容易搞错的是：A…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/tools/acp-agents/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ACP Agents 工具：ACP Agents | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="ACP Agents 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="ACP Agents | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="ACP 代理页解决的是“如何让 OpenClaw 充当调度器，把任务派给 Codex、Claude Code、Gemini CLI 等外部编码工具”。最该先看的是“Which page do I want?”表格，它帮你分清 ACP 代理、openclaw acp 桥接模式、CLI 后端三者的区别。最容易搞错的是：A…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/tools/acp-agents/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"ACP Agents 工具：ACP Agents","description":"ACP Agents 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/tools/acp-agents/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"ACP Agents","description":"ACP 代理页解决的是“如何让 OpenClaw 充当调度器，把任务派给 Codex、Claude Code、Gemini CLI 等外部编码工具”。最该先看的是“Which page do I want?”表格，它帮你分清 ACP 代理、openclaw acp 桥接模式、CLI 后端三者的区别。最容易搞错的是：A…","url":"https://fivey-can-read-openclaw.pages.dev/tools/acp-agents/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://fivey-can-read-openclaw.pages.dev/tools/acp-agents/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Tools 导读</p>
-        <h1>在 OpenClaw 中运行外部代码工具（如 Codex、Claude Code）</h1>
-        <p class="hero-copy">本页说明如何通过 ACP 协议，让 OpenClaw 启动并管理外部代码工具（如 Codex、Claude Code、Gemini CLI 等）的会话。使用 `/acp spawn` 命令或自然语言请求即可启动，会话会绑定到特定聊天或线程，并作为后台任务运行。最容易混淆的是区分本页（通过 OpenClaw 运行外部工具）、`openclaw acp` 命令（将 OpenClaw 作为 ACP 服务器暴露）以及 CLI 后端（仅作为文本回退模型），请根据“Which page do I want?”表格确认你需要的功能。首次使用时，系统通常已预装 `acpx` 运行时，但特定工具的适配器可能需要联网获取，若主机无网络访问可能失败，可使用 `/acp doctor` 快速检查就绪状态。</p>
+        <h1>让 Codex、Claude Code 等外部工具通过 OpenClaw 运行，而不是直接连 MCP</h1>
+        <p class="hero-copy">ACP 代理页解决的是“如何让 OpenClaw 充当调度器，把任务派给 Codex、Claude Code、Gemini CLI 等外部编码工具”。最该先看的是“Which page do I want?”表格，它帮你分清 ACP 代理、`openclaw acp` 桥接模式、CLI 后端三者的区别。最容易搞错的是：ACP 代理是让外部工具在 OpenClaw 里跑会话（受 OpenClaw 管控），而 `openclaw mcp serve` 是让外部工具直接连 OpenClaw 的频道聊天——两者完全相反。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,23 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🧵 ACP Agents 这页，其实是在讲“如果你点名要 Codex、Claude Code 这类外部编程工人来干活，OpenClaw 该走 ACP 专线”</h2><p>它不是普通原生 sub-agent，而是请外部 coding harness 上工。</p></div><div class="overview-meta"><span>外部编程工人专线</span><span>重点是 ACP runtime，不是 native sub-agent</span><a href="https://docs.openclaw.ai/tools/acp-agents" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section><section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>🚪 ACP 和 sub-agent 不是同一扇门</h2><p>前者像请外包专家，后者像叫自家小工。</p></div></section>
+      <!-- handcrafted-source:tools.acp-agents.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>让 Codex、Claude Code 等外部工具通过 OpenClaw 运行，而不是直接连 MCP</h2>
+      <p>ACP 代理页解决的是“如何让 OpenClaw 充当调度器，把任务派给 Codex、Claude Code、Gemini CLI 等外部编码工具”。最该先看的是“Which page do I want?”表格，它帮你分清 ACP 代理、`openclaw acp` 桥接模式、CLI 后端三者的区别。最容易搞错的是：ACP 代理是让外部工具在 OpenClaw 里跑会话（受 OpenClaw 管控），而 `openclaw mcp serve` 是让外部工具直接连 OpenClaw 的频道聊天——两者完全相反。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 36 节，先看 Start Here</span>
+      <span>路径：/tools/acp-agents</span>
+      <a href="https://docs.openclaw.ai/tools/acp-agents" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>🚪 ACP 和 sub-agent 不是同一扇门</h2><p>前者像请外包专家，后者像叫自家小工。</p></div></section>
 
 
       <footer class="page-footer">

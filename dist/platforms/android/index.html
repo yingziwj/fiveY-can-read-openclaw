@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Android 应用：Android App | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Android 应用是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Android App | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Android 应用是 companion node，必须依赖一台运行在 macOS/Linux/Windows 上的 Gateway。先配好 Gateway，再用 Pairing 流程把手机连上去。最容易踩的坑是：手机通过 Tailscale 或公网连接时，不能用裸 IP 的 ws://，必须用 Tailscale…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Android 应用：Android App | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Android 应用是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Android App | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Android 应用是 companion node，必须依赖一台运行在 macOS/Linux/Windows 上的 Gateway。先配好 Gateway，再用 Pairing 流程把手机连上去。最容易踩的坑是：手机通过 Tailscale 或公网连接时，不能用裸 IP 的 ws://，必须用 Tailscale…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/platforms/android/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Android 应用：Android App | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Android 应用是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Android App | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Android 应用是 companion node，必须依赖一台运行在 macOS/Linux/Windows 上的 Gateway。先配好 Gateway，再用 Pairing 流程把手机连上去。最容易踩的坑是：手机通过 Tailscale 或公网连接时，不能用裸 IP 的 ws://，必须用 Tailscale…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/platforms/android/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Android 应用：Android App","description":"Android 应用是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/platforms/android/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Android App","description":"Android 应用是 companion node，必须依赖一台运行在 macOS/Linux/Windows 上的 Gateway。先配好 Gateway，再用 Pairing 流程把手机连上去。最容易踩的坑是：手机通过 Tailscale 或公网连接时，不能用裸 IP 的 ws://，必须用 Tailscale…","url":"https://fivey-can-read-openclaw.pages.dev/platforms/android/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Platforms","item":"https://fivey-can-read-openclaw.pages.dev/platforms/android/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Platforms 导读</p>
-        <h1>Android节点应用配置与连接指南</h1>
-        <p class="hero-copy">本页详细说明如何为Android设备配置OpenClaw节点应用，并建立与网关的稳定连接。首先需要确保网关已在其他系统上运行，然后重点关注Android应用与网关之间的WebSocket连接方式，特别是不同网络环境下的安全配置。最容易出错的地方是跨网络连接时未使用安全的wss协议，导致连接失败。</p>
+        <h1>Android 端只当“副手”，不跑网关</h1>
+        <p class="hero-copy">Android 应用是 companion node，必须依赖一台运行在 macOS/Linux/Windows 上的 Gateway。先配好 Gateway，再用 Pairing 流程把手机连上去。最容易踩的坑是：手机通过 Tailscale 或公网连接时，不能用裸 IP 的 ws://，必须用 Tailscale Serve 或真实 TLS 证书的 wss://。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🤖 Android 这页，其实是在讲“Android 目前更像一台 node 设备，不是 Gateway 主机”</h2><p>它负责连到别处的 Gateway，然后贡献手机这边的能力。</p><p>所以重点不是“在 Android 上独立开整套 OpenClaw”，而是“把手机接进现有系统里”。</p></div><div class="overview-meta"><span>Android node</span><span>重点是配对、WebSocket、源码自建</span><a href="https://docs.openclaw.ai/platforms/android" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:platforms.android.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Android 端只当“副手”，不跑网关</h2>
+      <p>Android 应用是 companion node，必须依赖一台运行在 macOS/Linux/Windows 上的 Gateway。先配好 Gateway，再用 Pairing 流程把手机连上去。最容易踩的坑是：手机通过 Tailscale 或公网连接时，不能用裸 IP 的 ws://，必须用 Tailscale Serve 或真实 TLS 证书的 wss://。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 16 节，先看 Start Here</span>
+      <span>路径：/platforms/android</span>
+      <a href="https://docs.openclaw.ai/platforms/android" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>📦 它还没公开发版，所以现在更像开发者自己打包的试验机</h2><p>官方已经把源码放出来了，但不是那种去应用商店一键安装的状态。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label">源码自建</div><p>要自己用 Java 17 和 Android SDK 把 app 编出来，像自己从零拼一台设备。</p></div><div class="source-card"><div class="story-card-label">需要外部 Gateway</div><p>Android 不托管 Gateway，它只负责连过去。</p></div><div class="source-card"><div class="story-card-label">配对</div><p>连上 WebSocket 后，还是要走 device pairing，先拿到 node 工牌。</p></div><div class="source-card"><div class="story-card-label">🎈 最后记一句</div><p>Android 现在是陪跑 node，不是单机大本营。</p></div></div></section>
 
 

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:54:23.185Z",
+  "generatedAt": "2026-05-06T15:09:03.657Z",
   "pathname": "/help/debugging",
   "title": "Debugging",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "调试流式输出与运行时配置",
-    "heroSummary": "这页介绍三种调试工具：用 /debug 命令临时覆盖配置、用 gateway:watch 监听文件变化自动重启、以及启用原始流日志查看推理文本。最该先看 /debug 的用法，它能在聊天中快速开关设置而不用改配置文件。最容易搞错的是 gateway:watch 的监听范围，它只对特定文件类型（如源码、配置）触发重启，扩展元数据变化时不会强制重建。"
+    "heroTitle": "流式输出乱掉？先试 /debug 和 /trace",
+    "heroSummary": "当 provider 把推理内容混进正常文本时，用 /debug 临时改配置（不写磁盘），用 /trace 看插件自己的调试行。两个命令都默认关闭，记得先开 commands.debug: true。"
   }
 }

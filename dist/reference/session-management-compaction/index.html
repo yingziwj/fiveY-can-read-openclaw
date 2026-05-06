@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>会话管理深入讲解：Session Management Deep Dive | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="会话管理深入讲解是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Session Management Deep Dive | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页讲透 OpenClaw 会话的完整生命周期：从消息路由到 sessionKey，到 sessions.json 和 .jsonl 双持久层，再到自动压缩和磁盘维护。最该先看的是 Gateway 进程——它是会话状态的唯一拥有者，远程模式下查本地 Mac 文件毫无意义。容易搞错的是 maintenance 的 w…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="会话管理深入讲解：Session Management Deep Dive | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="会话管理深入讲解是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Session Management Deep Dive | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页讲透 OpenClaw 会话的完整生命周期：从消息路由到 sessionKey，到 sessions.json 和 .jsonl 双持久层，再到自动压缩和磁盘维护。最该先看的是 Gateway 进程——它是会话状态的唯一拥有者，远程模式下查本地 Mac 文件毫无意义。容易搞错的是 maintenance 的 w…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/reference/session-management-compaction/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="会话管理深入讲解：Session Management Deep Dive | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="会话管理深入讲解是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Session Management Deep Dive | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页讲透 OpenClaw 会话的完整生命周期：从消息路由到 sessionKey，到 sessions.json 和 .jsonl 双持久层，再到自动压缩和磁盘维护。最该先看的是 Gateway 进程——它是会话状态的唯一拥有者，远程模式下查本地 Mac 文件毫无意义。容易搞错的是 maintenance 的 w…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/reference/session-management-compaction/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"会话管理深入讲解：Session Management Deep Dive","description":"会话管理深入讲解是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/reference/session-management-compaction/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Session Management Deep Dive","description":"这一页讲透 OpenClaw 会话的完整生命周期：从消息路由到 sessionKey，到 sessions.json 和 .jsonl 双持久层，再到自动压缩和磁盘维护。最该先看的是 Gateway 进程——它是会话状态的唯一拥有者，远程模式下查本地 Mac 文件毫无意义。容易搞错的是 maintenance 的 w…","url":"https://fivey-can-read-openclaw.pages.dev/reference/session-management-compaction/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Reference","item":"https://fivey-can-read-openclaw.pages.dev/reference/session-management-compaction/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Reference 导读</p>
-        <h1>OpenClaw会话管理与压缩机制详解</h1>
-        <p class="hero-copy">本页详细解析OpenClaw会话从路由到持久化的完整流程，重点说明会话存储(sessions.json)与对话记录(*.jsonl)的双层结构。阅读时应先理解Gateway作为唯一状态源的核心地位，避免在远程模式下误查本地文件。最需注意的是磁盘空间控制机制，当启用enforce模式时系统会按特定顺序清理文件，可能影响会话数据的保留。</p>
+        <h1>会话管理：Gateway 是唯一真相源，别去翻本地文件</h1>
+        <p class="hero-copy">这一页讲透 OpenClaw 会话的完整生命周期：从消息路由到 sessionKey，到 sessions.json 和 .jsonl 双持久层，再到自动压缩和磁盘维护。最该先看的是 Gateway 进程——它是会话状态的唯一拥有者，远程模式下查本地 Mac 文件毫无意义。容易搞错的是 maintenance 的 warn 与 enforce 模式：warn 只报告不执行，别以为它会自动清理。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,8 +4324,21 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>📚 Session Management & Compaction 这页，其实是在讲“会话从进门、落盘、清洁、压缩到下次再读出来，是怎么一路流转的”</h2><p>这是大后勤总图，不只是 compaction 单点说明。</p></div><div class="overview-meta"><span>会话后勤总图</span><span>重点是 sessions.json、jsonl、hygiene、compaction</span><a href="https://docs.openclaw.ai/reference/session-management-compaction" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-
+      <!-- handcrafted-source:reference.session-management-compaction.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>会话管理：Gateway 是唯一真相源，别去翻本地文件</h2>
+      <p>这一页讲透 OpenClaw 会话的完整生命周期：从消息路由到 sessionKey，到 sessions.json 和 .jsonl 双持久层，再到自动压缩和磁盘维护。最该先看的是 Gateway 进程——它是会话状态的唯一拥有者，远程模式下查本地 Mac 文件毫无意义。容易搞错的是 maintenance 的 warn 与 enforce 模式：warn 只报告不执行，别以为它会自动清理。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 20 节，先看 Start Here</span>
+      <span>路径：/reference/session-management-compaction</span>
+      <a href="https://docs.openclaw.ai/reference/session-management-compaction" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
       <footer class="page-footer">
         <div>

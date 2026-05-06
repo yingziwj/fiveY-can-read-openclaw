@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Delegate 架构：Delegate Architecture | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Delegate 架构是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Delegate Architecture | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页讲的是把 OpenClaw 从“个人助理”升级为“组织委托代理”——代理有自己的邮箱、日历和身份，以“代表”而非“冒充”的方式行事。最该先看的是“能力分级”表格：从只读+草稿开始，别一上来就开写权限。最容易搞错的是：代理从不冒充人类，所有发信都明确来自代理账号，靠身份提供商（而非 OpenClaw 自身）来管控…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Delegate 架构：Delegate Architecture | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Delegate 架构是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Delegate Architecture | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页讲的是把 OpenClaw 从“个人助理”升级为“组织委托代理”——代理有自己的邮箱、日历和身份，以“代表”而非“冒充”的方式行事。最该先看的是“能力分级”表格：从只读+草稿开始，别一上来就开写权限。最容易搞错的是：代理从不冒充人类，所有发信都明确来自代理账号，靠身份提供商（而非 OpenClaw 自身）来管控…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/delegate-architecture/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Delegate 架构：Delegate Architecture | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Delegate 架构是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Delegate Architecture | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页讲的是把 OpenClaw 从“个人助理”升级为“组织委托代理”——代理有自己的邮箱、日历和身份，以“代表”而非“冒充”的方式行事。最该先看的是“能力分级”表格：从只读+草稿开始，别一上来就开写权限。最容易搞错的是：代理从不冒充人类，所有发信都明确来自代理账号，靠身份提供商（而非 OpenClaw 自身）来管控…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/delegate-architecture/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Delegate 架构：Delegate Architecture","description":"Delegate 架构是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/delegate-architecture/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Delegate Architecture","description":"这一页讲的是把 OpenClaw 从“个人助理”升级为“组织委托代理”——代理有自己的邮箱、日历和身份，以“代表”而非“冒充”的方式行事。最该先看的是“能力分级”表格：从只读+草稿开始，别一上来就开写权限。最容易搞错的是：代理从不冒充人类，所有发信都明确来自代理账号，靠身份提供商（而非 OpenClaw 自身）来管控…","url":"https://fivey-can-read-openclaw.pages.dev/concepts/delegate-architecture/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/delegate-architecture/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>委托代理架构：让AI助手以独立身份代表组织成员工作</h1>
-        <p class="hero-copy">这页解释如何将OpenClaw配置为拥有独立身份的委托代理，代表组织成员处理邮件、日程等任务。你需要先理解委托代理与个人助手的核心区别：委托代理使用自己的账户和权限，不会冒充人类。配置时最容易忽略权限层级，应从只读+草稿模式开始，避免过度授权。</p>
+        <h1>让代理拥有自己的身份，而不是假装是你</h1>
+        <p class="hero-copy">这一页讲的是把 OpenClaw 从“个人助理”升级为“组织委托代理”——代理有自己的邮箱、日历和身份，以“代表”而非“冒充”的方式行事。最该先看的是“能力分级”表格：从只读+草稿开始，别一上来就开写权限。最容易搞错的是：代理从不冒充人类，所有发信都明确来自代理账号，靠身份提供商（而非 OpenClaw 自身）来管控访问范围。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.delegate-architecture.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧑‍💼 Delegate Architecture 这页，其实是在讲“让 OpenClaw 当一个有自己工牌的助理，而不是冒充某个人”</h2>
-      <p>它不是偷偷穿上老板马甲去发消息，而是自己有账号、有名字、有权限，然后明确写着“代表谁处理事情”。</p>
-      <p>这套设计的重点是：身份清楚、权限清楚、边界清楚。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>让代理拥有自己的身份，而不是假装是你</h2>
+      <p>这一页讲的是把 OpenClaw 从“个人助理”升级为“组织委托代理”——代理有自己的邮箱、日历和身份，以“代表”而非“冒充”的方式行事。最该先看的是“能力分级”表格：从只读+草稿开始，别一上来就开写权限。最容易搞错的是：代理从不冒充人类，所有发信都明确来自代理账号，靠身份提供商（而非 OpenClaw 自身）来管控访问范围。</p>
     </div>
     <div class="overview-meta">
-      <span>组织级代理身份</span>
-      <span>重点是 own identity、on behalf of、权限分层</span>
+      <span>原文共 21 节，先看 Start Here</span>
+      <span>路径：/concepts/delegate-architecture</span>
       <a href="https://docs.openclaw.ai/concepts/delegate-architecture" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

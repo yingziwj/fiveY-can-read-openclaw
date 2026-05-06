@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:52.549Z",
+  "generatedAt": "2026-05-06T15:08:08.702Z",
   "pathname": "/providers/venice",
   "title": "Venice AI",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Venice AI隐私优先的AI推理服务配置",
-    "heroSummary": "这页详细说明如何接入Venice AI的隐私优先推理服务，包括私有模式和匿名代理模式的区别。配置时最关键的是根据隐私需求选择正确的模式，私有模式完全无日志，匿名模式可访问GPT等主流模型但会剥离元数据。最容易出错的是混淆两种模式的应用场景，私有模式适合开源模型，匿名模式用于访问Claude、GPT等专有模型。"
+    "heroTitle": "Venice AI：隐私优先的推理，选对模式再动手",
+    "heroSummary": "Venice 提供两种隐私等级：Private 模式完全不留日志，适合敏感场景；Anonymized 模式会转发请求给第三方（如 OpenAI），隐私性降低。配置时先拿 API Key（格式 vapi_xxx），然后运行 openclaw onboard --auth-choice venice-api-key 交互式设置，或直接设环境变量 VENICE_API_KEY。注意：Anonymized 模型并非完全隐私，底层提供商仍会处理请求。"
   }
 }

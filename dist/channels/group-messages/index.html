@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>群组消息：Group Messages | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="群组消息是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Group Messages | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="配置 channels.whatsapp.groups 和 agents.list[].groupChat.mentionPatterns 来定义触发规则；默认 mention 模式需要 @ 或匹配正则才唤醒。注意 channels.whatsapp.groupPolicy 默认是 allowlist，不添加发送者就…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="群组消息：Group Messages | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="群组消息是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Group Messages | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="配置 channels.whatsapp.groups 和 agents.list[].groupChat.mentionPatterns 来定义触发规则；默认 mention 模式需要 @ 或匹配正则才唤醒。注意 channels.whatsapp.groupPolicy 默认是 allowlist，不添加发送者就…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/channels/group-messages/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="群组消息：Group Messages | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="群组消息是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Group Messages | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="配置 channels.whatsapp.groups 和 agents.list[].groupChat.mentionPatterns 来定义触发规则；默认 mention 模式需要 @ 或匹配正则才唤醒。注意 channels.whatsapp.groupPolicy 默认是 allowlist，不添加发送者就…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/channels/group-messages/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"群组消息：Group Messages","description":"群组消息是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/channels/group-messages/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Group Messages","description":"配置 channels.whatsapp.groups 和 agents.list[].groupChat.mentionPatterns 来定义触发规则；默认 mention 模式需要 @ 或匹配正则才唤醒。注意 channels.whatsapp.groupPolicy 默认是 allowlist，不添加发送者就…","url":"https://fivey-can-read-openclaw.pages.dev/channels/group-messages/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Channels","item":"https://fivey-can-read-openclaw.pages.dev/channels/group-messages/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Channels 导读</p>
-        <h1>配置 WhatsApp 群组消息的触发与响应</h1>
-        <p class="hero-copy">这页说明如何让 Clawd 在 WhatsApp 群聊中工作，包括设置触发方式（被@才响应或总是响应）和群组会话管理。配置时需注意 `mentionPatterns` 正则表达式和 `groupPolicy` 权限控制，避免群组消息被错误拦截或触发。</p>
+        <h1>让 Clawd 在 WhatsApp 群里只被 @ 时才回应，且不干扰私聊</h1>
+        <p class="hero-copy">配置 `channels.whatsapp.groups` 和 `agents.list[].groupChat.mentionPatterns` 来定义触发规则；默认 `mention` 模式需要 @ 或匹配正则才唤醒。注意 `channels.whatsapp.groupPolicy` 默认是 `allowlist`，不添加发送者就会静默忽略所有群消息。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:channels.group-messages.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>💬 Group Messages 这页，其实是在教你“让 WhatsApp 群里的 OpenClaw 像一个懂礼貌的旁听同学，被点名才站起来回答”</h2>
-      <p>这页专门盯 WhatsApp 群聊，但它在讲的不是“怎么让它多说话”，反而是“怎么让它别乱说话”。</p>
-      <p>默认思路非常克制：被提到才醒；没被提到时，先把消息记在旁边，等需要时再当作上下文参考。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>让 Clawd 在 WhatsApp 群里只被 @ 时才回应，且不干扰私聊</h2>
+      <p>配置 `channels.whatsapp.groups` 和 `agents.list[].groupChat.mentionPatterns` 来定义触发规则；默认 `mention` 模式需要 @ 或匹配正则才唤醒。注意 `channels.whatsapp.groupPolicy` 默认是 `allowlist`，不添加发送者就会静默忽略所有群消息。</p>
     </div>
     <div class="overview-meta">
-      <span>适合 WhatsApp 群聊行为</span>
-      <span>重点是 activation、mention、pending-only context、单独群会话</span>
+      <span>原文共 7 节，先看 Start Here</span>
+      <span>路径：/channels/group-messages</span>
       <a href="https://docs.openclaw.ai/channels/group-messages" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

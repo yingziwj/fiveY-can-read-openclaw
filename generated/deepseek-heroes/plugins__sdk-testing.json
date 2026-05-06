@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:49:35.486Z",
+  "generatedAt": "2026-05-06T15:06:09.403Z",
   "pathname": "/plugins/sdk-testing",
   "title": "Plugin Testing",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "插件测试工具与类型参考",
-    "heroSummary": "这页列出了OpenClaw插件SDK的测试工具函数和类型定义，用于编写插件测试。开发插件时应先查看installCommonResolveTargetErrorCases等工具函数，它们能帮你快速添加标准错误处理测试。注意这页是参考文档，实际测试示例在Channel和Provider插件指南中，不要在这里寻找完整测试代码。"
+    "heroTitle": "插件测试：3 个工具函数 + 类型，别自己造轮子",
+    "heroSummary": "从 `openclaw/plugin-sdk/testing` 导入 `installCommonResolveTargetErrorCases`、`shouldAckReaction`、`removeAckReactionAfterReply` 三个工具函数，直接复用官方测试用例，不用自己写目标解析的错误处理。注意 `installCommonResolveTargetErrorCases` 需要传入 `resolveTarget` 函数和 `implicitAllowFrom` 数组，这是最容易漏的参数。"
   }
 }

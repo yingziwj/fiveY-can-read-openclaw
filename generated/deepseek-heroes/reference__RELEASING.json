@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:54:32.632Z",
+  "generatedAt": "2026-05-06T15:09:08.875Z",
   "pathname": "/reference/RELEASING",
   "title": "Release Policy",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw发布策略与版本命名规则",
-    "heroSummary": "这页详细说明了OpenClaw的三个发布通道（stable、beta、dev）及其对应的npm标签和版本命名格式。发布操作员需要重点关注NPM workflow inputs中的tag、preflight_run_id等参数配置，这些直接决定发布到beta还是latest通道。最容易出错的是版本命名格式——月份和日期不能补零，且stable correction release的版本号格式为YYYY.M.D-N。"
+    "heroTitle": "三个发布通道怎么选，版本号怎么读",
+    "heroSummary": "OpenClaw 有 stable、beta、dev 三条公开通道，stable 默认发到 npm beta 标签，只有显式指定才发 latest。版本号格式是 YYYY.M.D，不补零，修正版加 -N，beta 预发布加 -beta.N。发布流程是 beta 优先，stable 必须等 beta 验证通过后才能推进。"
   }
 }

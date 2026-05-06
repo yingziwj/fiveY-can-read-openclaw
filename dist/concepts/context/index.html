@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>上下文：Context | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="上下文是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Context | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Context 包含系统提示词、对话历史、工具调用结果和附件，它受模型上下文窗口（token 限制）约束。想快速查看窗口有多满，用 /status；想看具体塞了哪些文件，用 /context list。最容易混淆的是：Context 是当前会话的瞬时状态，而 memory 可以存盘跨会话复用。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="上下文：Context | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="上下文是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Context | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Context 包含系统提示词、对话历史、工具调用结果和附件，它受模型上下文窗口（token 限制）约束。想快速查看窗口有多满，用 /status；想看具体塞了哪些文件，用 /context list。最容易混淆的是：Context 是当前会话的瞬时状态，而 memory 可以存盘跨会话复用。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/context/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="上下文：Context | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="上下文是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Context | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Context 包含系统提示词、对话历史、工具调用结果和附件，它受模型上下文窗口（token 限制）约束。想快速查看窗口有多满，用 /status；想看具体塞了哪些文件，用 /context list。最容易混淆的是：Context 是当前会话的瞬时状态，而 memory 可以存盘跨会话复用。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/context/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"上下文：Context","description":"上下文是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/context/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Context","description":"Context 包含系统提示词、对话历史、工具调用结果和附件，它受模型上下文窗口（token 限制）约束。想快速查看窗口有多满，用 /status；想看具体塞了哪些文件，用 /context list。最容易混淆的是：Context 是当前会话的瞬时状态，而 memory 可以存盘跨会话复用。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/context/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/context/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>Context：模型运行时的完整输入内容</h1>
-        <p class="hero-copy">这页讲的是OpenClaw每次运行模型时，会塞进模型“上下文窗口”里的所有内容，包括系统提示、对话历史、工具调用结果等。最该先看的是如何用/status和/context list命令快速检查当前窗口占用情况，避免超出令牌限制。最容易搞错的是把Context和“记忆”混为一谈——Context只在当前窗口内有效，不会自动保存到磁盘。</p>
+        <h1>Context 不是记忆，是模型当前窗口里装的所有东西</h1>
+        <p class="hero-copy">Context 包含系统提示词、对话历史、工具调用结果和附件，它受模型上下文窗口（token 限制）约束。想快速查看窗口有多满，用 /status；想看具体塞了哪些文件，用 /context list。最容易混淆的是：Context 是当前会话的瞬时状态，而 memory 可以存盘跨会话复用。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.context.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧠 Context 不是“记忆力”，它更像 OpenClaw 这次出门带了哪些东西</h2>
-      <p>OpenClaw 每次去找模型说话时，不是空着手去的。它会把规则、聊天记录、工具结果、图片附件，还有工作区里该带的文件，一起装进一个小背包里。</p>
-      <p>这个小背包就是 context。背包有大小，装太多就会挤满。所以这页其实是在讲：OpenClaw 这次到底带了什么，怎么查，怎么省，怎么别把包塞爆。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Context 不是记忆，是模型当前窗口里装的所有东西</h2>
+      <p>Context 包含系统提示词、对话历史、工具调用结果和附件，它受模型上下文窗口（token 限制）约束。想快速查看窗口有多满，用 /status；想看具体塞了哪些文件，用 /context list。最容易混淆的是：Context 是当前会话的瞬时状态，而 memory 可以存盘跨会话复用。</p>
     </div>
     <div class="overview-meta">
-      <span>适合第一次想弄懂“模型到底看到了什么”的人</span>
-      <span>这页重点不是背术语，而是看懂每一层东西怎么进来</span>
+      <span>原文共 14 节，先看 Start Here</span>
+      <span>路径：/concepts/context</span>
       <a href="https://docs.openclaw.ai/concepts/context" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

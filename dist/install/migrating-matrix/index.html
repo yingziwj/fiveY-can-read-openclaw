@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matrix 迁移：Matrix migration | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Matrix 迁移是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Matrix migration | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="从旧版 Matrix 插件升级时，配置、凭据和运行时状态基本不变，无需重命名或重装。升级后首次启动或运行 openclaw doctor --fix 会自动创建快照并迁移同步和加密存储。注意：未备份到服务器的本地房间密钥无法自动恢复，多账号且未设置默认账号时迁移会跳过。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Matrix 迁移：Matrix migration | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Matrix 迁移是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Matrix migration | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="从旧版 Matrix 插件升级时，配置、凭据和运行时状态基本不变，无需重命名或重装。升级后首次启动或运行 openclaw doctor --fix 会自动创建快照并迁移同步和加密存储。注意：未备份到服务器的本地房间密钥无法自动恢复，多账号且未设置默认账号时迁移会跳过。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/install/migrating-matrix/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Matrix 迁移：Matrix migration | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Matrix 迁移是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Matrix migration | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="从旧版 Matrix 插件升级时，配置、凭据和运行时状态基本不变，无需重命名或重装。升级后首次启动或运行 openclaw doctor --fix 会自动创建快照并迁移同步和加密存储。注意：未备份到服务器的本地房间密钥无法自动恢复，多账号且未设置默认账号时迁移会跳过。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/install/migrating-matrix/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Matrix 迁移：Matrix migration","description":"Matrix 迁移是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/install/migrating-matrix/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Matrix migration","description":"从旧版 Matrix 插件升级时，配置、凭据和运行时状态基本不变，无需重命名或重装。升级后首次启动或运行 openclaw doctor --fix 会自动创建快照并迁移同步和加密存储。注意：未备份到服务器的本地房间密钥无法自动恢复，多账号且未设置默认账号时迁移会跳过。","url":"https://fivey-can-read-openclaw.pages.dev/install/migrating-matrix/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Install","item":"https://fivey-can-read-openclaw.pages.dev/install/migrating-matrix/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Install 导读</p>
-        <h1>Matrix插件升级迁移指南</h1>
-        <p class="hero-copy">这页详细说明如何从旧版Matrix插件平滑升级到当前版本，大部分配置和状态会自动保留。升级后务必运行`openclaw doctor --fix`并重启网关，以确保加密聊天记录能完整迁移。特别注意旧版插件未自动备份的本地加密密钥可能无法恢复，需手动检查备份状态。</p>
+        <h1>Matrix 插件升级：自动迁移与手动检查</h1>
+        <p class="hero-copy">从旧版 Matrix 插件升级时，配置、凭据和运行时状态基本不变，无需重命名或重装。升级后首次启动或运行 `openclaw doctor --fix` 会自动创建快照并迁移同步和加密存储。注意：未备份到服务器的本地房间密钥无法自动恢复，多账号且未设置默认账号时迁移会跳过。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:install.migrating-matrix.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧩 Matrix migration 这页，其实是在教你“旧 Matrix 房间怎么搬到新房型里，尽量别把加密钥匙弄丢”</h2>
-      <p>这页很长，不是因为官方爱啰嗦，而是因为 Matrix 的旧状态里有两种很麻烦的东西：账户布局和加密房间钥匙。</p>
-      <p>最重要的结论先说：大多数人是原地升级，不需要重命名插件和配置；真正麻烦的是旧加密状态的恢复边界。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Matrix 插件升级：自动迁移与手动检查</h2>
+      <p>从旧版 Matrix 插件升级时，配置、凭据和运行时状态基本不变，无需重命名或重装。升级后首次启动或运行 `openclaw doctor --fix` 会自动创建快照并迁移同步和加密存储。注意：未备份到服务器的本地房间密钥无法自动恢复，多账号且未设置默认账号时迁移会跳过。</p>
     </div>
     <div class="overview-meta">
-      <span>适合旧 Matrix 用户升级</span>
-      <span>重点是自动迁移、快照、恢复钥匙、医生修复</span>
+      <span>原文共 12 节，先看 Start Here</span>
+      <span>路径：/install/migrating-matrix</span>
       <a href="https://docs.openclaw.ai/install/migrating-matrix" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:53:08.005Z",
+  "generatedAt": "2026-05-06T15:08:18.378Z",
   "pathname": "/web/control-ui",
   "title": "Control UI",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw 网关控制面板使用指南",
-    "heroSummary": "这页详细说明如何通过浏览器访问和管理 OpenClaw 网关的控制界面，包括访问地址、首次设备配对流程和主要功能模块。访问前需确保网关已启动，首次连接新设备时必须完成命令行配对批准，否则会显示“pairing required”错误。控制面板支持多语言切换，可管理聊天会话、通道配置、定时任务、技能插件等核心功能，所有配置修改都包含防冲突校验机制。"
+    "heroTitle": "打开浏览器就能管网关：Control UI 接入与配对",
+    "heroSummary": "Control UI 是一个 Vite + Lit 单页应用，默认跑在 18789 端口，直接通过 WebSocket 连网关。首次从新浏览器或设备连接时，必须用 `openclaw devices approve` 做一次性配对审批，否则只会看到“pairing required”断开。如果浏览器重试时改了认证信息，旧的审批请求会失效，需要重新 `list` 拿新 ID 再批准。"
   }
 }

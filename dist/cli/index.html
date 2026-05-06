@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CLI 参考：CLI Reference | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="CLI 参考是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>CLI Reference | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这是 OpenClaw CLI 的完整命令索引，包含 setup、onboard、configure 等 50 多个子命令的入口。读之前先记住 --dev 和 --profile 两个全局标志，它们能隔离状态、避免污染生产环境。输出默认带 ANSI 颜色和进度条，但管道重定向或 --json 时会自动关闭，别被终端里…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="CLI 参考：CLI Reference | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="CLI 参考是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="CLI Reference | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这是 OpenClaw CLI 的完整命令索引，包含 setup、onboard、configure 等 50 多个子命令的入口。读之前先记住 --dev 和 --profile 两个全局标志，它们能隔离状态、避免污染生产环境。输出默认带 ANSI 颜色和进度条，但管道重定向或 --json 时会自动关闭，别被终端里…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CLI 参考：CLI Reference | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="CLI 参考是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="CLI Reference | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这是 OpenClaw CLI 的完整命令索引，包含 setup、onboard、configure 等 50 多个子命令的入口。读之前先记住 --dev 和 --profile 两个全局标志，它们能隔离状态、避免污染生产环境。输出默认带 ANSI 颜色和进度条，但管道重定向或 --json 时会自动关闭，别被终端里…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"CLI 参考：CLI Reference","description":"CLI 参考是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"CLI Reference","description":"这是 OpenClaw CLI 的完整命令索引，包含 setup、onboard、configure 等 50 多个子命令的入口。读之前先记住 --dev 和 --profile 两个全局标志，它们能隔离状态、避免污染生产环境。输出默认带 ANSI 颜色和进度条，但管道重定向或 --json 时会自动关闭，别被终端里…","url":"https://fivey-can-read-openclaw.pages.dev/cli/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>CLI命令全集与使用要点</h1>
-        <p class="hero-copy">这页列出了所有CLI命令和全局参数，是查找具体命令的入口页。使用前先看全局参数如--dev和--profile，它们会影响命令执行环境。注意输出样式部分解释了颜色显示和进度指示器的触发条件，这在脚本中容易出错。</p>
+        <h1>50+ 命令一页查，全局标志与输出风格先看懂</h1>
+        <p class="hero-copy">这是 OpenClaw CLI 的完整命令索引，包含 setup、onboard、configure 等 50 多个子命令的入口。读之前先记住 `--dev` 和 `--profile` 两个全局标志，它们能隔离状态、避免污染生产环境。输出默认带 ANSI 颜色和进度条，但管道重定向或 `--json` 时会自动关闭，别被终端里的花哨样式骗了。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.index.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧰 CLI Reference 像一整盒工具抽屉地图</h2>
-      <p>这页不是教你立刻做某一件事，而是在告诉你：`openclaw` 这把瑞士军刀，刀片都藏在哪些抽屉里。</p>
-      <p>如果你把 OpenClaw 想成一栋楼，这页就像楼层索引。想装机器、查健康、看日志、管会话、调浏览器、接 Gateway，都能从这里找到门。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>50+ 命令一页查，全局标志与输出风格先看懂</h2>
+      <p>这是 OpenClaw CLI 的完整命令索引，包含 setup、onboard、configure 等 50 多个子命令的入口。读之前先记住 `--dev` 和 `--profile` 两个全局标志，它们能隔离状态、避免污染生产环境。输出默认带 ANSI 颜色和进度条，但管道重定向或 `--json` 时会自动关闭，别被终端里的花哨样式骗了。</p>
     </div>
     <div class="overview-meta">
-      <span>适合刚打开命令行，还不知道该先敲哪条的人</span>
-      <span>这页最重要的是先分清：安装类、查看类、控制类、扩展类，是四种不同动作</span>
+      <span>原文共 91 节，先看 Start Here</span>
+      <span>路径：/cli/index</span>
       <a href="https://docs.openclaw.ai/cli/index" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

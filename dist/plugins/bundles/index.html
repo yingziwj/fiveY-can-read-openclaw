@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>插件捆绑包：Plugin Bundles | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="插件捆绑包是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Plugin Bundles | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Bundle 是来自三个生态的插件包，OpenClaw 会自动检测格式并映射为原生技能、钩子、MCP 工具等。先跑 openclaw plugins install 装包，再用 openclaw plugins list 确认识别为 Format: bundle 即可。注意：Bundle 不是原生插件，功能映射有限，…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="插件捆绑包：Plugin Bundles | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="插件捆绑包是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Plugin Bundles | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Bundle 是来自三个生态的插件包，OpenClaw 会自动检测格式并映射为原生技能、钩子、MCP 工具等。先跑 openclaw plugins install 装包，再用 openclaw plugins list 确认识别为 Format: bundle 即可。注意：Bundle 不是原生插件，功能映射有限，…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/plugins/bundles/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="插件捆绑包：Plugin Bundles | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="插件捆绑包是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Plugin Bundles | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Bundle 是来自三个生态的插件包，OpenClaw 会自动检测格式并映射为原生技能、钩子、MCP 工具等。先跑 openclaw plugins install 装包，再用 openclaw plugins list 确认识别为 Format: bundle 即可。注意：Bundle 不是原生插件，功能映射有限，…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/plugins/bundles/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"插件捆绑包：Plugin Bundles","description":"插件捆绑包是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/plugins/bundles/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Plugin Bundles","description":"Bundle 是来自三个生态的插件包，OpenClaw 会自动检测格式并映射为原生技能、钩子、MCP 工具等。先跑 openclaw plugins install 装包，再用 openclaw plugins list 确认识别为 Format: bundle 即可。注意：Bundle 不是原生插件，功能映射有限，…","url":"https://fivey-can-read-openclaw.pages.dev/plugins/bundles/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Plugins","item":"https://fivey-can-read-openclaw.pages.dev/plugins/bundles/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Plugins 导读</p>
-        <h1>如何安装和使用第三方插件包</h1>
-        <p class="hero-copy">这页教你如何将Codex、Claude或Cursor格式的插件包安装到OpenClaw中，并自动映射为原生功能。安装时最容易错在没区分插件包和原生插件，插件包功能有限且信任边界更窄。安装后务必用`openclaw plugins list`检查格式和子类型，确认检测成功。</p>
+        <h1>不用重写，直接装：Codex、Claude、Cursor 的插件包怎么接入 OpenClaw</h1>
+        <p class="hero-copy">Bundle 是来自三个生态的插件包，OpenClaw 会自动检测格式并映射为原生技能、钩子、MCP 工具等。先跑 `openclaw plugins install` 装包，再用 `openclaw plugins list` 确认识别为 `Format: bundle` 即可。注意：Bundle 不是原生插件，功能映射有限，不是所有特性都能跑。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:plugins.bundles.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🎁 Bundles 不是 OpenClaw 自己做的插件，它更像别人送来的一盒“现成能力礼物”</h2>
-      <p>这页讲的是：OpenClaw 不只会认自己家的 native plugin，还能认 Codex、Claude、Cursor 这些外面世界里的“能力包”。</p>
-      <p>你可以把 bundle 想成别人打包好的小盒子。OpenClaw 拆开以后，不会把所有东西都照单全收，而是只把能安全映射的那部分接进来。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>不用重写，直接装：Codex、Claude、Cursor 的插件包怎么接入 OpenClaw</h2>
+      <p>Bundle 是来自三个生态的插件包，OpenClaw 会自动检测格式并映射为原生技能、钩子、MCP 工具等。先跑 `openclaw plugins install` 装包，再用 `openclaw plugins list` 确认识别为 `Format: bundle` 即可。注意：Bundle 不是原生插件，功能映射有限，不是所有特性都能跑。</p>
     </div>
     <div class="overview-meta">
-      <span>适合第一次接触外部 bundle 的人</span>
-      <span>这页最重要的是先分清 bundle 和 native plugin 不是同一种东西</span>
+      <span>原文共 18 节，先看 Start Here</span>
+      <span>路径：/plugins/bundles</span>
       <a href="https://docs.openclaw.ai/plugins/bundles" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

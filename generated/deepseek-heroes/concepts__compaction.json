@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:47:48.423Z",
+  "generatedAt": "2026-05-06T15:05:03.485Z",
   "pathname": "/concepts/compaction",
   "title": "Compaction",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "对话压缩机制：如何让长对话继续运行",
-    "heroSummary": "这页解释当对话接近模型上下文限制时，系统如何自动压缩旧消息为摘要来维持对话。你应该先了解自动压缩的触发条件和手动压缩命令的用法。最容易忽略的是压缩前系统会自动提醒保存重要信息到记忆文件，防止关键内容丢失。"
+    "heroTitle": "对话太长？自动压缩旧消息，腾出上下文窗口",
+    "heroSummary": "当对话接近模型上下文窗口上限时，OpenClaw 会自动把早期内容压缩成摘要，保留最近消息和工具调用配对。注意：压缩只改变模型下次看到的输入，完整历史仍在磁盘上。如果遇到上下文溢出错误，系统会先压缩再重试，你可以在 `openclaw.json` 的 `agents.defaults.compaction` 中调整模式、目标 token 数，甚至指定专用模型来生成摘要。"
   }
 }

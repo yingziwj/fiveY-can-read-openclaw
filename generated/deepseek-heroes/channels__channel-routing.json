@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:47:11.099Z",
+  "generatedAt": "2026-05-06T15:04:40.312Z",
   "pathname": "/channels/channel-routing",
   "title": "Channel Routing",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "通道路由配置与规则详解",
-    "heroSummary": "本页详细说明OpenClaw如何将回复路由回消息来源的通道，路由过程由主机配置决定而非模型选择。配置多账户时务必设置明确的默认账户，否则回退路由可能选择第一个规范化账户ID。路由规则按优先级匹配绑定条件，所有提供的字段必须完全匹配才能应用对应代理。"
+    "heroTitle": "消息从哪来回哪去：路由规则与频道绑定",
+    "heroSummary": "OpenClaw 的路由是确定性的，模型不选频道，全靠配置决定回复路径。先看“Routing rules”那 8 级优先级，搞懂 agent 是怎么被选中的；最容易踩坑的是多账号场景下没设 defaultAccount，系统会按首字母挑账号，跟你想要的很可能不一样。"
   }
 }

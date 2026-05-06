@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>fal 提供商：fal | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="fal 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>fal | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="OpenClaw 内置了 fal provider，支持图片和视频生成。第一步是用 openclaw onboard --auth-choice fal-api-key 设置 API 密钥，然后在 agent 默认配置里指定模型。注意图片编辑不支持 aspectRatio 覆盖，视频生成是队列式的异步任务。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="fal 提供商：fal | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="fal 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="fal | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="OpenClaw 内置了 fal provider，支持图片和视频生成。第一步是用 openclaw onboard --auth-choice fal-api-key 设置 API 密钥，然后在 agent 默认配置里指定模型。注意图片编辑不支持 aspectRatio 覆盖，视频生成是队列式的异步任务。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/providers/fal/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="fal 提供商：fal | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="fal 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="fal | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="OpenClaw 内置了 fal provider，支持图片和视频生成。第一步是用 openclaw onboard --auth-choice fal-api-key 设置 API 密钥，然后在 agent 默认配置里指定模型。注意图片编辑不支持 aspectRatio 覆盖，视频生成是队列式的异步任务。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/providers/fal/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"fal 提供商：fal","description":"fal 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/providers/fal/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"fal","description":"OpenClaw 内置了 fal provider，支持图片和视频生成。第一步是用 openclaw onboard --auth-choice fal-api-key 设置 API 密钥，然后在 agent 默认配置里指定模型。注意图片编辑不支持 aspectRatio 覆盖，视频生成是队列式的异步任务。","url":"https://fivey-can-read-openclaw.pages.dev/providers/fal/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Providers","item":"https://fivey-can-read-openclaw.pages.dev/providers/fal/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Providers 导读</p>
-        <h1>配置fal提供商进行图像和视频生成</h1>
-        <p class="hero-copy">这页说明如何在OpenClaw中设置和使用fal提供商来生成图像和视频。首先需要设置FAL_KEY环境变量，然后配置默认的图像或视频模型。注意fal的图像编辑端点目前不支持某些功能，视频生成采用队列提交方式处理长时间任务。</p>
+        <h1>用 fal 跑图片和视频生成：先配好 FAL_KEY，再选模型</h1>
+        <p class="hero-copy">OpenClaw 内置了 fal provider，支持图片和视频生成。第一步是用 `openclaw onboard --auth-choice fal-api-key` 设置 API 密钥，然后在 agent 默认配置里指定模型。注意图片编辑不支持 `aspectRatio` 覆盖，视频生成是队列式的异步任务。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:providers.fal.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>⚡ fal 像一座速度快、会顺手做图和做视频的云工厂</h2>
-      <p>它既能出图，也能出视频，OpenClaw 用它时主要记住：一个 key、两条能力线、默认模型是什么。</p>
-      <p>这页不是最复杂，但很适合拿来当 image/video 双用 provider 的样本。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用 fal 跑图片和视频生成：先配好 FAL_KEY，再选模型</h2>
+      <p>OpenClaw 内置了 fal provider，支持图片和视频生成。第一步是用 `openclaw onboard --auth-choice fal-api-key` 设置 API 密钥，然后在 agent 默认配置里指定模型。注意图片编辑不支持 `aspectRatio` 覆盖，视频生成是队列式的异步任务。</p>
     </div>
     <div class="overview-meta">
-      <span>适合图像和视频都要的人</span>
-      <span>重点是 `FAL_KEY`、`fal/fal-ai/flux/dev`、`fal/fal-ai/minimax/video-01-live`</span>
+      <span>原文共 5 节，先看 Start Here</span>
+      <span>路径：/providers/fal</span>
       <a href="https://docs.openclaw.ai/providers/fal" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

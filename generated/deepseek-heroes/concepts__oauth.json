@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:48:05.026Z",
+  "generatedAt": "2026-05-06T15:05:14.974Z",
   "pathname": "/concepts/oauth",
   "title": "OAuth",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw OAuth 配置与令牌管理",
-    "heroSummary": "本页详细说明如何在 OpenClaw 中配置 OAuth 认证，特别是针对 OpenAI Codex 和 Anthropic Claude CLI 的接入方式。配置时需注意令牌存储位置在 `~/.openclaw/agents/<agentId>/agent/auth-profiles.json`，并避免因多端登录导致令牌失效。对于生产环境，Anthropic 推荐使用 API 密钥认证以确保安全。"
+    "heroTitle": "OAuth 接入：分清谁负责配对，谁负责放行群消息",
+    "heroSummary": "OpenClaw 对 OpenAI Codex 支持 OAuth 订阅认证，对 Anthropic 则优先复用 Claude CLI 本地登录。最容易踩的坑是：多个 OAuth 客户端同时登录会互相挤掉刷新令牌，解决方案是用 auth-profiles.json 做令牌池，让所有凭证从同一位置读取。"
   }
 }

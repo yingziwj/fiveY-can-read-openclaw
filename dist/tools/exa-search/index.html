@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exa 搜索：Exa Search | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Exa 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Exa Search | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页教你把 Exa 的 neural / keyword / hybrid 搜索接到 OpenClaw 的 web_search 工具上。最优先做的是去 exa.ai 注册并拿到 API Key，然后要么设环境变量 EXA_API_KEY，要么在配置里填 apiKey。容易漏的是：配置里 provider 要写成…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Exa 搜索：Exa Search | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Exa 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Exa Search | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页教你把 Exa 的 neural / keyword / hybrid 搜索接到 OpenClaw 的 web_search 工具上。最优先做的是去 exa.ai 注册并拿到 API Key，然后要么设环境变量 EXA_API_KEY，要么在配置里填 apiKey。容易漏的是：配置里 provider 要写成…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/tools/exa-search/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Exa 搜索：Exa Search | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Exa 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Exa Search | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页教你把 Exa 的 neural / keyword / hybrid 搜索接到 OpenClaw 的 web_search 工具上。最优先做的是去 exa.ai 注册并拿到 API Key，然后要么设环境变量 EXA_API_KEY，要么在配置里填 apiKey。容易漏的是：配置里 provider 要写成…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/tools/exa-search/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Exa 搜索：Exa Search","description":"Exa 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/tools/exa-search/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Exa Search","description":"这一页教你把 Exa 的 neural / keyword / hybrid 搜索接到 OpenClaw 的 web_search 工具上。最优先做的是去 exa.ai 注册并拿到 API Key，然后要么设环境变量 EXA_API_KEY，要么在配置里填 apiKey。容易漏的是：配置里 provider 要写成…","url":"https://fivey-can-read-openclaw.pages.dev/tools/exa-search/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://fivey-can-read-openclaw.pages.dev/tools/exa-search/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Tools 导读</p>
-        <h1>配置 Exa 作为 OpenClaw 的网页搜索工具</h1>
-        <p class="hero-copy">这页教你如何将 Exa AI 接入 OpenClaw 作为 `web_search` 的搜索提供商。首先需要获取并配置 API 密钥，最容易出错的地方是混淆环境变量和配置文件两种设置方式。</p>
+        <h1>Exa 搜索接入：先拿 API Key，再配 provider</h1>
+        <p class="hero-copy">这一页教你把 Exa 的 neural / keyword / hybrid 搜索接到 OpenClaw 的 web_search 工具上。最优先做的是去 exa.ai 注册并拿到 API Key，然后要么设环境变量 EXA_API_KEY，要么在配置里填 apiKey。容易漏的是：配置里 provider 要写成 &quot;exa&quot;，而且如果用了环境变量，配置里就别再写 apiKey，否则会冲突。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:tools.exa-search.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧠 Exa Search 像一个“会想办法把资料抄得更完整的读书小助手”</h2>
-      <p>Brave 更像帮你先找到门牌，Exa 更像会顺手把门后面的重点也抄给你。它支持神经搜索、快速搜索、深搜，还能把内容摘要、亮句、全文一起带回来。</p>
-      <p>所以这页真正的核心不是“能不能搜”，而是“搜完以后，你能拿到多少像样的内容”。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Exa 搜索接入：先拿 API Key，再配 provider</h2>
+      <p>这一页教你把 Exa 的 neural / keyword / hybrid 搜索接到 OpenClaw 的 web_search 工具上。最优先做的是去 exa.ai 注册并拿到 API Key，然后要么设环境变量 EXA_API_KEY，要么在配置里填 apiKey。容易漏的是：配置里 provider 要写成 &quot;exa&quot;，而且如果用了环境变量，配置里就别再写 apiKey，否则会冲突。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想让 OpenClaw 直接拿到更丰富搜索结果的人</span>
-      <span>这页最重要的是看懂：Exa 不只是搜索，也会做内容抽取</span>
+      <span>原文共 8 节，先看 Start Here</span>
+      <span>路径：/tools/exa-search</span>
       <a href="https://docs.openclaw.ai/tools/exa-search" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

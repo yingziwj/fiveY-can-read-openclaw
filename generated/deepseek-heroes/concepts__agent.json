@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:47:43.553Z",
+  "generatedAt": "2026-05-06T15:05:00.259Z",
   "pathname": "/concepts/agent",
   "title": "Agent Runtime",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw 代理运行环境配置指南",
-    "heroSummary": "这页详细说明了 OpenClaw 代理的唯一工作目录设置和启动文件注入机制。配置代理时，必须先通过 `openclaw setup` 初始化工作空间，否则代理无法正常启动。最容易出错的地方是混淆了 `TOOLS.md` 文件的作用——它只是使用指南，并不控制工具的实际可用性。"
+    "heroTitle": "Agent Runtime 是 OpenClaw 的大脑，它怎么工作、在哪工作、带什么文件启动",
+    "heroSummary": "先搞清楚工作目录（workspace）在哪，所有工具和上下文都只在这个目录里跑。启动时自动注入 6 个引导文件（AGENTS.md、SOUL.md 等），缺文件会插一行标记，不会报错。内置工具始终可用，TOOLS.md 只是你的使用笔记，不控制工具开关。"
   }
 }

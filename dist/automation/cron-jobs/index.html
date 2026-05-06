@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scheduled Tasks | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Scheduled Tasks是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="先跑 openclaw cron add --at &quot;2026-02-01T16:00:00Z&quot; --session main --wake now --delete-after-run 创建一个一次性提醒，再用 cron list 确认。注意：同时指定日与周几时是“或”逻辑（每月触发 5~6 次而非 0~1 次），…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Scheduled Tasks | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Scheduled Tasks是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="先跑 openclaw cron add --at &quot;2026-02-01T16:00:00Z&quot; --session main --wake now --delete-after-run 创建一个一次性提醒，再用 cron list 确认。注意：同时指定日与周几时是“或”逻辑（每月触发 5~6 次而非 0~1 次），…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/automation/cron-jobs/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Scheduled Tasks | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Scheduled Tasks是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="先跑 openclaw cron add --at &quot;2026-02-01T16:00:00Z&quot; --session main --wake now --delete-after-run 创建一个一次性提醒，再用 cron list 确认。注意：同时指定日与周几时是“或”逻辑（每月触发 5~6 次而非 0~1 次），…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/automation/cron-jobs/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Scheduled Tasks","description":"Scheduled Tasks是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/automation/cron-jobs/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Scheduled Tasks","description":"先跑 openclaw cron add --at \"2026-02-01T16:00:00Z\" --session main --wake now --delete-after-run 创建一个一次性提醒，再用 cron list 确认。注意：同时指定日与周几时是“或”逻辑（每月触发 5~6 次而非 0~1 次），…","url":"https://fivey-can-read-openclaw.pages.dev/automation/cron-jobs/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Automation","item":"https://fivey-can-read-openclaw.pages.dev/automation/cron-jobs/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Automation 导读</p>
-        <h1>定时任务配置与执行详解</h1>
-        <p class="hero-copy">本页详细说明如何通过命令行配置定时任务，包括一次性提醒、固定间隔和Cron表达式三种调度方式。配置时需特别注意时区设置，默认UTC时间可能导致执行时间偏差。执行模式分为主会话、独立会话和自定义会话，独立会话适合后台报告任务，能自动清理浏览器进程避免残留。</p>
+        <h1>Cron 定时任务：Gateway 内置调度器，持久化、可唤醒、能回传结果</h1>
+        <p class="hero-copy">先跑 `openclaw cron add --at &quot;2026-02-01T16:00:00Z&quot; --session main --wake now --delete-after-run` 创建一个一次性提醒，再用 `cron list` 确认。注意：同时指定日与周几时是“或”逻辑（每月触发 5~6 次而非 0~1 次），如需“与”逻辑请用 `+` 修饰符。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>⏰ Cron 像 Gateway 里的“定时广播员”</h2><p>这页最核心的意思很简单：如果你想让 OpenClaw 在某个准确时间做事，或者隔一阵子自己醒来做事，Cron 就是那个拿着时钟和任务小纸条的广播员。</p><p>它不是模型自己会记得，而是 Gateway 把任务记在本地账本里，到点再把老师叫醒。</p></div><div class="overview-meta"><span>适合做定时提醒、日报、独立后台任务</span><span>重点是“什么时候做”加“做什么”</span><a href="https://docs.openclaw.ai/automation/cron-jobs" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:automation.cron-jobs.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Cron 定时任务：Gateway 内置调度器，持久化、可唤醒、能回传结果</h2>
+      <p>先跑 `openclaw cron add --at &quot;2026-02-01T16:00:00Z&quot; --session main --wake now --delete-after-run` 创建一个一次性提醒，再用 `cron list` 确认。注意：同时指定日与周几时是“或”逻辑（每月触发 5~6 次而非 0~1 次），如需“与”逻辑请用 `+` 修饰符。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 27 节，先看 Start Here</span>
+      <span>路径：/automation/cron-jobs</span>
+      <a href="https://docs.openclaw.ai/automation/cron-jobs" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一步</p><h2>🧭 先抓住两个问题：什么时候做？在哪儿做？</h2><p>官方写得很长，其实都围着这两件事在转。</p></div><div class="story-grid"><div class="story-card"><div class="story-card-label">📅 什么时候做</div><p>一次性、每隔多久、按日历钟点，这些都归 schedule 管。</p></div><div class="story-card"><div class="story-card-label">🏠 在哪儿做</div><p>是塞进主会话、开独立小房间跑，还是绑定当前会话继续聊，这归 sessionTarget 管。</p></div><div class="source-card"><div class="story-card-label">🎈 一句话</div><p>Cron 就是“定时 + 任务地点”。</p></div></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第二步</p><h2>🏠 主会话和隔离会话，像“在客厅提醒”还是“去小黑屋单独干活”</h2><p>这是这页最值得读懂的地方。</p></div><div class="home-grid"><article class="home-card"><span class="home-card-index">🛋</span><h2>Main session</h2><p>像把一张提醒纸条放进客厅，等主老师下一次 heartbeat 来看到并处理。</p></article><article class="home-card"><span class="home-card-index">🧪</span><h2>Isolated</h2><p>像单独开一间小房间，叫老师进去把这件事做完，不打扰客厅聊天。</p></article><article class="home-card"><span class="home-card-index">🪢</span><h2>Current session</h2><p>像把任务绑到你现在这本对话笔记上，后面继续沿着这条线做。</p></article><article class="home-card"><span class="home-card-index">🏷</span><h2>Custom session</h2><p>像给某类固定工作单独准备一本长期任务本。</p></article></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第三步</p><h2>🛠 那几条 CLI 命令，像“给广播员写任务卡”</h2><p>别把它们只当命令看。每个 flag 都像在填任务卡上的一格。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label"><code>--at "2026-02-01T16:00:00Z"</code></div><p>像写“这张卡就在这个准确时刻响铃”。</p></div><div class="source-card"><div class="story-card-label"><code>--cron "0 7 * * *"</code></div><p>像写“每天早上 7 点，固定广播一次”。</p></div><div class="source-card"><div class="story-card-label"><code>--session isolated</code></div><p>像在卡片上写“别在客厅吵，去小房间单独做”。</p></div><div class="source-card"><div class="story-card-label"><code>--announce --channel slack --to "channel:..."</code></div><p>像写明“做完以后，把结果送到这扇门口去报信”。</p></div></div></section>

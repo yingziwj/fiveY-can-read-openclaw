@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Location Command | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Location Command是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="先搞清楚：你调的是 node.invoke(&#39;location.get&#39;)，但真正决定能不能拿到位置的是 OS 权限模型。页面里最关键的是那个选择器——Off / While Using，不是简单的开关。最容易踩的坑：你选了 While Using，系统可能只给一次授权，或者根本不给；Precise Location…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Location Command | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Location Command是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="先搞清楚：你调的是 node.invoke(&#39;location.get&#39;)，但真正决定能不能拿到位置的是 OS 权限模型。页面里最关键的是那个选择器——Off / While Using，不是简单的开关。最容易踩的坑：你选了 While Using，系统可能只给一次授权，或者根本不给；Precise Location…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/nodes/location-command/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Location Command | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Location Command是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="先搞清楚：你调的是 node.invoke(&#39;location.get&#39;)，但真正决定能不能拿到位置的是 OS 权限模型。页面里最关键的是那个选择器——Off / While Using，不是简单的开关。最容易踩的坑：你选了 While Using，系统可能只给一次授权，或者根本不给；Precise Location…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/nodes/location-command/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Location Command","description":"Location Command是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/nodes/location-command/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Location Command","description":"先搞清楚：你调的是 node.invoke('location.get')，但真正决定能不能拿到位置的是 OS 权限模型。页面里最关键的是那个选择器——Off / While Using，不是简单的开关。最容易踩的坑：你选了 While Using，系统可能只给一次授权，或者根本不给；Precise Location…","url":"https://fivey-can-read-openclaw.pages.dev/nodes/location-command/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Nodes","item":"https://fivey-can-read-openclaw.pages.dev/nodes/location-command/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Nodes 导读</p>
-        <h1>Location命令配置与权限映射</h1>
-        <p class="hero-copy">这页详细说明如何通过node.invoke调用location.get命令，以及对应的系统权限设置模型。配置时需注意Android应用默认关闭位置服务，需在应用内选择“使用期间”模式来请求前台权限。最容易出错的是iOS/Android的精确位置是独立开关，与基础位置权限分开管理，系统实际授权可能与应用请求不一致。</p>
+        <h1>location.get 权限不是开关，是三层博弈</h1>
+        <p class="hero-copy">先搞清楚：你调的是 node.invoke(&#39;location.get&#39;)，但真正决定能不能拿到位置的是 OS 权限模型。页面里最关键的是那个选择器——Off / While Using，不是简单的开关。最容易踩的坑：你选了 While Using，系统可能只给一次授权，或者根本不给；Precise Location 是独立开关，iOS 14+ 和 Android 的 fine/coarse 各管各的。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>📍 Location Command 这页，其实是在讲“节点能不能把它现在的位置报出来，以及报到多精确”</h2><p>这不是默认全开的能力，而是要看设备设置、系统授权、以及是否允许精确定位。</p></div><div class="overview-meta"><span>节点定位能力</span><span>重点是 off / whileUsing / preciseEnabled</span><a href="https://docs.openclaw.ai/nodes/location-command" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:nodes.location-command.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>location.get 权限不是开关，是三层博弈</h2>
+      <p>先搞清楚：你调的是 node.invoke(&#39;location.get&#39;)，但真正决定能不能拿到位置的是 OS 权限模型。页面里最关键的是那个选择器——Off / While Using，不是简单的开关。最容易踩的坑：你选了 While Using，系统可能只给一次授权，或者根本不给；Precise Location 是独立开关，iOS 14+ 和 Android 的 fine/coarse 各管各的。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 9 节，先看 Start Here</span>
+      <span>路径：/nodes/location-command</span>
+      <a href="https://docs.openclaw.ai/nodes/location-command" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>🧭 官方没用简单开关，而是用“模式选择器”</h2><p>因为位置权限本来就不是单一开或关。</p></div><div class="home-grid"><article class="home-card"><span class="home-card-index">⛔</span><h2><code>off</code></h2><p>完全不报位置，像把定位芯片盖住。</p></article><article class="home-card"><span class="home-card-index">🚶</span><h2><code>whileUsing</code></h2><p>只在你正在使用 app 时给位置，比较像“当面借用一下地图”。</p></article><article class="home-card"><span class="home-card-index">🎯</span><h2><code>preciseEnabled</code></h2><p>这决定给的是精确坐标还是比较模糊的大概区域。</p></article><article class="home-card"><span class="home-card-index">📱</span><h2>OS 最终拍板</h2><p>应用能请求，但系统设置才是真正最后盖章的人。</p></article></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第二站</p><h2>🪪 UI 里的选择只是“我想申请什么级别”，不等于系统一定答应</h2><p>所以官方才会强调：选择器驱动请求，实际授予还是看操作系统。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label">iOS / macOS</div><p>系统可能给你 While Using，也可能有更高一档 Always，但最终决定权不在 OpenClaw 手里。</p></div><div class="source-card"><div class="story-card-label">Android</div><p>当前更偏前台定位，说明这边管得更紧。</p></div><div class="source-card"><div class="story-card-label"><code>location.get</code></div><p>这就是实际问设备“你现在在哪儿”的命令入口。</p></div><div class="source-card"><div class="story-card-label">🎈 最后记一句</div><p>这页的重点不是地图本身，而是权限层级和精度层级。</p></div></div></section>
 

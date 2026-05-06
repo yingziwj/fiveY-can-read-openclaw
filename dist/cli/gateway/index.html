@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>gateway 命令：gateway | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="gateway 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>gateway | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Gateway 是 OpenClaw 的 WebSocket 服务器，管理通道、节点、会话和钩子。首次启动前先确认 gateway.mode=local 已写入配置，否则必须加 --allow-unconfigured 才能跑起来。绑定非回环地址时默认禁止无认证连接，这是安全护栏，别硬关。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="gateway 命令：gateway | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="gateway 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="gateway | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Gateway 是 OpenClaw 的 WebSocket 服务器，管理通道、节点、会话和钩子。首次启动前先确认 gateway.mode=local 已写入配置，否则必须加 --allow-unconfigured 才能跑起来。绑定非回环地址时默认禁止无认证连接，这是安全护栏，别硬关。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/gateway/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="gateway 命令：gateway | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="gateway 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="gateway | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Gateway 是 OpenClaw 的 WebSocket 服务器，管理通道、节点、会话和钩子。首次启动前先确认 gateway.mode=local 已写入配置，否则必须加 --allow-unconfigured 才能跑起来。绑定非回环地址时默认禁止无认证连接，这是安全护栏，别硬关。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/gateway/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"gateway 命令：gateway","description":"gateway 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/gateway/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"gateway","description":"Gateway 是 OpenClaw 的 WebSocket 服务器，管理通道、节点、会话和钩子。首次启动前先确认 gateway.mode=local 已写入配置，否则必须加 --allow-unconfigured 才能跑起来。绑定非回环地址时默认禁止无认证连接，这是安全护栏，别硬关。","url":"https://fivey-can-read-openclaw.pages.dev/cli/gateway/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/gateway/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>Gateway CLI 命令详解与配置要点</h1>
-        <p class="hero-copy">这页详细说明了 OpenClaw 网关服务器的命令行操作，包括启动、配置选项和查询命令。启动网关时，必须先确保配置文件中的 gateway.mode=local 已设置，否则需要使用 --allow-unconfigured 参数。使用 --url 参数连接远程网关时，必须同时提供 --token 或 --password 凭证，否则会报错。</p>
+        <h1>启动 Gateway 前必须搞懂的三件事</h1>
+        <p class="hero-copy">Gateway 是 OpenClaw 的 WebSocket 服务器，管理通道、节点、会话和钩子。首次启动前先确认 `gateway.mode=local` 已写入配置，否则必须加 `--allow-unconfigured` 才能跑起来。绑定非回环地址时默认禁止无认证连接，这是安全护栏，别硬关。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.gateway.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🏭 <code>openclaw gateway</code> 像机房值班员的整套工具包</h2>
-      <p>这页不是在解释 Gateway 是什么楼，而是在讲：当你站在命令行前，想把这间机房开起来、问状态、远程探测、重启服务时，该按哪几个按钮。</p>
-      <p>所以它更像“值班员操作手册”。不是概念页，而是实操页。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>启动 Gateway 前必须搞懂的三件事</h2>
+      <p>Gateway 是 OpenClaw 的 WebSocket 服务器，管理通道、节点、会话和钩子。首次启动前先确认 `gateway.mode=local` 已写入配置，否则必须加 `--allow-unconfigured` 才能跑起来。绑定非回环地址时默认禁止无认证连接，这是安全护栏，别硬关。</p>
     </div>
     <div class="overview-meta">
-      <span>适合需要亲手启动、巡检、重启 Gateway 的人</span>
-      <span>这页最重要的是分清：启动、查询、探测、服务托管，是四套不同动作</span>
+      <span>原文共 13 节，先看 Start Here</span>
+      <span>路径：/cli/gateway</span>
       <a href="https://docs.openclaw.ai/cli/gateway" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

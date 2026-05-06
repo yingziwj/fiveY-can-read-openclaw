@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nix 安装：Nix | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Nix 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Nix | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="nix-openclaw 是一个 Home Manager 模块，帮你一次性装好 Gateway、macOS 应用、whisper、spotify 等工具，全部版本锁定。先拿 Determinate Nix 装好 Nix，再复制模板 flake，填上 bot token 和 API key，最后 home-manag…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Nix 安装：Nix | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Nix 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Nix | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="nix-openclaw 是一个 Home Manager 模块，帮你一次性装好 Gateway、macOS 应用、whisper、spotify 等工具，全部版本锁定。先拿 Determinate Nix 装好 Nix，再复制模板 flake，填上 bot token 和 API key，最后 home-manag…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/install/nix/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Nix 安装：Nix | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Nix 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Nix | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="nix-openclaw 是一个 Home Manager 模块，帮你一次性装好 Gateway、macOS 应用、whisper、spotify 等工具，全部版本锁定。先拿 Determinate Nix 装好 Nix，再复制模板 flake，填上 bot token 和 API key，最后 home-manag…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/install/nix/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Nix 安装：Nix","description":"Nix 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/install/nix/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Nix","description":"nix-openclaw 是一个 Home Manager 模块，帮你一次性装好 Gateway、macOS 应用、whisper、spotify 等工具，全部版本锁定。先拿 Determinate Nix 装好 Nix，再复制模板 flake，填上 bot token 和 API key，最后 home-manag…","url":"https://fivey-can-read-openclaw.pages.dev/install/nix/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Install","item":"https://fivey-can-read-openclaw.pages.dev/install/nix/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Install 导读</p>
-        <h1>用 Nix 安装 OpenClaw 的完整指南</h1>
-        <p class="hero-copy">这页详细说明如何通过 nix-openclaw 模块以声明式方式安装 OpenClaw，包括网关、macOS 应用和工具。安装后需配置消息机器人令牌和模型提供商 API 密钥，并注意 Nix 模式会禁用自动安装流程，需手动设置环境变量。</p>
+        <h1>用 Nix 一把梭：装好 OpenClaw 全家桶，还能回滚</h1>
+        <p class="hero-copy">nix-openclaw 是一个 Home Manager 模块，帮你一次性装好 Gateway、macOS 应用、whisper、spotify 等工具，全部版本锁定。先拿 Determinate Nix 装好 Nix，再复制模板 flake，填上 bot token 和 API key，最后 home-manager switch 就能跑起来。注意：Nix 模式下自动安装和自更新会被禁用，macOS GUI 需要额外执行 defaults write 才能继承环境变量。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:install.nix.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>❄️ Nix 这页，其实是在教你“按一张非常严格的配方卡，把 OpenClaw 连同配套工具一起摆好”</h2>
-      <p>Nix 路线和普通安装最大的不同，不是命令，而是心态。普通安装像现场装配，Nix 更像照着一张写死的食谱做，每样材料和版本都尽量钉住。</p>
-      <p>所以官方才会说它是 declarative installation，还强调 rollback。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用 Nix 一把梭：装好 OpenClaw 全家桶，还能回滚</h2>
+      <p>nix-openclaw 是一个 Home Manager 模块，帮你一次性装好 Gateway、macOS 应用、whisper、spotify 等工具，全部版本锁定。先拿 Determinate Nix 装好 Nix，再复制模板 flake，填上 bot token 和 API key，最后 home-manager switch 就能跑起来。注意：Nix 模式下自动安装和自更新会被禁用，macOS GUI 需要额外执行 defaults write 才能继承环境变量。</p>
     </div>
     <div class="overview-meta">
-      <span>适合喜欢声明式配置的人</span>
-      <span>重点是 nix-openclaw、Home Manager、Nix mode</span>
+      <span>原文共 7 节，先看 Start Here</span>
+      <span>路径：/install/nix</span>
       <a href="https://docs.openclaw.ai/install/nix" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

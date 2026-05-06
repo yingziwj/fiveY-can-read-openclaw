@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:54:27.742Z",
+  "generatedAt": "2026-05-06T15:09:06.403Z",
   "pathname": "/help/troubleshooting",
   "title": "General Troubleshooting",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw 故障排查快速入口",
-    "heroSummary": "这页是排查 OpenClaw 问题的总入口，提供一套 60 秒内可执行的诊断命令序列。最该先按顺序运行 `openclaw status` 到 `openclaw logs --follow` 这组命令，检查网关连通性和服务状态。最容易搞错的是把 `RPC: limited - missing scope: operator.read` 这类降级诊断误判为连接失败，实际网关可能仍可访问。"
+    "heroTitle": "2分钟故障排查：先跑这7条命令，再查具体问题",
+    "heroSummary": "遇到OpenClaw异常时，按顺序执行`openclaw status`→`gateway probe`→`doctor`→`logs --follow`，输出中看到`works`或`audit ok`即为正常。最容易忽略的是`gateway probe`返回`RPC: limited - missing scope: operator.read`并非连接失败，只是诊断降级。如果本地OpenAI后端直连正常但通过OpenClaw代理失败，先检查`requiresStringContent`和`supportsTools`两个兼容开关。"
   }
 }

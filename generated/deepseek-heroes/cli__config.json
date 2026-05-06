@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:53:29.152Z",
+  "generatedAt": "2026-05-06T15:08:28.441Z",
   "pathname": "/cli/config",
   "title": "config",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "openclaw config 命令详解",
-    "heroSummary": "这页讲解如何用命令行工具直接读写 openclaw.json 配置文件，包括获取、设置、验证配置项和查看结构。最该先看的是 config 命令的基本用法和路径语法，因为这是所有操作的基础。最容易搞错的地方是设置值时，如果不加 --strict-json 参数，系统会尝试用 JSON5 解析，否则当字符串处理，这可能导致非预期的配置值。"
+    "heroTitle": "用命令行改配置，不用进交互向导",
+    "heroSummary": "`openclaw config` 让你在脚本或终端里直接 get/set/unset 配置项，路径用点号或方括号（如 `agents.list[0].id`）。最常用的场景是快速改一个值：`openclaw config set agents.defaults.heartbeat.every \"2h\"`。注意值默认按 JSON5 解析，字符串要加引号，否则可能被当成变量。"
   }
 }

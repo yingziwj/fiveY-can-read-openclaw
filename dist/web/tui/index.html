@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TUI | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="TUI是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="TUI 是 OpenClaw 的终端交互界面，核心是 agent + session 模型。快速上手只需两步：启动 Gateway 后执行 openclaw tui，输入消息即可。注意消息默认不发送给 provider，需手动开启 /deliver on 或用 --deliver 启动。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="TUI | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="TUI是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="TUI 是 OpenClaw 的终端交互界面，核心是 agent + session 模型。快速上手只需两步：启动 Gateway 后执行 openclaw tui，输入消息即可。注意消息默认不发送给 provider，需手动开启 /deliver on 或用 --deliver 启动。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/web/tui/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="TUI | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="TUI是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="TUI 是 OpenClaw 的终端交互界面，核心是 agent + session 模型。快速上手只需两步：启动 Gateway 后执行 openclaw tui，输入消息即可。注意消息默认不发送给 provider，需手动开启 /deliver on 或用 --deliver 启动。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/web/tui/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"TUI","description":"TUI是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/web/tui/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"TUI","description":"TUI 是 OpenClaw 的终端交互界面，核心是 agent + session 模型。快速上手只需两步：启动 Gateway 后执行 openclaw tui，输入消息即可。注意消息默认不发送给 provider，需手动开启 /deliver on 或用 --deliver 启动。","url":"https://fivey-can-read-openclaw.pages.dev/web/tui/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Web","item":"https://fivey-can-read-openclaw.pages.dev/web/tui/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Web 导读</p>
-        <h1>终端界面快速上手与核心配置</h1>
-        <p class="hero-copy">这页教你如何启动和使用OpenClaw的终端界面，重点说明消息发送与交付的开关设置。启动后先检查界面各区域状态，特别注意默认情况下消息不会发送到外部服务商，需要手动开启交付功能。</p>
+        <h1>在终端里跟 AI 聊天：先启动 Gateway，再跑 openclaw tui</h1>
+        <p class="hero-copy">TUI 是 OpenClaw 的终端交互界面，核心是 agent + session 模型。快速上手只需两步：启动 Gateway 后执行 openclaw tui，输入消息即可。注意消息默认不发送给 provider，需手动开启 /deliver on 或用 --deliver 启动。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:web.tui.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>⌨️ TUI 就像“把 OpenClaw 总控室搬进你的终端里”</h2>
-      <p>如果 Dashboard 是浏览器里的总控室，那 TUI 就像把其中最常用的一套控制台塞进终端。你不用开网页，也能在命令行里聊天、切 agent、换 session、看工具卡片、调 thinking 和 delivery。</p>
-      <p>所以这页不是“又一个聊天方式”那么简单，它更像一块给终端用户准备的控制面板。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>在终端里跟 AI 聊天：先启动 Gateway，再跑 openclaw tui</h2>
+      <p>TUI 是 OpenClaw 的终端交互界面，核心是 agent + session 模型。快速上手只需两步：启动 Gateway 后执行 openclaw tui，输入消息即可。注意消息默认不发送给 provider，需手动开启 /deliver on 或用 --deliver 启动。</p>
     </div>
     <div class="overview-meta">
-      <span>适合喜欢终端、想尽量不离开 shell 的人</span>
-      <span>这页最重要的是先看懂：TUI 连的是 Gateway，不是本地单机聊天小窗</span>
+      <span>原文共 17 节，先看 Start Here</span>
+      <span>路径：/web/tui</span>
       <a href="https://docs.openclaw.ai/web/tui" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

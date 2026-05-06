@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Groq 提供商：Groq | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Groq 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Groq | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Groq 用自研 LPU 芯片跑开源模型，推理极快，API 兼容 OpenAI。先到 console.groq.com/keys 拿 Key，设成环境变量 GROQ_API_KEY，然后在 agent 默认模型里写 groq/llama-3.3-70b-versatile 就能用。注意：如果网关以守护进程运行，Key…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Groq 提供商：Groq | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Groq 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Groq | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Groq 用自研 LPU 芯片跑开源模型，推理极快，API 兼容 OpenAI。先到 console.groq.com/keys 拿 Key，设成环境变量 GROQ_API_KEY，然后在 agent 默认模型里写 groq/llama-3.3-70b-versatile 就能用。注意：如果网关以守护进程运行，Key…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/providers/groq/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Groq 提供商：Groq | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Groq 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Groq | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Groq 用自研 LPU 芯片跑开源模型，推理极快，API 兼容 OpenAI。先到 console.groq.com/keys 拿 Key，设成环境变量 GROQ_API_KEY，然后在 agent 默认模型里写 groq/llama-3.3-70b-versatile 就能用。注意：如果网关以守护进程运行，Key…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/providers/groq/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Groq 提供商：Groq","description":"Groq 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/providers/groq/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Groq","description":"Groq 用自研 LPU 芯片跑开源模型，推理极快，API 兼容 OpenAI。先到 console.groq.com/keys 拿 Key，设成环境变量 GROQ_API_KEY，然后在 agent 默认模型里写 groq/llama-3.3-70b-versatile 就能用。注意：如果网关以守护进程运行，Key…","url":"https://fivey-can-read-openclaw.pages.dev/providers/groq/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Providers","item":"https://fivey-can-read-openclaw.pages.dev/providers/groq/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Providers 导读</p>
-        <h1>接入Groq：配置API密钥与默认模型</h1>
-        <p class="hero-copy">这页指导如何将OpenClaw连接到Groq的OpenAI兼容API，以使用其高速推理服务。首先获取GROQ_API_KEY并设置默认模型，配置时最容易忽略的是在守护进程环境中确保环境变量可访问。</p>
+        <h1>接入 Groq：先拿 API Key，再配默认模型</h1>
+        <p class="hero-copy">Groq 用自研 LPU 芯片跑开源模型，推理极快，API 兼容 OpenAI。先到 console.groq.com/keys 拿 Key，设成环境变量 GROQ_API_KEY，然后在 agent 默认模型里写 groq/llama-3.3-70b-versatile 就能用。注意：如果网关以守护进程运行，Key 必须写在 ~/.openclaw/.env 或 env.shellEnv 里，否则进程读不到。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>⚡ Groq 这页讲的是“超快开口”的开源模型跑道</h2><p>Groq 的核心卖点不是模型家族独一份，而是快。你可以把它想成一条特别快的跑道，很多开源模型在上面跑起来都显得更利索。</p></div><div class="overview-meta"><span>适合想要更快推理速度的人</span><span>重点是速度、开源模型、顺手还能做语音转写</span><a href="https://docs.openclaw.ai/providers/groq" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:providers.groq.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>接入 Groq：先拿 API Key，再配默认模型</h2>
+      <p>Groq 用自研 LPU 芯片跑开源模型，推理极快，API 兼容 OpenAI。先到 console.groq.com/keys 拿 Key，设成环境变量 GROQ_API_KEY，然后在 agent 默认模型里写 groq/llama-3.3-70b-versatile 就能用。注意：如果网关以守护进程运行，Key 必须写在 ~/.openclaw/.env 或 env.shellEnv 里，否则进程读不到。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/providers/groq</span>
+      <a href="https://docs.openclaw.ai/providers/groq" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一步</p><h2>🔑 先拿 Groq 钥匙，再选默认赛道</h2><p>这页主线很简单：先去拿 key，再告诉 OpenClaw 默认去哪条 Groq 赛道。</p></div><div class="home-grid"><article class="home-card"><span class="home-card-index">🗝</span><h2><code>GROQ_API_KEY</code></h2><p>像进入 Groq 赛道控制室的门卡。</p></article><article class="home-card"><span class="home-card-index">🏁</span><h2><code>groq/llama-3.3-70b-versatile</code></h2><p>像默认先把一位全能型大选手放在起跑线上。</p></article><article class="home-card"><span class="home-card-index">📦</span><h2>写进 <code>env</code></h2><p>像把门卡放到值班室抽屉，而不是临时夹在手里。</p></article><article class="home-card"><span class="home-card-index">🎈</span><h2>一句话</h2><p>Groq 的上手很短，先给钥匙，再选跑道。</p></article></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第二步</p><h2>🏎 “ultra-fast inference” 翻成人话，就是“同样的模型，嘴更快”</h2><p>官方在讲 LPU 硬件。你不用先懂芯片架构，只要记住它在强调的是速度。</p></div><div class="story-grid"><div class="story-card"><div class="story-card-label">Llama / Gemma / Mistral</div><p>像不同车队的车，都能开上这条 Groq 跑道。</p></div><div class="story-card"><div class="story-card-label">LPU 硬件</div><p>像专门为了这种比赛修的高速跑道，不是普通马路。</p></div><div class="source-card"><div class="story-card-label">🎈 一句话</div><p>Groq 不是在卖一颗独占脑子，而是在卖“让很多脑子跑得更快”的赛道。</p></div></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第三步</p><h2>🎧 Groq 还顺手能做语音转写，像“快嘴老师兼职做听写员”</h2><p>这页额外讲到 Whisper 转写，不是跑题，而是在告诉你 Groq 不只是文字回复。</p></div><div class="ad-placeholder"><p><code>media.understanding.audio.models: [{ provider: "groq" }]</code> 这段配置，像是在说：“以后收到语音留言，先请 Groq 家的听写员把它抄成文字，再交给后面的老师看。”</p></div></section>

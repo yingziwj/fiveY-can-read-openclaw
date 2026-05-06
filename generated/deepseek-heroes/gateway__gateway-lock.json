@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:51:38.488Z",
+  "generatedAt": "2026-05-06T15:07:10.398Z",
   "pathname": "/gateway/gateway-lock",
   "title": "Gateway Lock",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "网关端口独占锁机制",
-    "heroSummary": "这页解释网关如何通过独占WebSocket端口来防止同一主机上多个实例冲突。启动时若端口被占会立即报错，无需手动清理锁文件。注意错误信息会区分端口被占和其他绑定失败的情况。"
+    "heroTitle": "网关锁：同一台机器只能跑一个网关实例",
+    "heroSummary": "网关启动时立刻绑定 WebSocket 端口（默认 18789），端口被占就报错退出，不用锁文件，进程挂了系统自动释放。最容易踩的坑是 macOS 应用有 PID 守卫但运行时锁靠端口绑定，两个机制别搞混。"
   }
 }

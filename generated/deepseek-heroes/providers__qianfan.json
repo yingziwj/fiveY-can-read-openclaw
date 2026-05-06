@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:50:16.969Z",
+  "generatedAt": "2026-05-06T15:08:02.059Z",
   "pathname": "/providers/qianfan",
   "title": "Qianfan",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "接入百度千帆大模型平台",
-    "heroSummary": "这页教你如何配置 OpenClaw 使用百度千帆的统一 API。先准备好千帆 API 密钥，然后在配置中填入密钥并指定模型。注意 API 密钥格式是 `bce-v3/ALTAK-...`，且配置里的 `baseUrl` 必须指向 `https://qianfan.baidubce.com/v2`。"
+    "heroTitle": "用百度千帆API，改个base URL就能跑",
+    "heroSummary": "千帆是百度MaaS平台，兼容OpenAI协议，所以大部分OpenAI SDK只需改base URL为`https://qianfan.baidubce.com/v2`就能直接用。先到千帆控制台生成API Key（格式是`bce-v3/ALTAK-...`），然后跑`openclaw onboard --auth-choice qianfan-api-key`完成接入。注意：千帆走的是OpenAI兼容传输路径，不是原生OpenAI请求整形，所以provider特有参数可能不会转发。"
   }
 }

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:47:33.941Z",
+  "generatedAt": "2026-05-06T15:04:54.154Z",
   "pathname": "/channels/slack",
   "title": "Slack",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Slack 通道配置与接入指南",
-    "heroSummary": "本页详细说明如何将 OpenClaw 接入 Slack，包含 Socket Mode（默认）和 HTTP Request URLs 两种模式的完整配置步骤。配置时需重点关注 App-Level Token 和 Bot Token 的获取与填写，并确保 manifest 中的权限范围（scopes）和事件订阅（bot_events）设置正确，这是连接失败的最常见原因。"
+    "heroTitle": "Slack 接入：先拿两个 Token，再选 Socket 或 HTTP 模式",
+    "heroSummary": "这一页教你如何创建 Slack App 并配置 OpenClaw 通道。最优先完成的是生成 App-Level Token（xapp-...）和 Bot Token（xoxb-...），然后填入配置。容易搞错的是：Socket 模式需要 appToken + botToken，而 HTTP 模式需要 botToken + signingSecret，两种模式的 manifest 和配置项不同，别混用。"
   }
 }

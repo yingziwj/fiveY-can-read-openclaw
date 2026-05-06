@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:50:46.870Z",
+  "generatedAt": "2026-05-06T15:06:48.456Z",
   "pathname": "/tools/image-generation",
   "title": "Image Generation",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "配置和使用图像生成工具",
-    "heroSummary": "这页教你如何让智能体通过配置好的提供商自动生成和编辑图片。首先检查是否有可用的图像生成提供商，如果没有，需要设置API密钥或配置默认模型。最容易出错的地方是参数兼容性，不同提供商支持的参数不同，系统会自动映射最接近的尺寸或比例，但结果会报告实际应用的设置。"
+    "heroTitle": "让智能体直接生成图片，只需配好一个 API Key",
+    "heroSummary": "配置好任意一个图片生成 provider 的 API Key（如 OpenAI 或 Google），智能体就能在对话中自动调用 `image_generate` 工具生成并附上图片。默认启用，无需额外开启工具白名单。最易踩坑的是：不同 provider 支持的参数（尺寸、编辑张数）不同，当主 provider 不支持时系统会自动降级到 fallback，但返回的 `size` 等值会反映实际发送的配置，务必检查 `details.normalization` 确认是否发生了映射。"
   }
 }

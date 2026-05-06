@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:47.661Z",
+  "generatedAt": "2026-05-06T15:07:53.093Z",
   "pathname": "/platforms/mac/xpc",
   "title": "macOS IPC",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "macOS IPC架构：本地Unix socket连接节点服务与GUI应用",
-    "heroSummary": "这页详细说明OpenClaw在macOS上如何通过本地Unix socket连接节点服务与GUI应用，实现系统命令执行和权限管理。最该先看节点服务与GUI应用之间的IPC机制，了解system.run请求如何通过socket转发并在UI上下文中执行。最容易搞错的是PeekabooBridge的UI自动化使用独立的bridge.sock和JSON协议，且主机选择有特定顺序，安全设置需注意TeamID验证和调试标志。"
+    "heroTitle": "macOS 权限与 IPC：谁负责要权限，谁负责跑命令",
+    "heroSummary": "macOS 上所有需要 TCC 权限的操作（通知、录屏、麦克风、AppleScript）都集中到同一个 GUI 应用里，由 launchd 启动，保证权限不丢。\n\n系统命令执行走两条路：Agent 通过 Gateway WebSocket 发给 Node Service，Node Service 再通过本地 Unix Socket 转发给 Mac App 弹窗确认。\n\n最容易搞错的是 UI 自动化走的是独立的 PeekabooBridge 协议，用另一个 socket 文件，而且客户端会按 Peekaboo.app → Claude.app → OpenClaw.app 的顺序尝试连接，不是直接连自己的。"
   }
 }

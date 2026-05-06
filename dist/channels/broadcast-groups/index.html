@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>广播群组：Broadcast Groups | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="广播群组是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Broadcast Groups | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="广播组让多个Agent同时处理同一条消息，适合代码审查、多语言客服、质量复核等场景。目前仅支持WhatsApp网页渠道，且广播触发条件是OpenClaw本应回复（如被@）。配置时注意：广播组在频道白名单和群激活规则之后生效，别搞混执行顺序。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="广播群组：Broadcast Groups | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="广播群组是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Broadcast Groups | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="广播组让多个Agent同时处理同一条消息，适合代码审查、多语言客服、质量复核等场景。目前仅支持WhatsApp网页渠道，且广播触发条件是OpenClaw本应回复（如被@）。配置时注意：广播组在频道白名单和群激活规则之后生效，别搞混执行顺序。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/channels/broadcast-groups/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="广播群组：Broadcast Groups | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="广播群组是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Broadcast Groups | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="广播组让多个Agent同时处理同一条消息，适合代码审查、多语言客服、质量复核等场景。目前仅支持WhatsApp网页渠道，且广播触发条件是OpenClaw本应回复（如被@）。配置时注意：广播组在频道白名单和群激活规则之后生效，别搞混执行顺序。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/channels/broadcast-groups/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"广播群组：Broadcast Groups","description":"广播群组是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/channels/broadcast-groups/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Broadcast Groups","description":"广播组让多个Agent同时处理同一条消息，适合代码审查、多语言客服、质量复核等场景。目前仅支持WhatsApp网页渠道，且广播触发条件是OpenClaw本应回复（如被@）。配置时注意：广播组在频道白名单和群激活规则之后生效，别搞混执行顺序。","url":"https://fivey-can-read-openclaw.pages.dev/channels/broadcast-groups/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Channels","item":"https://fivey-can-read-openclaw.pages.dev/channels/broadcast-groups/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Channels 导读</p>
-        <h1>多智能体同时处理消息的广播组配置</h1>
-        <p class="hero-copy">这页教你如何配置广播组，让多个智能体在同一个WhatsApp群聊中同时处理用户消息。配置时要注意：目前仅支持WhatsApp渠道，且广播触发时机取决于群组激活规则。最容易出错的地方是忘记设置智能体的具体职责范围，导致多个智能体重复响应相同内容。</p>
+        <h1>一个群，多个Agent同时响应——广播组怎么用</h1>
+        <p class="hero-copy">广播组让多个Agent同时处理同一条消息，适合代码审查、多语言客服、质量复核等场景。目前仅支持WhatsApp网页渠道，且广播触发条件是OpenClaw本应回复（如被@）。配置时注意：广播组在频道白名单和群激活规则之后生效，别搞混执行顺序。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:channels.broadcast-groups.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>📣 Broadcast Groups 这页，其实是在教你“同一个群里，一条消息可以同时叫醒不止一个脑子”</h2>
-      <p>平时一条消息通常只会被分给一个 agent，但 Broadcast Groups 允许你把同一个触发点分发给一组 agent。</p>
-      <p>所以这页更像“群发任务机制”，不是普通群聊准入设置。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>一个群，多个Agent同时响应——广播组怎么用</h2>
+      <p>广播组让多个Agent同时处理同一条消息，适合代码审查、多语言客服、质量复核等场景。目前仅支持WhatsApp网页渠道，且广播触发条件是OpenClaw本应回复（如被@）。配置时注意：广播组在频道白名单和群激活规则之后生效，别搞混执行顺序。</p>
     </div>
     <div class="overview-meta">
-      <span>适合多 agent 同场响应</span>
-      <span>重点是 strategy、群 ID、agent 列表</span>
+      <span>原文共 31 节，先看 Start Here</span>
+      <span>路径：/channels/broadcast-groups</span>
       <a href="https://docs.openclaw.ai/channels/broadcast-groups" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

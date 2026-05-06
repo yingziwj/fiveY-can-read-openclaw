@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chutes 提供商：Chutes | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Chutes 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Chutes | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页教你如何让 OpenClaw 连上 Chutes 的开源模型目录。两种认证方式选一种：本地开发用浏览器 OAuth，远程或无头环境用 API Key。最容易踩的坑是发现失败时会自动降级到内置静态目录，所以即使认证没配好，启动也不会报错，但模型列表可能不是最新的。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Chutes 提供商：Chutes | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Chutes 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Chutes | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页教你如何让 OpenClaw 连上 Chutes 的开源模型目录。两种认证方式选一种：本地开发用浏览器 OAuth，远程或无头环境用 API Key。最容易踩的坑是发现失败时会自动降级到内置静态目录，所以即使认证没配好，启动也不会报错，但模型列表可能不是最新的。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/providers/chutes/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Chutes 提供商：Chutes | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Chutes 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Chutes | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页教你如何让 OpenClaw 连上 Chutes 的开源模型目录。两种认证方式选一种：本地开发用浏览器 OAuth，远程或无头环境用 API Key。最容易踩的坑是发现失败时会自动降级到内置静态目录，所以即使认证没配好，启动也不会报错，但模型列表可能不是最新的。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/providers/chutes/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Chutes 提供商：Chutes","description":"Chutes 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/providers/chutes/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Chutes","description":"这一页教你如何让 OpenClaw 连上 Chutes 的开源模型目录。两种认证方式选一种：本地开发用浏览器 OAuth，远程或无头环境用 API Key。最容易踩的坑是发现失败时会自动降级到内置静态目录，所以即使认证没配好，启动也不会报错，但模型列表可能不是最新的。","url":"https://fivey-can-read-openclaw.pages.dev/providers/chutes/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Providers","item":"https://fivey-can-read-openclaw.pages.dev/providers/chutes/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Providers 导读</p>
-        <h1>接入Chutes开源模型目录</h1>
-        <p class="hero-copy">这页教你如何通过OAuth或API密钥两种方式，将OpenClaw连接到Chutes的OpenAI兼容API。配置时最容易混淆两种认证方式，务必先根据你的使用场景（浏览器交互或无头环境）选择正确的`--auth-choice`参数。配置成功后，系统会自动注册默认模型和三个便捷别名，即使目录查询失败也能回退到静态目录保证服务可用。</p>
+        <h1>Chutes 接入：OAuth 或 API Key，二选一</h1>
+        <p class="hero-copy">这一页教你如何让 OpenClaw 连上 Chutes 的开源模型目录。两种认证方式选一种：本地开发用浏览器 OAuth，远程或无头环境用 API Key。最容易踩的坑是发现失败时会自动降级到内置静态目录，所以即使认证没配好，启动也不会报错，但模型列表可能不是最新的。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:providers.chutes.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🛰 Chutes 像一个能用浏览器登录，也能直接拿 API key 的模型集市</h2>
-      <p>它提供 OpenAI 兼容接口，OpenClaw 既能走 OAuth，也能走 key。官方还会在拿到认证后帮你发现模型。</p>
-      <p>这页的重点是：你是走浏览器登录，还是直接用 key。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Chutes 接入：OAuth 或 API Key，二选一</h2>
+      <p>这一页教你如何让 OpenClaw 连上 Chutes 的开源模型目录。两种认证方式选一种：本地开发用浏览器 OAuth，远程或无头环境用 API Key。最容易踩的坑是发现失败时会自动降级到内置静态目录，所以即使认证没配好，启动也不会报错，但模型列表可能不是最新的。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想用 Chutes 模型目录的人</span>
-      <span>重点是 OAuth / API key 双路线</span>
+      <span>原文共 7 节，先看 Start Here</span>
+      <span>路径：/providers/chutes</span>
       <a href="https://docs.openclaw.ai/providers/chutes" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

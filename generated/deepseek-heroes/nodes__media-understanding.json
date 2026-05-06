@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:19.875Z",
+  "generatedAt": "2026-05-06T15:07:33.743Z",
   "pathname": "/nodes/media-understanding",
   "title": "Media Understanding",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "配置媒体理解：自动摘要图片音频视频",
-    "heroSummary": "这页教你如何配置 OpenClaw 在回复前自动理解用户发送的图片、音频或视频，生成文本摘要用于路由和指令解析。配置核心是 `tools.media` 对象，你需要填写模型列表（支持 provider API 和 CLI 工具）并设置各媒体类型的参数。最容易出错的地方是配置回退顺序和并发数，以及忘记为音频转录设置 `echoTranscript` 来控制是否在回复中显示原文。"
+    "heroTitle": "媒体理解：在回复前自动摘要图片、音频、视频",
+    "heroSummary": "OpenClaw 能在回复管道运行前，自动将入站媒体（图片/音频/视频）摘要为简短文本，加速路由和命令解析。原始媒体始终会发给模型。配置核心是 `tools.media` 下的共享模型列表和按能力（image/audio/video）的覆盖参数，注意每个能力默认只处理第一个附件，失败时按顺序回退到下一个模型条目。"
   }
 }

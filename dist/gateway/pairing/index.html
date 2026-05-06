@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gateway-Owned 配对：Gateway-Owned Pairing | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Gateway-Owned 配对是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Gateway-Owned Pairing | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页讲的是由网关（Gateway）作为唯一权威来管理节点配对的模式。UI 只是审批界面，真正的配对状态和 token 都在网关侧。最容易搞错的是：WS 节点连接时默认走的是 device pairing（角色 node），与这里的 node.pair.* 是两套独立的配对存储，只有显式调用 node.pair.*…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Gateway-Owned 配对：Gateway-Owned Pairing | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Gateway-Owned 配对是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Gateway-Owned Pairing | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页讲的是由网关（Gateway）作为唯一权威来管理节点配对的模式。UI 只是审批界面，真正的配对状态和 token 都在网关侧。最容易搞错的是：WS 节点连接时默认走的是 device pairing（角色 node），与这里的 node.pair.* 是两套独立的配对存储，只有显式调用 node.pair.*…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/gateway/pairing/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Gateway-Owned 配对：Gateway-Owned Pairing | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Gateway-Owned 配对是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Gateway-Owned Pairing | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页讲的是由网关（Gateway）作为唯一权威来管理节点配对的模式。UI 只是审批界面，真正的配对状态和 token 都在网关侧。最容易搞错的是：WS 节点连接时默认走的是 device pairing（角色 node），与这里的 node.pair.* 是两套独立的配对存储，只有显式调用 node.pair.*…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/gateway/pairing/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Gateway-Owned 配对：Gateway-Owned Pairing","description":"Gateway-Owned 配对是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/pairing/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Gateway-Owned Pairing","description":"这一页讲的是由网关（Gateway）作为唯一权威来管理节点配对的模式。UI 只是审批界面，真正的配对状态和 token 都在网关侧。最容易搞错的是：WS 节点连接时默认走的是 device pairing（角色 node），与这里的 node.pair.* 是两套独立的配对存储，只有显式调用 node.pair.*…","url":"https://fivey-can-read-openclaw.pages.dev/gateway/pairing/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Gateway","item":"https://fivey-can-read-openclaw.pages.dev/gateway/pairing/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Gateway 导读</p>
-        <h1>网关自有配对（选项B）配置指南</h1>
-        <p class="hero-copy">这页详细说明如何让网关作为节点加入的权威控制中心，通过WebSocket连接管理配对请求。你需要先了解节点连接时如何发起配对请求，以及如何使用CLI命令或API来批准或拒绝请求。最容易混淆的是设备配对与网关自有配对的区别——只有明确调用node.pair.*的客户端才使用此流程，且配对请求5分钟后会自动过期。</p>
+        <h1>网关决定谁入网：Gateway-Owned Pairing 流程与关键区别</h1>
+        <p class="hero-copy">这一页讲的是由网关（Gateway）作为唯一权威来管理节点配对的模式。UI 只是审批界面，真正的配对状态和 token 都在网关侧。最容易搞错的是：WS 节点连接时默认走的是 device pairing（角色 node），与这里的 node.pair.* 是两套独立的配对存储，只有显式调用 node.pair.* 的客户端才会走本页流程。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,8 +4324,21 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🎟️ Gateway Pairing 这页，其实是在讲“节点能不能进门，最后拍板的是 Gateway，不是前台 UI”</h2><p>UI 只是审批窗口，名单和 token 都归 Gateway 管。</p></div><div class="overview-meta"><span>网关主导配对</span><span>重点是 pending request、approve/reject、token rotate</span><a href="https://docs.openclaw.ai/gateway/pairing" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-
+      <!-- handcrafted-source:gateway.pairing.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>网关决定谁入网：Gateway-Owned Pairing 流程与关键区别</h2>
+      <p>这一页讲的是由网关（Gateway）作为唯一权威来管理节点配对的模式。UI 只是审批界面，真正的配对状态和 token 都在网关侧。最容易搞错的是：WS 节点连接时默认走的是 device pairing（角色 node），与这里的 node.pair.* 是两套独立的配对存储，只有显式调用 node.pair.* 的客户端才会走本页流程。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 10 节，先看 Start Here</span>
+      <span>路径：/gateway/pairing</span>
+      <a href="https://docs.openclaw.ai/gateway/pairing" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
       <footer class="page-footer">
         <div>

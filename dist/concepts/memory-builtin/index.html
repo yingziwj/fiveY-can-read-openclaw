@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Builtin 记忆 Engine：Builtin Memory Engine | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Builtin 记忆 Engine是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Builtin Memory Engine | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Builtin Memory Engine 是 OpenClaw 的默认记忆后端，每个 agent 对应一个 SQLite 数据库，无需额外安装即可使用。最值得先看的是：只要配置了 OpenAI、Gemini 等任一 API Key，引擎会自动启用向量搜索；否则只有关键词搜索可用。容易搞错的是：Ollama 和 Lo…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Builtin 记忆 Engine：Builtin Memory Engine | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Builtin 记忆 Engine是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Builtin Memory Engine | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Builtin Memory Engine 是 OpenClaw 的默认记忆后端，每个 agent 对应一个 SQLite 数据库，无需额外安装即可使用。最值得先看的是：只要配置了 OpenAI、Gemini 等任一 API Key，引擎会自动启用向量搜索；否则只有关键词搜索可用。容易搞错的是：Ollama 和 Lo…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/memory-builtin/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Builtin 记忆 Engine：Builtin Memory Engine | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Builtin 记忆 Engine是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Builtin Memory Engine | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Builtin Memory Engine 是 OpenClaw 的默认记忆后端，每个 agent 对应一个 SQLite 数据库，无需额外安装即可使用。最值得先看的是：只要配置了 OpenAI、Gemini 等任一 API Key，引擎会自动启用向量搜索；否则只有关键词搜索可用。容易搞错的是：Ollama 和 Lo…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/memory-builtin/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Builtin 记忆 Engine：Builtin Memory Engine","description":"Builtin 记忆 Engine是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/memory-builtin/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Builtin Memory Engine","description":"Builtin Memory Engine 是 OpenClaw 的默认记忆后端，每个 agent 对应一个 SQLite 数据库，无需额外安装即可使用。最值得先看的是：只要配置了 OpenAI、Gemini 等任一 API Key，引擎会自动启用向量搜索；否则只有关键词搜索可用。容易搞错的是：Ollama 和 Lo…","url":"https://fivey-can-read-openclaw.pages.dev/concepts/memory-builtin/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/memory-builtin/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>内置内存引擎：默认的SQLite存储方案</h1>
-        <p class="hero-copy">这页介绍OpenClaw的默认内存后端，它用每个代理的SQLite数据库存储记忆索引，无需额外依赖即可启动。最该先看如何配置嵌入提供者来启用向量搜索，最容易搞错的是不设置提供者时只能使用关键词搜索功能。</p>
+        <h1>零依赖起步的内置记忆引擎，自动检测 API Key 开启向量搜索</h1>
+        <p class="hero-copy">Builtin Memory Engine 是 OpenClaw 的默认记忆后端，每个 agent 对应一个 SQLite 数据库，无需额外安装即可使用。最值得先看的是：只要配置了 OpenAI、Gemini 等任一 API Key，引擎会自动启用向量搜索；否则只有关键词搜索可用。容易搞错的是：Ollama 和 Local 不会自动检测，必须显式设置 provider。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.memory-builtin.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🗃 Builtin Memory Engine，就是 OpenClaw 自带的记忆小抽屉</h2>
-      <p>它默认用 SQLite 存记忆索引，开箱就能跑，不需要你先去装一堆额外东西。</p>
-      <p>这页的核心不是高深搜索算法，而是“先让记忆能找得到”。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>零依赖起步的内置记忆引擎，自动检测 API Key 开启向量搜索</h2>
+      <p>Builtin Memory Engine 是 OpenClaw 的默认记忆后端，每个 agent 对应一个 SQLite 数据库，无需额外安装即可使用。最值得先看的是：只要配置了 OpenAI、Gemini 等任一 API Key，引擎会自动启用向量搜索；否则只有关键词搜索可用。容易搞错的是：Ollama 和 Local 不会自动检测，必须显式设置 provider。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想先用默认记忆方案的人</span>
-      <span>重点是关键词、向量、混合检索</span>
+      <span>原文共 8 节，先看 Start Here</span>
+      <span>路径：/concepts/memory-builtin</span>
       <a href="https://docs.openclaw.ai/concepts/memory-builtin" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

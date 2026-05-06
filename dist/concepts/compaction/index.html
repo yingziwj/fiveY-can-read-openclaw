@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>压缩整理：Compaction | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="压缩整理是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Compaction | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="当对话接近模型上下文窗口上限时，OpenClaw 会自动把早期内容压缩成摘要，保留最近消息和工具调用配对。注意：压缩只改变模型下次看到的输入，完整历史仍在磁盘上。如果遇到上下文溢出错误，系统会先压缩再重试，你可以在 openclaw.json 的 agents.defaults.compaction 中调整模式、目标…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="压缩整理：Compaction | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="压缩整理是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Compaction | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="当对话接近模型上下文窗口上限时，OpenClaw 会自动把早期内容压缩成摘要，保留最近消息和工具调用配对。注意：压缩只改变模型下次看到的输入，完整历史仍在磁盘上。如果遇到上下文溢出错误，系统会先压缩再重试，你可以在 openclaw.json 的 agents.defaults.compaction 中调整模式、目标…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/compaction/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="压缩整理：Compaction | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="压缩整理是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Compaction | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="当对话接近模型上下文窗口上限时，OpenClaw 会自动把早期内容压缩成摘要，保留最近消息和工具调用配对。注意：压缩只改变模型下次看到的输入，完整历史仍在磁盘上。如果遇到上下文溢出错误，系统会先压缩再重试，你可以在 openclaw.json 的 agents.defaults.compaction 中调整模式、目标…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/compaction/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"压缩整理：Compaction","description":"压缩整理是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/compaction/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Compaction","description":"当对话接近模型上下文窗口上限时，OpenClaw 会自动把早期内容压缩成摘要，保留最近消息和工具调用配对。注意：压缩只改变模型下次看到的输入，完整历史仍在磁盘上。如果遇到上下文溢出错误，系统会先压缩再重试，你可以在 openclaw.json 的 agents.defaults.compaction 中调整模式、目标…","url":"https://fivey-can-read-openclaw.pages.dev/concepts/compaction/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/compaction/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>对话压缩机制：如何让长对话继续运行</h1>
-        <p class="hero-copy">这页解释当对话接近模型上下文限制时，系统如何自动压缩旧消息为摘要来维持对话。你应该先了解自动压缩的触发条件和手动压缩命令的用法。最容易忽略的是压缩前系统会自动提醒保存重要信息到记忆文件，防止关键内容丢失。</p>
+        <h1>对话太长？自动压缩旧消息，腾出上下文窗口</h1>
+        <p class="hero-copy">当对话接近模型上下文窗口上限时，OpenClaw 会自动把早期内容压缩成摘要，保留最近消息和工具调用配对。注意：压缩只改变模型下次看到的输入，完整历史仍在磁盘上。如果遇到上下文溢出错误，系统会先压缩再重试，你可以在 `openclaw.json` 的 `agents.defaults.compaction` 中调整模式、目标 token 数，甚至指定专用模型来生成摘要。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.compaction.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧹 Compaction 不是魔法，它更像聊天聊太久以后，帮你把旧纸条叠整齐</h2>
-      <p>OpenClaw 跟模型聊天时，不可能把一整天、一个月、甚至一年的所有内容都永远摊在桌上。桌面有大小限制，这个限制就是 context window。</p>
-      <p>当桌子快堆满时，OpenClaw 会把比较旧的那一大摞内容压成一张更短、更紧凑的“重点小抄”，这样新内容还能继续放进来。这件事，就叫 compaction。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>对话太长？自动压缩旧消息，腾出上下文窗口</h2>
+      <p>当对话接近模型上下文窗口上限时，OpenClaw 会自动把早期内容压缩成摘要，保留最近消息和工具调用配对。注意：压缩只改变模型下次看到的输入，完整历史仍在磁盘上。如果遇到上下文溢出错误，系统会先压缩再重试，你可以在 `openclaw.json` 的 `agents.defaults.compaction` 中调整模式、目标 token 数，甚至指定专用模型来生成摘要。</p>
     </div>
     <div class="overview-meta">
-      <span>适合总觉得“为什么聊天越久越要整理”的人</span>
-      <span>这页的重点不是参数，而是先分清 compaction 到底在收拾什么</span>
+      <span>原文共 11 节，先看 Start Here</span>
+      <span>路径：/concepts/compaction</span>
       <a href="https://docs.openclaw.ai/concepts/compaction" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

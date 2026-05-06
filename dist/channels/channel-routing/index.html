@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>通道路由：Channel Routing | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="通道路由是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Channel Routing | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="OpenClaw 的路由是确定性的，模型不选频道，全靠配置决定回复路径。先看“Routing rules”那 8 级优先级，搞懂 agent 是怎么被选中的；最容易踩坑的是多账号场景下没设 defaultAccount，系统会按首字母挑账号，跟你想要的很可能不一样。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="通道路由：Channel Routing | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="通道路由是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Channel Routing | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="OpenClaw 的路由是确定性的，模型不选频道，全靠配置决定回复路径。先看“Routing rules”那 8 级优先级，搞懂 agent 是怎么被选中的；最容易踩坑的是多账号场景下没设 defaultAccount，系统会按首字母挑账号，跟你想要的很可能不一样。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/channels/channel-routing/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="通道路由：Channel Routing | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="通道路由是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Channel Routing | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="OpenClaw 的路由是确定性的，模型不选频道，全靠配置决定回复路径。先看“Routing rules”那 8 级优先级，搞懂 agent 是怎么被选中的；最容易踩坑的是多账号场景下没设 defaultAccount，系统会按首字母挑账号，跟你想要的很可能不一样。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/channels/channel-routing/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"通道路由：Channel Routing","description":"通道路由是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/channels/channel-routing/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Channel Routing","description":"OpenClaw 的路由是确定性的，模型不选频道，全靠配置决定回复路径。先看“Routing rules”那 8 级优先级，搞懂 agent 是怎么被选中的；最容易踩坑的是多账号场景下没设 defaultAccount，系统会按首字母挑账号，跟你想要的很可能不一样。","url":"https://fivey-can-read-openclaw.pages.dev/channels/channel-routing/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Channels","item":"https://fivey-can-read-openclaw.pages.dev/channels/channel-routing/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Channels 导读</p>
-        <h1>通道路由配置与规则详解</h1>
-        <p class="hero-copy">本页详细说明OpenClaw如何将回复路由回消息来源的通道，路由过程由主机配置决定而非模型选择。配置多账户时务必设置明确的默认账户，否则回退路由可能选择第一个规范化账户ID。路由规则按优先级匹配绑定条件，所有提供的字段必须完全匹配才能应用对应代理。</p>
+        <h1>消息从哪来回哪去：路由规则与频道绑定</h1>
+        <p class="hero-copy">OpenClaw 的路由是确定性的，模型不选频道，全靠配置决定回复路径。先看“Routing rules”那 8 级优先级，搞懂 agent 是怎么被选中的；最容易踩坑的是多账号场景下没设 defaultAccount，系统会按首字母挑账号，跟你想要的很可能不一样。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:channels.channel-routing.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧭 Channel Routing 这页，其实是在教你“消息从哪扇门进来，就该回到哪扇门；至于交给哪个脑子，由你事先定规矩”</h2>
-      <p>最重要的一句是：模型不会自己临场决定“我要去 Telegram 回还是去 Slack 回”。路由是死规矩，不是自由发挥。</p>
-      <p>所以这页真正要你理解的，不是术语本身，而是“门、脑子、会话桶、回信路线”这几层怎么接起来。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>消息从哪来回哪去：路由规则与频道绑定</h2>
+      <p>OpenClaw 的路由是确定性的，模型不选频道，全靠配置决定回复路径。先看“Routing rules”那 8 级优先级，搞懂 agent 是怎么被选中的；最容易踩坑的是多账号场景下没设 defaultAccount，系统会按首字母挑账号，跟你想要的很可能不一样。</p>
     </div>
     <div class="overview-meta">
-      <span>适合理解多通道路由</span>
-      <span>重点是 channel、agent、sessionKey、bindings</span>
+      <span>原文共 10 节，先看 Start Here</span>
+      <span>路径：/channels/channel-routing</span>
       <a href="https://docs.openclaw.ai/channels/channel-routing" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

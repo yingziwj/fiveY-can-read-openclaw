@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>迁移指南：Migration Guide | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="迁移指南是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Migration Guide | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="迁移的核心是复制整个状态目录（默认 ~/.openclaw/）和工作区，而不是只拷 openclaw.json。最容易翻车的是忘记匹配旧机器的 profile 或状态目录路径，导致频道全部掉线。迁移后务必用 openclaw status 和 dashboard 验证频道连接和会话是否完整。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="迁移指南：Migration Guide | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="迁移指南是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Migration Guide | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="迁移的核心是复制整个状态目录（默认 ~/.openclaw/）和工作区，而不是只拷 openclaw.json。最容易翻车的是忘记匹配旧机器的 profile 或状态目录路径，导致频道全部掉线。迁移后务必用 openclaw status 和 dashboard 验证频道连接和会话是否完整。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/install/migrating/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="迁移指南：Migration Guide | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="迁移指南是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Migration Guide | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="迁移的核心是复制整个状态目录（默认 ~/.openclaw/）和工作区，而不是只拷 openclaw.json。最容易翻车的是忘记匹配旧机器的 profile 或状态目录路径，导致频道全部掉线。迁移后务必用 openclaw status 和 dashboard 验证频道连接和会话是否完整。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/install/migrating/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"迁移指南：Migration Guide","description":"迁移指南是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/install/migrating/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Migration Guide","description":"迁移的核心是复制整个状态目录（默认 ~/.openclaw/）和工作区，而不是只拷 openclaw.json。最容易翻车的是忘记匹配旧机器的 profile 或状态目录路径，导致频道全部掉线。迁移后务必用 openclaw status 和 dashboard 验证频道连接和会话是否完整。","url":"https://fivey-can-read-openclaw.pages.dev/install/migrating/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Install","item":"https://fivey-can-read-openclaw.pages.dev/install/migrating/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Install 导读</p>
-        <h1>将OpenClaw网关完整迁移到新机器</h1>
-        <p class="hero-copy">本页指导如何将OpenClaw网关的配置、认证、会话和频道状态完整迁移到新机器，无需重新配置。迁移的核心是复制整个状态目录（默认~/.openclaw/）和工作区文件，最常见的错误是只复制了openclaw.json配置文件而遗漏了认证文件和频道状态。迁移后务必检查频道连接状态和会话是否正常显示。</p>
+        <h1>迁移 OpenClaw 到新机器：别只拷配置文件</h1>
+        <p class="hero-copy">迁移的核心是复制整个状态目录（默认 ~/.openclaw/）和工作区，而不是只拷 openclaw.json。最容易翻车的是忘记匹配旧机器的 profile 或状态目录路径，导致频道全部掉线。迁移后务必用 openclaw status 和 dashboard 验证频道连接和会话是否完整。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:install.migrating.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🚚 Migration Guide 这页，其实是在教你“给 OpenClaw 搬家，但别把记忆、钥匙和门牌落在旧房子里”</h2>
-      <p>这页最重要的观念只有一个：不是只搬一个 <code>openclaw.json</code> 文件，而是把整个状态目录和工作区完整搬走。</p>
-      <p>如果你只拿走表面那张配置纸，很多真正重要的东西，比如凭据、通道登录、会话状态，都会留在旧房子里。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>迁移 OpenClaw 到新机器：别只拷配置文件</h2>
+      <p>迁移的核心是复制整个状态目录（默认 ~/.openclaw/）和工作区，而不是只拷 openclaw.json。最容易翻车的是忘记匹配旧机器的 profile 或状态目录路径，导致频道全部掉线。迁移后务必用 openclaw status 和 dashboard 验证频道连接和会话是否完整。</p>
     </div>
     <div class="overview-meta">
-      <span>适合迁移到新机器</span>
-      <span>重点是状态目录、workspace、doctor、同 profile</span>
+      <span>原文共 5 节，先看 Start Here</span>
+      <span>路径：/install/migrating</span>
       <a href="https://docs.openclaw.ai/install/migrating" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

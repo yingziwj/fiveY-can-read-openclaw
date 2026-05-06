@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SearXNG 搜索：SearXNG Search | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="SearXNG 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>SearXNG Search | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="用 SearXNG 做 OpenClaw 的 web_search provider，完全免费、无网络限制。先跑 Docker 容器（端口 8888），再配置 provider 为 searxng 或设环境变量 SEARXNG_BASE_URL。注意：公开部署必须用 https，内网可用 http。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="SearXNG 搜索：SearXNG Search | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="SearXNG 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="SearXNG Search | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="用 SearXNG 做 OpenClaw 的 web_search provider，完全免费、无网络限制。先跑 Docker 容器（端口 8888），再配置 provider 为 searxng 或设环境变量 SEARXNG_BASE_URL。注意：公开部署必须用 https，内网可用 http。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/tools/searxng-search/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SearXNG 搜索：SearXNG Search | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="SearXNG 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="SearXNG Search | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="用 SearXNG 做 OpenClaw 的 web_search provider，完全免费、无网络限制。先跑 Docker 容器（端口 8888），再配置 provider 为 searxng 或设环境变量 SEARXNG_BASE_URL。注意：公开部署必须用 https，内网可用 http。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/tools/searxng-search/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"SearXNG 搜索：SearXNG Search","description":"SearXNG 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/tools/searxng-search/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"SearXNG Search","description":"用 SearXNG 做 OpenClaw 的 web_search provider，完全免费、无网络限制。先跑 Docker 容器（端口 8888），再配置 provider 为 searxng 或设环境变量 SEARXNG_BASE_URL。注意：公开部署必须用 https，内网可用 http。","url":"https://fivey-can-read-openclaw.pages.dev/tools/searxng-search/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://fivey-can-read-openclaw.pages.dev/tools/searxng-search/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Tools 导读</p>
-        <h1>配置 SearXNG 作为无密钥网页搜索源</h1>
-        <p class="hero-copy">这页教你如何将自托管的 SearXNG 搜索引擎接入 OpenClaw，实现无需 API 密钥的网页搜索。配置时最关键的是正确填写 `baseUrl` 地址，并注意公开主机必须使用 `https://` 协议。</p>
+        <h1>自建搜索引擎，免 API Key，不限次数</h1>
+        <p class="hero-copy">用 SearXNG 做 OpenClaw 的 web_search provider，完全免费、无网络限制。先跑 Docker 容器（端口 8888），再配置 provider 为 searxng 或设环境变量 SEARXNG_BASE_URL。注意：公开部署必须用 https，内网可用 http。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:tools.searxng-search.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🕸 SearXNG Search 像给 OpenClaw 装一个“自己家里开的搜索超市”</h2>
-      <p>它是自托管、不要 key 的 web_search provider。也就是说，查询不会跑去商业搜索 API 那边，而是走你自己的 SearXNG 实例。</p>
-      <p>这页特别适合在意隐私、预算，或者想完全自己控搜索结果的人。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>自建搜索引擎，免 API Key，不限次数</h2>
+      <p>用 SearXNG 做 OpenClaw 的 web_search provider，完全免费、无网络限制。先跑 Docker 容器（端口 8888），再配置 provider 为 searxng 或设环境变量 SEARXNG_BASE_URL。注意：公开部署必须用 https，内网可用 http。</p>
     </div>
     <div class="overview-meta">
-      <span>适合自托管搜索的人</span>
-      <span>重点是 docker run、SEARXNG_BASE_URL、https 限制</span>
+      <span>原文共 7 节，先看 Start Here</span>
+      <span>路径：/tools/searxng-search</span>
       <a href="https://docs.openclaw.ai/tools/searxng-search" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

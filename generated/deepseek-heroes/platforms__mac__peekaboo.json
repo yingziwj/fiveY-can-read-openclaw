@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:38.081Z",
+  "generatedAt": "2026-05-06T15:07:45.882Z",
   "pathname": "/platforms/mac/peekaboo",
   "title": "Peekaboo Bridge",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "在OpenClaw中启用Peekaboo Bridge进行macOS UI自动化",
-    "heroSummary": "本页说明如何将OpenClaw应用配置为Peekaboo Bridge的轻量级代理主机，以便复用其TCC权限进行UI自动化。首先需要在OpenClaw的设置中启用此功能，然后使用`peekaboo`命令行工具连接。最需要注意的点是，启用后OpenClaw会启动本地UNIX套接字服务器，如果禁用，客户端将回退到其他可用主机。"
+    "heroTitle": "用 OpenClaw 当 Peekaboo 的本地桥接代理，复用 macOS 权限",
+    "heroSummary": "打开 OpenClaw 设置里的开关就能启动本地 UNIX socket，让 peekaboo CLI 走你的 TCC 授权干活。客户端发现顺序是 Peekaboo.app → Claude.app → OpenClaw.app，想指定就用环境变量 PEEKABOO_BRIDGE_SOCKET。桥接会校验调用方 TeamID，权限缺失会直接报错，不会弹系统设置。"
   }
 }

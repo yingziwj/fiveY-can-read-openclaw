@@ -14,7 +14,6 @@ import {
   escapeHtml,
   excerpt,
   formatDate,
-  normalizeWhitespace,
   readJson,
   stripMarkdown,
   softenTerms,
@@ -129,7 +128,6 @@ const handcraftedPageMap = new Map([
   ["/cli/gateway", path.resolve("content/handcrafted/cli.gateway.zh.html")],
   ["/cli/health", path.resolve("content/handcrafted/cli.health.zh.html")],
   ["/cli/hooks", path.resolve("content/handcrafted/cli.hooks.zh.html")],
-  ["/cli/infer", path.resolve("content/handcrafted/cli.infer.zh.html")],
   ["/cli/index", path.resolve("content/handcrafted/cli.index.zh.html")],
   ["/cli/mcp", path.resolve("content/handcrafted/cli.mcp.zh.html")],
   ["/cli/memory", path.resolve("content/handcrafted/cli.memory.zh.html")],
@@ -155,7 +153,6 @@ const handcraftedPageMap = new Map([
   ["/cli/uninstall", path.resolve("content/handcrafted/cli.uninstall.zh.html")],
   ["/cli/voicecall", path.resolve("content/handcrafted/cli.voicecall.zh.html")],
   ["/cli/webhooks", path.resolve("content/handcrafted/cli.webhooks.zh.html")],
-  ["/cli/wiki", path.resolve("content/handcrafted/cli.wiki.zh.html")],
   ["/cli/logs", path.resolve("content/handcrafted/cli.logs.zh.html")],
   ["/cli/doctor", path.resolve("content/handcrafted/cli.doctor.zh.html")],
   ["/start/docs-directory", path.resolve("content/handcrafted/start.docs-directory.zh.html")],
@@ -200,14 +197,33 @@ const handcraftedPageMap = new Map([
   ["/install/uninstall", path.resolve("content/handcrafted/install.uninstall.zh.html")],
   ["/install/updating", path.resolve("content/handcrafted/install.updating.zh.html")],
   ["/tools/index", path.resolve("content/handcrafted/tools.index.zh.html")],
+  ["/tools/acp-agents", path.resolve("content/handcrafted/tools.acp-agents.zh.html")],
   ["/tools/agent-send", path.resolve("content/handcrafted/tools.agent-send.zh.html")],
   ["/tools/apply-patch", path.resolve("content/handcrafted/tools.apply-patch.zh.html")],
   ["/tools/skills", path.resolve("content/handcrafted/tools.skills.zh.html")],
+  ["/tools/btw", path.resolve("content/handcrafted/tools.btw.zh.html")],
+  ["/tools/brave-search", path.resolve("content/handcrafted/tools.brave-search.zh.html")],
   ["/tools/browser-linux-troubleshooting", path.resolve("content/handcrafted/tools.browser-linux-troubleshooting.zh.html")],
+  ["/tools/browser-login", path.resolve("content/handcrafted/tools.browser-login.zh.html")],
+  ["/tools/browser-wsl2-windows-remote-cdp-troubleshooting", path.resolve("content/handcrafted/tools.browser-wsl2-windows-remote-cdp-troubleshooting.zh.html")],
+  ["/tools/code-execution", path.resolve("content/handcrafted/tools.code-execution.zh.html")],
   ["/tools/creating-skills", path.resolve("content/handcrafted/tools.creating-skills.zh.html")],
+  ["/tools/diffs", path.resolve("content/handcrafted/tools.diffs.zh.html")],
+  ["/tools/web", path.resolve("content/handcrafted/tools.web.zh.html")],
+  ["/tools/web-fetch", path.resolve("content/handcrafted/tools.web-fetch.zh.html")],
+  ["/tools/clawhub", path.resolve("content/handcrafted/tools.clawhub.zh.html")],
+  ["/tools/duckduckgo-search", path.resolve("content/handcrafted/tools.duckduckgo-search.zh.html")],
+  ["/tools/exa-search", path.resolve("content/handcrafted/tools.exa-search.zh.html")],
+  ["/tools/firecrawl", path.resolve("content/handcrafted/tools.firecrawl.zh.html")],
+  ["/tools/gemini-search", path.resolve("content/handcrafted/tools.gemini-search.zh.html")],
+  ["/tools/grok-search", path.resolve("content/handcrafted/tools.grok-search.zh.html")],
   ["/tools/image-generation", path.resolve("content/handcrafted/tools.image-generation.zh.html")],
+  ["/tools/kimi-search", path.resolve("content/handcrafted/tools.kimi-search.zh.html")],
+  ["/tools/perplexity-search", path.resolve("content/handcrafted/tools.perplexity-search.zh.html")],
   ["/tools/elevated", path.resolve("content/handcrafted/tools.elevated.zh.html")],
   ["/tools/exec-approvals", path.resolve("content/handcrafted/tools.exec-approvals.zh.html")],
+  ["/tools/llm-task", path.resolve("content/handcrafted/tools.llm-task.zh.html")],
+  ["/tools/lobster", path.resolve("content/handcrafted/tools.lobster.zh.html")],
   ["/tools/loop-detection", path.resolve("content/handcrafted/tools.loop-detection.zh.html")],
   ["/tools/media-overview", path.resolve("content/handcrafted/tools.media-overview.zh.html")],
   ["/tools/music-generation", path.resolve("content/handcrafted/tools.music-generation.zh.html")],
@@ -217,7 +233,12 @@ const handcraftedPageMap = new Map([
   ["/tools/reactions", path.resolve("content/handcrafted/tools.reactions.zh.html")],
   ["/tools/searxng-search", path.resolve("content/handcrafted/tools.searxng-search.zh.html")],
   ["/tools/skills-config", path.resolve("content/handcrafted/tools.skills-config.zh.html")],
+  ["/tools/slash-commands", path.resolve("content/handcrafted/tools.slash-commands.zh.html")],
+  ["/tools/subagents", path.resolve("content/handcrafted/tools.subagents.zh.html")],
   ["/tools/thinking", path.resolve("content/handcrafted/tools.thinking.zh.html")],
+  ["/tools/tavily", path.resolve("content/handcrafted/tools.tavily.zh.html")],
+  ["/tools/tts", path.resolve("content/handcrafted/tools.tts.zh.html")],
+  ["/tools/video-generation", path.resolve("content/handcrafted/tools.video-generation.zh.html")],
   ["/channels/index", path.resolve("content/handcrafted/channels.index.zh.html")],
   ["/channels/bluebubbles", path.resolve("content/handcrafted/channels.bluebubbles.zh.html")],
   ["/channels/broadcast-groups", path.resolve("content/handcrafted/channels.broadcast-groups.zh.html")],
@@ -237,6 +258,7 @@ const handcraftedPageMap = new Map([
   ["/channels/nextcloud-talk", path.resolve("content/handcrafted/channels.nextcloud-talk.zh.html")],
   ["/channels/nostr", path.resolve("content/handcrafted/channels.nostr.zh.html")],
   ["/channels/pairing", path.resolve("content/handcrafted/channels.pairing.zh.html")],
+  ["/channels/qqbot", path.resolve("content/handcrafted/channels.qqbot.zh.html")],
   ["/channels/signal", path.resolve("content/handcrafted/channels.signal.zh.html")],
   ["/channels/slack", path.resolve("content/handcrafted/channels.slack.zh.html")],
   ["/channels/synology-chat", path.resolve("content/handcrafted/channels.synology-chat.zh.html")],
@@ -244,22 +266,78 @@ const handcraftedPageMap = new Map([
   ["/channels/tlon", path.resolve("content/handcrafted/channels.tlon.zh.html")],
   ["/channels/troubleshooting", path.resolve("content/handcrafted/channels.troubleshooting.zh.html")],
   ["/channels/twitch", path.resolve("content/handcrafted/channels.twitch.zh.html")],
-  ["/concepts/active-memory", path.resolve("content/handcrafted/concepts.active-memory.zh.html")],
+  ["/channels/whatsapp", path.resolve("content/handcrafted/channels.whatsapp.zh.html")],
+  ["/channels/zalo", path.resolve("content/handcrafted/channels.zalo.zh.html")],
+  ["/channels/zalouser", path.resolve("content/handcrafted/channels.zalouser.zh.html")],
+  ["/concepts/agent", path.resolve("content/handcrafted/concepts.agent.zh.html")],
+  ["/concepts/agent-loop", path.resolve("content/handcrafted/concepts.agent-loop.zh.html")],
+  ["/concepts/agent-workspace", path.resolve("content/handcrafted/concepts.agent-workspace.zh.html")],
+  ["/concepts/architecture", path.resolve("content/handcrafted/concepts.architecture.zh.html")],
   ["/concepts/compaction", path.resolve("content/handcrafted/concepts.compaction.zh.html")],
+  ["/concepts/context", path.resolve("content/handcrafted/concepts.context.zh.html")],
+  ["/concepts/context-engine", path.resolve("content/handcrafted/concepts.context-engine.zh.html")],
+  ["/concepts/delegate-architecture", path.resolve("content/handcrafted/concepts.delegate-architecture.zh.html")],
+  ["/concepts/dreaming", path.resolve("content/handcrafted/concepts.dreaming.zh.html")],
+  ["/concepts/messages", path.resolve("content/handcrafted/concepts.messages.zh.html")],
   ["/concepts/markdown-formatting", path.resolve("content/handcrafted/concepts.markdown-formatting.zh.html")],
+  ["/concepts/model-failover", path.resolve("content/handcrafted/concepts.model-failover.zh.html")],
+  ["/concepts/model-providers", path.resolve("content/handcrafted/concepts.model-providers.zh.html")],
+  ["/concepts/models", path.resolve("content/handcrafted/concepts.models.zh.html")],
+  ["/concepts/multi-agent", path.resolve("content/handcrafted/concepts.multi-agent.zh.html")],
+  ["/concepts/memory", path.resolve("content/handcrafted/concepts.memory.zh.html")],
+  ["/concepts/memory-builtin", path.resolve("content/handcrafted/concepts.memory-builtin.zh.html")],
+  ["/concepts/memory-honcho", path.resolve("content/handcrafted/concepts.memory-honcho.zh.html")],
+  ["/concepts/memory-qmd", path.resolve("content/handcrafted/concepts.memory-qmd.zh.html")],
+  ["/concepts/memory-search", path.resolve("content/handcrafted/concepts.memory-search.zh.html")],
+  ["/concepts/oauth", path.resolve("content/handcrafted/concepts.oauth.zh.html")],
   ["/concepts/presence", path.resolve("content/handcrafted/concepts.presence.zh.html")],
+  ["/concepts/queue", path.resolve("content/handcrafted/concepts.queue.zh.html")],
+  ["/concepts/retry", path.resolve("content/handcrafted/concepts.retry.zh.html")],
+  ["/concepts/session", path.resolve("content/handcrafted/concepts.session.zh.html")],
+  ["/concepts/session-pruning", path.resolve("content/handcrafted/concepts.session-pruning.zh.html")],
   ["/concepts/session-tool", path.resolve("content/handcrafted/concepts.session-tool.zh.html")],
+  ["/concepts/soul", path.resolve("content/handcrafted/concepts.soul.zh.html")],
+  ["/concepts/streaming", path.resolve("content/handcrafted/concepts.streaming.zh.html")],
+  ["/concepts/system-prompt", path.resolve("content/handcrafted/concepts.system-prompt.zh.html")],
+  ["/concepts/timezone", path.resolve("content/handcrafted/concepts.timezone.zh.html")],
+  ["/concepts/typebox", path.resolve("content/handcrafted/concepts.typebox.zh.html")],
+  ["/concepts/typing-indicators", path.resolve("content/handcrafted/concepts.typing-indicators.zh.html")],
+  ["/concepts/usage-tracking", path.resolve("content/handcrafted/concepts.usage-tracking.zh.html")],
   ["/concepts/features", path.resolve("content/handcrafted/concepts.features.zh.html")],
+  ["/gateway/discovery", path.resolve("content/handcrafted/gateway.discovery.zh.html")],
+  ["/gateway/authentication", path.resolve("content/handcrafted/gateway.authentication.zh.html")],
+  ["/gateway/background-process", path.resolve("content/handcrafted/gateway.background-process.zh.html")],
+  ["/gateway/bonjour", path.resolve("content/handcrafted/gateway.bonjour.zh.html")],
   ["/gateway/bridge-protocol", path.resolve("content/handcrafted/gateway.bridge-protocol.zh.html")],
+  ["/gateway/cli-backends", path.resolve("content/handcrafted/gateway.cli-backends.zh.html")],
   ["/gateway/doctor", path.resolve("content/handcrafted/gateway.doctor.zh.html")],
   ["/gateway/gateway-lock", path.resolve("content/handcrafted/gateway.gateway-lock.zh.html")],
   ["/gateway/health", path.resolve("content/handcrafted/gateway.health.zh.html")],
+  ["/gateway/heartbeat", path.resolve("content/handcrafted/gateway.heartbeat.zh.html")],
+  ["/gateway/configuration", path.resolve("content/handcrafted/gateway.configuration.zh.html")],
   ["/gateway/configuration-examples", path.resolve("content/handcrafted/gateway.configuration-examples.zh.html")],
+  ["/gateway/configuration-reference", path.resolve("content/handcrafted/gateway.configuration-reference.zh.html")],
+  ["/gateway/index", path.resolve("content/handcrafted/gateway.index.zh.html")],
+  ["/gateway/local-models", path.resolve("content/handcrafted/gateway.local-models.zh.html")],
+  ["/gateway/logging", path.resolve("content/handcrafted/gateway.logging.zh.html")],
   ["/gateway/multiple-gateways", path.resolve("content/handcrafted/gateway.multiple-gateways.zh.html")],
   ["/gateway/network-model", path.resolve("content/handcrafted/gateway.network-model.zh.html")],
+  ["/gateway/openai-http-api", path.resolve("content/handcrafted/gateway.openai-http-api.zh.html")],
+  ["/gateway/openresponses-http-api", path.resolve("content/handcrafted/gateway.openresponses-http-api.zh.html")],
+  ["/gateway/openshell", path.resolve("content/handcrafted/gateway.openshell.zh.html")],
   ["/gateway/pairing", path.resolve("content/handcrafted/gateway.pairing.zh.html")],
+  ["/gateway/protocol", path.resolve("content/handcrafted/gateway.protocol.zh.html")],
+  ["/gateway/remote", path.resolve("content/handcrafted/gateway.remote.zh.html")],
+  ["/gateway/remote-gateway-readme", path.resolve("content/handcrafted/gateway.remote-gateway-readme.zh.html")],
+  ["/gateway/sandbox-vs-tool-policy-vs-elevated", path.resolve("content/handcrafted/gateway.sandbox-vs-tool-policy-vs-elevated.zh.html")],
+  ["/gateway/sandboxing", path.resolve("content/handcrafted/gateway.sandboxing.zh.html")],
+  ["/gateway/secrets", path.resolve("content/handcrafted/gateway.secrets.zh.html")],
   ["/gateway/secrets-plan-contract", path.resolve("content/handcrafted/gateway.secrets-plan-contract.zh.html")],
+  ["/gateway/security/index", path.resolve("content/handcrafted/gateway.security.index.zh.html")],
   ["/gateway/tailscale", path.resolve("content/handcrafted/gateway.tailscale.zh.html")],
+  ["/gateway/tools-invoke-http-api", path.resolve("content/handcrafted/gateway.tools-invoke-http-api.zh.html")],
+  ["/gateway/trusted-proxy-auth", path.resolve("content/handcrafted/gateway.trusted-proxy-auth.zh.html")],
+  ["/gateway/troubleshooting", path.resolve("content/handcrafted/gateway.troubleshooting.zh.html")],
   ["/providers/anthropic", path.resolve("content/handcrafted/providers.anthropic.zh.html")],
   ["/providers/alibaba", path.resolve("content/handcrafted/providers.alibaba.zh.html")],
   ["/providers/arcee", path.resolve("content/handcrafted/providers.arcee.zh.html")],
@@ -278,7 +356,6 @@ const handcraftedPageMap = new Map([
   ["/providers/groq", path.resolve("content/handcrafted/providers.groq.zh.html")],
   ["/providers/huggingface", path.resolve("content/handcrafted/providers.huggingface.zh.html")],
   ["/providers/index", path.resolve("content/handcrafted/providers.index.zh.html")],
-  ["/providers/inferrs", path.resolve("content/handcrafted/providers.inferrs.zh.html")],
   ["/providers/kilocode", path.resolve("content/handcrafted/providers.kilocode.zh.html")],
   ["/providers/litellm", path.resolve("content/handcrafted/providers.litellm.zh.html")],
   ["/providers/minimax", path.resolve("content/handcrafted/providers.minimax.zh.html")],
@@ -315,7 +392,6 @@ const handcraftedPageMap = new Map([
   ["/reference/device-models", path.resolve("content/handcrafted/reference.device-models.zh.html")],
   ["/reference/memory-config", path.resolve("content/handcrafted/reference.memory-config.zh.html")],
   ["/reference/prompt-caching", path.resolve("content/handcrafted/reference.prompt-caching.zh.html")],
-  ["/reference/rich-output-protocol", path.resolve("content/handcrafted/reference.rich-output-protocol.zh.html")],
   ["/reference/rpc", path.resolve("content/handcrafted/reference.rpc.zh.html")],
   ["/reference/secretref-credential-surface", path.resolve("content/handcrafted/reference.secretref-credential-surface.zh.html")],
   ["/reference/session-management-compaction", path.resolve("content/handcrafted/reference.session-management-compaction.zh.html")],
@@ -342,15 +418,28 @@ const handcraftedPageMap = new Map([
   ["/automation/tasks", path.resolve("content/handcrafted/automation.tasks.zh.html")],
   ["/automation/troubleshooting", path.resolve("content/handcrafted/automation.troubleshooting.zh.html")],
   ["/automation/webhook", path.resolve("content/handcrafted/automation.webhook.zh.html")],
+  ["/plugins/bundles", path.resolve("content/handcrafted/plugins.bundles.zh.html")],
   ["/plugins/building-plugins", path.resolve("content/handcrafted/plugins.building-plugins.zh.html")],
   ["/plugins/community", path.resolve("content/handcrafted/plugins.community.zh.html")],
   ["/plugins/webhooks", path.resolve("content/handcrafted/plugins.webhooks.zh.html")],
+  ["/plugins/sdk-channel-plugins", path.resolve("content/handcrafted/plugins.sdk-channel-plugins.zh.html")],
   ["/plugins/sdk-entrypoints", path.resolve("content/handcrafted/plugins.sdk-entrypoints.zh.html")],
+  ["/plugins/sdk-migration", path.resolve("content/handcrafted/plugins.sdk-migration.zh.html")],
+  ["/plugins/sdk-overview", path.resolve("content/handcrafted/plugins.sdk-overview.zh.html")],
+  ["/plugins/sdk-provider-plugins", path.resolve("content/handcrafted/plugins.sdk-provider-plugins.zh.html")],
+  ["/plugins/sdk-runtime", path.resolve("content/handcrafted/plugins.sdk-runtime.zh.html")],
+  ["/plugins/voice-call", path.resolve("content/handcrafted/plugins.voice-call.zh.html")],
+  ["/plugins/architecture", path.resolve("content/handcrafted/plugins.architecture.zh.html")],
+  ["/plugins/manifest", path.resolve("content/handcrafted/plugins.manifest.zh.html")],
+  ["/plugins/sdk-setup", path.resolve("content/handcrafted/plugins.sdk-setup.zh.html")],
   ["/plugins/sdk-testing", path.resolve("content/handcrafted/plugins.sdk-testing.zh.html")],
   ["/cli/flows", path.resolve("content/handcrafted/cli.flows.zh.html")],
   ["/tools/browser", path.resolve("content/handcrafted/tools.browser.zh.html")],
   ["/tools/exec", path.resolve("content/handcrafted/tools.exec.zh.html")],
   ["/tools/plugin", path.resolve("content/handcrafted/tools.plugin.zh.html")],
+  ["/web/dashboard", path.resolve("content/handcrafted/web.dashboard.zh.html")],
+  ["/web/index", path.resolve("content/handcrafted/web.index.zh.html")],
+  ["/web/tui", path.resolve("content/handcrafted/web.tui.zh.html")],
   ["/web/webchat", path.resolve("content/handcrafted/web.webchat.zh.html")],
   ["/nodes/index", path.resolve("content/handcrafted/nodes.index.zh.html")],
   ["/nodes/audio", path.resolve("content/handcrafted/nodes.audio.zh.html")],
@@ -384,8 +473,13 @@ const handcraftedPageMap = new Map([
   ["/platforms/mac/voicewake", path.resolve("content/handcrafted/platforms.mac.voicewake.zh.html")],
   ["/platforms/mac/webchat", path.resolve("content/handcrafted/platforms.mac.webchat.zh.html")],
   ["/platforms/mac/xpc", path.resolve("content/handcrafted/platforms.mac.xpc.zh.html")],
+  ["/help/debugging", path.resolve("content/handcrafted/help.debugging.zh.html")],
+  ["/help/environment", path.resolve("content/handcrafted/help.environment.zh.html")],
+  ["/help/faq", path.resolve("content/handcrafted/help.faq.zh.html")],
   ["/help/index", path.resolve("content/handcrafted/help.index.zh.html")],
   ["/help/scripts", path.resolve("content/handcrafted/help.scripts.zh.html")],
+  ["/help/testing", path.resolve("content/handcrafted/help.testing.zh.html")],
+  ["/help/troubleshooting", path.resolve("content/handcrafted/help.troubleshooting.zh.html")],
   ["/index", path.resolve("content/handcrafted/index.zh.html")],
   ["/vps", path.resolve("content/handcrafted/vps.zh.html")],
   ["/automation/auth-monitoring", path.resolve("content/handcrafted/automation.auth-monitoring.zh.html")],
@@ -396,113 +490,13 @@ const handcraftedPageMap = new Map([
   ["/security/CONTRIBUTING-THREAT-MODEL", path.resolve("content/handcrafted/security.CONTRIBUTING-THREAT-MODEL.zh.html")],
   ["/security/THREAT-MODEL-ATLAS", path.resolve("content/handcrafted/security.THREAT-MODEL-ATLAS.zh.html")],
   ["/security/formal-verification", path.resolve("content/handcrafted/security.formal-verification.zh.html")],
+  ["/web/control-ui", path.resolve("content/handcrafted/web.control-ui.zh.html")],
   ["/ci", path.resolve("content/handcrafted/ci.zh.html")],
   ["/date-time", path.resolve("content/handcrafted/date-time.zh.html")],
   ["/debug/node-issue", path.resolve("content/handcrafted/debug.node-issue.zh.html")],
   ["/diagnostics/flags", path.resolve("content/handcrafted/diagnostics.flags.zh.html")],
   ["/pi", path.resolve("content/handcrafted/pi.zh.html")],
-  ["/pi-dev", path.resolve("content/handcrafted/pi-dev.zh.html")],
-  ["/channels/qqbot", path.resolve("content/handcrafted/channels.qqbot.zh.html")],
-  ["/channels/whatsapp", path.resolve("content/handcrafted/channels.whatsapp.zh.html")],
-  ["/channels/zalo", path.resolve("content/handcrafted/channels.zalo.zh.html")],
-  ["/channels/zalouser", path.resolve("content/handcrafted/channels.zalouser.zh.html")],
-  ["/concepts/agent-loop", path.resolve("content/handcrafted/concepts.agent-loop.zh.html")],
-  ["/concepts/agent-workspace", path.resolve("content/handcrafted/concepts.agent-workspace.zh.html")],
-  ["/concepts/agent", path.resolve("content/handcrafted/concepts.agent.zh.html")],
-  ["/concepts/architecture", path.resolve("content/handcrafted/concepts.architecture.zh.html")],
-  ["/concepts/context-engine", path.resolve("content/handcrafted/concepts.context-engine.zh.html")],
-  ["/concepts/context", path.resolve("content/handcrafted/concepts.context.zh.html")],
-  ["/concepts/delegate-architecture", path.resolve("content/handcrafted/concepts.delegate-architecture.zh.html")],
-  ["/concepts/dreaming", path.resolve("content/handcrafted/concepts.dreaming.zh.html")],
-  ["/concepts/memory-builtin", path.resolve("content/handcrafted/concepts.memory-builtin.zh.html")],
-  ["/concepts/memory-honcho", path.resolve("content/handcrafted/concepts.memory-honcho.zh.html")],
-  ["/concepts/memory-qmd", path.resolve("content/handcrafted/concepts.memory-qmd.zh.html")],
-  ["/concepts/memory-search", path.resolve("content/handcrafted/concepts.memory-search.zh.html")],
-  ["/concepts/memory", path.resolve("content/handcrafted/concepts.memory.zh.html")],
-  ["/concepts/messages", path.resolve("content/handcrafted/concepts.messages.zh.html")],
-  ["/concepts/model-failover", path.resolve("content/handcrafted/concepts.model-failover.zh.html")],
-  ["/concepts/model-providers", path.resolve("content/handcrafted/concepts.model-providers.zh.html")],
-  ["/concepts/models", path.resolve("content/handcrafted/concepts.models.zh.html")],
-  ["/concepts/multi-agent", path.resolve("content/handcrafted/concepts.multi-agent.zh.html")],
-  ["/concepts/oauth", path.resolve("content/handcrafted/concepts.oauth.zh.html")],
-  ["/concepts/queue", path.resolve("content/handcrafted/concepts.queue.zh.html")],
-  ["/concepts/retry", path.resolve("content/handcrafted/concepts.retry.zh.html")],
-  ["/concepts/session-pruning", path.resolve("content/handcrafted/concepts.session-pruning.zh.html")],
-  ["/concepts/session", path.resolve("content/handcrafted/concepts.session.zh.html")],
-  ["/concepts/soul", path.resolve("content/handcrafted/concepts.soul.zh.html")],
-  ["/concepts/streaming", path.resolve("content/handcrafted/concepts.streaming.zh.html")],
-  ["/concepts/system-prompt", path.resolve("content/handcrafted/concepts.system-prompt.zh.html")],
-  ["/concepts/timezone", path.resolve("content/handcrafted/concepts.timezone.zh.html")],
-  ["/concepts/typebox", path.resolve("content/handcrafted/concepts.typebox.zh.html")],
-  ["/concepts/typing-indicators", path.resolve("content/handcrafted/concepts.typing-indicators.zh.html")],
-  ["/concepts/usage-tracking", path.resolve("content/handcrafted/concepts.usage-tracking.zh.html")],
-  ["/gateway/authentication", path.resolve("content/handcrafted/gateway.authentication.zh.html")],
-  ["/gateway/background-process", path.resolve("content/handcrafted/gateway.background-process.zh.html")],
-  ["/gateway/bonjour", path.resolve("content/handcrafted/gateway.bonjour.zh.html")],
-  ["/gateway/cli-backends", path.resolve("content/handcrafted/gateway.cli-backends.zh.html")],
-  ["/gateway/configuration-reference", path.resolve("content/handcrafted/gateway.configuration-reference.zh.html")],
-  ["/gateway/configuration", path.resolve("content/handcrafted/gateway.configuration.zh.html")],
-  ["/gateway/discovery", path.resolve("content/handcrafted/gateway.discovery.zh.html")],
-  ["/gateway/heartbeat", path.resolve("content/handcrafted/gateway.heartbeat.zh.html")],
-  ["/gateway/index", path.resolve("content/handcrafted/gateway.index.zh.html")],
-  ["/gateway/local-models", path.resolve("content/handcrafted/gateway.local-models.zh.html")],
-  ["/gateway/logging", path.resolve("content/handcrafted/gateway.logging.zh.html")],
-  ["/gateway/openai-http-api", path.resolve("content/handcrafted/gateway.openai-http-api.zh.html")],
-  ["/gateway/openresponses-http-api", path.resolve("content/handcrafted/gateway.openresponses-http-api.zh.html")],
-  ["/gateway/openshell", path.resolve("content/handcrafted/gateway.openshell.zh.html")],
-  ["/gateway/protocol", path.resolve("content/handcrafted/gateway.protocol.zh.html")],
-  ["/gateway/remote-gateway-readme", path.resolve("content/handcrafted/gateway.remote-gateway-readme.zh.html")],
-  ["/gateway/remote", path.resolve("content/handcrafted/gateway.remote.zh.html")],
-  ["/gateway/sandbox-vs-tool-policy-vs-elevated", path.resolve("content/handcrafted/gateway.sandbox-vs-tool-policy-vs-elevated.zh.html")],
-  ["/gateway/sandboxing", path.resolve("content/handcrafted/gateway.sandboxing.zh.html")],
-  ["/gateway/secrets", path.resolve("content/handcrafted/gateway.secrets.zh.html")],
-  ["/gateway/security/index", path.resolve("content/handcrafted/gateway.security.index.zh.html")],
-  ["/gateway/tools-invoke-http-api", path.resolve("content/handcrafted/gateway.tools-invoke-http-api.zh.html")],
-  ["/gateway/troubleshooting", path.resolve("content/handcrafted/gateway.troubleshooting.zh.html")],
-  ["/gateway/trusted-proxy-auth", path.resolve("content/handcrafted/gateway.trusted-proxy-auth.zh.html")],
-  ["/help/debugging", path.resolve("content/handcrafted/help.debugging.zh.html")],
-  ["/help/environment", path.resolve("content/handcrafted/help.environment.zh.html")],
-  ["/help/faq", path.resolve("content/handcrafted/help.faq.zh.html")],
-  ["/help/testing", path.resolve("content/handcrafted/help.testing.zh.html")],
-  ["/help/troubleshooting", path.resolve("content/handcrafted/help.troubleshooting.zh.html")],
-  ["/plugins/architecture", path.resolve("content/handcrafted/plugins.architecture.zh.html")],
-  ["/plugins/bundles", path.resolve("content/handcrafted/plugins.bundles.zh.html")],
-  ["/plugins/manifest", path.resolve("content/handcrafted/plugins.manifest.zh.html")],
-  ["/plugins/sdk-channel-plugins", path.resolve("content/handcrafted/plugins.sdk-channel-plugins.zh.html")],
-  ["/plugins/sdk-migration", path.resolve("content/handcrafted/plugins.sdk-migration.zh.html")],
-  ["/plugins/sdk-overview", path.resolve("content/handcrafted/plugins.sdk-overview.zh.html")],
-  ["/plugins/sdk-provider-plugins", path.resolve("content/handcrafted/plugins.sdk-provider-plugins.zh.html")],
-  ["/plugins/sdk-runtime", path.resolve("content/handcrafted/plugins.sdk-runtime.zh.html")],
-  ["/plugins/sdk-setup", path.resolve("content/handcrafted/plugins.sdk-setup.zh.html")],
-  ["/plugins/voice-call", path.resolve("content/handcrafted/plugins.voice-call.zh.html")],
-  ["/tools/acp-agents", path.resolve("content/handcrafted/tools.acp-agents.zh.html")],
-  ["/tools/brave-search", path.resolve("content/handcrafted/tools.brave-search.zh.html")],
-  ["/tools/browser-login", path.resolve("content/handcrafted/tools.browser-login.zh.html")],
-  ["/tools/browser-wsl2-windows-remote-cdp-troubleshooting", path.resolve("content/handcrafted/tools.browser-wsl2-windows-remote-cdp-troubleshooting.zh.html")],
-  ["/tools/btw", path.resolve("content/handcrafted/tools.btw.zh.html")],
-  ["/tools/clawhub", path.resolve("content/handcrafted/tools.clawhub.zh.html")],
-  ["/tools/code-execution", path.resolve("content/handcrafted/tools.code-execution.zh.html")],
-  ["/tools/diffs", path.resolve("content/handcrafted/tools.diffs.zh.html")],
-  ["/tools/duckduckgo-search", path.resolve("content/handcrafted/tools.duckduckgo-search.zh.html")],
-  ["/tools/exa-search", path.resolve("content/handcrafted/tools.exa-search.zh.html")],
-  ["/tools/firecrawl", path.resolve("content/handcrafted/tools.firecrawl.zh.html")],
-  ["/tools/gemini-search", path.resolve("content/handcrafted/tools.gemini-search.zh.html")],
-  ["/tools/grok-search", path.resolve("content/handcrafted/tools.grok-search.zh.html")],
-  ["/tools/kimi-search", path.resolve("content/handcrafted/tools.kimi-search.zh.html")],
-  ["/tools/llm-task", path.resolve("content/handcrafted/tools.llm-task.zh.html")],
-  ["/tools/lobster", path.resolve("content/handcrafted/tools.lobster.zh.html")],
-  ["/tools/perplexity-search", path.resolve("content/handcrafted/tools.perplexity-search.zh.html")],
-  ["/tools/slash-commands", path.resolve("content/handcrafted/tools.slash-commands.zh.html")],
-  ["/tools/subagents", path.resolve("content/handcrafted/tools.subagents.zh.html")],
-  ["/tools/tavily", path.resolve("content/handcrafted/tools.tavily.zh.html")],
-  ["/tools/tts", path.resolve("content/handcrafted/tools.tts.zh.html")],
-  ["/tools/video-generation", path.resolve("content/handcrafted/tools.video-generation.zh.html")],
-  ["/tools/web-fetch", path.resolve("content/handcrafted/tools.web-fetch.zh.html")],
-  ["/tools/web", path.resolve("content/handcrafted/tools.web.zh.html")],
-  ["/web/control-ui", path.resolve("content/handcrafted/web.control-ui.zh.html")],
-  ["/web/dashboard", path.resolve("content/handcrafted/web.dashboard.zh.html")],
-  ["/web/index", path.resolve("content/handcrafted/web.index.zh.html")],
-  ["/web/tui", path.resolve("content/handcrafted/web.tui.zh.html")]
+  ["/pi-dev", path.resolve("content/handcrafted/pi-dev.zh.html")]
 ]);
 
 function asset(fileName) {
@@ -515,41 +509,6 @@ function pageUrl(pathname) {
   }
 
   return `${SITE_URL}${publicPathname(pathname)}`;
-}
-
-const DEFAULT_META_DESCRIPTION =
-  "Fivey Can Read OpenClaw 把 OpenClaw 官方文档讲成中文故事版，适合第一次接触的人慢慢读懂安装、工具、通道、网关和插件。";
-const OG_IMAGE_URL = `${SITE_URL}/og-image.svg`;
-const OG_IMAGE_ALT = "Fivey Can Read OpenClaw 绘本版文档站封面";
-
-function cleanMetaDescription(value = "") {
-  const text = normalizeWhitespace(stripMarkdown(value));
-  return excerpt(text || DEFAULT_META_DESCRIPTION, 155);
-}
-
-function buildPageTitle(title = "") {
-  const cleanTitle = normalizeWhitespace(title || SITE_NAME);
-  if (!cleanTitle || cleanTitle === SITE_NAME) {
-    return SITE_NAME;
-  }
-
-  return `${cleanTitle} | ${SITE_NAME}`;
-}
-
-function buildDocMeta(page) {
-  const translatedTitle = page.translatedTitle || translateMenuTitle(page.title, page.sectionKey) || page.title;
-  const title = translatedTitle === page.title ? translatedTitle : `${translatedTitle}：${page.title}`;
-  const sourceDescription = cleanMetaDescription(page.description || "");
-  const sourceIsThin =
-    !sourceDescription ||
-    sourceDescription.length < 48 ||
-    sourceDescription.toLowerCase() === normalizeWhitespace(page.title || "").toLowerCase();
-  const fallbackDescription = `${translatedTitle}是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。`;
-
-  return {
-    title,
-    description: cleanMetaDescription(sourceIsThin ? fallbackDescription : sourceDescription)
-  };
 }
 
 function pageOutputPath(pathname) {
@@ -658,22 +617,22 @@ function sectionGuide(section) {
   );
 
   const lower = plain.toLowerCase();
-  let what = `这一节会把“${softenTerms(section.title)}”搬到台面上，让你看见它到底在忙什么。`;
-  let why = "你不用先背名字，先看清它一旦出场，会影响哪一步、拦住哪一步，就已经赢很多了。";
-  let use = "真要动手时，先盯默认值、开关位置和边界线，别一上来就全改。";
+  let what = `这一节主要在解释“${softenTerms(section.title)}”到底是干什么的，以及你什么时候会遇到它。`;
+  let why = "如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。";
+  let use = "真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。";
 
   if (/allow|deny|policy|required|must|default/.test(lower)) {
-    what = "这一节像守门员手里的规则板，写着谁默认能进、谁必须点头、谁会被拦下。";
-    why = "这类内容决定的不是好不好看，而是系统到底肯不肯放你过去。";
-    use = "真配的时候，优先盯住 default、required、allow、deny 这些词，它们就是门锁位置。";
+    what = `这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。`;
+    why = "这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。";
+    use = "你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。";
   } else if (/install|setup|configure|onboard|enable/.test(lower + section.title.toLowerCase())) {
-    what = "这一节更像搭台步骤，重点不是概念，而是先搬什么、后接什么才不会卡住。";
-    why = "文档写得长，往往不是话多，而是在防你漏掉前置条件。";
-    use = "照做时先找前置条件，再找必填项，最后看验活方式。";
+    what = `这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。`;
+    why = "很多文档看起来长，其实是在防你漏掉前置条件。";
+    use = "真正照做时，先找前置条件，再找必填项，最后看验证方法。";
   } else if (/tool|browser|search|exec|file|message|cron|plugin|skill/.test(lower + section.title.toLowerCase())) {
-    what = "这一节在讲一只工具手到底怎么伸出去，它能抓什么、碰什么、又在哪些地方会缩回来。";
-    why = "你要认清的是能力边界，不只是按钮名字。";
-    use = "如果这里同时有命令、配置和例子，先看例子，再回头认配置。";
+    what = `这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。`;
+    why = "你理解的是能力边界，不只是功能名字。";
+    use = "如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。";
   }
 
   return { what, why, use };
@@ -682,7 +641,10 @@ function sectionGuide(section) {
 async function renderHandcraftedContent(page) {
   const filePath = handcraftedPageMap.get(page.pathname);
   if (!filePath) return null;
-  return fs.readFile(filePath, "utf8");
+  const original = await fs.readFile(filePath, "utf8");
+  const heroOverride = await loadHeroOverride(page);
+  const rewritten = rewriteHandcraftedOverviewCard(page, original, heroOverride);
+  return `<!-- handcrafted-source:${path.basename(filePath)} -->\n${rewritten}`;
 }
 
 async function renderAiPageContent(page) {
@@ -775,6 +737,51 @@ async function loadHeroOverride(page) {
   }
 }
 
+function buildUnifiedOverviewCard(page, heroOverride) {
+  const overviewTitle = heroOverride?.heroTitle || buildDocHeroTitle(page);
+  const overviewSummary = heroOverride?.heroSummary || buildDocHeroText(page);
+  const firstSection = page.sections?.[0]?.title ? softenTerms(page.sections[0].title) : "";
+
+  return `
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>${escapeHtml(overviewTitle)}</h2>
+      <p>${escapeHtml(overviewSummary)}</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 ${page.sections.length} 节${firstSection ? `，先看 ${firstSection}` : ""}</span>
+      <span>路径：${escapeHtml(page.pathname)}</span>
+      <a href="${escapeHtml(page.url)}" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+`.trim();
+}
+
+function rewriteHandcraftedOverviewCard(page, html, heroOverride) {
+  const replacement = buildUnifiedOverviewCard(page, heroOverride);
+  const trimmed = html.trimStart();
+
+  if (!trimmed.startsWith("<section")) {
+    return `${replacement}\n\n${html}`;
+  }
+
+  const firstSectionEnd = trimmed.indexOf("</section>");
+  if (firstSectionEnd === -1) {
+    return `${replacement}\n\n${trimmed}`;
+  }
+
+  const firstSection = trimmed.slice(0, firstSectionEnd + "</section>".length);
+  if (!firstSection.includes('class="overview-card"')) {
+    return `${replacement}\n\n${trimmed}`;
+  }
+
+  const rest = trimmed.slice(firstSectionEnd + "</section>".length).trimStart();
+  return rest ? `${replacement}\n\n${rest}` : replacement;
+}
+
 function renderSidebar(navigation, currentPathname) {
   return `
     <nav class="sidebar-nav">
@@ -807,8 +814,7 @@ function renderSidebar(navigation, currentPathname) {
 
 function renderPageLayout({ title, description, pathname, heroEyebrow, heroTitle, heroText, content, navigation, breadcrumbs = [] }) {
   const canonical = pageUrl(pathname);
-  const pageTitle = buildPageTitle(title);
-  const metaDescription = cleanMetaDescription(description);
+  const pageTitle = `${title} | ${SITE_NAME}`;
   const breadcrumbJson = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -826,21 +832,17 @@ function renderPageLayout({ title, description, pathname, heroEyebrow, heroTitle
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${escapeHtml(pageTitle)}</title>
-  <meta name="description" content="${escapeHtml(metaDescription)}">
+  <meta name="description" content="${escapeHtml(description)}">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="${escapeHtml(SITE_NAME)}">
   <meta property="og:title" content="${escapeHtml(pageTitle)}">
-  <meta property="og:description" content="${escapeHtml(metaDescription)}">
+  <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:url" content="${escapeHtml(canonical)}">
-  <meta property="og:image" content="${escapeHtml(OG_IMAGE_URL)}">
-  <meta property="og:image:alt" content="${escapeHtml(OG_IMAGE_ALT)}">
+  <meta property="og:image" content="${escapeHtml(`${SITE_URL}/og-image.svg`)}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(pageTitle)}">
-  <meta name="twitter:description" content="${escapeHtml(metaDescription)}">
-  <meta name="twitter:image" content="${escapeHtml(OG_IMAGE_URL)}">
-  <meta name="twitter:image:alt" content="${escapeHtml(OG_IMAGE_ALT)}">
+  <meta name="twitter:description" content="${escapeHtml(description)}">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="${escapeHtml(canonical)}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -851,7 +853,7 @@ function renderPageLayout({ title, description, pathname, heroEyebrow, heroTitle
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: title,
-    description: metaDescription,
+    description,
     url: canonical,
     isPartOf: {
       "@type": "WebSite",
@@ -1033,7 +1035,7 @@ function renderHomePage() {
 
   return renderPageLayout({
     title: SITE_NAME,
-    description: heroText,
+    description: excerpt(heroText, 160),
     pathname: "/",
     heroEyebrow: "OpenClaw 文档故事乐园",
     heroTitle: "给 5 岁小朋友也能慢慢听懂的 OpenClaw 网站",
@@ -1082,7 +1084,7 @@ function renderIconPage() {
   `;
 
   return renderPageLayout({
-    title: "主题图标",
+    title: "Theme Icons",
     description: "Fivey Can Read OpenClaw 的 3 个站点图标候选方案。",
     pathname: "/theme-icons",
     heroEyebrow: "Brand Preview",
@@ -1119,11 +1121,11 @@ async function renderDocPage(page) {
           </div>
           <div class="story-grid">
             <div class="story-card">
-              <div class="story-card-label">这一段在忙什么</div>
+              <div class="story-card-label">这段在解决什么</div>
               <p>${escapeHtml(guide.what)}</p>
             </div>
             <div class="story-card">
-              <div class="story-card-label">为什么别跳过</div>
+              <div class="story-card-label">为什么值得看</div>
               <p>${escapeHtml(guide.why)}</p>
             </div>
             <div class="story-card">
@@ -1131,7 +1133,7 @@ async function renderDocPage(page) {
               <p>${escapeHtml(guide.use)}</p>
             </div>
             <div class="source-card">
-              <div class="story-card-label">先看眼前发生了什么</div>
+              <div class="story-card-label">先别急着背术语</div>
               <p>${escapeHtml(storyForParagraph(stripMarkdown(section.blocks.map((block) => block.type === "paragraph" ? block.text : "").join(" "))))}</p>
             </div>
           </div>
@@ -1150,7 +1152,7 @@ async function renderDocPage(page) {
           <p class="section-kicker">先听这页的人话版</p>
           <h2>${escapeHtml(page.title)}</h2>
           <p>${escapeHtml(storyLead(page.title, page.description || ""))}</p>
-          <p>${escapeHtml(`把这页读完，你最好能直接说出三件事：它在系统里扮哪一个角色、什么时候该把它请出来、最容易摔跤的是哪一步。`)}</p>
+          <p>${escapeHtml(`如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。`)}</p>
         </div>
         <div class="overview-meta">
           <span>原始路径：${escapeHtml(page.pathname)}</span>
@@ -1170,15 +1172,17 @@ async function renderDocPage(page) {
   const handcraftedContent = await renderHandcraftedContent(page);
   const aiContent = handcraftedContent ? null : await renderAiPageContent(page);
   const heroOverride = await loadHeroOverride(page);
-  const meta = buildDocMeta(page);
+
+  const heroTitle = heroOverride?.heroTitle || buildDocHeroTitle(page);
+  const heroText = heroOverride?.heroSummary || buildDocHeroText(page);
 
   return renderPageLayout({
-    title: meta.title,
-    description: meta.description,
+    title: page.title,
+    description: excerpt(heroText || page.description || `${page.title} 的儿童故事化解读。`, 160),
     pathname: page.pathname,
     heroEyebrow: `${page.sectionLabel} 导读`,
-    heroTitle: heroOverride?.heroTitle || buildDocHeroTitle(page),
-    heroText: heroOverride?.heroSummary || buildDocHeroText(page),
+    heroTitle,
+    heroText,
     content: handcraftedContent || aiContent || genericContent,
     navigation: siteData.navigation,
     breadcrumbs
@@ -1990,27 +1994,15 @@ for (const page of siteData.pages) {
   }
 }
 
-const sitemapPathnames = [
+const sitemapEntries = [
   "/",
-  "/theme-icons/",
   ...siteData.pages.map((page) => publicPathname(page.pathname))
-];
-
-const sitemapEntries = [...new Set(sitemapPathnames)]
+]
   .map((pathname) => {
     const url = pathname === "/" ? SITE_URL : `${SITE_URL}${pathname}`;
-    const priority = pathname === "/" ? "1.0" : pathname === "/theme-icons/" ? "0.4" : "0.7";
-    const changefreq = pathname === "/" ? "daily" : "weekly";
-    return [
-      "  <url>",
-      `    <loc>${escapeHtml(url)}</loc>`,
-      `    <lastmod>${siteData.generatedAt}</lastmod>`,
-      `    <changefreq>${changefreq}</changefreq>`,
-      `    <priority>${priority}</priority>`,
-      "  </url>"
-    ].join("\n");
+    return `<url><loc>${escapeHtml(url)}</loc><lastmod>${siteData.generatedAt}</lastmod></url>`;
   })
-  .join("\n");
+  .join("");
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

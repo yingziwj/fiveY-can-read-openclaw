@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agent Harness 插件：Agent Harness Plugins | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Agent Harness 插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Agent Harness Plugins | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="当你有一个模型家族自带会话运行时（比如 coding-agent 服务器、本地 CLI），且 OpenClaw 的标准 Provider 传输不适用时，才需要注册一个 Agent Harness。最容易搞错的是：不要为了接入一个新 LLM API 就写 Harness——那是 Provider 插件的事。注册前先确认…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Agent Harness 插件：Agent Harness Plugins | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Agent Harness 插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Agent Harness Plugins | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="当你有一个模型家族自带会话运行时（比如 coding-agent 服务器、本地 CLI），且 OpenClaw 的标准 Provider 传输不适用时，才需要注册一个 Agent Harness。最容易搞错的是：不要为了接入一个新 LLM API 就写 Harness——那是 Provider 插件的事。注册前先确认…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/plugins/sdk-agent-harness/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Agent Harness 插件：Agent Harness Plugins | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Agent Harness 插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Agent Harness Plugins | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="当你有一个模型家族自带会话运行时（比如 coding-agent 服务器、本地 CLI），且 OpenClaw 的标准 Provider 传输不适用时，才需要注册一个 Agent Harness。最容易搞错的是：不要为了接入一个新 LLM API 就写 Harness——那是 Provider 插件的事。注册前先确认…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/plugins/sdk-agent-harness/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Agent Harness 插件：Agent Harness Plugins","description":"Agent Harness 插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-agent-harness/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Agent Harness Plugins","description":"当你有一个模型家族自带会话运行时（比如 coding-agent 服务器、本地 CLI），且 OpenClaw 的标准 Provider 传输不适用时，才需要注册一个 Agent Harness。最容易搞错的是：不要为了接入一个新 LLM API 就写 Harness——那是 Provider 插件的事。注册前先确认…","url":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-agent-harness/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Plugins","item":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-agent-harness/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Plugins 导读</p>
-        <h1>机器人朋友 Harness 新本领插件s：这块新积木往哪儿卡</h1>
-        <p class="hero-copy">机器人朋友 Harness 新本领插件s 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：机器人朋友 Harness 新本领插件s。</p>
+        <h1>Agent Harness 不是 Provider，也不是 Channel——它是模型原生运行时的执行器</h1>
+        <p class="hero-copy">当你有一个模型家族自带会话运行时（比如 coding-agent 服务器、本地 CLI），且 OpenClaw 的标准 Provider 传输不适用时，才需要注册一个 Agent Harness。最容易搞错的是：不要为了接入一个新 LLM API 就写 Harness——那是 Provider 插件的事。注册前先确认你的场景是否真的需要接管整个 turn 的执行，否则用内置 PI 即可。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>

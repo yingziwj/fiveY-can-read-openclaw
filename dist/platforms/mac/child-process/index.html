@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gateway 生命周期：Gateway Lifecycle | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Gateway 生命周期是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Gateway Lifecycle | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="macOS 版 app 默认通过 launchd 管理 Gateway 生命周期，不是子进程。先搞清楚默认走 launchd，子进程模式当前并未启用。最容易踩的坑是 unsigned dev 构建会写一个 disable 标记，导致 launchd 不启动 Gateway，需要手动删掉 ~/.openclaw/dis…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Gateway 生命周期：Gateway Lifecycle | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Gateway 生命周期是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Gateway Lifecycle | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="macOS 版 app 默认通过 launchd 管理 Gateway 生命周期，不是子进程。先搞清楚默认走 launchd，子进程模式当前并未启用。最容易踩的坑是 unsigned dev 构建会写一个 disable 标记，导致 launchd 不启动 Gateway，需要手动删掉 ~/.openclaw/dis…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/platforms/mac/child-process/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Gateway 生命周期：Gateway Lifecycle | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Gateway 生命周期是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Gateway Lifecycle | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="macOS 版 app 默认通过 launchd 管理 Gateway 生命周期，不是子进程。先搞清楚默认走 launchd，子进程模式当前并未启用。最容易踩的坑是 unsigned dev 构建会写一个 disable 标记，导致 launchd 不启动 Gateway，需要手动删掉 ~/.openclaw/dis…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/platforms/mac/child-process/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Gateway 生命周期：Gateway Lifecycle","description":"Gateway 生命周期是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/platforms/mac/child-process/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Gateway Lifecycle","description":"macOS 版 app 默认通过 launchd 管理 Gateway 生命周期，不是子进程。先搞清楚默认走 launchd，子进程模式当前并未启用。最容易踩的坑是 unsigned dev 构建会写一个 disable 标记，导致 launchd 不启动 Gateway，需要手动删掉 ~/.openclaw/dis…","url":"https://fivey-can-read-openclaw.pages.dev/platforms/mac/child-process/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Platforms","item":"https://fivey-can-read-openclaw.pages.dev/platforms/mac/child-process/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Platforms 导读</p>
-        <h1>macOS上Gateway的启动与管理方式</h1>
-        <p class="hero-copy">这页说明macOS应用默认通过launchd管理Gateway，而非子进程模式。最该先看默认的launchd行为，了解应用如何自动启动Gateway。最容易搞错的是开发构建时的签名问题，未签名构建会禁用launchd，需手动重置。</p>
+        <h1>macOS 上 Gateway 到底谁在管？默认走 launchd，别被子进程模式骗了</h1>
+        <p class="hero-copy">macOS 版 app 默认通过 launchd 管理 Gateway 生命周期，不是子进程。先搞清楚默认走 launchd，子进程模式当前并未启用。最容易踩的坑是 unsigned dev 构建会写一个 disable 标记，导致 launchd 不启动 Gateway，需要手动删掉 ~/.openclaw/disable-launchagent 才能恢复。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🚦 Child Process 这页，其实是在讲“Mac app 现在默认不用子进程托管 Gateway，而是交给 launchd 管”</h2><p>这能带来更稳的登录自启和崩溃重拉起，不是为了炫技。</p></div><div class="overview-meta"><span>Mac Gateway 生命周期</span><span>重点是 launchd 默认、child-process 不是当前路线</span><a href="https://docs.openclaw.ai/platforms/mac/child-process" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:platforms.mac.child-process.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>macOS 上 Gateway 到底谁在管？默认走 launchd，别被子进程模式骗了</h2>
+      <p>macOS 版 app 默认通过 launchd 管理 Gateway 生命周期，不是子进程。先搞清楚默认走 launchd，子进程模式当前并未启用。最容易踩的坑是 unsigned dev 构建会写一个 disable 标记，导致 launchd 不启动 Gateway，需要手动删掉 ~/.openclaw/disable-launchagent 才能恢复。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/platforms/mac/child-process</span>
+      <a href="https://docs.openclaw.ai/platforms/mac/child-process" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>🧷 launchd 更像“系统级值班表”，不是 App 自己抱着一个子进程不撒手</h2><p>所以当前默认路线是 attach / install / kickstart，不是 fork 一个小孩进程看着它。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label"><code>launchctl kickstart ...</code></div><p>像把值班中的 Gateway 重新拉起来。</p></div><div class="source-card"><div class="story-card-label"><code>launchctl bootout ...</code></div><p>像把这班值勤从系统表里撤下来。</p></div><div class="source-card"><div class="story-card-label"><code>~/.openclaw/disable-launchagent</code></div><p>这像临时贴上的“先别走 launchd”便签，常见于 unsigned dev build 快速调试。</p></div><div class="source-card"><div class="story-card-label">手动终端模式</div><p>如果你真想 UI 紧挨着 Gateway 看日志，那就自己在终端里跑，不走默认托管路线。</p></div></div></section>
 
 

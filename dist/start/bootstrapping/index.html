@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>代理启动引导：Agent Bootstrapping | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="代理启动引导是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Agent Bootstrapping | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Bootstrapping 只在 Agent 首次运行时执行一次：在本地或远程网关主机上创建 workspace 并写入身份文件。最该先看的是它生成的四个文件（AGENTS.md、IDENTITY.md 等）分别存什么——它们决定了 Agent 后续的行为。容易搞错的是：如果通过 macOS 应用连接远程 Gatew…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="代理启动引导：Agent Bootstrapping | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="代理启动引导是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Agent Bootstrapping | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Bootstrapping 只在 Agent 首次运行时执行一次：在本地或远程网关主机上创建 workspace 并写入身份文件。最该先看的是它生成的四个文件（AGENTS.md、IDENTITY.md 等）分别存什么——它们决定了 Agent 后续的行为。容易搞错的是：如果通过 macOS 应用连接远程 Gatew…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/start/bootstrapping/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="代理启动引导：Agent Bootstrapping | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="代理启动引导是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Agent Bootstrapping | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Bootstrapping 只在 Agent 首次运行时执行一次：在本地或远程网关主机上创建 workspace 并写入身份文件。最该先看的是它生成的四个文件（AGENTS.md、IDENTITY.md 等）分别存什么——它们决定了 Agent 后续的行为。容易搞错的是：如果通过 macOS 应用连接远程 Gatew…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/start/bootstrapping/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"代理启动引导：Agent Bootstrapping","description":"代理启动引导是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/start/bootstrapping/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Agent Bootstrapping","description":"Bootstrapping 只在 Agent 首次运行时执行一次：在本地或远程网关主机上创建 workspace 并写入身份文件。最该先看的是它生成的四个文件（AGENTS.md、IDENTITY.md 等）分别存什么——它们决定了 Agent 后续的行为。容易搞错的是：如果通过 macOS 应用连接远程 Gatew…","url":"https://fivey-can-read-openclaw.pages.dev/start/bootstrapping/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Start","item":"https://fivey-can-read-openclaw.pages.dev/start/bootstrapping/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Start 导读</p>
-        <h1>首次运行Agent的初始化流程</h1>
-        <p class="hero-copy">这页详细说明Agent首次启动时的初始化过程，包括创建workspace文件和收集身份信息。最该先看初始化会创建哪些文件，以及这些文件的作用。最容易搞错的是当Gateway运行在远程机器上时，workspace文件实际存放在远程主机上，而不是本地。</p>
+        <h1>第一次启动 Agent 时，它自己会做什么</h1>
+        <p class="hero-copy">Bootstrapping 只在 Agent 首次运行时执行一次：在本地或远程网关主机上创建 workspace 并写入身份文件。最该先看的是它生成的四个文件（AGENTS.md、IDENTITY.md 等）分别存什么——它们决定了 Agent 后续的行为。容易搞错的是：如果通过 macOS 应用连接远程 Gateway，workspace 实际在远程主机上，编辑文件必须登录那台机器。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:start.bootstrapping.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🍼 <code>Bootstrapping</code> 像“第一次入住时的开箱小仪式”</h2>
-      <p>这页讲的是第一次跑 agent 时，OpenClaw 怎么把小工人的房间先摆好，再问它几个最基础的问题。</p>
-      <p>你可以把它想成新家开箱。先放床、放桌子、贴名字，再让小工人正式坐下来上班。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>第一次启动 Agent 时，它自己会做什么</h2>
+      <p>Bootstrapping 只在 Agent 首次运行时执行一次：在本地或远程网关主机上创建 workspace 并写入身份文件。最该先看的是它生成的四个文件（AGENTS.md、IDENTITY.md 等）分别存什么——它们决定了 Agent 后续的行为。容易搞错的是：如果通过 macOS 应用连接远程 Gateway，workspace 实际在远程主机上，编辑文件必须登录那台机器。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想弄懂“第一次开工时，OpenClaw 在忙什么”的人</span>
-      <span>这页最重要的是记住：bootstrapping 只跑一次</span>
+      <span>原文共 4 节，先看 Start Here</span>
+      <span>路径：/start/bootstrapping</span>
       <a href="https://docs.openclaw.ai/start/bootstrapping" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

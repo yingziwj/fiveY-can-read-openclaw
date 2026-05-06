@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>技能：Skills | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="技能是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Skills | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="OpenClaw 从 6 个位置加载技能目录，同名时按 workspace &gt; .agents &gt; ~/.agents &gt; ~/.openclaw &gt; bundled &gt; extraDirs 的优先级覆盖。注意技能位置和可见性是两回事——位置决定哪个副本生效，allowlist 决定哪些技能能被 agent 使用，且…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="技能：Skills | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="技能是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Skills | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="OpenClaw 从 6 个位置加载技能目录，同名时按 workspace &gt; .agents &gt; ~/.agents &gt; ~/.openclaw &gt; bundled &gt; extraDirs 的优先级覆盖。注意技能位置和可见性是两回事——位置决定哪个副本生效，allowlist 决定哪些技能能被 agent 使用，且…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/tools/skills/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="技能：Skills | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="技能是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Skills | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="OpenClaw 从 6 个位置加载技能目录，同名时按 workspace &gt; .agents &gt; ~/.agents &gt; ~/.openclaw &gt; bundled &gt; extraDirs 的优先级覆盖。注意技能位置和可见性是两回事——位置决定哪个副本生效，allowlist 决定哪些技能能被 agent 使用，且…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/tools/skills/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"技能：Skills","description":"技能是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/tools/skills/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Skills","description":"OpenClaw 从 6 个位置加载技能目录，同名时按 workspace > .agents > ~/.agents > ~/.openclaw > bundled > extraDirs 的优先级覆盖。注意技能位置和可见性是两回事——位置决定哪个副本生效，allowlist 决定哪些技能能被 agent 使用，且…","url":"https://fivey-can-read-openclaw.pages.dev/tools/skills/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://fivey-can-read-openclaw.pages.dev/tools/skills/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Tools 导读</p>
-        <h1>OpenClaw技能配置与加载优先级详解</h1>
-        <p class="hero-copy">这页详细说明OpenClaw如何通过AgentSkills兼容的文件夹结构加载技能，以及多来源技能之间的优先级规则。配置时最需注意技能加载的六个来源及其冲突解决顺序，特别是workspace技能优先级最高。在多代理环境中，要区分个人技能、项目技能和共享技能的不同作用范围，避免权限混淆。</p>
+        <h1>技能目录的加载顺序与覆盖规则</h1>
+        <p class="hero-copy">OpenClaw 从 6 个位置加载技能目录，同名时按 workspace &gt; .agents &gt; ~/.agents &gt; ~/.openclaw &gt; bundled &gt; extraDirs 的优先级覆盖。注意技能位置和可见性是两回事——位置决定哪个副本生效，allowlist 决定哪些技能能被 agent 使用，且 agent 自己的 skills 列表会完全替换 defaults，不会合并。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:tools.skills.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧰 Skills 不是新工具，它更像写给 OpenClaw 的“小抄本”</h2>
-      <p>OpenClaw 有很多工具，像手、脚、眼睛、耳朵。可光有工具还不够，它还得知道什么时候该用哪一个、先做什么、后做什么、别踩什么坑。</p>
-      <p>Skills 干的就是这件事。它不是给 OpenClaw 再装一只新手，而是往它脑袋里塞一张“小抄”：遇到这种任务，就按这套路子来。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>技能目录的加载顺序与覆盖规则</h2>
+      <p>OpenClaw 从 6 个位置加载技能目录，同名时按 workspace &gt; .agents &gt; ~/.agents &gt; ~/.openclaw &gt; bundled &gt; extraDirs 的优先级覆盖。注意技能位置和可见性是两回事——位置决定哪个副本生效，allowlist 决定哪些技能能被 agent 使用，且 agent 自己的 skills 列表会完全替换 defaults，不会合并。</p>
     </div>
     <div class="overview-meta">
-      <span>这页适合第一次搞不清 skill 是什么的人</span>
-      <span>重点不是语法，而是先搞懂 skill 到底在系统里扮演什么角色</span>
+      <span>原文共 19 节，先看 Start Here</span>
+      <span>路径：/tools/skills</span>
       <a href="https://docs.openclaw.ai/tools/skills" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

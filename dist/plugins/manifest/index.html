@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>插件清单：Plugin Manifest | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="插件清单是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Plugin Manifest | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="openclaw.plugin.json 是 OpenClaw 加载插件代码前必须读的元数据文件。先看 id 和 configSchema，这是唯二必填字段；最容易漏的是 providerAuthEnvVars 和 providerAuthAliases——它们让 OpenClaw 在没加载插件代码时就能知道环境变量…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="插件清单：Plugin Manifest | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="插件清单是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Plugin Manifest | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="openclaw.plugin.json 是 OpenClaw 加载插件代码前必须读的元数据文件。先看 id 和 configSchema，这是唯二必填字段；最容易漏的是 providerAuthEnvVars 和 providerAuthAliases——它们让 OpenClaw 在没加载插件代码时就能知道环境变量…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/plugins/manifest/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="插件清单：Plugin Manifest | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="插件清单是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Plugin Manifest | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="openclaw.plugin.json 是 OpenClaw 加载插件代码前必须读的元数据文件。先看 id 和 configSchema，这是唯二必填字段；最容易漏的是 providerAuthEnvVars 和 providerAuthAliases——它们让 OpenClaw 在没加载插件代码时就能知道环境变量…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/plugins/manifest/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"插件清单：Plugin Manifest","description":"插件清单是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/plugins/manifest/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Plugin Manifest","description":"openclaw.plugin.json 是 OpenClaw 加载插件代码前必须读的元数据文件。先看 id 和 configSchema，这是唯二必填字段；最容易漏的是 providerAuthEnvVars 和 providerAuthAliases——它们让 OpenClaw 在没加载插件代码时就能知道环境变量…","url":"https://fivey-can-read-openclaw.pages.dev/plugins/manifest/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Plugins","item":"https://fivey-can-read-openclaw.pages.dev/plugins/manifest/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Plugins 导读</p>
-        <h1>OpenClaw 插件清单文件详解</h1>
-        <p class="hero-copy">这页讲的是 OpenClaw 原生插件的核心配置文件 openclaw.plugin.json，它定义了插件在加载前的元数据和行为。你应该先看‘Top-level field reference’表格，了解每个字段的用途和必填项。最容易错的是混淆不同插件格式的清单文件，比如 Codex 或 Claude 插件用的是别的文件，而 OpenClaw 原生插件必须用这个。</p>
+        <h1>插件启动前，OpenClaw 先读这个文件</h1>
+        <p class="hero-copy">`openclaw.plugin.json` 是 OpenClaw 加载插件代码前必须读的元数据文件。先看 `id` 和 `configSchema`，这是唯二必填字段；最容易漏的是 `providerAuthEnvVars` 和 `providerAuthAliases`——它们让 OpenClaw 在没加载插件代码时就能知道环境变量和认证关系，不配好会导致启动时认证失败。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:plugins.manifest.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🪪 Plugin Manifest，就是插件的身份证和说明卡</h2>
-      <p>这页讲的是插件装上去之前，系统最先要看的那张卡。</p>
-      <p>名字、版本、入口、配置、能力，先写好，OpenClaw 才知道这盒东西能不能放进来。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>插件启动前，OpenClaw 先读这个文件</h2>
+      <p>`openclaw.plugin.json` 是 OpenClaw 加载插件代码前必须读的元数据文件。先看 `id` 和 `configSchema`，这是唯二必填字段；最容易漏的是 `providerAuthEnvVars` 和 `providerAuthAliases`——它们让 OpenClaw 在没加载插件代码时就能知道环境变量和认证关系，不配好会导致启动时认证失败。</p>
     </div>
     <div class="overview-meta">
-      <span>适合先看 manifest 长什么样</span>
-      <span>重点是字段、类型、默认值和入口</span>
+      <span>原文共 22 节，先看 Start Here</span>
+      <span>路径：/plugins/manifest</span>
       <a href="https://docs.openclaw.ai/plugins/manifest" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

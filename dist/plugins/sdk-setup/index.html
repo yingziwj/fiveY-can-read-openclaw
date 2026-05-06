@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>插件设置与配置：Plugin Setup and Config | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="插件设置与配置是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Plugin Setup and Config | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页是插件打包的参考手册，不是教程。先看 package.json 里的 openclaw 字段——它决定了你的插件是频道插件还是 Provider 插件，以及系统怎么发现它。最容易搞错的是 openclaw.install.minHostVersion：它不是在文档里写一句“要求版本”，而是会强制阻止旧版本加载插…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="插件设置与配置：Plugin Setup and Config | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="插件设置与配置是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Plugin Setup and Config | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页是插件打包的参考手册，不是教程。先看 package.json 里的 openclaw 字段——它决定了你的插件是频道插件还是 Provider 插件，以及系统怎么发现它。最容易搞错的是 openclaw.install.minHostVersion：它不是在文档里写一句“要求版本”，而是会强制阻止旧版本加载插…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/plugins/sdk-setup/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="插件设置与配置：Plugin Setup and Config | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="插件设置与配置是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Plugin Setup and Config | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页是插件打包的参考手册，不是教程。先看 package.json 里的 openclaw 字段——它决定了你的插件是频道插件还是 Provider 插件，以及系统怎么发现它。最容易搞错的是 openclaw.install.minHostVersion：它不是在文档里写一句“要求版本”，而是会强制阻止旧版本加载插…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/plugins/sdk-setup/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"插件设置与配置：Plugin Setup and Config","description":"插件设置与配置是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-setup/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Plugin Setup and Config","description":"这一页是插件打包的参考手册，不是教程。先看 package.json 里的 openclaw 字段——它决定了你的插件是频道插件还是 Provider 插件，以及系统怎么发现它。最容易搞错的是 openclaw.install.minHostVersion：它不是在文档里写一句“要求版本”，而是会强制阻止旧版本加载插…","url":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-setup/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Plugins","item":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-setup/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Plugins 导读</p>
-        <h1>插件配置字段详解</h1>
-        <p class="hero-copy">这页详细说明了在package.json中配置OpenClaw插件所需的openclaw字段，包括channel、install等关键部分。你应该先看package metadata部分，了解如何为channel或provider插件填写基础字段。最容易出错的是install字段中的minHostVersion版本格式和allowInvalidConfigRecovery的适用范围，这些配置直接影响插件的安装和运行。</p>
+        <h1>插件打包到底要填哪些字段？</h1>
+        <p class="hero-copy">这一页是插件打包的参考手册，不是教程。先看 `package.json` 里的 `openclaw` 字段——它决定了你的插件是频道插件还是 Provider 插件，以及系统怎么发现它。最容易搞错的是 `openclaw.install.minHostVersion`：它不是在文档里写一句“要求版本”，而是会强制阻止旧版本加载插件，填错会导致插件装不上。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:plugins.sdk-setup.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧰 Plugin Setup，就是教你把第一盒插件搭起来</h2>
-      <p>这页是起步页。它不是讲理论，而是带你把目录、文件、入口、测试这些最开始的东西摆好。</p>
-      <p>像第一次搭积木，先把底板放平，再往上插零件。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>插件打包到底要填哪些字段？</h2>
+      <p>这一页是插件打包的参考手册，不是教程。先看 `package.json` 里的 `openclaw` 字段——它决定了你的插件是频道插件还是 Provider 插件，以及系统怎么发现它。最容易搞错的是 `openclaw.install.minHostVersion`：它不是在文档里写一句“要求版本”，而是会强制阻止旧版本加载插件，填错会导致插件装不上。</p>
     </div>
     <div class="overview-meta">
-      <span>适合刚开始做插件的人</span>
-      <span>重点是新项目怎么起步、怎么不漏文件</span>
+      <span>原文共 16 节，先看 Start Here</span>
+      <span>路径：/plugins/sdk-setup</span>
       <a href="https://docs.openclaw.ai/plugins/sdk-setup" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

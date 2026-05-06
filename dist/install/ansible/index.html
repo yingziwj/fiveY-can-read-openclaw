@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ansible 安装：Ansible | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Ansible 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Ansible | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="用 openclaw-ansible 快速安装，自动配置 UFW、Tailscale、Docker 和系统服务。注意：网关直接跑在宿主机上，只有 agent 沙箱走 Docker 隔离。先确保系统是 Debian 11+ 或 Ubuntu 20.04+，有 root 权限。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Ansible 安装：Ansible | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Ansible 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Ansible | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="用 openclaw-ansible 快速安装，自动配置 UFW、Tailscale、Docker 和系统服务。注意：网关直接跑在宿主机上，只有 agent 沙箱走 Docker 隔离。先确保系统是 Debian 11+ 或 Ubuntu 20.04+，有 root 权限。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/install/ansible/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ansible 安装：Ansible | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Ansible 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Ansible | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="用 openclaw-ansible 快速安装，自动配置 UFW、Tailscale、Docker 和系统服务。注意：网关直接跑在宿主机上，只有 agent 沙箱走 Docker 隔离。先确保系统是 Debian 11+ 或 Ubuntu 20.04+，有 root 权限。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/install/ansible/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Ansible 安装：Ansible","description":"Ansible 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/install/ansible/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Ansible","description":"用 openclaw-ansible 快速安装，自动配置 UFW、Tailscale、Docker 和系统服务。注意：网关直接跑在宿主机上，只有 agent 沙箱走 Docker 隔离。先确保系统是 Debian 11+ 或 Ubuntu 20.04+，有 root 权限。","url":"https://fivey-can-read-openclaw.pages.dev/install/ansible/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Install","item":"https://fivey-can-read-openclaw.pages.dev/install/ansible/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Install 导读</p>
-        <h1>用Ansible一键部署OpenClaw到生产服务器</h1>
-        <p class="hero-copy">这页介绍如何通过openclaw-ansible自动化安装脚本，在Debian/Ubuntu服务器上部署OpenClaw。最该先看Quick Start部分的一行命令安装方式，但要注意安装前必须满足操作系统、权限和网络等前提条件。最容易搞错的地方是理解OpenClaw网关本身运行在主机上而非Docker容器内，只有代理沙箱才使用Docker隔离。</p>
+        <h1>一行命令部署生产级 OpenClaw，安全架构已内置</h1>
+        <p class="hero-copy">用 openclaw-ansible 快速安装，自动配置 UFW、Tailscale、Docker 和系统服务。注意：网关直接跑在宿主机上，只有 agent 沙箱走 Docker 隔离。先确保系统是 Debian 11+ 或 Ubuntu 20.04+，有 root 权限。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:install.ansible.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🛡️ Ansible 这页，其实是在教你“派一支装修队去服务器上，按同一张图纸装 OpenClaw”</h2>
-      <p>它不是给第一次试玩的人准备的，而是给“我要把 Gateway 稳稳放到正式服务器上”的人。重点不在炫技，而在少出事。</p>
-      <p>官方这页最想传达的只有一句：这不是把 OpenClaw 塞进 Docker 里乱跑，而是在主机上稳稳值班，同时用 Docker 给工具沙箱单独关进隔离房。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>一行命令部署生产级 OpenClaw，安全架构已内置</h2>
+      <p>用 openclaw-ansible 快速安装，自动配置 UFW、Tailscale、Docker 和系统服务。注意：网关直接跑在宿主机上，只有 agent 沙箱走 Docker 隔离。先确保系统是 Debian 11+ 或 Ubuntu 20.04+，有 root 权限。</p>
     </div>
     <div class="overview-meta">
-      <span>适合正式服务器部署</span>
-      <span>重点是安全、自动化、可重复</span>
+      <span>原文共 13 节，先看 Start Here</span>
+      <span>路径：/install/ansible</span>
       <a href="https://docs.openclaw.ai/install/ansible" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

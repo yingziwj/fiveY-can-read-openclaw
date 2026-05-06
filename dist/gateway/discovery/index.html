@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>发现与传输：Discovery and Transports | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="发现与传输是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Discovery and Transports | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="OpenClaw 把“远程控制网关”和“节点配对”当作两个独立问题处理。所有网络发现和广告都由网关负责，客户端只消费。先理解这个分工，再看 Bonjour 和 SSH 传输的取舍。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="发现与传输：Discovery and Transports | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="发现与传输是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Discovery and Transports | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="OpenClaw 把“远程控制网关”和“节点配对”当作两个独立问题处理。所有网络发现和广告都由网关负责，客户端只消费。先理解这个分工，再看 Bonjour 和 SSH 传输的取舍。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/gateway/discovery/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="发现与传输：Discovery and Transports | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="发现与传输是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Discovery and Transports | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="OpenClaw 把“远程控制网关”和“节点配对”当作两个独立问题处理。所有网络发现和广告都由网关负责，客户端只消费。先理解这个分工，再看 Bonjour 和 SSH 传输的取舍。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/gateway/discovery/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"发现与传输：Discovery and Transports","description":"发现与传输是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/discovery/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Discovery and Transports","description":"OpenClaw 把“远程控制网关”和“节点配对”当作两个独立问题处理。所有网络发现和广告都由网关负责，客户端只消费。先理解这个分工，再看 Bonjour 和 SSH 传输的取舍。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/discovery/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Gateway","item":"https://fivey-can-read-openclaw.pages.dev/gateway/discovery/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Gateway 导读</p>
-        <h1>网关发现与传输机制详解</h1>
-        <p class="hero-copy">本页详细说明OpenClaw网关如何被发现（通过Bonjour/DNS-SD）以及客户端（如macOS菜单栏应用、移动设备）如何通过直接WebSocket或SSH回退两种方式连接到网关。首先应理解“直接WS传输”和“SSH传输”各自的应用场景与配置要点。最需注意的是Bonjour TXT记录仅作为UX提示，未经认证，客户端必须依赖解析后的服务端点（SRV+A/AAAA记录）进行安全连接，且TLS指纹钉扎不能被广告的`gatewayTlsSha256`覆盖。</p>
+        <h1>分清两件事：远程控制 vs 节点配对，别混在一起</h1>
+        <p class="hero-copy">OpenClaw 把“远程控制网关”和“节点配对”当作两个独立问题处理。所有网络发现和广告都由网关负责，客户端只消费。先理解这个分工，再看 Bonjour 和 SSH 传输的取舍。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:gateway.discovery.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧭 <code>Discovery &amp; transports</code> 像“先找到哪一栋楼，再决定走哪条路进去”</h2>
-      <p>这页看着像网络术语，其实只在讲两件事：客户端怎么先发现 Gateway 在哪，以及发现后该走直连、尾网还是 SSH 这条路。</p>
-      <p>所以它不像“复杂协议课”，更像找门和选路图。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>分清两件事：远程控制 vs 节点配对，别混在一起</h2>
+      <p>OpenClaw 把“远程控制网关”和“节点配对”当作两个独立问题处理。所有网络发现和广告都由网关负责，客户端只消费。先理解这个分工，再看 Bonjour 和 SSH 传输的取舍。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想弄清客户端到底怎么找到 Gateway 的人</span>
-      <span>这页最重要的是先分清：发现是找门，传输是选路</span>
+      <span>原文共 10 节，先看 Start Here</span>
+      <span>路径：/gateway/discovery</span>
       <a href="https://docs.openclaw.ai/gateway/discovery" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

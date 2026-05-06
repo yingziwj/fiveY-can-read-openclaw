@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Linux 服务器：Linux Server | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Linux 服务器是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Linux Server | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="先挑提供商（Railway、DigitalOcean 等 11 种方案），再理解云上架构：Gateway 跑在 VPS 上，你通过控制 UI 或 Tailscale 远程连它。最容易错的是绑定 lan 或 tailnet 时必须配 gateway.auth.token 或 password，否则连不上。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Linux 服务器：Linux Server | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Linux 服务器是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Linux Server | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="先挑提供商（Railway、DigitalOcean 等 11 种方案），再理解云上架构：Gateway 跑在 VPS 上，你通过控制 UI 或 Tailscale 远程连它。最容易错的是绑定 lan 或 tailnet 时必须配 gateway.auth.token 或 password，否则连不上。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/vps/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Linux 服务器：Linux Server | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Linux 服务器是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Linux Server | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="先挑提供商（Railway、DigitalOcean 等 11 种方案），再理解云上架构：Gateway 跑在 VPS 上，你通过控制 UI 或 Tailscale 远程连它。最容易错的是绑定 lan 或 tailnet 时必须配 gateway.auth.token 或 password，否则连不上。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/vps/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Linux 服务器：Linux Server","description":"Linux 服务器是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/vps/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Linux Server","description":"先挑提供商（Railway、DigitalOcean 等 11 种方案），再理解云上架构：Gateway 跑在 VPS 上，你通过控制 UI 或 Tailscale 远程连它。最容易错的是绑定 lan 或 tailnet 时必须配 gateway.auth.token 或 password，否则连不上。","url":"https://fivey-can-read-openclaw.pages.dev/vps/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Vps","item":"https://fivey-can-read-openclaw.pages.dev/vps/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Vps 导读</p>
-        <h1>在Linux服务器或云VPS上部署OpenClaw网关</h1>
-        <p class="hero-copy">这页帮你选择云服务提供商，并说明如何在VPS上运行网关。先看“选择提供商”部分，根据需求挑选合适的部署平台。注意，如果绑定到局域网或Tailscale网络，必须配置网关认证令牌或密码。</p>
+        <h1>选云商、配网络、防踩坑：Linux 服务器部署 Gateway 全指引</h1>
+        <p class="hero-copy">先挑提供商（Railway、DigitalOcean 等 11 种方案），再理解云上架构：Gateway 跑在 VPS 上，你通过控制 UI 或 Tailscale 远程连它。最容易错的是绑定 `lan` 或 `tailnet` 时必须配 `gateway.auth.token` 或 `password`，否则连不上。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:vps.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🖥️ Linux Server 这一页，其实是在讲“把 OpenClaw 放进一间靠谱的服务器房”</h2>
-      <p>它不是单纯列供应商，而是在帮你选房子、看搬家方式、再教你怎么把这间房收拾得稳一点。</p>
-      <p>如果你要长期跑 OpenClaw，这页就是你选 VPS 和云主机时的地图。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>选云商、配网络、防踩坑：Linux 服务器部署 Gateway 全指引</h2>
+      <p>先挑提供商（Railway、DigitalOcean 等 11 种方案），再理解云上架构：Gateway 跑在 VPS 上，你通过控制 UI 或 Tailscale 远程连它。最容易错的是绑定 `lan` 或 `tailnet` 时必须配 `gateway.auth.token` 或 `password`，否则连不上。</p>
     </div>
     <div class="overview-meta">
-      <span>适合要上云、要长跑的人</span>
-      <span>先选供应商，再看云部署怎么运作，再看小机器调优</span>
+      <span>原文共 7 节，先看 Start Here</span>
+      <span>路径：/vps</span>
       <a href="https://docs.openclaw.ai/vps" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>configure 命令：configure | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="configure 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>configure | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="运行 openclaw configure 进入交互式向导，一次性设置凭据、设备、代理默认值。模型部分新增多选白名单，控制 /model 和模型选择器显示哪些模型。注意：当从提供商认证开始时，默认模型和白名单会自动优先选中该提供商；若配对提供商（如 Volcengine/BytePlus）的筛选结果为空，会回退到完整…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="configure 命令：configure | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="configure 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="configure | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="运行 openclaw configure 进入交互式向导，一次性设置凭据、设备、代理默认值。模型部分新增多选白名单，控制 /model 和模型选择器显示哪些模型。注意：当从提供商认证开始时，默认模型和白名单会自动优先选中该提供商；若配对提供商（如 Volcengine/BytePlus）的筛选结果为空，会回退到完整…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/configure/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="configure 命令：configure | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="configure 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="configure | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="运行 openclaw configure 进入交互式向导，一次性设置凭据、设备、代理默认值。模型部分新增多选白名单，控制 /model 和模型选择器显示哪些模型。注意：当从提供商认证开始时，默认模型和白名单会自动优先选中该提供商；若配对提供商（如 Volcengine/BytePlus）的筛选结果为空，会回退到完整…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/configure/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"configure 命令：configure","description":"configure 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/configure/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"configure","description":"运行 openclaw configure 进入交互式向导，一次性设置凭据、设备、代理默认值。模型部分新增多选白名单，控制 /model 和模型选择器显示哪些模型。注意：当从提供商认证开始时，默认模型和白名单会自动优先选中该提供商；若配对提供商（如 Volcengine/BytePlus）的筛选结果为空，会回退到完整…","url":"https://fivey-can-read-openclaw.pages.dev/cli/configure/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/configure/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>配置OpenClaw的交互式向导</h1>
-        <p class="hero-copy">这页教你用`openclaw configure`命令，通过交互式提示来设置凭证、设备和代理默认值。最该先看Model部分，它现在支持多选模型白名单，直接影响`/model`接口和模型选择器的显示内容。最容易搞错的是配置网关认证时，如果同时设置了token和密码但未指定认证模式，向导会阻止守护进程安装，必须明确设置`gateway.auth.mode`。</p>
+        <h1>一条命令配好所有：凭据、设备、模型、频道</h1>
+        <p class="hero-copy">运行 `openclaw configure` 进入交互式向导，一次性设置凭据、设备、代理默认值。模型部分新增多选白名单，控制 `/model` 和模型选择器显示哪些模型。注意：当从提供商认证开始时，默认模型和白名单会自动优先选中该提供商；若配对提供商（如 Volcengine/BytePlus）的筛选结果为空，会回退到完整列表而非空白。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.configure.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧭 <code>openclaw configure</code> 像“牵着你逛一圈新房的带路老师”</h2>
-      <p>如果 <code>config</code> 是自己拿镊子改总账本，<code>configure</code> 就是另一种路子：不让你盯着一长串路径，而是边走边问，边问边配。</p>
-      <p>你可以把它想成装修向导。它会问你门装哪、钥匙放哪、脑子用哪颗、消息从哪扇门进来。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>一条命令配好所有：凭据、设备、模型、频道</h2>
+      <p>运行 `openclaw configure` 进入交互式向导，一次性设置凭据、设备、代理默认值。模型部分新增多选白名单，控制 `/model` 和模型选择器显示哪些模型。注意：当从提供商认证开始时，默认模型和白名单会自动优先选中该提供商；若配对提供商（如 Volcengine/BytePlus）的筛选结果为空，会回退到完整列表而非空白。</p>
     </div>
     <div class="overview-meta">
-      <span>适合第一次搭、或者想按步骤走的人</span>
-      <span>这页最重要的是记住：它是按区域带你走，不是一次把所有细节硬摊开</span>
+      <span>原文共 3 节，先看 Start Here</span>
+      <span>路径：/cli/configure</span>
       <a href="https://docs.openclaw.ai/cli/configure" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

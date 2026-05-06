@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>引导参考：Onboarding Reference | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="引导参考是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Onboarding Reference | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="非交互模式要手动传所有参数，包括 --auth-choice 和 --gateway-auth；--gateway-token 与 --gateway-token-ref-env 互斥。重置默认只清配置+凭证+会话，想清工作区要加 --reset-scope full。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="引导参考：Onboarding Reference | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="引导参考是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Onboarding Reference | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="非交互模式要手动传所有参数，包括 --auth-choice 和 --gateway-auth；--gateway-token 与 --gateway-token-ref-env 互斥。重置默认只清配置+凭证+会话，想清工作区要加 --reset-scope full。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/reference/wizard/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="引导参考：Onboarding Reference | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="引导参考是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Onboarding Reference | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="非交互模式要手动传所有参数，包括 --auth-choice 和 --gateway-auth；--gateway-token 与 --gateway-token-ref-env 互斥。重置默认只清配置+凭证+会话，想清工作区要加 --reset-scope full。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/reference/wizard/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"引导参考：Onboarding Reference","description":"引导参考是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/reference/wizard/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Onboarding Reference","description":"非交互模式要手动传所有参数，包括 --auth-choice 和 --gateway-auth；--gateway-token 与 --gateway-token-ref-env 互斥。重置默认只清配置+凭证+会话，想清工作区要加 --reset-scope full。","url":"https://fivey-can-read-openclaw.pages.dev/reference/wizard/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Reference","item":"https://fivey-can-read-openclaw.pages.dev/reference/wizard/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Reference 导读</p>
-        <h1>openclaw onboard 命令完整参考</h1>
-        <p class="hero-copy">这页详细说明 openclaw onboard 命令的所有选项和流程细节，包括本地模式配置检测、非交互式自动化脚本和网关RPC接口。使用非交互模式时，注意 --gateway-token 和 --gateway-token-ref-env 参数互斥，这是最容易出错的地方。</p>
+        <h1>openclaw onboard 所有参数和流程细节，适合自动化或排查时查</h1>
+        <p class="hero-copy">非交互模式要手动传所有参数，包括 `--auth-choice` 和 `--gateway-auth`；`--gateway-token` 与 `--gateway-token-ref-env` 互斥。重置默认只清配置+凭证+会话，想清工作区要加 `--reset-scope full`。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,8 +4324,21 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🪄 Wizard 这页，其实是在讲“openclaw onboard 这位带路老师背后完整的参考手册”</h2><p>概览页讲大路，这页讲每个开关和非交互参数到底怎么用。</p></div><div class="overview-meta"><span>onboard 参考手册</span><span>重点是 non-interactive、gateway token、agent add</span><a href="https://docs.openclaw.ai/reference/wizard" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-
+      <!-- handcrafted-source:reference.wizard.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>openclaw onboard 所有参数和流程细节，适合自动化或排查时查</h2>
+      <p>非交互模式要手动传所有参数，包括 `--auth-choice` 和 `--gateway-auth`；`--gateway-token` 与 `--gateway-token-ref-env` 互斥。重置默认只清配置+凭证+会话，想清工作区要加 `--reset-scope full`。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 8 节，先看 Start Here</span>
+      <span>路径：/reference/wizard</span>
+      <a href="https://docs.openclaw.ai/reference/wizard" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
       <footer class="page-footer">
         <div>

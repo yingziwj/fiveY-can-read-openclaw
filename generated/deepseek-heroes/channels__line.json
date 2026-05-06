@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:47:20.971Z",
+  "generatedAt": "2026-05-06T15:04:45.198Z",
   "pathname": "/channels/line",
   "title": "LINE",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "LINE 通道配置与接入指南",
-    "heroSummary": "这页详细说明如何将 LINE 消息 API 接入 OpenClaw 网关，包括获取 Channel Access Token 和 Channel Secret、设置 Webhook URL 等关键步骤。配置时最容易出错的地方是签名验证依赖原始请求体，必须确保中间件不修改 body 数据。建议先完成 LINE 开发者控制台的通道创建和 Webhook 启用，再配置 OpenClaw 的 token 和 secret。"
+    "heroTitle": "LINE 接入：先拿 token 和 secret，再配 webhook",
+    "heroSummary": "这一页教你让 LINE 机器人通过 OpenClaw 接收消息。最优先做两件事：在 LINE Developers Console 里拿到 Channel access token 和 Channel secret，然后把 webhook URL 填成你的网关地址（HTTPS 必须）。最容易踩的坑是：LINE 的签名校验依赖原始请求体，所以 OpenClaw 会忽略中间件修改过的 req.body，如果你自己加了 body 解析中间件，务必确保它不影响原始字节。"
   }
 }

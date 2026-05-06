@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:53:46.316Z",
+  "generatedAt": "2026-05-06T15:08:42.851Z",
   "pathname": "/cli/node",
   "title": "node",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "配置无界面节点主机连接网关",
-    "heroSummary": "这页说明如何运行 openclaw node 命令，让其他机器成为执行节点，通过 WebSocket 连接到网关。启动时需指定网关地址和端口，并注意认证信息从环境变量或本地配置读取，不直接使用 --token 参数。"
+    "heroTitle": "用一台无头机器跑 agent 命令，先配好 token 和 exec 白名单",
+    "heroSummary": "`openclaw node` 让你在远程 Linux/Windows 机器上启动一个轻量节点，agent 可以通过它执行命令或操控浏览器，无需安装完整桌面应用。启动前务必确认 `OPENCLAW_GATEWAY_TOKEN` 或 `gateway.auth.token` 已配置——节点命令不支持 `--token` 参数，且不会继承 `gateway.remote.token`。浏览器代理默认开启，如果不想暴露节点上的浏览器配置文件，记得在配置里把 `nodeHost.browserProxy.enabled` 设为 `false`。"
   }
 }

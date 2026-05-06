@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>引导（CLI）：Onboarding (CLI) | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="引导（CLI）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Onboarding (CLI) | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="CLI 引导式配置是官方推荐的上手方式，覆盖本地/远程 Gateway、频道、技能和工作区。先跑 openclaw onboard 走 QuickStart 用默认值最快出效果，注意 Token 即使本地回环也会自动生成，DM 隔离默认写为 per-channel-peer。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="引导（CLI）：Onboarding (CLI) | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="引导（CLI）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Onboarding (CLI) | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="CLI 引导式配置是官方推荐的上手方式，覆盖本地/远程 Gateway、频道、技能和工作区。先跑 openclaw onboard 走 QuickStart 用默认值最快出效果，注意 Token 即使本地回环也会自动生成，DM 隔离默认写为 per-channel-peer。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/start/wizard/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="引导（CLI）：Onboarding (CLI) | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="引导（CLI）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Onboarding (CLI) | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="CLI 引导式配置是官方推荐的上手方式，覆盖本地/远程 Gateway、频道、技能和工作区。先跑 openclaw onboard 走 QuickStart 用默认值最快出效果，注意 Token 即使本地回环也会自动生成，DM 隔离默认写为 per-channel-peer。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/start/wizard/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"引导（CLI）：Onboarding (CLI)","description":"引导（CLI）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/start/wizard/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Onboarding (CLI)","description":"CLI 引导式配置是官方推荐的上手方式，覆盖本地/远程 Gateway、频道、技能和工作区。先跑 openclaw onboard 走 QuickStart 用默认值最快出效果，注意 Token 即使本地回环也会自动生成，DM 隔离默认写为 per-channel-peer。","url":"https://fivey-can-read-openclaw.pages.dev/start/wizard/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Start","item":"https://fivey-can-read-openclaw.pages.dev/start/wizard/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Start 导读</p>
-        <h1>CLI 快速配置 OpenClaw 的完整流程</h1>
-        <p class="hero-copy">这页详细讲解如何用 `openclaw onboard` 命令一次性配置网关、通道、技能和工作区。配置时最容易搞错的是网关认证模式的选择，如果选了 SecretRef 但环境变量没设好，会导致守护进程安装失败。</p>
+        <h1>一条命令完成 OpenClaw 全环境配置</h1>
+        <p class="hero-copy">CLI 引导式配置是官方推荐的上手方式，覆盖本地/远程 Gateway、频道、技能和工作区。先跑 `openclaw onboard` 走 QuickStart 用默认值最快出效果，注意 Token 即使本地回环也会自动生成，DM 隔离默认写为 per-channel-peer。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:start.wizard.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧙 <code>Onboarding (CLI)</code> 像“命令行里的向导老师”</h2>
-      <p>这页讲的是：如果你想在终端里把 OpenClaw 装好，带着你一步一步走的那位老师会怎么问、怎么选、怎么把配置写好。</p>
-      <p>它是推荐路线。尤其在 macOS、Linux、Windows（WSL2）上，CLI 这条路最通用，也最像工程师会走的路。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>一条命令完成 OpenClaw 全环境配置</h2>
+      <p>CLI 引导式配置是官方推荐的上手方式，覆盖本地/远程 Gateway、频道、技能和工作区。先跑 `openclaw onboard` 走 QuickStart 用默认值最快出效果，注意 Token 即使本地回环也会自动生成，DM 隔离默认写为 per-channel-peer。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想在终端里完整掌握安装的人</span>
-      <span>这页最重要的是记住：它是完整流程，不是单条命令</span>
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/start/wizard</span>
       <a href="https://docs.openclaw.ai/start/wizard" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

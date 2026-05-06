@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:48:30.722Z",
+  "generatedAt": "2026-05-06T15:05:26.834Z",
   "pathname": "/install/docker",
   "title": "Docker",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Docker 安装指南：可选容器化网关",
-    "heroSummary": "这页指导如何通过 Docker 安装 OpenClaw 网关，适合需要隔离环境或验证 Docker 流程的用户。先确认 Docker 是否适合你的场景，避免在本地开发时使用。注意配置防火墙和内存要求，否则可能导致 OOM 错误。"
+    "heroTitle": "Docker 安装：先判断你是否真的需要容器化",
+    "heroSummary": "Docker 是可选的，只有当你想要隔离的网关环境或在无本地安装的主机上运行时才需要。最易踩的坑是内存不足：构建镜像至少需要 2 GB RAM，否则 pnpm install 会被 OOM 杀掉（退出码 137）。如果你只是本地快速开发，用普通安装流程更快。"
   }
 }

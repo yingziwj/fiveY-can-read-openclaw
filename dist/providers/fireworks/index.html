@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fireworks 提供商：Fireworks | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Fireworks 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Fireworks | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页教你如何把 Fireworks 的开放权重模型和路由模型接入 OpenClaw。最优先的动作是执行 openclaw onboard --auth-choice fireworks-api-key 来存储 API Key 并设置默认模型。容易搞错的是：自定义模型 ID 必须带 fireworks/ 前缀，但 O…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Fireworks 提供商：Fireworks | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Fireworks 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Fireworks | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页教你如何把 Fireworks 的开放权重模型和路由模型接入 OpenClaw。最优先的动作是执行 openclaw onboard --auth-choice fireworks-api-key 来存储 API Key 并设置默认模型。容易搞错的是：自定义模型 ID 必须带 fireworks/ 前缀，但 O…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/providers/fireworks/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Fireworks 提供商：Fireworks | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Fireworks 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Fireworks | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页教你如何把 Fireworks 的开放权重模型和路由模型接入 OpenClaw。最优先的动作是执行 openclaw onboard --auth-choice fireworks-api-key 来存储 API Key 并设置默认模型。容易搞错的是：自定义模型 ID 必须带 fireworks/ 前缀，但 O…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/providers/fireworks/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Fireworks 提供商：Fireworks","description":"Fireworks 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/providers/fireworks/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Fireworks","description":"这一页教你如何把 Fireworks 的开放权重模型和路由模型接入 OpenClaw。最优先的动作是执行 openclaw onboard --auth-choice fireworks-api-key 来存储 API Key 并设置默认模型。容易搞错的是：自定义模型 ID 必须带 fireworks/ 前缀，但 O…","url":"https://fivey-can-read-openclaw.pages.dev/providers/fireworks/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Providers","item":"https://fivey-can-read-openclaw.pages.dev/providers/fireworks/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Providers 导读</p>
-        <h1>Fireworks：模型入口要怎么敲门</h1>
-        <p class="hero-copy">Fireworks 这一页像在认一家新店的门头。先别急着掏 key，先看它认哪种证件、默认会叫谁出场、哪几个地址一写歪整条路就黑掉。原文最响的一记鼓点，其实是：Fireworks。</p>
+        <h1>Fireworks 接入：先拿 API Key，再跑 onboard</h1>
+        <p class="hero-copy">这一页教你如何把 Fireworks 的开放权重模型和路由模型接入 OpenClaw。最优先的动作是执行 `openclaw onboard --auth-choice fireworks-api-key` 来存储 API Key 并设置默认模型。容易搞错的是：自定义模型 ID 必须带 `fireworks/` 前缀，但 OpenClaw 发请求时会自动去掉这个前缀，所以配置时别漏了前缀。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:49:30.496Z",
+  "generatedAt": "2026-05-06T15:06:06.762Z",
   "pathname": "/plugins/sdk-overview",
   "title": "Plugin SDK Overview",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "插件 SDK 导入与注册参考",
-    "heroSummary": "这页是插件 SDK 的导入路径和注册 API 的完整参考，告诉你应该从哪个子路径导入，以及可以注册哪些功能。开发插件时，先看“Import convention”部分，确保从正确的子路径导入，避免依赖错误。注意不要使用以 Slack、Discord 等命名的便捷路径，它们仅供捆绑插件维护使用。"
+    "heroTitle": "Plugin SDK 就是一张“该从哪导入、能注册什么”的速查表",
+    "heroSummary": "先看 import 约定：必须从具体子路径导入，别图省事用 `openclaw/plugin-sdk/slack` 这种品牌化捷径——那是留给内置插件的，新插件用了会踩坑。200+ 子路径按用途分组，写 channel 插件主看 `channel-core`，写 provider 插件主看 `provider-entry`，别在 `core` 里乱翻。"
   }
 }

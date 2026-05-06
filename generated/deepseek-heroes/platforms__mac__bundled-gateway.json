@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:28.194Z",
+  "generatedAt": "2026-05-06T15:07:39.625Z",
   "pathname": "/platforms/mac/bundled-gateway",
   "title": "Gateway on macOS",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "macOS 上配置 OpenClaw Gateway 的完整步骤",
-    "heroSummary": "这页详细说明如何在 macOS 上安装 OpenClaw CLI 并配置为 launchd 服务，让 Gateway 在后台持续运行。你需要先全局安装 openclaw CLI，这是使用本地模式的前提。最容易出错的地方是版本兼容性，必须确保 CLI 版本与 macOS 应用版本匹配，否则服务无法正常工作。"
+    "heroTitle": "macOS 版 Gateway：不再内置，需要手动装 CLI",
+    "heroSummary": "新版 macOS 应用不再捆绑 Node 或 Gateway 运行时，必须先用 npm 全局安装 openclaw CLI。安装后应用会通过 launchd 管理 Gateway 进程，或附着到已有本地 Gateway。最容易踩的坑是版本不匹配——如果 CLI 版本与应用版本不一致，Gateway 会启动失败，需要手动更新 CLI。"
   }
 }

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:47:33.653Z",
+  "generatedAt": "2026-05-06T15:04:55.002Z",
   "pathname": "/channels/signal",
   "title": "Signal",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Signal 通道配置与接入指南",
-    "heroSummary": "本页详细说明如何通过 signal-cli 将 OpenClaw 接入 Signal 平台，重点在于配置账户、选择注册路径并设置配对策略。配置时需注意 account 字段必须填写完整的 Signal 电话号码，且 dmPolicy 设为 'pairing' 才能启用私聊功能。"
+    "heroTitle": "Signal 通道：用 signal-cli 接机器人，先搞定注册和配对",
+    "heroSummary": "这一页是 Signal 通道的接入指南，核心是让 Gateway 通过 signal-cli 的 HTTP JSON-RPC 收发消息。先选注册路径（QR 链接或短信验证），然后配置账号、cliPath 和 dmPolicy，最后用 openclaw pairing approve 批准第一个 DM 发送者。最容易踩的坑是：机器人必须用独立 Signal 号码，且 dmPolicy 设为 pairing 时，只有 allowFrom 列表里的号码才能触发配对流程。"
   }
 }

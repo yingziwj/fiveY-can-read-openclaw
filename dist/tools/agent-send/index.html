@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agent Send 工具：Agent Send | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Agent Send 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Agent Send | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="openclaw agent 让你在终端直接发消息给 Agent，适合脚本、测试或定时任务。最常用的三个参数是 --message（必填）、--to（指定目标）和 --deliver（把回复发到聊天频道）。注意：默认走 Gateway，加 --local 才强制本地运行；--to 和 --session-id 互斥，…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Agent Send 工具：Agent Send | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Agent Send 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Agent Send | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="openclaw agent 让你在终端直接发消息给 Agent，适合脚本、测试或定时任务。最常用的三个参数是 --message（必填）、--to（指定目标）和 --deliver（把回复发到聊天频道）。注意：默认走 Gateway，加 --local 才强制本地运行；--to 和 --session-id 互斥，…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/tools/agent-send/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Agent Send 工具：Agent Send | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Agent Send 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Agent Send | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="openclaw agent 让你在终端直接发消息给 Agent，适合脚本、测试或定时任务。最常用的三个参数是 --message（必填）、--to（指定目标）和 --deliver（把回复发到聊天频道）。注意：默认走 Gateway，加 --local 才强制本地运行；--to 和 --session-id 互斥，…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/tools/agent-send/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Agent Send 工具：Agent Send","description":"Agent Send 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/tools/agent-send/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Agent Send","description":"openclaw agent 让你在终端直接发消息给 Agent，适合脚本、测试或定时任务。最常用的三个参数是 --message（必填）、--to（指定目标）和 --deliver（把回复发到聊天频道）。注意：默认走 Gateway，加 --local 才强制本地运行；--to 和 --session-id 互斥，…","url":"https://fivey-can-read-openclaw.pages.dev/tools/agent-send/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://fivey-can-read-openclaw.pages.dev/tools/agent-send/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Tools 导读</p>
-        <h1>命令行触发单次Agent交互</h1>
-        <p class="hero-copy">这页教你用`openclaw agent`命令从命令行触发一次Agent交互，无需等待聊天消息，适用于脚本工作流和测试。最该先看`--message`参数怎么填，这是必填项。最容易错的是会话选择：用`--to`指定目标（如手机号）会推导会话，用`--agent`会使用该Agent的`main`会话，用`--session-id`则复用现有会话，三者逻辑不同，选错可能导致消息发到不预期的会话。</p>
+        <h1>用命令行跑一次 Agent 对话，不依赖入站消息</h1>
+        <p class="hero-copy">`openclaw agent` 让你在终端直接发消息给 Agent，适合脚本、测试或定时任务。最常用的三个参数是 `--message`（必填）、`--to`（指定目标）和 `--deliver`（把回复发到聊天频道）。注意：默认走 Gateway，加 `--local` 才强制本地运行；`--to` 和 `--session-id` 互斥，前者自动派生会话，后者复用已有会话。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:tools.agent-send.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>📨 Agent Send 就像“你不走聊天窗口，直接从后台塞一张任务纸条给 OpenClaw”</h2>
-      <p>平时我们都是在 Telegram、Slack、TUI 这些地方跟 OpenClaw 说话。可有时候你根本不想打开聊天界面，只想在命令行里直接塞一句任务进去，让它回你结果，甚至顺手把结果送到某个通道。</p>
-      <p><code>openclaw agent</code> 干的就是这件事。它像后台快递口，你直接写纸条、指定收件人、选好要不要投递出去。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用命令行跑一次 Agent 对话，不依赖入站消息</h2>
+      <p>`openclaw agent` 让你在终端直接发消息给 Agent，适合脚本、测试或定时任务。最常用的三个参数是 `--message`（必填）、`--to`（指定目标）和 `--deliver`（把回复发到聊天频道）。注意：默认走 Gateway，加 `--local` 才强制本地运行；`--to` 和 `--session-id` 互斥，前者自动派生会话，后者复用已有会话。</p>
     </div>
     <div class="overview-meta">
-      <span>适合脚本调用、自动化任务、命令行测试</span>
-      <span>这页最重要的是分清：这是“后台塞任务”，不是“打开一个新聊天界面”</span>
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/tools/agent-send</span>
       <a href="https://docs.openclaw.ai/tools/agent-send" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:53:00.784Z",
+  "generatedAt": "2026-05-06T15:08:11.455Z",
   "pathname": "/providers/zai",
   "title": "Z.AI",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Z.AI 接入配置指南",
-    "heroSummary": "这页说明如何将 Z.AI 的 GLM 模型接入 OpenClaw，核心是配置 API 密钥和选择正确的区域端点。配置时最容易出错的是混淆通用 API 与 Coding Plan 的密钥类型，导致认证失败。"
+    "heroTitle": "接入智谱 GLM，只需一个 API Key",
+    "heroSummary": "Z.AI 是智谱 GLM 模型的 API 平台，OpenClaw 通过 `zai` provider 接入。先到 Z.AI 控制台创建 API Key，然后运行 `openclaw onboard --auth-choice zai-api-key` 完成初始化。默认模型是 `zai/glm-5.1`，支持自动检测端点或手动指定区域端点；注意工具调用流式默认开启，如需关闭需在配置中设置 `tool_stream: false`。"
   }
 }

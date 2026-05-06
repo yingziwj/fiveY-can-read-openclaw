@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>daemon 命令：daemon | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="daemon 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>daemon | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页是 openclaw daemon 命令的参考，它已被 openclaw gateway 取代，但所有子命令（status、install、start、stop、restart、uninstall）完全兼容。如果你在用旧脚本或习惯，可以继续用 daemon，但新项目请改用 gateway。最容易踩坑的是 sta…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="daemon 命令：daemon | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="daemon 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="daemon | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页是 openclaw daemon 命令的参考，它已被 openclaw gateway 取代，但所有子命令（status、install、start、stop、restart、uninstall）完全兼容。如果你在用旧脚本或习惯，可以继续用 daemon，但新项目请改用 gateway。最容易踩坑的是 sta…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/daemon/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="daemon 命令：daemon | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="daemon 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="daemon | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页是 openclaw daemon 命令的参考，它已被 openclaw gateway 取代，但所有子命令（status、install、start、stop、restart、uninstall）完全兼容。如果你在用旧脚本或习惯，可以继续用 daemon，但新项目请改用 gateway。最容易踩坑的是 sta…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/daemon/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"daemon 命令：daemon","description":"daemon 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/daemon/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"daemon","description":"这一页是 openclaw daemon 命令的参考，它已被 openclaw gateway 取代，但所有子命令（status、install、start、stop、restart、uninstall）完全兼容。如果你在用旧脚本或习惯，可以继续用 daemon，但新项目请改用 gateway。最容易踩坑的是 sta…","url":"https://fivey-can-read-openclaw.pages.dev/cli/daemon/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/daemon/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>openclaw daemon 命令：管理网关服务的旧版别名</h1>
-        <p class="hero-copy">这页说明 `openclaw daemon` 是 `openclaw gateway` 服务管理命令的旧版别名，用于安装、启动、停止和检查网关服务状态。使用 `status` 子命令时，如果配置了 SecretRef 但未解析，可能导致身份验证失败，此时应显式传递 `--token` 或 `--password` 参数。建议优先参考 `openclaw gateway` 命令获取最新文档和示例。</p>
+        <h1>`openclaw daemon` 是旧名，新名是 `openclaw gateway`，命令一样用</h1>
+        <p class="hero-copy">这一页是 `openclaw daemon` 命令的参考，它已被 `openclaw gateway` 取代，但所有子命令（status、install、start、stop、restart、uninstall）完全兼容。如果你在用旧脚本或习惯，可以继续用 daemon，但新项目请改用 gateway。最容易踩坑的是 status 的 token 探测：如果 token 来自 SecretRef 且未解析，status 会报 rpc.authWarning，此时要么显式传 --token，要么先解析 SecretRef。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.daemon.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧯 <code>openclaw daemon</code> 像“旧门牌上的老名字，其实还是在叫 Gateway 服务员”</h2>
-      <p>这页最容易让人误会成一套新系统。其实不是。官方第一句就讲了：它只是旧别名，背后还是同一套 Gateway 服务管理命令。</p>
-      <p>所以你可以把它想成旧小区门口还挂着“值班室”这块老牌子，但里面坐的还是现在那位 Gateway 管家。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>`openclaw daemon` 是旧名，新名是 `openclaw gateway`，命令一样用</h2>
+      <p>这一页是 `openclaw daemon` 命令的参考，它已被 `openclaw gateway` 取代，但所有子命令（status、install、start、stop、restart、uninstall）完全兼容。如果你在用旧脚本或习惯，可以继续用 daemon，但新项目请改用 gateway。最容易踩坑的是 status 的 token 探测：如果 token 来自 SecretRef 且未解析，status 会报 rpc.authWarning，此时要么显式传 --token，要么先解析 SecretRef。</p>
     </div>
     <div class="overview-meta">
-      <span>适合碰到旧文档、旧命令、老教程时做对照的人</span>
-      <span>这页最重要的是记住：daemon 不是新东西，它是 gateway 服务命令的旧名字</span>
+      <span>原文共 5 节，先看 Start Here</span>
+      <span>路径：/cli/daemon</span>
       <a href="https://docs.openclaw.ai/cli/daemon" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

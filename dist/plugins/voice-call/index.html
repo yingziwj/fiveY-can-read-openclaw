@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>语音通话插件：Voice Call Plugin | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="语音通话插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Voice Call Plugin | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="先装插件、重启 Gateway，再在 plugins.entries.voice-call.config 里填 provider 和号码。Twilio/Telnyx/Plivo 都需要公开可访问的 webhook URL，否则外呼会失败；本地开发用 mock 省心。最容易踩的坑是 ngrok 免费版 URL 会变，导…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="语音通话插件：Voice Call Plugin | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="语音通话插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Voice Call Plugin | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="先装插件、重启 Gateway，再在 plugins.entries.voice-call.config 里填 provider 和号码。Twilio/Telnyx/Plivo 都需要公开可访问的 webhook URL，否则外呼会失败；本地开发用 mock 省心。最容易踩的坑是 ngrok 免费版 URL 会变，导…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/plugins/voice-call/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="语音通话插件：Voice Call Plugin | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="语音通话插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Voice Call Plugin | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="先装插件、重启 Gateway，再在 plugins.entries.voice-call.config 里填 provider 和号码。Twilio/Telnyx/Plivo 都需要公开可访问的 webhook URL，否则外呼会失败；本地开发用 mock 省心。最容易踩的坑是 ngrok 免费版 URL 会变，导…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/plugins/voice-call/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"语音通话插件：Voice Call Plugin","description":"语音通话插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/plugins/voice-call/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Voice Call Plugin","description":"先装插件、重启 Gateway，再在 plugins.entries.voice-call.config 里填 provider 和号码。Twilio/Telnyx/Plivo 都需要公开可访问的 webhook URL，否则外呼会失败；本地开发用 mock 省心。最容易踩的坑是 ngrok 免费版 URL 会变，导…","url":"https://fivey-can-read-openclaw.pages.dev/plugins/voice-call/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Plugins","item":"https://fivey-can-read-openclaw.pages.dev/plugins/voice-call/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Plugins 导读</p>
-        <h1>OpenClaw语音通话插件安装与配置</h1>
-        <p class="hero-copy">这页详细说明如何安装和配置语音通话插件，支持Twilio、Telnyx、Plivo等提供商。配置时需在plugins.entries.voice-call.config下设置provider和API密钥，并确保webhook URL可公开访问。最容易出错的是签名验证和ngrok免费层URL变动，生产环境建议使用稳定域名。</p>
+        <h1>给 OpenClaw 装一个打电话的插件：选哪家、怎么配、最坑在哪</h1>
+        <p class="hero-copy">先装插件、重启 Gateway，再在 `plugins.entries.voice-call.config` 里填 provider 和号码。Twilio/Telnyx/Plivo 都需要公开可访问的 webhook URL，否则外呼会失败；本地开发用 `mock` 省心。最容易踩的坑是 ngrok 免费版 URL 会变，导致签名验证失败——要么用 `publicUrl` 固定它，要么生产环境换稳定域名。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:plugins.voice-call.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>📞 Voice Call Plugin，就是让 OpenClaw 学会接电话</h2>
-      <p>这页讲的是语音通话插件。它不是普通聊天窗口，而是把“听”和“说”接进来。</p>
-      <p>你可以把它想成给 OpenClaw 装了一副耳机和麦克风，再让它知道电话响了以后该怎么接。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>给 OpenClaw 装一个打电话的插件：选哪家、怎么配、最坑在哪</h2>
+      <p>先装插件、重启 Gateway，再在 `plugins.entries.voice-call.config` 里填 provider 和号码。Twilio/Telnyx/Plivo 都需要公开可访问的 webhook URL，否则外呼会失败；本地开发用 `mock` 省心。最容易踩的坑是 ngrok 免费版 URL 会变，导致签名验证失败——要么用 `publicUrl` 固定它，要么生产环境换稳定域名。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想做语音通话的人</span>
-      <span>重点是音频流、呼叫状态、以及转写和回应</span>
+      <span>原文共 17 节，先看 Start Here</span>
+      <span>路径：/plugins/voice-call</span>
       <a href="https://docs.openclaw.ai/plugins/voice-call" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

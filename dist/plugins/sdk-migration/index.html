@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>插件 SDK 迁移：Plugin SDK Migration | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="插件 SDK 迁移是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Plugin SDK Migration | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="旧版 openclaw/plugin-sdk/compat 和 openclaw/extension-api 已弃用，未来大版本将彻底移除。先对照“常见导入路径表”找到你当前使用的旧路径，替换为对应的新子路径（如 plugin-sdk/channel-core）。注意：不要使用表中未列出的渠道品牌路径（如 plugi…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="插件 SDK 迁移：Plugin SDK Migration | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="插件 SDK 迁移是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Plugin SDK Migration | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="旧版 openclaw/plugin-sdk/compat 和 openclaw/extension-api 已弃用，未来大版本将彻底移除。先对照“常见导入路径表”找到你当前使用的旧路径，替换为对应的新子路径（如 plugin-sdk/channel-core）。注意：不要使用表中未列出的渠道品牌路径（如 plugi…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/plugins/sdk-migration/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="插件 SDK 迁移：Plugin SDK Migration | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="插件 SDK 迁移是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Plugin SDK Migration | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="旧版 openclaw/plugin-sdk/compat 和 openclaw/extension-api 已弃用，未来大版本将彻底移除。先对照“常见导入路径表”找到你当前使用的旧路径，替换为对应的新子路径（如 plugin-sdk/channel-core）。注意：不要使用表中未列出的渠道品牌路径（如 plugi…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/plugins/sdk-migration/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"插件 SDK 迁移：Plugin SDK Migration","description":"插件 SDK 迁移是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-migration/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Plugin SDK Migration","description":"旧版 openclaw/plugin-sdk/compat 和 openclaw/extension-api 已弃用，未来大版本将彻底移除。先对照“常见导入路径表”找到你当前使用的旧路径，替换为对应的新子路径（如 plugin-sdk/channel-core）。注意：不要使用表中未列出的渠道品牌路径（如 plugi…","url":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-migration/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Plugins","item":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-migration/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Plugins 导读</p>
-        <h1>插件SDK迁移指南：替换废弃导入，避免未来中断</h1>
-        <p class="hero-copy">本页指导如何将旧版插件从废弃的兼容层迁移到新的模块化SDK。首先应使用grep命令查找并替换`plugin-sdk/compat`和`openclaw/extension-api`这两个废弃的导入路径。迁移时最容易出错的地方是Windows包装器回退行为，未显式设置`allowShellFallback: true`将导致失败。</p>
+        <h1>旧插件SDK即将移除，你的插件需要迁移到新的按需导入架构</h1>
+        <p class="hero-copy">旧版 `openclaw/plugin-sdk/compat` 和 `openclaw/extension-api` 已弃用，未来大版本将彻底移除。先对照“常见导入路径表”找到你当前使用的旧路径，替换为对应的新子路径（如 `plugin-sdk/channel-core`）。注意：不要使用表中未列出的渠道品牌路径（如 `plugin-sdk/slack`），它们只是内部快捷方式，不是稳定API。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:plugins.sdk-migration.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧳 Plugin SDK Migration，就是把旧盒子搬成新盒子</h2>
-      <p>这页讲的是升级路径。老插件不是扔掉，而是像搬家一样，先把能用的东西整理出来，再放进新的 SDK 盒子里。</p>
-      <p>官方想帮你少走弯路：先保住原来的能力，再慢慢换成新的结构。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>旧插件SDK即将移除，你的插件需要迁移到新的按需导入架构</h2>
+      <p>旧版 `openclaw/plugin-sdk/compat` 和 `openclaw/extension-api` 已弃用，未来大版本将彻底移除。先对照“常见导入路径表”找到你当前使用的旧路径，替换为对应的新子路径（如 `plugin-sdk/channel-core`）。注意：不要使用表中未列出的渠道品牌路径（如 `plugin-sdk/slack`），它们只是内部快捷方式，不是稳定API。</p>
     </div>
     <div class="overview-meta">
-      <span>适合正在把旧插件搬到新 SDK 的人</span>
-      <span>重点是旧目录怎么映射到新插件结构</span>
+      <span>原文共 8 节，先看 Start Here</span>
+      <span>路径：/plugins/sdk-migration</span>
       <a href="https://docs.openclaw.ai/plugins/sdk-migration" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>沙箱 vs 工具 Policy vs Elevated：Sandbox vs Tool Policy vs Elevated | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="沙箱 vs 工具 Policy vs Elevated是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Sandbox vs Tool Policy vs Elevated | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Sandbox 决定工具跑在 Docker 还是宿主机；Tool Policy 决定哪些工具可用（deny 优先，allow 非空即白名单）；Elevated 是沙箱内的逃生门，仅限 exec 使用。最容易搞混的是 sandbox mode 的 &quot;non-main&quot;：群聊和频道会话默认被沙箱化，而主会话不沙箱，这常导…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="沙箱 vs 工具 Policy vs Elevated：Sandbox vs Tool Policy vs Elevated | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="沙箱 vs 工具 Policy vs Elevated是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Sandbox vs Tool Policy vs Elevated | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Sandbox 决定工具跑在 Docker 还是宿主机；Tool Policy 决定哪些工具可用（deny 优先，allow 非空即白名单）；Elevated 是沙箱内的逃生门，仅限 exec 使用。最容易搞混的是 sandbox mode 的 &quot;non-main&quot;：群聊和频道会话默认被沙箱化，而主会话不沙箱，这常导…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/gateway/sandbox-vs-tool-policy-vs-elevated/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="沙箱 vs 工具 Policy vs Elevated：Sandbox vs Tool Policy vs Elevated | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="沙箱 vs 工具 Policy vs Elevated是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Sandbox vs Tool Policy vs Elevated | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Sandbox 决定工具跑在 Docker 还是宿主机；Tool Policy 决定哪些工具可用（deny 优先，allow 非空即白名单）；Elevated 是沙箱内的逃生门，仅限 exec 使用。最容易搞混的是 sandbox mode 的 &quot;non-main&quot;：群聊和频道会话默认被沙箱化，而主会话不沙箱，这常导…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/gateway/sandbox-vs-tool-policy-vs-elevated/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"沙箱 vs 工具 Policy vs Elevated：Sandbox vs Tool Policy vs Elevated","description":"沙箱 vs 工具 Policy vs Elevated是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/sandbox-vs-tool-policy-vs-elevated/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Sandbox vs Tool Policy vs Elevated","description":"Sandbox 决定工具跑在 Docker 还是宿主机；Tool Policy 决定哪些工具可用（deny 优先，allow 非空即白名单）；Elevated 是沙箱内的逃生门，仅限 exec 使用。最容易搞混的是 sandbox mode 的 \"non-main\"：群聊和频道会话默认被沙箱化，而主会话不沙箱，这常导…","url":"https://fivey-can-read-openclaw.pages.dev/gateway/sandbox-vs-tool-policy-vs-elevated/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Gateway","item":"https://fivey-can-read-openclaw.pages.dev/gateway/sandbox-vs-tool-policy-vs-elevated/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Gateway 导读</p>
-        <h1>OpenClaw 三种权限控制详解</h1>
-        <p class="hero-copy">本页解释 Sandbox、Tool Policy 和 Elevated 三个核心配置的区别与联系，它们分别决定工具在哪里运行、哪些工具可用以及如何突破沙箱限制。配置时最容易混淆的是 `sandbox.mode` 的 `&quot;non-main&quot;` 模式，它只沙箱化非主会话，常导致群组或频道中的意外行为。建议先使用 `openclaw sandbox explain` 命令查看当前会话的实际生效配置，再调整相关设置。</p>
+        <h1>分清三个控制：在哪跑、能用啥、怎么逃</h1>
+        <p class="hero-copy">Sandbox 决定工具跑在 Docker 还是宿主机；Tool Policy 决定哪些工具可用（deny 优先，allow 非空即白名单）；Elevated 是沙箱内的逃生门，仅限 exec 使用。最容易搞混的是 sandbox mode 的 &quot;non-main&quot;：群聊和频道会话默认被沙箱化，而主会话不沙箱，这常导致“为什么我的工具在群里跑不了”的困惑。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,8 +4324,21 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🧱 Sandbox vs Tool Policy vs Elevated 这页，其实是在讲“哪里跑、能不能用、能不能越狱”是三件不同的事</h2><p>很多人把这三层门混成一层，这页就是来拆开的。</p></div><div class="overview-meta"><span>三层不同的门</span><span>重点是 sandbox / tool policy / elevated</span><a href="https://docs.openclaw.ai/gateway/sandbox-vs-tool-policy-vs-elevated" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-
+      <!-- handcrafted-source:gateway.sandbox-vs-tool-policy-vs-elevated.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>分清三个控制：在哪跑、能用啥、怎么逃</h2>
+      <p>Sandbox 决定工具跑在 Docker 还是宿主机；Tool Policy 决定哪些工具可用（deny 优先，allow 非空即白名单）；Elevated 是沙箱内的逃生门，仅限 exec 使用。最容易搞混的是 sandbox mode 的 &quot;non-main&quot;：群聊和频道会话默认被沙箱化，而主会话不沙箱，这常导致“为什么我的工具在群里跑不了”的困惑。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 10 节，先看 Start Here</span>
+      <span>路径：/gateway/sandbox-vs-tool-policy-vs-elevated</span>
+      <a href="https://docs.openclaw.ai/gateway/sandbox-vs-tool-policy-vs-elevated" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
       <footer class="page-footer">
         <div>

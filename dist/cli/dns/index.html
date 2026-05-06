@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>dns 命令：dns | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="dns 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>dns | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页教你用 openclaw dns setup 在 macOS 上配置 CoreDNS，让 Tailscale 网络里的设备能通过 .internal 域名互相发现。最值得注意：--apply 需要 sudo 权限，且只支持 macOS；配置前先确认你的 tailnet IP 和域名别写错。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="dns 命令：dns | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="dns 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="dns | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页教你用 openclaw dns setup 在 macOS 上配置 CoreDNS，让 Tailscale 网络里的设备能通过 .internal 域名互相发现。最值得注意：--apply 需要 sudo 权限，且只支持 macOS；配置前先确认你的 tailnet IP 和域名别写错。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/dns/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="dns 命令：dns | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="dns 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="dns | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页教你用 openclaw dns setup 在 macOS 上配置 CoreDNS，让 Tailscale 网络里的设备能通过 .internal 域名互相发现。最值得注意：--apply 需要 sudo 权限，且只支持 macOS；配置前先确认你的 tailnet IP 和域名别写错。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/dns/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"dns 命令：dns","description":"dns 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/dns/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"dns","description":"这一页教你用 openclaw dns setup 在 macOS 上配置 CoreDNS，让 Tailscale 网络里的设备能通过 .internal 域名互相发现。最值得注意：--apply 需要 sudo 权限，且只支持 macOS；配置前先确认你的 tailnet IP 和域名别写错。","url":"https://fivey-can-read-openclaw.pages.dev/cli/dns/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/dns/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>配置 CoreDNS 实现广域网设备发现</h1>
-        <p class="hero-copy">这页讲解如何使用 `openclaw dns setup` 命令为 Tailscale 网络配置 CoreDNS，以实现跨广域网的 DNS-SD 服务发现。你需要指定一个发现域名（如 `openclaw.internal`），并注意在 macOS 上使用 `--apply` 参数时需要 sudo 权限来安装和重启服务。配置完成后，命令会输出关键的 Tailscale Split DNS 设置值，这是将设备接入发现网络时必须填写的核心信息。</p>
+        <h1>用 CoreDNS 打通 Tailscale 跨地域服务发现</h1>
+        <p class="hero-copy">这一页教你用 `openclaw dns setup` 在 macOS 上配置 CoreDNS，让 Tailscale 网络里的设备能通过 `.internal` 域名互相发现。最值得注意：`--apply` 需要 sudo 权限，且只支持 macOS；配置前先确认你的 tailnet IP 和域名别写错。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.dns.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧭 <code>openclaw dns</code> 像“给 OpenClaw 画一张找路地图”</h2>
-      <p>这页不是在讲很玄的网络原理，而是在讲一件很实在的事：当你想让别的设备在大范围里找到 OpenClaw 时，应该怎么把路标摆好。</p>
-      <p>你可以把它想成在院子外面立牌子。牌子写对了，远处的小朋友才找得到门；牌子写错了，大家就会在外面转圈圈。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用 CoreDNS 打通 Tailscale 跨地域服务发现</h2>
+      <p>这一页教你用 `openclaw dns setup` 在 macOS 上配置 CoreDNS，让 Tailscale 网络里的设备能通过 `.internal` 域名互相发现。最值得注意：`--apply` 需要 sudo 权限，且只支持 macOS；配置前先确认你的 tailnet IP 和域名别写错。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想让局域网之外也能找到 Gateway 的人</span>
-      <span>这页最重要的是理解：DNS 不是聊天，是“地址怎么被发现”</span>
+      <span>原文共 3 节，先看 Start Here</span>
+      <span>路径：/cli/dns</span>
       <a href="https://docs.openclaw.ai/cli/dns" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

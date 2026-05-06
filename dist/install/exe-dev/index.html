@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>exe.dev 安装：exe.dev | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="exe.dev 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>exe.dev | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="用 exe.new/openclaw 一键创建 VM，Shelley 代理会自动完成 OpenClaw 安装和 nginx 转发配置。关键一步：VM 必须保持 stateful，否则 ~/.openclaw/ 下的配置和状态会丢失。装好后通过 &lt;vm-name&gt;.exe.xyz 访问，用 token 或密码认证，别忘…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="exe.dev 安装：exe.dev | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="exe.dev 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="exe.dev | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="用 exe.new/openclaw 一键创建 VM，Shelley 代理会自动完成 OpenClaw 安装和 nginx 转发配置。关键一步：VM 必须保持 stateful，否则 ~/.openclaw/ 下的配置和状态会丢失。装好后通过 &lt;vm-name&gt;.exe.xyz 访问，用 token 或密码认证，别忘…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/install/exe-dev/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="exe.dev 安装：exe.dev | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="exe.dev 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="exe.dev | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="用 exe.new/openclaw 一键创建 VM，Shelley 代理会自动完成 OpenClaw 安装和 nginx 转发配置。关键一步：VM 必须保持 stateful，否则 ~/.openclaw/ 下的配置和状态会丢失。装好后通过 &lt;vm-name&gt;.exe.xyz 访问，用 token 或密码认证，别忘…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/install/exe-dev/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"exe.dev 安装：exe.dev","description":"exe.dev 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/install/exe-dev/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"exe.dev","description":"用 exe.new/openclaw 一键创建 VM，Shelley 代理会自动完成 OpenClaw 安装和 nginx 转发配置。关键一步：VM 必须保持 stateful，否则 ~/.openclaw/ 下的配置和状态会丢失。装好后通过 \u003cvm-name>.exe.xyz 访问，用 token 或密码认证，别忘…","url":"https://fivey-can-read-openclaw.pages.dev/install/exe-dev/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Install","item":"https://fivey-can-read-openclaw.pages.dev/install/exe-dev/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Install 导读</p>
-        <h1>在exe.dev虚拟机上安装OpenClaw网关</h1>
-        <p class="hero-copy">这页教你如何在exe.dev虚拟机上部署OpenClaw网关，使其可通过https://&lt;vm-name&gt;.exe.xyz从你的笔记本电脑访问。最该先看“Beginner quick path”快速入门步骤，按顺序点击链接、填写认证信息、等待配置完成。最容易错的是忘记保持虚拟机为有状态模式，否则OpenClaw的配置文件和会话数据会丢失。</p>
+        <h1>在 exe.dev 上跑 OpenClaw：一条命令建 VM，Shelley 自动装好网关</h1>
+        <p class="hero-copy">用 exe.new/openclaw 一键创建 VM，Shelley 代理会自动完成 OpenClaw 安装和 nginx 转发配置。关键一步：VM 必须保持 stateful，否则 ~/.openclaw/ 下的配置和状态会丢失。装好后通过 &lt;vm-name&gt;.exe.xyz 访问，用 token 或密码认证，别忘了用 openclaw devices approve 批准设备配对。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:install.exe-dev.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>⚡ exe.dev 这页，其实是在教你“让一位云上小助理先帮你把 OpenClaw 房子搭好，再去验收”</h2>
-      <p>这条路很特别，因为官方把一个外部代理助手 Shelley 直接写进流程里。你不是完全手动搭，而是先让它帮你铺好地，再自己去检查门票、代理和配对。</p>
-      <p>所以这页最不像传统安装文档，更像“半自动装修 + 人工验房”。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>在 exe.dev 上跑 OpenClaw：一条命令建 VM，Shelley 自动装好网关</h2>
+      <p>用 exe.new/openclaw 一键创建 VM，Shelley 代理会自动完成 OpenClaw 安装和 nginx 转发配置。关键一步：VM 必须保持 stateful，否则 ~/.openclaw/ 下的配置和状态会丢失。装好后通过 &lt;vm-name&gt;.exe.xyz 访问，用 token 或密码认证，别忘了用 openclaw devices approve 批准设备配对。</p>
     </div>
     <div class="overview-meta">
-      <span>适合 exe.dev 云机路线</span>
-      <span>重点是 Shelley、nginx 代理、pairing 审批</span>
+      <span>原文共 11 节，先看 Start Here</span>
+      <span>路径：/install/exe-dev</span>
       <a href="https://docs.openclaw.ai/install/exe-dev" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

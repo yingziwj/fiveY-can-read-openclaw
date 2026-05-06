@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>画布：Canvas | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="画布是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Canvas | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Canvas 是一个由 WKWebView 驱动的独立面板，代理可以通过 Gateway WebSocket 控制它显示、导航、执行 JS 甚至截图。所有文件存储在 ~/Library/Application Support/OpenClaw/canvas/ 下，通过 openclaw-canvas:// 自定义协议…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="画布：Canvas | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="画布是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Canvas | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Canvas 是一个由 WKWebView 驱动的独立面板，代理可以通过 Gateway WebSocket 控制它显示、导航、执行 JS 甚至截图。所有文件存储在 ~/Library/Application Support/OpenClaw/canvas/ 下，通过 openclaw-canvas:// 自定义协议…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/platforms/mac/canvas/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="画布：Canvas | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="画布是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Canvas | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Canvas 是一个由 WKWebView 驱动的独立面板，代理可以通过 Gateway WebSocket 控制它显示、导航、执行 JS 甚至截图。所有文件存储在 ~/Library/Application Support/OpenClaw/canvas/ 下，通过 openclaw-canvas:// 自定义协议…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/platforms/mac/canvas/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"画布：Canvas","description":"画布是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/platforms/mac/canvas/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Canvas","description":"Canvas 是一个由 WKWebView 驱动的独立面板，代理可以通过 Gateway WebSocket 控制它显示、导航、执行 JS 甚至截图。所有文件存储在 ~/Library/Application Support/OpenClaw/canvas/ 下，通过 openclaw-canvas:// 自定义协议…","url":"https://fivey-can-read-openclaw.pages.dev/platforms/mac/canvas/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Platforms","item":"https://fivey-can-read-openclaw.pages.dev/platforms/mac/canvas/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Platforms 导读</p>
-        <h1>macOS应用中的Canvas面板配置与API使用</h1>
-        <p class="hero-copy">这页详细说明macOS应用中Canvas面板的文件存储位置、URL访问方式和通过Gateway WebSocket控制的API接口。最该先看Canvas状态文件存储在Application Support目录下的具体路径和自定义URL scheme的映射规则。最容易搞错的是canvas.navigate命令接受的路径类型，它支持本地canvas路径、http(s)和file://三种格式，如果传递&quot;/&quot;会显示本地脚手架或index.html。</p>
+        <h1>Canvas 面板：代理能直接操作的轻量可视化工作区</h1>
+        <p class="hero-copy">Canvas 是一个由 WKWebView 驱动的独立面板，代理可以通过 Gateway WebSocket 控制它显示、导航、执行 JS 甚至截图。所有文件存储在 ~/Library/Application Support/OpenClaw/canvas/ 下，通过 openclaw-canvas:// 自定义协议访问。最容易忽略的是：Canvas 可在设置中关闭，关闭后所有 canvas 命令都会返回 CANVAS_DISABLED，调试前先确认开关状态。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🖼️ Canvas 这页，其实是在讲“Mac app 里有一块可被 agent 操作的小画布面板”</h2><p>它适合放 HTML/CSS/JS 小界面、A2UI、小交互面板，不是完整浏览器替代品。</p></div><div class="overview-meta"><span>Mac Canvas 面板</span><span>重点是 Application Support 存储、自定义 URL、单面板切换</span><a href="https://docs.openclaw.ai/platforms/mac/canvas" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:platforms.mac.canvas.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Canvas 面板：代理能直接操作的轻量可视化工作区</h2>
+      <p>Canvas 是一个由 WKWebView 驱动的独立面板，代理可以通过 Gateway WebSocket 控制它显示、导航、执行 JS 甚至截图。所有文件存储在 ~/Library/Application Support/OpenClaw/canvas/ 下，通过 openclaw-canvas:// 自定义协议访问。最容易忽略的是：Canvas 可在设置中关闭，关闭后所有 canvas 命令都会返回 CANVAS_DISABLED，调试前先确认开关状态。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 8 节，先看 Start Here</span>
+      <span>路径：/platforms/mac/canvas</span>
+      <a href="https://docs.openclaw.ai/platforms/mac/canvas" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>📁 它会把每个 session 的画布内容收在自己小抽屉里</h2><p>所以 Canvas 不是凭空闪现，而是有自己的本地存储位置。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label">Application Support</div><p>像画布作品柜，每个 session 一格。</p></div><div class="source-card"><div class="story-card-label"><code>openclaw-canvas://...</code></div><p>这是它的专属取件地址，像内部专用门牌。</p></div><div class="source-card"><div class="story-card-label">只显示一个面板</div><p>同一时间只会亮一块画布，不会满屏乱飞很多窗口。</p></div><div class="source-card"><div class="story-card-label">Allow Canvas</div><p>这个开关像画布总闸，关了相关 node 命令就直接拒绝。</p></div></div></section>
 
 

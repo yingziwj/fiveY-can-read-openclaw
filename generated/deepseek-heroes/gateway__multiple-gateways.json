@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:51:43.499Z",
+  "generatedAt": "2026-05-06T15:07:15.819Z",
   "pathname": "/gateway/multiple-gateways",
   "title": "Multiple Gateways",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "在同一主机上运行多个网关的配置要点",
-    "heroSummary": "这页讲解如何在同一台机器上运行多个OpenClaw网关实例，例如用于创建独立的救援机器人。配置时最关键的步骤是确保每个实例使用完全隔离的配置文件路径、状态目录和端口号，否则会导致配置冲突和端口占用问题。特别注意要为每个实例预留至少20个端口的间隔，以避免浏览器、画布等衍生端口发生重叠。"
+    "heroTitle": "同一台机器跑多个 Gateway：先隔离配置，再分配端口",
+    "heroSummary": "多数场景一个 Gateway 就够，但需要隔离或冗余（比如救援机器人）时，必须为每个实例单独指定配置路径、状态目录、工作区和端口。最容易踩的坑是端口重叠——两个实例的 base port 至少要隔开 20 个端口，否则浏览器/CDP 端口会冲突。"
   }
 }

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:53:24.658Z",
+  "generatedAt": "2026-05-06T15:08:25.328Z",
   "pathname": "/cli/channels",
   "title": "channels",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "管理聊天通道账户与运行状态",
-    "heroSummary": "这页讲解如何使用 openclaw channels 命令管理 Gateway 上的聊天通道账户，包括查看状态、添加/移除账户等操作。最该先看 channels status 命令，它能检查通道的实时运行状态，但要注意 --probe 参数仅在网关可达时才会执行实际探测，否则只显示配置摘要。添加账户时最容易错在忘记指定通道类型所需的特定参数（如 Telegram 的 --token 或 Nostr 的 --private-key），建议先运行 openclaw channels add --help 查看对应通道的必填字段。"
+    "heroTitle": "用 openclaw channels 管理所有聊天账号：增删、状态、能力查询",
+    "heroSummary": "先跑 `openclaw channels add --channel <名称> --token <令牌>` 接入新账号，非交互模式要填对 token 或私钥等参数。查账号是否在线用 `channels status --probe` 会执行真实探测，网关不可达时只显示配置摘要。`channels capabilities` 能查账号支持哪些目标（如频道、私信），但必须配合 `--channel` 和 `--target` 才有意义。"
   }
 }

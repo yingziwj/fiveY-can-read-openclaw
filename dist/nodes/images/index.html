@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Image and Media Support | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Image and Media Support是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="用 openclaw message send --media 发媒体，支持本地路径或 URL，图片自动压缩到 2048px 以内，音频默认作为语音笔记发送。自动回复同样走这套管道，多个媒体会依次发送，注意文档最大 100 MB、音视频 16 MB。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Image and Media Support | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Image and Media Support是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="用 openclaw message send --media 发媒体，支持本地路径或 URL，图片自动压缩到 2048px 以内，音频默认作为语音笔记发送。自动回复同样走这套管道，多个媒体会依次发送，注意文档最大 100 MB、音视频 16 MB。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/nodes/images/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Image and Media Support | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Image and Media Support是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="用 openclaw message send --media 发媒体，支持本地路径或 URL，图片自动压缩到 2048px 以内，音频默认作为语音笔记发送。自动回复同样走这套管道，多个媒体会依次发送，注意文档最大 100 MB、音视频 16 MB。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/nodes/images/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Image and Media Support","description":"Image and Media Support是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/nodes/images/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Image and Media Support","description":"用 openclaw message send --media 发媒体，支持本地路径或 URL，图片自动压缩到 2048px 以内，音频默认作为语音笔记发送。自动回复同样走这套管道，多个媒体会依次发送，注意文档最大 100 MB、音视频 16 MB。","url":"https://fivey-can-read-openclaw.pages.dev/nodes/images/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Nodes","item":"https://fivey-can-read-openclaw.pages.dev/nodes/images/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Nodes 导读</p>
-        <h1>WhatsApp媒体发送与自动回复配置指南</h1>
-        <p class="hero-copy">这页详细说明了通过OpenClaw CLI发送媒体文件到WhatsApp的具体命令格式和参数要求，包括图片压缩、音频转语音笔记等处理规则。使用`openclaw message send --media`命令时，必须注意文件路径或URL的格式，以及不同类型媒体的大小限制差异。配置自动回复时，`getReplyFromConfig`返回的媒体URL会经过相同处理流程，多张图片会按顺序发送。</p>
+        <h1>WhatsApp 媒体消息：发图、发语音、发文件，一条命令搞定</h1>
+        <p class="hero-copy">用 `openclaw message send --media` 发媒体，支持本地路径或 URL，图片自动压缩到 2048px 以内，音频默认作为语音笔记发送。自动回复同样走这套管道，多个媒体会依次发送，注意文档最大 100 MB、音视频 16 MB。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🖼️ Images 这页，其实是在讲“带图片、音频、视频去发消息时，OpenClaw 会怎么分类包装再送进 WhatsApp”</h2><p>它不是原样把任何文件一把塞过去，而是会先判断这是图、音频、视频还是文档，再按各自规矩处理。</p></div><div class="overview-meta"><span>WhatsApp Web 媒体发送规则</span><span>重点是 --media、类型识别、大小限制</span><a href="https://docs.openclaw.ai/nodes/images" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:nodes.images.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>WhatsApp 媒体消息：发图、发语音、发文件，一条命令搞定</h2>
+      <p>用 `openclaw message send --media` 发媒体，支持本地路径或 URL，图片自动压缩到 2048px 以内，音频默认作为语音笔记发送。自动回复同样走这套管道，多个媒体会依次发送，注意文档最大 100 MB、音视频 16 MB。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 8 节，先看 Start Here</span>
+      <span>路径：/nodes/images</span>
+      <a href="https://docs.openclaw.ai/nodes/images" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>📦 <code>openclaw message send --media ...</code> 像把一个带附件的包裹交给快递员</h2><p>OpenClaw 会先看附件是什么，再决定走哪条寄送通道。</p></div><div class="home-grid"><article class="home-card"><span class="home-card-index">🖼️</span><h2>图片</h2><p>会缩放并重压成 JPEG，目标是别超过 WhatsApp 的媒体大小限制。</p></article><article class="home-card"><span class="home-card-index">🎵</span><h2>音频</h2><p>会按语音 note 的感觉发出去，超过限制就不硬发。</p></article><article class="home-card"><span class="home-card-index">🎬</span><h2>视频</h2><p>普通视频和 gifPlayback 风格视频都能走，但规则不完全一样。</p></article><article class="home-card"><span class="home-card-index">📄</span><h2>其他文件</h2><p>走文档通道，尽量保留文件名。</p></article></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第二站</p><h2>🧪 类型识别不是只看后缀，它会尽量先看文件真身</h2><p>官方特地写了 magic bytes、headers、扩展名这套顺序，就是为了少认错文件。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label">本地路径或 URL</div><p>你给本地文件也行，给 HTTP(S) 地址也行，OpenClaw 会先抓成缓冲区再判断。</p></div><div class="source-card"><div class="story-card-label"><code>--message</code></div><p>这就是包裹上的小纸条，也就是媒体 caption，可以为空。</p></div><div class="source-card"><div class="story-card-label"><code>--dry-run</code></div><p>像先看模拟寄件单，不真正寄出，只看看最终准备好的包裹长什么样。</p></div><div class="source-card"><div class="story-card-label"><code>--json</code></div><p>像打印标准化寄件回执，方便别的程序接着处理。</p></div></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第三站</p><h2>🎈 这页的重点不是“媒体能不能发”，而是“发之前会怎样被重新包装”</h2><p>你越把它当快递打包规则看，越不容易读偏。</p></div></section>

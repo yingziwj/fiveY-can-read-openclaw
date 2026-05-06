@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:48:25.529Z",
+  "generatedAt": "2026-05-06T15:05:24.281Z",
   "pathname": "/install/bun",
   "title": "Bun (Experimental)",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Bun 实验性安装与使用指南",
-    "heroSummary": "这页说明如何用 Bun 作为本地运行时直接运行 TypeScript，但生产环境网关不推荐使用（WhatsApp 和 Telegram 有已知问题）。安装时用 `bun install` 命令，注意它会忽略 `pnpm-lock.yaml` 且默认不保存锁文件。Bun 会阻止依赖的生命周期脚本执行，遇到运行时问题需用 `bun pm trust` 显式信任特定包。"
+    "heroTitle": "Bun 只适合本地开发，别用它跑网关",
+    "heroSummary": "Bun 是可选运行时，能直接跑 TypeScript，但官方明确警告 WhatsApp 和 Telegram 网关已知问题，生产必须用 Node。安装时注意 Bun 会忽略 pnpm-lock.yaml，且部分脚本（如 docs:build）硬编码了 pnpm，仍需 pnpm 执行。"
   }
 }

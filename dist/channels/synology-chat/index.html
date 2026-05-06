@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Synology Chat 通道：Synology Chat | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Synology Chat 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Synology Chat | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页教你用 Synology Chat 的 Outgoing 和 Incoming Webhook 把群聊机器人接进 OpenClaw。最容易踩坑的是 DM 策略：默认 allowlist 模式如果 allowedUserIds 为空，Webhook 路由根本不会启动，必须要么填用户 ID，要么改成 open。非交…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Synology Chat 通道：Synology Chat | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Synology Chat 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Synology Chat | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页教你用 Synology Chat 的 Outgoing 和 Incoming Webhook 把群聊机器人接进 OpenClaw。最容易踩坑的是 DM 策略：默认 allowlist 模式如果 allowedUserIds 为空，Webhook 路由根本不会启动，必须要么填用户 ID，要么改成 open。非交…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/channels/synology-chat/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Synology Chat 通道：Synology Chat | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Synology Chat 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Synology Chat | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页教你用 Synology Chat 的 Outgoing 和 Incoming Webhook 把群聊机器人接进 OpenClaw。最容易踩坑的是 DM 策略：默认 allowlist 模式如果 allowedUserIds 为空，Webhook 路由根本不会启动，必须要么填用户 ID，要么改成 open。非交…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/channels/synology-chat/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Synology Chat 通道：Synology Chat","description":"Synology Chat 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/channels/synology-chat/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Synology Chat","description":"这一页教你用 Synology Chat 的 Outgoing 和 Incoming Webhook 把群聊机器人接进 OpenClaw。最容易踩坑的是 DM 策略：默认 allowlist 模式如果 allowedUserIds 为空，Webhook 路由根本不会启动，必须要么填用户 ID，要么改成 open。非交…","url":"https://fivey-can-read-openclaw.pages.dev/channels/synology-chat/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Channels","item":"https://fivey-can-read-openclaw.pages.dev/channels/synology-chat/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Channels 导读</p>
-        <h1>Synology Chat 插件配置与接入指南</h1>
-        <p class="hero-copy">本页详细说明如何将 Synology Chat 作为直接消息通道接入 OpenClaw 系统，包括插件安装、Webhook 配置和环境变量设置。首先需要确认插件是否已安装，然后重点配置 Synology Chat 的出站 Webhook 指向 OpenClaw 网关，并获取入站 Webhook URL 用于回复。最容易出错的地方是 DM 策略配置：默认使用 allowlist 模式，如果 allowedUserIds 列表为空会导致 Webhook 路由无法启动，此时应改用 open 策略或添加允许的用户 ID。</p>
+        <h1>Synology Chat 接入：先配好两个 Webhook，再管好 DM 权限</h1>
+        <p class="hero-copy">这一页教你用 Synology Chat 的 Outgoing 和 Incoming Webhook 把群聊机器人接进 OpenClaw。最容易踩坑的是 DM 策略：默认 allowlist 模式如果 allowedUserIds 为空，Webhook 路由根本不会启动，必须要么填用户 ID，要么改成 open。非交互式配置可以直接用 openclaw channels add 命令一次性传 token 和 incoming URL。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:channels.synology-chat.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧷 Synology Chat 这页，其实是在教你“拿两根 webhook 线，把 NAS 里的聊天机器人接到 OpenClaw”</h2>
-      <p>一根线负责把外面的消息送进来，一根线负责把 OpenClaw 的回话送回去。</p>
-      <p>所以这页最重要的不是华丽功能，而是三样朴素东西：插件、token、incoming webhook URL。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Synology Chat 接入：先配好两个 Webhook，再管好 DM 权限</h2>
+      <p>这一页教你用 Synology Chat 的 Outgoing 和 Incoming Webhook 把群聊机器人接进 OpenClaw。最容易踩坑的是 DM 策略：默认 allowlist 模式如果 allowedUserIds 为空，Webhook 路由根本不会启动，必须要么填用户 ID，要么改成 open。非交互式配置可以直接用 openclaw channels add 命令一次性传 token 和 incoming URL。</p>
     </div>
     <div class="overview-meta">
-      <span>插件通道</span>
-      <span>重点是双 webhook、DM 策略、用户 ID</span>
+      <span>原文共 10 节，先看 Start Here</span>
+      <span>路径：/channels/synology-chat</span>
       <a href="https://docs.openclaw.ai/channels/synology-chat" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

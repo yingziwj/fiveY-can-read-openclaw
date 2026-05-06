@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:23.613Z",
+  "generatedAt": "2026-05-06T15:07:40.035Z",
   "pathname": "/platforms/ios",
   "title": "iOS App",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "iOS App 连接网关配置指南",
-    "heroSummary": "这页详细说明 iOS App 如何通过 WebSocket 连接网关，并获取节点能力。首先需要确保网关已在另一设备运行，并在 iOS 设置中选择或手动输入网关地址。配对时若应用重试导致请求 ID 变更，务必在批准前重新运行设备列表命令确认最新 ID。"
+    "heroTitle": "iOS 端接入：先配网关，再配对，最后搞定推送",
+    "heroSummary": "iOS 应用通过 WebSocket 连接同一局域网或 Tailnet 上的网关，暴露 Canvas、摄像头、位置等节点能力。最易踩坑的是配对流程：每次重试都会生成新的 requestId，必须重新执行 openclaw devices list 获取最新 ID 再 approve。官方构建版使用外部推送中继，网关需配置 relay baseUrl，且必须与 iOS 构建时内置的 URL 一致，否则推送失效。"
   }
 }

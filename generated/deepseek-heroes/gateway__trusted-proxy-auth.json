@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:09.342Z",
+  "generatedAt": "2026-05-06T15:07:28.082Z",
   "pathname": "/gateway/trusted-proxy-auth",
   "title": "Trusted Proxy Auth",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "网关反向代理认证配置指南",
-    "heroSummary": "本页详细说明如何配置网关，使其信任前置反向代理（如Pomerium、nginx+oauth2-proxy）传递的用户身份信息进行认证。启用前必须确保代理已正确处理认证并正确设置可信代理IP，否则可能导致未授权访问。配置后，控制UI的WebSocket连接将依赖代理认证和用户白名单，而非设备配对。"
+    "heroTitle": "让反向代理替你管登录，但别开错门",
+    "heroSummary": "这页讲的是把认证全甩给反向代理（Pomerium、Caddy、nginx 等），OpenClaw 只看代理传过来的用户头。最要紧的是先配好 `gateway.trustedProxies` 白名单，否则谁都能伪造身份。注意：开启后 Control UI 不再依赖设备配对，权限全靠代理和 `allowUsers` 控制，务必堵死所有绕过代理的入口。"
   }
 }

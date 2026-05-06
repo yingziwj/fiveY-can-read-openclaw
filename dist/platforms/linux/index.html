@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Linux 应用：Linux App | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Linux 应用是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Linux App | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="本页给出 Linux 部署 Gateway 的快速路径：先装 Node 24 或 Node 22.14+，再用 openclaw onboard --install-daemon 一键安装守护进程。注意：Bun 会导致 WhatsApp/Telegram 异常，不要用；首次认证默认走 token，若改密码需在配置中设…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Linux 应用：Linux App | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Linux 应用是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Linux App | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="本页给出 Linux 部署 Gateway 的快速路径：先装 Node 24 或 Node 22.14+，再用 openclaw onboard --install-daemon 一键安装守护进程。注意：Bun 会导致 WhatsApp/Telegram 异常，不要用；首次认证默认走 token，若改密码需在配置中设…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/platforms/linux/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Linux 应用：Linux App | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Linux 应用是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Linux App | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="本页给出 Linux 部署 Gateway 的快速路径：先装 Node 24 或 Node 22.14+，再用 openclaw onboard --install-daemon 一键安装守护进程。注意：Bun 会导致 WhatsApp/Telegram 异常，不要用；首次认证默认走 token，若改密码需在配置中设…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/platforms/linux/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Linux 应用：Linux App","description":"Linux 应用是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/platforms/linux/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Linux App","description":"本页给出 Linux 部署 Gateway 的快速路径：先装 Node 24 或 Node 22.14+，再用 openclaw onboard --install-daemon 一键安装守护进程。注意：Bun 会导致 WhatsApp/Telegram 异常，不要用；首次认证默认走 token，若改密码需在配置中设…","url":"https://fivey-can-read-openclaw.pages.dev/platforms/linux/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Platforms","item":"https://fivey-can-read-openclaw.pages.dev/platforms/linux/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Platforms 导读</p>
-        <h1>Linux 环境部署 OpenClaw 网关</h1>
-        <p class="hero-copy">这页指导如何在 Linux 系统上安装和运行 OpenClaw 网关，推荐使用 Node 24 作为运行时。最该先看“Beginner quick path (VPS)”部分，按步骤安装 Node、OpenClaw 并设置端口转发。最容易搞错的是运行时选择：不要用 Bun，它可能导致 WhatsApp/Telegram 相关错误。</p>
+        <h1>Linux 上跑 Gateway：Node 是首选，Bun 有坑</h1>
+        <p class="hero-copy">本页给出 Linux 部署 Gateway 的快速路径：先装 Node 24 或 Node 22.14+，再用 `openclaw onboard --install-daemon` 一键安装守护进程。注意：Bun 会导致 WhatsApp/Telegram 异常，不要用；首次认证默认走 token，若改密码需在配置中设 `gateway.auth.mode: &quot;password&quot;`。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🐧 Linux 这页，其实是在讲“把 Linux 当成最稳的 Gateway 宿主机来用”</h2><p>它不是花哨伴侣 app 路线，而是很扎实的服务端路线。</p><p>如果你想把 OpenClaw 放到 VPS、服务器、常开机器上，Linux 基本就是主场。</p></div><div class="overview-meta"><span>Linux Gateway 主场</span><span>重点是 Node 24、onboard、SSH 端口转发</span><a href="https://docs.openclaw.ai/platforms/linux" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:platforms.linux.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Linux 上跑 Gateway：Node 是首选，Bun 有坑</h2>
+      <p>本页给出 Linux 部署 Gateway 的快速路径：先装 Node 24 或 Node 22.14+，再用 `openclaw onboard --install-daemon` 一键安装守护进程。注意：Bun 会导致 WhatsApp/Telegram 异常，不要用；首次认证默认走 token，若改密码需在配置中设 `gateway.auth.mode: &quot;password&quot;`。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/platforms/linux</span>
+      <a href="https://docs.openclaw.ai/platforms/linux" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>🚀 最快路径其实很朴素：装 Node、装 openclaw、跑 onboard</h2><p>官方给的 VPS 初学者路线非常直接。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label">Node 24</div><p>像先把发动机装好。22 LTS 也能兼容，但首选 24。</p></div><div class="source-card"><div class="story-card-label"><code>npm i -g openclaw@latest</code></div><p>把 OpenClaw 全局装上，相当于把整套工具箱放进系统里。</p></div><div class="source-card"><div class="story-card-label"><code>openclaw onboard --install-daemon</code></div><p>像新手向导顺手帮你把常驻服务也铺好。</p></div><div class="source-card"><div class="story-card-label"><code>ssh -N -L 18789:127.0.0.1:18789 ...</code></div><p>这句像从你笔记本拉一根保密长线，把远程 Gateway 门口接回本地浏览器。</p></div></div></section>
 
 

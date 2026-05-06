@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:48:03.885Z",
+  "generatedAt": "2026-05-06T15:05:12.691Z",
   "pathname": "/concepts/messages",
   "title": "Messages",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "消息处理流程与配置要点",
-    "heroSummary": "这页详细说明了OpenClaw如何处理入站消息的完整流程，包括路由、队列、会话和流式回复。配置时需重点关注messages.*前缀、代理默认值和各通道的覆盖设置，其中入站消息的去重和防抖动机制最容易因忽略通道差异而出错。"
+    "heroTitle": "消息从进到出，OpenClaw 替你管了排队、去重、流式回复",
+    "heroSummary": "先看消息流总图（Inbound → 路由 → 队列 → 推理 → 出站），再根据你的渠道调 `messages.inbound.debounceMs` 和 `agents.defaults.blockStreaming`。最容易踩的坑：去重缓存是短期的，同一消息重连后可能重复触发；防抖只对纯文本生效，带媒体或控制命令会立即执行。"
   }
 }

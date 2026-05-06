@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>nodes 命令：nodes | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="nodes 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>nodes | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="openclaw nodes 管理已配对节点（设备），核心操作是查看列表、审批待配对请求、以及通过 invoke 调用设备能力。注意：shell 执行（如 system.run）已被禁止，需改用 exec 工具；审批不同命令所需权限不同，pending 只需配对权限，但 approve 可能额外需要 write 或…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="nodes 命令：nodes | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="nodes 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="nodes | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="openclaw nodes 管理已配对节点（设备），核心操作是查看列表、审批待配对请求、以及通过 invoke 调用设备能力。注意：shell 执行（如 system.run）已被禁止，需改用 exec 工具；审批不同命令所需权限不同，pending 只需配对权限，但 approve 可能额外需要 write 或…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/nodes/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="nodes 命令：nodes | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="nodes 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="nodes | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="openclaw nodes 管理已配对节点（设备），核心操作是查看列表、审批待配对请求、以及通过 invoke 调用设备能力。注意：shell 执行（如 system.run）已被禁止，需改用 exec 工具；审批不同命令所需权限不同，pending 只需配对权限，但 approve 可能额外需要 write 或…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/nodes/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"nodes 命令：nodes","description":"nodes 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/nodes/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"nodes","description":"openclaw nodes 管理已配对节点（设备），核心操作是查看列表、审批待配对请求、以及通过 invoke 调用设备能力。注意：shell 执行（如 system.run）已被禁止，需改用 exec 工具；审批不同命令所需权限不同，pending 只需配对权限，但 approve 可能额外需要 write 或…","url":"https://fivey-can-read-openclaw.pages.dev/cli/nodes/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/nodes/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>管理节点设备与调用节点能力</h1>
-        <p class="hero-copy">这页介绍如何使用 `openclaw nodes` 命令管理已配对的设备节点，并直接调用节点上的功能。最该先看 `nodes list` 和 `nodes pending` 命令来查看设备状态和待处理请求。最容易搞错的是：想执行 shell 命令时，不能用 `nodes invoke` 调用 `system.run`，而应该使用 `exec` 工具并设置 `host=node`。</p>
+        <h1>用 CLI 管理已配对设备：配对、审批、调用能力</h1>
+        <p class="hero-copy">`openclaw nodes` 管理已配对节点（设备），核心操作是查看列表、审批待配对请求、以及通过 invoke 调用设备能力。注意：shell 执行（如 system.run）已被禁止，需改用 exec 工具；审批不同命令所需权限不同，pending 只需配对权限，但 approve 可能额外需要 write 或 admin。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,18 +4324,18 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.nodes.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>📱 Nodes 就是那些“跟着 Gateway 一起跑的小伙伴设备”</h2>
-      <p>这页不是在讲主机本身，而是在讲那些会连到 Gateway 的伴侣设备。它们可以是 macOS、iPhone、Android，也可以是没有屏幕的 headless 机器。</p>
-      <p>你可以把 Node 想成一双手、一只眼、一台手机，都会听 Gateway 的指挥，但它自己不是总控台。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用 CLI 管理已配对设备：配对、审批、调用能力</h2>
+      <p>`openclaw nodes` 管理已配对节点（设备），核心操作是查看列表、审批待配对请求、以及通过 invoke 调用设备能力。注意：shell 执行（如 system.run）已被禁止，需改用 exec 工具；审批不同命令所需权限不同，pending 只需配对权限，但 approve 可能额外需要 write 或 admin。</p>
     </div>
     <div class="overview-meta">
-      <span>适合第一次想明白“节点到底是什么”的人</span>
-      <span>这页最重要的是分清：node 是周边设备，不是 gateway 本体</span>
-      <a href="https://docs.openclaw.ai/nodes/index" target="_blank" rel="noreferrer">查看官方原文</a>
+      <span>原文共 3 节，先看 Start Here</span>
+      <span>路径：/cli/nodes</span>
+      <a href="https://docs.openclaw.ai/cli/nodes" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>
 </section>

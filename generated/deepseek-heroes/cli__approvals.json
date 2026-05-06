@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:53:23.267Z",
+  "generatedAt": "2026-05-06T15:08:24.580Z",
   "pathname": "/cli/approvals",
   "title": "approvals",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "管理 OpenClaw 执行审批的 CLI 命令",
-    "heroSummary": "这页讲解如何使用 `openclaw approvals` 命令管理本地主机、网关或节点的执行审批规则。最该先看 `openclaw approvals get` 命令，它能显示针对不同目标的生效策略。最容易搞错的是 `set` 命令接受 JSON5 格式，且 `--file` 和 `--stdin` 参数不能同时使用。"
+    "heroTitle": "审批文件、请求策略、生效规则，三件事一次讲清",
+    "heroSummary": "`openclaw approvals` 管理本地、网关和节点主机的 exec 审批文件，但生效结果由审批文件与 `tools.exec` 请求策略共同决定。先跑 `openclaw approvals get` 看三栏输出（请求策略、审批文件、生效结果），再决定用 `set` 改审批文件还是用 `exec-policy` 同步请求策略。最容易搞错的是：审批文件才是最终强制规则，请求策略只是意图，两者不一致时以审批文件为准。"
   }
 }

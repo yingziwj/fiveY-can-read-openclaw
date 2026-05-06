@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:46.684Z",
+  "generatedAt": "2026-05-06T15:08:05.949Z",
   "pathname": "/providers/sglang",
   "title": "SGLang",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "如何将OpenClaw连接到SGLang推理服务",
-    "heroSummary": "本页说明如何配置OpenClaw以使用SGLang提供的开源模型。首先应确认SGLang服务已启动并暴露OpenAI兼容的API端点（如/v1/chat/completions）。最常见的错误是未正确设置SGLANG_API_KEY环境变量或baseUrl配置，导致模型自动发现失败或连接被拒。"
+    "heroTitle": "SGLang 接入：自动发现模型 vs 手动配置，选错会跳过发现",
+    "heroSummary": "SGLang 跑在本地，OpenClaw 通过 OpenAI 兼容接口连接。最省事的是设个 SGLANG_API_KEY（任意值），然后让 OpenClaw 自动拉模型列表；一旦你在配置里显式写了 models.providers.sglang，自动发现就失效，必须手动填模型 ID 和参数。注意：基础 URL 必须暴露 /v1 端点，默认端口 30000。"
   }
 }

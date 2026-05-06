@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:54:51.296Z",
+  "generatedAt": "2026-05-06T15:09:22.562Z",
   "pathname": "/reference/test",
   "title": "Tests",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "测试命令与基准脚本参考",
-    "heroSummary": "这页列出了所有测试相关的pnpm命令和基准脚本，包括单元测试、覆盖率、本地PR检查、模型延迟和CLI启动时间测量。开发时最该先看Start Here里的test:force命令，它能解决端口占用问题。最容易搞错的是test:changed命令，它只在修改可路由文件时生效，配置变更会回退到全量运行。"
+    "heroTitle": "测试命令速查：跑单测、压模型、过 PR 门禁",
+    "heroSummary": "本页汇总了所有测试相关的 pnpm 脚本和压测工具。PR 落地前必须跑 `pnpm check` + `pnpm build` + `pnpm test` + `pnpm check:docs`。如果 `pnpm test` 因资源不足挂掉，用 `OPENCLAW_VITEST_MAX_WORKERS=1 pnpm test` 重跑一次再报 regression。"
   }
 }

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:50:37.305Z",
+  "generatedAt": "2026-05-06T15:06:41.754Z",
   "pathname": "/tools/elevated",
   "title": "Elevated Mode",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "沙盒外执行命令的权限控制",
-    "heroSummary": "这页讲解如何让沙盒中的代理在受控条件下执行主机命令，核心是配置允许名单和使用指令开关。配置时最容易错在允许名单格式和层级权限叠加，务必检查全局与代理级设置是否冲突。"
+    "heroTitle": "让沙箱里的 agent 突破限制：Elevated Mode 配置与使用",
+    "heroSummary": "当 agent 在沙箱中运行时，Elevated Mode 允许它跳出沙箱执行命令。先配好 `tools.elevated.enabled` 和 `allowFrom` 白名单，否则指令无效。最易错的是：白名单同时受全局和 agent 级限制，且 Discord 渠道有 fallback 逻辑，别漏配。"
   }
 }

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:53:17.571Z",
+  "generatedAt": "2026-05-06T15:08:21.607Z",
   "pathname": "/cli/agents",
   "title": "agents",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "管理多工作空间与路由绑定",
-    "heroSummary": "这页教你用命令行管理独立的OpenClaw代理，每个代理包含独立的工作空间、认证和路由配置。先看示例代码了解如何添加代理和绑定渠道，特别注意绑定升级机制：从渠道级绑定升级到账户级时会替换原有绑定，而不是新增重复项。"
+    "heroTitle": "用 `openclaw agents` 管理独立工作区、身份和路由",
+    "heroSummary": "每个 agent 就是一个独立的“工作区+认证+路由”单元。最该先看 `openclaw agents add` 如何创建带绑定和 workspace 的 agent，以及 `openclaw agents bind` 如何把频道流量固定到指定 agent。容易搞错的是绑定升级：先绑 `telegram` 再绑 `telegram:ops` 会原地升级而非新增，默认账号路由需要显式添加 `--bind telegram:default`。"
   }
 }

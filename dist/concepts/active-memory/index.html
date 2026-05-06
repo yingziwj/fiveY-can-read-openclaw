@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Active 记忆：Active Memory | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Active 记忆是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Active Memory | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Active Memory 是一个在主回复之前自动检索相关记忆的插件，解决“记忆系统只能被动等待调用”的问题。先按“Paste This Into Your Agent”里的 JSON 配置启用，注意只对 direct 会话生效，且默认复用当前会话模型；想提速就单独配一个 Cerebras 等低延迟模型，但务必确认…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Active 记忆：Active Memory | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Active 记忆是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Active Memory | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Active Memory 是一个在主回复之前自动检索相关记忆的插件，解决“记忆系统只能被动等待调用”的问题。先按“Paste This Into Your Agent”里的 JSON 配置启用，注意只对 direct 会话生效，且默认复用当前会话模型；想提速就单独配一个 Cerebras 等低延迟模型，但务必确认…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/active-memory/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Active 记忆：Active Memory | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Active 记忆是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Active Memory | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Active Memory 是一个在主回复之前自动检索相关记忆的插件，解决“记忆系统只能被动等待调用”的问题。先按“Paste This Into Your Agent”里的 JSON 配置启用，注意只对 direct 会话生效，且默认复用当前会话模型；想提速就单独配一个 Cerebras 等低延迟模型，但务必确认…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/active-memory/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Active 记忆：Active Memory","description":"Active 记忆是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/active-memory/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Active Memory","description":"Active Memory 是一个在主回复之前自动检索相关记忆的插件，解决“记忆系统只能被动等待调用”的问题。先按“Paste This Into Your Agent”里的 JSON 配置启用，注意只对 direct 会话生效，且默认复用当前会话模型；想提速就单独配一个 Cerebras 等低延迟模型，但务必确认…","url":"https://fivey-can-read-openclaw.pages.dev/concepts/active-memory/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/active-memory/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>Active Memory：先把底下那条暗线看见</h1>
-        <p class="hero-copy">Active Memory 这页在补地图，不是在发操作说明。看完你应该能指出它埋在系统哪一层、为什么会牵动后面的动作，以及最容易把哪几件事想反。原文最响的一记鼓点，其实是：Active Memory。</p>
+        <h1>让记忆主动浮现，而不是等用户开口</h1>
+        <p class="hero-copy">Active Memory 是一个在主回复之前自动检索相关记忆的插件，解决“记忆系统只能被动等待调用”的问题。先按“Paste This Into Your Agent”里的 JSON 配置启用，注意只对 direct 会话生效，且默认复用当前会话模型；想提速就单独配一个 Cerebras 等低延迟模型，但务必确认 API Key 有 chat/completions 权限。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,210 +4324,294 @@
         </div>
       </div>
 
+      
       <section class="section-shell">
-  <div class="overview-card">
-    <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧠 Active Memory 像“回复前先翻一下旧笔记”的小助手</h2>
-      <p>普通 memory 往往要等模型主动想起去查，或者等用户说“你还记得吗”。Active Memory 不等到那一步，它会在主回复生成前，给系统一次有限的机会去找相关记忆。</p>
-      <p>它不是默认永远开着的魔法。它是一个可选插件，只在符合条件的交互式、持久会话里运行，而且如果找不到有用记忆，就应该安静返回 <code>NONE</code>。</p>
-    </div>
-    <div class="overview-meta">
-      <span>适合想让长期偏好和上下文自然浮现的人</span>
-      <span>重点是配置开关、会话资格、queryMode、promptStyle 和调试方式</span>
-      <a href="https://docs.openclaw.ai/concepts/active-memory" target="_blank" rel="noreferrer">查看官方原文</a>
-    </div>
-  </div>
-</section>
-
-<section class="section-shell">
-  <div class="section-heading">
-    <p class="section-kicker">第一站</p>
-    <h2>🧩 它在主回复前只插一小步</h2>
-    <p>Active Memory 的工作很克制：先根据当前对话做一次记忆查询，找到就把摘要塞进隐藏上下文，找不到就不打扰主回复。</p>
-  </div>
-  <div class="source-card">
-    <div class="story-card-label">运行形状</div>
-    <pre><code class="language-text">User Message
-→ Build Memory Query
-→ Active Memory blocking memory sub-agent
-→ NONE 或 relevant summary
-→ Main Reply</code></pre>
-  </div>
-  <div class="story-grid">
-    <div class="story-card">
-      <div class="story-card-label">只给一次机会</div>
-      <p>它不是循环查很久，而是在回复前给记忆系统一次有限尝试。</p>
-    </div>
-    <div class="story-card">
-      <div class="story-card-label">只能用两把工具</div>
-      <p>blocking memory sub-agent 只用 <code>memory_search</code> 和 <code>memory_get</code>，工具面很窄。</p>
-    </div>
-    <div class="story-card">
-      <div class="story-card-label">看不见原始标签</div>
-      <p>正常客户端不会显示原始 <code>&lt;active_memory_plugin&gt;</code> 标签，只会影响模型输入。</p>
-    </div>
-    <div class="source-card">
-      <div class="story-card-label">什么时候适合</div>
-      <p>适合长期偏好、反复出现的习惯、需要连续性的用户上下文；不适合一次性 API 任务和后台自动化。</p>
-    </div>
-  </div>
-</section>
-
-<section class="section-shell">
-  <div class="section-heading">
-    <p class="section-kicker">第二站</p>
-    <h2>🔧 安全起步：只给一个 agent、只开 direct</h2>
-    <p>第一次配置时，最好小范围打开。先让 <code>main</code> agent 在 direct 会话里试跑，日志开着，调稳后再扩大。</p>
-  </div>
-  <div class="source-card">
-    <div class="story-card-label">推荐起步配置</div>
-    <pre><code class="language-json5">{
-  plugins: {
-    entries: {
-      "active-memory": {
-        enabled: true,
-        config: {
-          enabled: true,
-          agents: ["main"],
-          allowedChatTypes: ["direct"],
-          modelFallback: "google/gemini-3-flash",
-          queryMode: "recent",
-          promptStyle: "balanced",
-          timeoutMs: 15000,
-          maxSummaryChars: 220,
-          persistTranscripts: false,
-          logging: true,
-        },
-      },
-    },
-  },
-}</code></pre>
-  </div>
-  <div class="home-grid">
-    <article class="home-card">
-      <span class="home-card-index">✅</span>
-      <h2><code>enabled</code></h2>
-      <p>插件本体和 config 都要开，才有机会运行。</p>
-    </article>
-    <article class="home-card">
-      <span class="home-card-index">👤</span>
-      <h2><code>agents</code></h2>
-      <p>只让指定 agent 使用，避免所有 agent 一起翻记忆。</p>
-    </article>
-    <article class="home-card">
-      <span class="home-card-index">💬</span>
-      <h2><code>allowedChatTypes</code></h2>
-      <p>默认 direct 最稳；group、channel 要明确 opt in。</p>
-    </article>
-    <article class="home-card">
-      <span class="home-card-index">⏱️</span>
-      <h2><code>timeoutMs</code></h2>
-      <p>它跑在回复路径里，超时要克制，否则用户会等很久。</p>
-    </article>
-  </div>
-</section>
-
-<section class="section-shell">
-  <div class="section-heading">
-    <p class="section-kicker">第三站</p>
-    <h2>🚦 两道门都开，它才会动</h2>
-    <p>很多“为什么没跑”的问题，其实都是没过门槛。配置门和运行时门缺一个，它都会安静跳过。</p>
-  </div>
-  <div class="story-grid">
-    <div class="story-card">
-      <div class="story-card-label">配置门</div>
-      <p>插件启用，当前 agent id 在 <code>config.agents</code> 里，聊天类型在 <code>allowedChatTypes</code> 里。</p>
-    </div>
-    <div class="story-card">
-      <div class="story-card-label">运行时门</div>
-      <p>会话必须是交互式、持久的聊天会话；headless one-shot、heartbeat、内部 helper execution 都不跑。</p>
-    </div>
-    <div class="source-card">
-      <div class="story-card-label">规则压缩成一行</div>
-      <pre><code class="language-text">plugin enabled
-+ agent id targeted
-+ allowed chat type
-+ eligible interactive persistent chat session
-= active memory runs</code></pre>
-    </div>
-    <div class="story-card">
-      <div class="story-card-label">临时开关</div>
-      <p><code>/active-memory off</code>、<code>on</code>、<code>status</code> 只影响当前会话；带 <code>--global</code> 才写全局 config。</p>
-    </div>
-  </div>
-</section>
-
-<section class="section-shell">
-  <div class="section-heading">
-    <p class="section-kicker">第四站</p>
-    <h2>⚖️ <code>queryMode</code> 和 <code>promptStyle</code> 决定“翻多少、翻多积极”</h2>
-    <p>一个管给记忆 sub-agent 看多少对话，一个管它多愿意返回记忆。</p>
-  </div>
-  <div class="home-grid">
-    <article class="home-card">
-      <span class="home-card-index">1</span>
-      <h2><code>message</code></h2>
-      <p>只看最新用户消息，最快，适合偏稳定偏好的召回。</p>
-    </article>
-    <article class="home-card">
-      <span class="home-card-index">2</span>
-      <h2><code>recent</code></h2>
-      <p>看最新消息加一点最近对话，速度和上下文比较均衡。</p>
-    </article>
-    <article class="home-card">
-      <span class="home-card-index">3</span>
-      <h2><code>full</code></h2>
-      <p>看完整对话，最重，只有真的需要远处上下文时再用。</p>
-    </article>
-    <article class="home-card">
-      <span class="home-card-index">🎚️</span>
-      <h2><code>promptStyle</code></h2>
-      <p><code>strict</code> 更保守，<code>contextual</code> 更重连续性，<code>preference-only</code> 更偏长期喜好。</p>
-    </article>
-  </div>
-</section>
-
-<section class="section-shell">
-  <div class="section-heading">
-    <p class="section-kicker">第五站</p>
-    <h2>🔍 调试时看状态线，不要猜</h2>
-    <p>官方给了很明确的调试路线：开 verbose、开 trace、看 gateway log，再用 memory status 深查。</p>
-  </div>
-  <div class="source-card">
-    <div class="story-card-label">会话里先这样看</div>
-    <pre><code class="language-text">/verbose on
-/trace on
-what should I order?</code></pre>
-  </div>
-  <div class="story-grid">
-    <div class="story-card">
-      <div class="story-card-label"><code>/verbose on</code></div>
-      <p>能看到类似 <code>Active Memory: status=ok elapsed=842ms</code> 的状态线。</p>
-    </div>
-    <div class="story-card">
-      <div class="story-card-label"><code>/trace on</code></div>
-      <p>能看到给人读的 Active Memory debug summary，帮助你判断召回是否合理。</p>
-    </div>
-    <div class="story-card">
-      <div class="story-card-label"><code>memory status --deep</code></div>
-      <p>如果召回慢、空、报 provider 错，先检查 memory-search 后端和索引健康。</p>
-    </div>
-    <div class="source-card">
-      <div class="story-card-label">Provider 选择要明确</div>
-      <p>如果你依赖 embedding 召回，建议显式 pin <code>agents.defaults.memorySearch.provider</code>，不要让环境里“刚好可用”的 provider 随机改变结果。</p>
-    </div>
-  </div>
-</section>
-
-<section class="section-shell">
-  <div class="section-heading">
-    <p class="section-kicker">最后总结</p>
-    <h2>🎈 把 Active Memory 压成一句话</h2>
-    <p>Active Memory 是一个可选的回复前记忆召回插件：只在符合条件的持久聊天里运行，找到有用记忆就加进隐藏上下文，找不到就安静让主回复继续。</p>
-  </div>
-</section>
-
+        <div class="overview-card">
+          <div>
+            <p class="section-kicker">AI 绘本解读版</p>
+            <h2>主动记忆：在你说“等等”之前，它已经想起来了</h2>
+            <p>主动记忆是个小插件，它在你的 AI 回复之前，先偷偷翻一下记忆。不用你说“记住这个”，也不用等它慢慢想，该出现的东西会提前摆到桌面上。</p>
+          </div>
+          <div class="overview-meta">
+            <span>原始路径：/concepts/active-memory</span>
+            <span>故事卡片：10 张</span>
+            <a href="https://docs.openclaw.ai/concepts/active-memory" target="_blank" rel="noreferrer">查看官方原文</a>
+          </div>
+        </div>
+      </section>
+      
+          <section class="section-shell" id="section-1">
+            <div class="section-heading">
+              <p class="section-kicker">第 1 站</p>
+              <h2>为什么要有这个插件？</h2>
+              <p>大多数记忆系统像一本放在书架上的书，你得说“帮我查一下”它才翻开。主动记忆不一样，它像个勤快的助手，在你开口前就把可能用到的纸条递过来。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>因为等你想起来要查记忆的时候，对话已经凉了半截。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>普通记忆靠你命令：你说“搜索记忆”它才动。</li><li>主动记忆自己判断时机：每次回复前，它先快速扫一眼。</li><li>它只做一次，不啰嗦：只在你回复前的那一瞬间出手，不会反复打扰。</li><li>它是个可选插件，不是默认行为：你得主动说“我要用”。</li><li>它只对符合条件的话生效：不是每一句对话都触发，只挑那些有上下文、有记忆价值的会话。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>主动记忆是帮你抢在“忘记”之前把记忆亮出来的小门卫。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-2">
+            <div class="section-heading">
+              <p class="section-kicker">第 2 站</p>
+              <h2>怎么装上去？贴一段代码就行</h2>
+              <p>把下面这段 JSON 贴到你的 agent 配置里，重启一下网关，主动记忆就开始工作了。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>因为不贴代码它就不动。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>这段配置把插件打开，只对 main agent 生效。</li><li>它默认只处理直接对话（direct），不会在群聊里乱翻。</li><li>它先用当前会话的模型，如果拿不到，再用你指定的备用模型。</li><li>贴完之后重启网关，新配置才生效。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
+              <ul><li>执行后：插件启动，但不会马上翻记忆——它只在你每次回复前才干活。</li><li>如果写错了 agent 名字，它就不干活，不会报错。</li><li>如果 allowedChatTypes 写错，它可能在不该干活的时候干活。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>贴代码 → 重启 → 它就开始在后台守着了。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-3">
+            <div class="section-heading">
+              <p class="section-kicker">第 3 站</p>
+              <h2>最安全的打开方式</h2>
+              <p>第一次用，别贪多。只开一个插件，只对一个 agent，只开日志调参数。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>因为一上来就全开容易出事，调起来也麻烦。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>先确保插件 enabled 为 true。</li><li>agents 列表里只写一个名字，比如 main。</li><li>allowedChatTypes 只写 direct，别写 group。</li><li>logging 先开 true，调好之后再关掉，省得日志刷屏。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
+              <ul><li>这段 JSON 里的 timeoutMs 设了 15 秒，如果记忆搜索超过 15 秒就放弃，不影响主回复。</li><li>queryMode 设 recent，只找最近的内容，不翻旧账。</li><li>promptStyle 设 balanced，不偏不倚。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>小范围打开，调稳了再扩大。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-4">
+            <div class="section-heading">
+              <p class="section-kicker">第 4 站</p>
+              <h2>怎么让它跑得快？</h2>
+              <p>想让主动记忆快一点，就别用主聊天模型，给它配个专门的推理模型。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>因为主模型可能很重，像卡车拉货，而记忆搜索只需要一辆小摩托。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>最简单的做法：不设 model 字段，它自动继承主模型。</li><li>想更快：设一个专门的轻量模型，比如 Cerebras 的。</li><li>Cerebras 跑得特别快，适合当记忆搜索的引擎。</li><li>配置里要加一个 providers 条目，写好 API 地址和密钥。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
+              <ul><li>执行后：主动记忆不再用主模型，而是用 Cerebras 那台快车。</li><li>注意：API 密钥要从环境变量读，别硬编码。</li><li>如果模型写错了，它会 fallback 到主模型，不会崩。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>给主动记忆配个快模型，它就能在眨眼间翻完记忆。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-5">
+            <div class="section-heading">
+              <p class="section-kicker">第 5 站</p>
+              <h2>它到底怎么工作的？我看不见它</h2>
+              <p>主动记忆在回复里不留下任何标记，它只是悄悄往模型前面塞了一段提示。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>因为它的工作就是“让你感觉不到它存在，但回复更自然”。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>它不会在聊天窗口里显示 &lt;active_memory&gt; 之类的标签。</li><li>它往模型输入里加了一段隐藏的提示，模型看到了，但你看不到。</li><li>这段提示告诉模型：刚才翻到的记忆在这里，你看着办。</li><li>如果记忆没翻到东西，它就不加提示，什么都不做。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>它像影子一样，你看不见它，但它的影响在回复里。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-6">
+            <div class="section-heading">
+              <p class="section-kicker">第 6 站</p>
+              <h2>临时开关：不用改配置也能关</h2>
+              <p>在聊天窗口里打命令，就能在当前会话里关掉或打开主动记忆。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>因为有时候你不想让它翻记忆，比如聊隐私话题。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>打 /active-memory off 就关，只关当前会话。</li><li>打 /active-memory on 再打开。</li><li>打 /active-memory status 看当前状态。</li><li>这个开关不影响全局配置，其他会话照常运行。</li><li>如果想全局关掉，得去改配置文件。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
+              <ul><li>执行 /active-memory off 后：当前会话不再触发记忆搜索，但插件本身还在运行。</li><li>执行 /active-memory on 后：下一个回复就会重新开始搜索记忆。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>临时开关，不动全局，随开随关。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-7">
+            <div class="section-heading">
+              <p class="section-kicker">第 7 站</p>
+              <h2>它什么时候跑？两道门把关</h2>
+              <p>主动记忆要过两道门才干活：配置门和运行时门。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>因为不是所有对话都需要翻记忆，翻多了反而乱。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>第一道门：配置里插件要 enabled，agent 名字要在 agents 列表里。</li><li>第二道门：会话必须是交互式的、持久的、允许的聊天类型。</li><li>两道门都开了，它才跑。否则它安静待着。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
+              <ul><li>如果插件 enabled 但 agents 没写对，它不跑。</li><li>如果会话是临时的（比如一次性提问），它也不跑。</li><li>如果聊天类型是 group 但 allowedChatTypes 没写 group，它也不跑。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>两道门都开了，它才动。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-8">
+            <div class="section-heading">
+              <p class="section-kicker">第 8 站</p>
+              <h2>出问题了怎么办？</h2>
+              <p>主动记忆没按预期工作，按这几步查。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>因为问题可能出在好几个地方，得一个一个排除。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>先确认插件 enabled 是 true。</li><li>再确认当前 agent 名字在 agents 列表里。</li><li>确认你用的是交互式持久会话，不是一次性提问。</li><li>打开 logging，看网关日志里有没有 active-memory 相关行。</li><li>用 openclaw memory status --deep 检查记忆搜索本身是否正常。</li><li>如果记忆结果太杂，调小 maxSummaryChars。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
+              <ul><li>打开 logging 后，日志里会出现 active-memory: ... start|done 这样的行。</li><li>如果看到 memory sync failed，说明记忆同步有问题。</li><li>如果看到 provider 相关错误，说明嵌入模型配置不对。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>按步骤查，日志会告诉你真相。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-9">
+            <div class="section-heading">
+              <p class="section-kicker">第 9 站</p>
+              <h2>嵌入模型突然变了？</h2>
+              <p>主动记忆用的是你配置好的 memorySearch 管道，嵌入模型变了通常是 memorySearch 设置的问题。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>因为主动记忆自己不管理嵌入，它只是调用 memorySearch。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>主动记忆不单独配嵌入模型，它用 agents.defaults.memorySearch 里的设置。</li><li>如果嵌入提供商变了，检查 memorySearch 配置。</li><li>有些提供商能自动检测，比如 ollama。</li><li>确保你的环境里有可用的嵌入提供商。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>嵌入模型变了，别怪主动记忆，去查 memorySearch。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-10">
+            <div class="section-heading">
+              <p class="section-kicker">第 10 站</p>
+              <h2>排查提供商问题</h2>
+              <p>如果主动记忆慢、返回空、或者提供商突然切换，看日志。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>因为日志里有具体的错误信息。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>日志里找 active-memory: ... start|done 看耗时。</li><li>如果看到 memory sync failed (search-bootstrap)，说明同步失败。</li><li>提供商错误会直接显示在日志里。</li><li>检查当前会话的状态行，看有没有异常。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
+              <ul><li>在日志里搜 provider 或 embedding，能找到具体错误。</li><li>如果慢，看 start 和 done 的时间差。</li><li>如果空，看有没有 memory found 之类的日志。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>日志是侦探，盯着它看就能找到凶手。</p>
+              </div>
+            </div>
+          </section>
+        
+      <section class="section-shell">
+        <div class="ad-placeholder">
+          <p>这里预留给未来的 Google AdSense 模块。</p>
+          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
+        </div>
+      </section>
+    
 
       <footer class="page-footer">
         <div>

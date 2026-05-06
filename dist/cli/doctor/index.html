@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>doctor 命令：doctor | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="doctor 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>doctor | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="openclaw doctor 会检查网关、通道、状态完整性、cron 任务、Talk 配置等，并给出修复建议。最常用的是 --fix（自动修复）和 --deep（扫描多余网关安装）。注意：macOS 上如果之前设过 launchctl setenv 环境变量，会覆盖配置文件导致“unauthorized”，需要先…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="doctor 命令：doctor | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="doctor 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="doctor | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="openclaw doctor 会检查网关、通道、状态完整性、cron 任务、Talk 配置等，并给出修复建议。最常用的是 --fix（自动修复）和 --deep（扫描多余网关安装）。注意：macOS 上如果之前设过 launchctl setenv 环境变量，会覆盖配置文件导致“unauthorized”，需要先…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/doctor/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="doctor 命令：doctor | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="doctor 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="doctor | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="openclaw doctor 会检查网关、通道、状态完整性、cron 任务、Talk 配置等，并给出修复建议。最常用的是 --fix（自动修复）和 --deep（扫描多余网关安装）。注意：macOS 上如果之前设过 launchctl setenv 环境变量，会覆盖配置文件导致“unauthorized”，需要先…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/doctor/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"doctor 命令：doctor","description":"doctor 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/doctor/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"doctor","description":"openclaw doctor 会检查网关、通道、状态完整性、cron 任务、Talk 配置等，并给出修复建议。最常用的是 --fix（自动修复）和 --deep（扫描多余网关安装）。注意：macOS 上如果之前设过 launchctl setenv 环境变量，会覆盖配置文件导致“unauthorized”，需要先…","url":"https://fivey-can-read-openclaw.pages.dev/cli/doctor/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/doctor/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>网关健康检查与自动修复命令</h1>
-        <p class="hero-copy">运行 openclaw doctor 命令检查网关和通道配置状态，并可使用 --repair 参数自动修复常见问题。特别注意 --force 参数会覆盖自定义配置，而 --non-interactive 模式在无头环境中会自动跳过交互提示。</p>
+        <h1>一条命令诊断网关和通道，还能自动修</h1>
+        <p class="hero-copy">`openclaw doctor` 会检查网关、通道、状态完整性、cron 任务、Talk 配置等，并给出修复建议。最常用的是 `--fix`（自动修复）和 `--deep`（扫描多余网关安装）。注意：macOS 上如果之前设过 `launchctl setenv` 环境变量，会覆盖配置文件导致“unauthorized”，需要先 `unsetenv` 再跑 doctor。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.doctor.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🩺 <code>openclaw doctor</code> 像一位会巡逻、会修补、还会收拾残局的医生</h2>
-      <p>这不是那种只会说“你去重启试试”的医生。它会先看门口，再看屋里，再看看有没有东西卡在抽屉里没收好。</p>
-      <p>如果 Gateway 或 channel 出了点小毛病，它会尽量给你一条能继续走的路，而不是只把你丢在原地。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>一条命令诊断网关和通道，还能自动修</h2>
+      <p>`openclaw doctor` 会检查网关、通道、状态完整性、cron 任务、Talk 配置等，并给出修复建议。最常用的是 `--fix`（自动修复）和 `--deep`（扫描多余网关安装）。注意：macOS 上如果之前设过 `launchctl setenv` 环境变量，会覆盖配置文件导致“unauthorized”，需要先 `unsetenv` 再跑 doctor。</p>
     </div>
     <div class="overview-meta">
-      <span>适合遇到“好像坏了，但不知道坏在哪”的时候</span>
-      <span>这页最重要的是记住：doctor 不是聊天，它是巡检 + 修复 + 备份保护</span>
+      <span>原文共 4 节，先看 Start Here</span>
+      <span>路径：/cli/doctor</span>
       <a href="https://docs.openclaw.ai/cli/doctor" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

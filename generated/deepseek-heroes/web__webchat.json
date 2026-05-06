@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:53:13.033Z",
+  "generatedAt": "2026-05-06T15:08:18.272Z",
   "pathname": "/web/webchat",
   "title": "WebChat",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "WebChat：原生聊天界面接入网关WebSocket",
-    "heroSummary": "这页说明如何通过macOS/iOS原生应用或控制台界面，直接连接网关WebSocket进行聊天交互。启动前必须配置有效的网关认证路径，即使本地回环也需要共享密钥。界面使用chat.history、chat.send和chat.inject操作，其中chat.history会进行显示标准化处理，自动过滤指令标签和静音令牌。"
+    "heroTitle": "WebChat 是原生聊天界面，不走浏览器，直接连 Gateway WebSocket",
+    "heroSummary": "先启动 gateway，再打开 WebChat 应用（macOS/iOS）或 Control UI 的聊天标签页。注意即使在本机环回地址，也必须配置有效的 gateway auth path（默认是 shared-secret），否则连不上。最容易搞错的是：WebChat 的回复路由是确定性的——同一会话的回复永远回到 WebChat，不会跑到其他 channel。"
   }
 }

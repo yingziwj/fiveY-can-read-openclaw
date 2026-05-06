@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:50:12.354Z",
+  "generatedAt": "2026-05-06T15:07:58.774Z",
   "pathname": "/providers/openai",
   "title": "OpenAI",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenAI接入配置与交互风格设置",
-    "heroSummary": "这页详细说明如何在OpenClaw中接入OpenAI的两种方式：API密钥和ChatGPT订阅登录，并配置交互风格。首先要设置正确的认证方式，API密钥用于按量计费，ChatGPT登录用于订阅访问。最容易出错的是混淆openai/*和openai-codex/*路由，以及忘记配置personality参数来控制提示覆盖层。"
+    "heroTitle": "OpenAI 接入：先分清 API Key 和 Codex 订阅，再决定用哪条路",
+    "heroSummary": "OpenClaw 支持两种 OpenAI 认证：API Key（按量计费，模型前缀 openai/*）和 Codex 订阅（ChatGPT 登录，模型前缀 openai-codex/*）。首次配置时，先选认证方式，再运行 `openclaw onboard` 传入 key 或走 OAuth。最容易踩的坑是模型前缀写错——API Key 用户用了 `openai-codex/*` 模型会报错。"
   }
 }

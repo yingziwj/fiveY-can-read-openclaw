@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>dashboard 命令：dashboard | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="dashboard 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>dashboard | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="执行 openclaw dashboard 即可用已配置的认证令牌打开控制 UI。如果令牌来自 SecretRef，命令会生成不含令牌的 URL 以保护密钥，避免暴露在终端或剪贴板中。若令牌未解析，会打印修复指引而非无效占位符。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="dashboard 命令：dashboard | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="dashboard 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="dashboard | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="执行 openclaw dashboard 即可用已配置的认证令牌打开控制 UI。如果令牌来自 SecretRef，命令会生成不含令牌的 URL 以保护密钥，避免暴露在终端或剪贴板中。若令牌未解析，会打印修复指引而非无效占位符。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/dashboard/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="dashboard 命令：dashboard | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="dashboard 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="dashboard | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="执行 openclaw dashboard 即可用已配置的认证令牌打开控制 UI。如果令牌来自 SecretRef，命令会生成不含令牌的 URL 以保护密钥，避免暴露在终端或剪贴板中。若令牌未解析，会打印修复指引而非无效占位符。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/dashboard/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"dashboard 命令：dashboard","description":"dashboard 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/dashboard/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"dashboard","description":"执行 openclaw dashboard 即可用已配置的认证令牌打开控制 UI。如果令牌来自 SecretRef，命令会生成不含令牌的 URL 以保护密钥，避免暴露在终端或剪贴板中。若令牌未解析，会打印修复指引而非无效占位符。","url":"https://fivey-can-read-openclaw.pages.dev/cli/dashboard/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/dashboard/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>用命令行打开控制面板</h1>
-        <p class="hero-copy">执行 `openclaw dashboard` 会基于当前认证打开控制界面，无需手动配置令牌。注意：如果令牌由 SecretRef 管理但未解析，命令会输出不含令牌的 URL 并提供修复指引，避免在终端或浏览器中暴露敏感信息。</p>
+        <h1>用当前认证打开控制面板，令牌自动处理</h1>
+        <p class="hero-copy">执行 openclaw dashboard 即可用已配置的认证令牌打开控制 UI。如果令牌来自 SecretRef，命令会生成不含令牌的 URL 以保护密钥，避免暴露在终端或剪贴板中。若令牌未解析，会打印修复指引而非无效占位符。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,18 +4324,18 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.dashboard.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🕹 Dashboard 就是 OpenClaw 的“驾驶舱”，但它是给管理员坐的</h2>
-      <p>这页不是在讲聊天，也不是在讲普通网页。它讲的是浏览器里的控制室：你可以在这里看状态、接线、处理 token、做审批，但前提是你得先拿到门票。</p>
-      <p>所以别把它当成“随便给人看的主页”。它更像总控台，里面放的是方向盘，不是海报。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用当前认证打开控制面板，令牌自动处理</h2>
+      <p>执行 openclaw dashboard 即可用已配置的认证令牌打开控制 UI。如果令牌来自 SecretRef，命令会生成不含令牌的 URL 以保护密钥，避免暴露在终端或剪贴板中。若令牌未解析，会打印修复指引而非无效占位符。</p>
     </div>
     <div class="overview-meta">
-      <span>适合第一次打开 Control UI 的人</span>
-      <span>这页最重要的是记住：它是 admin surface，不要公开乱放</span>
-      <a href="https://docs.openclaw.ai/web/dashboard" target="_blank" rel="noreferrer">查看官方原文</a>
+      <span>原文共 1 节，先看 Start Here</span>
+      <span>路径：/cli/dashboard</span>
+      <a href="https://docs.openclaw.ai/cli/dashboard" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>
 </section>

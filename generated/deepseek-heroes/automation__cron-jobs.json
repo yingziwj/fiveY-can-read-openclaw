@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:49:14.781Z",
+  "generatedAt": "2026-05-06T15:05:52.106Z",
   "pathname": "/automation/cron-jobs",
   "title": "Scheduled Tasks",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "定时任务配置与执行详解",
-    "heroSummary": "本页详细说明如何通过命令行配置定时任务，包括一次性提醒、固定间隔和Cron表达式三种调度方式。配置时需特别注意时区设置，默认UTC时间可能导致执行时间偏差。执行模式分为主会话、独立会话和自定义会话，独立会话适合后台报告任务，能自动清理浏览器进程避免残留。"
+    "heroTitle": "Cron 定时任务：Gateway 内置调度器，持久化、可唤醒、能回传结果",
+    "heroSummary": "先跑 `openclaw cron add --at \"2026-02-01T16:00:00Z\" --session main --wake now --delete-after-run` 创建一个一次性提醒，再用 `cron list` 确认。注意：同时指定日与周几时是“或”逻辑（每月触发 5~6 次而非 0~1 次），如需“与”逻辑请用 `+` 修饰符。"
   }
 }

@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>受信代理认证：Trusted Proxy Auth | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="受信代理认证是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Trusted Proxy Auth | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这页讲的是把认证全甩给反向代理（Pomerium、Caddy、nginx 等），OpenClaw 只看代理传过来的用户头。最要紧的是先配好 gateway.trustedProxies 白名单，否则谁都能伪造身份。注意：开启后 Control UI 不再依赖设备配对，权限全靠代理和 allowUsers 控制，务必堵…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="受信代理认证：Trusted Proxy Auth | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="受信代理认证是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Trusted Proxy Auth | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这页讲的是把认证全甩给反向代理（Pomerium、Caddy、nginx 等），OpenClaw 只看代理传过来的用户头。最要紧的是先配好 gateway.trustedProxies 白名单，否则谁都能伪造身份。注意：开启后 Control UI 不再依赖设备配对，权限全靠代理和 allowUsers 控制，务必堵…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/gateway/trusted-proxy-auth/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="受信代理认证：Trusted Proxy Auth | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="受信代理认证是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Trusted Proxy Auth | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这页讲的是把认证全甩给反向代理（Pomerium、Caddy、nginx 等），OpenClaw 只看代理传过来的用户头。最要紧的是先配好 gateway.trustedProxies 白名单，否则谁都能伪造身份。注意：开启后 Control UI 不再依赖设备配对，权限全靠代理和 allowUsers 控制，务必堵…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/gateway/trusted-proxy-auth/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"受信代理认证：Trusted Proxy Auth","description":"受信代理认证是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/trusted-proxy-auth/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Trusted Proxy Auth","description":"这页讲的是把认证全甩给反向代理（Pomerium、Caddy、nginx 等），OpenClaw 只看代理传过来的用户头。最要紧的是先配好 gateway.trustedProxies 白名单，否则谁都能伪造身份。注意：开启后 Control UI 不再依赖设备配对，权限全靠代理和 allowUsers 控制，务必堵…","url":"https://fivey-can-read-openclaw.pages.dev/gateway/trusted-proxy-auth/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Gateway","item":"https://fivey-can-read-openclaw.pages.dev/gateway/trusted-proxy-auth/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Gateway 导读</p>
-        <h1>网关反向代理认证配置指南</h1>
-        <p class="hero-copy">本页详细说明如何配置网关，使其信任前置反向代理（如Pomerium、nginx+oauth2-proxy）传递的用户身份信息进行认证。启用前必须确保代理已正确处理认证并正确设置可信代理IP，否则可能导致未授权访问。配置后，控制UI的WebSocket连接将依赖代理认证和用户白名单，而非设备配对。</p>
+        <h1>让反向代理替你管登录，但别开错门</h1>
+        <p class="hero-copy">这页讲的是把认证全甩给反向代理（Pomerium、Caddy、nginx 等），OpenClaw 只看代理传过来的用户头。最要紧的是先配好 `gateway.trustedProxies` 白名单，否则谁都能伪造身份。注意：开启后 Control UI 不再依赖设备配对，权限全靠代理和 `allowUsers` 控制，务必堵死所有绕过代理的入口。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,8 +4324,21 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🛂 Trusted Proxy Auth 这页，其实是在讲“把认证整件事交给你前面的反向代理代办”</h2><p>这招很厉害，也很危险。代理没配好，就等于把大门钥匙挂在外面。</p></div><div class="overview-meta"><span>代理代管认证</span><span>重点是 trusted proxy IP、header 身份、误配风险</span><a href="https://docs.openclaw.ai/gateway/trusted-proxy-auth" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-
+      <!-- handcrafted-source:gateway.trusted-proxy-auth.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>让反向代理替你管登录，但别开错门</h2>
+      <p>这页讲的是把认证全甩给反向代理（Pomerium、Caddy、nginx 等），OpenClaw 只看代理传过来的用户头。最要紧的是先配好 `gateway.trustedProxies` 白名单，否则谁都能伪造身份。注意：开启后 Control UI 不再依赖设备配对，权限全靠代理和 `allowUsers` 控制，务必堵死所有绕过代理的入口。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 28 节，先看 Start Here</span>
+      <span>路径：/gateway/trusted-proxy-auth</span>
+      <a href="https://docs.openclaw.ai/gateway/trusted-proxy-auth" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
       <footer class="page-footer">
         <div>

@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>消息：Messages | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="消息是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Messages | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="先看消息流总图（Inbound → 路由 → 队列 → 推理 → 出站），再根据你的渠道调 messages.inbound.debounceMs 和 agents.defaults.blockStreaming。最容易踩的坑：去重缓存是短期的，同一消息重连后可能重复触发；防抖只对纯文本生效，带媒体或控制命令会立即执…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="消息：Messages | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="消息是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Messages | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="先看消息流总图（Inbound → 路由 → 队列 → 推理 → 出站），再根据你的渠道调 messages.inbound.debounceMs 和 agents.defaults.blockStreaming。最容易踩的坑：去重缓存是短期的，同一消息重连后可能重复触发；防抖只对纯文本生效，带媒体或控制命令会立即执…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/messages/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="消息：Messages | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="消息是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Messages | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="先看消息流总图（Inbound → 路由 → 队列 → 推理 → 出站），再根据你的渠道调 messages.inbound.debounceMs 和 agents.defaults.blockStreaming。最容易踩的坑：去重缓存是短期的，同一消息重连后可能重复触发；防抖只对纯文本生效，带媒体或控制命令会立即执…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/messages/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"消息：Messages","description":"消息是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/messages/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Messages","description":"先看消息流总图（Inbound → 路由 → 队列 → 推理 → 出站），再根据你的渠道调 messages.inbound.debounceMs 和 agents.defaults.blockStreaming。最容易踩的坑：去重缓存是短期的，同一消息重连后可能重复触发；防抖只对纯文本生效，带媒体或控制命令会立即执…","url":"https://fivey-can-read-openclaw.pages.dev/concepts/messages/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/messages/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>消息处理流程与配置要点</h1>
-        <p class="hero-copy">这页详细说明了OpenClaw如何处理入站消息的完整流程，包括路由、队列、会话和流式回复。配置时需重点关注messages.*前缀、代理默认值和各通道的覆盖设置，其中入站消息的去重和防抖动机制最容易因忽略通道差异而出错。</p>
+        <h1>消息从进到出，OpenClaw 替你管了排队、去重、流式回复</h1>
+        <p class="hero-copy">先看消息流总图（Inbound → 路由 → 队列 → 推理 → 出站），再根据你的渠道调 `messages.inbound.debounceMs` 和 `agents.defaults.blockStreaming`。最容易踩的坑：去重缓存是短期的，同一消息重连后可能重复触发；防抖只对纯文本生效，带媒体或控制命令会立即执行。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.messages.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>📮 Messages 就是“消息怎么进门、怎么排队、怎么回家”</h2>
-      <p>这页把很多东西缝在一起：消息从哪儿来，来了以后怎么分给哪一本会话本，排队时怎么等，回答时怎么一小段一小段送出去，脑子里要不要把想法亮出来。</p>
-      <p>你可以把它想成一条邮局流水线。门口收信，柜台分信，车间干活，最后把回信送回去。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>消息从进到出，OpenClaw 替你管了排队、去重、流式回复</h2>
+      <p>先看消息流总图（Inbound → 路由 → 队列 → 推理 → 出站），再根据你的渠道调 `messages.inbound.debounceMs` 和 `agents.defaults.blockStreaming`。最容易踩的坑：去重缓存是短期的，同一消息重连后可能重复触发；防抖只对纯文本生效，带媒体或控制命令会立即执行。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想看懂“消息来了以后到底发生什么”的人</span>
-      <span>这页最重要的是把 inbound、session、queue、streaming 放在同一条路上看</span>
+      <span>原文共 11 节，先看 Start Here</span>
+      <span>路径：/concepts/messages</span>
       <a href="https://docs.openclaw.ai/concepts/messages" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

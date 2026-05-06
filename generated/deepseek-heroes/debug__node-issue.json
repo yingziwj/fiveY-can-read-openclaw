@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:54:18.563Z",
+  "generatedAt": "2026-05-06T15:09:00.353Z",
   "pathname": "/debug/node-issue",
   "title": "Node + tsx Crash",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Node + tsx 启动报错 __name is not a function 的排查与修复",
-    "heroSummary": "这页专门解决从 Bun 切换到 tsx 后，OpenClaw 在 Node v25 上启动时遇到的 __name is not a function 崩溃问题。先看环境确认是否匹配 Node v25 和 tsx 4.21.0，然后运行提供的重现脚本来验证问题。最容易错在没注意这是特定于 Node v25 和 tsx 组合的兼容性问题，与 Bun 环境无关。"
+    "heroTitle": "Node + tsx 启动崩溃：__name is not a function",
+    "heroSummary": "用 tsx 替代 Bun 后，Node 25 下启动 OpenClaw 报 __name 不是函数。先跑最小复现脚本确认环境，问题出在 tsx 4.21.0 与 Node 25 的兼容性，与代码逻辑无关。"
   }
 }

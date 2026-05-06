@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Firecrawl 工具：Firecrawl | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Firecrawl 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Firecrawl | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Firecrawl 在 OpenClaw 里能当 web_search 提供商、独立插件工具（firecrawl_search / firecrawl_scrape）以及 web_fetch 的回退提取器。先拿 API Key 并配好 plugins.entries.firecrawl.config，注意 baseU…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Firecrawl 工具：Firecrawl | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Firecrawl 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Firecrawl | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Firecrawl 在 OpenClaw 里能当 web_search 提供商、独立插件工具（firecrawl_search / firecrawl_scrape）以及 web_fetch 的回退提取器。先拿 API Key 并配好 plugins.entries.firecrawl.config，注意 baseU…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/tools/firecrawl/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Firecrawl 工具：Firecrawl | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Firecrawl 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Firecrawl | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Firecrawl 在 OpenClaw 里能当 web_search 提供商、独立插件工具（firecrawl_search / firecrawl_scrape）以及 web_fetch 的回退提取器。先拿 API Key 并配好 plugins.entries.firecrawl.config，注意 baseU…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/tools/firecrawl/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Firecrawl 工具：Firecrawl","description":"Firecrawl 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/tools/firecrawl/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Firecrawl","description":"Firecrawl 在 OpenClaw 里能当 web_search 提供商、独立插件工具（firecrawl_search / firecrawl_scrape）以及 web_fetch 的回退提取器。先拿 API Key 并配好 plugins.entries.firecrawl.config，注意 baseU…","url":"https://fivey-can-read-openclaw.pages.dev/tools/firecrawl/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://fivey-can-read-openclaw.pages.dev/tools/firecrawl/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Tools 导读</p>
-        <h1>Firecrawl 配置与使用指南</h1>
-        <p class="hero-copy">这页详细说明如何在 OpenClaw 中配置和使用 Firecrawl 服务，包括作为 web_search 提供者、独立插件工具以及 web_fetch 的备用提取器。配置时最关键的是正确设置 API 密钥，并注意 baseUrl 必须保持为 https://api.firecrawl.dev，这是最容易出错的地方。</p>
+        <h1>Firecrawl 接入：三种用法、API Key 与配置陷阱</h1>
+        <p class="hero-copy">Firecrawl 在 OpenClaw 里能当 web_search 提供商、独立插件工具（firecrawl_search / firecrawl_scrape）以及 web_fetch 的回退提取器。先拿 API Key 并配好 plugins.entries.firecrawl.config，注意 baseUrl 只能填 https://api.firecrawl.dev，别改错。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:tools.firecrawl.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🔥 Firecrawl 像一位“能绕过坏天气、把网页硬送回来的搬运员”</h2>
-      <p>这页讲的是：当普通网页搜索、普通 fetch 遇到 JS-heavy 页面或者爱拦人的站点时，Firecrawl 可以出来帮忙。它会搜索、会抽取，还能给 web_fetch 当后备队。</p>
-      <p>你可以把它想成一位穿雨衣的搬运员。网页难进，它照样尽量把内容背回来。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Firecrawl 接入：三种用法、API Key 与配置陷阱</h2>
+      <p>Firecrawl 在 OpenClaw 里能当 web_search 提供商、独立插件工具（firecrawl_search / firecrawl_scrape）以及 web_fetch 的回退提取器。先拿 API Key 并配好 plugins.entries.firecrawl.config，注意 baseUrl 只能填 https://api.firecrawl.dev，别改错。</p>
     </div>
     <div class="overview-meta">
-      <span>适合需要强抽取、JS-heavy 页面、或容易被拦的站点的人</span>
-      <span>这页最重要的是看懂三种用法：搜索、抓取、给 web_fetch 兜底</span>
+      <span>原文共 9 节，先看 Start Here</span>
+      <span>路径：/tools/firecrawl</span>
       <a href="https://docs.openclaw.ai/tools/firecrawl" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:51:05.092Z",
+  "generatedAt": "2026-05-06T15:06:58.695Z",
   "pathname": "/tools/slash-commands",
   "title": "Slash Commands",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "斜杠命令配置与使用指南",
-    "heroSummary": "这页详细列出了所有可用的斜杠命令，并解释了如何通过配置控制命令的启用和授权。配置时最需注意 `commands.allowFrom` 会完全覆盖其他授权来源，一旦设置，通道白名单和 `commands.useAccessGroups` 将失效。命令分为独立消息和行内快捷方式两种，行内快捷方式会在模型处理前被剥离，不影响后续对话流。"
+    "heroTitle": "斜杠命令：哪些能用、谁能用、怎么配",
+    "heroSummary": "斜杠命令分三类：独立命令（如 /new）、内联快捷指令（如 /help）和指令（如 /think）。配置时最易搞混的是 commands.allowFrom 与 channel 白名单的关系——一旦设置了 allowFrom，就只有它说了算。想开 /bash 或 /config 这类敏感命令，记得先配 tools.elevated 或 ownerAllowFrom。"
   }
 }

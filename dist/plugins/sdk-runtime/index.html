@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>插件运行时助手：Plugin Runtime Helpers | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="插件运行时助手是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Plugin Runtime Helpers | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="注册插件时注入的api.runtime对象封装了agent身份、子代理、任务流等核心能力，比直接引用宿主内部模块更安全。最常用的是api.runtime.agent.runEmbeddedAgent()启动普通agent回合，以及api.runtime.subagent.run()管理后台子代理。注意子代理的模型覆盖…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="插件运行时助手：Plugin Runtime Helpers | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="插件运行时助手是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Plugin Runtime Helpers | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="注册插件时注入的api.runtime对象封装了agent身份、子代理、任务流等核心能力，比直接引用宿主内部模块更安全。最常用的是api.runtime.agent.runEmbeddedAgent()启动普通agent回合，以及api.runtime.subagent.run()管理后台子代理。注意子代理的模型覆盖…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/plugins/sdk-runtime/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="插件运行时助手：Plugin Runtime Helpers | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="插件运行时助手是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Plugin Runtime Helpers | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="注册插件时注入的api.runtime对象封装了agent身份、子代理、任务流等核心能力，比直接引用宿主内部模块更安全。最常用的是api.runtime.agent.runEmbeddedAgent()启动普通agent回合，以及api.runtime.subagent.run()管理后台子代理。注意子代理的模型覆盖…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/plugins/sdk-runtime/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"插件运行时助手：Plugin Runtime Helpers","description":"插件运行时助手是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-runtime/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Plugin Runtime Helpers","description":"注册插件时注入的api.runtime对象封装了agent身份、子代理、任务流等核心能力，比直接引用宿主内部模块更安全。最常用的是api.runtime.agent.runEmbeddedAgent()启动普通agent回合，以及api.runtime.subagent.run()管理后台子代理。注意子代理的模型覆盖…","url":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-runtime/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Plugins","item":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-runtime/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Plugins 导读</p>
-        <h1>插件运行时助手参考</h1>
-        <p class="hero-copy">这页列出了插件注册时注入的`api.runtime`对象所有可用方法，用于访问Agent身份、启动子任务等运行时功能。开发插件时，应优先查看`api.runtime.agent`部分，它提供了工作目录、会话管理等核心助手。注意，`api.runtime.subagent`中的模型覆盖功能需要配置明确授权，否则请求会被拒绝。</p>
+        <h1>插件开发别直接import内部模块，用api.runtime就行</h1>
+        <p class="hero-copy">注册插件时注入的api.runtime对象封装了agent身份、子代理、任务流等核心能力，比直接引用宿主内部模块更安全。最常用的是api.runtime.agent.runEmbeddedAgent()启动普通agent回合，以及api.runtime.subagent.run()管理后台子代理。注意子代理的模型覆盖需要用户在配置中显式允许，否则会被拒绝。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:plugins.sdk-runtime.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🛠 Plugin Runtime Helpers，就是插件上班时的工具箱</h2>
-      <p>这页讲的是插件运行时能拿到什么帮手。不是写插件本体，而是写插件上班时怎么查路径、找配置、读环境。</p>
-      <p>你可以把 runtime 想成后台工具间。真正干活时，插件随手就能拿到铅笔、地图和对讲机。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>插件开发别直接import内部模块，用api.runtime就行</h2>
+      <p>注册插件时注入的api.runtime对象封装了agent身份、子代理、任务流等核心能力，比直接引用宿主内部模块更安全。最常用的是api.runtime.agent.runEmbeddedAgent()启动普通agent回合，以及api.runtime.subagent.run()管理后台子代理。注意子代理的模型覆盖需要用户在配置中显式允许，否则会被拒绝。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想知道插件运行时能用哪些 helper</span>
-      <span>重点是路径、配置、环境和上下文</span>
+      <span>原文共 21 节，先看 Start Here</span>
+      <span>路径：/plugins/sdk-runtime</span>
       <a href="https://docs.openclaw.ai/plugins/sdk-runtime" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

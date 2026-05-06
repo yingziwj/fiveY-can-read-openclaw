@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Typing Indicators | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Typing Indicators是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="通过 agents.defaults.typingMode 选择触发时机（从不/立即/思考时/消息时），用 typingIntervalSeconds 设置刷新间隔（默认6秒）。注意：thinking 模式要求模型流式输出推理过程，心跳运行始终不显示打字指示。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Typing Indicators | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Typing Indicators是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="通过 agents.defaults.typingMode 选择触发时机（从不/立即/思考时/消息时），用 typingIntervalSeconds 设置刷新间隔（默认6秒）。注意：thinking 模式要求模型流式输出推理过程，心跳运行始终不显示打字指示。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/typing-indicators/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Typing Indicators | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Typing Indicators是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="通过 agents.defaults.typingMode 选择触发时机（从不/立即/思考时/消息时），用 typingIntervalSeconds 设置刷新间隔（默认6秒）。注意：thinking 模式要求模型流式输出推理过程，心跳运行始终不显示打字指示。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/typing-indicators/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Typing Indicators","description":"Typing Indicators是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/typing-indicators/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Typing Indicators","description":"通过 agents.defaults.typingMode 选择触发时机（从不/立即/思考时/消息时），用 typingIntervalSeconds 设置刷新间隔（默认6秒）。注意：thinking 模式要求模型流式输出推理过程，心跳运行始终不显示打字指示。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/typing-indicators/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/typing-indicators/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>打字指示器配置详解</h1>
-        <p class="hero-copy">这页讲如何控制AI在聊天中显示“正在输入”的时机和频率。先看typingMode的四种模式，它们决定打字指示器何时触发。最容易错的是把typingIntervalSeconds当成开始时间，它其实控制刷新频率，而heartbeat运行永远不显示打字指示器。</p>
+        <h1>控制机器人“正在输入...”何时出现、多久刷新一次</h1>
+        <p class="hero-copy">通过 `agents.defaults.typingMode` 选择触发时机（从不/立即/思考时/消息时），用 `typingIntervalSeconds` 设置刷新间隔（默认6秒）。注意：`thinking` 模式要求模型流式输出推理过程，心跳运行始终不显示打字指示。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.typing-indicators.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>⌨️ Typing Indicators 这页，其实是在讲“机器人什么时候开始显示正在输入，以及多久挥一次手说‘我还活着’”</h2>
-      <p>这不是花哨动效，而是聊天礼貌问题。</p>
-      <p>太早亮灯会显得乱，太晚亮灯又像死机。所以官方把“什么时候开始打字状态”单独做成了可调规则。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>控制机器人“正在输入...”何时出现、多久刷新一次</h2>
+      <p>通过 `agents.defaults.typingMode` 选择触发时机（从不/立即/思考时/消息时），用 `typingIntervalSeconds` 设置刷新间隔（默认6秒）。注意：`thinking` 模式要求模型流式输出推理过程，心跳运行始终不显示打字指示。</p>
     </div>
     <div class="overview-meta">
-      <span>输入中提示的启动时机和刷新节奏</span>
-      <span>重点是 typingMode 和 typingIntervalSeconds</span>
+      <span>原文共 5 节，先看 Start Here</span>
+      <span>路径：/concepts/typing-indicators</span>
       <a href="https://docs.openclaw.ai/concepts/typing-indicators" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

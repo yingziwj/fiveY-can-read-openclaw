@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:53:17.553Z",
+  "generatedAt": "2026-05-06T15:08:21.573Z",
   "pathname": "/ci",
   "title": "CI Pipeline",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "CI流水线任务清单与执行逻辑",
-    "heroSummary": "本页详细列出了CI流水线中每个任务的具体用途、触发条件和执行顺序，重点解释了智能范围检测如何跳过不必要的任务以节省时间。最该先看Job Overview表格，了解各任务的分工；最容易搞错的是preflight任务中的范围检测逻辑，它决定了后续哪些任务会运行，而不是一个独立的检查步骤。"
+    "heroTitle": "CI 跑哪些检查、按什么顺序失败、本地怎么复现",
+    "heroSummary": "每次 push 或 PR 都会触发 CI，但只有改动相关的 job 才会跑，省时间。先看“Fail-Fast Order”理解为什么有些 job 先失败、有些后跑——这决定了你等结果时的优先级。最容易忽略的是 `preflight` 不是独立 job，它负责判断哪些 lane 该出现，scope 逻辑在 `scripts/ci-changed-scope.mjs` 里，改 scope 规则要同步更新测试。"
   }
 }

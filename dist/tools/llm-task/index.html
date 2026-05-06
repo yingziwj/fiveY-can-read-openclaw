@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LLM Task 工具：LLM Task | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="LLM Task 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>LLM Task | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="llm-task 是一个可选插件工具，专门给 Lobster 这类工作流引擎用的：你只需要配 prompt 和 schema，就能让 LLM 输出结构化的 JSON，不用为每个流程写 OpenClaw 代码。最容易漏的是两步启用：先在 plugins 里打开插件，再在 agent 的 allow 列表里加上 llm-…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="LLM Task 工具：LLM Task | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="LLM Task 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="LLM Task | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="llm-task 是一个可选插件工具，专门给 Lobster 这类工作流引擎用的：你只需要配 prompt 和 schema，就能让 LLM 输出结构化的 JSON，不用为每个流程写 OpenClaw 代码。最容易漏的是两步启用：先在 plugins 里打开插件，再在 agent 的 allow 列表里加上 llm-…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/tools/llm-task/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="LLM Task 工具：LLM Task | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="LLM Task 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="LLM Task | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="llm-task 是一个可选插件工具，专门给 Lobster 这类工作流引擎用的：你只需要配 prompt 和 schema，就能让 LLM 输出结构化的 JSON，不用为每个流程写 OpenClaw 代码。最容易漏的是两步启用：先在 plugins 里打开插件，再在 agent 的 allow 列表里加上 llm-…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/tools/llm-task/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"LLM Task 工具：LLM Task","description":"LLM Task 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/tools/llm-task/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"LLM Task","description":"llm-task 是一个可选插件工具，专门给 Lobster 这类工作流引擎用的：你只需要配 prompt 和 schema，就能让 LLM 输出结构化的 JSON，不用为每个流程写 OpenClaw 代码。最容易漏的是两步启用：先在 plugins 里打开插件，再在 agent 的 allow 列表里加上 llm-…","url":"https://fivey-can-read-openclaw.pages.dev/tools/llm-task/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://fivey-can-read-openclaw.pages.dev/tools/llm-task/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Tools 导读</p>
-        <h1>LLM任务插件配置与使用指南</h1>
-        <p class="hero-copy">这页详细介绍如何启用和配置llm-task插件，让工作流引擎能直接调用LLM生成结构化JSON输出。配置时需特别注意allowedModels白名单设置，否则请求会被拒绝；使用时要确保prompt参数必填，并可通过schema参数验证输出格式。</p>
+        <h1>在流程里加一步纯 JSON 的 LLM 任务，不用写自定义代码</h1>
+        <p class="hero-copy">`llm-task` 是一个可选插件工具，专门给 Lobster 这类工作流引擎用的：你只需要配 prompt 和 schema，就能让 LLM 输出结构化的 JSON，不用为每个流程写 OpenClaw 代码。最容易漏的是两步启用：先在 plugins 里打开插件，再在 agent 的 allow 列表里加上 `llm-task`，缺一不可。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,8 +4324,21 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>📦 LLM Task 这页，其实是在讲“把一个 JSON 风格的小模型任务打包成单独工具步骤”</h2><p>它适合流程引擎，不用每次都专门写一整套插件。</p></div><div class="overview-meta"><span>结构化小任务</span><span>重点是 prompt + input + schema</span><a href="https://docs.openclaw.ai/tools/llm-task" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-
+      <!-- handcrafted-source:tools.llm-task.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>在流程里加一步纯 JSON 的 LLM 任务，不用写自定义代码</h2>
+      <p>`llm-task` 是一个可选插件工具，专门给 Lobster 这类工作流引擎用的：你只需要配 prompt 和 schema，就能让 LLM 输出结构化的 JSON，不用为每个流程写 OpenClaw 代码。最容易漏的是两步启用：先在 plugins 里打开插件，再在 agent 的 allow 列表里加上 `llm-task`，缺一不可。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 7 节，先看 Start Here</span>
+      <span>路径：/tools/llm-task</span>
+      <a href="https://docs.openclaw.ai/tools/llm-task" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
       <footer class="page-footer">
         <div>

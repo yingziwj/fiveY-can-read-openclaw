@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:23.914Z",
+  "generatedAt": "2026-05-06T15:07:37.323Z",
   "pathname": "/platforms/index",
   "title": "Platforms",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw 平台选择与网关安装指南",
-    "heroSummary": "这页帮你根据操作系统选择运行 OpenClaw 的方式，并指导安装网关服务。最该先看“Choose your OS”部分确定你的平台，然后按“Gateway service install (CLI)”执行安装命令。最容易搞错的是 Windows 用户需注意网关推荐通过 WSL2 运行，而非原生 Windows 应用。"
+    "heroTitle": "先选系统，再装网关——不同平台的门不一样",
+    "heroSummary": "OpenClaw 核心用 TypeScript 写，Node 是推荐运行时，Bun 在网关上有已知 bug。macOS、iOS、Android 已有原生伴侣应用，Windows 和 Linux 建议走 WSL2 或 Docker。安装网关服务时，不同 OS 的守护进程机制不同：macOS 用 LaunchAgent，Linux/WSL2 用 systemd 用户服务，Windows 用计划任务加开机启动回退。"
   }
 }

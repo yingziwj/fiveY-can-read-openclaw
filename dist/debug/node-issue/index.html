@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Node + tsx Crash | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Node + tsx Crash是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="用 tsx 替代 Bun 后，Node 25 下启动 OpenClaw 报 __name 不是函数。先跑最小复现脚本确认环境，问题出在 tsx 4.21.0 与 Node 25 的兼容性，与代码逻辑无关。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Node + tsx Crash | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Node + tsx Crash是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="用 tsx 替代 Bun 后，Node 25 下启动 OpenClaw 报 __name 不是函数。先跑最小复现脚本确认环境，问题出在 tsx 4.21.0 与 Node 25 的兼容性，与代码逻辑无关。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/debug/node-issue/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Node + tsx Crash | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Node + tsx Crash是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="用 tsx 替代 Bun 后，Node 25 下启动 OpenClaw 报 __name 不是函数。先跑最小复现脚本确认环境，问题出在 tsx 4.21.0 与 Node 25 的兼容性，与代码逻辑无关。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/debug/node-issue/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Node + tsx Crash","description":"Node + tsx Crash是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/debug/node-issue/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Node + tsx Crash","description":"用 tsx 替代 Bun 后，Node 25 下启动 OpenClaw 报 __name 不是函数。先跑最小复现脚本确认环境，问题出在 tsx 4.21.0 与 Node 25 的兼容性，与代码逻辑无关。","url":"https://fivey-can-read-openclaw.pages.dev/debug/node-issue/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Debug","item":"https://fivey-can-read-openclaw.pages.dev/debug/node-issue/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Debug 导读</p>
-        <h1>Node + tsx 启动报错 __name is not a function 的排查与修复</h1>
-        <p class="hero-copy">这页专门解决从 Bun 切换到 tsx 后，OpenClaw 在 Node v25 上启动时遇到的 __name is not a function 崩溃问题。先看环境确认是否匹配 Node v25 和 tsx 4.21.0，然后运行提供的重现脚本来验证问题。最容易错在没注意这是特定于 Node v25 和 tsx 组合的兼容性问题，与 Bun 环境无关。</p>
+        <h1>Node + tsx 启动崩溃：__name is not a function</h1>
+        <p class="hero-copy">用 tsx 替代 Bun 后，Node 25 下启动 OpenClaw 报 __name 不是函数。先跑最小复现脚本确认环境，问题出在 tsx 4.21.0 与 Node 25 的兼容性，与代码逻辑无关。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,16 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:debug.node-issue.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🐛 这页就是“Node + tsx 一启动就摔跤，帮你找到是哪根脚绊了自己”</h2>
-      <p>它把一个真实崩溃拆成了：现象、环境、复现、怀疑点、绕路方案。读它不是为了学 bug 口味，而是为了少踩一次坑。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Node + tsx 启动崩溃：__name is not a function</h2>
+      <p>用 tsx 替代 Bun 后，Node 25 下启动 OpenClaw 报 __name 不是函数。先跑最小复现脚本确认环境，问题出在 tsx 4.21.0 与 Node 25 的兼容性，与代码逻辑无关。</p>
     </div>
     <div class="overview-meta">
-      <span>适合遇到 `__name is not a function` 的人</span>
-      <span>先看复现，再看版本差异，再看临时绕路</span>
+      <span>原文共 11 节，先看 Start Here</span>
+      <span>路径：/debug/node-issue</span>
       <a href="https://docs.openclaw.ai/debug/node-issue" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

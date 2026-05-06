@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Audio and Voice Notes | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Audio and Voice Notes是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="OpenClaw 自动检测音频模型顺序：回复模型 → 本地 CLI → Gemini → 提供商。若不想自动，手动配置 tools.media.audio.models 并注意 CLI 必须在 PATH 上。最易错的是 maxBytes 限制和回退逻辑——第一个模型失败或超时才会用下一个。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Audio and Voice Notes | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Audio and Voice Notes是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="OpenClaw 自动检测音频模型顺序：回复模型 → 本地 CLI → Gemini → 提供商。若不想自动，手动配置 tools.media.audio.models 并注意 CLI 必须在 PATH 上。最易错的是 maxBytes 限制和回退逻辑——第一个模型失败或超时才会用下一个。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/nodes/audio/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Audio and Voice Notes | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Audio and Voice Notes是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="OpenClaw 自动检测音频模型顺序：回复模型 → 本地 CLI → Gemini → 提供商。若不想自动，手动配置 tools.media.audio.models 并注意 CLI 必须在 PATH 上。最易错的是 maxBytes 限制和回退逻辑——第一个模型失败或超时才会用下一个。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/nodes/audio/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Audio and Voice Notes","description":"Audio and Voice Notes是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/nodes/audio/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Audio and Voice Notes","description":"OpenClaw 自动检测音频模型顺序：回复模型 → 本地 CLI → Gemini → 提供商。若不想自动，手动配置 tools.media.audio.models 并注意 CLI 必须在 PATH 上。最易错的是 maxBytes 限制和回退逻辑——第一个模型失败或超时才会用下一个。","url":"https://fivey-can-read-openclaw.pages.dev/nodes/audio/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Nodes","item":"https://fivey-can-read-openclaw.pages.dev/nodes/audio/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Nodes 导读</p>
-        <h1>音频转录节点配置与自动检测机制</h1>
-        <p class="hero-copy">本页详细说明音频/语音笔记节点的处理流程、自动检测顺序以及配置方法。配置时需明确指定模型顺序，并注意自动检测会按优先级尝试首个可用选项。最容易出错的地方是CLI路径设置和文件大小限制，需确保命令可执行且音频不超过maxBytes限制。</p>
+        <h1>音频转文字：先配模型，再设权限，最后调回退</h1>
+        <p class="hero-copy">OpenClaw 自动检测音频模型顺序：回复模型 → 本地 CLI → Gemini → 提供商。若不想自动，手动配置 `tools.media.audio.models` 并注意 CLI 必须在 PATH 上。最易错的是 `maxBytes` 限制和回退逻辑——第一个模型失败或超时才会用下一个。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🎤 Audio 这页，其实是在讲“有人丢来语音后，OpenClaw 怎么先找人转写，再把语音内容改造成可读文本”</h2><p>它会先找能干活的模型或本地 CLI，一个不行就换下一个。</p><p>转写成功后，正文会被替换成音频说明块，方便后续命令解析和回复流程继续跑。</p></div><div class="overview-meta"><span>音频转写与回退链</span><span>重点是 auto-detection、provider/CLI fallback、Transcript</span><a href="https://docs.openclaw.ai/nodes/audio" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:nodes.audio.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>音频转文字：先配模型，再设权限，最后调回退</h2>
+      <p>OpenClaw 自动检测音频模型顺序：回复模型 → 本地 CLI → Gemini → 提供商。若不想自动，手动配置 `tools.media.audio.models` 并注意 CLI 必须在 PATH 上。最易错的是 `maxBytes` 限制和回退逻辑——第一个模型失败或超时才会用下一个。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 12 节，先看 Start Here</span>
+      <span>路径：/nodes/audio</span>
+      <a href="https://docs.openclaw.ai/nodes/audio" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>🪜 它的工作顺序很像“先试第一位听写员，不行就换下一位”</h2><p>这页真正的主角不是某一个模型，而是回退顺序。</p></div><div class="home-grid"><article class="home-card"><span class="home-card-index">1</span><h2>先找音频文件</h2><p>会先抓到第一份音频附件，必要时先下载到本地。</p></article><article class="home-card"><span class="home-card-index">2</span><h2>检查大小</h2><p>超过 <code>maxBytes</code> 的候选人会先跳过，别把大包裹硬塞给它。</p></article><article class="home-card"><span class="home-card-index">3</span><h2>按顺序试模型</h2><p>一个失败、超时、跳过，就换下一个 provider 或 CLI。</p></article><article class="home-card"><span class="home-card-index">4</span><h2>成功后替换正文</h2><p>转写成功就把 <code>Body</code> 换成音频块，并塞入 <code>{{Transcript}}</code>。</p></article></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第二站</p><h2>🤖 auto-detection 像自动找最近能上岗的听写员</h2><p>你不手工配置时，系统会先自己找本地 CLI，再找 Gemini CLI，再找 provider key。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label">本地 CLI</div><p>像先找办公室里现成的 Whisper、sherpa 这类本地听写员，不必先出门联网求助。</p></div><div class="source-card"><div class="story-card-label">Gemini CLI</div><p>这是第二站，像请另一位外援看本地文件内容。</p></div><div class="source-card"><div class="story-card-label">Provider keys</div><p>再往后才轮到 OpenAI、Groq、Deepgram、Google 这些外部服务。</p></div><div class="source-card"><div class="story-card-label"><code>tools.media.audio.enabled: false</code></div><p>这句像把自动听写开关彻底关掉，谁也别来自动帮忙转写。</p></div></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第三站</p><h2>🛠️ 配置 models 列表，本质上是在给听写员排班</h2><p>你可以让 OpenAI 先上，再让 whisper CLI 兜底，也可以反过来。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label">Provider-only</div><p>纯 provider 配置像“全部交给云端听写员”。</p></div><div class="source-card"><div class="story-card-label">CLI fallback</div><p>把 CLI 放后面，就是“云端不行时，退回本地救场”。</p></div><div class="source-card"><div class="story-card-label">Scope gating</div><p>还能限制哪些聊天类型允许转写，比如群聊里别自动偷听。</p></div><div class="source-card"><div class="story-card-label">🎈 最后记一句</div><p>Audio 这页讲的不是一个模型，而是一整条“谁先听、谁兜底、听完后怎么改写正文”的流水线。</p></div></div></section>

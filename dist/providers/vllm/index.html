@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vLLM 提供商：vLLM | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="vLLM 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>vLLM | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="OpenClaw 通过 OpenAI 兼容接口连接 vLLM，默认地址是 http://127.0.0.1:8000/v1。设置 VLLM_API_KEY（任意值即可）后，OpenClaw 能自动发现 vLLM 上的模型列表，无需手动配置。如果服务器需要认证或要自定义参数，才需要写显式配置。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="vLLM 提供商：vLLM | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="vLLM 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="vLLM | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="OpenClaw 通过 OpenAI 兼容接口连接 vLLM，默认地址是 http://127.0.0.1:8000/v1。设置 VLLM_API_KEY（任意值即可）后，OpenClaw 能自动发现 vLLM 上的模型列表，无需手动配置。如果服务器需要认证或要自定义参数，才需要写显式配置。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/providers/vllm/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="vLLM 提供商：vLLM | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="vLLM 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="vLLM | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="OpenClaw 通过 OpenAI 兼容接口连接 vLLM，默认地址是 http://127.0.0.1:8000/v1。设置 VLLM_API_KEY（任意值即可）后，OpenClaw 能自动发现 vLLM 上的模型列表，无需手动配置。如果服务器需要认证或要自定义参数，才需要写显式配置。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/providers/vllm/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"vLLM 提供商：vLLM","description":"vLLM 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/providers/vllm/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"vLLM","description":"OpenClaw 通过 OpenAI 兼容接口连接 vLLM，默认地址是 http://127.0.0.1:8000/v1。设置 VLLM_API_KEY（任意值即可）后，OpenClaw 能自动发现 vLLM 上的模型列表，无需手动配置。如果服务器需要认证或要自定义参数，才需要写显式配置。","url":"https://fivey-can-read-openclaw.pages.dev/providers/vllm/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Providers","item":"https://fivey-can-read-openclaw.pages.dev/providers/vllm/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Providers 导读</p>
-        <h1>连接OpenClaw到vLLM服务器的配置指南</h1>
-        <p class="hero-copy">这页教你如何将OpenClaw连接到vLLM服务器，通过OpenAI兼容API使用开源模型。首先要设置VLLM_API_KEY环境变量并确认服务器地址正确，否则自动发现会失败。最容易出错的地方是忘记配置API密钥或服务器地址，导致连接失败。</p>
+        <h1>vLLM 接入：先设环境变量，再选模型</h1>
+        <p class="hero-copy">OpenClaw 通过 OpenAI 兼容接口连接 vLLM，默认地址是 http://127.0.0.1:8000/v1。设置 VLLM_API_KEY（任意值即可）后，OpenClaw 能自动发现 vLLM 上的模型列表，无需手动配置。如果服务器需要认证或要自定义参数，才需要写显式配置。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🖥 vLLM 像“你自己家里的本地模型机房”</h2><p>这页不是云平台导览，而是在教你怎么把本地或自托管 vLLM 机房接进 OpenClaw。重点永远是：机房先开机、接口要露出 <code>/v1</code>、然后再决定让 OpenClaw 自动发现还是手写模型清单。</p></div><div class="overview-meta"><span>适合跑本地 / 自托管模型的人</span><span>重点是本地机房、自动发现、手写模型目录</span><a href="https://docs.openclaw.ai/providers/vllm" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:providers.vllm.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>vLLM 接入：先设环境变量，再选模型</h2>
+      <p>OpenClaw 通过 OpenAI 兼容接口连接 vLLM，默认地址是 http://127.0.0.1:8000/v1。设置 VLLM_API_KEY（任意值即可）后，OpenClaw 能自动发现 vLLM 上的模型列表，无需手动配置。如果服务器需要认证或要自定义参数，才需要写显式配置。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 7 节，先看 Start Here</span>
+      <span>路径：/providers/vllm</span>
+      <a href="https://docs.openclaw.ai/providers/vllm" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一步</p><h2>🏭 先把 vLLM 机房开起来，再谈接线</h2><p>官方很明确：vLLM 先得有一个能说 OpenAI 兼容语言的 HTTP 服务在那等着。</p></div><div class="story-grid"><div class="story-card"><div class="story-card-label"><code>http://127.0.0.1:8000/v1</code></div><p>像机房前台窗口地址。没这个窗口，OpenClaw 连问都没处问。</p></div><div class="story-card"><div class="story-card-label"><code>/v1/models</code></div><p>像机房的设备目录。</p></div><div class="story-card"><div class="story-card-label"><code>/v1/chat/completions</code></div><p>像真正的出活窗口。</p></div></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第二步</p><h2>🪪 <code>VLLM_API_KEY</code> 常常只是“允许我启用这条线”的标记牌</h2><p>官方特别提了一句：如果你的本地机房其实不设鉴权，那这个值随便给一个也行。</p></div><div class="ad-placeholder"><p>这就像门口保安有时只是想确认“你确实是走这条通道的人”，不一定真的要核对一张正式身份证。</p></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第三步</p><h2>🛰 自动发现 vs 手写清单，像“让前台自己扫设备目录”还是“你亲手列出机器表”</h2><p>这是这页真正的主轴。</p></div><div class="home-grid"><article class="home-card"><span class="home-card-index">🤖</span><h2>自动发现</h2><p>你不写 <code>models.providers.vllm</code>，OpenClaw 就会自己去扫 <code>/v1/models</code>，把机房里现有机器抄回来。</p></article><article class="home-card"><span class="home-card-index">✍️</span><h2>手写清单</h2><p>像你自己做一份设备台账，明确写 context、max tokens、headers 等细节。</p></article><article class="home-card"><span class="home-card-index">🧭</span><h2>什么时候该手写</h2><p>换了端口、换了主机、要固定参数、要自定义 headers 时，就别偷懒。</p></article><article class="home-card"><span class="home-card-index">🎈</span><h2>一句话</h2><p>简单场景让它自己扫，复杂场景自己列台账。</p></article></div></section>

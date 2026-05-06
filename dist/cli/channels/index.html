@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>channels 命令：channels | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="channels 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>channels | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="先跑 openclaw channels add --channel &lt;名称&gt; --token &lt;令牌&gt; 接入新账号，非交互模式要填对 token 或私钥等参数。查账号是否在线用 channels status --probe 会执行真实探测，网关不可达时只显示配置摘要。channels capabilities 能…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="channels 命令：channels | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="channels 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="channels | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="先跑 openclaw channels add --channel &lt;名称&gt; --token &lt;令牌&gt; 接入新账号，非交互模式要填对 token 或私钥等参数。查账号是否在线用 channels status --probe 会执行真实探测，网关不可达时只显示配置摘要。channels capabilities 能…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/channels/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="channels 命令：channels | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="channels 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="channels | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="先跑 openclaw channels add --channel &lt;名称&gt; --token &lt;令牌&gt; 接入新账号，非交互模式要填对 token 或私钥等参数。查账号是否在线用 channels status --probe 会执行真实探测，网关不可达时只显示配置摘要。channels capabilities 能…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/channels/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"channels 命令：channels","description":"channels 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/channels/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"channels","description":"先跑 openclaw channels add --channel \u003c名称> --token \u003c令牌> 接入新账号，非交互模式要填对 token 或私钥等参数。查账号是否在线用 channels status --probe 会执行真实探测，网关不可达时只显示配置摘要。channels capabilities 能…","url":"https://fivey-can-read-openclaw.pages.dev/cli/channels/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/channels/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>管理聊天通道账户与运行状态</h1>
-        <p class="hero-copy">这页讲解如何使用 openclaw channels 命令管理 Gateway 上的聊天通道账户，包括查看状态、添加/移除账户等操作。最该先看 channels status 命令，它能检查通道的实时运行状态，但要注意 --probe 参数仅在网关可达时才会执行实际探测，否则只显示配置摘要。添加账户时最容易错在忘记指定通道类型所需的特定参数（如 Telegram 的 --token 或 Nostr 的 --private-key），建议先运行 openclaw channels add --help 查看对应通道的必填字段。</p>
+        <h1>用 openclaw channels 管理所有聊天账号：增删、状态、能力查询</h1>
+        <p class="hero-copy">先跑 `openclaw channels add --channel &lt;名称&gt; --token &lt;令牌&gt;` 接入新账号，非交互模式要填对 token 或私钥等参数。查账号是否在线用 `channels status --probe` 会执行真实探测，网关不可达时只显示配置摘要。`channels capabilities` 能查账号支持哪些目标（如频道、私信），但必须配合 `--channel` 和 `--target` 才有意义。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.channels.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🚪 <code>openclaw channels</code> 像“给每一扇聊天大门发门禁卡，再看看它们今天开没开”</h2>
-      <p>这页不是在教你聊天，而是在教你管门。Telegram 是一扇门，Slack 是一扇门，Discord 也是一扇门。OpenClaw 要先知道每扇门归谁管、钥匙放哪、门现在通不通。</p>
-      <p>所以这组命令干的事很像门卫室日常：登记、查看状态、试钥匙、认门牌、看值班日志。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用 openclaw channels 管理所有聊天账号：增删、状态、能力查询</h2>
+      <p>先跑 `openclaw channels add --channel &lt;名称&gt; --token &lt;令牌&gt;` 接入新账号，非交互模式要填对 token 或私钥等参数。查账号是否在线用 `channels status --probe` 会执行真实探测，网关不可达时只显示配置摘要。`channels capabilities` 能查账号支持哪些目标（如频道、私信），但必须配合 `--channel` 和 `--target` 才有意义。</p>
     </div>
     <div class="overview-meta">
-      <span>适合已经装好 OpenClaw，准备把各个聊天通道接进来的人</span>
-      <span>这页最重要的是记住：它不是聊天命令，它是“管通道账号和门禁状态”的命令</span>
+      <span>原文共 8 节，先看 Start Here</span>
+      <span>路径：/cli/channels</span>
       <a href="https://docs.openclaw.ai/cli/channels" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

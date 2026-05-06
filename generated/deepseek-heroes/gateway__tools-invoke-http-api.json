@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:04.082Z",
+  "generatedAt": "2026-05-06T15:07:28.276Z",
   "pathname": "/gateway/tools-invoke-http-api",
   "title": "Tools Invoke API",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "通过 HTTP 直接调用单个工具",
-    "heroSummary": "本页说明如何使用 Gateway 的 /tools/invoke 端点直接调用工具，需注意其认证等同于网关操作员权限。调用时需在请求体中指定工具名、参数和会话键，工具可用性受网关策略链控制。最关键的安全要点是：此端点应视为网关的完全操作员访问接口，切勿将网关的共享密钥凭证暴露给不受信任的调用方，且不应将此端点直接暴露在公网上。"
+    "heroTitle": "直接调工具：/tools/invoke 端点怎么用、怎么认证、哪里最危险",
+    "heroSummary": "这是 Gateway 暴露的裸 HTTP 端点，不走 OpenAI 兼容路由，直接调单个工具。先看认证方式：共享密钥模式下，这个端点无视 `x-openclaw-scopes` 头，一律恢复全量 operator 权限，所以务必把它绑在 loopback 或私有网络，别暴露到公网。请求体里 `tool` 必填，`sessionKey` 默认走主会话，工具是否可用由策略链决定，策略拒绝会返回 404。"
   }
 }

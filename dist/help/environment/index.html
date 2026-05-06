@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Environment Variables | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Environment Variables是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="OpenClaw 从 5 个来源加载环境变量，优先级从进程环境到 shell 导入依次降低。核心规则是“绝不覆盖已存在的值”，所以先到者生效。最容易踩坑的是 .env 文件和配置 env 块都只能补缺，不能覆盖已有变量；如果你在 shell 里 export 了某个 key，后面所有来源的同名 key 都会被忽略。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Environment Variables | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Environment Variables是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="OpenClaw 从 5 个来源加载环境变量，优先级从进程环境到 shell 导入依次降低。核心规则是“绝不覆盖已存在的值”，所以先到者生效。最容易踩坑的是 .env 文件和配置 env 块都只能补缺，不能覆盖已有变量；如果你在 shell 里 export 了某个 key，后面所有来源的同名 key 都会被忽略。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/help/environment/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Environment Variables | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Environment Variables是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="OpenClaw 从 5 个来源加载环境变量，优先级从进程环境到 shell 导入依次降低。核心规则是“绝不覆盖已存在的值”，所以先到者生效。最容易踩坑的是 .env 文件和配置 env 块都只能补缺，不能覆盖已有变量；如果你在 shell 里 export 了某个 key，后面所有来源的同名 key 都会被忽略。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/help/environment/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Environment Variables","description":"Environment Variables是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/help/environment/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Environment Variables","description":"OpenClaw 从 5 个来源加载环境变量，优先级从进程环境到 shell 导入依次降低。核心规则是“绝不覆盖已存在的值”，所以先到者生效。最容易踩坑的是 .env 文件和配置 env 块都只能补缺，不能覆盖已有变量；如果你在 shell 里 export 了某个 key，后面所有来源的同名 key 都会被忽略。","url":"https://fivey-can-read-openclaw.pages.dev/help/environment/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Help","item":"https://fivey-can-read-openclaw.pages.dev/help/environment/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Help 导读</p>
-        <h1>OpenClaw环境变量加载规则与配置</h1>
-        <p class="hero-copy">这页详细说明了OpenClaw从多个来源加载环境变量的优先级顺序，核心规则是“从不覆盖已有值”。配置时最容易搞错的是优先级顺序，特别是`.env`文件和配置文件中`env`块的区别。</p>
+        <h1>环境变量从哪里来、优先级怎么排</h1>
+        <p class="hero-copy">OpenClaw 从 5 个来源加载环境变量，优先级从进程环境到 shell 导入依次降低。核心规则是“绝不覆盖已存在的值”，所以先到者生效。最容易踩坑的是 `.env` 文件和配置 `env` 块都只能补缺，不能覆盖已有变量；如果你在 shell 里 export 了某个 key，后面所有来源的同名 key 都会被忽略。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:help.environment.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🌦 Environment Variables，就是“给房间摆天气和规则牌”</h2>
-      <p>这页讲的是环境变量。它们像贴在门口的提示卡，告诉程序今天该往哪边走。</p>
-      <p>有的卡是钥匙，有的是开关，有的是默认值。放对地方，系统就会照着它跑。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>环境变量从哪里来、优先级怎么排</h2>
+      <p>OpenClaw 从 5 个来源加载环境变量，优先级从进程环境到 shell 导入依次降低。核心规则是“绝不覆盖已存在的值”，所以先到者生效。最容易踩坑的是 `.env` 文件和配置 `env` 块都只能补缺，不能覆盖已有变量；如果你在 shell 里 export 了某个 key，后面所有来源的同名 key 都会被忽略。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想知道 .env / OPENCLAW_* 的人</span>
-      <span>重点是在哪设、怎么读、哪些别写错</span>
+      <span>原文共 13 节，先看 Start Here</span>
+      <span>路径：/help/environment</span>
       <a href="https://docs.openclaw.ai/help/environment" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

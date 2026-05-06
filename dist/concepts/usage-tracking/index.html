@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Usage Tracking | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Usage Tracking是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="这一页告诉你 OpenClaw 怎么从各上游 API 拉取配额/剩余量，并统一显示成“X% 剩余”。最该先看“Where it shows up”小节，那里列出了聊天、CLI、菜单栏所有能看到用量的入口。最容易搞错的是 MiniMax 的 raw 字段表示剩余而非已用，系统会帮你反转，但如果你自己读原始数据要小心。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Usage Tracking | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Usage Tracking是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="这一页告诉你 OpenClaw 怎么从各上游 API 拉取配额/剩余量，并统一显示成“X% 剩余”。最该先看“Where it shows up”小节，那里列出了聊天、CLI、菜单栏所有能看到用量的入口。最容易搞错的是 MiniMax 的 raw 字段表示剩余而非已用，系统会帮你反转，但如果你自己读原始数据要小心。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/usage-tracking/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Usage Tracking | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Usage Tracking是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="这一页告诉你 OpenClaw 怎么从各上游 API 拉取配额/剩余量，并统一显示成“X% 剩余”。最该先看“Where it shows up”小节，那里列出了聊天、CLI、菜单栏所有能看到用量的入口。最容易搞错的是 MiniMax 的 raw 字段表示剩余而非已用，系统会帮你反转，但如果你自己读原始数据要小心。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/usage-tracking/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Usage Tracking","description":"Usage Tracking是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/usage-tracking/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Usage Tracking","description":"这一页告诉你 OpenClaw 怎么从各上游 API 拉取配额/剩余量，并统一显示成“X% 剩余”。最该先看“Where it shows up”小节，那里列出了聊天、CLI、菜单栏所有能看到用量的入口。最容易搞错的是 MiniMax 的 raw 字段表示剩余而非已用，系统会帮你反转，但如果你自己读原始数据要小心。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/usage-tracking/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/usage-tracking/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>OpenClaw 用量追踪机制详解</h1>
-        <p class="hero-copy">本页详细解释了 OpenClaw 如何从上游 API 获取并展示用量与配额信息，包括配额消耗、剩余量或原始计数。配置时需注意，不同提供商（如 MiniMax、Anthropic）的认证方式和数据字段（如 `usage_percent` 表示剩余配额）存在差异，错误理解可能导致显示异常。当实时会话数据稀疏时，系统会回退到最近的用量记录来填充缺失的令牌或缓存计数器。</p>
+        <h1>用量跟踪：谁还剩多少，怎么查，哪里容易看错</h1>
+        <p class="hero-copy">这一页告诉你 OpenClaw 怎么从各上游 API 拉取配额/剩余量，并统一显示成“X% 剩余”。最该先看“Where it shows up”小节，那里列出了聊天、CLI、菜单栏所有能看到用量的入口。最容易搞错的是 MiniMax 的 raw 字段表示剩余而非已用，系统会帮你反转，但如果你自己读原始数据要小心。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.usage-tracking.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>📊 Usage Tracking 这页，其实是在讲“别再自己瞎估费用了，能问 provider 就直接问 provider 账本”</h2>
-      <p>它主打的是实报实销式的查看，不是根据 token 硬猜一个大概数。</p>
-      <p>也就是说，能从官方 usage 接口直接拉到账单窗口，就直接拉；拉不到，就别装得很确定。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用量跟踪：谁还剩多少，怎么查，哪里容易看错</h2>
+      <p>这一页告诉你 OpenClaw 怎么从各上游 API 拉取配额/剩余量，并统一显示成“X% 剩余”。最该先看“Where it shows up”小节，那里列出了聊天、CLI、菜单栏所有能看到用量的入口。最容易搞错的是 MiniMax 的 raw 字段表示剩余而非已用，系统会帮你反转，但如果你自己读原始数据要小心。</p>
     </div>
     <div class="overview-meta">
-      <span>优先 provider 真实 usage / quota</span>
-      <span>重点是 /status、/usage、CLI 状态卡</span>
+      <span>原文共 4 节，先看 Start Here</span>
+      <span>路径：/concepts/usage-tracking</span>
       <a href="https://docs.openclaw.ai/concepts/usage-tracking" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

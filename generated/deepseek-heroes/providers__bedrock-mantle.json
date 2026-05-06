@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:49:44.778Z",
+  "generatedAt": "2026-05-06T15:06:14.686Z",
   "pathname": "/providers/bedrock-mantle",
   "title": "Amazon Bedrock Mantle",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "配置 Amazon Bedrock Mantle 提供商",
-    "heroSummary": "这页说明如何在 OpenClaw 中接入 Amazon Bedrock Mantle 服务，该服务通过 OpenAI 兼容接口提供多种开源模型。你需要设置 AWS 认证方式（显式令牌或 IAM 凭证）并指定区域，系统会自动发现可用模型。最容易出错的是认证配置，如果使用 IAM 凭证，系统会自动生成并每小时刷新令牌，但必须确保凭证链可访问；如果手动配置，需准确填写 baseUrl 和模型参数。"
+    "heroTitle": "接 Amazon Bedrock Mantle 只需一个 token，模型自动发现",
+    "heroSummary": "Mantle 是 Bedrock 托管的 OpenAI 兼容端点，提供 GPT-OSS、Qwen 等模型。先设置环境变量 AWS_BEARER_TOKEN_BEDROCK（或依赖 IAM 自动生成），OpenClaw 会自动发现模型列表。注意 token 与标准 Bedrock provider 共用，区域默认 us-east-1。"
   }
 }

@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>acp 命令：acp | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="acp 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>acp | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="openclaw acp 在 stdio 上启动一个 ACP 桥，让 IDE 或 ACP 客户端能把提示词通过 WebSocket 转发给 Gateway。最容易搞错的是：这不是用来启动 Codex 或 Claude 等外部 Agent 的——那是 /acp spawn 和 ACP Agents 页的事。先确认你的场…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="acp 命令：acp | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="acp 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="acp | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="openclaw acp 在 stdio 上启动一个 ACP 桥，让 IDE 或 ACP 客户端能把提示词通过 WebSocket 转发给 Gateway。最容易搞错的是：这不是用来启动 Codex 或 Claude 等外部 Agent 的——那是 /acp spawn 和 ACP Agents 页的事。先确认你的场…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/acp/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="acp 命令：acp | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="acp 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="acp | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="openclaw acp 在 stdio 上启动一个 ACP 桥，让 IDE 或 ACP 客户端能把提示词通过 WebSocket 转发给 Gateway。最容易搞错的是：这不是用来启动 Codex 或 Claude 等外部 Agent 的——那是 /acp spawn 和 ACP Agents 页的事。先确认你的场…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/acp/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"acp 命令：acp","description":"acp 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/acp/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"acp","description":"openclaw acp 在 stdio 上启动一个 ACP 桥，让 IDE 或 ACP 客户端能把提示词通过 WebSocket 转发给 Gateway。最容易搞错的是：这不是用来启动 Codex 或 Claude 等外部 Agent 的——那是 /acp spawn 和 ACP Agents 页的事。先确认你的场…","url":"https://fivey-can-read-openclaw.pages.dev/cli/acp/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/acp/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>OpenClaw ACP 桥接命令：连接 IDE 与网关的会话转发器</h1>
-        <p class="hero-copy">此命令在 IDE 与 OpenClaw 网关之间建立 ACP 协议桥接，负责会话映射和提示转发。最需注意它与 ACP 原生运行时的区别：它仅作桥接，不支持客户端文件系统或终端方法，且会话历史重建功能有限。配置时需明确指定网关 URL 和令牌，并注意 `--session` 参数用于绑定现有会话。</p>
+        <h1>用 IDE 通过 ACP 连接 Gateway，别搞混成启动外部 Agent</h1>
+        <p class="hero-copy">`openclaw acp` 在 stdio 上启动一个 ACP 桥，让 IDE 或 ACP 客户端能把提示词通过 WebSocket 转发给 Gateway。最容易搞错的是：这不是用来启动 Codex 或 Claude 等外部 Agent 的——那是 `/acp spawn` 和 ACP Agents 页的事。先确认你的场景：客户端要连 OpenClaw 就走 `openclaw acp`；要让 OpenClaw 启动外部 Agent 就走 ACP Agents。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.acp.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🌉 `openclaw acp` 像一座桥，把 IDE 和 Gateway 连起来</h2>
-      <p>这页讲的不是“又一个聊天命令”。它更像一座桥。左边是会说 ACP 的 IDE，右边是 OpenClaw 的 Gateway。桥搭起来以后，IDE 才能把话送过去，把回复接回来。</p>
-      <p>所以 `acp` 的工作很专一：管桥、管会话、管转发。它不是完整的编辑器本体，也不是另起一套聊天世界。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用 IDE 通过 ACP 连接 Gateway，别搞混成启动外部 Agent</h2>
+      <p>`openclaw acp` 在 stdio 上启动一个 ACP 桥，让 IDE 或 ACP 客户端能把提示词通过 WebSocket 转发给 Gateway。最容易搞错的是：这不是用来启动 Codex 或 Claude 等外部 Agent 的——那是 `/acp spawn` 和 ACP Agents 页的事。先确认你的场景：客户端要连 OpenClaw 就走 `openclaw acp`；要让 OpenClaw 启动外部 Agent 就走 ACP Agents。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想让外部 ACP 客户端连上 OpenClaw 的人</span>
-      <span>这页最重要的是记住：它走 stdio，对外连 Gateway WebSocket</span>
+      <span>原文共 13 节，先看 Start Here</span>
+      <span>路径：/cli/acp</span>
       <a href="https://docs.openclaw.ai/cli/acp" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>voicecall 命令：voicecall | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="voicecall 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>voicecall | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="voicecall 是语音电话插件的子命令，没装插件就不会出现。先跑 openclaw voicecall call 拨号，再用 --call-id 跟踪通话状态。暴露 webhook 时优先用 Tailscale Serve，别用 Funnel 暴露到公网。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="voicecall 命令：voicecall | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="voicecall 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="voicecall | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="voicecall 是语音电话插件的子命令，没装插件就不会出现。先跑 openclaw voicecall call 拨号，再用 --call-id 跟踪通话状态。暴露 webhook 时优先用 Tailscale Serve，别用 Funnel 暴露到公网。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/voicecall/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="voicecall 命令：voicecall | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="voicecall 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="voicecall | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="voicecall 是语音电话插件的子命令，没装插件就不会出现。先跑 openclaw voicecall call 拨号，再用 --call-id 跟踪通话状态。暴露 webhook 时优先用 Tailscale Serve，别用 Funnel 暴露到公网。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/voicecall/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"voicecall 命令：voicecall","description":"voicecall 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/voicecall/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"voicecall","description":"voicecall 是语音电话插件的子命令，没装插件就不会出现。先跑 openclaw voicecall call 拨号，再用 --call-id 跟踪通话状态。暴露 webhook 时优先用 Tailscale Serve，别用 Funnel 暴露到公网。","url":"https://fivey-can-read-openclaw.pages.dev/cli/voicecall/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/voicecall/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>OpenClaw 语音通话 CLI 命令详解</h1>
-        <p class="hero-copy">这页详细说明 openclaw voicecall 命令的用法，包括通话状态查询、发起通话、继续通话和结束通话等核心操作。使用前需确保已安装并启用 voice-call 插件，否则命令不会显示。特别注意 expose 命令的安全配置，建议优先使用 Tailscale Serve 模式而非 Funnel 模式来保护 webhook 端点。</p>
+        <h1>语音电话命令：先装插件，再打电话</h1>
+        <p class="hero-copy">`voicecall` 是语音电话插件的子命令，没装插件就不会出现。先跑 `openclaw voicecall call` 拨号，再用 `--call-id` 跟踪通话状态。暴露 webhook 时优先用 Tailscale Serve，别用 Funnel 暴露到公网。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.voicecall.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>📞 <code>openclaw voicecall</code> 像“给电话机器人发任务，再决定它的来电门是不是要对外打开”</h2>
-      <p>这页不是默认每个人都会看到的命令。官方第一句就提醒了：它是插件提供的，只有 voice-call 插件装好并启用以后，它才会出现。</p>
-      <p>所以这页最像一套电话机器人控制台：打一通电话、续一句话、挂断电话，再决定来电 webhook 这扇门要不要通过 Tailscale 暴露出去。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>语音电话命令：先装插件，再打电话</h2>
+      <p>`voicecall` 是语音电话插件的子命令，没装插件就不会出现。先跑 `openclaw voicecall call` 拨号，再用 `--call-id` 跟踪通话状态。暴露 webhook 时优先用 Tailscale Serve，别用 Funnel 暴露到公网。</p>
     </div>
     <div class="overview-meta">
-      <span>适合已经装了 voice-call 插件，准备让 OpenClaw 打电话或接来电的人</span>
-      <span>这页最重要的是记住：它是插件能力，不是基础 CLI 人人自带的按钮</span>
+      <span>原文共 3 节，先看 Start Here</span>
+      <span>路径：/cli/voicecall</span>
       <a href="https://docs.openclaw.ai/cli/voicecall" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

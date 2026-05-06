@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:54:37.027Z",
+  "generatedAt": "2026-05-06T15:09:12.423Z",
   "pathname": "/reference/memory-config",
   "title": "Memory configuration reference",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw 内存搜索配置参数详解",
-    "heroSummary": "这页列出了 OpenClaw 内存搜索的所有配置项，包括 provider 选择、API 密钥解析和远程端点设置。配置时先确定使用哪个 embedding 提供商，并注意 provider 未设置时的自动检测顺序。最容易出错的地方是 API 密钥的配置方式，不同提供商的环境变量和配置键各不相同，Bedrock 使用 AWS 凭证链而非 API 密钥。"
+    "heroTitle": "Memory 配置全参数速查：选 provider、填 key、避坑",
+    "heroSummary": "所有 memory search 配置都在 `agents.defaults.memorySearch` 下，但 active memory 的开关在 `plugins.entries.active-memory`，别找错地方。provider 会自动检测，顺序是 local → github-copilot → openai → gemini → voyage → mistral → bedrock，ollama 必须手动设置。API key 优先读环境变量，Bedrock 走 AWS 凭证链，注意 Codex OAuth 不能用于 embedding。"
   }
 }

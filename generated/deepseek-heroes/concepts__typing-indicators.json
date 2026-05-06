@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:54:11.913Z",
+  "generatedAt": "2026-05-06T15:08:57.523Z",
   "pathname": "/concepts/typing-indicators",
   "title": "Typing Indicators",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "打字指示器配置详解",
-    "heroSummary": "这页讲如何控制AI在聊天中显示“正在输入”的时机和频率。先看typingMode的四种模式，它们决定打字指示器何时触发。最容易错的是把typingIntervalSeconds当成开始时间，它其实控制刷新频率，而heartbeat运行永远不显示打字指示器。"
+    "heroTitle": "控制机器人“正在输入...”何时出现、多久刷新一次",
+    "heroSummary": "通过 `agents.defaults.typingMode` 选择触发时机（从不/立即/思考时/消息时），用 `typingIntervalSeconds` 设置刷新间隔（默认6秒）。注意：`thinking` 模式要求模型流式输出推理过程，心跳运行始终不显示打字指示。"
   }
 }

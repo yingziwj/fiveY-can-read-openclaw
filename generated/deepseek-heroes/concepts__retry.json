@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:48:09.464Z",
+  "generatedAt": "2026-05-06T15:05:18.938Z",
   "pathname": "/concepts/retry",
   "title": "Retry Policy",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "重试策略：如何配置请求失败后的自动重试",
-    "heroSummary": "这页详细说明了系统在HTTP请求失败时的重试机制，包括默认参数和不同服务商（如Discord、Telegram）的特殊规则。你应该先看“Defaults”部分了解基础配置，再根据实际使用的服务商查看对应章节。最容易搞错的是：系统按单个请求重试而非整个流程，且非幂等操作不会被重复执行，配置时需特别注意这一点。"
+    "heroTitle": "重试只针对单次HTTP请求，不重跑整个流程",
+    "heroSummary": "先看默认值：最多重试3次，最大延迟30秒，抖动10%。Discord仅在429时重试，Telegram重试更多错误但Markdown解析失败不重试。最容易搞错的是重试粒度——它只重试当前失败的HTTP请求，不会回退到流程开头。"
   }
 }

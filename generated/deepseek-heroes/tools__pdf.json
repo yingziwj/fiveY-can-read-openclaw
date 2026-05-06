@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:50:56.031Z",
+  "generatedAt": "2026-05-06T15:06:53.674Z",
   "pathname": "/tools/pdf",
   "title": "PDF Tool",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "PDF 工具：如何配置与使用",
-    "heroSummary": "这页详细说明 PDF 工具如何从本地或远程文件提取文本，并返回分析结果。配置时需注意：工具是否可用取决于能否为代理解析到支持 PDF 的模型，优先检查 `agents.defaults.pdfModel` 等设置。输入参数中，`pdf` 或 `pdfs` 必须提供，否则会报错；使用 `pages` 过滤页面时，页码从 1 开始，且会被去重和排序。"
+    "heroTitle": "PDF 工具：一句话让模型读 PDF，支持原生与降级两种模式",
+    "heroSummary": "这个工具让 AI 直接分析 PDF 文件内容，支持本地文件、URL 或 file:// 协议。最值得先看的是“Availability”部分——工具只在能解析出支持 PDF 的模型配置时才注册，否则根本不可用。容易踩坑的是：原生模式（Anthropic/Google）不支持 pages 参数，而其他提供商会先提取文本再回退到图片，行为差异明显。"
   }
 }

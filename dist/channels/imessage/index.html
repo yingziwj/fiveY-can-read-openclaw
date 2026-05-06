@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iMessage 通道：iMessage | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="iMessage 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>iMessage | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这是基于 imsg 的旧版 iMessage 通道，新部署请直接用 BlueBubbles。配置核心是填对 cliPath 和 dbPath，首次配对需在 1 小时内用 openclaw pairing approve 批准。最容易踩坑的是 macOS 权限：必须给运行 gateway 的进程上下文授予“完全磁盘访问…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="iMessage 通道：iMessage | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="iMessage 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="iMessage | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这是基于 imsg 的旧版 iMessage 通道，新部署请直接用 BlueBubbles。配置核心是填对 cliPath 和 dbPath，首次配对需在 1 小时内用 openclaw pairing approve 批准。最容易踩坑的是 macOS 权限：必须给运行 gateway 的进程上下文授予“完全磁盘访问…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/channels/imessage/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="iMessage 通道：iMessage | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="iMessage 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="iMessage | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这是基于 imsg 的旧版 iMessage 通道，新部署请直接用 BlueBubbles。配置核心是填对 cliPath 和 dbPath，首次配对需在 1 小时内用 openclaw pairing approve 批准。最容易踩坑的是 macOS 权限：必须给运行 gateway 的进程上下文授予“完全磁盘访问…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/channels/imessage/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"iMessage 通道：iMessage","description":"iMessage 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/channels/imessage/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"iMessage","description":"这是基于 imsg 的旧版 iMessage 通道，新部署请直接用 BlueBubbles。配置核心是填对 cliPath 和 dbPath，首次配对需在 1 小时内用 openclaw pairing approve 批准。最容易踩坑的是 macOS 权限：必须给运行 gateway 的进程上下文授予“完全磁盘访问…","url":"https://fivey-can-read-openclaw.pages.dev/channels/imessage/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Channels","item":"https://fivey-can-read-openclaw.pages.dev/channels/imessage/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Channels 导读</p>
-        <h1>iMessage 旧版集成配置与权限设置</h1>
-        <p class="hero-copy">这页详细说明了如何通过 imsg 命令行工具将 iMessage 接入系统，但请注意这是旧版方案，新部署应优先使用 BlueBubbles。配置时需重点设置 cliPath 和 dbPath，并确保在 macOS 上正确授予全磁盘访问和自动化权限，否则消息收发会失败。</p>
+        <h1>iMessage 接入：旧通道，新用户请走 BlueBubbles</h1>
+        <p class="hero-copy">这是基于 `imsg` 的旧版 iMessage 通道，新部署请直接用 BlueBubbles。配置核心是填对 `cliPath` 和 `dbPath`，首次配对需在 1 小时内用 `openclaw pairing approve` 批准。最容易踩坑的是 macOS 权限：必须给运行 gateway 的进程上下文授予“完全磁盘访问”和“自动化”权限，且需在相同上下文先跑一次 `imsg chats --limit 1` 触发授权弹窗。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:channels.imessage.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>💬 iMessage 这页，其实是在教你“让 OpenClaw 通过 Mac 上的 imsg 工具，学会收发苹果消息”</h2>
-      <p>这条路和 BlueBubbles 很像，都是 Mac 世界里的桥，但方式不同。BlueBubbles 更像有一位 HTTP 翻译员，iMessage 这里更像让 OpenClaw 直接指挥一个叫 <code>imsg</code> 的工具人去跑腿。</p>
-      <p>所以这页最重要的不是 token，而是那台有 Messages 登录、权限给齐的 Mac。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>iMessage 接入：旧通道，新用户请走 BlueBubbles</h2>
+      <p>这是基于 `imsg` 的旧版 iMessage 通道，新部署请直接用 BlueBubbles。配置核心是填对 `cliPath` 和 `dbPath`，首次配对需在 1 小时内用 `openclaw pairing approve` 批准。最容易踩坑的是 macOS 权限：必须给运行 gateway 的进程上下文授予“完全磁盘访问”和“自动化”权限，且需在相同上下文先跑一次 `imsg chats --limit 1` 触发授权弹窗。</p>
     </div>
     <div class="overview-meta">
-      <span>适合原生 iMessage 通道</span>
-      <span>重点是 imsg、Mac 权限、cliPath、群提及</span>
+      <span>原文共 11 节，先看 Start Here</span>
+      <span>路径：/channels/imessage</span>
       <a href="https://docs.openclaw.ai/channels/imessage" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

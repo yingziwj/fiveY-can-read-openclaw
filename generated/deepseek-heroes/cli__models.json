@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:53:47.543Z",
+  "generatedAt": "2026-05-06T15:08:42.533Z",
   "pathname": "/cli/models",
   "title": "models",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw 模型配置与认证管理",
-    "heroSummary": "这页详细说明如何用 `openclaw models` 命令管理 AI 模型、设置默认模型与备用方案，并配置认证信息。使用 `openclaw models status` 可快速查看当前模型解析状态和认证概览，这是配置后首先要检查的步骤。特别注意模型引用格式：当模型 ID 包含 `/` 时，必须提供提供商前缀，否则 OpenClaw 会先尝试将其解析为别名，这可能导致配置错误。"
+    "heroTitle": "用 openclaw models 管理模型发现、认证与回退",
+    "heroSummary": "先跑 `openclaw models status` 看当前默认模型、回退列表和认证状态，`--probe` 会发真实请求测试认证。设置模型时如果模型 ID 包含斜杠（如 OpenRouter 风格），必须带上 provider 前缀，否则按第一个斜杠拆分会出错。认证配置用 `models auth add` 交互式引导，或 `models auth login --provider <id>` 走 OAuth/API key 流程。"
   }
 }

@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>模型提供商快速开始：Model Provider Quickstart | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="模型提供商快速开始是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Model Provider Quickstart | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="OpenClaw 支持 20+ 家 LLM 提供商，但上手只需两步：先通过 openclaw onboard 完成认证，再把默认模型设为 provider/model 格式（例如 anthropic/claude-opus-4-6）。注意：部分变体提供商（如 anthropic-vertex）无需单独认证，但 cop…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="模型提供商快速开始：Model Provider Quickstart | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="模型提供商快速开始是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Model Provider Quickstart | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="OpenClaw 支持 20+ 家 LLM 提供商，但上手只需两步：先通过 openclaw onboard 完成认证，再把默认模型设为 provider/model 格式（例如 anthropic/claude-opus-4-6）。注意：部分变体提供商（如 anthropic-vertex）无需单独认证，但 cop…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/providers/models/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="模型提供商快速开始：Model Provider Quickstart | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="模型提供商快速开始是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Model Provider Quickstart | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="OpenClaw 支持 20+ 家 LLM 提供商，但上手只需两步：先通过 openclaw onboard 完成认证，再把默认模型设为 provider/model 格式（例如 anthropic/claude-opus-4-6）。注意：部分变体提供商（如 anthropic-vertex）无需单独认证，但 cop…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/providers/models/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"模型提供商快速开始：Model Provider Quickstart","description":"模型提供商快速开始是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/providers/models/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Model Provider Quickstart","description":"OpenClaw 支持 20+ 家 LLM 提供商，但上手只需两步：先通过 openclaw onboard 完成认证，再把默认模型设为 provider/model 格式（例如 anthropic/claude-opus-4-6）。注意：部分变体提供商（如 anthropic-vertex）无需单独认证，但 cop…","url":"https://fivey-can-read-openclaw.pages.dev/providers/models/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Providers","item":"https://fivey-can-read-openclaw.pages.dev/providers/models/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Providers 导读</p>
-        <h1>模型提供商快速接入指南</h1>
-        <p class="hero-copy">这页教你如何为OpenClaw选择并配置AI模型提供商，核心是两步：先通过`openclaw onboard`完成认证，再在配置中设置默认模型格式为`provider/model`。最容易出错的是忘记设置正确的模型格式，导致后续调用失败。</p>
+        <h1>先选一家模型商，再跑一条命令就能用</h1>
+        <p class="hero-copy">OpenClaw 支持 20+ 家 LLM 提供商，但上手只需两步：先通过 `openclaw onboard` 完成认证，再把默认模型设为 `provider/model` 格式（例如 `anthropic/claude-opus-4-6`）。注意：部分变体提供商（如 `anthropic-vertex`）无需单独认证，但 `copilot-proxy` 和 `google-gemini-cli` 需要指定 `--auth-choice` 参数，否则会认证失败。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:providers.models.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧭 <code>Model Providers Quickstart</code> 像“模型供应商新手路标”</h2>
-      <p>这页和 provider 目录很像，但更短、更像新手版路牌。它不是全卖场地图，而是“先从这几家常见货架开始”。</p>
-      <p>所以读这页时，不要想把所有供应商都弄懂。先找一两家你用得上的就够了。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>先选一家模型商，再跑一条命令就能用</h2>
+      <p>OpenClaw 支持 20+ 家 LLM 提供商，但上手只需两步：先通过 `openclaw onboard` 完成认证，再把默认模型设为 `provider/model` 格式（例如 `anthropic/claude-opus-4-6`）。注意：部分变体提供商（如 `anthropic-vertex`）无需单独认证，但 `copilot-proxy` 和 `google-gemini-cli` 需要指定 `--auth-choice` 参数，否则会认证失败。</p>
     </div>
     <div class="overview-meta">
-      <span>适合第一次挑常见 provider 的人</span>
-      <span>这页本质上是“从哪几家先开始”</span>
+      <span>原文共 4 节，先看 Start Here</span>
+      <span>路径：/providers/models</span>
       <a href="https://docs.openclaw.ai/providers/models" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

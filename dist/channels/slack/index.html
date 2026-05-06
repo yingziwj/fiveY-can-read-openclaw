@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Slack 通道：Slack | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Slack 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Slack | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页教你如何创建 Slack App 并配置 OpenClaw 通道。最优先完成的是生成 App-Level Token（xapp-...）和 Bot Token（xoxb-...），然后填入配置。容易搞错的是：Socket 模式需要 appToken + botToken，而 HTTP 模式需要 botToken…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Slack 通道：Slack | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Slack 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Slack | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页教你如何创建 Slack App 并配置 OpenClaw 通道。最优先完成的是生成 App-Level Token（xapp-...）和 Bot Token（xoxb-...），然后填入配置。容易搞错的是：Socket 模式需要 appToken + botToken，而 HTTP 模式需要 botToken…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/channels/slack/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Slack 通道：Slack | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Slack 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Slack | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页教你如何创建 Slack App 并配置 OpenClaw 通道。最优先完成的是生成 App-Level Token（xapp-...）和 Bot Token（xoxb-...），然后填入配置。容易搞错的是：Socket 模式需要 appToken + botToken，而 HTTP 模式需要 botToken…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/channels/slack/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Slack 通道：Slack","description":"Slack 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/channels/slack/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Slack","description":"这一页教你如何创建 Slack App 并配置 OpenClaw 通道。最优先完成的是生成 App-Level Token（xapp-...）和 Bot Token（xoxb-...），然后填入配置。容易搞错的是：Socket 模式需要 appToken + botToken，而 HTTP 模式需要 botToken…","url":"https://fivey-can-read-openclaw.pages.dev/channels/slack/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Channels","item":"https://fivey-can-read-openclaw.pages.dev/channels/slack/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Channels 导读</p>
-        <h1>Slack 通道配置与接入指南</h1>
-        <p class="hero-copy">本页详细说明如何将 OpenClaw 接入 Slack，包含 Socket Mode（默认）和 HTTP Request URLs 两种模式的完整配置步骤。配置时需重点关注 App-Level Token 和 Bot Token 的获取与填写，并确保 manifest 中的权限范围（scopes）和事件订阅（bot_events）设置正确，这是连接失败的最常见原因。</p>
+        <h1>Slack 接入：先拿两个 Token，再选 Socket 或 HTTP 模式</h1>
+        <p class="hero-copy">这一页教你如何创建 Slack App 并配置 OpenClaw 通道。最优先完成的是生成 App-Level Token（xapp-...）和 Bot Token（xoxb-...），然后填入配置。容易搞错的是：Socket 模式需要 appToken + botToken，而 HTTP 模式需要 botToken + signingSecret，两种模式的 manifest 和配置项不同，别混用。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:channels.slack.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>💬 Slack 通道，其实就是把 OpenClaw 请进你们公司的聊天办公室</h2>
-      <p>这页看着像在讲 token、事件、命令，其实说白了就是一件事：怎样把 OpenClaw 变成一个能在 Slack 里收消息、回消息、守规矩的小同事。</p>
-      <p>第一次看 Slack 文档，最容易被一堆名词吓到。其实先盯住四样东西就够了：App 是谁、两把 token 是什么、谁能来找它、它在频道里什么时候开口。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Slack 接入：先拿两个 Token，再选 Socket 或 HTTP 模式</h2>
+      <p>这一页教你如何创建 Slack App 并配置 OpenClaw 通道。最优先完成的是生成 App-Level Token（xapp-...）和 Bot Token（xoxb-...），然后填入配置。容易搞错的是：Socket 模式需要 appToken + botToken，而 HTTP 模式需要 botToken + signingSecret，两种模式的 manifest 和配置项不同，别混用。</p>
     </div>
     <div class="overview-meta">
-      <span>适合第一次把 OpenClaw 接进 Slack 的人</span>
-      <span>这页真正的难点是两把 token 和频道规则</span>
+      <span>原文共 19 节，先看 Start Here</span>
+      <span>路径：/channels/slack</span>
       <a href="https://docs.openclaw.ai/channels/slack" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

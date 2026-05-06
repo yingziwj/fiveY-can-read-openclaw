@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:49:44.097Z",
+  "generatedAt": "2026-05-06T15:06:15.452Z",
   "pathname": "/providers/bedrock",
   "title": "Amazon Bedrock",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "配置 OpenClaw 接入 Amazon Bedrock 模型",
-    "heroSummary": "这页说明如何通过 AWS 凭证而非 API 密钥，让 OpenClaw 使用 Bedrock Converse 流式接口调用模型。配置时需注意，自动模型发现功能仅在检测到特定 AWS 环境标记（如 AWS_ACCESS_KEY_ID）时才会启用，否则需在配置中显式设置 discovery.enabled: true。"
+    "heroTitle": "Bedrock 接入：不走 API Key，走 AWS 凭证链",
+    "heroSummary": "OpenClaw 通过 Bedrock Converse 流式 API 调用模型，认证走 AWS SDK 默认凭证链（环境变量、共享配置或实例角色），不需要 apiKey。配置时 provider 填 `amazon-bedrock`，auth 设为 `aws-sdk`，并确保网关主机上有有效的 AWS 凭证。最容易踩的坑是：自动发现只在检测到 `AWS_ACCESS_KEY_ID` 等显式标记时才启用，纯 IMDS 或 SSO 场景需要手动设置 `discovery.enabled: true`。"
   }
 }

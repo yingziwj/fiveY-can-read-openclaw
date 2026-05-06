@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:27.880Z",
+  "generatedAt": "2026-05-06T15:07:43.419Z",
   "pathname": "/platforms/mac/child-process",
   "title": "Gateway Lifecycle",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "macOS上Gateway的启动与管理方式",
-    "heroSummary": "这页说明macOS应用默认通过launchd管理Gateway，而非子进程模式。最该先看默认的launchd行为，了解应用如何自动启动Gateway。最容易搞错的是开发构建时的签名问题，未签名构建会禁用launchd，需手动重置。"
+    "heroTitle": "macOS 上 Gateway 到底谁在管？默认走 launchd，别被子进程模式骗了",
+    "heroSummary": "macOS 版 app 默认通过 launchd 管理 Gateway 生命周期，不是子进程。先搞清楚默认走 launchd，子进程模式当前并未启用。最容易踩的坑是 unsigned dev 构建会写一个 disable 标记，导致 launchd 不启动 Gateway，需要手动删掉 ~/.openclaw/disable-launchagent 才能恢复。"
   }
 }

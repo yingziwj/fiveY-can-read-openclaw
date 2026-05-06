@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>日志概览：Logging Overview | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="日志概览是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Logging Overview | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="日志分文件日志和控制台输出两种，文件默认写在 /tmp/openclaw/ 下，路径可在配置里改。最推荐用 openclaw logs --follow 实时跟踪，支持 JSON、纯文本、彩色输出。注意控制台 UI 的日志标签页也是读同一个文件，别重复开。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="日志概览：Logging Overview | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="日志概览是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Logging Overview | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="日志分文件日志和控制台输出两种，文件默认写在 /tmp/openclaw/ 下，路径可在配置里改。最推荐用 openclaw logs --follow 实时跟踪，支持 JSON、纯文本、彩色输出。注意控制台 UI 的日志标签页也是读同一个文件，别重复开。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/logging/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="日志概览：Logging Overview | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="日志概览是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Logging Overview | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="日志分文件日志和控制台输出两种，文件默认写在 /tmp/openclaw/ 下，路径可在配置里改。最推荐用 openclaw logs --follow 实时跟踪，支持 JSON、纯文本、彩色输出。注意控制台 UI 的日志标签页也是读同一个文件，别重复开。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/logging/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"日志概览：Logging Overview","description":"日志概览是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/logging/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Logging Overview","description":"日志分文件日志和控制台输出两种，文件默认写在 /tmp/openclaw/ 下，路径可在配置里改。最推荐用 openclaw logs --follow 实时跟踪，支持 JSON、纯文本、彩色输出。注意控制台 UI 的日志标签页也是读同一个文件，别重复开。","url":"https://fivey-can-read-openclaw.pages.dev/logging/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Logging","item":"https://fivey-can-read-openclaw.pages.dev/logging/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Logging 导读</p>
-        <h1>OpenClaw 日志系统概览与操作指南</h1>
-        <p class="hero-copy">本页详细说明 OpenClaw 日志的两种输出方式（文件日志与控制台输出）及其默认存储位置。建议先了解如何通过 CLI 命令 `openclaw logs --follow` 实时查看日志，这是最常用的调试方式。配置日志路径时，最容易在 `~/.openclaw/openclaw.json` 文件中写错文件路径格式，需确保 JSON 结构正确。</p>
+        <h1>日志在哪里、怎么看、怎么调</h1>
+        <p class="hero-copy">日志分文件日志和控制台输出两种，文件默认写在 /tmp/openclaw/ 下，路径可在配置里改。最推荐用 openclaw logs --follow 实时跟踪，支持 JSON、纯文本、彩色输出。注意控制台 UI 的日志标签页也是读同一个文件，别重复开。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,16 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:logging.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🪵 Logging 这页，就是“OpenClaw 的日记本放哪儿、怎么翻、怎么只看重点”</h2>
-      <p>它讲两种日记：文件里的 JSONL 日记和终端/控制台里流出来的现场记录。你要的不是一堆术语，而是知道去哪儿看、怎么跟踪。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>日志在哪里、怎么看、怎么调</h2>
+      <p>日志分文件日志和控制台输出两种，文件默认写在 /tmp/openclaw/ 下，路径可在配置里改。最推荐用 openclaw logs --follow 实时跟踪，支持 JSON、纯文本、彩色输出。注意控制台 UI 的日志标签页也是读同一个文件，别重复开。</p>
     </div>
     <div class="overview-meta">
-      <span>适合排障、监控、接告警的人</span>
-      <span>先看文件位置，再看 `openclaw logs --follow`，最后看 UI 和过滤</span>
+      <span>原文共 26 节，先看 Start Here</span>
+      <span>路径：/logging</span>
       <a href="https://docs.openclaw.ai/logging" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

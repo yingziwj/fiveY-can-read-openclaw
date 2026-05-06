@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:49:20.317Z",
+  "generatedAt": "2026-05-06T15:05:55.075Z",
   "pathname": "/concepts/model-providers",
   "title": "Model Providers",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "模型提供商的配置与轮换机制",
-    "heroSummary": "这页详细说明了如何配置不同AI模型提供商（如OpenAI、Anthropic）的API密钥，并实现密钥轮换以应对限流。配置时需注意`models.providers.*.models[].contextTokens`是实际生效的上下文长度上限，而密钥轮换仅在收到限流错误（如429）时才会触发，其他错误会立即失败。"
+    "heroTitle": "模型供应商：分清谁管模型，谁管聊天",
+    "heroSummary": "这一页只讲 LLM 供应商（如 OpenAI、Anthropic），不是 WhatsApp/Telegram 这类聊天通道。配置时先确认模型选择规则在另一页 /concepts/models，这里重点看 provider 的 API key 轮换机制和插件如何接管供应商逻辑。最容易搞错的是把 provider 的 contextTokens 当成建议值——它实际上是运行时的硬上限。"
   }
 }

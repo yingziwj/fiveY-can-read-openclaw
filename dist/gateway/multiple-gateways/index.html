@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Multiple Gateways | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Multiple Gateways是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="多数场景一个 Gateway 就够，但需要隔离或冗余（比如救援机器人）时，必须为每个实例单独指定配置路径、状态目录、工作区和端口。最容易踩的坑是端口重叠——两个实例的 base port 至少要隔开 20 个端口，否则浏览器/CDP 端口会冲突。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Multiple Gateways | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Multiple Gateways是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="多数场景一个 Gateway 就够，但需要隔离或冗余（比如救援机器人）时，必须为每个实例单独指定配置路径、状态目录、工作区和端口。最容易踩的坑是端口重叠——两个实例的 base port 至少要隔开 20 个端口，否则浏览器/CDP 端口会冲突。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/gateway/multiple-gateways/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Multiple Gateways | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Multiple Gateways是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="多数场景一个 Gateway 就够，但需要隔离或冗余（比如救援机器人）时，必须为每个实例单独指定配置路径、状态目录、工作区和端口。最容易踩的坑是端口重叠——两个实例的 base port 至少要隔开 20 个端口，否则浏览器/CDP 端口会冲突。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/gateway/multiple-gateways/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Multiple Gateways","description":"Multiple Gateways是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/multiple-gateways/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Multiple Gateways","description":"多数场景一个 Gateway 就够，但需要隔离或冗余（比如救援机器人）时，必须为每个实例单独指定配置路径、状态目录、工作区和端口。最容易踩的坑是端口重叠——两个实例的 base port 至少要隔开 20 个端口，否则浏览器/CDP 端口会冲突。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/multiple-gateways/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Gateway","item":"https://fivey-can-read-openclaw.pages.dev/gateway/multiple-gateways/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Gateway 导读</p>
-        <h1>在同一主机上运行多个网关的配置要点</h1>
-        <p class="hero-copy">这页讲解如何在同一台机器上运行多个OpenClaw网关实例，例如用于创建独立的救援机器人。配置时最关键的步骤是确保每个实例使用完全隔离的配置文件路径、状态目录和端口号，否则会导致配置冲突和端口占用问题。特别注意要为每个实例预留至少20个端口的间隔，以避免浏览器、画布等衍生端口发生重叠。</p>
+        <h1>同一台机器跑多个 Gateway：先隔离配置，再分配端口</h1>
+        <p class="hero-copy">多数场景一个 Gateway 就够，但需要隔离或冗余（比如救援机器人）时，必须为每个实例单独指定配置路径、状态目录、工作区和端口。最容易踩的坑是端口重叠——两个实例的 base port 至少要隔开 20 个端口，否则浏览器/CDP 端口会冲突。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,8 +4324,21 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🚪 Multiple Gateways 这页，其实是在讲“同机开多个 Gateway 时，哪些仓库和门牌必须彻底分家”</h2><p>不分家就会撞端口、抢状态、打配置架。</p></div><div class="overview-meta"><span>多网关隔离</span><span>重点是 profile、state dir、workspace、port spacing</span><a href="https://docs.openclaw.ai/gateway/multiple-gateways" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-
+      <!-- handcrafted-source:gateway.multiple-gateways.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>同一台机器跑多个 Gateway：先隔离配置，再分配端口</h2>
+      <p>多数场景一个 Gateway 就够，但需要隔离或冗余（比如救援机器人）时，必须为每个实例单独指定配置路径、状态目录、工作区和端口。最容易踩的坑是端口重叠——两个实例的 base port 至少要隔开 20 个端口，否则浏览器/CDP 端口会冲突。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 9 节，先看 Start Here</span>
+      <span>路径：/gateway/multiple-gateways</span>
+      <a href="https://docs.openclaw.ai/gateway/multiple-gateways" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
       <footer class="page-footer">
         <div>

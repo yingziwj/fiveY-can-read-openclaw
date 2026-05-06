@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nostr 通道：Nostr | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Nostr 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Nostr | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页教你如何让 OpenClaw 通过 Nostr 协议收发加密私信。先准备好 Nostr 私钥（nsec 开头），然后通过命令行或配置文件添加通道。最容易踩的坑是：私钥必须用环境变量或 --use-env 保护，千万别硬编码到配置文件里。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Nostr 通道：Nostr | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Nostr 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Nostr | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页教你如何让 OpenClaw 通过 Nostr 协议收发加密私信。先准备好 Nostr 私钥（nsec 开头），然后通过命令行或配置文件添加通道。最容易踩的坑是：私钥必须用环境变量或 --use-env 保护，千万别硬编码到配置文件里。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/channels/nostr/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Nostr 通道：Nostr | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Nostr 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Nostr | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页教你如何让 OpenClaw 通过 Nostr 协议收发加密私信。先准备好 Nostr 私钥（nsec 开头），然后通过命令行或配置文件添加通道。最容易踩的坑是：私钥必须用环境变量或 --use-env 保护，千万别硬编码到配置文件里。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/channels/nostr/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Nostr 通道：Nostr","description":"Nostr 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/channels/nostr/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Nostr","description":"这一页教你如何让 OpenClaw 通过 Nostr 协议收发加密私信。先准备好 Nostr 私钥（nsec 开头），然后通过命令行或配置文件添加通道。最容易踩的坑是：私钥必须用环境变量或 --use-env 保护，千万别硬编码到配置文件里。","url":"https://fivey-can-read-openclaw.pages.dev/channels/nostr/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Channels","item":"https://fivey-can-read-openclaw.pages.dev/channels/nostr/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Channels 导读</p>
-        <h1>配置Nostr通道：接入去中心化社交网络</h1>
-        <p class="hero-copy">这页教你如何为OpenClaw配置Nostr通道，以接收和响应加密私信。配置前需先生成Nostr密钥对，并注意默认插件是禁用的，需要手动启用。最容易出错的地方是密钥管理，建议使用环境变量而非直接写入配置文件。</p>
+        <h1>Nostr 通道：用私钥接上去中心化社交网络</h1>
+        <p class="hero-copy">这一页教你如何让 OpenClaw 通过 Nostr 协议收发加密私信。先准备好 Nostr 私钥（nsec 开头），然后通过命令行或配置文件添加通道。最容易踩的坑是：私钥必须用环境变量或 `--use-env` 保护，千万别硬编码到配置文件里。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:channels.nostr.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🔐 Nostr 这页，其实是在教你“给 OpenClaw 一把私钥，让它去分布式世界里收加密私信”</h2>
-      <p>它不像普通聊天平台那样有一个总后台。Nostr 更像很多中继站拼起来的街道网络。</p>
-      <p>所以这页最关键的三件事是：装插件、准备私钥、告诉 OpenClaw 去哪些 relay 门口等消息。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Nostr 通道：用私钥接上去中心化社交网络</h2>
+      <p>这一页教你如何让 OpenClaw 通过 Nostr 协议收发加密私信。先准备好 Nostr 私钥（nsec 开头），然后通过命令行或配置文件添加通道。最容易踩的坑是：私钥必须用环境变量或 `--use-env` 保护，千万别硬编码到配置文件里。</p>
     </div>
     <div class="overview-meta">
-      <span>可选插件，默认不启用</span>
-      <span>重点是私钥、relay、DM 策略</span>
+      <span>原文共 20 节，先看 Start Here</span>
+      <span>路径：/channels/nostr</span>
       <a href="https://docs.openclaw.ai/channels/nostr" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

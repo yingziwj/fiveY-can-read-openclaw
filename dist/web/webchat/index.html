@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WebChat | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="WebChat是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="先启动 gateway，再打开 WebChat 应用（macOS/iOS）或 Control UI 的聊天标签页。注意即使在本机环回地址，也必须配置有效的 gateway auth path（默认是 shared-secret），否则连不上。最容易搞错的是：WebChat 的回复路由是确定性的——同一会话的回复永远回…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="WebChat | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="WebChat是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="先启动 gateway，再打开 WebChat 应用（macOS/iOS）或 Control UI 的聊天标签页。注意即使在本机环回地址，也必须配置有效的 gateway auth path（默认是 shared-secret），否则连不上。最容易搞错的是：WebChat 的回复路由是确定性的——同一会话的回复永远回…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/web/webchat/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="WebChat | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="WebChat是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="先启动 gateway，再打开 WebChat 应用（macOS/iOS）或 Control UI 的聊天标签页。注意即使在本机环回地址，也必须配置有效的 gateway auth path（默认是 shared-secret），否则连不上。最容易搞错的是：WebChat 的回复路由是确定性的——同一会话的回复永远回…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/web/webchat/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"WebChat","description":"WebChat是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/web/webchat/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"WebChat","description":"先启动 gateway，再打开 WebChat 应用（macOS/iOS）或 Control UI 的聊天标签页。注意即使在本机环回地址，也必须配置有效的 gateway auth path（默认是 shared-secret），否则连不上。最容易搞错的是：WebChat 的回复路由是确定性的——同一会话的回复永远回…","url":"https://fivey-can-read-openclaw.pages.dev/web/webchat/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Web","item":"https://fivey-can-read-openclaw.pages.dev/web/webchat/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Web 导读</p>
-        <h1>WebChat：原生聊天界面接入网关WebSocket</h1>
-        <p class="hero-copy">这页说明如何通过macOS/iOS原生应用或控制台界面，直接连接网关WebSocket进行聊天交互。启动前必须配置有效的网关认证路径，即使本地回环也需要共享密钥。界面使用chat.history、chat.send和chat.inject操作，其中chat.history会进行显示标准化处理，自动过滤指令标签和静音令牌。</p>
+        <h1>WebChat 是原生聊天界面，不走浏览器，直接连 Gateway WebSocket</h1>
+        <p class="hero-copy">先启动 gateway，再打开 WebChat 应用（macOS/iOS）或 Control UI 的聊天标签页。注意即使在本机环回地址，也必须配置有效的 gateway auth path（默认是 shared-secret），否则连不上。最容易搞错的是：WebChat 的回复路由是确定性的——同一会话的回复永远回到 WebChat，不会跑到其他 channel。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:web.webchat.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>💬 WebChat 像“直接坐到 Gateway 柜台前聊天”</h2>
-      <p>这页讲的不是某个第三方聊天软件接入，而是 OpenClaw 自己的一种聊天前台。你可以把它想成：总机房前面放了一个原生聊天窗口，你坐下来就能跟里面的人说话。</p>
-      <p>它最重要的特点不是好看，而是它不绕路。它直接连 Gateway WebSocket，用的也是同一套 session 和路由规则。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>WebChat 是原生聊天界面，不走浏览器，直接连 Gateway WebSocket</h2>
+      <p>先启动 gateway，再打开 WebChat 应用（macOS/iOS）或 Control UI 的聊天标签页。注意即使在本机环回地址，也必须配置有效的 gateway auth path（默认是 shared-secret），否则连不上。最容易搞错的是：WebChat 的回复路由是确定性的——同一会话的回复永远回到 WebChat，不会跑到其他 channel。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想在 macOS、iOS 或控制台里直接聊 OpenClaw 的人</span>
-      <span>这页最重要的是记住：WebChat 不是单独服务器，它只是 Gateway 的一个前台</span>
+      <span>原文共 7 节，先看 Start Here</span>
+      <span>路径：/web/webchat</span>
       <a href="https://docs.openclaw.ai/web/webchat" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

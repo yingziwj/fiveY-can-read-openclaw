@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brave 搜索：Brave Search | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Brave 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Brave Search | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页教你如何将 Brave Search 配成 web_search 工具。核心两步：去 Brave 后台申请 Search 计划并拿到 API Key，然后在配置里填好 apiKey 并选择 mode（普通网页搜索或 LLM 上下文模式）。注意：新配置路径是 plugins.entries.brave.confi…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Brave 搜索：Brave Search | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Brave 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Brave Search | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页教你如何将 Brave Search 配成 web_search 工具。核心两步：去 Brave 后台申请 Search 计划并拿到 API Key，然后在配置里填好 apiKey 并选择 mode（普通网页搜索或 LLM 上下文模式）。注意：新配置路径是 plugins.entries.brave.confi…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/tools/brave-search/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Brave 搜索：Brave Search | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Brave 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Brave Search | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页教你如何将 Brave Search 配成 web_search 工具。核心两步：去 Brave 后台申请 Search 计划并拿到 API Key，然后在配置里填好 apiKey 并选择 mode（普通网页搜索或 LLM 上下文模式）。注意：新配置路径是 plugins.entries.brave.confi…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/tools/brave-search/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Brave 搜索：Brave Search","description":"Brave 搜索是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/tools/brave-search/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Brave Search","description":"这一页教你如何将 Brave Search 配成 web_search 工具。核心两步：去 Brave 后台申请 Search 计划并拿到 API Key，然后在配置里填好 apiKey 并选择 mode（普通网页搜索或 LLM 上下文模式）。注意：新配置路径是 plugins.entries.brave.confi…","url":"https://fivey-can-read-openclaw.pages.dev/tools/brave-search/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://fivey-can-read-openclaw.pages.dev/tools/brave-search/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Tools 导读</p>
-        <h1>配置Brave搜索API接入OpenClaw</h1>
-        <p class="hero-copy">这页指导如何将Brave搜索API配置为OpenClaw的web_search工具。配置时需注意API密钥应放在plugins.entries.brave.config.webSearch.apiKey路径下，而非旧版tools.web.search.apiKey。Brave提供每月$5免费额度，可覆盖1000次查询，建议在仪表盘中设置用量限制以避免意外费用。</p>
+        <h1>Brave Search 接入：先拿 API Key，再选搜索模式</h1>
+        <p class="hero-copy">这一页教你如何将 Brave Search 配成 web_search 工具。核心两步：去 Brave 后台申请 Search 计划并拿到 API Key，然后在配置里填好 apiKey 并选择 mode（普通网页搜索或 LLM 上下文模式）。注意：新配置路径是 plugins.entries.brave.config.webSearch，旧路径 tools.web.search.apiKey 虽然还能用但已不推荐。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:tools.brave-search.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🔦 Brave Search 像一把“快、稳、能带路标”的网页小手电</h2>
-      <p>这页讲的是：OpenClaw 想上网找资料时，可以把 Brave 当成默认的搜网页同学。它不只是帮你翻网页，还会尽量把结果摆得更清楚。</p>
-      <p>你可以把它想成一位带地图的找路员。你只要说问题，它就把能用的线索带回来。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Brave Search 接入：先拿 API Key，再选搜索模式</h2>
+      <p>这一页教你如何将 Brave Search 配成 web_search 工具。核心两步：去 Brave 后台申请 Search 计划并拿到 API Key，然后在配置里填好 apiKey 并选择 mode（普通网页搜索或 LLM 上下文模式）。注意：新配置路径是 plugins.entries.brave.config.webSearch，旧路径 tools.web.search.apiKey 虽然还能用但已不推荐。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想给 OpenClaw 配一个网页搜索提供商的人</span>
-      <span>这页最重要的是区分：Brave 是 <code>web_search</code> 提供商，不是浏览器</span>
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/tools/brave-search</span>
       <a href="https://docs.openclaw.ai/tools/brave-search" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

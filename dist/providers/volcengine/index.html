@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Volcengine（Doubao）：Volcengine (Doubao) | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Volcengine（Doubao）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Volcengine (Doubao) | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Volcengine 提供两个 provider：通用（volcengine）和编程专用（volcengine-plan），共享同一个 API Key。先跑 onboard 命令自动注册，再选默认模型——注意默认会设成编程模型 ark-code-latest。如果以守护进程运行，务必把 VOLCANO_ENGINE_…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Volcengine（Doubao）：Volcengine (Doubao) | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Volcengine（Doubao）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Volcengine (Doubao) | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Volcengine 提供两个 provider：通用（volcengine）和编程专用（volcengine-plan），共享同一个 API Key。先跑 onboard 命令自动注册，再选默认模型——注意默认会设成编程模型 ark-code-latest。如果以守护进程运行，务必把 VOLCANO_ENGINE_…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/providers/volcengine/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Volcengine（Doubao）：Volcengine (Doubao) | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Volcengine（Doubao）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Volcengine (Doubao) | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Volcengine 提供两个 provider：通用（volcengine）和编程专用（volcengine-plan），共享同一个 API Key。先跑 onboard 命令自动注册，再选默认模型——注意默认会设成编程模型 ark-code-latest。如果以守护进程运行，务必把 VOLCANO_ENGINE_…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/providers/volcengine/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Volcengine（Doubao）：Volcengine (Doubao)","description":"Volcengine（Doubao）是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/providers/volcengine/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Volcengine (Doubao)","description":"Volcengine 提供两个 provider：通用（volcengine）和编程专用（volcengine-plan），共享同一个 API Key。先跑 onboard 命令自动注册，再选默认模型——注意默认会设成编程模型 ark-code-latest。如果以守护进程运行，务必把 VOLCANO_ENGINE_…","url":"https://fivey-can-read-openclaw.pages.dev/providers/volcengine/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Providers","item":"https://fivey-can-read-openclaw.pages.dev/providers/volcengine/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Providers 导读</p>
-        <h1>接入火山引擎（豆包）模型服务</h1>
-        <p class="hero-copy">这页说明如何配置OpenClaw来使用火山引擎托管的豆包模型和第三方模型，包括通用和编程两类工作负载。你需要先设置VOLCANO_ENGINE_API_KEY环境变量，然后通过openclaw onboard命令完成认证。最容易搞错的是区分volcengine（通用模型）和volcengine-plan（编程模型）两个不同的提供者端点，虽然它们共享同一个API密钥，但用途和模型列表不同。</p>
+        <h1>一个 API Key 同时接入通用和编程模型</h1>
+        <p class="hero-copy">Volcengine 提供两个 provider：通用（volcengine）和编程专用（volcengine-plan），共享同一个 API Key。先跑 onboard 命令自动注册，再选默认模型——注意默认会设成编程模型 ark-code-latest。如果以守护进程运行，务必把 VOLCANO_ENGINE_API_KEY 写进 .env 文件，否则会找不到。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:providers.volcengine.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🌋 Volcengine 像一把钥匙开两扇门：普通模型门和 coding 模型门</h2>
-      <p>这页最容易让人看晕的地方，是 provider 有两个：<code>volcengine</code> 和 <code>volcengine-plan</code>。但官方又说，它们其实共用同一把 <code>VOLCANO_ENGINE_API_KEY</code>。</p>
-      <p>所以记法很简单：一把钥匙，两扇门，一扇偏通用，一扇偏代码。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>一个 API Key 同时接入通用和编程模型</h2>
+      <p>Volcengine 提供两个 provider：通用（volcengine）和编程专用（volcengine-plan），共享同一个 API Key。先跑 onboard 命令自动注册，再选默认模型——注意默认会设成编程模型 ark-code-latest。如果以守护进程运行，务必把 VOLCANO_ENGINE_API_KEY 写进 .env 文件，否则会找不到。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想接 Doubao 和 Volcano Engine 托管模型的人</span>
-      <span>重点是一把 key 开双门</span>
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/providers/volcengine</span>
       <a href="https://docs.openclaw.ai/providers/volcengine" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

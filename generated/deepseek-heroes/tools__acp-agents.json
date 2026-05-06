@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:50:25.065Z",
+  "generatedAt": "2026-05-06T15:06:29.874Z",
   "pathname": "/tools/acp-agents",
   "title": "ACP Agents",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "在 OpenClaw 中运行外部代码工具（如 Codex、Claude Code）",
-    "heroSummary": "本页说明如何通过 ACP 协议，让 OpenClaw 启动并管理外部代码工具（如 Codex、Claude Code、Gemini CLI 等）的会话。使用 `/acp spawn` 命令或自然语言请求即可启动，会话会绑定到特定聊天或线程，并作为后台任务运行。最容易混淆的是区分本页（通过 OpenClaw 运行外部工具）、`openclaw acp` 命令（将 OpenClaw 作为 ACP 服务器暴露）以及 CLI 后端（仅作为文本回退模型），请根据“Which page do I want?”表格确认你需要的功能。首次使用时，系统通常已预装 `acpx` 运行时，但特定工具的适配器可能需要联网获取，若主机无网络访问可能失败，可使用 `/acp doctor` 快速检查就绪状态。"
+    "heroTitle": "让 Codex、Claude Code 等外部工具通过 OpenClaw 运行，而不是直接连 MCP",
+    "heroSummary": "ACP 代理页解决的是“如何让 OpenClaw 充当调度器，把任务派给 Codex、Claude Code、Gemini CLI 等外部编码工具”。最该先看的是“Which page do I want?”表格，它帮你分清 ACP 代理、`openclaw acp` 桥接模式、CLI 后端三者的区别。最容易搞错的是：ACP 代理是让外部工具在 OpenClaw 里跑会话（受 OpenClaw 管控），而 `openclaw mcp serve` 是让外部工具直接连 OpenClaw 的频道聊天——两者完全相反。"
   }
 }

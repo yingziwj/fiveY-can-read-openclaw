@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:54:21.919Z",
+  "generatedAt": "2026-05-06T15:09:03.506Z",
   "pathname": "/help/environment",
   "title": "Environment Variables",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw环境变量加载规则与配置",
-    "heroSummary": "这页详细说明了OpenClaw从多个来源加载环境变量的优先级顺序，核心规则是“从不覆盖已有值”。配置时最容易搞错的是优先级顺序，特别是`.env`文件和配置文件中`env`块的区别。"
+    "heroTitle": "环境变量从哪里来、优先级怎么排",
+    "heroSummary": "OpenClaw 从 5 个来源加载环境变量，优先级从进程环境到 shell 导入依次降低。核心规则是“绝不覆盖已存在的值”，所以先到者生效。最容易踩坑的是 `.env` 文件和配置 `env` 块都只能补缺，不能覆盖已有变量；如果你在 shell 里 export 了某个 key，后面所有来源的同名 key 都会被忽略。"
   }
 }

@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iOS 应用：iOS App | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="iOS 应用是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>iOS App | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="iOS 应用通过 WebSocket 连接同一局域网或 Tailnet 上的网关，暴露 Canvas、摄像头、位置等节点能力。最易踩坑的是配对流程：每次重试都会生成新的 requestId，必须重新执行 openclaw devices list 获取最新 ID 再 approve。官方构建版使用外部推送中继，网关需…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="iOS 应用：iOS App | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="iOS 应用是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="iOS App | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="iOS 应用通过 WebSocket 连接同一局域网或 Tailnet 上的网关，暴露 Canvas、摄像头、位置等节点能力。最易踩坑的是配对流程：每次重试都会生成新的 requestId，必须重新执行 openclaw devices list 获取最新 ID 再 approve。官方构建版使用外部推送中继，网关需…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/platforms/ios/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="iOS 应用：iOS App | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="iOS 应用是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="iOS App | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="iOS 应用通过 WebSocket 连接同一局域网或 Tailnet 上的网关，暴露 Canvas、摄像头、位置等节点能力。最易踩坑的是配对流程：每次重试都会生成新的 requestId，必须重新执行 openclaw devices list 获取最新 ID 再 approve。官方构建版使用外部推送中继，网关需…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/platforms/ios/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"iOS 应用：iOS App","description":"iOS 应用是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/platforms/ios/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"iOS App","description":"iOS 应用通过 WebSocket 连接同一局域网或 Tailnet 上的网关，暴露 Canvas、摄像头、位置等节点能力。最易踩坑的是配对流程：每次重试都会生成新的 requestId，必须重新执行 openclaw devices list 获取最新 ID 再 approve。官方构建版使用外部推送中继，网关需…","url":"https://fivey-can-read-openclaw.pages.dev/platforms/ios/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Platforms","item":"https://fivey-can-read-openclaw.pages.dev/platforms/ios/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Platforms 导读</p>
-        <h1>iOS App 连接网关配置指南</h1>
-        <p class="hero-copy">这页详细说明 iOS App 如何通过 WebSocket 连接网关，并获取节点能力。首先需要确保网关已在另一设备运行，并在 iOS 设置中选择或手动输入网关地址。配对时若应用重试导致请求 ID 变更，务必在批准前重新运行设备列表命令确认最新 ID。</p>
+        <h1>iOS 端接入：先配网关，再配对，最后搞定推送</h1>
+        <p class="hero-copy">iOS 应用通过 WebSocket 连接同一局域网或 Tailnet 上的网关，暴露 Canvas、摄像头、位置等节点能力。最易踩坑的是配对流程：每次重试都会生成新的 requestId，必须重新执行 openclaw devices list 获取最新 ID 再 approve。官方构建版使用外部推送中继，网关需配置 relay baseUrl，且必须与 iOS 构建时内置的 URL 一致，否则推送失效。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>📱 iOS 这页，其实是在讲“让 iPhone 变成 Gateway 的随身遥控节点”</h2><p>它能带来相机、屏幕、定位、语音这些手机本领，但真正的大脑还在别的设备上的 Gateway。</p></div><div class="overview-meta"><span>iOS node</span><span>重点是发现 Gateway、配对、节点能力</span><a href="https://docs.openclaw.ai/platforms/ios" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:platforms.ios.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>iOS 端接入：先配网关，再配对，最后搞定推送</h2>
+      <p>iOS 应用通过 WebSocket 连接同一局域网或 Tailnet 上的网关，暴露 Canvas、摄像头、位置等节点能力。最易踩坑的是配对流程：每次重试都会生成新的 requestId，必须重新执行 openclaw devices list 获取最新 ID 再 approve。官方构建版使用外部推送中继，网关需配置 relay baseUrl，且必须与 iOS 构建时内置的 URL 一致，否则推送失效。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 14 节，先看 Start Here</span>
+      <span>路径：/platforms/ios</span>
+      <a href="https://docs.openclaw.ai/platforms/ios" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>🧭 先找到 Gateway，再领设备工牌</h2><p>这页最核心的流程就是发现、连接、审批。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label"><code>openclaw gateway --port 18789</code></div><p>先把 Gateway 开起来，相当于先把总指挥室点亮。</p></div><div class="source-card"><div class="story-card-label">Bonjour / tailnet / 手填 host</div><p>iOS app 会尽量自动找路，找不到时再手工填门牌号。</p></div><div class="source-card"><div class="story-card-label"><code>openclaw devices approve &lt;requestId&gt;</code></div><p>这句像给 iPhone 发 node 工牌，拿到后它才算正式入队。</p></div><div class="source-card"><div class="story-card-label">会什么</div><p>Canvas、截图、相机、定位、Talk、Voice Wake，都是它这边擅长的体能活。</p></div></div></section>
 
 

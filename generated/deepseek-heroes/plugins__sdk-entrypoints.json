@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:49:30.146Z",
+  "generatedAt": "2026-05-06T15:06:04.025Z",
   "pathname": "/plugins/sdk-entrypoints",
   "title": "Plugin Entry Points",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "插件入口点：三种定义方式与注册模式",
-    "heroSummary": "这页详细解释了插件如何通过definePluginEntry、defineChannelPluginEntry和defineSetupPluginEntry三种辅助函数定义入口对象。开发时需根据插件类型选择对应函数，并特别注意api.registrationMode的不同值，它决定了在网关启动、通道禁用或CLI元数据捕获等场景下应注册哪些组件，避免错误地加载重型运行时。"
+    "heroTitle": "三种入口函数，决定你的插件怎么被加载",
+    "heroSummary": "插件必须导出一个默认入口对象，SDK 提供了三个构造器：`definePluginEntry` 给非消息通道类插件用，`defineChannelPluginEntry` 给消息通道用并自动处理注册模式，`defineSetupPluginEntry` 只返回 `{ plugin }` 用于禁用或延迟加载场景。最容易搞错的是 `kind` 字段只接受 `\"memory\"` 或 `\"context-engine\"`，以及 `registerFull` 只在 `registrationMode === \"full\"` 时执行。"
   }
 }

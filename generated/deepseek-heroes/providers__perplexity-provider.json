@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:50:17.406Z",
+  "generatedAt": "2026-05-06T15:08:02.302Z",
   "pathname": "/providers/perplexity-provider",
-  "title": "Perplexity (Provider)",
+  "title": "Perplexity",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "配置Perplexity网页搜索插件",
-    "heroSummary": "这页教你如何接入Perplexity的网页搜索功能，让AI助手能上网查资料。配置时要注意区分API密钥前缀：pplx-走原生接口支持过滤，sk-or-走OpenRouter提供AI摘要。最容易错的是把环境变量配给错误的进程，特别是后台服务运行时需要确保密钥能被网关进程读取。"
+    "heroTitle": "Perplexity 接入：先分清两种 API Key 的区别",
+    "heroSummary": "这一页教你配置 Perplexity 作为 Web 搜索 provider。最关键的一步是设置 API Key——用 `pplx-` 开头的原生 Key 走 Perplexity Search API，支持结构化结果和过滤；用 `sk-or-` 开头的 Key 则走 OpenRouter 的 Sonar 模型，返回 AI 合成答案。最容易踩的坑是：如果 OpenClaw Gateway 以守护进程运行，Key 必须放在 `~/.openclaw/.env` 或 `env.shellEnv` 里，否则进程读不到。"
   }
 }

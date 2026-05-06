@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:42.363Z",
+  "generatedAt": "2026-05-06T15:07:52.912Z",
   "pathname": "/platforms/mac/webchat",
   "title": "WebChat (macOS)",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "macOS菜单栏WebChat应用配置与连接方式",
-    "heroSummary": "这页详细说明macOS菜单栏WebChat应用如何连接Gateway，包括本地直连和远程SSH转发两种模式。配置时最容易混淆的是会话选择——默认使用主会话，但可通过切换器访问其他会话。调试时使用`./scripts/clawlog.sh`查看`WebChatSwiftUI`类别的日志。"
+    "heroTitle": "macOS 菜单栏里的 WebChat：怎么启动、怎么接线、注意什么",
+    "heroSummary": "这一页讲的是 macOS 菜单栏 app 如何把 WebChat 嵌成原生 SwiftUI 视图，并默认连到所选 agent 的 main session（可切换）。启动方式有两种：手动从 Lobster 菜单点“Open Chat”，或加 --webchat 参数自动打开；调试日志用 clawlog.sh。最容易搞错的是数据平面走 Gateway WS 方法（chat.history/chat.send/chat.abort），且返回的 transcript 会做显示层清理——去掉标签、工具调用 XML 和静默 token 行，超大行会被替换为占位符。"
   }
 }

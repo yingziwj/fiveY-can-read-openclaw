@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:54:27.573Z",
+  "generatedAt": "2026-05-06T15:09:06.541Z",
   "pathname": "/pi",
   "title": "Pi Integration Architecture",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw如何嵌入pi AI代理实现代码能力",
-    "heroSummary": "这页讲OpenClaw直接导入pi的AgentSession来嵌入AI代理，而不是通过子进程或RPC。最该先看runEmbeddedPiAgent()的调用参数，特别是sessionId和provider配置。最容易错的是把工具文件放错位置——现在各插件的运行时文件都在自己的扩展目录里，不在统一的src/agents/tools下。"
+    "heroTitle": "OpenClaw 如何把 pi 智能体嵌入消息网关",
+    "heroSummary": "这一页讲的是 OpenClaw 通过直接调用 pi 的 createAgentSession() 将 AI 编码智能体嵌入到消息网关中，而不是作为子进程或 RPC 运行。重点看 runEmbeddedPiAgent() 的入参，尤其是 sessionKey、onBlockReply 和 provider/model 的配置方式。最容易出错的是：session 文件路径和 workspace 目录必须正确，否则会话无法持久化；provider 和 model 名称必须与 pi 的 ModelRegistry 中注册的一致。"
   }
 }

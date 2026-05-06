@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matrix 通道：Matrix | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Matrix 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Matrix | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Matrix 是 OpenClaw 内置的频道插件，支持私聊、群聊、线程、媒体、端到端加密。配置时最易踩的坑是：所有邀请（包括私聊邀请）都先走 autoJoin 过滤，dm.policy 在加入后才生效；想用流式预览就设 streaming 为 partial 或 quiet，但会多耗 API 调用。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Matrix 通道：Matrix | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Matrix 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Matrix | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Matrix 是 OpenClaw 内置的频道插件，支持私聊、群聊、线程、媒体、端到端加密。配置时最易踩的坑是：所有邀请（包括私聊邀请）都先走 autoJoin 过滤，dm.policy 在加入后才生效；想用流式预览就设 streaming 为 partial 或 quiet，但会多耗 API 调用。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/channels/matrix/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Matrix 通道：Matrix | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Matrix 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Matrix | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Matrix 是 OpenClaw 内置的频道插件，支持私聊、群聊、线程、媒体、端到端加密。配置时最易踩的坑是：所有邀请（包括私聊邀请）都先走 autoJoin 过滤，dm.policy 在加入后才生效；想用流式预览就设 streaming 为 partial 或 quiet，但会多耗 API 调用。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/channels/matrix/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Matrix 通道：Matrix","description":"Matrix 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/channels/matrix/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Matrix","description":"Matrix 是 OpenClaw 内置的频道插件，支持私聊、群聊、线程、媒体、端到端加密。配置时最易踩的坑是：所有邀请（包括私聊邀请）都先走 autoJoin 过滤，dm.policy 在加入后才生效；想用流式预览就设 streaming 为 partial 或 quiet，但会多耗 API 调用。","url":"https://fivey-can-read-openclaw.pages.dev/channels/matrix/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Channels","item":"https://fivey-can-read-openclaw.pages.dev/channels/matrix/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Channels 导读</p>
-        <h1>OpenClaw 的 Matrix 插件配置与使用</h1>
-        <p class="hero-copy">这页详细说明如何在 OpenClaw 中配置和使用 Matrix 插件，包括安装、账户设置和关键配置项。配置时最容易混淆的是 autoJoin 和 dm.policy 的区别：autoJoin 控制是否接受邀请，dm.policy 决定加入后如何处理私聊消息。</p>
+        <h1>Matrix 接入：先拿 token 或密码，再配 autoJoin</h1>
+        <p class="hero-copy">Matrix 是 OpenClaw 内置的频道插件，支持私聊、群聊、线程、媒体、端到端加密。配置时最易踩的坑是：所有邀请（包括私聊邀请）都先走 autoJoin 过滤，dm.policy 在加入后才生效；想用流式预览就设 streaming 为 partial 或 quiet，但会多耗 API 调用。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:channels.matrix.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🔷 Matrix 这页，其实是在教你“先把 Matrix 这块插件砖装上，再决定用密码还是门票进屋，还要不要处理加密房间”</h2>
-      <p>它和 Telegram、Slack 最大的不同，是它不是核心内置通道，而是一块插件。也就是说，第一步不是填配置，而是先把这块砖装进墙里。</p>
-      <p>然后真正的难点只有两个：账号怎么登录，以及加密房间的验证和备份怎么处理。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Matrix 接入：先拿 token 或密码，再配 autoJoin</h2>
+      <p>Matrix 是 OpenClaw 内置的频道插件，支持私聊、群聊、线程、媒体、端到端加密。配置时最易踩的坑是：所有邀请（包括私聊邀请）都先走 autoJoin 过滤，dm.policy 在加入后才生效；想用流式预览就设 streaming 为 partial 或 quiet，但会多耗 API 调用。</p>
     </div>
     <div class="overview-meta">
-      <span>适合 Matrix 插件通道</span>
-      <span>重点是插件安装、homeserver、token/密码、E2EE</span>
+      <span>原文共 33 节，先看 Start Here</span>
+      <span>路径：/channels/matrix</span>
       <a href="https://docs.openclaw.ai/channels/matrix" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

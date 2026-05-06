@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:48:04.042Z",
+  "generatedAt": "2026-05-06T15:05:16.542Z",
   "pathname": "/concepts/multi-agent",
   "title": "Multi-Agent Routing",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "多智能体路由配置指南",
-    "heroSummary": "这页讲解如何在单个网关中运行多个独立智能体并配置消息路由。你需要先理解每个智能体都拥有完全隔离的工作空间、配置目录和会话存储，这是路由的基础。最容易出错的地方是直接复用agentDir目录，这会导致认证和会话冲突，正确做法是单独复制auth-profiles.json文件。"
+    "heroTitle": "多Agent路由：让多个独立大脑共用一台Gateway",
+    "heroSummary": "每个Agent拥有独立的workspace、agentDir和会话存储，互不共享。核心动作是给每个Agent配置bindings，把不同渠道的入站消息路由到对应的Agent。最容易踩的坑是重复使用agentDir，会导致认证和会话冲突——想共享凭证只能手动复制auth-profiles.json。"
   }
 }

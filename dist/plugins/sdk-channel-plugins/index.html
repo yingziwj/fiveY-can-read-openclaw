@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>构建通道插件：Building Channel Plugins | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="构建通道插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Building Channel Plugins | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="OpenClaw把消息工具留在核心，你的插件只负责配置、安全、配对、会话映射和出站发送。先看package.json里channel字段怎么填，再按需添加approvalCapability和inbound mention策略——别把审批逻辑塞进auth对象里。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="构建通道插件：Building Channel Plugins | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="构建通道插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Building Channel Plugins | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="OpenClaw把消息工具留在核心，你的插件只负责配置、安全、配对、会话映射和出站发送。先看package.json里channel字段怎么填，再按需添加approvalCapability和inbound mention策略——别把审批逻辑塞进auth对象里。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/plugins/sdk-channel-plugins/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="构建通道插件：Building Channel Plugins | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="构建通道插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Building Channel Plugins | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="OpenClaw把消息工具留在核心，你的插件只负责配置、安全、配对、会话映射和出站发送。先看package.json里channel字段怎么填，再按需添加approvalCapability和inbound mention策略——别把审批逻辑塞进auth对象里。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/plugins/sdk-channel-plugins/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"构建通道插件：Building Channel Plugins","description":"构建通道插件是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-channel-plugins/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Building Channel Plugins","description":"OpenClaw把消息工具留在核心，你的插件只负责配置、安全、配对、会话映射和出站发送。先看package.json里channel字段怎么填，再按需添加approvalCapability和inbound mention策略——别把审批逻辑塞进auth对象里。","url":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-channel-plugins/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Plugins","item":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-channel-plugins/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Plugins 导读</p>
-        <h1>为 OpenClaw 构建消息平台连接插件</h1>
-        <p class="hero-copy">本页指导你构建一个通道插件，将 OpenClaw 连接到 Slack、Discord 等外部消息平台。你需要重点关注插件配置、会话映射和安全策略的实现，特别是 `messaging.resolveSessionConversation` 钩子，它负责将平台原始会话 ID 正确映射到 OpenClaw 的内部会话结构，这是最容易出错的地方。</p>
+        <h1>写一个能收发消息、管DM安全、处理审批的Channel Plugin，从这开始</h1>
+        <p class="hero-copy">OpenClaw把消息工具留在核心，你的插件只负责配置、安全、配对、会话映射和出站发送。先看package.json里channel字段怎么填，再按需添加approvalCapability和inbound mention策略——别把审批逻辑塞进auth对象里。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:plugins.sdk-channel-plugins.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🚪 Building Channel Plugins，就是给 OpenClaw 再开一扇门</h2>
-      <p>这页讲的是怎么做“通道插件”。通道就是 OpenClaw 说话和收消息的门。</p>
-      <p>如果你想让它认识新平台，比如一个新的聊天软件，就要先给它做一扇新门，再让门口的人知道怎么敲门。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>写一个能收发消息、管DM安全、处理审批的Channel Plugin，从这开始</h2>
+      <p>OpenClaw把消息工具留在核心，你的插件只负责配置、安全、配对、会话映射和出站发送。先看package.json里channel字段怎么填，再按需添加approvalCapability和inbound mention策略——别把审批逻辑塞进auth对象里。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想让 OpenClaw 接新聊天平台的人</span>
-      <span>重点是 channel 入口、收发消息、和配置填法</span>
+      <span>原文共 8 节，先看 Start Here</span>
+      <span>路径：/plugins/sdk-channel-plugins</span>
       <a href="https://docs.openclaw.ai/plugins/sdk-channel-plugins" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

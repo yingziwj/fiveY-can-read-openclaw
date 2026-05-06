@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:47.680Z",
+  "generatedAt": "2026-05-06T15:07:52.913Z",
   "pathname": "/platforms/macos",
   "title": "macOS App",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "macOS 菜单栏应用：权限管理与网关连接",
-    "heroSummary": "这页讲的是 OpenClaw 在 macOS 上的菜单栏应用，它负责处理系统权限（如通知、辅助功能）并连接本地或远程网关。最该先看的是应用在“本地”和“远程”两种模式下如何启动网关服务，这决定了你的 Mac 是否能被远程访问。最容易搞错的是 LaunchAgent 的标签名，使用 `--profile` 参数时标签会变成 `ai.openclaw.<profile>`，手动操作时若写错会导致服务无法控制。"
+    "heroTitle": "macOS 菜单栏伴侣：权限、网关、节点能力一把抓",
+    "heroSummary": "这页讲的是 OpenClaw macOS 桌面应用，它不是一个独立网关，而是菜单栏里的权限管家 + 网关连接器。先搞懂“本地模式”和“远程模式”的区别：本地模式附到本地网关，远程模式通过 SSH/Tailscale 连远程网关，且远程模式会启动 launchd 节点服务。最容易踩坑的是 TCC 权限——麦克风、屏幕录制、辅助功能这些必须通过这个应用授权，否则节点能力（如 screen.record、system.run）会静默失败。"
   }
 }

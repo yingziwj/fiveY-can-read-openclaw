@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>平台总览：Platforms | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="平台总览是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Platforms | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="OpenClaw 核心用 TypeScript 写，Node 是推荐运行时，Bun 在网关上有已知 bug。macOS、iOS、Android 已有原生伴侣应用，Windows 和 Linux 建议走 WSL2 或 Docker。安装网关服务时，不同 OS 的守护进程机制不同：macOS 用 LaunchAgent，…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="平台总览：Platforms | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="平台总览是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Platforms | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="OpenClaw 核心用 TypeScript 写，Node 是推荐运行时，Bun 在网关上有已知 bug。macOS、iOS、Android 已有原生伴侣应用，Windows 和 Linux 建议走 WSL2 或 Docker。安装网关服务时，不同 OS 的守护进程机制不同：macOS 用 LaunchAgent，…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/platforms/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="平台总览：Platforms | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="平台总览是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Platforms | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="OpenClaw 核心用 TypeScript 写，Node 是推荐运行时，Bun 在网关上有已知 bug。macOS、iOS、Android 已有原生伴侣应用，Windows 和 Linux 建议走 WSL2 或 Docker。安装网关服务时，不同 OS 的守护进程机制不同：macOS 用 LaunchAgent，…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/platforms/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"平台总览：Platforms","description":"平台总览是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/platforms/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Platforms","description":"OpenClaw 核心用 TypeScript 写，Node 是推荐运行时，Bun 在网关上有已知 bug。macOS、iOS、Android 已有原生伴侣应用，Windows 和 Linux 建议走 WSL2 或 Docker。安装网关服务时，不同 OS 的守护进程机制不同：macOS 用 LaunchAgent，…","url":"https://fivey-can-read-openclaw.pages.dev/platforms/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Platforms","item":"https://fivey-can-read-openclaw.pages.dev/platforms/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Platforms 导读</p>
-        <h1>OpenClaw 平台选择与网关安装指南</h1>
-        <p class="hero-copy">这页帮你根据操作系统选择运行 OpenClaw 的方式，并指导安装网关服务。最该先看“Choose your OS”部分确定你的平台，然后按“Gateway service install (CLI)”执行安装命令。最容易搞错的是 Windows 用户需注意网关推荐通过 WSL2 运行，而非原生 Windows 应用。</p>
+        <h1>先选系统，再装网关——不同平台的门不一样</h1>
+        <p class="hero-copy">OpenClaw 核心用 TypeScript 写，Node 是推荐运行时，Bun 在网关上有已知 bug。macOS、iOS、Android 已有原生伴侣应用，Windows 和 Linux 建议走 WSL2 或 Docker。安装网关服务时，不同 OS 的守护进程机制不同：macOS 用 LaunchAgent，Linux/WSL2 用 systemd 用户服务，Windows 用计划任务加开机启动回退。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🧭 Platforms 这页，其实是在教你“OpenClaw 在不同操作系统上分别扮演什么角色”</h2><p>有的系统适合跑 Gateway，有的系统更像陪跑节点，有的系统还在规划中。</p><p>所以这页不是功能秀，而是“这台机器最适合干什么”的总地图。</p></div><div class="overview-meta"><span>平台总地图</span><span>重点是 Gateway / node / companion app 各自站位</span><a href="https://docs.openclaw.ai/platforms/index" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:platforms.index.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>先选系统，再装网关——不同平台的门不一样</h2>
+      <p>OpenClaw 核心用 TypeScript 写，Node 是推荐运行时，Bun 在网关上有已知 bug。macOS、iOS、Android 已有原生伴侣应用，Windows 和 Linux 建议走 WSL2 或 Docker。安装网关服务时，不同 OS 的守护进程机制不同：macOS 用 LaunchAgent，Linux/WSL2 用 systemd 用户服务，Windows 用计划任务加开机启动回退。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 5 节，先看 Start Here</span>
+      <span>路径：/platforms/index</span>
+      <a href="https://docs.openclaw.ai/platforms/index" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>🧱 最稳的底座还是 Node 运行时，不是 Bun</h2><p>官方这里讲得很直：Gateway 推荐 Node，Bun 暂时别拿来当主力发动机。</p></div><div class="home-grid"><article class="home-card"><span class="home-card-index">🍏</span><h2>macOS</h2><p>有菜单栏伴侣 app，也能跑本地或远程配合。</p></article><article class="home-card"><span class="home-card-index">📱</span><h2>iOS / Android</h2><p>更像 node 设备，负责相机、语音、定位这些外设能力。</p></article><article class="home-card"><span class="home-card-index">🪟</span><h2>Windows</h2><p>能跑，但完整体验更推荐 WSL2。</p></article><article class="home-card"><span class="home-card-index">🐧</span><h2>Linux</h2><p>是很稳的 Gateway 宿主，尤其适合 VPS。</p></article></div></section>
 
 

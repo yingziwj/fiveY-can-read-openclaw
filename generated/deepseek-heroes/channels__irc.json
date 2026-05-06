@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:47:20.758Z",
+  "generatedAt": "2026-05-06T15:04:44.955Z",
   "pathname": "/channels/irc",
   "title": "IRC",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "配置 OpenClaw 连接 IRC 频道",
-    "heroSummary": "这页教你如何在 OpenClaw 主配置中启用并设置 IRC 插件，以接入 IRC 服务器和频道。先看 Quick start 部分，按步骤填写 host、port、nick 等必填项。最容易搞错的是 access control：allowFrom 仅用于私聊，频道发言权限需单独配置 groupAllowFrom 或 groups[\"#channel\"].allowFrom。"
+    "heroTitle": "IRC 接入：先分清“谁能在频道里用”和“谁能在私聊里用”",
+    "heroSummary": "配置 IRC 时最容易踩的坑是把 `allowFrom` 当成频道权限——它只管私聊；频道里谁可以触发 bot 要设 `groupAllowFrom` 或每个频道的 `allowFrom`。另外，`groupPolicy` 默认是 `allowlist`，没列在 `groups` 里的频道 bot 根本不听。"
   }
 }

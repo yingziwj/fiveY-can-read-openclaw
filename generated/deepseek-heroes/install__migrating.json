@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:48:41.210Z",
+  "generatedAt": "2026-05-06T15:05:36.075Z",
   "pathname": "/install/migrating",
   "title": "Migration Guide",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "将OpenClaw网关完整迁移到新机器",
-    "heroSummary": "本页指导如何将OpenClaw网关的配置、认证、会话和频道状态完整迁移到新机器，无需重新配置。迁移的核心是复制整个状态目录（默认~/.openclaw/）和工作区文件，最常见的错误是只复制了openclaw.json配置文件而遗漏了认证文件和频道状态。迁移后务必检查频道连接状态和会话是否正常显示。"
+    "heroTitle": "迁移 OpenClaw 到新机器：别只拷配置文件",
+    "heroSummary": "迁移的核心是复制整个状态目录（默认 ~/.openclaw/）和工作区，而不是只拷 openclaw.json。最容易翻车的是忘记匹配旧机器的 profile 或状态目录路径，导致频道全部掉线。迁移后务必用 openclaw status 和 dashboard 验证频道连接和会话是否完整。"
   }
 }

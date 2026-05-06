@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>setup 命令：setup | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="setup 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>setup | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="openclaw setup 会初始化配置文件 ~/.openclaw/openclaw.json 和 agent 工作目录。不加任何选项只是初始化，带上 --wizard 才会进入完整的引导流程。最易错的是以为直接运行就能完成所有配置——实际上引导需要显式指定 --wizard 或 --non-interactiv…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="setup 命令：setup | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="setup 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="setup | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="openclaw setup 会初始化配置文件 ~/.openclaw/openclaw.json 和 agent 工作目录。不加任何选项只是初始化，带上 --wizard 才会进入完整的引导流程。最易错的是以为直接运行就能完成所有配置——实际上引导需要显式指定 --wizard 或 --non-interactiv…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/setup/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="setup 命令：setup | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="setup 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="setup | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="openclaw setup 会初始化配置文件 ~/.openclaw/openclaw.json 和 agent 工作目录。不加任何选项只是初始化，带上 --wizard 才会进入完整的引导流程。最易错的是以为直接运行就能完成所有配置——实际上引导需要显式指定 --wizard 或 --non-interactiv…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/setup/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"setup 命令：setup","description":"setup 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/setup/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"setup","description":"openclaw setup 会初始化配置文件 ~/.openclaw/openclaw.json 和 agent 工作目录。不加任何选项只是初始化，带上 --wizard 才会进入完整的引导流程。最易错的是以为直接运行就能完成所有配置——实际上引导需要显式指定 --wizard 或 --non-interactiv…","url":"https://fivey-can-read-openclaw.pages.dev/cli/setup/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/setup/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>初始化 OpenClaw 配置和工作空间</h1>
-        <p class="hero-copy">运行 openclaw setup 命令来创建配置文件 ~/.openclaw/openclaw.json 并设置 agent 工作空间。首次使用建议加上 --wizard 参数进入交互式引导流程，注意不带任何参数时只会初始化基础配置而不会启动完整引导。</p>
+        <h1>第一次用 OpenClaw？先跑这条命令</h1>
+        <p class="hero-copy">`openclaw setup` 会初始化配置文件 `~/.openclaw/openclaw.json` 和 agent 工作目录。不加任何选项只是初始化，带上 `--wizard` 才会进入完整的引导流程。最易错的是以为直接运行就能完成所有配置——实际上引导需要显式指定 `--wizard` 或 `--non-interactive` 等选项。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.setup.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧰 `openclaw setup` 像“先把新家收拾好，再把小工人请进门”</h2>
-      <p>这页讲的是最开始的第一步。还没开始跑复杂功能前，先把 `~/.openclaw/openclaw.json` 和工作区准备好，像先把床铺、桌子和门牌都摆齐。</p>
-      <p>它不是在炫耀命令。它是在帮你把房间搭起来，让 OpenClaw 后面能住得稳、跑得顺。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>第一次用 OpenClaw？先跑这条命令</h2>
+      <p>`openclaw setup` 会初始化配置文件 `~/.openclaw/openclaw.json` 和 agent 工作目录。不加任何选项只是初始化，带上 `--wizard` 才会进入完整的引导流程。最易错的是以为直接运行就能完成所有配置——实际上引导需要显式指定 `--wizard` 或 `--non-interactive` 等选项。</p>
     </div>
     <div class="overview-meta">
-      <span>适合第一次安装、第一次起步、第一次把家当摆进来的人</span>
-      <span>这页最重要的是记住：setup 是“打地基”，不是“开始工作本身”</span>
+      <span>原文共 3 节，先看 Start Here</span>
+      <span>路径：/cli/setup</span>
       <a href="https://docs.openclaw.ai/cli/setup" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

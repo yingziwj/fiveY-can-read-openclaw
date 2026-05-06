@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kubernetes 安装：Kubernetes | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Kubernetes 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Kubernetes | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这页不是生产级部署，而是让你在已有集群上快速跑起来的最小配置。先执行 ./scripts/k8s/deploy.sh 并设置好模型提供商的 API Key，部署后记得用 kubectl get secret 拿 Control UI 的共享密钥，默认开启了 token 认证。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Kubernetes 安装：Kubernetes | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Kubernetes 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Kubernetes | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这页不是生产级部署，而是让你在已有集群上快速跑起来的最小配置。先执行 ./scripts/k8s/deploy.sh 并设置好模型提供商的 API Key，部署后记得用 kubectl get secret 拿 Control UI 的共享密钥，默认开启了 token 认证。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/install/kubernetes/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Kubernetes 安装：Kubernetes | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Kubernetes 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Kubernetes | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这页不是生产级部署，而是让你在已有集群上快速跑起来的最小配置。先执行 ./scripts/k8s/deploy.sh 并设置好模型提供商的 API Key，部署后记得用 kubectl get secret 拿 Control UI 的共享密钥，默认开启了 token 认证。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/install/kubernetes/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Kubernetes 安装：Kubernetes","description":"Kubernetes 安装是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/install/kubernetes/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Kubernetes","description":"这页不是生产级部署，而是让你在已有集群上快速跑起来的最小配置。先执行 ./scripts/k8s/deploy.sh 并设置好模型提供商的 API Key，部署后记得用 kubectl get secret 拿 Control UI 的共享密钥，默认开启了 token 认证。","url":"https://fivey-can-read-openclaw.pages.dev/install/kubernetes/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Install","item":"https://fivey-can-read-openclaw.pages.dev/install/kubernetes/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Install 导读</p>
-        <h1>在Kubernetes上部署OpenClaw的快速指南</h1>
-        <p class="hero-copy">这页提供在Kubernetes上运行OpenClaw的最小化部署方案，不是生产就绪的配置。部署前需要准备好Kubernetes集群、kubectl工具和至少一个模型提供商的API密钥。最容易出错的地方是忘记设置API密钥环境变量，这会导致部署后无法正常连接AI模型服务。</p>
+        <h1>K8s 部署：一条命令拉起 OpenClaw，先配好 API Key</h1>
+        <p class="hero-copy">这页不是生产级部署，而是让你在已有集群上快速跑起来的最小配置。先执行 `./scripts/k8s/deploy.sh` 并设置好模型提供商的 API Key，部署后记得用 `kubectl get secret` 拿 Control UI 的共享密钥，默认开启了 token 认证。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:install.kubernetes.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>☸️ Kubernetes 这页，其实是在教你“把 OpenClaw 放进一个很会管很多盒子的超级仓库里”</h2>
-      <p>官方一开始就很诚实：这不是完整生产方案，而是最小起步版。意思不是它不能用，而是它只先搭最核心的骨架，剩下的要你按自己环境再加。</p>
-      <p>所以这页更像一份“最小骨架图”，不是包治百病的成品模板。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>K8s 部署：一条命令拉起 OpenClaw，先配好 API Key</h2>
+      <p>这页不是生产级部署，而是让你在已有集群上快速跑起来的最小配置。先执行 `./scripts/k8s/deploy.sh` 并设置好模型提供商的 API Key，部署后记得用 `kubectl get secret` 拿 Control UI 的共享密钥，默认开启了 token 认证。</p>
     </div>
     <div class="overview-meta">
-      <span>适合已经有 Kubernetes 集群的人</span>
-      <span>重点是最小资源集、Secret、PVC、port-forward</span>
+      <span>原文共 18 节，先看 Start Here</span>
+      <span>路径：/install/kubernetes</span>
       <a href="https://docs.openclaw.ai/install/kubernetes" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

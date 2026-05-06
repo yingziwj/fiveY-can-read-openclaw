@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:52:37.208Z",
+  "generatedAt": "2026-05-06T15:07:45.576Z",
   "pathname": "/platforms/mac/permissions",
   "title": "macOS Permissions",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "macOS权限配置与故障恢复指南",
-    "heroSummary": "本页详细说明macOS权限(TCC)的稳定配置要求，包括应用签名、路径和标识符的一致性。开发者应优先检查应用签名和路径是否稳定，这是权限丢失最常见的原因。特别注意临时签名每次构建都会生成新身份，导致系统遗忘已授权限且不再弹出提示。"
+    "heroTitle": "macOS 权限一换路径就丢，恢复步骤在这里",
+    "heroSummary": "macOS 的 TCC 权限和 App 的签名、路径、Bundle ID 绑定，任何一个变了权限就会消失。如果权限提示不出现，先检查签名是否为真证书，再按恢复清单操作：退出 App → 清除系统设置中的条目 → 用 tccutil 重置。"
   }
 }

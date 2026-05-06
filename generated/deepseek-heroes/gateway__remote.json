@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:51:52.623Z",
+  "generatedAt": "2026-05-06T15:07:22.191Z",
   "pathname": "/gateway/remote",
   "title": "Remote Access",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "远程访问网关的两种核心模式",
-    "heroSummary": "这页讲如何通过SSH隧道或Tailscale网络远程连接网关主机，让代理程序在专用服务器上持续运行。你应该先确定自己的使用场景：是需要网关24小时在线，还是仅临时从笔记本电脑远程控制。最容易搞错的是混淆网关主机和客户端角色，网关必须绑定到本地回环端口，远程连接时才需要隧道转发。"
+    "heroTitle": "远程接入：分清谁跑代理、谁连进来",
+    "heroSummary": "这一页讲的是如何让 Gateway 跑在一台常开机器上，其他设备通过 SSH 隧道或 tailnet 连过去。最该先看“Start Here”里的两条线：操作端走 SSH 隧道，节点端走 WebSocket。容易搞错的是——Gateway 绑定的是 loopback，必须手动转发端口才能远程访问，不是配个 IP 就能直连。"
   }
 }

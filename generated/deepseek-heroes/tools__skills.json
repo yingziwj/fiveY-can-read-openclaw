@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:51:00.378Z",
+  "generatedAt": "2026-05-06T15:06:56.193Z",
   "pathname": "/tools/skills",
   "title": "Skills",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "OpenClaw技能配置与加载优先级详解",
-    "heroSummary": "这页详细说明OpenClaw如何通过AgentSkills兼容的文件夹结构加载技能，以及多来源技能之间的优先级规则。配置时最需注意技能加载的六个来源及其冲突解决顺序，特别是workspace技能优先级最高。在多代理环境中，要区分个人技能、项目技能和共享技能的不同作用范围，避免权限混淆。"
+    "heroTitle": "技能目录的加载顺序与覆盖规则",
+    "heroSummary": "OpenClaw 从 6 个位置加载技能目录，同名时按 workspace > .agents > ~/.agents > ~/.openclaw > bundled > extraDirs 的优先级覆盖。注意技能位置和可见性是两回事——位置决定哪个副本生效，allowlist 决定哪些技能能被 agent 使用，且 agent 自己的 skills 列表会完全替换 defaults，不会合并。"
   }
 }

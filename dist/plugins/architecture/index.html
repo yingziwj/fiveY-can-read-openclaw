@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>插件内部机制：Plugin Internals | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="插件内部机制是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Plugin Internals | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页是OpenClaw插件系统的深度架构参考，不是入门教程。核心是“能力模型”（Capability Model）：每个原生插件通过注册一个或多个能力类型（如文本推理、语音、频道等）来声明自己的功能。如果你要开发新插件，先看“能力类型”表格，明确你的插件该注册哪个能力；最容易搞错的是“钩子（hook）插件”和“能力…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="插件内部机制：Plugin Internals | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="插件内部机制是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Plugin Internals | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页是OpenClaw插件系统的深度架构参考，不是入门教程。核心是“能力模型”（Capability Model）：每个原生插件通过注册一个或多个能力类型（如文本推理、语音、频道等）来声明自己的功能。如果你要开发新插件，先看“能力类型”表格，明确你的插件该注册哪个能力；最容易搞错的是“钩子（hook）插件”和“能力…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/plugins/architecture/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="插件内部机制：Plugin Internals | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="插件内部机制是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Plugin Internals | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页是OpenClaw插件系统的深度架构参考，不是入门教程。核心是“能力模型”（Capability Model）：每个原生插件通过注册一个或多个能力类型（如文本推理、语音、频道等）来声明自己的功能。如果你要开发新插件，先看“能力类型”表格，明确你的插件该注册哪个能力；最容易搞错的是“钩子（hook）插件”和“能力…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/plugins/architecture/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"插件内部机制：Plugin Internals","description":"插件内部机制是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/plugins/architecture/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Plugin Internals","description":"这一页是OpenClaw插件系统的深度架构参考，不是入门教程。核心是“能力模型”（Capability Model）：每个原生插件通过注册一个或多个能力类型（如文本推理、语音、频道等）来声明自己的功能。如果你要开发新插件，先看“能力类型”表格，明确你的插件该注册哪个能力；最容易搞错的是“钩子（hook）插件”和“能力…","url":"https://fivey-can-read-openclaw.pages.dev/plugins/architecture/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Plugins","item":"https://fivey-can-read-openclaw.pages.dev/plugins/architecture/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Plugins 导读</p>
-        <h1>OpenClaw插件内部架构详解</h1>
-        <p class="hero-copy">本页是OpenClaw插件系统的深度架构参考，详细解释了插件的公共能力模型、分类形态和兼容性策略。如果你正在开发或维护插件，需要了解插件如何通过能力注册与系统交互，以及不同插件形态（如纯能力、混合能力、仅钩子）的设计差异。特别注意：外部插件在采用新能力模型时，相关辅助接口可能仍在演进，需关注文档中的稳定性标记。</p>
+        <h1>插件系统内部架构：能力模型与兼容性</h1>
+        <p class="hero-copy">这一页是OpenClaw插件系统的深度架构参考，不是入门教程。核心是“能力模型”（Capability Model）：每个原生插件通过注册一个或多个能力类型（如文本推理、语音、频道等）来声明自己的功能。如果你要开发新插件，先看“能力类型”表格，明确你的插件该注册哪个能力；最容易搞错的是“钩子（hook）插件”和“能力插件”的区别——钩子插件不注册任何能力，只通过钩子介入流程，虽然仍受支持，但官方推荐新插件优先使用能力注册。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:plugins.architecture.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🏗 Plugin Internals，就是插件肚子里那张路线图</h2>
-      <p>这页讲的是插件内部怎么拼起来：入口、注册、生命周期、能力、运行时。</p>
-      <p>它不是单页功能说明，而是整个插件系统的“骨架图”。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>插件系统内部架构：能力模型与兼容性</h2>
+      <p>这一页是OpenClaw插件系统的深度架构参考，不是入门教程。核心是“能力模型”（Capability Model）：每个原生插件通过注册一个或多个能力类型（如文本推理、语音、频道等）来声明自己的功能。如果你要开发新插件，先看“能力类型”表格，明确你的插件该注册哪个能力；最容易搞错的是“钩子（hook）插件”和“能力插件”的区别——钩子插件不注册任何能力，只通过钩子介入流程，虽然仍受支持，但官方推荐新插件优先使用能力注册。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想看插件内部怎么连线的人</span>
-      <span>重点是生命周期、注册流程、和能力边界</span>
+      <span>原文共 40 节，先看 Start Here</span>
+      <span>路径：/plugins/architecture</span>
       <a href="https://docs.openclaw.ai/plugins/architecture" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

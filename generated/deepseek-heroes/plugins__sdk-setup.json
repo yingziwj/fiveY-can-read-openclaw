@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:49:35.447Z",
+  "generatedAt": "2026-05-06T15:06:06.596Z",
   "pathname": "/plugins/sdk-setup",
   "title": "Plugin Setup and Config",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "插件配置字段详解",
-    "heroSummary": "这页详细说明了在package.json中配置OpenClaw插件所需的openclaw字段，包括channel、install等关键部分。你应该先看package metadata部分，了解如何为channel或provider插件填写基础字段。最容易出错的是install字段中的minHostVersion版本格式和allowInvalidConfigRecovery的适用范围，这些配置直接影响插件的安装和运行。"
+    "heroTitle": "插件打包到底要填哪些字段？",
+    "heroSummary": "这一页是插件打包的参考手册，不是教程。先看 `package.json` 里的 `openclaw` 字段——它决定了你的插件是频道插件还是 Provider 插件，以及系统怎么发现它。最容易搞错的是 `openclaw.install.minHostVersion`：它不是在文档里写一句“要求版本”，而是会强制阻止旧版本加载插件，填错会导致插件装不上。"
   }
 }

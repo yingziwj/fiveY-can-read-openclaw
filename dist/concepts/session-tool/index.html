@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Session 工具：Session Tools | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Session 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Session Tools | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Session Tools 是 OpenClaw 给 Agent 的跨会话工具箱，核心是 8 个工具。最常用的是 sessions_send（跨会话发消息并等回复）和 sessions_spawn（派子 Agent 后台干活）。注意 sessions_history 默认不展示工具调用结果，需要加 includeTo…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Session 工具：Session Tools | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Session 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Session Tools | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Session Tools 是 OpenClaw 给 Agent 的跨会话工具箱，核心是 8 个工具。最常用的是 sessions_send（跨会话发消息并等回复）和 sessions_spawn（派子 Agent 后台干活）。注意 sessions_history 默认不展示工具调用结果，需要加 includeTo…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/session-tool/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Session 工具：Session Tools | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Session 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Session Tools | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Session Tools 是 OpenClaw 给 Agent 的跨会话工具箱，核心是 8 个工具。最常用的是 sessions_send（跨会话发消息并等回复）和 sessions_spawn（派子 Agent 后台干活）。注意 sessions_history 默认不展示工具调用结果，需要加 includeTo…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/session-tool/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Session 工具：Session Tools","description":"Session 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/concepts/session-tool/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Session Tools","description":"Session Tools 是 OpenClaw 给 Agent 的跨会话工具箱，核心是 8 个工具。最常用的是 sessions_send（跨会话发消息并等回复）和 sessions_spawn（派子 Agent 后台干活）。注意 sessions_history 默认不展示工具调用结果，需要加 includeTo…","url":"https://fivey-can-read-openclaw.pages.dev/concepts/session-tool/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Concepts","item":"https://fivey-can-read-openclaw.pages.dev/concepts/session-tool/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Concepts 导读</p>
-        <h1>跨会话工具：列表、通信与子代理管理</h1>
-        <p class="hero-copy">这页详细列出了OpenClaw中用于跨会话操作的工具集，包括会话列表查询、历史记录读取、消息发送和子代理控制。使用sessions_send发送消息时，务必设置timeoutSeconds参数来控制是否等待回复，这是最易出错的地方。sessions_history默认会过滤工具调用结果，需要includeTools: true才能查看完整记录。</p>
+        <h1>让 Agent 跨会话干活：发消息、查记录、派子任务</h1>
+        <p class="hero-copy">Session Tools 是 OpenClaw 给 Agent 的跨会话工具箱，核心是 8 个工具。最常用的是 sessions_send（跨会话发消息并等回复）和 sessions_spawn（派子 Agent 后台干活）。注意 sessions_history 默认不展示工具调用结果，需要加 includeTools: true 才能看到。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:concepts.session-tool.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>📮 <code>Session Tools</code> 像“专门管会话的小邮局”</h2>
-      <p>这组工具的目标很明确：少而稳，专门用来列会话、看历史、往别的会话里送消息，顺便还能开一个分身会话。</p>
-      <p>它不是一个很大很杂的工具柜，而是一套小而硬的邮政流水线。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>让 Agent 跨会话干活：发消息、查记录、派子任务</h2>
+      <p>Session Tools 是 OpenClaw 给 Agent 的跨会话工具箱，核心是 8 个工具。最常用的是 sessions_send（跨会话发消息并等回复）和 sessions_spawn（派子 Agent 后台干活）。注意 sessions_history 默认不展示工具调用结果，需要加 includeTools: true 才能看到。</p>
     </div>
     <div class="overview-meta">
-      <span>适合要跨 session 查历史、送消息、起子会话的人</span>
-      <span>这页最重要的是记住：会话 key 有固定格式，main / group / cron / hook / node 各有各的门牌</span>
+      <span>原文共 8 节，先看 Start Here</span>
+      <span>路径：/concepts/session-tool</span>
       <a href="https://docs.openclaw.ai/concepts/session-tool" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

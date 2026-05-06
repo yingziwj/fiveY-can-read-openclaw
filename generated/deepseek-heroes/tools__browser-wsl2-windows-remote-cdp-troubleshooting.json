@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:50:33.765Z",
+  "generatedAt": "2026-05-06T15:06:35.118Z",
   "pathname": "/tools/browser-wsl2-windows-remote-cdp-troubleshooting",
   "title": "WSL2 + Windows + remote Chrome CDP troubleshooting",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "WSL2与Windows间远程控制Chrome的排错指南",
-    "heroSummary": "这页专门解决OpenClaw网关在WSL2、Chrome在Windows时，跨系统控制浏览器的配置问题。先根据你的部署模式选择正确的浏览器连接方式，避免用错本地模式导致连接失败。最容易错的是把WSL2到Windows的远程连接误配置为仅限本机的Chrome MCP模式。"
+    "heroTitle": "WSL2 里的 Gateway 怎么控制 Windows 上的 Chrome？",
+    "heroSummary": "先选对浏览器模式：WSL2 里的 Gateway 必须用 raw remote CDP 模式，不能选 Chrome MCP（那是给同机用的）。最容易踩的坑是多个问题同时出现，导致你修错层——先确认 WSL2 能访问 Windows 的 CDP 端口（默认 9222），再检查浏览器配置。"
   }
 }

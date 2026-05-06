@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>设置：Setup | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="设置是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Setup | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="你的个性化配置（skills、prompts）必须放在 ~/.openclaw/workspace，全局配置在 ~/.openclaw/openclaw.json，这样更新代码才不会覆盖你的定制。初次跑 openclaw setup 一键初始化；想自己控制 Gateway 就用 pnpm gateway:watch…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="设置：Setup | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="设置是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Setup | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="你的个性化配置（skills、prompts）必须放在 ~/.openclaw/workspace，全局配置在 ~/.openclaw/openclaw.json，这样更新代码才不会覆盖你的定制。初次跑 openclaw setup 一键初始化；想自己控制 Gateway 就用 pnpm gateway:watch…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/start/setup/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="设置：Setup | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="设置是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Setup | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="你的个性化配置（skills、prompts）必须放在 ~/.openclaw/workspace，全局配置在 ~/.openclaw/openclaw.json，这样更新代码才不会覆盖你的定制。初次跑 openclaw setup 一键初始化；想自己控制 Gateway 就用 pnpm gateway:watch…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/start/setup/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"设置：Setup","description":"设置是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/start/setup/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Setup","description":"你的个性化配置（skills、prompts）必须放在 ~/.openclaw/workspace，全局配置在 ~/.openclaw/openclaw.json，这样更新代码才不会覆盖你的定制。初次跑 openclaw setup 一键初始化；想自己控制 Gateway 就用 pnpm gateway:watch…","url":"https://fivey-can-read-openclaw.pages.dev/start/setup/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Start","item":"https://fivey-can-read-openclaw.pages.dev/start/setup/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Start 导读</p>
-        <h1>OpenClaw 安装与配置指南</h1>
-        <p class="hero-copy">这页详细说明 OpenClaw 的两种安装方式：稳定版 macOS 应用和前沿版源码运行。最关键的是配置文件的存放位置——定制化内容应放在 `~/.openclaw/` 目录下，这样更新系统时不会丢失个人设置。最容易出错的地方是混淆本地配置和源码仓库，导致更新后定制内容被覆盖。</p>
+        <h1>安装前先搞清两件事：配置放哪里、Gateway 怎么跑</h1>
+        <p class="hero-copy">你的个性化配置（skills、prompts）必须放在 `~/.openclaw/workspace`，全局配置在 `~/.openclaw/openclaw.json`，这样更新代码才不会覆盖你的定制。初次跑 `openclaw setup` 一键初始化；想自己控制 Gateway 就用 `pnpm gateway:watch` 启动，macOS 应用切到 Local 模式连它。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:start.setup.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🏡 <code>Setup</code> 像“把新家先安稳落地”</h2>
-      <p>这页不是在讲一堆艰深名词。它只是在说：先把房子摆好，再让 OpenClaw 真正住进去。</p>
-      <p>你可以把它想成安家手册。哪些东西放在家外面，哪些东西放在门口，哪些东西先用官方稳稳的方式跑起来，这页都帮你定好。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>安装前先搞清两件事：配置放哪里、Gateway 怎么跑</h2>
+      <p>你的个性化配置（skills、prompts）必须放在 `~/.openclaw/workspace`，全局配置在 `~/.openclaw/openclaw.json`，这样更新代码才不会覆盖你的定制。初次跑 `openclaw setup` 一键初始化；想自己控制 Gateway 就用 `pnpm gateway:watch` 启动，macOS 应用切到 Local 模式连它。</p>
     </div>
     <div class="overview-meta">
-      <span>适合第一次真正把 OpenClaw 放进电脑的人</span>
-      <span>这页最重要的不是“快”，而是“稳”</span>
+      <span>原文共 16 节，先看 Start Here</span>
+      <span>路径：/start/setup</span>
       <a href="https://docs.openclaw.ai/start/setup" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

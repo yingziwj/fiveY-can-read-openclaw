@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>认证 Credential Semantics：Auth Credential Semantics | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="认证 Credential Semantics是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Auth Credential Semantics | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这一页定义了所有凭证选择命令（如 resolveAuthProfileOrder、models status --probe）共用的 eligibility 和 resolution 语义。最容易踩的坑是：expires 字段格式不对或已过期会导致 profile 直接被判 ineligible，即使有 tokenR…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="认证 Credential Semantics：Auth Credential Semantics | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="认证 Credential Semantics是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Auth Credential Semantics | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这一页定义了所有凭证选择命令（如 resolveAuthProfileOrder、models status --probe）共用的 eligibility 和 resolution 语义。最容易踩的坑是：expires 字段格式不对或已过期会导致 profile 直接被判 ineligible，即使有 tokenR…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/auth-credential-semantics/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="认证 Credential Semantics：Auth Credential Semantics | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="认证 Credential Semantics是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Auth Credential Semantics | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这一页定义了所有凭证选择命令（如 resolveAuthProfileOrder、models status --probe）共用的 eligibility 和 resolution 语义。最容易踩的坑是：expires 字段格式不对或已过期会导致 profile 直接被判 ineligible，即使有 tokenR…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/auth-credential-semantics/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"认证 Credential Semantics：Auth Credential Semantics","description":"认证 Credential Semantics是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/auth-credential-semantics/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Auth Credential Semantics","description":"这一页定义了所有凭证选择命令（如 resolveAuthProfileOrder、models status --probe）共用的 eligibility 和 resolution 语义。最容易踩的坑是：expires 字段格式不对或已过期会导致 profile 直接被判 ineligible，即使有 tokenR…","url":"https://fivey-can-read-openclaw.pages.dev/auth-credential-semantics/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Auth Credential Semantics","item":"https://fivey-can-read-openclaw.pages.dev/auth-credential-semantics/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Auth Credential Semantics 导读</p>
-        <h1>认证凭据的生效与解析规则</h1>
-        <p class="hero-copy">本页定义了 `resolveAuthProfileOrder` 等工具在判断凭据是否可用、如何解析时的统一规则。阅读时请先关注 `expires` 字段的校验逻辑，这是最常见的配置错误点。当凭据引用（`tokenRef`）无法解析时，系统会返回 `unresolved_ref` 状态码，需检查引用路径是否正确。</p>
+        <h1>凭证选不中？先看这页的 eligibility 规则</h1>
+        <p class="hero-copy">这一页定义了所有凭证选择命令（如 resolveAuthProfileOrder、models status --probe）共用的 eligibility 和 resolution 语义。最容易踩的坑是：expires 字段格式不对或已过期会导致 profile 直接被判 ineligible，即使有 tokenRef 也救不回来。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,16 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:auth-credential-semantics.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🪪 Auth Credential Semantics，就是“门口保安用哪套规则判断这张票能不能进”</h2>
-      <p>它不是给用户看的花哨指南，而是给系统看的统一判定标准。谁能用、谁过期了、谁引用坏了，都要按同一套规则算。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>凭证选不中？先看这页的 eligibility 规则</h2>
+      <p>这一页定义了所有凭证选择命令（如 resolveAuthProfileOrder、models status --probe）共用的 eligibility 和 resolution 语义。最容易踩的坑是：expires 字段格式不对或已过期会导致 profile 直接被判 ineligible，即使有 tokenRef 也救不回来。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想理解凭证选择和失效规则的人</span>
-      <span>重点是 `reason code`、`tokenRef`、`expires`、解析顺序</span>
+      <span>原文共 9 节，先看 Start Here</span>
+      <span>路径：/auth-credential-semantics</span>
       <a href="https://docs.openclaw.ai/auth-credential-semantics" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

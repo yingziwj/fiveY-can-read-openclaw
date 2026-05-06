@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:53:17.553Z",
+  "generatedAt": "2026-05-06T15:08:21.209Z",
   "pathname": "/cli/agent",
   "title": "agent",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "通过命令行运行智能体任务",
-    "heroSummary": "使用 openclaw agent 命令通过网关或本地模式执行智能体任务，必须至少指定一个会话选择器（如 --to、--session-id 或 --agent）。最需要注意 --local 参数会强制使用嵌入式智能体，但仍会预加载插件注册表，确保插件功能可用。"
+    "heroTitle": "用 openclaw agent 发消息给 Agent，先选会话还是直接指定 Agent",
+    "heroSummary": "核心动作是 `openclaw agent --message \"...\"`，必须带 `--to`、`--session-id` 或 `--agent` 三者之一来定位会话。最容易踩的坑是 `--channel` 和 `--reply-channel` 只管回复投递，不影响会话路由；想强制走本地 Agent 加 `--local`，但插件注册表仍会预加载。"
   }
 }

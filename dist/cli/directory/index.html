@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>directory 命令：directory | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="directory 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>directory | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="openclaw directory 不是通讯录，而是帮你查出各平台用户/群组的 ID，这些 ID 是发给 message send 用的。不同渠道的 ID 格式完全不同（比如 Slack 要加 user: 前缀，WhatsApp 群组 ID 带 @g.us），查出来直接复制粘贴就行。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="directory 命令：directory | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="directory 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="directory | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="openclaw directory 不是通讯录，而是帮你查出各平台用户/群组的 ID，这些 ID 是发给 message send 用的。不同渠道的 ID 格式完全不同（比如 Slack 要加 user: 前缀，WhatsApp 群组 ID 带 @g.us），查出来直接复制粘贴就行。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/directory/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="directory 命令：directory | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="directory 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="directory | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="openclaw directory 不是通讯录，而是帮你查出各平台用户/群组的 ID，这些 ID 是发给 message send 用的。不同渠道的 ID 格式完全不同（比如 Slack 要加 user: 前缀，WhatsApp 群组 ID 带 @g.us），查出来直接复制粘贴就行。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/directory/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"directory 命令：directory","description":"directory 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/directory/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"directory","description":"openclaw directory 不是通讯录，而是帮你查出各平台用户/群组的 ID，这些 ID 是发给 message send 用的。不同渠道的 ID 格式完全不同（比如 Slack 要加 user: 前缀，WhatsApp 群组 ID 带 @g.us），查出来直接复制粘贴就行。","url":"https://fivey-can-read-openclaw.pages.dev/cli/directory/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/directory/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>openclaw directory 命令：查找联系人、群组和自身ID</h1>
-        <p class="hero-copy">这页讲解如何使用 openclaw directory 命令查找支持目录查询的频道（如联系人、群组和“我”）的ID，以便在其他命令（特别是 message send）中作为目标参数使用。使用前需注意 --channel 标志在配置多个频道时为必填项，且不同频道的ID格式各异（如 WhatsApp 用电话号码，Slack 用 user:U… 格式），输出默认为制表符分隔的 id 和 name，脚本处理时建议使用 --json 标志。</p>
+        <h1>用 directory 命令找到任何人的 ID，然后直接发消息</h1>
+        <p class="hero-copy">`openclaw directory` 不是通讯录，而是帮你查出各平台用户/群组的 ID，这些 ID 是发给 `message send` 用的。不同渠道的 ID 格式完全不同（比如 Slack 要加 `user:` 前缀，WhatsApp 群组 ID 带 `@g.us`），查出来直接复制粘贴就行。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.directory.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🗺️ <code>openclaw directory</code> 像“一个专门帮你找门牌号的小地图盒”</h2>
-      <p>这页不是在聊天，也不是在发消息。它是在帮你找地址。你看到的是名字，OpenClaw 想要的是能直接投递的 ID。</p>
-      <p>所以它最像一张小地图：先把人、群、房间这些名字翻出来，再把真正能用的门牌抄给别的命令。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用 directory 命令找到任何人的 ID，然后直接发消息</h2>
+      <p>`openclaw directory` 不是通讯录，而是帮你查出各平台用户/群组的 ID，这些 ID 是发给 `message send` 用的。不同渠道的 ID 格式完全不同（比如 Slack 要加 `user:` 前缀，WhatsApp 群组 ID 带 `@g.us`），查出来直接复制粘贴就行。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想把昵称、群名、房间名变成可复制 ID 的人</span>
-      <span>这页最重要的是记住：它负责找路，不负责送信</span>
+      <span>原文共 8 节，先看 Start Here</span>
+      <span>路径：/cli/directory</span>
       <a href="https://docs.openclaw.ai/cli/directory" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

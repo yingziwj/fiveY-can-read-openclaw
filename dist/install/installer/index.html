@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>安装器内部机制：Installer Internals | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="安装器内部机制是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Installer Internals | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="OpenClaw 提供三套安装脚本，分别对应 macOS/Linux/WSL 和 Windows。先搞清楚你该用哪个：install.sh 适合大多数交互式安装，install-cli.sh 不依赖 root，install.ps1 是 Windows 专属。最容易踩坑的是——如果从 OpenClaw 仓库内部运行脚…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="安装器内部机制：Installer Internals | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="安装器内部机制是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Installer Internals | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="OpenClaw 提供三套安装脚本，分别对应 macOS/Linux/WSL 和 Windows。先搞清楚你该用哪个：install.sh 适合大多数交互式安装，install-cli.sh 不依赖 root，install.ps1 是 Windows 专属。最容易踩坑的是——如果从 OpenClaw 仓库内部运行脚…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/install/installer/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="安装器内部机制：Installer Internals | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="安装器内部机制是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Installer Internals | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="OpenClaw 提供三套安装脚本，分别对应 macOS/Linux/WSL 和 Windows。先搞清楚你该用哪个：install.sh 适合大多数交互式安装，install-cli.sh 不依赖 root，install.ps1 是 Windows 专属。最容易踩坑的是——如果从 OpenClaw 仓库内部运行脚…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/install/installer/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"安装器内部机制：Installer Internals","description":"安装器内部机制是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/install/installer/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Installer Internals","description":"OpenClaw 提供三套安装脚本，分别对应 macOS/Linux/WSL 和 Windows。先搞清楚你该用哪个：install.sh 适合大多数交互式安装，install-cli.sh 不依赖 root，install.ps1 是 Windows 专属。最容易踩坑的是——如果从 OpenClaw 仓库内部运行脚…","url":"https://fivey-can-read-openclaw.pages.dev/install/installer/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Install","item":"https://fivey-can-read-openclaw.pages.dev/install/installer/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Install 导读</p>
-        <h1>OpenClaw 安装脚本内部机制详解</h1>
-        <p class="hero-copy">本文详细解析了 OpenClaw 提供的三个安装脚本（install.sh、install-cli.sh、install.ps1）的内部执行流程和平台差异。建议先根据你的操作系统和安装需求，在“Quick commands”部分找到对应的命令直接执行。最容易出错的地方是脚本会自动检测环境并安装依赖（如 Node.js、Git），如果系统已有特定版本或配置，可能需要手动干预或检查冲突。</p>
+        <h1>安装脚本到底在背后做了什么？</h1>
+        <p class="hero-copy">OpenClaw 提供三套安装脚本，分别对应 macOS/Linux/WSL 和 Windows。先搞清楚你该用哪个：`install.sh` 适合大多数交互式安装，`install-cli.sh` 不依赖 root，`install.ps1` 是 Windows 专属。最容易踩坑的是——如果从 OpenClaw 仓库内部运行脚本，它会询问你是用本地检出还是全局安装；没有 TTY 时默认走 npm 并给出警告，选错安装方法会直接退出码 2。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:install.installer.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧰 Installer Internals 这页，其实是在掀开安装车的后盖，告诉你里面有哪几位师傅在干活</h2>
-      <p>这页不是教你“怎么装”，而是教你“安装脚本背后到底怎么想”。如果你只想装好，普通安装页就够了；如果你想搞懂安装车的内部流程，这页才有意义。</p>
-      <p>官方把安装器分成三位师傅：<code>install.sh</code>、<code>install-cli.sh</code>、<code>install.ps1</code>。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>安装脚本到底在背后做了什么？</h2>
+      <p>OpenClaw 提供三套安装脚本，分别对应 macOS/Linux/WSL 和 Windows。先搞清楚你该用哪个：`install.sh` 适合大多数交互式安装，`install-cli.sh` 不依赖 root，`install.ps1` 是 Windows 专属。最容易踩坑的是——如果从 OpenClaw 仓库内部运行脚本，它会询问你是用本地检出还是全局安装；没有 TTY 时默认走 npm 并给出警告，选错安装方法会直接退出码 2。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想读懂安装器内部逻辑的人</span>
-      <span>重点是三种脚本各管什么</span>
+      <span>原文共 13 节，先看 Start Here</span>
+      <span>路径：/install/installer</span>
       <a href="https://docs.openclaw.ai/install/installer" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

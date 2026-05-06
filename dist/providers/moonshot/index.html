@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moonshot AI 提供商：Moonshot AI | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Moonshot AI 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Moonshot AI | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="配置 Moonshot 时，先选好国际版或国内版 endpoint，然后通过 openclaw onboard --auth-choice 完成接入。Kimi K2.5 是默认模型，但如果你要用 Kimi Coding，记得切到 kimi/ 前缀的 provider。最容易踩的坑：Moonshot 和 Kimi Co…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Moonshot AI 提供商：Moonshot AI | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Moonshot AI 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Moonshot AI | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="配置 Moonshot 时，先选好国际版或国内版 endpoint，然后通过 openclaw onboard --auth-choice 完成接入。Kimi K2.5 是默认模型，但如果你要用 Kimi Coding，记得切到 kimi/ 前缀的 provider。最容易踩的坑：Moonshot 和 Kimi Co…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/providers/moonshot/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Moonshot AI 提供商：Moonshot AI | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Moonshot AI 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Moonshot AI | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="配置 Moonshot 时，先选好国际版或国内版 endpoint，然后通过 openclaw onboard --auth-choice 完成接入。Kimi K2.5 是默认模型，但如果你要用 Kimi Coding，记得切到 kimi/ 前缀的 provider。最容易踩的坑：Moonshot 和 Kimi Co…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/providers/moonshot/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Moonshot AI 提供商：Moonshot AI","description":"Moonshot AI 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/providers/moonshot/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Moonshot AI","description":"配置 Moonshot 时，先选好国际版或国内版 endpoint，然后通过 openclaw onboard --auth-choice 完成接入。Kimi K2.5 是默认模型，但如果你要用 Kimi Coding，记得切到 kimi/ 前缀的 provider。最容易踩的坑：Moonshot 和 Kimi Co…","url":"https://fivey-can-read-openclaw.pages.dev/providers/moonshot/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Providers","item":"https://fivey-can-read-openclaw.pages.dev/providers/moonshot/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Providers 导读</p>
-        <h1>配置 Moonshot AI (Kimi) 接入</h1>
-        <p class="hero-copy">这页教你如何配置 Moonshot AI 的 Kimi API 和 Kimi Coding，包括设置 API 密钥、选择模型和配置网络搜索。先看 Start Here 部分了解基本模型 ID 和配置结构，最容易错的是混淆 moonshot/ 和 kimi/ 前缀的模型引用，以及选错 API 端点（国际版或中国版）。</p>
+        <h1>Moonshot 和 Kimi Coding 是两套独立的 provider，API Key 和模型 ref 都不互通</h1>
+        <p class="hero-copy">配置 Moonshot 时，先选好国际版或国内版 endpoint，然后通过 `openclaw onboard --auth-choice` 完成接入。Kimi K2.5 是默认模型，但如果你要用 Kimi Coding，记得切到 `kimi/` 前缀的 provider。最容易踩的坑：Moonshot 和 Kimi Coding 的 key 不能混用，endpoint 也不同。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🌙 Moonshot 这页，其实是在提醒你：Moonshot 和 Kimi Coding 是两扇不同的门</h2><p>很多人一看到都是 Kimi，就以为同一把钥匙全能开。官方专门强调不是这样。Moonshot API 和 Kimi Coding 是两套门、两把钥匙、两种模型前缀。</p></div><div class="overview-meta"><span>适合想接 Kimi 系列模型的人</span><span>重点是 Moonshot 和 Kimi Coding 分家、thinking 开关</span><a href="https://docs.openclaw.ai/providers/moonshot" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:providers.moonshot.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Moonshot 和 Kimi Coding 是两套独立的 provider，API Key 和模型 ref 都不互通</h2>
+      <p>配置 Moonshot 时，先选好国际版或国内版 endpoint，然后通过 `openclaw onboard --auth-choice` 完成接入。Kimi K2.5 是默认模型，但如果你要用 Kimi Coding，记得切到 `kimi/` 前缀的 provider。最容易踩的坑：Moonshot 和 Kimi Coding 的 key 不能混用，endpoint 也不同。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/providers/moonshot</span>
+      <a href="https://docs.openclaw.ai/providers/moonshot" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一步</p><h2>🚪 先分清两扇门：<code>moonshot/...</code> 和 <code>kimi-coding/...</code></h2><p>这是这页最重要的一件事。别混。</p></div><div class="story-grid"><div class="story-card"><div class="story-card-label">🌙 Moonshot API</div><p>像 Moonshot 自家的主门，模型前缀写成 <code>moonshot/...</code>。</p></div><div class="story-card"><div class="story-card-label">💻 Kimi Coding</div><p>像给编程场景准备的另一扇门，前缀写成 <code>kimi-coding/...</code>。</p></div><div class="source-card"><div class="story-card-label">⚠️ 为什么官方重复强调</div><p>因为这两扇门的钥匙不通用，入口地址也不一样。拿错钥匙去敲门，只会撞门。</p></div></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第二步</p><h2>🧠 Kimi 这些型号，主要是在区分“普通答题”和“思考版”</h2><p><code>kimi-k2.5</code>、<code>kimi-k2-thinking</code> 这一串名字，看起来像很多新脑子，其实有一条主轴很清楚。</p></div><div class="home-grid"><article class="home-card"><span class="home-card-index">💬</span><h2><code>kimi-k2.5</code></h2><p>像普通答题版老师。</p></article><article class="home-card"><span class="home-card-index">🤔</span><h2><code>kimi-k2-thinking</code></h2><p>像会多想几步的思考版老师。</p></article><article class="home-card"><span class="home-card-index">⚡</span><h2><code>turbo</code></h2><p>像同一路老师里的加速档。</p></article><article class="home-card"><span class="home-card-index">🎈</span><h2>一句话</h2><p>大方向还是普通版和思考版，再加一个快一点的档位。</p></article></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第三步</p><h2>🪄 native thinking 像“给 Kimi 戴上或摘掉思考帽”</h2><p>这页最后那段最值得翻成人话，因为它其实很好懂。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label"><code>thinking: { type: "enabled" }</code></div><p>像明确说：“这轮把思考帽戴上。”</p></div><div class="source-card"><div class="story-card-label"><code>thinking: { type: "disabled" }</code></div><p>像说：“别拐弯了，直接答。”</p></div><div class="source-card"><div class="story-card-label"><code>/think off</code></div><p>像会话现场把思考帽摘掉。</p></div><div class="source-card"><div class="story-card-label">工具选择为什么会被自动改</div><p>官方说当 thinking 开着时，某些 <code>tool_choice</code> 不兼容，所以 OpenClaw 会像现场协调员一样，自动把不合适的工具选择改回能兼容的 <code>auto</code>。</p></div></div></section>

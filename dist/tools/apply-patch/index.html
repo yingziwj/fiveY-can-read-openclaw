@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>apply_patch 工具：apply_patch Tool | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="apply_patch 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>apply_patch Tool | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="一次性提交多个文件的新增、修改、删除操作，用 *** Begin Patch 和 *** End Patch 包裹。默认只允许写工作区内的路径，想写外部需关闭 workspaceOnly。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="apply_patch 工具：apply_patch Tool | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="apply_patch 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="apply_patch Tool | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="一次性提交多个文件的新增、修改、删除操作，用 *** Begin Patch 和 *** End Patch 包裹。默认只允许写工作区内的路径，想写外部需关闭 workspaceOnly。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/tools/apply-patch/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="apply_patch 工具：apply_patch Tool | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="apply_patch 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="apply_patch Tool | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="一次性提交多个文件的新增、修改、删除操作，用 *** Begin Patch 和 *** End Patch 包裹。默认只允许写工作区内的路径，想写外部需关闭 workspaceOnly。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/tools/apply-patch/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"apply_patch 工具：apply_patch Tool","description":"apply_patch 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/tools/apply-patch/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"apply_patch Tool","description":"一次性提交多个文件的新增、修改、删除操作，用 *** Begin Patch 和 *** End Patch 包裹。默认只允许写工作区内的路径，想写外部需关闭 workspaceOnly。","url":"https://fivey-can-read-openclaw.pages.dev/tools/apply-patch/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://fivey-can-read-openclaw.pages.dev/tools/apply-patch/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Tools 导读</p>
-        <h1>apply_patch 工具：用结构化补丁批量修改文件</h1>
-        <p class="hero-copy">这页教你如何用 apply_patch 工具，通过一个输入字符串批量增删改多个文件，适合需要原子性操作多个文件的场景。最该先看的是输入格式，必须严格包含 *** Begin Patch 和 *** End Patch 标记。最容易搞错的是路径设置，默认只能操作工作区内的文件，若需操作外部文件必须显式配置 workspaceOnly: false。</p>
+        <h1>批量改文件用 apply_patch，比单次 edit 更稳</h1>
+        <p class="hero-copy">一次性提交多个文件的新增、修改、删除操作，用 `*** Begin Patch` 和 `*** End Patch` 包裹。默认只允许写工作区内的路径，想写外部需关闭 `workspaceOnly`。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,23 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🩹 apply_patch 这页，其实是在讲“别手抠文件，直接交一张结构化补丁施工单”</h2><p>尤其多文件、多段改动时，这张施工单比零散 edit 更稳。</p></div><div class="overview-meta"><span>结构化补丁工具</span><span>重点是 Begin Patch / Update / Add / Delete</span><a href="https://docs.openclaw.ai/tools/apply-patch" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section><section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>📋 它像正式工单，不是随口说一句“帮我改下”</h2><p><code>*** Add File</code> 像新盖房，<code>*** Update File</code> 像翻修，<code>*** Delete File</code> 像拆房。</p></div></section>
+      <!-- handcrafted-source:tools.apply-patch.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>批量改文件用 apply_patch，比单次 edit 更稳</h2>
+      <p>一次性提交多个文件的新增、修改、删除操作，用 `*** Begin Patch` 和 `*** End Patch` 包裹。默认只允许写工作区内的路径，想写外部需关闭 `workspaceOnly`。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 4 节，先看 Start Here</span>
+      <span>路径：/tools/apply-patch</span>
+      <a href="https://docs.openclaw.ai/tools/apply-patch" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>📋 它像正式工单，不是随口说一句“帮我改下”</h2><p><code>*** Add File</code> 像新盖房，<code>*** Update File</code> 像翻修，<code>*** Delete File</code> 像拆房。</p></div></section>
 
 
       <footer class="page-footer">

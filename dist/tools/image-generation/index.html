@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Generation 工具：Image Generation | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Image Generation 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Image Generation | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="配置好任意一个图片生成 provider 的 API Key（如 OpenAI 或 Google），智能体就能在对话中自动调用 image_generate 工具生成并附上图片。默认启用，无需额外开启工具白名单。最易踩坑的是：不同 provider 支持的参数（尺寸、编辑张数）不同，当主 provider 不支持时系…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Image Generation 工具：Image Generation | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Image Generation 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Image Generation | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="配置好任意一个图片生成 provider 的 API Key（如 OpenAI 或 Google），智能体就能在对话中自动调用 image_generate 工具生成并附上图片。默认启用，无需额外开启工具白名单。最易踩坑的是：不同 provider 支持的参数（尺寸、编辑张数）不同，当主 provider 不支持时系…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/tools/image-generation/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Image Generation 工具：Image Generation | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Image Generation 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Image Generation | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="配置好任意一个图片生成 provider 的 API Key（如 OpenAI 或 Google），智能体就能在对话中自动调用 image_generate 工具生成并附上图片。默认启用，无需额外开启工具白名单。最易踩坑的是：不同 provider 支持的参数（尺寸、编辑张数）不同，当主 provider 不支持时系…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/tools/image-generation/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Image Generation 工具：Image Generation","description":"Image Generation 工具是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/tools/image-generation/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Image Generation","description":"配置好任意一个图片生成 provider 的 API Key（如 OpenAI 或 Google），智能体就能在对话中自动调用 image_generate 工具生成并附上图片。默认启用，无需额外开启工具白名单。最易踩坑的是：不同 provider 支持的参数（尺寸、编辑张数）不同，当主 provider 不支持时系…","url":"https://fivey-can-read-openclaw.pages.dev/tools/image-generation/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://fivey-can-read-openclaw.pages.dev/tools/image-generation/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Tools 导读</p>
-        <h1>配置和使用图像生成工具</h1>
-        <p class="hero-copy">这页教你如何让智能体通过配置好的提供商自动生成和编辑图片。首先检查是否有可用的图像生成提供商，如果没有，需要设置API密钥或配置默认模型。最容易出错的地方是参数兼容性，不同提供商支持的参数不同，系统会自动映射最接近的尺寸或比例，但结果会报告实际应用的设置。</p>
+        <h1>让智能体直接生成图片，只需配好一个 API Key</h1>
+        <p class="hero-copy">配置好任意一个图片生成 provider 的 API Key（如 OpenAI 或 Google），智能体就能在对话中自动调用 `image_generate` 工具生成并附上图片。默认启用，无需额外开启工具白名单。最易踩坑的是：不同 provider 支持的参数（尺寸、编辑张数）不同，当主 provider 不支持时系统会自动降级到 fallback，但返回的 `size` 等值会反映实际发送的配置，务必检查 `details.normalization` 确认是否发生了映射。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:tools.image-generation.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🖼 `image_generate` 像给代理一支会画画的手</h2>
-      <p>它能画图，也能改图，最后生成的图片会自动作为回复里的媒体附件出现。</p>
-      <p>这页最重要的是：只要有一个可用的图像 provider，这个工具通常就会自动出现。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>让智能体直接生成图片，只需配好一个 API Key</h2>
+      <p>配置好任意一个图片生成 provider 的 API Key（如 OpenAI 或 Google），智能体就能在对话中自动调用 `image_generate` 工具生成并附上图片。默认启用，无需额外开启工具白名单。最易踩坑的是：不同 provider 支持的参数（尺寸、编辑张数）不同，当主 provider 不支持时系统会自动降级到 fallback，但返回的 `size` 等值会反映实际发送的配置，务必检查 `details.normalization` 确认是否发生了映射。</p>
     </div>
     <div class="overview-meta">
-      <span>适合想让代理自动出图的人</span>
-      <span>重点是 provider 可用性和默认模型</span>
+      <span>原文共 9 节，先看 Start Here</span>
+      <span>路径：/tools/image-generation</span>
       <a href="https://docs.openclaw.ai/tools/image-generation" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

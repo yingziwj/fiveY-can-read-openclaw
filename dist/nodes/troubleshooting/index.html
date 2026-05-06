@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Node 故障排查：Node Troubleshooting | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Node 故障排查是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Node Troubleshooting | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="从 openclaw status 开始，按命令梯子逐级排查。最容易搞混的是配对（身份信任）与执行审批（命令权限）是两套独立机制——配对通过不代表 system.run 能用，后者需要单独配置节点的审批白名单。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Node 故障排查：Node Troubleshooting | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Node 故障排查是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Node Troubleshooting | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="从 openclaw status 开始，按命令梯子逐级排查。最容易搞混的是配对（身份信任）与执行审批（命令权限）是两套独立机制——配对通过不代表 system.run 能用，后者需要单独配置节点的审批白名单。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/nodes/troubleshooting/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Node 故障排查：Node Troubleshooting | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Node 故障排查是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Node Troubleshooting | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="从 openclaw status 开始，按命令梯子逐级排查。最容易搞混的是配对（身份信任）与执行审批（命令权限）是两套独立机制——配对通过不代表 system.run 能用，后者需要单独配置节点的审批白名单。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/nodes/troubleshooting/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Node 故障排查：Node Troubleshooting","description":"Node 故障排查是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/nodes/troubleshooting/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Node Troubleshooting","description":"从 openclaw status 开始，按命令梯子逐级排查。最容易搞混的是配对（身份信任）与执行审批（命令权限）是两套独立机制——配对通过不代表 system.run 能用，后者需要单独配置节点的审批白名单。","url":"https://fivey-can-read-openclaw.pages.dev/nodes/troubleshooting/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Nodes","item":"https://fivey-can-read-openclaw.pages.dev/nodes/troubleshooting/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Nodes 导读</p>
-        <h1>节点故障排查：状态可见但工具失效时的处理指南</h1>
-        <p class="hero-copy">当节点在状态中可见但节点工具失败时，使用此页进行排查。首先运行命令阶梯中的基础诊断命令，然后检查节点特定状态和权限。最容易混淆的是设备配对与执行批准的区别：配对是连接网关的身份验证，而执行批准控制节点本地运行特定命令的权限，两者需分别检查。</p>
+        <h1>节点能连上但工具报错？先跑这组命令</h1>
+        <p class="hero-copy">从 `openclaw status` 开始，按命令梯子逐级排查。最容易搞混的是配对（身份信任）与执行审批（命令权限）是两套独立机制——配对通过不代表 `system.run` 能用，后者需要单独配置节点的审批白名单。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🩺 Node Troubleshooting 这页，其实是在教你“节点明明在线，但工具就是不干活时，应该先查哪一层门”</h2><p>它不是一句“重启试试”，而是一张从总状态到节点能力再到权限的排查梯子。</p></div><div class="overview-meta"><span>节点故障排查梯子</span><span>重点是 status、describe、approvals、foreground、permissions</span><a href="https://docs.openclaw.ai/nodes/troubleshooting" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:nodes.troubleshooting.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>节点能连上但工具报错？先跑这组命令</h2>
+      <p>从 `openclaw status` 开始，按命令梯子逐级排查。最容易搞混的是配对（身份信任）与执行审批（命令权限）是两套独立机制——配对通过不代表 `system.run` 能用，后者需要单独配置节点的审批白名单。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 7 节，先看 Start Here</span>
+      <span>路径：/nodes/troubleshooting</span>
+      <a href="https://docs.openclaw.ai/nodes/troubleshooting" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一站</p><h2>🪜 先爬总梯子，再爬节点专用梯子</h2><p>别一上来就钻某个子命令，先看大门有没有开。</p></div><div class="story-grid"><div class="source-card"><div class="story-card-label"><code>openclaw status</code></div><p>像先看整栋楼总控板，有没有明显断电。</p></div><div class="source-card"><div class="story-card-label"><code>openclaw gateway status</code></div><p>确认总指挥室是不是在线。</p></div><div class="source-card"><div class="story-card-label"><code>openclaw logs --follow</code></div><p>像站在后台玻璃窗后面看现场，到底卡在哪一步。</p></div><div class="source-card"><div class="story-card-label"><code>openclaw nodes describe --node ...</code></div><p>再看具体这台 node 会不会你要调用的那个能力。</p></div></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第二站</p><h2>🚪 Node 工具失败，最常见其实是卡在三道门：前台、权限、审批</h2><p>把这三层分清，排查速度会快很多。</p></div><div class="home-grid"><article class="home-card"><span class="home-card-index">📱</span><h2>Foreground</h2><p><code>camera.*</code>、<code>canvas.*</code> 这类常要求 app 在前台，后台直接拒。</p></article><article class="home-card"><span class="home-card-index">🔐</span><h2>Permissions</h2><p>没给相机、屏幕录制、定位权限，再漂亮的命令也没戏。</p></article><article class="home-card"><span class="home-card-index">✅</span><h2>Device pairing</h2><p>这是“设备能不能连到网关”的门，不是命令执行审批门。</p></article><article class="home-card"><span class="home-card-index">📝</span><h2>Exec approvals</h2><p>这是 <code>system.run</code> 这种命令能不能在 node 主机上真正落地的另一道门。</p></article></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第三站</p><h2>🎈 最容易混的是 pairing 和 approvals，它们不是一回事</h2><p>能连上节点，不等于节点就被允许帮你跑 shell。一个是进楼门卡，一个是机房操作证。</p></div></section>

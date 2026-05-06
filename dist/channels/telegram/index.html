@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Telegram 通道：Telegram | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Telegram 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Telegram | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="配置分三步：在 BotFather 拿 token，写入 config 或环境变量，启动 gateway 后配对第一个 DM。最容易搞错的是 DM 配对只管私聊，群组发信权限要靠 allowFrom 里的数字 ID 显式授权。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Telegram 通道：Telegram | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Telegram 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Telegram | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="配置分三步：在 BotFather 拿 token，写入 config 或环境变量，启动 gateway 后配对第一个 DM。最容易搞错的是 DM 配对只管私聊，群组发信权限要靠 allowFrom 里的数字 ID 显式授权。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/channels/telegram/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Telegram 通道：Telegram | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Telegram 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Telegram | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="配置分三步：在 BotFather 拿 token，写入 config 或环境变量，启动 gateway 后配对第一个 DM。最容易搞错的是 DM 配对只管私聊，群组发信权限要靠 allowFrom 里的数字 ID 显式授权。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/channels/telegram/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Telegram 通道：Telegram","description":"Telegram 通道是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/channels/telegram/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Telegram","description":"配置分三步：在 BotFather 拿 token，写入 config 或环境变量，启动 gateway 后配对第一个 DM。最容易搞错的是 DM 配对只管私聊，群组发信权限要靠 allowFrom 里的数字 ID 显式授权。","url":"https://fivey-can-read-openclaw.pages.dev/channels/telegram/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Channels","item":"https://fivey-can-read-openclaw.pages.dev/channels/telegram/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Channels 导读</p>
-        <h1>Telegram 机器人接入配置指南</h1>
-        <p class="hero-copy">这页详细说明如何配置 Telegram 机器人，重点是设置 botToken 和 dmPolicy。最容易出错的地方是混淆 DM 配对授权与群组权限，配对只允许私聊，群组访问仍需在 allowFrom 中明确添加用户 ID。</p>
+        <h1>Telegram 接入：先拿 token，再分清 DM 与群组权限</h1>
+        <p class="hero-copy">配置分三步：在 BotFather 拿 token，写入 config 或环境变量，启动 gateway 后配对第一个 DM。最容易搞错的是 DM 配对只管私聊，群组发信权限要靠 allowFrom 里的数字 ID 显式授权。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:channels.telegram.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>📱 Telegram 通道，其实就是给 OpenClaw 装一个“会回消息的小助手”</h2>
-      <p>这页看起来像在讲配置，其实是在讲一件很实际的事：怎样把 OpenClaw 接到 Telegram 上，让它能在私聊和群里正常工作，还不会谁都能随便来用。</p>
-      <p>所以别把它当参数表。把它当成一张接线图就行。你真正要盯住的，只有三件事：机器人是谁、谁能和它说话、它在群里什么时候开口。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Telegram 接入：先拿 token，再分清 DM 与群组权限</h2>
+      <p>配置分三步：在 BotFather 拿 token，写入 config 或环境变量，启动 gateway 后配对第一个 DM。最容易搞错的是 DM 配对只管私聊，群组发信权限要靠 allowFrom 里的数字 ID 显式授权。</p>
     </div>
     <div class="overview-meta">
-      <span>适合第一次把 OpenClaw 接入 Telegram 的人</span>
-      <span>这页最容易踩坑的是权限和群组规则</span>
+      <span>原文共 10 节，先看 Start Here</span>
+      <span>路径：/channels/telegram</span>
       <a href="https://docs.openclaw.ai/channels/telegram" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

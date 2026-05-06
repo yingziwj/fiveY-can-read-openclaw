@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Together AI 提供商：Together AI | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Together AI 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Together AI | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="先到 Together 后台拿 API Key，然后跑 openclaw onboard 走一遍交互式配置，它会自动设好默认模型。内置的模型列表里 Kimi K2.5 是默认，DeepSeek、Llama 都有，注意视频生成走的是独立的 video_generate 工具，默认模型是 Wan2.2。">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="Together AI 提供商：Together AI | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Together AI 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Together AI | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="先到 Together 后台拿 API Key，然后跑 openclaw onboard 走一遍交互式配置，它会自动设好默认模型。内置的模型列表里 Kimi K2.5 是默认，DeepSeek、Llama 都有，注意视频生成走的是独立的 video_generate 工具，默认模型是 Wan2.2。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/providers/together/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Together AI 提供商：Together AI | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Together AI 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Together AI | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="先到 Together 后台拿 API Key，然后跑 openclaw onboard 走一遍交互式配置，它会自动设好默认模型。内置的模型列表里 Kimi K2.5 是默认，DeepSeek、Llama 都有，注意视频生成走的是独立的 video_generate 工具，默认模型是 Wan2.2。">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/providers/together/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Together AI 提供商：Together AI","description":"Together AI 提供商是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/providers/together/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Together AI","description":"先到 Together 后台拿 API Key，然后跑 openclaw onboard 走一遍交互式配置，它会自动设好默认模型。内置的模型列表里 Kimi K2.5 是默认，DeepSeek、Llama 都有，注意视频生成走的是独立的 video_generate 工具，默认模型是 Wan2.2。","url":"https://fivey-can-read-openclaw.pages.dev/providers/together/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Providers","item":"https://fivey-can-read-openclaw.pages.dev/providers/together/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Providers 导读</p>
-        <h1>接入 Together AI 提供商的配置指南</h1>
-        <p class="hero-copy">这页说明如何通过 OpenAI 兼容的 API 将 Together AI 接入系统，以使用 Llama、DeepSeek、Kimi 等开源模型。首先需要设置 TOGETHER_API_KEY 环境变量，并注意在后台服务运行时确保该密钥对进程可见。最容易出错的地方是忘记为后台守护进程配置环境变量，导致认证失败。</p>
+        <h1>接入 Together AI：拿 Key、跑一遍、选模型</h1>
+        <p class="hero-copy">先到 Together 后台拿 API Key，然后跑 `openclaw onboard` 走一遍交互式配置，它会自动设好默认模型。内置的模型列表里 Kimi K2.5 是默认，DeepSeek、Llama 都有，注意视频生成走的是独立的 `video_generate` 工具，默认模型是 Wan2.2。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,7 +4324,22 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🤝 Together AI 像“开源模型大集市”</h2><p>这页讲的不是某一家模型，而是一个统一 API 入口。你拿一把 Together 的 key，就能去挑 Llama、DeepSeek、Kimi、GLM 等等不同摊位的货。</p></div><div class="overview-meta"><span>适合想一把钥匙逛很多开源模型的人</span><span>重点是统一入口和默认模型选择</span><a href="https://docs.openclaw.ai/providers/together" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
+      <!-- handcrafted-source:providers.together.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>接入 Together AI：拿 Key、跑一遍、选模型</h2>
+      <p>先到 Together 后台拿 API Key，然后跑 `openclaw onboard` 走一遍交互式配置，它会自动设好默认模型。内置的模型列表里 Kimi K2.5 是默认，DeepSeek、Llama 都有，注意视频生成走的是独立的 `video_generate` 工具，默认模型是 Wan2.2。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/providers/together</span>
+      <a href="https://docs.openclaw.ai/providers/together" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第一步</p><h2>🔑 接法跟其他统一网关差不多：先给 key，再挑默认摊位</h2><p>官方把流程压得很短，因为 Together 的主路确实不复杂。</p></div><div class="home-grid"><article class="home-card"><span class="home-card-index">🛠</span><h2><code>openclaw onboard --auth-choice together-api-key</code></h2><p>像在集市入口处办一张通行证。</p></article><article class="home-card"><span class="home-card-index">🧠</span><h2><code>together/moonshotai/Kimi-K2.5</code></h2><p>像先把 Kimi 这个摊位选成默认停靠点。</p></article><article class="home-card"><span class="home-card-index">🏠</span><h2>后台环境变量</h2><p>还是老规矩：真正值班的 Gateway 也得摸得到 <code>TOGETHER_API_KEY</code>。</p></article><article class="home-card"><span class="home-card-index">🎈</span><h2>一句话</h2><p>拿通行证进集市，再决定默认先逛哪个摊位。</p></article></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">第二步</p><h2>🧺 可选模型这一段，像“摊位导览图”</h2><p>GLM、Llama、DeepSeek、Kimi 都在这里，不是说你要全背，而是告诉你集市够大。</p></div><div class="ad-placeholder"><p>所以 Together 的价值不在“某一个模型独有”，而在于它把很多热门开源模型摊位摆进了同一个入口里。</p></div></section>
 <section class="section-shell"><div class="section-heading"><p class="section-kicker">最后总结</p><h2>🎈 把 Together 这页压成一句最好记的话</h2><p>Together 像开源模型大集市。一把 key 进门，很多摊位可选，关键是先挑一个你最常用的当默认摊位。</p></div></section>

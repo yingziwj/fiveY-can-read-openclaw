@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Task Flow | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Task Flow是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="Task Flow 不是普通后台任务，而是负责编排多步骤流程的调度层。先搞清楚你的场景：单步任务用 Task 就行，多步且需要跨重启追踪进度的才上 Task Flow。最容易搞混的是 Managed 和 Mirrored 两种模式——前者让 Task Flow 全权创建并推进任务，后者只观察外部任务、不控制创建，选错…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Task Flow | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Task Flow是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="Task Flow 不是普通后台任务，而是负责编排多步骤流程的调度层。先搞清楚你的场景：单步任务用 Task 就行，多步且需要跨重启追踪进度的才上 Task Flow。最容易搞混的是 Managed 和 Mirrored 两种模式——前者让 Task Flow 全权创建并推进任务，后者只观察外部任务、不控制创建，选错…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/automation/taskflow/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Task Flow | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Task Flow是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="Task Flow 不是普通后台任务，而是负责编排多步骤流程的调度层。先搞清楚你的场景：单步任务用 Task 就行，多步且需要跨重启追踪进度的才上 Task Flow。最容易搞混的是 Managed 和 Mirrored 两种模式——前者让 Task Flow 全权创建并推进任务，后者只观察外部任务、不控制创建，选错…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/automation/taskflow/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Task Flow","description":"Task Flow是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/automation/taskflow/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Task Flow","description":"Task Flow 不是普通后台任务，而是负责编排多步骤流程的调度层。先搞清楚你的场景：单步任务用 Task 就行，多步且需要跨重启追踪进度的才上 Task Flow。最容易搞混的是 Managed 和 Mirrored 两种模式——前者让 Task Flow 全权创建并推进任务，后者只观察外部任务、不控制创建，选错…","url":"https://fivey-can-read-openclaw.pages.dev/automation/taskflow/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Automation","item":"https://fivey-can-read-openclaw.pages.dev/automation/taskflow/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Automation 导读</p>
-        <h1>多步骤自动化流程编排</h1>
-        <p class="hero-copy">这页讲解如何用Task Flow编排需要多个步骤的自动化工作流，比如数据收集→报告生成→发送这样的连续操作。你应该先看“何时使用Task Flow”表格，明确区分单任务和多步骤场景。最容易搞错的是混淆Managed和Mirrored模式——前者由系统全权管理任务创建和执行，后者只同步观察外部创建的任务进度。</p>
+        <h1>多步流程编排：让一连串后台任务有状态、可恢复</h1>
+        <p class="hero-copy">Task Flow 不是普通后台任务，而是负责编排多步骤流程的调度层。先搞清楚你的场景：单步任务用 Task 就行，多步且需要跨重启追踪进度的才上 Task Flow。最容易搞混的是 Managed 和 Mirrored 两种模式——前者让 Task Flow 全权创建并推进任务，后者只观察外部任务、不控制创建，选错模式会导致流程失控。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:automation.taskflow.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧵 Task Flow 像一条会自己记步数的任务绳</h2>
-      <p>它管理的是多步流程，不是单个跑腿。每一步都能落地、能续跑、能回头看。</p>
-      <p>如果背景任务是“一个人去办一件事”，Task Flow 就是“这件事要分好几步走，而且每一步都要记档”。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>多步流程编排：让一连串后台任务有状态、可恢复</h2>
+      <p>Task Flow 不是普通后台任务，而是负责编排多步骤流程的调度层。先搞清楚你的场景：单步任务用 Task 就行，多步且需要跨重启追踪进度的才上 Task Flow。最容易搞混的是 Managed 和 Mirrored 两种模式——前者让 Task Flow 全权创建并推进任务，后者只观察外部任务、不控制创建，选错模式会导致流程失控。</p>
     </div>
     <div class="overview-meta">
-      <span>适合多步、可续跑、可回放的流程</span>
-      <span>重点是 managed / mirrored 两种模式</span>
+      <span>原文共 9 节，先看 Start Here</span>
+      <span>路径：/automation/taskflow</span>
       <a href="https://docs.openclaw.ai/automation/taskflow" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

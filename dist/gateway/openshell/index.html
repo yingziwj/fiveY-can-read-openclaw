@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OpenShell | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="OpenShell是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="OpenShell 让 OpenClaw 不再在本地跑 Docker，而是通过 openshell CLI 在远端创建沙箱，所有命令走 SSH 执行。配置时最关键的决策是 workspace 模式：选 mirror 则本地目录是唯一真相，每次执行前后自动双向同步；选其他模式则远程文件可能不回写。先装好 openshe…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="OpenShell | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="OpenShell是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="OpenShell 让 OpenClaw 不再在本地跑 Docker，而是通过 openshell CLI 在远端创建沙箱，所有命令走 SSH 执行。配置时最关键的决策是 workspace 模式：选 mirror 则本地目录是唯一真相，每次执行前后自动双向同步；选其他模式则远程文件可能不回写。先装好 openshe…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/gateway/openshell/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="OpenShell | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="OpenShell是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="OpenShell 让 OpenClaw 不再在本地跑 Docker，而是通过 openshell CLI 在远端创建沙箱，所有命令走 SSH 执行。配置时最关键的决策是 workspace 模式：选 mirror 则本地目录是唯一真相，每次执行前后自动双向同步；选其他模式则远程文件可能不回写。先装好 openshe…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/gateway/openshell/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"OpenShell","description":"OpenShell是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/openshell/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"OpenShell","description":"OpenShell 让 OpenClaw 不再在本地跑 Docker，而是通过 openshell CLI 在远端创建沙箱，所有命令走 SSH 执行。配置时最关键的决策是 workspace 模式：选 mirror 则本地目录是唯一真相，每次执行前后自动双向同步；选其他模式则远程文件可能不回写。先装好 openshe…","url":"https://fivey-can-read-openclaw.pages.dev/gateway/openshell/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Gateway","item":"https://fivey-can-read-openclaw.pages.dev/gateway/openshell/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Gateway 导读</p>
-        <h1>OpenShell 沙盒后端配置指南</h1>
-        <p class="hero-copy">这页教你如何配置 OpenClaw 使用 OpenShell 作为远程沙盒后端，替代本地 Docker 容器。首先要设置插件启用和沙盒后端参数，最容易错的是 workspaceAccess 权限和 mirror 模式的选择，这会影响本地与远程文件的同步逻辑。</p>
+        <h1>OpenShell：把沙箱搬到远程，本地只留一份源码</h1>
+        <p class="hero-copy">OpenShell 让 OpenClaw 不再在本地跑 Docker，而是通过 openshell CLI 在远端创建沙箱，所有命令走 SSH 执行。配置时最关键的决策是 workspace 模式：选 mirror 则本地目录是唯一真相，每次执行前后自动双向同步；选其他模式则远程文件可能不回写。先装好 openshell CLI 并确保在 PATH 上，然后在插件配置里把 sandbox.backend 设为 openshell 即可。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,8 +4324,21 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>📦 OpenShell 这页，其实是在讲“别在本地养 Docker 盒子了，把沙箱生命周期外包给 openshell CLI”</h2><p>它像远程沙箱托管员，帮你开箱、查箱、删箱。</p></div><div class="overview-meta"><span>远程沙箱托管</span><span>重点是 openshell CLI、workspace mode、SSH 桥</span><a href="https://docs.openclaw.ai/gateway/openshell" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-
+      <!-- handcrafted-source:gateway.openshell.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>OpenShell：把沙箱搬到远程，本地只留一份源码</h2>
+      <p>OpenShell 让 OpenClaw 不再在本地跑 Docker，而是通过 openshell CLI 在远端创建沙箱，所有命令走 SSH 执行。配置时最关键的决策是 workspace 模式：选 mirror 则本地目录是唯一真相，每次执行前后自动双向同步；选其他模式则远程文件可能不回写。先装好 openshell CLI 并确保在 PATH 上，然后在插件配置里把 sandbox.backend 设为 openshell 即可。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 16 节，先看 Start Here</span>
+      <span>路径：/gateway/openshell</span>
+      <a href="https://docs.openclaw.ai/gateway/openshell" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
       <footer class="page-footer">
         <div>

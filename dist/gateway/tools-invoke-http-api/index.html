@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>工具 Invoke API：Tools Invoke API | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="工具 Invoke API是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>Tools Invoke API | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="这是 Gateway 暴露的裸 HTTP 端点，不走 OpenAI 兼容路由，直接调单个工具。先看认证方式：共享密钥模式下，这个端点无视 x-openclaw-scopes 头，一律恢复全量 operator 权限，所以务必把它绑在 loopback 或私有网络，别暴露到公网。请求体里 tool 必填，session…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="工具 Invoke API：Tools Invoke API | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="工具 Invoke API是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="Tools Invoke API | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="这是 Gateway 暴露的裸 HTTP 端点，不走 OpenAI 兼容路由，直接调单个工具。先看认证方式：共享密钥模式下，这个端点无视 x-openclaw-scopes 头，一律恢复全量 operator 权限，所以务必把它绑在 loopback 或私有网络，别暴露到公网。请求体里 tool 必填，session…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/gateway/tools-invoke-http-api/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="工具 Invoke API：Tools Invoke API | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="工具 Invoke API是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="Tools Invoke API | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="这是 Gateway 暴露的裸 HTTP 端点，不走 OpenAI 兼容路由，直接调单个工具。先看认证方式：共享密钥模式下，这个端点无视 x-openclaw-scopes 头，一律恢复全量 operator 权限，所以务必把它绑在 loopback 或私有网络，别暴露到公网。请求体里 tool 必填，session…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/gateway/tools-invoke-http-api/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"工具 Invoke API：Tools Invoke API","description":"工具 Invoke API是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/tools-invoke-http-api/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Tools Invoke API","description":"这是 Gateway 暴露的裸 HTTP 端点，不走 OpenAI 兼容路由，直接调单个工具。先看认证方式：共享密钥模式下，这个端点无视 x-openclaw-scopes 头，一律恢复全量 operator 权限，所以务必把它绑在 loopback 或私有网络，别暴露到公网。请求体里 tool 必填，session…","url":"https://fivey-can-read-openclaw.pages.dev/gateway/tools-invoke-http-api/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Gateway","item":"https://fivey-can-read-openclaw.pages.dev/gateway/tools-invoke-http-api/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Gateway 导读</p>
-        <h1>通过 HTTP 直接调用单个工具</h1>
-        <p class="hero-copy">本页说明如何使用 Gateway 的 /tools/invoke 端点直接调用工具，需注意其认证等同于网关操作员权限。调用时需在请求体中指定工具名、参数和会话键，工具可用性受网关策略链控制。最关键的安全要点是：此端点应视为网关的完全操作员访问接口，切勿将网关的共享密钥凭证暴露给不受信任的调用方，且不应将此端点直接暴露在公网上。</p>
+        <h1>直接调工具：/tools/invoke 端点怎么用、怎么认证、哪里最危险</h1>
+        <p class="hero-copy">这是 Gateway 暴露的裸 HTTP 端点，不走 OpenAI 兼容路由，直接调单个工具。先看认证方式：共享密钥模式下，这个端点无视 `x-openclaw-scopes` 头，一律恢复全量 operator 权限，所以务必把它绑在 loopback 或私有网络，别暴露到公网。请求体里 `tool` 必填，`sessionKey` 默认走主会话，工具是否可用由策略链决定，策略拒绝会返回 404。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,8 +4324,21 @@
         </div>
       </div>
 
-      <section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>🔧 Tools Invoke HTTP API 这页，其实是在讲“用一条 HTTP 门直接敲某个工具一下”</h2><p>门虽小，但进门后还是 Gateway 操作员级权限，不是玩具门。</p></div><div class="overview-meta"><span>单工具 HTTP 小门</span><span>重点是 /tools/invoke 和 trusted operator 边界</span><a href="https://docs.openclaw.ai/gateway/tools-invoke-http-api" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-
+      <!-- handcrafted-source:gateway.tools-invoke-http-api.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>直接调工具：/tools/invoke 端点怎么用、怎么认证、哪里最危险</h2>
+      <p>这是 Gateway 暴露的裸 HTTP 端点，不走 OpenAI 兼容路由，直接调单个工具。先看认证方式：共享密钥模式下，这个端点无视 `x-openclaw-scopes` 头，一律恢复全量 operator 权限，所以务必把它绑在 loopback 或私有网络，别暴露到公网。请求体里 `tool` 必填，`sessionKey` 默认走主会话，工具是否可用由策略链决定，策略拒绝会返回 404。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 7 节，先看 Start Here</span>
+      <span>路径：/gateway/tools-invoke-http-api</span>
+      <a href="https://docs.openclaw.ai/gateway/tools-invoke-http-api" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
       <footer class="page-footer">
         <div>

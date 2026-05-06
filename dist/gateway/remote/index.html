@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Remote Access | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Remote Access是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta name="description" content="这一页讲的是如何让 Gateway 跑在一台常开机器上，其他设备通过 SSH 隧道或 tailnet 连过去。最该先看“Start Here”里的两条线：操作端走 SSH 隧道，节点端走 WebSocket。容易搞错的是——Gateway 绑定的是 loopback，必须手动转发端口才能远程访问，不是配个 IP 就能…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Remote Access | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Remote Access是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:description" content="这一页讲的是如何让 Gateway 跑在一台常开机器上，其他设备通过 SSH 隧道或 tailnet 连过去。最该先看“Start Here”里的两条线：操作端走 SSH 隧道，节点端走 WebSocket。容易搞错的是——Gateway 绑定的是 loopback，必须手动转发端口才能远程访问，不是配个 IP 就能…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/gateway/remote/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Remote Access | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Remote Access是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:description" content="这一页讲的是如何让 Gateway 跑在一台常开机器上，其他设备通过 SSH 隧道或 tailnet 连过去。最该先看“Start Here”里的两条线：操作端走 SSH 隧道，节点端走 WebSocket。容易搞错的是——Gateway 绑定的是 loopback，必须手动转发端口才能远程访问，不是配个 IP 就能…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/gateway/remote/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Remote Access","description":"Remote Access是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/gateway/remote/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Remote Access","description":"这一页讲的是如何让 Gateway 跑在一台常开机器上，其他设备通过 SSH 隧道或 tailnet 连过去。最该先看“Start Here”里的两条线：操作端走 SSH 隧道，节点端走 WebSocket。容易搞错的是——Gateway 绑定的是 loopback，必须手动转发端口才能远程访问，不是配个 IP 就能…","url":"https://fivey-can-read-openclaw.pages.dev/gateway/remote/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Gateway","item":"https://fivey-can-read-openclaw.pages.dev/gateway/remote/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Gateway 导读</p>
-        <h1>远程访问网关的两种核心模式</h1>
-        <p class="hero-copy">这页讲如何通过SSH隧道或Tailscale网络远程连接网关主机，让代理程序在专用服务器上持续运行。你应该先确定自己的使用场景：是需要网关24小时在线，还是仅临时从笔记本电脑远程控制。最容易搞错的是混淆网关主机和客户端角色，网关必须绑定到本地回环端口，远程连接时才需要隧道转发。</p>
+        <h1>远程接入：分清谁跑代理、谁连进来</h1>
+        <p class="hero-copy">这一页讲的是如何让 Gateway 跑在一台常开机器上，其他设备通过 SSH 隧道或 tailnet 连过去。最该先看“Start Here”里的两条线：操作端走 SSH 隧道，节点端走 WebSocket。容易搞错的是——Gateway 绑定的是 loopback，必须手动转发端口才能远程访问，不是配个 IP 就能直连。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:gateway.remote.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🚇 <code>Remote access</code> 像“人在外面，但通过隧道摸到家里总机房”</h2>
-      <p>这页讲的不是“再开一个 Gateway”，而是总机房继续待在远处那台主机上，你只是从外面安全地接进去。</p>
-      <p>最常见的路有两条：SSH 隧道，或者 tailnet 这类专线。核心思想一直不变，总机房只保留一个。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>远程接入：分清谁跑代理、谁连进来</h2>
+      <p>这一页讲的是如何让 Gateway 跑在一台常开机器上，其他设备通过 SSH 隧道或 tailnet 连过去。最该先看“Start Here”里的两条线：操作端走 SSH 隧道，节点端走 WebSocket。容易搞错的是——Gateway 绑定的是 loopback，必须手动转发端口才能远程访问，不是配个 IP 就能直连。</p>
     </div>
     <div class="overview-meta">
-      <span>适合把 Gateway 放在远端主机上长期值班的人</span>
-      <span>这页最重要的是记住：远程访问不是复制一份 Gateway，而是安全地连回唯一那一份</span>
+      <span>原文共 20 节，先看 Start Here</span>
+      <span>路径：/gateway/remote</span>
       <a href="https://docs.openclaw.ai/gateway/remote" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

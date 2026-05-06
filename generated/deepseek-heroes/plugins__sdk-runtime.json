@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:49:35.078Z",
+  "generatedAt": "2026-05-06T15:06:06.244Z",
   "pathname": "/plugins/sdk-runtime",
   "title": "Plugin Runtime Helpers",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "插件运行时助手参考",
-    "heroSummary": "这页列出了插件注册时注入的`api.runtime`对象所有可用方法，用于访问Agent身份、启动子任务等运行时功能。开发插件时，应优先查看`api.runtime.agent`部分，它提供了工作目录、会话管理等核心助手。注意，`api.runtime.subagent`中的模型覆盖功能需要配置明确授权，否则请求会被拒绝。"
+    "heroTitle": "插件开发别直接import内部模块，用api.runtime就行",
+    "heroSummary": "注册插件时注入的api.runtime对象封装了agent身份、子代理、任务流等核心能力，比直接引用宿主内部模块更安全。最常用的是api.runtime.agent.runEmbeddedAgent()启动普通agent回合，以及api.runtime.subagent.run()管理后台子代理。注意子代理的模型覆盖需要用户在配置中显式允许，否则会被拒绝。"
   }
 }

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:51:15.471Z",
+  "generatedAt": "2026-05-06T15:08:31.349Z",
   "pathname": "/cli/daemon",
   "title": "daemon",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "openclaw daemon 命令：管理网关服务的旧版别名",
-    "heroSummary": "这页说明 `openclaw daemon` 是 `openclaw gateway` 服务管理命令的旧版别名，用于安装、启动、停止和检查网关服务状态。使用 `status` 子命令时，如果配置了 SecretRef 但未解析，可能导致身份验证失败，此时应显式传递 `--token` 或 `--password` 参数。建议优先参考 `openclaw gateway` 命令获取最新文档和示例。"
+    "heroTitle": "`openclaw daemon` 是旧名，新名是 `openclaw gateway`，命令一样用",
+    "heroSummary": "这一页是 `openclaw daemon` 命令的参考，它已被 `openclaw gateway` 取代，但所有子命令（status、install、start、stop、restart、uninstall）完全兼容。如果你在用旧脚本或习惯，可以继续用 daemon，但新项目请改用 gateway。最容易踩坑的是 status 的 token 探测：如果 token 来自 SecretRef 且未解析，status 会报 rpc.authWarning，此时要么显式传 --token，要么先解析 SecretRef。"
   }
 }

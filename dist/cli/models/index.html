@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>models 命令：models | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="models 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>models | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="先跑 openclaw models status 看当前默认模型、回退列表和认证状态，--probe 会发真实请求测试认证。设置模型时如果模型 ID 包含斜杠（如 OpenRouter 风格），必须带上 provider 前缀，否则按第一个斜杠拆分会出错。认证配置用 models auth add 交互式引导，或…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="models 命令：models | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="models 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="models | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="先跑 openclaw models status 看当前默认模型、回退列表和认证状态，--probe 会发真实请求测试认证。设置模型时如果模型 ID 包含斜杠（如 OpenRouter 风格），必须带上 provider 前缀，否则按第一个斜杠拆分会出错。认证配置用 models auth add 交互式引导，或…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/models/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="models 命令：models | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="models 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="models | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="先跑 openclaw models status 看当前默认模型、回退列表和认证状态，--probe 会发真实请求测试认证。设置模型时如果模型 ID 包含斜杠（如 OpenRouter 风格），必须带上 provider 前缀，否则按第一个斜杠拆分会出错。认证配置用 models auth add 交互式引导，或…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/models/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"models 命令：models","description":"models 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/models/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"models","description":"先跑 openclaw models status 看当前默认模型、回退列表和认证状态，--probe 会发真实请求测试认证。设置模型时如果模型 ID 包含斜杠（如 OpenRouter 风格），必须带上 provider 前缀，否则按第一个斜杠拆分会出错。认证配置用 models auth add 交互式引导，或…","url":"https://fivey-can-read-openclaw.pages.dev/cli/models/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/models/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>OpenClaw 模型配置与认证管理</h1>
-        <p class="hero-copy">这页详细说明如何用 `openclaw models` 命令管理 AI 模型、设置默认模型与备用方案，并配置认证信息。使用 `openclaw models status` 可快速查看当前模型解析状态和认证概览，这是配置后首先要检查的步骤。特别注意模型引用格式：当模型 ID 包含 `/` 时，必须提供提供商前缀，否则 OpenClaw 会先尝试将其解析为别名，这可能导致配置错误。</p>
+        <h1>用 openclaw models 管理模型发现、认证与回退</h1>
+        <p class="hero-copy">先跑 `openclaw models status` 看当前默认模型、回退列表和认证状态，`--probe` 会发真实请求测试认证。设置模型时如果模型 ID 包含斜杠（如 OpenRouter 风格），必须带上 provider 前缀，否则按第一个斜杠拆分会出错。认证配置用 `models auth add` 交互式引导，或 `models auth login --provider &lt;id&gt;` 走 OAuth/API key 流程。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.models.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🧠 <code>openclaw models</code> 像“去模型仓库挑主力队员、替补队员，再检查他们有没有带工牌”</h2>
-      <p>这页讲的是模型发现、扫描、默认模型、fallback、auth profiles。翻成人话，就是你得先决定今天谁上场、谁当替补、他们有没有拿着正确的入场证。</p>
-      <p>所以这页不只是“看有哪些模型”，更像教练在排阵容：主力是谁，替补是谁，账号有没有过期，探针一照能不能真的上场。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用 openclaw models 管理模型发现、认证与回退</h2>
+      <p>先跑 `openclaw models status` 看当前默认模型、回退列表和认证状态，`--probe` 会发真实请求测试认证。设置模型时如果模型 ID 包含斜杠（如 OpenRouter 风格），必须带上 provider 前缀，否则按第一个斜杠拆分会出错。认证配置用 `models auth add` 交互式引导，或 `models auth login --provider &lt;id&gt;` 走 OAuth/API key 流程。</p>
     </div>
     <div class="overview-meta">
-      <span>适合正在配 provider、切默认模型、查登录状态的人</span>
-      <span>这页最重要的是记住：models 不只是列清单，它还管默认阵容、替补路线和认证工牌</span>
+      <span>原文共 5 节，先看 Start Here</span>
+      <span>路径：/cli/models</span>
       <a href="https://docs.openclaw.ai/cli/models" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:51:48.656Z",
+  "generatedAt": "2026-05-06T15:07:15.917Z",
   "pathname": "/gateway/network-model",
   "title": "Network model",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "网关网络模型：连接节点与外部服务的核心架构",
-    "heroSummary": "这页详细说明OpenClaw网关如何管理节点连接、WebSocket控制平面及Canvas主机服务，是理解整个系统通信基础的关键。配置网关时，最需要关注的是认证设置和端口绑定规则，特别是非本地回环访问时的安全要求。最容易出错的地方是误将网关暴露在非受信网络而不配置正确的认证方式，或混淆网关端口与Canvas服务的端口关系。"
+    "heroTitle": "Gateway 是唯一主人，别让第二个进程抢 WhatsApp 会话",
+    "heroSummary": "所有流量都经过 Gateway 这个长进程，它独占 WhatsApp Web 会话——一台主机只跑一个 Gateway，否则会掉线。先配好 `gateway.auth` 和 `canvasHost`，非回环访问必须用 token 或 trusted-proxy，别裸奔。"
   }
 }

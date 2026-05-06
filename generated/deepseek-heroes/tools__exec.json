@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:50:42.798Z",
+  "generatedAt": "2026-05-06T15:06:42.257Z",
   "pathname": "/tools/exec",
   "title": "Exec Tool",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "Exec 工具：在 workspace 中运行 shell 命令",
-    "heroSummary": "这页详细说明如何在 workspace 中执行 shell 命令，包括前台/后台运行、参数配置和安全设置。配置时需特别注意 `host` 参数的选择，它决定命令在沙箱、网关还是节点上执行，错误设置可能导致命令在非预期环境中运行。如果使用 `host=auto`，系统会根据沙箱运行时状态自动解析，但明确指定 `host=sandbox` 在沙箱未启用时会失败，而非静默回退到网关。"
+    "heroTitle": "Exec Tool：在 workspace 里跑 shell 命令，分清前台/后台、沙箱/主机",
+    "heroSummary": "先看 `process` 是否允许：允许则支持前台+后台（`yieldMs`/`background`），否则同步执行且忽略超时。后台会话按 agent 隔离。最容易搞错的是 `host` 参数：默认 `auto` 在有沙箱时解析为 `sandbox`，否则为 `gateway`；显式设 `host=sandbox` 但沙箱未启用时会报错关闭，不会静默回退到 gateway。"
   }
 }

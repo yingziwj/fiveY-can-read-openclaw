@@ -3,29 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>onboard 命令：onboard | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="onboard 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <title>onboard | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="openclaw onboard 是 CLI 的交互式向导，帮你快速配置本地或远程 Gateway。首次运行先选 --flow quickstart 跳过手动步骤；如果要用自定义 API 提供商，务必注意 --custom-api-key 可省略但环境变量 CUSTOM_API_KEY 必须存在。非交互模式用于脚本时…">
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
-  <meta property="og:title" content="onboard 命令：onboard | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="onboard 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
+  <meta property="og:title" content="onboard | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="openclaw onboard 是 CLI 的交互式向导，帮你快速配置本地或远程 Gateway。首次运行先选 --flow quickstart 跳过手动步骤；如果要用自定义 API 提供商，务必注意 --custom-api-key 可省略但环境变量 CUSTOM_API_KEY 必须存在。非交互模式用于脚本时…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/onboard/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta property="og:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="onboard 命令：onboard | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="onboard 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。">
-  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
-  <meta name="twitter:image:alt" content="Fivey Can Read OpenClaw 绘本版文档站封面">
+  <meta name="twitter:title" content="onboard | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="openclaw onboard 是 CLI 的交互式向导，帮你快速配置本地或远程 Gateway。首次运行先选 --flow quickstart 跳过手动步骤；如果要用自定义 API 提供商，务必注意 --custom-api-key 可省略但环境变量 CUSTOM_API_KEY 必须存在。非交互模式用于脚本时…">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/onboard/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"onboard 命令：onboard","description":"onboard 命令是 OpenClaw 官方文档的中文故事化解读，保留原文路径和导航顺序，帮第一次接触的人听懂这一页在做什么、什么时候会用到。","url":"https://fivey-can-read-openclaw.pages.dev/cli/onboard/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"onboard","description":"openclaw onboard 是 CLI 的交互式向导，帮你快速配置本地或远程 Gateway。首次运行先选 --flow quickstart 跳过手动步骤；如果要用自定义 API 提供商，务必注意 --custom-api-key 可省略但环境变量 CUSTOM_API_KEY 必须存在。非交互模式用于脚本时…","url":"https://fivey-can-read-openclaw.pages.dev/cli/onboard/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Cli","item":"https://fivey-can-read-openclaw.pages.dev/cli/onboard/"}]}</script>
 </head>
 <body>
@@ -2184,8 +2180,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Cli 导读</p>
-        <h1>openclaw onboard 命令：交互式网关配置向导</h1>
-        <p class="hero-copy">这页详细说明如何使用 openclaw onboard 命令，通过交互式向导配置本地或远程网关。最该先看的是命令的基本用法和 --flow 参数选项，了解如何选择快速启动或手动配置流程。最容易搞错的是在脚本中使用时，需要明确添加 --non-interactive 参数，而不是依赖 --json 输出，否则命令会进入交互模式中断脚本执行。</p>
+        <h1>一句话完成 Gateway 初始化：选流程、填密钥、跑起来</h1>
+        <p class="hero-copy">`openclaw onboard` 是 CLI 的交互式向导，帮你快速配置本地或远程 Gateway。首次运行先选 `--flow quickstart` 跳过手动步骤；如果要用自定义 API 提供商，务必注意 `--custom-api-key` 可省略但环境变量 `CUSTOM_API_KEY` 必须存在。非交互模式用于脚本时，记得加 `--non-interactive`，光加 `--json` 不会跳过交互。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -4328,17 +4324,17 @@
         </div>
       </div>
 
-      <section class="section-shell">
+      <!-- handcrafted-source:cli.onboard.zh.html -->
+<section class="section-shell">
   <div class="overview-card">
     <div>
-      <p class="section-kicker">先讲人话版</p>
-      <h2>🎒 <code>openclaw onboard</code> 像带你第一次走进 OpenClaw 的新家</h2>
-      <p>这页讲的不是某个单独按钮，而是一趟“把家安好”的旅程。你会一路选门、选钥匙、选房间、选怎么连 Gateway，最后让 OpenClaw 真的能开始住进去。</p>
-      <p>所以它更像入学报名，不像说明书。你不是在背参数，你是在一步一步把新家点亮。</p>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>一句话完成 Gateway 初始化：选流程、填密钥、跑起来</h2>
+      <p>`openclaw onboard` 是 CLI 的交互式向导，帮你快速配置本地或远程 Gateway。首次运行先选 `--flow quickstart` 跳过手动步骤；如果要用自定义 API 提供商，务必注意 `--custom-api-key` 可省略但环境变量 `CUSTOM_API_KEY` 必须存在。非交互模式用于脚本时，记得加 `--non-interactive`，光加 `--json` 不会跳过交互。</p>
     </div>
     <div class="overview-meta">
-      <span>适合第一次把 OpenClaw 装起来的人</span>
-      <span>这页最重要的是记住：`onboard` 是互动旅程，不是一次性命令</span>
+      <span>原文共 4 节，先看 Start Here</span>
+      <span>路径：/cli/onboard</span>
       <a href="https://docs.openclaw.ai/cli/onboard" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
   </div>

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-08T14:51:47.955Z",
+  "generatedAt": "2026-05-06T15:07:15.843Z",
   "pathname": "/gateway/openai-http-api",
   "title": "OpenAI Chat Completions",
   "model": "deepseek-chat",
   "result": {
-    "heroTitle": "启用OpenAI兼容HTTP接口的配置与安全须知",
-    "heroSummary": "这页说明如何配置Gateway以提供OpenAI Chat Completions兼容的HTTP端点，该功能默认关闭，需在配置中手动开启。配置时务必注意安全边界：此端点具有完整的操作员访问权限，认证通过后即被视为可信操作员，应仅在内网或私有入口使用，避免直接暴露到公网。"
+    "heroTitle": "把 Gateway 当 OpenAI API 用？先开配置，再注意权限",
+    "heroSummary": "这个端点默认关闭，必须在配置里手动启用。认证走 Gateway 自己的 auth 模式，拿到 token 就等于拿到管理员权限，没有用户级隔离。model 字段填的是 agent 名称，不是模型 ID——想指定模型得靠 x-openclaw-model 请求头。"
   }
 }
