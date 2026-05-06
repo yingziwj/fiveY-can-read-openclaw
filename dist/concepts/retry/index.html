@@ -4328,172 +4328,219 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>消息发不出去？别急，它会自己再试几次</h2>
-            <p>想象你寄信时邮局关门了。OpenClaw不会立刻放弃，它会等一等再试。这套重试规则就是告诉你：它会试几次、等多久、哪些情况才值得再试。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/concepts/retry</span>
-            <span>故事卡片：6 张</span>
-            <a href="https://docs.openclaw.ai/concepts/retry" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>重试规则想做什么</h2>
-              <p>这套规则就像个有耐心的邮递员，既要把信送到，又不能把同一封信寄两次。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道它为什么这样设计，你就能明白哪些错误会被自动处理。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>每次只重试当前这封信，不会把前面送过的信再送一遍。</li><li>如果整个寄信流程有好几步，它只重试卡住的那一步。</li><li>特别小心那些‘寄两次就会出问题’的信，比如付款确认，它不会乱重试。</li><li>目标是让消息最终送达，同时保持顺序，不产生重复操作。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>重试是为了补救单次失败，不是推倒重来。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>默认设置：邮递员的耐心值</h2>
-              <p>邮递员不会无限次敲门，也不会等一辈子。这里就是他的默认行动指南。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>大多数时候，用这套默认值就够了，你知道他大概会怎么做。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>最多尝试敲门3次。</li><li>两次敲门之间，等待时间会越来越长（指数退避）。</li><li>最长不会等超过30秒。</li><li>每次等待时间会加一点随机‘抖动’，防止所有邮递员同时去敲门。</li><li>给Telegram送信，至少等400毫秒；给Discord送信，至少等500毫秒。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>默认会试3次，等待时间有上限且会变化。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>给Discord送信的规矩</h2>
-              <p>Discord像个热门俱乐部，人太多时会让你在门外排队。重试规则主要就管这个。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道它只在什么情况下重试，你就不会奇怪为什么别的错误它不处理。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>只有当Discord说‘人太多了，请稍后’（HTTP 429错误）时，它才会重试。</li><li>它会看Discord给的‘排队时间’（retry_after），按这个时间等。</li><li>如果Discord没给具体时间，它就用自己的‘指数退避’规则来等。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>对Discord，主要应对‘限流排队’，别的错误直接放弃。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>给Telegram送信的规矩</h2>
-              <p>Telegram的邮路偶尔会临时施工或拥堵。这里的规则更宽容，会多试几种情况。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>Telegram网络环境复杂，这套规则能帮你自动应对更多小故障。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>遇到这些情况会重试：对方让排队（429）、超时、连接突然断了、服务暂时不可用。</li><li>同样优先采用Telegram给的‘排队时间’。</li><li>但有一种错误它不重试：消息格式（Markdown）解析错误。这时它会换用纯文本再发一次。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>对Telegram，应对更多临时故障，但格式错误会直接降级处理。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>自己调整规则：修改邮递员手册</h2>
-              <p>如果你觉得默认的邮递员太急或太慢，可以打开他的工作手册（配置文件）改几个数字。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>当默认行为不符合你的需求时，在这里微调。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>规则写在 ~/.openclaw/openclaw.json 这个文件里。</li><li>你可以分别设置Telegram和Discord邮递员的耐心值。</li><li>能改的项目：尝试次数、最短等待时间、最长等待时间、随机抖动幅度。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>打开配置文件，找到‘channels’部分。</li><li>在‘telegram’或‘discord’下面，你会看到‘retry’这个工具箱。</li><li>修改‘attempts’就像告诉邮递员：“这个门可以多敲几次”。</li><li>修改‘minDelayMs’和‘maxDelayMs’是调整他等待时间的下限和上限。</li><li>改‘jitter’是给等待时间加一点随机性，避免所有请求同时重试撞车。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>在配置文件中，按通道单独设置重试参数。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>重要提醒：哪些信会重投</h2>
-              <p>不是所有操作失败都会重试。搞清楚边界，你就知道系统会在哪里自动努力，在哪里直接举手放弃。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>避免你对‘自动重试’产生不切实际的期望。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>重试针对每一次具体的送信动作：比如发一条消息、传一张图片、加一个表情回复。</li><li>如果一个任务像连环信（A做完才能做B），那么只有当前卡住的这步会重试，前面已经成功的步骤不会回头重做。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>重试单位是单个请求步骤，不是整个任务流。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🔁 Retry 就像“敲门没人应时，再轻轻敲几次”</h2>
+      <p>这页讲的是：当通道发消息、传图片、打反应、发投票时，如果路上有点小卡住，OpenClaw 会不会再试一次。</p>
+      <p>它不是无脑狂敲门，而是只在合适的时候，带着节奏、带着间隔，重试当前那一步。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想弄懂“为什么有些发送会重来一次”的人</span>
+      <span>这页最重要的是记住：retry 是按单步重试，不是整个流程翻拍</span>
+      <a href="https://docs.openclaw.ai/concepts/retry" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一眼</p>
+    <h2>🚪 它只负责“当前这一步”，不负责把整本故事重新来过</h2>
+    <p>这是 retry 的第一个关键点。它像一个小门童，专盯眼前这一敲。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>按请求重试</h2>
+      <p>不是按整个聊天流程重拍一遍，而是只盯当前这一笔请求。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>保住顺序</h2>
+      <p>因为只重试当前一步，所以不会把前面已经完成的动作顺手打乱。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>避开重复副作用</h2>
+      <p>像不会因为重试就把同一封信多寄几次。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>重试的是哪一步</h2>
+      <p>比如发消息、上传媒体、加反应、发投票，每一步都各自看自己的重试规则。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🪫 官方默认给了一个“稳稳试三次”的节奏</h2>
+    <p>默认值很像一个有礼貌的小门童：先试三次，别太急，也别无限闹腾。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">Attempts: 3</div>
+      <p>像最多敲三下门。不是敲到天荒地老。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Max delay cap: 30000 ms</div>
+      <p>像告诉门童：等可以等，但最长别等到太离谱，最多三十秒封顶。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Jitter: 10%</div>
+      <p>像每次重试的间隔不要太整齐，稍微抖一抖，避免大家都在同一秒一起撞门。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Provider defaults</div>
+      <p>Telegram 和 Discord 的门口性格不一样，所以官方给了不同的最小延迟。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">Discord</p>
+    <h2>💬 Discord 更像“只在被拒绝时再敲一次门”</h2>
+    <p>Discord 的规则很朴素：只在 rate limit 的时候重试。它不想把所有错误都当成“再来一次就好”。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">429</span>
+      <h2>只认 rate limit</h2>
+      <p>像门口保安说“今天太挤了，等会儿再来”。这类才重试。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⏱</span>
+      <h2><code>retry_after</code></h2>
+      <p>如果对方明确告诉你要等多久，就照着对方说的等，不自己乱猜。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📈</span>
+      <h2>否则指数退避</h2>
+      <p>像每次再敲门都稍微等久一点，别把门砸坏。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>一句话</h2>
+      <p>Discord 只在“太挤了”时再试，不是见错就重来。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">Telegram</p>
+    <h2>📲 Telegram 更温柔一点，会把暂时性小故障也包进去</h2>
+    <p>Telegram 的重试条件更宽。因为它常常会遇到网络抖一下、连接断一下、或者暂时不可用这种小麻烦。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">429 / timeout / connect-reset / closed</div>
+      <p>像门口的灯刚闪了一下，或者传话线刚断了一秒。这些都可以再试。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">temporarily unavailable</div>
+      <p>像门口贴了一张“现在先别来，等会儿再说”的小纸条。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>retry_after</code></div>
+      <p>如果 Telegram 也给了你明确等待时间，就照它的话来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Markdown parse errors 不重试</div>
+      <p>这类不是门没开，而是你递过去的纸条格式坏了，所以它不会一遍遍重试同一张坏纸条，而是直接退回去改成纯文本。</p>
+    </div>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">🛠 配置像在做什么</div>
+      <p><code>attempts</code> 像给小门童设最多敲几次；<code>minDelayMs</code> 像告诉它每次最少隔多久再敲；<code>maxDelayMs</code> 像封顶；<code>jitter</code> 像让节奏别太死板。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>channels.telegram.retry</code></div>
+      <p>像给 Telegram 单独放一张“重试怎么敲门”的小便签。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 一句话</div>
+      <p>Telegram 允许更多暂时性问题重试，但坏格式不靠重试救。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 记一句</div>
+      <p>重试是补救，不是重写规则。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧩 复杂流程里，已经做完的步骤不会被重新搬一遍</h2>
+    <p>这是官方特别强调的点。Composite flow 里，重试只发生在当前没做完的那一段，不会把已经成功的动作倒回去。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2>只重试当前请求</h2>
+      <p>像只把坏掉的那一包重新拎起来，不会把前面已经送到家的包裹重送。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧱</span>
+      <h2>已完成步骤不回滚</h2>
+      <p>像砌墙砌到一半，坏的是这一块，不会把整面墙拆光重来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📍</span>
+      <h2>保持顺序</h2>
+      <p>处理顺序不会乱，不会因为重试把时间线倒着跑。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎯</span>
+      <h2>这就是 retry 的边界</h2>
+      <p>它是门口的补敲，不是整栋楼重建。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">配置</p>
+    <h2>🛠 配置其实很简单：每个门各自放一张重试小卡片</h2>
+    <p>官方给的 JSON 配置就是在说：Telegram 一套，Discord 一套，各写各的节奏。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>channels.telegram.retry</code></div>
+      <p>像给 Telegram 门口贴一张“如果卡住了怎么办”的说明。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>channels.discord.retry</code></div>
+      <p>像给 Discord 门口贴另一张不同节奏的说明。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>attempts</code> / <code>minDelayMs</code> / <code>maxDelayMs</code> / <code>jitter</code></div>
+      <p>分别像“最多试几次、最少等多久、最多等多久、每次别太整齐”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>重试是按门来设，不是整个系统一个大开关。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把这页压成一句最短的话</h2>
+    <p>Retry policy 就是一个有礼貌的小门童：遇到暂时性问题会再敲几次，但只敲当前这一步，不会把已经做完的事全部重来。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你愿意，我下一轮可以继续把剩下那批 `gateway` 和 `concepts` 页面也按同一标准收掉。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

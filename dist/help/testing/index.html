@@ -4328,279 +4328,78 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>测试：像过安检一样，一道一道过</h2>
-            <p>OpenClaw 的测试分成好几道门。有的门检查零件有没有装对，有的门模拟真人发消息，还有的门要连上真服务去敲门。这一页就是带你走一遍这些门，告诉你什么时候该走哪道门，走错了会怎样。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/help/testing</span>
-            <span>故事卡片：10 张</span>
-            <a href="https://docs.openclaw.ai/help/testing" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>从哪开始</h2>
-              <p>先搞清楚这三道门分别是测什么的，然后选一个进去。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>不然你可能会跑错测试，浪费时间。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>第一道门叫单元/集成测试，它检查代码里的小零件和零件之间的拼装。</li><li>第二道门叫 E2E 测试，它模拟一个用户从头到尾操作一遍，看系统会不会崩。</li><li>第三道门叫 live 测试，它真的去连外部服务（比如 AI 模型），看看能不能打通。</li><li>还有一套 Docker 容器，专门跑一些需要独立环境的测试。</li><li>这道门不测什么？它故意不测那些需要真密钥、真网络的东西，那些留给 live 测试去做。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>三道门：零件门、流程门、真联网门。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>日常快速通道</h2>
-              <p>你每天最常用的几个命令，按顺序跑就行。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>省得你每次都要想先跑哪个。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>最保险的一步：`pnpm build &amp;&amp; pnpm check &amp;&amp; pnpm test`，编译、检查、测试全过一遍，推代码前必做。</li><li>如果你的电脑够快，可以用 `pnpm test:max` 一口气跑完所有测试。</li><li>想盯着一个文件改，就用 `pnpm test:watch`，它会一直监听变化自动重跑。</li><li>只跑单个测试文件：`pnpm test extensions/discord/src/monitor/message-handler.preflight.test.ts`，省时间。</li><li>想看看代码覆盖率：`pnpm test:coverage`，跑完之后会告诉你哪些代码没被测试到。</li><li>启动一个带 Docker 的 QA 环境：`pnpm qa:lab:up`，它会拉起一个模拟的测试实验室。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`pnpm test:watch` 执行后，终端会进入监听模式，文件一保存就自动重跑，像有个哨兵盯着你的代码。</li><li>`pnpm test:coverage` 跑完后，会生成一个 coverage 目录，里面有个 HTML 文件，打开就能看到哪些行没测到。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>推代码前跑三件套：build、check、test。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>QA 实验室：真刀真枪的环境</h2>
-              <p>这些命令让你在本地模拟一个真实的测试实验室，连上真的服务。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>有些 bug 只有在真实环境里才会出现，比如网络延迟、并发冲突。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>`openclaw qa telegram` 会启动一个 Telegram 的 QA 测试，它可以同时跑多个任务，最多 64 个。</li><li>你可以用 `--concurrency 1` 让任务一个一个跑，像串糖葫芦一样，方便排查问题。</li><li>它会从环境变量里读取 API 密钥，还会加载一个 QA 专用的供应商配置路径。</li><li>它会把当前工作目录挂载到容器里，这样测试就能访问你的代码。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>执行 `openclaw qa telegram --concurrency 4` 后，你会看到四个任务同时在跑，每个任务都像一个独立的机器人。</li><li>如果某个任务报错，它会停在原地，你可以在终端里看到具体的错误信息。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>QA 实验室是模拟真实战场的沙盘。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>共享凭证：像借钥匙一样</h2>
-              <p>当多个测试任务需要同一个 Telegram 账号时，它们会通过一个中央池子来借钥匙，用完就还。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>防止多个任务同时用同一个账号，导致被封或冲突。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>加上 `--credential-source convex` 参数，测试就会从一个 Convex 数据库里借凭证。</li><li>借到凭证后，测试会持续发送心跳信号，表示“我还活着，还在用”。</li><li>测试结束后，它会自动释放凭证，把钥匙还回池子。</li><li>这个凭证池的代码放在 `qa/convex-credential-broker/` 目录下。</li><li>你需要设置一些环境变量才能连上这个池子。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>借钥匙要排队，用完要归还。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>添加一个新渠道到 QA</h2>
-              <p>如果你想测试一个新的通讯渠道（比如 Slack），需要做两件事。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>不然 QA 系统不知道该怎么跟这个新渠道打交道。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>第一件事：写一个“传输适配器”，它负责把 OpenClaw 的消息翻译成那个渠道能懂的格式。</li><li>第二件事：写一个“场景包”，它定义了一系列测试步骤，比如发一条消息、收一条回复。</li><li>不要自己造一个新的 QA 命令入口，直接用现有的 `qa-lab` 命令就行，它会帮你管理一切。</li><li>`qa-lab` 已经包含了共享的主机机制，比如并发控制、凭证管理。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>加新渠道就两步：适配器 + 场景包。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>测试套件：从简单到真实</h2>
-              <p>三个套件按真实程度递增，也按稳定程度递减。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>越真实的测试越容易失败（因为网络、服务不稳定），所以先跑简单的。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>单元/集成测试：最快最稳，不联网，只测代码逻辑。</li><li>E2E 测试：中等，会启动一个完整的网关，模拟用户操作。</li><li>Live 测试：最慢最不稳定，会真的去调外部 API。</li><li>建议顺序：先单元，再 E2E，最后 live（如果改了相关代码）。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>先跑零件门，再跑流程门，最后跑真联网门。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>单元/集成测试：零件和拼装</h2>
-              <p>这是最常用的测试，检查每个函数和模块是否正常工作。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>大部分 bug 在这一层就能被发现，不用跑到外面去。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>命令：`pnpm test`，它会按顺序跑十个分片，每个分片里的测试文件。</li><li>测试文件分布在 `src/**/*.test.ts`、`packages/**/*.test.ts`、`test/**/*.test.ts` 等目录。</li><li>它既测纯函数（单元测试），也测模块之间的交互（集成测试），比如网关认证、路由。</li><li>特别注意：像 `compact.hooks.test.ts` 这样的文件，必须通过真实的 `run.ts` 路径来测，不能只写辅助函数测试。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`pnpm test` 执行后，你会看到终端里依次跑过十个分片，每个分片有自己的进度条。</li><li>如果某个测试失败，它会停在失败的地方，并打印出错误栈，告诉你哪一行代码出了问题。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>单元集成测代码，不联网，最快。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>E2E 测试：网关冒烟</h2>
-              <p>模拟一个完整的用户会话，从发请求到收响应，看网关会不会挂。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>有些问题只有把整个流程串起来才能发现，比如路由错误、会话超时。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>命令：`pnpm test:e2e`，它使用 `vitest.e2e.config.ts` 配置。</li><li>测试文件后缀是 `.e2e.test.ts`，分布在 `src` 和 `test` 目录下。</li><li>它默认不隔离线程（`isolate: false`），和仓库里其他测试一致。</li><li>CI 环境最多跑 2 个 worker，本地默认 1 个，防止资源耗尽。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`pnpm test:e2e` 执行后，它会启动一个虚拟网关，然后像用户一样发送请求，检查响应。</li><li>如果网关返回了错误的状态码，测试就会失败，并告诉你哪个接口出了问题。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>E2E 测流程，模拟用户走一遍。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-9">
-            <div class="section-heading">
-              <p class="section-kicker">第 9 站</p>
-              <h2>供应商契约测试：插件接口的保证</h2>
-              <p>这些测试检查插件是否遵守了约定的接口规范，比如认证、发现、加载等。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>如果插件不遵守规范，系统可能无法正确加载或使用它。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>测试文件在 `src/plugins/contracts/*.contract.test.ts`。</li><li>它覆盖了多个契约：状态探测、注册表形状、认证流程、认证选择、模型目录、插件发现、插件加载、运行时。</li><li>什么时候跑：修改了插件 SDK、添加或修改了渠道/供应商插件、重构了插件注册或发现逻辑。</li><li>这些测试不需要真实的 API 密钥，它们只检查接口是否匹配。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>契约测试保证插件接口不跑偏。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-10">
-            <div class="section-heading">
-              <p class="section-kicker">第 10 站</p>
-              <h2>添加回归测试：堵住漏洞</h2>
-              <p>当你修复了一个线上问题，应该加一个测试防止它再次出现。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>不然同一个 bug 可能会在下次重构时悄悄回来。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>如果可能，写一个不需要联网的回归测试，用 mock 或 stub 模拟问题场景。</li><li>如果问题必须联网才能复现（比如限流、认证策略），那就写一个 live 测试，但要通过环境变量控制是否启用。</li><li>尽量在最小范围内捕获 bug：如果是请求转换的问题，直接测模型转换函数；如果是网关流程的问题，测网关 mock 测试。</li><li>特别注意：`SecretRef` 的遍历防护，确保密钥引用不会泄露。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>修一个 bug，加一道护栏。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧪 Testing，就是给整个项目做上岗前体检</h2>
+      <p>这页讲的是测试。不是只测一小块，而是看整条链路会不会在某个小地方断掉。</p>
+      <p>像把整盒彩笔先试写一遍，确保没有一支断墨。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想知道项目整体怎么验收</span>
+      <span>重点是单测、构建、页面检查和线上检查</span>
+      <a href="https://docs.openclaw.ai/help/testing" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧩 测试不是一种，是几层小检查叠起来</h2>
+    <p>先测小零件，再测组合，最后测整站。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🔬</span>
+      <h2>单元层</h2>
+      <p>先看单个函数会不会坏。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧱</span>
+      <h2>构建层</h2>
+      <p>再看页面能不能顺利拼起来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🌍</span>
+      <h2>线上层</h2>
+      <p>最后去真站点门口敲一敲。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🛠 命令像在做什么</h2>
+    <p>测试命令像一套验收流程，从桌面到线上，逐层过关。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">`npm run build`</div>
+      <p>像先把积木完整搭起来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">`npm run check`</div>
+      <p>像确认每块积木有没有插歪。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">`npm run verify-live`</div>
+      <p>像去真门口看看灯是不是亮着。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>🎈 Testing 的目标很朴素：别让看起来能跑的东西，真跑时掉链子</h2>
+    <p>把这套检查做稳，站点更新才更安心。</p>
+  </div>
+</section>
+
+
 
       <footer class="page-footer">
         <div>

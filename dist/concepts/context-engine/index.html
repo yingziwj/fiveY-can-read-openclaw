@@ -4328,307 +4328,64 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>给模型装一个会挑消息的大脑</h2>
-            <p>每次模型说话前，都要有人帮它挑出哪些对话该听、哪些该存起来、哪些该打包成摘要。这个挑消息的人，就是 Context Engine。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/concepts/context-engine</span>
-            <span>故事卡片：11 张</span>
-            <a href="https://docs.openclaw.ai/concepts/context-engine" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>先看一眼你正在用哪个引擎</h2>
-              <p>打开终端，敲一行命令，就能看到当前是谁在帮你管消息。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道自己用什么引擎，换引擎时才不会走错门。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>敲 openclaw doctor，它会告诉你当前引擎的名字。</li><li>你也可以直接翻 config 文件，找到 plugins.slots.contextEngine 那一行。</li><li>默认装好的是 legacy 引擎，它像一位老管家，按老规矩办事。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>openclaw doctor 执行后，终端会打印出引擎状态，就像门卫报出今天谁值班。</li><li>cat ~/.openclaw/openclaw.json | jq &#39;.plugins.slots.contextEngine&#39; 会直接显示引擎 ID，比如 &quot;legacy&quot;。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>先查引擎，后换引擎，别盲猜。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>装一个新引擎，就像换一把新锁</h2>
-              <p>先装插件，再在 config 里指定用哪个引擎，最后重启生效。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>不同引擎处理消息的方式不一样，选对引擎能让模型记得更准、跑得更快。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>从 npm 安装：openclaw plugins install @martian-engineering/lossless-claw。</li><li>本地开发时，用 -l 参数链接你自己的引擎文件夹，不用每次都复制。</li><li>装好后，在 config 的 plugins.slots.contextEngine 里填上引擎 ID，比如 &quot;lossless-claw&quot;。</li><li>别忘了在 plugins.entries 里把对应的插件 enabled 设为 true，否则引擎不会干活。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>安装命令执行后，插件会被下载到 OpenClaw 的插件目录，就像把新钥匙挂到钥匙架上。</li><li>config 里 contextEngine: &quot;lossless-claw&quot; 就是告诉系统：以后用这把锁开门。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>先装插件，再配 config，引擎才能上岗。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>引擎在四个时刻插手</h2>
-              <p>每次模型要说话，引擎都会在四个环节里干活：收消息、拼消息、压缩消息、打扫战场。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>懂了这四个环节，你就知道引擎到底在后台忙什么。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>Ingest：新消息进来时，引擎可以把它存到自己的仓库里，比如索引或数据库。</li><li>Assemble：模型要说话前，引擎从仓库里挑出该听的消息，排好队，还可能会加一句系统提示。</li><li>Compact：对话太长或你敲 /compact 时，引擎把旧消息压缩成摘要，腾出空间。</li><li>After turn：每次模型回答完后，引擎可以做一些清理或记录工作。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>收、拼、压、扫，四个动作撑起一次对话。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>子代理结束时，引擎也会帮忙</h2>
-              <p>子代理跑完或被清理时，引擎会收到通知，可以趁机打扫卫生。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>子代理跑完会留下一堆临时消息，引擎可以趁机关掉临时通道，防止混乱。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>onSubagentEnded 钩子会在子代理结束时触发，引擎可以清理相关数据。</li><li>还有一个 prepareSubagentSpawn 钩子，但目前还没启用，是留给未来用的。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>子代理结束，引擎就扫地出门。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>引擎可以往系统提示里塞小纸条</h2>
-              <p>Assemble 时，引擎可以返回一段 systemPromptAddition 字符串，OpenClaw 会把它贴在系统提示前面。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这样引擎就能动态告诉模型一些提醒，比如“别忘了昨天聊的那个话题”，而不需要改文件。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>这段字符串会被直接拼到系统提示的开头，像在门口贴一张便条。</li><li>可以用来放回忆指令、检索提示、上下文相关的小贴士。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>引擎能往系统提示里加私货，但不用改文件。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>默认的 legacy 引擎：老管家，按老规矩办事</h2>
-              <p>legacy 引擎是 OpenClaw 自带的，它什么都不额外做，只是把消息原样传给模型。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>如果你不需要花哨的记忆或压缩策略，legacy 引擎最稳，不会出幺蛾子。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>Ingest 什么都不做，消息直接交给会话管理器。</li><li>Assemble 也是传话筒，只做基本的消毒和验证。</li><li>Compact 时，它把旧消息压缩成一段摘要，保留最近的完整消息。</li><li>After turn 也是空操作。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>legacy 引擎就是啥也不干，保持原始行为。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>插件引擎：自己动手，丰衣足食</h2>
-              <p>你可以写一个插件，注册自己的引擎，实现完全自定义的消息处理逻辑。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>如果你的场景需要特殊的记忆或压缩策略，插件引擎可以让你随心所欲。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>用 api.registerContextEngine 注册引擎，需要提供 id、name 和 ownsCompaction 等元信息。</li><li>实现 ingest、assemble、compact 等方法，每个方法都接收特定参数。</li><li>注册后，在 config 的 slots 里选上这个引擎 ID 就能启用。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>注册代码里，api.registerContextEngine(&quot;my-engine&quot;, () =&gt; ({...})) 就像在门卫室登记一个新门卫。</li><li>config 里 contextEngine: &quot;my-engine&quot; 就是告诉系统：今天这个新门卫值班。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>注册引擎就像登记新门卫，然后指定他上岗。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>配置参考：唯一活着的引擎</h2>
-              <p>运行时只有一个引擎能干活，其他注册的引擎可以加载但不会被调用。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>避免两个引擎抢着管消息，造成混乱。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>plugins.slots.contextEngine 指定当前活动的引擎 ID，默认是 &quot;legacy&quot;。</li><li>即使其他引擎插件 enabled，也只有 slot 里指定的那个会实际工作。</li><li>如果指定的引擎 ID 找不到或注册失败，OpenClaw 不会自动回退，运行会报错。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>config 里 contextEngine: &quot;legacy&quot; 就是指定老管家值班。</li><li>如果改成不存在的 ID，运行时会直接报错，不会偷偷用别的引擎。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>一个 slot，一个引擎，没有替补。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-9">
-            <div class="section-heading">
-              <p class="section-kicker">第 9 站</p>
-              <h2>引擎与压缩、记忆的关系</h2>
-              <p>压缩是引擎的职责之一，记忆插件是独立的东西，但引擎可以用记忆插件的数据。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>理清分工，才知道该装什么插件、配什么引擎。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>legacy 引擎的压缩使用内置的摘要功能；插件引擎可以自己实现任何压缩策略。</li><li>记忆插件（memory plugin）只负责搜索和检索，不控制模型看到什么。</li><li>引擎可以在 assemble 时调用记忆插件的数据，比如用 buildMemorySystemPromptAddition 生成系统提示。</li><li>会话修剪（trimming）仍然由运行时执行，不受引擎影响。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>引擎管展示，记忆管搜索，两者可以合作但各司其职。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-10">
-            <div class="section-heading">
-              <p class="section-kicker">第 10 站</p>
-              <h2>小贴士：换引擎不丢历史</h2>
-              <p>切换引擎后，已有会话的历史消息不会丢失，新引擎只负责未来的对话。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>放心切换，不用担心聊到一半换引擎会丢进度。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>用 openclaw doctor 确认新引擎加载成功。</li><li>切换引擎后，已有会话继续使用它们原来的历史记录，新引擎只影响后续消息。</li><li>如果引擎报错，检查日志，确保插件注册正确。</li><li>本地开发时，用 -l 参数链接本地目录，省去复制步骤。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>openclaw plugins install -l ./my-engine 会把本地文件夹链接到插件目录，修改代码后立即生效。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>换引擎就像换门卫，旧门卫的记事本还在，新门卫从下一班开始记。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-11">
-            <div class="section-heading">
-              <p class="section-kicker">第 11 站</p>
-              <h2>相关链接</h2>
-              <p>想了解更多，可以去翻这几页。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这些页面会帮你把引擎的上下游串起来。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>Context — 模型如何构建每次对话的上下文。</li><li>Plugin Architecture — 如何注册插件引擎。</li><li>Compaction — 如何压缩长对话。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>引擎不是孤岛，它连着上下文、插件和压缩。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧠 Context Engine 这页，其实是在讲“谁来决定每次给模型背什么包”</h2>
+      <p>OpenClaw 每次跑模型前，都要挑聊天记录、摘要、补充说明一起打包。</p>
+      <p>Context engine 就像这个打包总管。它决定旧纸条怎么收、哪些内容带上车、包满了该怎么压缩。</p>
+    </div>
+    <div class="overview-meta">
+      <span>重点是 context 打包总管</span>
+      <span>安装插件后可替换默认 legacy 引擎</span>
+      <a href="https://docs.openclaw.ai/concepts/context-engine" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🎒 它管的不是“记忆本身”，而是“这次出门到底带哪几样东西”</h2>
+    <p>所以别把 context engine 误会成单纯数据库。它更像发车前的装车主管。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card"><span class="home-card-index">📥</span><h2>Ingest</h2><p>新消息一进来，它先决定要怎么收进自己的仓库或索引里。</p></article>
+    <article class="home-card"><span class="home-card-index">🧺</span><h2>Assemble</h2><p>真正开跑前，它把这轮该带的消息按顺序摆出来，装进模型背包。</p></article>
+    <article class="home-card"><span class="home-card-index">✂️</span><h2>Compact</h2><p>包太满时，它负责把旧故事压短，腾出空间。</p></article>
+    <article class="home-card"><span class="home-card-index">🧾</span><h2>After turn</h2><p>一轮结束后，它还能顺手存状态、更新索引、做后台收尾。</p></article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧩 换引擎这件事，本质上就是“先装新总管，再把总管席位换给它”</h2>
+    <p>官方默认总管叫 <code>legacy</code>。你想换人，就先把新插件装进来。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>openclaw plugins install @martian-engineering/lossless-claw</code></div><p>像先把新的打包主管招进公司。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>plugins.slots.contextEngine</code></div><p>这格像“总管座位牌”。把它改成新引擎 id，才算正式换岗。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>entries.{plugin}.enabled</code></div><p>这像给新总管开工牌。没 enabled，就只是人来了但没上岗。</p></div>
+    <div class="source-card"><div class="story-card-label">🔄 重启 Gateway</div><p>换完人记得重启，相当于重新宣布“今天起由这个总管值班”。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>✨ <code>systemPromptAddition</code> 像总管塞进开场白的一张临时便签</h2>
+    <p>它不是改静态文件，而是每轮临时多贴一句“今天特别注意这个”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label">动态提醒</div><p>比如回忆线索、检索提示、当前上下文特别注意点，都可以从这里塞进去。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>onSubagentEnded</code></div><p>这像小工干完活后，总管回来做收尾清场。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>openclaw doctor</code></div><p>这句像去值班室看一眼，现在到底是哪位总管在岗。</p></div>
+    <div class="source-card"><div class="story-card-label">🎈 最后记一句</div><p>Context engine 不是新模型，也不是新记忆库，它是“谁来打包上下文”的总调度。</p></div>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

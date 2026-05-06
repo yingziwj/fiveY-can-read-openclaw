@@ -4328,215 +4328,75 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>出问题时，怎么抓住现场？</h2>
-            <p>调试不是猜谜，OpenClaw 给了你几把钥匙：临时改配置、看插件说了什么、盯住原始数据流。下面一张一张讲清楚。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/help/debugging</span>
-            <span>故事卡片：7 张</span>
-            <a href="https://docs.openclaw.ai/help/debugging" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>临时改配置：/debug 命令</h2>
-              <p>不用打开文件，在聊天框里就能临时改配置，改完就生效，重启就消失。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>有时候你只想试一个开关，不想改配置文件。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>/debug show 看看当前临时改了什么。</li><li>/debug set messages.responsePrefix=&quot;[openclaw]&quot; 给每条回复前面加个标签，方便在日志里找到它。</li><li>/debug unset 去掉某一条临时改动。</li><li>/debug reset 一键清空所有临时改动，回到配置文件里的样子。</li><li>/debug 默认是关着的，需要先在 openclaw.json 里打开 commands.debug: true 才能用。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>执行 /debug show 后，终端会列出一张临时配置表，每行一个 key=value。</li><li>执行 /debug set xxx 后，配置立刻生效，但不会写进磁盘文件。</li><li>执行 /debug reset 后，所有临时改动消失，配置回到 openclaw.json 里的值。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>临时配置像便利贴，撕掉就没了，适合试错。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>看插件的小纸条：/trace 命令</h2>
-              <p>插件自己会吐一些调试信息，/trace 让你在当前会话里看到它们，不用打开啰嗦模式。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>有时候插件内部出了问题，但普通输出看不到。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>/trace 打开，插件就会把调试信息发到你的聊天窗口。</li><li>/trace on 和 /trace off 分别打开和关闭。</li><li>它和 /verbose 不同：/verbose 看的是工具调用和状态，/trace 看的是插件自己的小纸条。</li><li>比如 Active Memory 插件的调试摘要，就用 /trace 来看。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>/trace 是插件的小窗口，别跟 /verbose 搞混。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>自动重启：gateway:watch</h2>
-              <p>改完代码想立刻试？用 pnpm gateway:watch，文件一保存，网关就自动重启。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>不用每次手动停止再启动，省时间。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>执行 pnpm gateway:watch，终端里会启动一个文件监听器。</li><li>你改任何代码文件，它自动重启网关。</li><li>本质上是 node scripts/watch-node.mjs gateway --force。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>运行后终端会显示“Watching for file changes...”</li><li>你改一个文件保存，终端会显示“Restarting...”然后重新加载。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>改代码、保存、自动重启，像热锅里的汤。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>隔离调试：--dev 双旗</h2>
-              <p>用 --dev 开一个干净的调试环境，不污染你的日常数据。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>调试时不想搞乱正常配置和数据。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>全局 --dev 把状态隔离到 ~/.openclaw-dev 目录，和正常 ~/.openclaw 分开。</li><li>网关 --dev 让网关自动创建默认配置和空白工作区，省去初始设置。</li><li>两个 --dev 可以一起用，也可以单独用。</li><li>网关端口默认变成 19001，派生端口也跟着变。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>执行 openclaw --dev 后，所有数据存在 ~/.openclaw-dev 里。</li><li>执行 gateway --dev 后，网关自动生成 config.yaml 和 workspace。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>--dev 像借了一套新工具，用完还回去，不碰自己的。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>看原始流：raw-stream 日志</h2>
-              <p>OpenClaw 能在任何过滤和格式化之前，把 AI 回复的原始数据流记下来。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>有时候你想知道 AI 的推理过程是作为普通文本来的，还是单独一个 thinking 块。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>用 pnpm gateway:watch --raw-stream 启动，日志会写到默认文件。</li><li>日志里每条消息都是 JSON，包含完整的 delta 内容。</li><li>可以指定路径：--raw-stream-path /path/to/log.jsonl。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>执行后，终端会显示“Raw stream logging to /path/to/log.jsonl”。</li><li>每次 AI 回复，日志文件会追加一行 JSON。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>原始流是 AI 说的第一句话，还没被加工。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>看更原始的块：pi-mono 的 PI_RAW_STREAM</h2>
-              <p>如果 OpenClaw 的日志还不够底层，用 pi-mono 的环境变量抓 OpenAI 兼容接口的原始块。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>有时候问题出在解析之前，需要看最原始的 API 响应。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>设置环境变量 PI_RAW_STREAM=1，pi-mono 就会记录原始块。</li><li>默认路径是 ~/.pi-mono/logs/raw-openai-completions.jsonl。</li><li>可以用 PI_RAW_STREAM_PATH 自定义路径。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>在终端执行 export PI_RAW_STREAM=1 然后启动程序。</li><li>日志文件里每行是一个完整的 chunk，包含 choices、delta 等字段。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>这个日志比 raw-stream 更底层，看的是 API 返回的原始数据包。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>安全提醒</h2>
-              <p>原始日志里可能包含你的提示词、工具输出和用户数据，小心保管。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>调试完记得删掉日志，别泄露隐私。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>原始流日志可能包含完整的对话内容和工具调用结果。</li><li>日志只留在本地，调试完就删除。</li><li>如果非要分享，先去掉敏感信息和用户身份。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>日志是现场照片，看完就销毁。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🪤 Debugging，就是把问题拆成几只小虫子一只只抓</h2>
+      <p>这页讲的是怎么查 bug。不是把错误一口吞下，而是把它拆成日志、输入、环境、步骤一项项看。</p>
+      <p>像拿小手电找床底下的东西，先看光照到哪，再看阴影里藏了什么。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合看日志和报错的人</span>
+      <span>重点是先缩小范围，再定位原因</span>
+      <a href="https://docs.openclaw.ai/help/debugging" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一步</p>
+    <h2>🔎 先看症状，再找病因</h2>
+    <p>调试最怕的不是错，而是你不知道错从哪儿开始。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">先看日志</div>
+      <p>像先听病人怎么说话。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">先看最后一步</div>
+      <p>像回放最后一次摔倒发生了什么。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">先缩小范围</div>
+      <p>像把大屋子分成一间一间找。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二步</p>
+    <h2>🛠 命令像在做什么</h2>
+    <p>调试命令不是为了显得专业，而是为了让你更快看到线索。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">`openclaw logs`</div>
+      <p>像翻监控回放。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">`openclaw doctor`</div>
+      <p>像做一次快速体检。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">`openclaw config get ...`</div>
+      <p>像把某个设置项单独拎出来看。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>🎈 Debugging 不是猜题，是找证据</h2>
+    <p>一条日志、一条配置、一次输入，往往比脑补更有用。</p>
+  </div>
+</section>
+
+
 
       <footer class="page-footer">
         <div>

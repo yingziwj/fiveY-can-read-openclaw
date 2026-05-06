@@ -4328,210 +4328,245 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>消息来了，OpenClaw 怎么接、怎么管、怎么回？</h2>
-            <p>一条消息从外面飞进来，OpenClaw 会先看看它是不是重复的，要不要等一等再处理，然后决定是直接交给智能体，还是先排队。回消息的时候，还能一段一段地往外吐，像打字机一样。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/concepts/messages</span>
-            <span>故事卡片：7 张</span>
-            <a href="https://docs.openclaw.ai/concepts/messages" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>消息进门之后的第一站</h2>
-              <p>消息从微信、Telegram 这些通道进来，OpenClaw 先做两件事：去重和防抖。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>避免同一个消息被重复处理，也避免用户连发一堆消息时，智能体手忙脚乱。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>去重就像门卫记下每张进门条上的编号，同一张条子不会再放进来第二次。</li><li>防抖好比你在窗口连续喊了好几声，工作人员等你喊完才回你一句，免得你一句他一句乱套。</li><li>防抖的时间可以按通道调，比如 WhatsApp 等 5 秒，Slack 等 1.5 秒。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>配置里的 debounceMs: 2000 就是等 2 秒，byChannel 里可以给不同通道设不同时间。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>消息进门先过门卫和缓冲垫，不慌不忙再处理。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>会话和钥匙串</h2>
-              <p>每个聊天会话都有一把钥匙，这把钥匙归网关管，不归客户端管。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>不管你在手机还是电脑上聊，会话历史都统一存在网关，不会丢。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>私聊的钥匙就是你和智能体的主钥匙。</li><li>群聊和频道有自己单独的钥匙，互不干扰。</li><li>建议长时间对话只用一台设备，不然不同设备上的历史可能对不上。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>会话钥匙在网关手里，网关是真相之源。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>消息的两种身体：提示体与命令体</h2>
-              <p>OpenClaw 把用户发的消息拆成两部分：一部分是给智能体看的提示，一部分是给指令解析器看的原始文字。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这样智能体收到的提示可以带上通道的包装（比如时间戳），而指令解析器拿到的是干干净净的用户原话。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>Body 是包装后的提示文本，可能包含通道信息。</li><li>CommandBody 是用户打的原始文字，用来解析指令。</li><li>RawBody 是旧的别名，现在用 CommandBody 就好。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>消息分两层：一层给智能体，一层给指令器。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>排队与跟进的几种玩法</h2>
-              <p>如果智能体正在忙，新来的消息可以排队，也可以插队，或者先存着等下一轮。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>避免智能体被消息冲垮，也让你能控制对话节奏。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>interrupt 模式：新消息打断当前任务，立刻处理。</li><li>steer 模式：新消息引导当前任务转向，不打断。</li><li>followup 模式：新消息等当前任务结束后再处理。</li><li>collect 模式：新消息收集起来，等用户说“好了”再一起处理。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>配置 messages.queue 可以选模式，还能按通道单独设置。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>智能体忙的时候，消息可以排队、插队或存着，由你定。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>一段一段往外吐：流式与分块</h2>
-              <p>智能体回消息时可以像打字机一样一段一段地输出，而不是等全部写完再一次性发出来。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>用户不用干等，能看到智能体正在“想”和“写”。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>blockStreaming 开关控制是否启用流式输出，默认关。</li><li>分块时会注意不把代码块从中间劈开。</li><li>humanDelay 可以模拟人类打字的速度，让回复看起来更自然。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>agents.defaults.blockStreamingDefault 设置全局开关。</li><li>channels.whatsapp.blockStreaming 可以单独给 WhatsApp 开流式。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>回复可以像打字机一样一段段往外蹦，用户看着不着急。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>让智能体把思考过程亮出来</h2>
-              <p>OpenClaw 可以展示智能体的推理过程，或者把它藏起来。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>调试时想看它怎么想的，正式使用时可能不想让用户看到。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>用 /reasoning on 打开推理显示，off 关闭，stream 让它流式显示。</li><li>推理内容仍然计入 token 消耗。</li><li>Telegram 支持在草稿气泡里流式显示推理过程。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>智能体的思考过程可以亮出来，也可以藏起来，随你调。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>回复前缀与线程回复</h2>
-              <p>每条出去的回复前面可以加个前缀，比如智能体的名字或表情，还能决定回复是跟帖还是开新帖。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>让回复看起来更整齐，也方便在群聊里区分是谁在说话。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>responsePrefix 可以按通道、甚至按账号设置，比如 WhatsApp 的消息前缀。</li><li>replyToMode 控制回复时是引用原消息还是直接发新消息。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>messages.responsePrefix 设置全局前缀。</li><li>channels.telegram.responsePrefix 单独给 Telegram 设前缀。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>每条回复前面都能加个标签，还能控制它是跟帖还是新帖。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📮 Messages 就是“消息怎么进门、怎么排队、怎么回家”</h2>
+      <p>这页把很多东西缝在一起：消息从哪儿来，来了以后怎么分给哪一本会话本，排队时怎么等，回答时怎么一小段一小段送出去，脑子里要不要把想法亮出来。</p>
+      <p>你可以把它想成一条邮局流水线。门口收信，柜台分信，车间干活，最后把回信送回去。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想看懂“消息来了以后到底发生什么”的人</span>
+      <span>这页最重要的是把 inbound、session、queue、streaming 放在同一条路上看</span>
+      <a href="https://docs.openclaw.ai/concepts/messages" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>📨 先想画面：一条消息从门口进来，不会直接冲进工厂</h2>
+    <p>它会先经过路由、会话键、队列，再进 agent run。最后才是回复。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">Inbound message</div>
+      <p>像一封刚进门的信，先放到前台，不是直接扔进后厨。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Routing / bindings</div>
+      <p>像门卫先看这封信该送去哪一间屋子。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Session key</div>
+      <p>像给这封信贴上一个“属于哪本聊天本”的书签。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Queue -> run -> replies</div>
+      <p>像先排队，再请工人处理，最后把回信分段送出去。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧷 重复投递不该让它重复开工，所以有个小记忆盒</h2>
+    <p>官方说得很实在：通道重连以后，同一条消息可能又来一次。OpenClaw 会先认出来，别让它重复跑一遍。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2>Inbound dedupe</h2>
+      <p>像门口放了一只短期记忆盒，同样的包裹再来时，会先认出它来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧾</span>
+      <h2>按 channel/account/peer/session/message id 认人</h2>
+      <p>像信封上写了很多标签，门卫就能更稳地判断是不是同一封信。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚫</span>
+      <h2>认出来就不重复开工</h2>
+      <p>不是冷漠，是为了不让同一件事被做两遍。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>重复投递应该像复印件，不该像新工单。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>⏳ 连续几封小纸条来了，它可以先抱成一团</h2>
+    <p>这就是 debouncing。意思是，连着来的几条消息，可以先稍微等一下，合成一次更像人话的回复。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>messages.inbound.debounceMs</code></div>
+      <p>像前台设一个小缓冲区：别一条条刚进来就急着喊工人，先等一小会儿看还有没有后续。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">按通道可以不同</div>
+      <p>WhatsApp 可以等久一点，Slack 和 Discord 可以短一点。像不同门口的人说话节奏不一样。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">text-only 才会等</div>
+      <p>纯文字会先等，图片和附件通常会立刻放行，不然用户会觉得机器人卡住了。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">控制命令直接过</div>
+      <p>像店长的手势，不需要跟普通闲聊一起凑热闹。</p>
+    </div>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">🛠 配置像在做什么</div>
+      <p><code>debounceMs: 2000</code> 就像说“先等两秒，看对方是不是还要接着说”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>byChannel</code></div>
+      <p>像不同门口有不同的等候时间表。WhatsApp 这扇门慢一点，Slack 那扇门快一点。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">一条消息变一轮</div>
+      <p>合并以后，OpenClaw 就拿一组更完整的话去想答案，而不是每个碎碎念都单独开工。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>debounce 不是拖延，是先听完再回。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🗂 Session 是门卫手里的那本“这位客人属于哪一间屋”的本子</h2>
+    <p>这页特别强调：会话是 gateway 的，不是客户端各自私藏的。控制台和 TUI 看到的，才是主本子。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🏠</span>
+      <h2>Direct chats</h2>
+      <p>直聊通常会折叠到主会话。像同一个人一直来前台，还是记在同一本聊天本上。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">👥</span>
+      <h2>Groups / channels</h2>
+      <p>群聊和频道通常会有自己的会话键。像每个房间都有自己的记录本。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔒</span>
+      <h2>Gateway 是总账本</h2>
+      <p>客户端只是来读，不是各写各的。真正的历史由 gateway host 负责保存。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>谁属于哪本本子，别让手机自己猜，交给 gateway 记。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🪧 prompt body 和 command body 不一样，像“给小工人的话”和“给门卫的原话”</h2>
+    <p>官方把这两层拆开，是为了让历史和命令解析都更稳。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>Body</code></div>
+      <p>像真正送进工人脑袋里的工作单，可能已经包好历史和外壳了。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>CommandBody</code></div>
+      <p>像门卫拿到的原话，专门用来识别是不是在下命令。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>RawBody</code></div>
+      <p>就是旧名字，像以前的老标签，还能认，但现在更推荐看 <code>CommandBody</code>。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">历史包裹怎么摆</div>
+      <p>群聊常会先放“从你上次回复之后发生了什么”的历史条，再放“这一次请直接回应”的当前消息条。这样工人不会把故事顺序搞乱。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>📣 队列不是一个总开关，它有几种排法</h2>
+    <p>如果工人正在干活，新来的消息可以马上插手、等下一轮、一起收拢，或者把旧排队再带一点回来。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">⚡</span>
+      <h2><code>interrupt</code></h2>
+      <p>像把正在说话的人打断，换成最新一封信先上。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧪</span>
+      <h2><code>steer</code></h2>
+      <p>像轻轻在工人耳边补一句：“方向往这边拐。”</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧺</span>
+      <h2><code>followup</code> / <code>collect</code></h2>
+      <p>像把后续纸条先收在篮子里，等当前这一轮做完再一起处理。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>一句话</h2>
+      <p>队列是在帮消息排队，不是在帮消息打架。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第七站</p>
+    <h2>🗣 说话方式也能调：边想边说，还是先想完再说</h2>
+    <p>官方这里讲 streaming、chunking、prefix、reply threading，还有 reasoning visibility。它们本质上都是“回信怎么摆出来”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>blockStreaming</code></div>
+      <p>像让工人边想边递草稿，不必等整篇写完再亮给你看。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>blockStreamingChunk</code></div>
+      <p>像决定草稿一口气递多大块，别把句子切得太碎。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>/reasoning on|off|stream</code></div>
+      <p>像决定脑内小火花要不要给你看，是全藏起来、全部关掉，还是边想边亮。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">消息前缀和线程</div>
+      <p><code>responsePrefix</code> 像回信前先加个称呼，<code>replyToMode</code> 像决定是不是把回信挂回原来那条线上。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把这页压成一句最短的话</h2>
+    <p>Messages 这页讲的是一条消息从门口进来、被认出是谁、是否先排队、怎么喂给工人、以及最后如何分段回家。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你想继续看“怎么让登录结果像一把稳定的小钥匙”，下一页就去 <code>/concepts/oauth</code>。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

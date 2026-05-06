@@ -4328,136 +4328,168 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>给OpenClaw装上Kimi搜索🔍</h2>
-            <p>想象一下，你有个聪明的助手叫Kimi。它不光会聊天，还能上网帮你查资料。现在，我们把它接到OpenClaw这个工具箱里。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/tools/kimi-search</span>
-            <span>故事卡片：4 张</span>
-            <a href="https://docs.openclaw.ai/tools/kimi-search" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>第一步：拿钥匙🔑</h2>
-              <p>想让Kimi帮你上网查东西，得先有把钥匙。这把钥匙叫API密钥。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>没钥匙，门卫不认识你，进不去。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>去Moonshot AI的网站（platform.moonshot.cn）申请一把钥匙。</li><li>这把钥匙长得像“sk-”开头的一串神秘字符。</li><li>拿到钥匙后，你得把它交给OpenClaw的门卫。</li><li>你可以直接把钥匙塞进环境变量里，名字叫KIMI_API_KEY或者MOONSHOT_API_KEY。</li><li>或者，你也可以在配置工具箱时，亲手把钥匙填进去。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>运行 `openclaw configure --section web` 这个命令，就像打开工具箱的“网页搜索”抽屉。</li><li>系统会问你：“用谁帮你搜？”选“Kimi”。</li><li>接着它会伸手问你要钥匙，你把刚才申请的那串字符给它就行。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>先拿钥匙，再进门。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>第二步：告诉门卫怎么走🗺️</h2>
-              <p>钥匙有了，还得告诉OpenClaw，该去哪个地址找Kimi。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>走错路，钥匙可能就开不了门。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>Kimi住在两个地方：一个国际地址（api.moonshot.ai），一个国内地址（api.moonshot.cn）。</li><li>如果你平时就用国内地址和Kimi聊天，OpenClaw会很聪明，默认也走这条路去搜索。</li><li>这样能避免走错路，被国际地址的门卫（返回401错误）拦在外面。</li><li>当然，你也可以在配置里明确写清楚：“请走这条路：https://api.moonshot.ai/v1”。</li><li>还要告诉它，请家里哪位Kimi先生（模型）来帮忙，默认是“kimi-k2.5”这位。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>在配置文件的 `webSearch` 部分，写下 `baseUrl` 和 `model`。</li><li>`baseUrl` 是地址，`model` 是你要找的帮手名字。</li><li>如果这两个不写，OpenClaw会用默认值：国际地址和kimi-k2.5。</li><li>钥匙（apiKey）也可以写在这里，但如果环境变量里已经有了，这里可以不写。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>地址写对，帮手找对，一路畅通。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>第三步：Kimi怎么帮你搜🔎</h2>
-              <p>一切就绪，Kimi开始工作了。它上网搜东西的方式很特别。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>了解它怎么干活，你才知道怎么问问题最有效。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>你问一个问题（query），Kimi会派它的“网页搜索”小分队出去。</li><li>小分队不是给你拉回来一堆链接列表。</li><li>它会像Gemini和Grok搜索那样，把找到的信息消化、整理，给你一个完整的答案。</li><li>答案里还会贴心地把关键信息的来源（引用）标出来，就像加了小脚注。</li><li>你没法指定“只搜中文网站”或“只要最近一周的”，这些精细过滤目前还不行。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>你只能告诉它 `query`（你的问题）。</li><li>虽然系统兼容 `count` 参数，但Kimi不管这个，它永远只给你一个整理好的答案。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>Kimi给你的是消化好的答案，不是一堆链接。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>工具箱里的其他邻居🔗</h2>
-              <p>OpenClaw的搜索工具箱里，不止Kimi一位。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道还有谁，下次可以换着用。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>想了解所有能上网搜索的帮手，可以看看“网页搜索总览”。</li><li>Kimi来自Moonshot家族，想更了解这个家族（聊天、写代码），可以看Moonshot的专门介绍。</li><li>如果你喜欢Google家的风格，可以试试Gemini搜索。</li><li>如果你对xAI家的风格好奇，可以看看Grok搜索。</li><li>它们都擅长把搜索到的信息，整理成有引用的答案。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>工具箱很丰富，Kimi是其中一位好帮手。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🌙 Kimi Search 像一位“拿着 Moonshot 参考书的答案小助手”</h2>
+      <p>这页讲的是 Kimi 在 OpenClaw 里的搜索路线。它走的是 Moonshot web search，输出的也是带引用的答案，不只是蓝色链接列表。</p>
+      <p>你可以把它想成一个安静但很会整理笔记的小助手。你问它问题，它先去找，再把结果收拾成一段能读懂的话。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合已经在用 Moonshot / Kimi 生态的人</span>
+      <span>这页最重要的是看懂 Kimi、Moonshot API key、以及答案型搜索的关系</span>
+      <a href="https://docs.openclaw.ai/tools/kimi-search" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🌙 先把它想成“Moonshot 家的资料小助手”</h2>
+    <p>官方一开始就点明了：Kimi 不是另一套完全不同的怪东西，它本质上就是用 Moonshot web search 来帮你回答问题。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📚 答案型搜索</div>
+      <p>不是只给链接，而是把资料整理成答案。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📝 带引用</div>
+      <p>答案后面会把来源挂出来，让你知道它不是凭空编的。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🌙 Moonshot 生态</div>
+      <p>如果你已经在用 Moonshot 相关的 key 和配置，这条路会很顺。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 先记一句</div>
+      <p>Kimi 的风格是“搜完直接讲答案”，不是“搜完丢一堆链接给你”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔑 API key 那一步，就像把门卡插进 Moonshot 的柜子里</h2>
+    <p>官方给了两种 key 名字：<code>KIMI_API_KEY</code> 和 <code>MOONSHOT_API_KEY</code>。你可以把它们理解成同一类门卡的两种标签。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>KIMI_API_KEY</code></div>
+      <p>像直接写给 Kimi 的门卡。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>MOONSHOT_API_KEY</code></div>
+      <p>像写给 Moonshot 总柜台的门卡。两者都能用。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw configure --section web</code></div>
+      <p>像把网页搜索这张桌子打开，然后把 Kimi 放上去。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🧠 环境变量也行</div>
+      <p>如果你不想写进配置，也可以放到 Gateway 环境里。像把门卡放进口袋，而不是贴在墙上。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧩 配置里的 provider，就是在说“网页搜索以后走哪条路”</h2>
+    <p>官方配置块其实很直接：把 web search provider 指向 kimi，就等于让 OpenClaw 以后先叫 Kimi 出手。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>provider: \"kimi\"</code></div>
+      <p>像在总搜索台挂牌：“网页搜索请走 Kimi 这条路。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>plugins.entries.moonshot</code></div>
+      <p>像把 Moonshot 这套能力包先装好。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>webSearch.apiKey</code></div>
+      <p>像给这个搜索柜子配门卡。没门卡，Kimi 就进不去。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 这页的主线</div>
+      <p>Kimi 不是独立的大系统，只是 Web Search 里的一条 provider 线路。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🔁 它怎么出答案，和 Gemini / Grok 的感觉很像</h2>
+    <p>官方也直接说了，Kimi 的思路和 Gemini、Grok 类似：先找资料，再把资料合成带引用的回答。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧲</span>
+      <h2>先找</h2>
+      <p>让 Moonshot web search 去找相关网页。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧠</span>
+      <h2>再合成</h2>
+      <p>把找到的资料收拢成一个更像答案的东西。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔗</span>
+      <h2>带引用</h2>
+      <p>告诉你答案是从哪里来的。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🌙</span>
+      <h2>风格更安静</h2>
+      <p>它给人的感觉像一个不吵，但会把笔记整理好的助手。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧷 参数还是很少，说明它主打的是简单直接</h2>
+    <p>Kimi Search 没有很多花里胡哨的筛选项。它就是让你把问题丢进去，然后拿到一个带引用的答案。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>query</code></div>
+      <p>你要问的问题。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>count</code></div>
+      <p>你想让它带回多少条结果。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚫 不主打复杂过滤</div>
+      <p>更细的国家、语言、时效筛选，这里不是主角。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 这一节一句话</div>
+      <p>Kimi 不是参数多，而是答案整齐。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>把这页压成一句最好记的话</h2>
+    <p>Kimi Search 是 Moonshot 家的答案型网页搜索，拿到 key 以后就能让 OpenClaw 去网上找资料、再把答案讲清楚。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议回去对比 <code>/tools/gemini-search</code> 和 <code>/tools/grok-search</code>。它们和 Kimi 很像，但钥匙和后台味道都不一样。</p>
+  </div>
+</section>
+
+
 
       <footer class="page-footer">
         <div>

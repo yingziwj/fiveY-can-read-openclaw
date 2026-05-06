@@ -4328,154 +4328,204 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>给OpenClaw装个“网络望远镜”🔭</h2>
-            <p>想让你的OpenClaw去网上找东西吗？Exa Search就是它的眼睛。拿到钥匙，告诉它怎么找，它就能把网页里的精华都给你带回来。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/tools/exa-search</span>
-            <span>故事卡片：5 张</span>
-            <a href="https://docs.openclaw.ai/tools/exa-search" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>第一步：拿到钥匙🔑</h2>
-              <p>想用Exa，你得先有一把钥匙。这把钥匙叫API Key。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>没钥匙，门卫不会让你用Exa的搜索服务。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>去exa.ai网站注册个账号，就像办张会员卡。</li><li>在网站的‘仪表盘’里，找到生成API Key的地方，点一下。</li><li>这把钥匙就是一串以‘exa-’开头的密码。</li><li>你得把这串密码交给OpenClaw的‘网关’保管。</li><li>可以把它写在网关的‘环境变量’里，名字就叫EXA_API_KEY。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>命令 `openclaw configure --section web` 会打开一个配置窗口。</li><li>你可以在窗口里找到放钥匙的地方，把‘exa-...’这串密码贴进去。</li><li>执行后，OpenClaw的后台就记住了这把钥匙。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>钥匙在手，搜索不愁。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>第二步：告诉它怎么找🔍</h2>
-              <p>钥匙有了，现在告诉你的‘网络望远镜’要看什么、怎么看。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>不说清楚，它可能找得太慢，或者找错东西。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>‘query’是必填的，就是你心里想问的问题，比如‘怎么养猫’。</li><li>‘count’是让它找几个结果回来，最少1个，最多100个。</li><li>‘type’是搜索模式，就像选望远镜的镜头。</li><li>‘freshness’是时间过滤器，比如只看‘一周内’的新消息。</li><li>‘date_after’更精确，告诉它‘从这个日期之后’的才要。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>问题越具体，答案越对路。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>第三步：选个搜索镜头🎯</h2>
-              <p>Exa有好几种‘镜头’，帮你用不同方式看网络。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>用对镜头，找东西又快又准。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>‘auto’是自动挡，让Exa自己选最好的镜头（默认就用这个）。</li><li>‘neural’是理解语义的镜头，能看懂你话里的意思。</li><li>‘fast’是快速镜头，主要看关键词，嗖一下就回来。</li><li>‘deep’是深度镜头，看得更仔细更全面。</li><li>‘deep-reasoning’是带推理的深度镜头，想得更深。</li><li>‘instant’是最快镜头，追求速度第一。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>日常用‘auto’，着急用‘fast’，深挖用‘deep’。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>第四步：让它把精华带回来📄</h2>
-              <p>Exa厉害在不仅能找到网页，还能把网页里的文字精华‘提取’出来给你。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>不用你亲自点开每个链接去翻，它帮你把重点都挑出来了。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>在命令里加一个‘contents’对象，就像给望远镜加个‘采集袋’。</li><li>设置‘text: true’，它会把整个网页的文字都装回来。</li><li>设置‘highlights’，它会挑出几个最关键的句子给你看。</li><li>设置‘summary: true’，它甚至能用AI帮你写个简短总结。</li><li>你可以控制采集量，比如‘只要5000个字符’或‘只要3个关键句’。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>代码里的 `contents: { text: true, highlights: { numSentences: 3 }, summary: true }` 就是在下指令。</li><li>执行后，返回的结果里就不光是一个链接，还会附带提取好的文字、高亮句和AI总结。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>一键采集，精华到手。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>最后的小贴士💡</h2>
-              <p>用的时候，记住这几个小细节。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道这些，用起来更顺手，少踩坑。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>如果网页允许，Exa会优先给你‘高亮句子’，这是最快看到重点的方式。</li><li>高亮句没有的话，它会试着给‘AI总结’。</li><li>如果连总结也没有，它才会把‘全文’都抓取下来。</li><li>别忘了‘freshness’这个时间过滤器，找新闻时特别有用。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>细节决定体验。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧠 Exa Search 像一个“会想办法把资料抄得更完整的读书小助手”</h2>
+      <p>Brave 更像帮你先找到门牌，Exa 更像会顺手把门后面的重点也抄给你。它支持神经搜索、快速搜索、深搜，还能把内容摘要、亮句、全文一起带回来。</p>
+      <p>所以这页真正的核心不是“能不能搜”，而是“搜完以后，你能拿到多少像样的内容”。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想让 OpenClaw 直接拿到更丰富搜索结果的人</span>
+      <span>这页最重要的是看懂：Exa 不只是搜索，也会做内容抽取</span>
+      <a href="https://docs.openclaw.ai/tools/exa-search" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>📖 Exa 不是只给你一张地址单，它还会帮你先翻两页</h2>
+    <p>官方一开头就把它的特色说得很明白：这是一个网页搜索提供商，但它自带内容抽取。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🔎</span>
+      <h2>搜索</h2>
+      <p>先帮你找相关网页。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✂️</span>
+      <h2>抽取</h2>
+      <p>再把网页里的重点内容抄出来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧠</span>
+      <h2>神经 / 深搜</h2>
+      <p>像换不同力度的找法。你想找“意思接近”的，还是“更认真更深”的，它都能切。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⭐</span>
+      <h2>先记一句</h2>
+      <p>Exa 是“找得到”，也“抄得出”。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔑 API key 像借书证，先办卡再进馆</h2>
+    <p>拿 Exa 的 key 很简单，先注册，再把 key 放进 Gateway 环境或者配置里。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">1. 去 exa.ai 开账号</div>
+      <p>像先去图书馆办卡。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">2. 拿 API key</div>
+      <p><code>EXA_API_KEY</code> 就像借书证。系统看见它，才知道你能进门。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">3. 放进环境变量或配置</div>
+      <p>你可以直接放在 Gateway 环境，也可以走 <code>openclaw configure --section web</code>。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 一句话</div>
+      <p>Exa 上岗前，先把借书证办好。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🛠 配置那段 JSON，翻成人话就是“把网页搜索台接到 Exa”</h2>
+    <p>官方给的配置和 Brave 很像：插件里放 key，web search 里选 provider。不同的是 Exa 还常常顺手带出内容抽取的能力。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>tools.web.search.provider: \"exa\"</code></div>
+      <p>像在总搜索台挂牌：“以后搜网页，先叫 Exa。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>plugins.entries.exa.config.webSearch.apiKey</code></div>
+      <p>像把借书证放进 Exa 自己的抽屉。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>EXA_API_KEY</code></div>
+      <p>像另一条备用通道。环境变量和配置都能喂给它。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⚠️ 官方提醒</div>
+      <p>如果你同时想用日期筛选和 freshness，二选一就行，别两套时间尺一起上。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🎚 Exa 的参数，像给读书小助手的不同任务单</h2>
+    <p>Exa 真正好玩的地方，是它的搜索模式和内容抽取模式很多。你可以把它当成会读书的搜索员。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧠</span>
+      <h2><code>type: neural</code></h2>
+      <p>像按意思找书，不只是按字面撞关键词。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⚡</span>
+      <h2><code>type: fast</code></h2>
+      <p>像先快翻一遍，适合速度优先。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪜</span>
+      <h2><code>type: deep</code></h2>
+      <p>像认真往深里翻，查得更细。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔁</span>
+      <h2><code>deep-reasoning</code></h2>
+      <p>像深搜以后还要再想一层，适合更复杂的问题。</p>
+    </article>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>count</code></div>
+      <p>像告诉它：别搬整间图书馆，先拿我需要的几本。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>freshness</code></div>
+      <p>像只要最近新上架的书。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>date_after</code> / <code>date_before</code></div>
+      <p>像拿日期尺子圈出时间盒子。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>contents</code></div>
+      <p>像告诉它：“不只给我目录，还给我书里的摘录。”</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>📚 contents 这块，才是 Exa 真正像“读书助手”的地方</h2>
+    <p>官方最值得记的一段，就是它可以同时给你全文、亮句和摘要。这样搜索结果不只是“去哪儿找”，而是“找到后先看什么”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>text</code></div>
+      <p>像把整页抄下来。内容最全，但也最长。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>highlights</code></div>
+      <p>像只划重点句子，省你自己翻。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>summary</code></div>
+      <p>像给你先念一段小抄，知道大意再决定要不要深看。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🧠 默认行为</div>
+      <p>如果你没写 contents，Exa 还会默认给高亮片段。意思就是它默认就不想只给你空目录。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🧯 这页最后的几个提醒，都是在告诉你“Exa 既快又深，但别把规则混了”</h2>
+    <p>官方 Notes 里写得很实用。你只要记住几个小坑就行。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📦 最多 100 条</div>
+      <p>它能给很多结果，但不是无限。像借书也有上限。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">⏳ 会缓存</div>
+      <p>结果默认缓存 15 分钟。重复问题别总让它重新跑。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧰 先搜，后抽</div>
+      <p>你可以先用搜索找大方向，再用 contents 把内容拿细一点。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 最后收住</div>
+      <p>Exa 像一个会先找路、再抄重点的读书小助手，特别适合想要更丰富网页内容的场景。</p>
+    </div>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

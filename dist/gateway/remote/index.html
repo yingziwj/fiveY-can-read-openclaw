@@ -4328,330 +4328,171 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>远程开门：SSH、隧道和网络小尾巴</h2>
-            <p>你可以在家里放一台永远开着的网关，然后从任何地方连过去。就像在门口装了一个门卫，你在外面打个电话，他就帮你开门、递东西。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/gateway/remote</span>
-            <span>故事卡片：12 张</span>
-            <a href="https://docs.openclaw.ai/gateway/remote" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>先看这里：谁在哪儿？</h2>
-              <p>这套系统里，网关是永不离线的管家，你的电脑是遥控器，手机是跑腿的。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道谁在哪儿，才知道怎么连。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>对于你（操作员 / macOS 用户）：SSH 隧道是万能后备方案，不管你在哪都能连。</li><li>对于节点（手机、平板等设备）：它们直接连网关的 WebSocket——局域网、小尾巴网络或 SSH 隧道都行。</li><li>简单说：你是老板，网关是办公室，节点是员工。老板在外地用电话指挥办公室，办公室再派员工干活。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>网关是永远在线的管家，你从任何地方都能通过 SSH 隧道找到它。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>核心想法：一根看不见的管子</h2>
-              <p>网关的 WebSocket 只在本机（127.0.0.1）上听消息，就像门卫只开一扇后门，外人找不到。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>安全第一，但你也想从外面用，所以需要一根管子把后门引出来。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>网关 WebSocket 默认绑在 127.0.0.1:18789，只有本机能访问。</li><li>远程使用时，你用 SSH 隧道把这根管子从远程机器引到本地——就像从外面挖一条地道，直通后门。</li><li>如果你有小尾巴网络（比如 Tailscale）或 VPN，隧道可以省掉，直接连。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>默认只开本地后门，远程用就挖一条 SSH 地道。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>常见小尾巴网络方案：管家住哪儿？</h2>
-              <p>网关主机就是管家住的地方，它掌管会话、身份、频道和状态。你的电脑和节点都连到它。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>选对管家住处，你的遥控器才管用。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>管家住在一个永不离线的主机上，比如家里的服务器或云上的 VPS。</li><li>你通过 Tailscale 或 SSH 找到它。</li><li>最佳体验：网关绑在 loopback，然后用 Tailscale Serve 暴露控制界面。</li><li>后备方案：loopback + SSH 隧道，从任何需要访问的机器上挖过去。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>管家选个永不离线的地方住，你从外面遥控。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>方案1：管家在云端（VPS 或家里服务器）</h2>
-              <p>网关跑在永不离线的主机上，你通过 Tailscale 或 SSH 连过去。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>你的笔记本经常休眠，但想让管家一直醒着。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>最佳体验：保持 `gateway.bind: &quot;loopback&quot;`，然后用 Tailscale Serve 把控制界面端出来。</li><li>后备方案：loopback + SSH 隧道，从任何需要访问的机器挖过去。</li><li>参考例子：exe.dev（简易虚拟机）或 Hetzner（生产级 VPS）。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>管家在云端永不离线，笔记本休眠也不怕。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>方案2：家用电脑当管家，笔记本当遥控器</h2>
-              <p>笔记本不跑代理，只远程连接。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>你的台式机永远开着，笔记本随身带。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>笔记本用 macOS 应用的“Remote over SSH”模式（设置 → 通用 → “OpenClaw runs”）。</li><li>应用会自动打开并管理 SSH 隧道，WebChat 和健康检查都正常工作。</li><li>具体操作看 macOS 远程访问指南。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>台式机当管家，笔记本当遥控器，隧道自动管。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>方案3：笔记本当管家，其他机器远程连</h2>
-              <p>网关跑在笔记本上，但你想从其他机器安全访问。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>你主要用笔记本，但偶尔需要从别的电脑或手机控制。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>从其他机器用 SSH 隧道连到笔记本。</li><li>或者用 Tailscale Serve 暴露控制界面，网关保持 loopback 只绑定本地。</li><li>参考 Tailscale 和 Web 概览指南。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>笔记本当管家，用 SSH 隧道或 Tailscale 安全开门。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>命令怎么跑：消息的旅行路线</h2>
-              <p>一条消息从外面进来，网关先接住，再决定派谁去办。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道消息怎么走，出问题时好追查。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>例如：一条 Telegram 消息到达网关。</li><li>网关运行代理，决定是否需要调用节点工具。</li><li>网关通过 WebSocket 调用节点上的 RPC（`node.*`）。</li><li>节点返回结果，网关再回复给 Telegram。</li><li>整个过程：网关是总机，节点是分机。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>消息先到网关总机，再转给节点分机。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>SSH 隧道：命令行挖地道</h2>
-              <p>用一条 ssh 命令，把远程网关的端口引到本地。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这是最通用的远程连接方法，不依赖任何第三方服务。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>执行 `ssh -N -L 18789:127.0.0.1:18789 user@host`，就像挖一条从本地到远程的管道。</li><li>隧道建好后，本地 18789 端口就指向远程网关的 WebSocket。</li><li>然后 `openclaw health` 和 `openclaw status --deep` 就能通过 `ws://127.0.0.1:18789` 访问远程网关。</li><li>其他命令如 `openclaw gateway status` 等也可以用 `--url` 指定转发地址。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`ssh -N -L 18789:127.0.0.1:18789 user@host`：-N 表示不执行远程命令，只转发端口；-L 指定本地端口到远程地址的映射。</li><li>`openclaw health` 和 `openclaw status --deep` 会自动使用隧道，就像网关在本地一样。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>一条 ssh 命令，远程网关变本地。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-9">
-            <div class="section-heading">
-              <p class="section-kicker">第 9 站</p>
-              <h2>配置网关令牌：给管家一个密码</h2>
-              <p>把令牌存进配置，重启后依然有效。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>没有令牌，管家不认识你。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>执行 `openclaw config set gateway.remote.token &quot;&lt;your-token&gt;&quot;`。</li><li>令牌会保存在配置文件中，重启网关后依然有效。</li><li>就像给管家一个暗号，每次对暗号才能进门。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`openclaw config set gateway.remote.token &quot;&lt;your-token&gt;&quot;`：将令牌写入配置，注意替换为真实令牌。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>存好令牌，管家才认你。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-10">
-            <div class="section-heading">
-              <p class="section-kicker">第 10 站</p>
-              <h2>创建 LaunchAgent：让隧道开机自启</h2>
-              <p>写一个 plist 文件，告诉 macOS 每次登录自动挖隧道。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>不用每次手动输入 ssh 命令，省心。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>把 plist 文件保存到 `~/Library/LaunchAgents/ai.openclaw.ssh-tunnel.plist`。</li><li>文件里指定了 ssh 命令和参数，比如 `-N remote-gateway`。</li><li>注意：remote-gateway 需要在 SSH 配置中定义好主机别名。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>plist 文件内容：Label 是标识，ProgramArguments 数组里放 ssh 命令和参数。</li><li>`remote-gateway` 是 SSH 配置中的主机别名，需提前在 ~/.ssh/config 中定义。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>写一个 plist，隧道自动启。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-11">
-            <div class="section-heading">
-              <p class="section-kicker">第 11 站</p>
-              <h2>加载 LaunchAgent：让隧道跑起来</h2>
-              <p>用 launchctl 命令激活 plist，隧道立即启动，以后登录自动运行。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>不激活，plist 就是一张废纸。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>执行 `launchctl bootstrap gui/$UID ~/Library/LaunchAgents/ai.openclaw.ssh-tunnel.plist`。</li><li>隧道会在登录时自动启动，崩溃后自动重启，端口一直转发。</li><li>如果你之前有旧的 `com.openclaw.ssh-tunnel` LaunchAgent，先卸载删除。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`launchctl bootstrap gui/$UID ...`：加载并启动代理，gui/$UID 表示当前用户会话。</li><li>`launchctl bootout gui/$UID ...` 可卸载代理。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>激活 plist，隧道永不离线。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-12">
-            <div class="section-heading">
-              <p class="section-kicker">第 12 站</p>
-              <h2>故障排查：隧道还活着吗？</h2>
-              <p>用几条命令检查隧道是否在跑，端口是否在听。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>连不上时，先确认隧道是不是断了。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>`ps aux | grep &quot;ssh -N remote-gateway&quot; | grep -v grep`：看看 ssh 进程还在不在。</li><li>`lsof -i :18789`：看看 18789 端口是否在监听。</li><li>如果不在，用 `launchctl kickstart -k gui/$UID/ai.openclaw.ssh-tunnel` 重启隧道。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`ps aux | grep ...`：过滤出 ssh 进程，grep -v grep 去掉自身。</li><li>`lsof -i :18789`：列出使用 18789 端口的进程。</li><li>`launchctl kickstart -k ...`：强制重启 LaunchAgent。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>ps 看进程，lsof 看端口，kickstart 重启。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🚇 <code>Remote access</code> 像“人在外面，但通过隧道摸到家里总机房”</h2>
+      <p>这页讲的不是“再开一个 Gateway”，而是总机房继续待在远处那台主机上，你只是从外面安全地接进去。</p>
+      <p>最常见的路有两条：SSH 隧道，或者 tailnet 这类专线。核心思想一直不变，总机房只保留一个。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合把 Gateway 放在远端主机上长期值班的人</span>
+      <span>这页最重要的是记住：远程访问不是复制一份 Gateway，而是安全地连回唯一那一份</span>
+      <a href="https://docs.openclaw.ai/gateway/remote" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">核心想法</p>
+    <h2>🏢 Agent 住在哪台机器上，那台机器就是“家”</h2>
+    <p>官方一直在强调这个画面：Gateway host 才是 agent 真正住着的地方。你的笔记本、手机、网页都只是去远程摸它。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🏠</span>
+      <h2>Gateway host</h2>
+      <p>像总机房所在的主屋，里面存会话、认证资料、通道状态。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">💻</span>
+      <h2>你的电脑</h2>
+      <p>像一只遥控器，不一定是 agent 真正住的地方。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📱</span>
+      <h2>节点设备</h2>
+      <p>像外面的手脚和感官，依旧得回到这间主屋听令。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>远程访问的重点不是“多装一个”，而是“稳稳连回唯一那一个”。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">三种常见住法</p>
+    <h2>🛖 官方举的三个场景，其实就是三种“谁在家，谁在外面”的生活方式</h2>
+    <p>这段很像生活场景说明，不是纯技术条目。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">1. 永久在线的尾网主机</div>
+      <p>像把总机房放在 VPS 或家里小服务器上，让它日夜值班。你的笔记本睡了，家里总机房还醒着。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">2. 家里台式机跑 Gateway，笔记本远控</div>
+      <p>像家里的主屋一直亮着灯，你出门在外用一只遥控器摸回去。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">3. 笔记本自己跑 Gateway，再给别处远控</div>
+      <p>像你把主屋搬到笔记本里，但偶尔还想让其他机器临时接进来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 记一句</div>
+      <p>场景在变，唯一不变的是“真正的状态和会话只由那一个 Gateway 持有”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">命令翻译</p>
+    <h2>🕳 <code>ssh -N -L 18789:127.0.0.1:18789 user@host</code> 到底在现场做了什么？</h2>
+    <p>这行命令很多人会背，但不一定真懂。其实画面非常具体。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>ssh -N -L 18789:127.0.0.1:18789 user@host</code></div>
+      <p>像你从自己脚下挖了一条小隧道，通到远处主机的本地小门口。你眼前这边的 <code>127.0.0.1:18789</code>，其实已经被这条隧道悄悄接到了远方那边。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>-L</code></div>
+      <p>像告诉施工队：“在我这边开一个本地入口，通往远处那扇门。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>-N</code></div>
+      <p>像说“这次不进去开壳子、不聊天，只负责把隧道撑住”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">后面发生什么</div>
+      <p>隧道撑好后，<code>openclaw health</code>、<code>openclaw status --deep</code> 这些动作，看起来像在摸本地门，其实摸到的是远程总机房。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">远程默认配置</p>
+    <h2>🗂 <code>gateway.mode: "remote"</code> 像“以后默认就走那条隧道回家”</h2>
+    <p>如果你每次都要摸远程主机，官方允许你把远程地址和令牌记进配置里。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🌉</span>
+      <h2><code>gateway.remote.url</code></h2>
+      <p>像在通讯录里记住“以后默认回哪扇门”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔑</span>
+      <h2><code>gateway.remote.token</code></h2>
+      <p>像顺手把那扇远程门要用的门卡也记下来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⚠️</span>
+      <h2><code>--url</code> 例外</h2>
+      <p>官方特别提醒：你手动传 <code>--url</code> 时，CLI 不会替你偷偷套用配置里的隐式凭证。该显式带 token/password 就要显式带。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>能记默认值就记默认值，但手动改门牌时，也要自己记得带门卡。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">安全规则</p>
+    <h2>🔒 官方的态度很明确：总机房最好还是尽量只开在 loopback 里</h2>
+    <p>这页最想传达的安全习惯，其实就这一句。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">Loopback + SSH / Tailscale Serve</div>
+      <p>像总机房平时不把大门朝街上敞开，而是只在家里开个内门，再靠隧道或专线进去。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Non-loopback 必须带认证</div>
+      <p>如果门真的要开到外面，就必须带 token 或 password，不能裸奔。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">TLS fingerprint</div>
+      <p>像你不只认门牌号，还认门上的独特指纹，防止有人在路上假冒那扇门。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 记一句</div>
+      <p>远程的正确默认不是“把门打开”，而是“门尽量还关在家里，只通过可信隧道摸进去”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把这页压成一句最短的话</h2>
+    <p>Remote access 就像人不在家，但通过 SSH 隧道或尾网专线摸回唯一那间总机房；重点不是再开一个 Gateway，而是安全地连回那一个。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你已经能连回去，但就是不知道哪儿坏了，下一页就去 <code>/gateway/troubleshooting</code>。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

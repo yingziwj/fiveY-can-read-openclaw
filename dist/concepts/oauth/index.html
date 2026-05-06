@@ -4328,269 +4328,201 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>OAuth：一把钥匙开一把锁，但有人会偷换钥匙</h2>
-            <p>OpenClaw 帮你管理 OAuth 登录，就像前台帮你收着所有门禁卡。但有些门禁系统很霸道——你领了新卡，旧卡就作废了。这一页就是教你怎么保管、切换、防止被踢下线。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/concepts/oauth</span>
-            <span>故事卡片：10 张</span>
-            <a href="https://docs.openclaw.ai/concepts/oauth" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>订阅登录？还是 API 钥匙？</h2>
-              <p>OpenClaw 支持两种进门方式：一种是按月付钱的订阅登录（OAuth），另一种是拿 API 钥匙直接刷。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>你得先搞清楚自己用的是哪种，不然走错门会被保安拦住。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>OpenAI Codex（ChatGPT 的 OAuth）是明确支持的订阅登录方式。</li><li>Anthropic 那边有点绕：如果你用 API 钥匙，走正常计费；如果你想用订阅登录，目前只对 Anthropic 内部员工开放。</li><li>所以普通用户想用 Anthropic 的订阅登录，得走 Claude CLI 复用这条路。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>看清门牌再敲门，不是所有门都让你刷脸。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>为什么会有“令牌回收站”</h2>
-              <p>OAuth 提供商发新令牌时，可能会把旧的作废。如果你同时在两个地方登录，其中一个就会被悄悄踢下线。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这个问题很烦人，所以 OpenClaw 专门建了一个“令牌回收站”来保护你。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>比如你用 OpenClaw 登录了一次，又用 Claude Code 登录了一次，其中一边可能过一会儿就掉线了。</li><li>因为新令牌出来时，旧令牌被对方偷偷销毁了。</li><li>OpenClaw 把 `auth-profiles.json` 当作令牌回收站，所有令牌都集中收在这里，避免互相打架。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>别让两把钥匙同时插进一个锁孔。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>令牌住在哪里？</h2>
-              <p>每个代理（agent）都有自己的小抽屉，令牌和钥匙都放在里面。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道东西放在哪，你才不会乱翻。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>每个代理的令牌都存放在 `~/.openclaw/agents/&lt;agentId&gt;/agent/auth-profiles.json` 这个文件里。</li><li>还有一个老文件 `auth.json`，只用来兼容旧版本，新版本基本不用它。</li><li>如果你在配置里写了明文 API 钥匙，OpenClaw 发现后会帮你擦掉，换成更安全的令牌。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>每个代理都有自己的保险箱。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>Anthropic 的旧令牌还能用吗？</h2>
-              <p>Anthropic 曾经不让第三方工具复用 Claude CLI 的令牌，但现在又说可以了。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>政策变来变去，你得知道现在的规则。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>Anthropic 官方文档说 Claude Code 的使用受订阅限制，但 Anthropic 工作人员告诉我们 OpenClaw 这样复用是允许的。</li><li>所以 OpenClaw 现在默认允许复用 Claude CLI 和 `claude -p` 命令的令牌。</li><li>如果你想要其他订阅登录方式，可以看 OpenAI Codex、Qwen、MiniMax 或 GLM 的文档。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>政策松绑了，但随时可能再收紧。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>怎么复用 Claude CLI 的登录？</h2>
-              <p>如果你电脑上已经登录了 Claude CLI，OpenClaw 可以直接拿来用，不用重新输密码。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>省掉重复登录的麻烦，就像用同一个门禁卡刷所有门。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>运行 `openclaw onboard` 配置时，它会检测本地有没有 Claude CLI 的登录信息。</li><li>如果有，就直接复用，不需要你手动输入任何东西。</li><li>这样你的订阅登录就自动关联到 OpenClaw 了。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>一次登录，到处使用。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>OAuth 登录流程：后台发生了什么？</h2>
-              <p>OpenClaw 的登录流程由 `@mariozechner/pi-ai` 库实现，你只要跟着向导点几下就行。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>了解流程能帮你排查登录失败的问题。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>当你选择 OAuth 登录时，OpenClaw 会打开浏览器让你去提供商那里授权。</li><li>授权完成后，提供商把令牌返回给 OpenClaw，OpenClaw 存进代理的配置文件里。</li><li>整个过程就像前台帮你跑腿拿门禁卡。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>你点同意，后台自动收卡。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>Anthropic 的 setup-token 怎么用？</h2>
-              <p>Anthropic 还有一种 setup-token 的登录方式，不过现在更推荐复用 Claude CLI。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>setup-token 是备用方案，了解它以防万一。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>第一步：在 OpenClaw 里选择 Anthropic setup-token 或者粘贴已有的令牌。</li><li>第二步：OpenClaw 把令牌存进 auth profile。</li><li>第三步：模型选择时仍然用 `anthropic/...` 前缀。</li><li>已有的 Anthropic auth profile 可以随时切换回来。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>setup-token 是备用钥匙，平时用复用就好。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>OpenAI Codex OAuth：一步步登录</h2>
-              <p>OpenAI Codex 的 OAuth 登录流程使用了 PKCE 协议，安全且明确支持在 OpenClaw 中使用。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这是最常用的订阅登录方式，值得搞清楚每一步。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>流程开始：OpenClaw 生成一个 PKCE 验证码和随机 state 值。</li><li>然后打开 `https://auth.openai.com/oauth/authorize?...` 让你授权。</li><li>接着尝试在本地 `http://127.0.0.1:1455/auth/callback` 接收回调。</li><li>如果回调失败（比如你在远程服务器），可以手动粘贴重定向 URL 或授权码。</li><li>最后 OpenClaw 用授权码去 `https://auth.openai.com/oauth/token` 交换访问令牌，并提取 `accountId` 存储。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>运行 `openclaw onboard`，然后选择 `openai-codex` 作为认证方式。</li><li>如果回调端口被占用，OpenClaw 会提示你手动粘贴回调 URL。</li><li>存储的令牌包含 access、refresh、expires 和 accountId 四个字段。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>跟着向导走，令牌自动到手。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-9">
-            <div class="section-heading">
-              <p class="section-kicker">第 9 站</p>
-              <h2>多个账号怎么管理？两种方案</h2>
-              <p>如果你有个人和工作两个账号，OpenClaw 提供了两种隔离方式。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>避免混用账号导致数据混乱或掉线。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>方案一（推荐）：创建两个独立的代理，比如 `work` 和 `personal`，每个代理有自己的令牌和会话。</li><li>方案二（高级）：在同一个代理里配置多个 profile，通过 `auth.order` 全局指定默认，或者在会话中通过 `/model ...@&lt;profileId&gt;` 临时切换。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>创建独立代理：`openclaw agents add work` 和 `openclaw agents add personal`。</li><li>在会话中切换 profile：输入 `/model anthropic/claude-sonnet-4-20250514@personal`。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>要么分房间住，要么带门牌切换。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-10">
-            <div class="section-heading">
-              <p class="section-kicker">第 10 站</p>
-              <h2>更多相关文档</h2>
-              <p>如果你还想了解认证概览、密钥存储或配置项，可以看看这些链接。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>补充知识，让你对整个系统更清楚。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>认证概览：查看 [Authentication](/gateway/authentication)。</li><li>密钥存储：查看 [Secrets](/gateway/secrets)。</li><li>配置参考：查看 [Configuration Reference](/gateway/configuration-reference#auth-storage)。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>每扇门后面都有一本说明书。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🔐 OAuth 就像“去别家办门票，再把票放进自己的安全抽屉”</h2>
+      <p>这页在讲：OpenClaw 怎么用 OAuth、setup-token、API key、Claude CLI 登录这些方式，稳稳地拿到登录凭证，并把它们按人头、按 agent、按账号分好。</p>
+      <p>你可以把它想成一间门禁办公室。门票怎么拿，拿回来放哪，多个账号怎么不打架，都是这间办公室要管的事。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想搞懂“登录凭证放哪最稳”的人</span>
+      <span>这页最重要的是分清：token sink、storage、refresh、profile routing</span>
+      <a href="https://docs.openclaw.ai/concepts/oauth" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🎟 先记住：OAuth 不是“账号密码”，而是“去别处换一张可用的票”</h2>
+    <p>OpenClaw 支持某些供应商的 subscription auth。最典型的画面就是 OpenAI Codex OAuth。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🔐</span>
+      <h2>OAuth</h2>
+      <p>像先去官方门口办手续，再带着回执回到 OpenClaw。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎫</span>
+      <h2>setup-token</h2>
+      <p>像一张订阅票。能用，但不是所有场景都该用。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🗝</span>
+      <h2>API key</h2>
+      <p>像固定门卡。很多时候最省心，也最稳。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧾</span>
+      <h2>Claude CLI login</h2>
+      <p>像把你已经在别处办好的门卡，搬到 OpenClaw 这边继续用。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧺 为什么要有 token sink？因为新票可能会把旧票挤掉</h2>
+    <p>官方说得很现实：有些服务一发新 refresh token，旧 token 就可能失效。于是 OpenClaw 把 auth-profiles.json 当成一只“接票篮子”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">token sink</div>
+      <p>像把所有凭证先统一放在一个安全抽屉里，别让多个工具各自揣一张，最后彼此顶掉。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">多处登录会互相影响</div>
+      <p>像同一把门卡在两台机器上来回复制，结果最后某一台突然说“卡失效了”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">单一来源</div>
+      <p>OpenClaw 让 runtime 只从一个地方读凭证，这样更容易追踪，也更不容易乱。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 一句话</div>
+      <p>不是为了多此一举，而是为了不让凭证在各处打架。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🗄 凭证住哪儿？住在每个 agent 自己的小保险箱里</h2>
+    <p>这页非常强调“per-agent”。意思是，每个 agent 都有自己的保险箱，别把所有钥匙混在一个口袋里。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🧰</span>
+      <h2><code>~/.openclaw/agents/&lt;agentId&gt;/agent/auth-profiles.json</code></h2>
+      <p>像某个 agent 的专属钥匙柜，里面放 OAuth 和 API key 这些门票。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪞</span>
+      <h2>Legacy auth.json</h2>
+      <p>像旧柜门。还能认，但官方已经把主柜换到更现代的抽屉上了。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📥</span>
+      <h2>OAuth import file</h2>
+      <p>像老票据先收进临时袋，再慢慢搬进正式柜子。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>一句话</h2>
+      <p>每个 agent 一套门票，不要混装。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">Anthropic 路线</p>
+    <h2>🎟 setup-token 像“订阅票”，Claude CLI 像“把现成门卡搬过来”</h2>
+    <p>官方把 Anthropic 的两条路写得很明确：一个是 setup-token，一个是本地 Claude CLI 登录迁移。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw models auth setup-token --provider anthropic</code></div>
+      <p>像去 Anthropic 那边领一张订阅票，然后塞进 OpenClaw 的门禁夹里。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw models auth paste-token --provider anthropic</code></div>
+      <p>如果票是在别的地方拿的，就手动贴回来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw models auth login --provider anthropic --method cli --set-default</code></div>
+      <p>像把 Claude CLI 已经办好的门卡，搬进 OpenClaw 的新门禁柜里，还顺手把默认走哪扇门也改掉。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>openclaw onboard --auth-choice anthropic-cli</code></div>
+      <p>像新手老师在开门时直接问你：“你想走这条现成路线吗？”</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">OpenAI 路线</p>
+    <h2>🌐 OpenAI Codex OAuth 像“带着回执来开门”</h2>
+    <p>这条路更像标准 OAuth。OpenClaw 先带你去授权，再把回执和刷新票据安全收起来。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw onboard --auth-choice openai-codex</code></div>
+      <p>像新手老师说：“今天你要走 OpenAI 这条正规授权路。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">PKCE</div>
+      <p>像先拿一对临时配对小卡片，防止别人偷走中间回执。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">本地回调口</div>
+      <p>OpenClaw 会试着在 <code>127.0.0.1:1455</code> 接住回执。接不住时，就让你把回跳地址贴回来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">刷新后重写</div>
+      <p>登录后的凭证会带着 <code>expires</code>。过期了就自动刷新，再塞回抽屉，不用你天天手工盯。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">多账号</p>
+    <h2>👥 多个账号别抢同一个抽屉，要么分柜子，要么分标签</h2>
+    <p>这页把“多个账号”讲得很稳。最推荐的办法是分 agent；更高级的办法是在一个 agent 里放多个 profile。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>分 agent</h2>
+      <p>像给工作和私人各配一个房间。最稳，也最不容易串台。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>一个 agent 多 profile</h2>
+      <p>像同一个房间里放多个带标签的小抽屉。要用哪张票，靠顺序或会话 override 选。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🏷</span>
+      <h2><code>/model Opus@anthropic:work</code></h2>
+      <p>像对前台说：“这次别拿默认那张票，拿工作用那张。”</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>账号越多，越要让它们各回各的抽屉。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把这页压成一句最短的话</h2>
+    <p>OAuth 这页讲的是：把登录票据从别处安全搬回来，放进每个 agent 自己的抽屉里，再按 profile 和会话规则稳稳取用。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>下一页如果你想看“在线状态和设备名单怎么像小卡片一样挂出来”，就去 <code>/concepts/presence</code>。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

@@ -4328,292 +4328,223 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>斜杠命令：给机器人发号施令的快捷方式</h2>
-            <p>就像在游戏里按快捷键一样，用 / 开头打一句话，机器人就会立刻执行。有的命令是内置的，有的来自插件，还有的来自你安装的技能。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/tools/slash-commands</span>
-            <span>故事卡片：11 张</span>
-            <a href="https://docs.openclaw.ai/tools/slash-commands" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>命令怎么跑起来</h2>
-              <p>所有命令都要单独发一条消息，以 / 开头。只有主机用的 bash 命令用 ! 开头。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道命令怎么发，才能让机器人听懂你的指令。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>命令就像一把钥匙，必须单独插进锁孔（单独一条消息），不能混在普通聊天里。</li><li>大部分命令以 / 开头，比如 /new 开始新对话。</li><li>主机专属的 bash 命令用 ! 开头，比如 !ls，也可以用 /bash ls 代替。</li><li>如果没权限，命令会被当成普通文字，机器人不会执行。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>记住：命令要单独发，以 / 开头，否则只是聊天文字。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>开关命令的权限门</h2>
-              <p>在配置文件里，你可以决定哪些命令能用，哪些不能用。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>如果不想别人乱用命令，就在这里关掉。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>每个命令都有一个开关，比如 commands.text 控制文字命令，默认开着。</li><li>如果你把 commands.text 设为 false，没有原生命令的平台（比如 WhatsApp）仍然能用文字命令。</li><li>commands.native 控制原生命令（比如 Discord 的斜杠命令），默认 auto——Discord 和 Telegram 自动开，Slack 默认关。</li><li>你可以在 channels.discord.commands.native 等地方单独设置某个平台的开关。</li><li>设为 false 会清除之前注册的命令（Slack 除外）。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>配置文件里这样写：{ commands: { native: &quot;auto&quot;, text: true } }</li><li>执行后，Discord 上会注册斜杠命令，Telegram 也是，Slack 则不会。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>配置文件就是命令的总闸，想开哪个就开哪个。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>命令从哪里来</h2>
-              <p>命令有四个来源：核心内置、自动生成、插件注册、技能注册。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道来源，就能理解为什么有些命令出现，有些没有。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>核心内置命令像房间里的基础家具，比如 /new、/stop，永远在那里。</li><li>自动生成的 dock 命令像每个平台的专属门牌，比如 /dock-discord。</li><li>插件命令像额外买的工具，比如 /dreaming 控制记忆梦境。</li><li>技能命令像你雇的帮手，比如 /skill prose 调用写作技能。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>命令不是凭空出现的，它们各有来头。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>核心内置命令：最常用的几个</h2>
-              <p>这些命令不用装任何东西，直接用。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>日常操作全靠它们。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>/new [模型] 开始新对话，/reset 也一样。</li><li>/compact [指令] 压缩对话历史，省空间。</li><li>/stop 立刻停下当前任务。</li><li>/think 设置思考深度，从 off 到 xhigh 可选。</li><li>/verbose 切换详细输出，看更多细节。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>记住 /new、/stop、/think，日常就够用了。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>dock 命令：每个平台的专属通道</h2>
-              <p>这些命令由插件自动生成，每个平台有一个。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>用来管理不同平台的对接。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>/dock-discord 或 /dock_discord 管理 Discord 对接。</li><li>/dock-mattermost 管理 Mattermost。</li><li>/dock-slack 管理 Slack。</li><li>/dock-telegram 管理 Telegram。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>每个平台有专属的 dock 命令，就像每个房间有自己的门。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>插件命令：扩展工具箱</h2>
-              <p>插件会添加更多斜杠命令，比如控制梦境、配对设备。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这些命令让机器人能做更多事。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>/dreaming [on|off|status] 打开或关闭记忆梦境。</li><li>/pair [qr|status|pending|approve] 管理设备配对。</li><li>/phone status|arm|disarm 临时启用高风险手机命令。</li><li>/voice status|list|set 管理语音配置。</li><li>/codex status|models|threads 查看和控制 Codex 应用服务器。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>装什么插件，就有什么命令。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>技能命令：调用你的自定义技能</h2>
-              <p>你安装的技能也会变成斜杠命令。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>技能就像你的私人助手，随时调用。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>/skill &lt;名字&gt; [输入] 通用入口，总是能用。</li><li>有些技能会注册成直接命令，比如 /prose。</li><li>原生技能命令的开关由 commands.nativeSkills 控制。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>技能就是命令，命令就是技能。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>/tools：看看机器人现在能用什么工具</h2>
-              <p>这个命令告诉你当前对话里机器人能调用哪些工具。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>想知道机器人有没有联网、有没有计算器？问它。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>/tools 默认显示简洁列表，方便快速浏览。</li><li>/tools verbose 加上简短描述。</li><li>结果跟当前会话有关——换 agent、换频道、换模型，结果都可能变。</li><li>包括核心工具、插件工具、频道自有工具。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>/tools 是机器人的工具箱清单，随时查看。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-9">
-            <div class="section-heading">
-              <p class="section-kicker">第 9 站</p>
-              <h2>/mcp 和 /plugins：管理员专用</h2>
-              <p>这两个命令默认关闭，需要管理员权限才能用。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>用来管理 MCP 服务器和插件。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>/mcp 管理 MCP 服务器定义，比如 /mcp show 查看，/mcp set 添加。</li><li>/plugins 查看和启用/禁用插件，比如 /plugins list。</li><li>默认关闭，需要设置 commands.mcp: true 和 commands.plugins: true。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>/mcp show 显示所有 MCP 服务器。</li><li>/mcp set context7={&quot;command&quot;:&quot;uvx&quot;,&quot;args&quot;:[&quot;context7-mcp&quot;]} 添加一个服务器。</li><li>/plugins enable context7 启用名为 context7 的插件。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>管理员才碰 /mcp 和 /plugins。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-10">
-            <div class="section-heading">
-              <p class="section-kicker">第 10 站</p>
-              <h2>不同平台，命令跑法不同</h2>
-              <p>文字命令和原生命令的会话是分开的。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道这个，就不会搞混命令的上下文。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>文字命令在普通聊天会话里运行，私聊和群聊各有各的会话。</li><li>原生命令（比如 Discord 的斜杠）使用独立会话。</li><li>/stop 针对当前活跃的聊天会话，所以能停下正在跑的任务。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>文字命令和原生命令各走各的道。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-11">
-            <div class="section-heading">
-              <p class="section-kicker">第 11 站</p>
-              <h2>/btw：顺便问一句</h2>
-              <p>不打断当前任务，临时问个问题。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>适合在机器人忙着的时候，问个无关紧要的问题。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>/btw 使用当前会话作为背景，但不会改变它。</li><li>它是一次独立的、没有工具的调用。</li><li>结果不会写入对话历史，也不会影响后续对话。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>/btw 是悄悄话，问完就忘。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🪄 Slash Commands 不是聊天内容，它更像你对 OpenClaw 说的“舞台指令”</h2>
+      <p>平常聊天时，你是在告诉 OpenClaw“我想做什么”。但发斜杠命令时，你更像是在对后台喊：“切模型、停一下、给我看状态、去开个子代理、把这次回复改成快一点。”</p>
+      <p>所以这页不是普通对话指南，而是一张“遥控器说明书”。你不是在写作文，你是在按按钮。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合已经在用 OpenClaw 聊天，想开始用命令遥控它的人</span>
+      <span>这页最重要的是先分清 commands、directives、inline shortcuts 三种东西</span>
+      <a href="https://docs.openclaw.ai/tools/slash-commands" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🎛 遥控器上其实有三类按钮</h2>
+    <p>官方开头那段看着绕，其实只是想告诉你：虽然大家都长得像 <code>/...</code>，但它们做的事不完全一样。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📣</span>
+      <h2>Commands</h2>
+      <p>像明确按下一个功能键，比如 <code>/status</code>、<code>/help</code>、<code>/config set</code>。它就是来办事的。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧠</span>
+      <h2>Directives</h2>
+      <p>像给本轮或本会话贴一个小纸条：这次要快一点、思考深一点、改模型、改队列规则。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✂️</span>
+      <h2>Inline shortcuts</h2>
+      <p>像在一句普通话里顺手插个快捷按钮。比如你说着说着夹一个 <code>/status</code>，系统先把状态拿出来，再继续处理剩下的话。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⭐</span>
+      <h2>先记一句</h2>
+      <p>Slash command 更像遥控指令，不是普通聊天句子。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧩 “单独发”和“夹在话里发”，结果真的不一样</h2>
+    <p>这页最容易让人看晕的地方就在这里。官方其实是在讲“这张纸条是贴在这一句话上，还是贴在整个会话上”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📄 指令单独发</div>
+      <p>如果消息里只有 <code>/think high</code> 这种 directive，它更像你站到后台说：“从现在开始，这个会话默认深想一点。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📝 指令夹在句子里</div>
+      <p>如果你说“帮我看下这个 bug /think high”，那它更像这一次任务上的便签，只影响这次，不会把整间教室的规则改掉。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">✂️ 为什么说会被 stripped</div>
+      <p>因为这些 directive 更像后台标签，系统会先把它摘下来处理，再把真正要给模型看的话送进去。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🔐 还得先有权限</div>
+      <p>官方特地强调：这些遥控键不是谁都能按。没被授权的人发 directive，系统会把它当普通文本看，或者干脆忽略。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>⚙️ 配置那段别硬背，把它看成“遥控器哪些按钮开着”</h2>
+    <p>官方给的 <code>commands</code> 配置块看着多，其实每一项都只是在回答：“这个按钮要不要亮起来？”</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>commands.text: true</code></div>
+      <p>像决定聊天文字里的 <code>/...</code> 要不要当成命令读。开着就是认，关着就尽量少认。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>commands.native: \"auto\"</code></div>
+      <p>像让系统自己判断，要不要在 Telegram、Discord 这些地方把按钮直接注册成原生 slash command。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>commands.bash: false</code></div>
+      <p>像把“让机器人直接在宿主机上敲 shell”的大红按钮先盖上安全罩。不开时，别人不能随便用 <code>! &lt;cmd&gt;</code>。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>commands.allowFrom</code></div>
+      <p>像命令遥控器的白名单。这里一旦写了，谁能按按钮就只看这份名单，不再看普通 pairing 或通道 allowlist。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🕹 常用命令其实可以按“它们在后台做什么”来记</h2>
+    <p>命令表很长，但别一条条死背。按动作分组，脑子会轻很多。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🩺</span>
+      <h2>看状态</h2>
+      <p><code>/status</code>、<code>/tools</code>、<code>/whoami</code>，像抬头看仪表盘，确认现在是谁、能干什么、系统状态如何。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎚</span>
+      <h2>改本轮风格</h2>
+      <p><code>/think</code>、<code>/fast</code>、<code>/verbose</code>、<code>/reasoning</code>、<code>/model</code>，像给当前这辆车切驾驶模式。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧰</span>
+      <h2>动系统配置</h2>
+      <p><code>/config</code>、<code>/mcp</code>、<code>/plugins</code>、<code>/debug</code>，像去机房后面改控制面板。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧵</span>
+      <h2>管会话和子代理</h2>
+      <p><code>/subagents</code>、<code>/focus</code>、<code>/session idle</code>、<code>/kill</code>，像在调度后台的小工队伍。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🛠 把几条最常用的命令翻成“现场动作”</h2>
+    <p>这部分最值得你带走，因为它能直接改变你以后怎么读整张命令表。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>/tools</code></div>
+      <p>不是问“系统理论上有哪些工具”，而是在问“此时此地、这个代理、这场对话里，它手边现在到底能拿到哪些工具”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>/status</code></div>
+      <p>像看仪表盘。会告诉你现在状态怎么样，甚至当前模型提供商还剩多少配额。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>/model openai/gpt-5.2</code></div>
+      <p>像让司机这次换一辆车。不是改历史记录，而是把后面这段会话切到另一种脑子上。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>/queue debounce:2s cap:25 drop:summarize</code></div>
+      <p>像告诉前台接待：消息很多时，先别一窝蜂全往里冲，等 2 秒再打包；最多堆 25 个；太多了就别原样全留，改成摘要。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>💣 <code>/bash</code> 和 <code>! &lt;cmd&gt;</code> 这种命令，要当成“开宿主机大门”来看</h2>
+    <p>官方把这块写得很谨慎，是对的。因为这不是普通聊天命令，而是让 OpenClaw 去宿主机上直接敲命令。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>! ls</code></div>
+      <p>像你没经过模型绕圈，直接冲后台说：“你去机器上给我看一下目录。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>/bash stop</code> / <code>!stop</code></div>
+      <p>像前台看见后台机器还在忙，赶紧冲进去喊停。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>commands.bashForegroundMs</code></div>
+      <p>像规定“如果这活一下子做不完，就别一直霸着前台，转去后台慢慢做”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🔐 为什么默认关着</div>
+      <p>因为这已经不是“让模型多想一点”这种软操作了，而是直接让它碰宿主机。安全级别完全不同。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第七站</p>
+    <h2>🧵 子代理、聚焦线程、会话寿命这些命令，其实都在讲“后台有几个人在干活”</h2>
+    <p>官方这里列得很多，但主线很简单：一个主代理不够时，你可以再分派小工去做事，还能决定聊天线程之后跟谁绑定。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>/subagents spawn</code></div>
+      <p>像主工头又叫来一个小工，交给他一张任务单，让他去后台单独干。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>/focus</code> / <code>/unfocus</code></div>
+      <p>像把当前聊天线程绑到某个正在干活的小工上，或者把这根绳子解绑。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>/session idle</code> / <code>max-age</code></div>
+      <p>像规定这个小工如果太久没人理，或者活干太久，就自动下班、自动松绑。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 为什么这类命令常被忽略</div>
+      <p>因为它们不像 <code>/help</code> 那么显眼，但一旦你开始多人、多线程、多代理协作，它们就是后台秩序本身。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 slash commands 这页压成一句话</h2>
+    <p>Slash commands 就是 OpenClaw 的后台遥控器。聊天是在说“做什么”，斜杠命令是在说“现在用什么模式做、谁来做、后台怎么配”。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你接下来只想继续看一页，我建议看 <code>/tools/subagents</code>。因为一旦你开始用 <code>/subagents</code>、<code>/kill</code>、<code>/focus</code> 这些命令，整个后台调度逻辑就会一下子变清楚。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

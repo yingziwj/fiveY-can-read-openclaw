@@ -4328,154 +4328,83 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>插件SDK：你给OpenClaw加的每一个零件，都从这里拿钥匙</h2>
-            <p>这是一张地图，告诉你该从哪个门进去拿哪个工具。别走错门，也别拿错钥匙。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/plugins/sdk-overview</span>
-            <span>故事卡片：5 张</span>
-            <a href="https://docs.openclaw.ai/plugins/sdk-overview" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>从哪条路走？</h2>
-              <p>每个插件只能从指定的入口进，不能抄近道。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>走错入口，你的插件可能启动不了，或者跟别人打架。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>永远从带具体名字的小门进，比如 `openclaw/plugin-sdk/plugin-entry`，而不是大门口乱翻。</li><li>每个小门只放一类工具，这样开门快，也不会因为互相依赖卡住。</li><li>如果是做聊天频道插件，走 `channel-core` 那个门；如果是做通用功能，走 `core` 门。</li><li>别自己编一个叫 `openclaw/plugin-sdk/slack` 的门——那是给官方插件用的，你自己不能用。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`import { definePluginEntry } from &quot;openclaw/plugin-sdk/plugin-entry&quot;;` —— 这是从“插件入口”门里拿一个叫 `definePluginEntry` 的工具。</li><li>`import { defineChannelPluginEntry } from &quot;openclaw/plugin-sdk/channel-core&quot;;` —— 这是从“频道核心”门里拿另一个工具。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>每个插件只能从指定的门进，别走错。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>这些门牌号是什么意思？</h2>
-              <p>每个小门都有自己的名字，告诉你能从里面拿到什么。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道门牌号，你才能找到对的门。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>`plugin-sdk/plugin-entry` 这个门里只放一样东西：`definePluginEntry`，它是插件的总入口。</li><li>`plugin-sdk/core` 这个门里东西多：频道插件入口、频道插件基类、配置构建器等等。</li><li>还有专门放认证工具的门、放命令授权的门、放消息构建器的门。</li><li>总共有200多个小门，但常用的只有十几个，别被数字吓到。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>记几个常用的门就够了，其他的用到再查。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>进门以后，你手里会拿到一张注册表</h2>
-              <p>你拿到一个 `api` 对象，它能帮你把插件的能力注册到系统里。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>不注册，系统就不知道你的插件能干什么。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>`api.registerProvider(...)` 是注册一个能对话的AI模型。</li><li>`api.registerChannel(...)` 是注册一个聊天频道，比如Slack、Discord。</li><li>`api.registerTool(tool, opts?)` 是注册一个工具，让AI能用它。</li><li>`api.registerCommand(def)` 是注册一个命令，绕过AI直接执行。</li><li>`api.registerHook(events, handler, opts?)` 是注册一个钩子，在特定事件发生时插一脚。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>比如 `api.registerTool(myTool, { optional: true })` 表示这个工具是可选的，AI可以不用它。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>注册就是告诉系统：我来了，我能干这些事。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>钩子怎么拦路？</h2>
-              <p>钩子可以在某些动作发生前或发生后，决定是放行还是拦下。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>钩子能让你在关键时刻插一手，比如检查权限、修改消息。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>`before_tool_call` 钩子：如果你返回 `{ block: true }`，后面的钩子全都不执行了，工具调用被拦住。</li><li>`before_install` 钩子：同样，返回 `{ block: true }` 就拦住安装，后面的不跑。</li><li>`reply_dispatch` 钩子：如果你返回 `{ handled: true, ... }`，就表示你接手了回复，系统和默认的AI都不再处理。</li><li>`message_sending` 钩子：返回 `{ cancel: true }` 就取消发送消息。</li><li>注意：返回 `{ block: false }` 等于没表态，后面的钩子还会继续判断。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>钩子像门卫，你说“拦住”，后面的人就不用再问了。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>你自己的插件长什么样？</h2>
-              <p>插件内部要分几个文件，各管各的事。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这样代码干净，别人也能看懂。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>`api.ts` 放你插件对外公开的东西，别人可以调用。</li><li>`runtime-api.ts` 放只有你自己内部用的东西。</li><li>`index.ts` 是插件的入口，从这里开始启动。</li><li>千万不要在自己的插件代码里通过 `openclaw/plugin-sdk/你的插件` 来引用自己，那是对外用的。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>自己的东西走内部小路，对外才走SDK大门。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📚 Plugin SDK Overview，就是插件世界的总地图</h2>
+      <p>这页不是某一个具体插件，而是告诉你插件 SDK 整体怎么拼起来。</p>
+      <p>你可以把它想成一张总地图：入口在哪、能注册什么、哪些地方是门，哪些地方是柜台。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合先看插件 SDK 全景</span>
+      <span>重点是 registration API、capabilities、imports</span>
+      <a href="https://docs.openclaw.ai/plugins/sdk-overview" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧭 先看清三件事：从哪进、能注册什么、最后怎么装进去</h2>
+    <p>这页最值钱的是全景，不是某个单独 API 名字。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🪟</span>
+      <h2>入口</h2>
+      <p>插件从哪个文件开始被 OpenClaw 找到。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧰</span>
+      <h2>能力</h2>
+      <p>能注册工具、通道、provider、hook 等。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🗺</span>
+      <h2>映射</h2>
+      <p>外部 bundle、manifest、SDK 彼此怎么对上号。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>一句话</h2>
+      <p>它是插件怎么被看见、怎么被接住的总说明。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🛠 命令 / 代码像在做什么</h2>
+    <p>SDK 里的代码示例，其实是在教你把能力挂上系统的墙。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">`definePluginEntry(...)`</div>
+      <p>像先报上名字，再递交自己的能力清单。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">`registerTool(...)`</div>
+      <p>像把一个新工具正式放进工具箱。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">`registerHook(...)`</div>
+      <p>像在关键路口安排一个小哨兵。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>🎈 Overview 不是细节题，而是“先看地图再出门”</h2>
+    <p>把这一页看懂，后面的 manifest、entrypoints、runtime 和 testing 才不会各看各的像散片。</p>
+  </div>
+</section>
+
+
 
       <footer class="page-footer">
         <div>

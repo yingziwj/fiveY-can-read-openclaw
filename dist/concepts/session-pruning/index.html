@@ -4328,172 +4328,175 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>给聊天室大扫除</h2>
-            <p>每次对话久了，工具箱里会堆满旧零件。我们有个自动清洁工，专门帮你扔掉这些旧零件，让房间保持清爽。放心，你的聊天记录本子原封不动，只是工具箱变轻了。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/concepts/session-pruning</span>
-            <span>故事卡片：6 张</span>
-            <a href="https://docs.openclaw.ai/concepts/session-pruning" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>为什么要打扫工具箱？</h2>
-              <p>工具箱太满，搬起来又贵又慢。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>省下搬箱子的力气和钱。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>你和AI聊天时，每次用工具（比如查文件、搜网页）都会留下结果。</li><li>这些结果像零件一样堆在工具箱里，越堆越多。</li><li>箱子太重，每次搬给AI看都要花更多力气（成本更高）。</li><li>箱子太满，可能逼你提前整理整个房间（触发压缩）。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>定期扔旧零件，搬箱子更轻松。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>清洁工怎么干活？</h2>
-              <p>等五分钟闹钟响，开始收拾旧零件。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>看看清洁工的具体动作，你就知道哪里会变干净。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>闹钟（缓存TTL）默认响五分钟。时间一到，清洁工出动。</li><li>他只收拾旧工具零件，你的聊天对话原样留着。</li><li>太大的零件，他剪掉中间，留个头尾，中间贴个“...”标签。</li><li>剩下的旧零件，他直接换成“已清理”的占位牌。</li><li>收拾完，重置闹钟，下次请求还用这个清爽的箱子。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>五分钟一响，剪旧零件，换占位牌。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>给老照片相册瘦身</h2>
-              <p>以前聊天里的老照片太占地方，也帮你清理掉。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>别让老照片拖慢新请求的速度。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>这是另一项独立清理，专门处理历史里存的原始图片块。</li><li>清理后，图片换成一句话：“图片数据已移除 - 模型已处理过”。</li><li>这样新请求的缓存钥匙（前缀）就能保持稳定。</li><li>避免老照片突然冒出来，撑破后来的缓存。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>老照片换成说明牌，不占缓存空间。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>默认谁家开清洁工？</h2>
-              <p>用Anthropic（比如Claude）的朋友，清洁工默认上班。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>看看你的工具箱是不是已经有人打扫了。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>如果你用Anthropic OAuth或令牌登录（包括Claude CLI复用），清洁工每小时检查一次。</li><li>如果你用API密钥，清洁工每半小时检查一次。</li><li>这是自动设置，你不用操心。</li><li>但如果你自己定了规矩，OpenClaw不会覆盖你的设置。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>Anthropic用户，清洁工已就位。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>怎么打开或关上清洁工？</h2>
-              <p>写张小纸条，告诉系统要不要打扫。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>亲手控制工具箱的整洁度。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>非Anthropic用户，清洁工默认关着。</li><li>想打开，就贴张纸条，写上“按缓存闹钟打扫，闹钟设五分钟”。</li><li>想关上，纸条写“别打扫”。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>贴这张纸条，清洁工就会按闹钟（TTL）开始工作。</li><li>执行后，工具箱里旧工具零件会被定期清理。</li><li>闹钟“5m”意思是五分钟响一次。</li><li>如果写“off”，清洁工就下班，工具箱会慢慢堆满。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>纸条写“cache-ttl”就开扫，写“off”就关扫。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>清洁工 vs 整理师</h2>
-              <p>清洁工扔零件，整理师写摘要。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>分清谁在干什么，搭配使用更高效。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>清洁工（Pruning）：只扔掉旧工具结果，不保存改动，每次请求都可能干。</li><li>整理师（Compaction）：给整个聊天写摘要，保存到记录本，永久改变历史。</li><li>他俩是搭档：清洁工在整理师下次来之前，保持工具箱清爽。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>一个扔零件，一个写摘要，一起保持房间利落。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>✂️ <code>Session Pruning</code> 像“只剪旧工具纸，不剪整本故事书”</h2>
+      <p>这页讲的是一件很细的事：每次模型要开工前，OpenClaw 会把老旧的工具结果先收一收，别让眼前那一页太鼓。</p>
+      <p>它不是把整段历史删掉，而是只在模型真正要看的那一瞬间，把太重的旧工具纸裁一裁。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想省 Anthropic 缓存成本、又不想删掉历史的人</span>
+      <span>这页最重要的是：pruning 是临时裁纸，不是把 JSONL 历史改写掉</span>
+      <a href="https://docs.openclaw.ai/concepts/session-pruning" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">先分清</p>
+    <h2>🧾 它剪的是“眼前那一页”，不是“书柜里的整本书”</h2>
+    <p>官方第一句就很关键：pruning 只改请求时送去模型的上下文，不会改磁盘上的 session 历史。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📒</span>
+      <h2>On-disk history 不动</h2>
+      <p>JSONL 里的记录还在，像书柜里的故事书没有被撕页。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✂️</span>
+      <h2>In-memory context 会裁</h2>
+      <p>只是模型那一轮看到的东西变轻了，像把书桌上的材料减薄。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⏳</span>
+      <h2>cache-ttl</h2>
+      <p>这个模式像“缓存过期后再先修剪一下”，避免下一次重新缓存时背太多旧纸。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>它是模型前面的临时收纳，不是历史文档的永久删改。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">什么时候剪</p>
+    <h2>🕰 只有满足条件，它才会拿起小剪刀</h2>
+    <p>官方把触发条件写得非常明确。翻成人话，就是“这次真的需要了再剪”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>mode: "cache-ttl"</code></div>
+      <p>像把剪纸规则挂出来：只有走这个模式才会裁旧纸。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">最后一次 Anthropic 调用太久了</div>
+      <p>像说“上次缓存已经过期了，那这次先裁一点再重新上桌”。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">TTL 再次重置</div>
+      <p>一旦裁过，新的缓存窗口就重新开始计时。像刚裁好，桌面又变整齐了。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">只对 Anthropic 系列生效</div>
+      <p>官方写得很直白：这个裁纸工，只在 Anthropic API 和 OpenRouter Anthropic 模型这条线上工作。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">为什么有用</p>
+    <h2>💰 它最想帮你省的是“第一次重新上桌时”的缓存写入</h2>
+    <p>这部分就是成本故事。它不是神奇变快，而是帮你少背一点旧东西，让缓存重写时轻一点。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">💸</span>
+      <h2>cacheWrite 变小</h2>
+      <p>第一次过 TTL 后的那次请求，重新写缓存时会更轻。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪶</span>
+      <h2>不是“多付费”</h2>
+      <p>官方特地提醒：pruning 不是额外加钱，而是换一种更聪明的上下文形状。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔁</span>
+      <h2>为什么 TTL reset 重要</h2>
+      <p>裁过一次以后，下一轮 follow-up 就能继续吃新的缓存，而不是反复背很重的旧包。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>它省的是缓存写入，不是拿历史开刀。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">能剪什么</p>
+    <h2>🧺 它只剪旧工具结果，而且剪得很小心</h2>
+    <p>这页最实在的地方在于边界很明确：不是所有消息都动，只有 toolResult 才在可裁范围里。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">只动 <code>toolResult</code></div>
+      <p>像只裁工具台上堆太厚的旧纸，不碰用户和助手的原话。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">保留最后几位 assistant</div>
+      <p>最后几段助手话不剪，像把最近几页作业本留在桌上。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">有图片的工具结果跳过</div>
+      <p>带图的纸不能随便裁，官方直接让它跳过。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">soft-trim / hard-clear</div>
+      <p>一个像把长纸条头尾留下，中间折掉；一个像整张旧纸直接换成“已清理”的占位牌。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">怎么配</p>
+    <h2>🧩 配置项像剪纸规则本</h2>
+    <p>官方给了一整套默认值。把它看成“裁纸机面板”就好读很多。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">⏳</span>
+      <h2><code>ttl</code></h2>
+      <p>像规定这张缓存票多久后会失效，默认 5 分钟。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧮</span>
+      <h2><code>keepLastAssistants</code></h2>
+      <p>像规定最近几段助手内容必须留着，默认留 3 段。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✂️</span>
+      <h2><code>softTrim</code></h2>
+      <p>像裁纸时留头留尾，别把整张纸都扔了。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧯</span>
+      <h2><code>hardClear</code></h2>
+      <p>像实在太厚就直接换成“这里已经清掉了”的占位卡。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把这页压成一句最短的话</h2>
+    <p>Session Pruning 就是在模型开工前，把过旧、过厚的工具结果先裁一裁，让 Anthropic 的缓存更轻一点，但又不碰磁盘上的完整故事书。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你想看“模型怎么通过一组小工具去看会话、发消息、开分身”，下一页可以去 <code>/concepts/session-tool</code>。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

@@ -4328,281 +4328,171 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>出问题了？别慌，这里有条路</h2>
-            <p>如果 OpenClaw 突然不听话了，别急着拔电源。这篇是深水区的排查手册，从最轻的检查开始，一步一步走到根因。想快速过一遍，先去 /help/troubleshooting 走快速通道。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/gateway/troubleshooting</span>
-            <span>故事卡片：9 张</span>
-            <a href="https://docs.openclaw.ai/gateway/troubleshooting" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>先跑这几条命令，像给系统把个脉</h2>
-              <p>别乱翻日志，按顺序敲这几行，系统会告诉你它哪里不舒服。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>因为大部分问题就卡在前几步，跑完就能定位。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>先敲 openclaw status，看看大门是不是开着的。</li><li>再敲 openclaw gateway status，确认网关在不在。</li><li>然后 openclaw logs --follow，盯着日志流，看有没有红色报错。</li><li>接着 openclaw doctor，让系统自检一遍。</li><li>最后 openclaw channels status --probe，让系统主动去戳一下每个通道，看谁不响应。</li><li>如果一切健康，你会看到 probe 返回 works，audit 返回 ok。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>openclaw status：检查整体状态，返回 running 或 stopped。</li><li>openclaw gateway status：检查网关进程，返回 active 或 failed。</li><li>openclaw logs --follow：实时滚动日志，按 Ctrl+C 退出。</li><li>openclaw doctor：跑健康检查，输出绿色通过或红色失败。</li><li>openclaw channels status --probe：对每个通道发测试消息，看能否收到回复。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>先跑命令，别瞎猜。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>Anthropic 429：长对话被拦住了</h2>
-              <p>如果你看到 HTTP 429 错误，说 Extra usage is required for long context requests，那是 Anthropic 觉得你的对话太长，要额外收费。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>因为长上下文需要特殊的 1M beta 路径，你的账号可能没开这个权限。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>先跑 openclaw logs --follow 确认错误确实是 429。</li><li>然后 openclaw models status 看看当前用的是哪个模型。</li><li>再跑 openclaw config get agents.defaults.models 检查模型配置。</li><li>关键点：模型必须有 params.context1m: true 才能支持长上下文。</li><li>如果你的 Anthropic 凭证没有长上下文资格，长会话就会失败。</li><li>只有需要 1M beta 路径的长模型运行才会触发这个错误。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>openclaw logs --follow：看日志里有没有 429 字样。</li><li>openclaw models status：列出当前模型及其参数。</li><li>openclaw config get agents.defaults.models：获取默认模型配置。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>长对话需要特殊模型和凭证，缺一不可。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>本地 OpenAI 后端：直接测试通，但代理跑不起来</h2>
-              <p>你用 curl 测试本地模型，返回正常。但 OpenClaw 一跑代理任务就失败。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>因为直接测试和代理运行走的是不同的路径，代理可能缺少某些参数或配置。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>先用 curl 测试 /v1/models，看模型列表是否正常。</li><li>再用 curl 测试 /v1/chat/completions，发一条简单消息，看返回。</li><li>如果这两步都正常，问题出在 OpenClaw 调用时。</li><li>接着跑 openclaw infer model run --model &lt;provider/model&gt; --prompt &quot;hi&quot; --json，看 OpenClaw 自己能不能推理。</li><li>最后 openclaw logs --follow，看日志里有没有错误信息。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>curl http://127.0.0.1:1234/v1/models：检查模型列表。</li><li>curl http://127.0.0.1:1234/v1/chat/completions -H &#39;content-type: application/json&#39; -d &#39;{&quot;model&quot;:&quot;&lt;id&gt;&quot;,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;hi&quot;}],&quot;stream&quot;:false}&#39;：测试聊天补全。</li><li>openclaw infer model run --model &lt;provider/model&gt; --prompt &quot;hi&quot; --json：用 OpenClaw 推理引擎测试。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>直接通不代表代理通，要用 OpenClaw 自己的推理命令测试。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>没有回复：通道通了，但没人说话</h2>
-              <p>通道状态显示正常，但发消息没人回。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>可能是配对没完成、群聊需要@、或者通道白名单没配好。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>先检查 openclaw channels status --probe，确认通道确实能收到测试消息。</li><li>然后 openclaw pairing list --channel &lt;channel&gt;，看看私聊发送者是否还在等待配对。</li><li>检查群聊配置：requireMention 和 mentionPatterns，如果开启了，必须@机器人才能触发。</li><li>检查通道或群组的白名单（allowlist），确认发送者在名单里。</li><li>如果以上都正常，跑 openclaw logs --follow 看有没有路由错误。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>openclaw channels status --probe：测试通道连通性。</li><li>openclaw pairing list --channel &lt;channel&gt; [--account &lt;id&gt;]：查看配对状态。</li><li>openclaw config get channels：查看通道配置。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>没回复，先看配对、再看@规则、最后看白名单。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>控制面板连不上：URL、认证、安全上下文</h2>
-              <p>网页控制面板打不开，或者连上后一直转圈。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>因为 URL 写错了、认证方式不匹配、或者 HTTP 和 HTTPS 混用了。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>先跑 openclaw gateway status 确认网关在运行。</li><li>检查 probe URL 和 dashboard URL 是否正确，比如是不是用了 localhost 但实际是远程。</li><li>检查认证模式（auth mode）和令牌（token）是否与客户端一致。</li><li>如果网关要求设备身份，但你在用 HTTP，就会失败。</li><li>跑 openclaw doctor 做全面检查。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>openclaw gateway status：检查网关状态。</li><li>openclaw logs --follow：看日志有没有连接错误。</li><li>openclaw doctor：健康检查。</li><li>openclaw gateway status --json：以 JSON 格式输出状态，方便查看。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>连不上控制面板，先对 URL、再对令牌、最后看协议。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>认证错误代码速查表</h2>
-              <p>当连接失败时，错误信息里有个 details.code，查这个表就知道下一步该做什么。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>因为不同的错误代码对应不同的修复动作，不用瞎猜。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>从失败响应的 error.details.code 字段拿到错误码。</li><li>对照文档里的表格，找到对应的含义和推荐操作。</li><li>如果是设备认证 v2 迁移相关，跑 openclaw --version 和 openclaw doctor 检查版本。</li><li>然后 openclaw gateway status 确认网关状态。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>openclaw --version：查看版本号。</li><li>openclaw doctor：健康检查。</li><li>openclaw gateway status：网关状态。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>看错误码，找对应操作，别自己乱试。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>网关服务起不来：进程闪退</h2>
-              <p>服务已经安装了，但进程跑几秒就消失。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>可能是配置冲突、端口被占、或者系统服务配置有问题。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>跑 openclaw gateway status 看状态是不是 Runtime: stopped，并且有退出提示。</li><li>检查服务配置是否一致：Config (cli) 和 Config (service) 可能不同。</li><li>检查端口是否被其他程序占用。</li><li>用 --deep 参数扫描系统级服务，看有没有多余的 launchd/systemd/schtasks 安装。</li><li>如果检测到其他类似网关的服务，会提示清理。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>openclaw gateway status：查看网关状态。</li><li>openclaw logs --follow：看日志里的退出原因。</li><li>openclaw doctor：健康检查。</li><li>openclaw gateway status --deep：深度扫描系统服务。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>进程闪退，先看退出提示，再查配置和端口。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>升级后突然坏了：配置漂移或默认值变严</h2>
-              <p>升级 OpenClaw 后，之前能用的功能突然报错。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>因为新版本可能改了默认值，或者原来宽松的配置现在被严格检查。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>最常见的是认证和 URL 覆盖行为变了。</li><li>检查 gateway.mode：如果是 remote，CLI 调用可能指向远程，而本地服务是好的。</li><li>显式使用 --url 调用时，不会回退到存储的凭证。</li><li>绑定和认证的护栏更严了：非回环绑定需要有效的网关认证路径。</li><li>旧的 gateway.token 配置不再生效，必须用 gateway.auth.token。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>openclaw gateway status：检查网关状态。</li><li>openclaw config get gateway.mode：查看模式。</li><li>openclaw config get gateway.remote.url：查看远程 URL。</li><li>openclaw config get gateway.auth.mode：查看认证模式。</li><li>openclaw config get gateway.bind：查看绑定地址。</li><li>openclaw config get gateway.auth.token：查看认证令牌。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>升级后出问题，先检查配置是否匹配新版本要求。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-9">
-            <div class="section-heading">
-              <p class="section-kicker">第 9 站</p>
-              <h2>配对和设备身份状态变了</h2>
-              <p>升级后，之前配对的设备或用户突然需要重新审批。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>因为策略或身份变更后，配对状态被重置了。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>检查 openclaw devices list，看是否有待审批的设备。</li><li>检查 openclaw pairing list，看是否有待审批的私聊配对。</li><li>如果策略变更，之前自动通过的配对可能需要手动确认。</li><li>跑 openclaw doctor 看看有没有身份相关的错误。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>openclaw devices list：列出所有设备。</li><li>openclaw pairing list --channel &lt;channel&gt; [--account &lt;id&gt;]：查看配对状态。</li><li>openclaw logs --follow：看日志里有没有配对失败的信息。</li><li>openclaw doctor：健康检查。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>升级后配对失效，去设备列表和配对列表里审批。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🩺 <code>Gateway troubleshooting</code> 像“总机房急救手册”</h2>
+      <p>这页不是在教新功能，而是在说：出了问题时，先按什么顺序查，看到什么症状时应该往哪边想。</p>
+      <p>它的价值不在于“命令多”，而在于它给了你一条不会乱的查病路线。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合 Gateway 已经有问题、想快速顺着线排查的人</span>
+      <span>这页最重要的是记住：先爬命令梯子，再看症状，不要一上来就乱重装</span>
+      <a href="https://docs.openclaw.ai/gateway/troubleshooting" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">先做什么</p>
+    <h2>🪜 官方给了一架“命令梯子”，别跳步</h2>
+    <p>这几条命令的顺序非常值钱。因为它能防止你一头冲去重启、删文件、重装，结果越查越乱。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw status</code></div>
+      <p>像先站在门口看总牌子：整体有没有亮灯，别一上来就钻进机房深处。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway status</code></div>
+      <p>像再往前一步，看总机房自己是不是在运行、RPC 探针是不是通的。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw logs --follow</code></div>
+      <p>像站进监控室，看问题是正在发生，还是只是历史残影。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw doctor</code> / <code>openclaw channels status --probe</code></div>
+      <p>一个像全科医生，一个像去各个通道门口敲门确认它们还醒着。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">没回复时</p>
+    <h2>📭 通道明明亮着，但没人回话？先查门卫规则，不要先怪网络</h2>
+    <p>官方这里的态度很实用：很多“不回复”问题，其实不是链路断了，而是策略把消息拦掉了。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🤝</span>
+      <h2>Pairing pending</h2>
+      <p>像对方还站在门口没被登记放行。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📣</span>
+      <h2><code>requireMention</code></h2>
+      <p>像群里没点名叫它，所以门卫决定先别让它出声。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚫</span>
+      <h2>Allowlist mismatch</h2>
+      <p>像人到了门口，但名单上根本没有他。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>“没回复”常常是规则问题，不一定是连接坏了。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">Control UI 连不上</p>
+    <h2>🖥 Dashboard 连不上时，往往是“门牌、门卡、握手方式”三选一出了错</h2>
+    <p>官方把这块拆得很细，但抓住共性就好。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">Host/port/url 错了</div>
+      <p>像人跑到了隔壁楼门口，自然一直敲不开。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Auth mode / token mismatch</div>
+      <p>像门是对的，但掏出的门卡不是这一栋认的那张。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">device identity / nonce / signature</div>
+      <p>像门卫要求你先完成挑战式握手，你却只把老票据拍在桌上。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>AUTH_TOKEN_MISMATCH</code> / <code>PAIRING_REQUIRED</code></div>
+      <p>官方连错因代码都给你分好了。把它们当成门口告示牌，会比硬猜快很多。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">服务没起来</p>
+    <h2>🚫 Gateway 服务起不来时，最常见的是三件事：模式不对、门没锁、端口被占</h2>
+    <p>这是那种一看像大故障，实际往往很具体的页。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🏷</span>
+      <h2><code>gateway.mode=local</code></h2>
+      <p>像系统发现你想在本地开机房，但配置却还写着“我不在本地值班”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔒</span>
+      <h2>non-loopback without auth</h2>
+      <p>像你想把大门朝外开，但忘了先装门锁。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚪</span>
+      <h2><code>EADDRINUSE</code></h2>
+      <p>像那扇门牌已经被别的人占用了，你再开就撞车。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>一句话</h2>
+      <p>先看模式，再看门锁，再看端口，别直接重装。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">定时任务和心跳</p>
+    <h2>⏰ Cron / Heartbeat 出问题时，先确认“有没有排班”，再看“排班时送给谁”</h2>
+    <p>官方这一段很像值班系统排错表。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw cron status</code> / <code>cron list</code></div>
+      <p>像先翻排班表，看看定时工人到底有没有被排上班。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw system heartbeat last</code></div>
+      <p>像查看最近一次巡逻员的值班记录。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">quiet-hours / dm-blocked</div>
+      <p>像不是系统坏了，而是巡逻员按规则本来就该安静，或者不准直接敲私聊门。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 记一句</div>
+      <p>很多“没送达”不是失败，而是被规则正常跳过了。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把这页压成一句最短的话</h2>
+    <p>Troubleshooting 就是总机房急救手册：先爬命令梯子，再按症状找病因，别一上来就乱动配置和服务。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你已经知道问题多半和钥匙、凭证、秘密存放有关，下一页就去 <code>/gateway/secrets</code>。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

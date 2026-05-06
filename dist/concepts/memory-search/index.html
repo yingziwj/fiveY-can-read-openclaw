@@ -4328,274 +4328,108 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>你的记忆管家：在笔记堆里精准捞针</h2>
-            <p>想象你有个装满纸条的抽屉。记忆搜索就是那个能听懂你模糊描述，帮你找到相关纸条的聪明管家。它不看字面，而是理解意思，哪怕你记不清原话。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/concepts/memory-search</span>
-            <span>故事卡片：10 张</span>
-            <a href="https://docs.openclaw.ai/concepts/memory-search" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>📦 开箱即用</h2>
-              <p>如果你已经有 GitHub Copilot、OpenAI 这些钥匙，记忆搜索已经悄悄启动了。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>看看你的工具箱里有没有现成的钥匙。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>系统会自动识别你已有的钥匙，比如 GitHub Copilot 订阅、OpenAI 的 API 密钥。</li><li>想自己指定管家？那就告诉它用谁家的钥匙来开门。</li><li>如果不想用云服务，可以用本地钥匙，但需要自己准备一个本地模型。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>这段配置就像在管家手册上写：&#39;请用 OpenAI 的钥匙开门&#39;。</li><li>写上 &#39;provider: &quot;local&quot;&#39;，就是告诉管家：&#39;用我们自家后院的钥匙&#39;。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>有钥匙就用，没钥匙就配一把。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>🔑 钥匙铺子</h2>
-              <p>管家支持好几种钥匙，有的免费，有的要钱，有的还能开图片和声音的锁。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>选一把顺手的钥匙，或者看看你家有没有现成的。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>Bedrock 和 GitHub Copilot 是免费钥匙，系统看到你电脑里有 AWS 凭证或 Copilot 就自动用上了。</li><li>Gemini、OpenAI、Mistral 这些是付费钥匙，需要你提供 API 密钥，但 Gemini 这把钥匙还能打开图片和音频文件。</li><li>Local 是本地钥匙，完全不用联网，但需要你在电脑上装好一个叫 node-llama-cpp 的工具箱。</li><li>Ollama 也是本地钥匙的一种，方便你在自己机器上跑模型。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>钥匙分免费、付费、本地，Gemini 那把还能开多媒体锁。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>🔍 管家怎么找东西</h2>
-              <p>管家同时派两个小工去找：一个理解意思，一个匹配字词，最后把结果拼起来给你。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>看懂这个，你就知道为什么它找得又准又全。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>你问一个问题，管家立刻兵分两路。</li><li>一路叫&#39;理解意思&#39;：它把你的问题变成一串数字密码（嵌入向量），然后去记忆仓库里找密码最接近的纸条。</li><li>另一路叫&#39;匹配字词&#39;：它把你的问题拆成关键词，用老办法（BM25）去仓库里翻找包含这些词的纸条。</li><li>两路小工把找到的纸条都带回来，管家给它们打分、排队，把最相关的几条递到你面前。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>双线并进，既懂意思又看字面，结果更靠谱。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>🧹 让结果更清爽</h2>
-              <p>笔记多了，结果可能太旧或者太重复。两个小开关能帮你打扫一下。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>让你的记忆仓库保持新鲜、不啰嗦。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>旧笔记会褪色，重复内容会合并。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>⏳ 时光滤镜</h2>
-              <p>给旧笔记慢慢蒙上一层灰，让新的更容易被看见。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>防止去年的会议纪要总挡着昨天的待办事项。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>默认设置下，30 天前的笔记，重要性只剩一半。</li><li>像 &#39;MEMORY.md&#39; 这种常青文件，永远不会蒙灰，永远重要。</li><li>如果你发现陈年旧事老排在前面，就打开这个开关。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>新的亮，旧的暗，常青树永远绿。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>🎯 去重雷达</h2>
-              <p>防止五张纸条都在讲同一件事，帮你看到不同话题。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>避免搜索结果翻来覆去都是同一个路由配置。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>如果搜索&#39;路由器&#39;，结果里五条都是上个月同一份配置文档的不同段落，去重雷达就会介入。</li><li>它会重新排列，确保最上面的结果覆盖&#39;路由器设置&#39;、&#39;故障排查&#39;、&#39;型号对比&#39;等不同方面。</li><li>当你觉得结果像在重复播放时，就打开它。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>要多样，不要复读机。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>⚙️ 同时打开两个开关</h2>
-              <p>想既新鲜又多样？一行配置同时点亮两个功能。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>一键让你的记忆搜索既与时俱进又丰富多彩。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>这行配置就像同时按下&#39;时光滤镜&#39;和&#39;去重雷达&#39;的启动按钮。</li><li>写进去，管家就会同时应用这两条打扫规则。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>双管齐下，效果更佳。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>🖼️ 记住图片和声音</h2>
-              <p>用 Gemini 这把钥匙，你的记忆仓库不仅能存文字，还能存图片和音频。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>让你的搜索也能&#39;看到&#39;截图、&#39;听到&#39;录音。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>只有 Gemini Embedding 2 这把高级钥匙支持这个功能。</li><li>你可以把会议截图、产品演示录音也存进记忆仓库。</li><li>搜索时你还是用文字提问，但管家能理解这些图片和声音的内容，把相关的找出来。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>文字提问，多媒体也能答。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-9">
-            <div class="section-heading">
-              <p class="section-kicker">第 9 站</p>
-              <h2>💬 记住聊天记录</h2>
-              <p>你可以选择把之前的对话也存进仓库，这样搜索时就能想起&#39;我们上次聊过这个&#39;。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>让 AI 也有&#39;对话记忆&#39;，上下文更连贯。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>这是个实验功能，需要你手动打开一扇叫 &#39;sessionMemory&#39; 的后门。</li><li>打开后，你和 AI 的聊天记录也会被切片、索引，变成可搜索的记忆。</li><li>下次你问相关问题时，它就能引用之前的对话片段了。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>让对话也有记忆可循。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-10">
-            <div class="section-heading">
-              <p class="section-kicker">第 10 站</p>
-              <h2>🚧 常见卡壳点</h2>
-              <p>东西找不到？可能是仓库没建好，或者钥匙没插对。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>快速自救指南。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>搜不到任何东西？先敲 &#39;openclaw memory status&#39; 看看仓库是不是空的。如果是，就用力敲 &#39;openclaw memory index --force&#39; 重建仓库。</li><li>只能找到完全匹配关键词的，找不到意思相关的？可能是理解意思的那把钥匙（嵌入提供者）没配好。用 &#39;openclaw memory status --deep&#39; 深挖一下。</li><li>中文日文韩文搜不到？可能是字词匹配的索引坏了，同样用 &#39;--force&#39; 重建一下。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>&#39;status&#39; 命令是看一眼仓库大门和里面的货架。</li><li>&#39;index --force&#39; 是命令管家：&#39;别管之前有什么，按现在的笔记全部重新整理一遍！&#39;</li><li>&#39;status --deep&#39; 是打开仓库的详细日志，检查每一把钥匙的状态。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>没结果就查状态，不对就重建。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🔍 Memory Search 像一把会找“意思”的记忆小铲子</h2>
+      <p>它不是只按原句找，而是把记忆切成小块后，靠关键词、向量，或者两条路一起找。</p>
+      <p>所以它更像“我记得大概意思”的时候用的工具。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想让代理记忆检索更像人脑的人</span>
+      <span>重点是 keyword / vector / hybrid 三条路</span>
+      <a href="https://docs.openclaw.ai/concepts/memory-search" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧩 它怎么找，像“先分小块，再四处问路”</h2>
+    <p>这不是全文乱扫，而是先把记忆切成能检索的小段，再去匹配。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">关键词</div>
+      <p>像拿着字面小地图找。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">向量</div>
+      <p>像按意思找，不只看原词。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">混合</div>
+      <p>像两只脚一起走，一边看字，一边看意思。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">节省心智</div>
+      <p>你不用记得原句，记得大概意思也行。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🛠 配置时，最关键的是选哪位“记忆翻译官”</h2>
+    <p>OpenClaw 允许多种 embedding provider，默认还能自动找。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🟦</span>
+      <h2>OpenAI / Gemini / Voyage / Mistral</h2>
+      <p>像已经挂号的外部翻译官，系统能自动认出来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🟩</span>
+      <h2>Bedrock / Ollama / Local</h2>
+      <p>像你自己家里也能摆上的翻译桌。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⚙</span>
+      <h2><code>memorySearch.provider</code></h2>
+      <p>像把翻译官名字写进总账本。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>没有向量提供商也能跑</h2>
+      <p>只是会更偏关键词，不会完全没法用。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧭 为什么这页重要</h2>
+    <p>因为真正让代理“会回忆”的，不只是存得久，而是找得回来。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">召回质量</div>
+      <p>找得准，代理才会像真的记得你。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">多语言</div>
+      <p>CJK、英文、混合文本都能用，只是要挑合适的检索方式。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">本地优先</div>
+      <p>你可以先用本地、后补云端，不必一开始就上大系统。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Memory Search 这页压成一句最好记的话</h2>
+    <p>Memory Search 就是帮记忆找回来的小铲子：先分块，再按字面和意思一起找，最后把最像你要的内容摆到前面。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

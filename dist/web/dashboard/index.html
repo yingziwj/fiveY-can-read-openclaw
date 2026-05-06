@@ -4328,136 +4328,163 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>你的网关控制台：一扇看得见所有门的玻璃墙</h2>
-            <p>想象一下，你的整个网关系统是一栋大楼。这个控制台，就是你面前那面巨大的玻璃墙。墙上实时显示着每扇门的开关、谁在进出、哪条走廊在忙碌。现在，我们来看看怎么走到这面墙前。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/web/dashboard</span>
-            <span>故事卡片：4 张</span>
-            <a href="https://docs.openclaw.ai/web/dashboard" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>找到那面玻璃墙 🧭</h2>
-              <p>控制台就是一个网页，你的网关已经把它准备好了。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>你得先知道门牌号，才能走过去。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>网关启动后，它就在一个固定的地址上等着你。</li><li>通常，你只需要在浏览器里输入 `http://localhost:18789` 这个地址。</li><li>就像走到大楼前台，告诉前台小姐你要去总控室。</li><li>如果管理员改了路，他会告诉你新的门牌号（通过 `gateway.controlUi.basePath` 这个设置）。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>记住 `localhost:18789`，这是最常见的入口。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>最顺的路：让向导带你走 🚀</h2>
-              <p>别自己找路了，用 `openclaw` 这个向导，它能一键开门。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这是官方推荐的方法，又快又安全，不会走错。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>第一次设置好网关后，向导会自动帮你打开浏览器，直接跳到控制台页面。</li><li>它还会在屏幕上打印出一个干净的网址链接，没有密码黏在上面。</li><li>以后任何时候想回来，就在命令行里敲 `openclaw dashboard`。</li><li>这个命令会做三件事：复制链接、尝试帮你打开浏览器、如果没屏幕（比如在服务器上）就告诉你怎么用SSH连过来看。</li><li>如果页面弹出个小窗口问你要密码，就把管理员给你的那个秘密口令贴进去。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>执行 `openclaw dashboard`，就像按下了总控室的快捷呼叫按钮。</li><li>现场会发生：你的终端亮起一行网址，浏览器‘唰’地打开，页面加载出那面玻璃墙。</li><li>如果没反应，命令会告诉你‘嘿，你现在没屏幕，得用别的法子看’。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>想进控制台？敲 `openclaw dashboard` 就对了。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>门口的守卫：密码和令牌 🔑</h2>
-              <p>进控制台前，有时需要验明身份。有两种钥匙：长期令牌和一次性密码。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>搞清楚用哪把钥匙，才不会被拦在门外干着急。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>**长期令牌**：像一把个人专属的金属钥匙。你把它存在电脑的环境变量里（叫 `OPENCLAW_GATEWAY_TOKEN`）。</li><li>向导 `openclaw dashboard` 很聪明，它不会把这把金属钥匙直接焊在网址上给人看，而是用更安全的方式递进去。</li><li>进去后，控制台会把这把钥匙存在当前浏览器标签的‘短期记忆’里，关掉标签就忘。</li><li>**一次性密码**：像一张当天有效的访客卡。也是通过环境变量设置（叫 `OPENCLAW_GATEWAY_PASSWORD`）。</li><li>这张卡更临时，每次刷新页面都需要重新出示。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>设置 `OPENCLAW_GATEWAY_TOKEN=你的令牌`，等于把金属钥匙挂在了系统门口。</li><li>向导传递令牌时，动作很轻，不会在终端历史或剪贴板里留下钥匙的印子。</li><li>如果没带钥匙（环境变量里没令牌），向导会打印一个普通网址，并附上清晰的提示：‘您需要先配置钥匙’。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>长期用选令牌，临时用选密码；向导会帮你安全地递钥匙。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>如果守卫说“无权进入” 🚫</h2>
-              <p>被拦在门外了？别慌，通常是钥匙不对或者拿错了。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道怎么解决，就能快速回到玻璃墙前。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>页面上如果显示‘未授权’或错误码1008，就是守卫没认出你的钥匙。</li><li>系统有安全机制：连续拿错钥匙，守卫会暂时把你记上小本本，让你‘稍后再试’。</li><li>**检查你的钥匙**：</li><li>  - 是不是忘了设置 `OPENCLAW_GATEWAY_TOKEN` 或 `OPENCLAW_GATEWAY_PASSWORD`？</li><li>  - 钥匙的字符串有没有抄错一个字母？</li><li>**怎么做**：</li><li>  - 在当前的命令行窗口里，把正确的令牌或密码设置好。</li><li>  - 然后，重新运行 `openclaw dashboard` 命令。</li><li>  - 让向导带着新钥匙，再去敲一次门。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>看到错误时，先别乱敲命令。</li><li>现场修正：在终端里输入 `export OPENCLAW_GATEWAY_TOKEN=正确令牌`，然后重跑 `openclaw dashboard`。</li><li>这个动作就像：发现钥匙不对，回车上拿对的那把，再走到门前。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>进不去？先查环境变量里的钥匙对不对，然后让向导重试。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🖥 Dashboard 就是 OpenClaw 的“总控室”</h2>
+      <p>这页讲的不是普通网页首页，而是 OpenClaw 的控制台。你可以把它想成整个系统的总控室：聊天、配置、设备批准、exec approvals，这些后台动作很多都在这里看得见、点得到。</p>
+      <p>也正因为它是总控室，所以官方一直在强调一件事：别把它当公开展示页。它不是给路人看的，它是管理员面板。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合已经把 Gateway 跑起来，想进入控制台的人</span>
+      <span>这页最重要的是分清：这是 admin surface，不该直接裸露在公网</span>
+      <a href="https://docs.openclaw.ai/web/dashboard" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🏠 先想画面：这不是聊天窗，这是总控室门口</h2>
+    <p>官方开头的“Control UI served at /”一句，其实已经把定位说死了。这里不是让人闲聊的普通网页，而是系统管理面板。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">💬 能聊天</div>
+      <p>是的，它里面也能聊，但那只是总控室里的一块屏幕，不是它全部身份。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">⚙️ 能改配置</div>
+      <p>很多配置、批准、工具状态都能从这里看和调。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔐 权限非常高</div>
+      <p>因为它本来就能碰敏感东西，所以官方才会一再提醒不要把它公开裸奔。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 一句话先记住</div>
+      <p>Dashboard 不是站点首页，它是管理员总控室。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🚪 最快进门的方法，其实就两条：本地开门，或者用 <code>openclaw dashboard</code> 带路</h2>
+    <p>官方的 fast path 很实用，因为第一次最常卡住的就是“门在哪、票在哪、要不要带 token”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>http://127.0.0.1:18789/</code></div>
+      <p>像默认总控室门牌号。Gateway 跑起来以后，本地最常见就是这个门口。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw dashboard</code></div>
+      <p>像让系统当引导员，帮你把门牌号和该怎么进去都准备好，顺手还能帮你开浏览器。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">onboarding 自动打开</div>
+      <p>像安装结束后，带你第一次走进总控室，不用你自己满楼找门。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>第一次进 Dashboard，最稳的办法不是手敲复杂 URL，而是直接让 <code>openclaw dashboard</code> 带路。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🎟 token 这件事，翻成人话就是“进总控室要门票，而且别把门票乱贴”</h2>
+    <p>这页花了不少篇幅讲 token，不是小题大做。因为总控室不是谁路过都该能进。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🔑 token source</div>
+      <p>像总控室门票来源，通常来自 <code>gateway.auth.token</code> 或 <code>OPENCLAW_GATEWAY_TOKEN</code>。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧼 为什么会 strip 掉 URL 里的 token</div>
+      <p>像引导员暂时拿着门票把你送进门，进门后立刻把票从走廊上擦掉，别让别人顺手捡走。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📦 sessionStorage</div>
+      <p>像把这张票暂时放在你当前这个浏览器标签页的小抽屉里，而不是贴到整台机器都能轻易翻到的地方。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🔐 SecretRef-managed token</div>
+      <p>如果门票本来就锁在外部保险柜里，<code>openclaw dashboard</code> 会故意只给你一个不带票的干净地址，避免它把门票抖到终端、剪贴板和浏览器启动参数里。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🚨 “unauthorized / 1008” 不是玄学，就是“门票不对或者路没通”</h2>
+    <p>官方这段其实写得很实在。别一看到 1008 就慌，大多数情况就几类。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw status</code></div>
+      <p>像先站在门外看总控室大楼有没有亮灯。Gateway 要是根本没起来，别先怀疑 token。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>ssh -N -L 18789:127.0.0.1:18789 user@host</code></div>
+      <p>像给远处的总控室拉一条临时专线过来，让你在本地门口也能敲到它。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw config get gateway.auth.token</code></div>
+      <p>像回头去查管理员手册里现在这张门票到底写了什么。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw doctor --generate-gateway-token</code></div>
+      <p>像发现大楼压根没给你准备门票，那就现场补发一张。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🌐 这页一直在说“别公开暴露”，因为这真的不是给路人逛的页面</h2>
+    <p>安全提醒不是客气话。Dashboard 能碰很多高权限动作，所以公开暴露的风险很真。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🏠 localhost 最稳</div>
+      <p>像总控室只在你家里开门，默认安全感最高。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧵 SSH tunnel / Tailscale</div>
+      <p>像给自己和总控室之间拉私人走廊，而不是把大门直接开到大街上。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚫 不要直接裸露公网</div>
+      <p>因为这里不只是看面板，还能批准设备、看聊天、处理 exec approvals。让路人摸到，代价太高。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 这节一句话</div>
+      <p>Dashboard 该像管理员后台，不该像公开宣传页。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Dashboard 这页压成一句话</h2>
+    <p>Dashboard 就是 OpenClaw 的总控室：本地开门最稳，token 是门票，SSH / Tailscale 是私人走廊，而“不要公开裸露”是这页最重要的安全底线。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/web</code> 或 <code>/gateway/doctor</code>。前者会告诉你总控室这栋楼怎么对外开门，后者会告诉你楼里哪里坏了该怎么修。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

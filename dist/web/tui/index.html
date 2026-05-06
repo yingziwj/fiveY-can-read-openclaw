@@ -4328,317 +4328,193 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>在终端里跟AI聊天：OpenClaw TUI 入门</h2>
-            <p>打开终端，敲两行命令，你就能在键盘上跟AI对话。不用网页，不用鼠标，一切都在黑底绿字的命令行里发生。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/web/tui</span>
-            <span>故事卡片：11 张</span>
-            <a href="https://docs.openclaw.ai/web/tui" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>两步启动：先开网关，再开聊天室</h2>
-              <p>先跑一个命令让网关跑起来，再跑另一个命令打开聊天界面。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>让你知道从零到能打字聊天只需要两条命令。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>第一步：在终端里输入 `openclaw gateway`，回车。网关就开始运行，像打开了一扇门，等着AI进来。</li><li>第二步：再开一个新终端（或者同一个终端后台跑着网关），输入 `openclaw tui`，回车。聊天界面就弹出来了。</li><li>两条命令之间不要搞混：网关是后台服务，TUI 是前台聊天窗口。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`openclaw gateway` 执行后，你会看到一些日志输出，表示网关正在监听连接。</li><li>`openclaw tui` 执行后，屏幕会变成上下分栏：上面是聊天记录，下面是输入框。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>先开网关，再开 TUI，两步就能开始聊。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>屏幕上有什么：四块区域各司其职</h2>
-              <p>TUI 界面分成四块：头顶状态、聊天记录、底栏信息、输入框。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>让你一打开界面就知道哪里看连接状态、哪里看回复、哪里打字。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>最上面一行（Header）显示你连到了哪个网关、当前用的哪个AI智能体、当前在哪个会话里。</li><li>中间一大块是聊天记录（Chat log）：你发的消息、AI的回复、系统通知、工具卡片都按时间顺序排在这里。</li><li>最下面一行（Footer）是状态栏：显示连接状态、智能体名字、会话名字、模型名字，还有一堆开关状态（think/fast/verbose/trace/reasoning）和token计数。</li><li>底部还有一行输入框（Input），你可以直接打字，按 Enter 发送，还支持自动补全。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>抬头看状态，中间看对话，低头打字，底栏看全局。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>智能体 + 会话：你是谁、你在哪</h2>
-              <p>每个智能体有一个唯一的名字（比如 main、research），会话属于当前智能体，你可以切换。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>帮你理解怎么在不同的AI角色和对话历史之间切换。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>智能体（Agent）就像不同的助手，每个有自己的名字（slug），比如 main 是默认助手，research 是研究助手。网关会告诉你有哪些智能体可用。</li><li>会话（Session）是当前智能体的聊天记录。每个会话有一个键（key），存在 Redis 里，格式是 `agent:&lt;智能体ID&gt;:&lt;会话键&gt;`。</li><li>如果你输入 `/session main`，TUI 会自动补全成 `agent:&lt;当前智能体&gt;:main`，切换到当前智能体下的 main 会话。</li><li>如果你输入 `/session agent:other:main`，你就明确切换到 other 智能体的 main 会话。</li><li>会话有作用域（scope），决定了会话键的存储方式。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`/session main` 执行后，你会看到底栏的 session 字段变成 `main`，聊天记录会切换到那个会话的内容。</li><li>`/session agent:research:main` 执行后，智能体也会自动切换到 research，会话变成 research 下的 main。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>智能体是不同的人，会话是不同的小本本，切换会话就是换本子。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>发送消息与交付：你的话怎么送到AI手里</h2>
-              <p>你发的消息先到网关，默认不会转发给AI提供商（比如OpenAI）。需要手动开启交付。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>避免你发了消息却没收到回复，因为交付默认是关的。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>你按 Enter 发送消息，消息先到达网关，但默认网关不会把消息发给AI提供商（比如OpenAI的API）。这叫“交付关闭”。</li><li>要开启交付，有三种方式：在TUI里输入 `/deliver on`，或者打开设置面板（Settings）勾选交付，或者在启动TUI时加上 `--deliver` 参数。</li><li>交付开启后，你的消息才会被送到AI提供商那里，AI的回复才会回来。</li><li>如果你发了消息却没有任何回复，先检查交付是否开启。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`/deliver on` 执行后，底栏的 deliver 状态会变成 on，之后发送的消息就会转发给AI。</li><li>`openclaw tui --deliver` 启动时直接开启交付，省得每次手动开。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>默认消息只到网关，要让它到AI手里，记得开交付。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>选择器与覆盖层：换模型、换智能体、换设置</h2>
-              <p>按快捷键弹出选择器，可以换模型、换智能体、换会话，或者调整设置。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>让你不用记命令，用快捷键就能快速切换。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>按 Ctrl+L 弹出模型选择器（Model picker）：列出所有可用模型，选一个就会覆盖当前会话的模型。</li><li>按 Ctrl+G 弹出智能体选择器（Agent picker）：列出所有智能体，选一个就切换过去。</li><li>会话选择器（Session picker）只显示当前智能体下的会话，按快捷键或输入 `/sessions` 可以打开。</li><li>设置面板（Settings）可以开关交付、展开工具输出、显示思考过程。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>Ctrl+L 换模型，Ctrl+G 换智能体，设置面板调开关。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>快捷键一览：键盘就是你的遥控器</h2>
-              <p>常用操作都有快捷键，不用鼠标。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>让你操作更流畅，不用到处找命令。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>Enter：发送当前输入的消息。</li><li>Esc：中止正在进行的AI回复（比如AI说了一半你想打断）。</li><li>Ctrl+C：清空输入框。按两次 Ctrl+C 退出TUI。</li><li>Ctrl+D：直接退出TUI。</li><li>Ctrl+L：打开模型选择器。</li><li>Ctrl+G：打开智能体选择器。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>Enter 发送，Esc 中止，Ctrl+C 清空，Ctrl+D 退出，Ctrl+L/G 选模型和智能体。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>斜杠命令：用文字控制一切</h2>
-              <p>在输入框里打斜杠开头命令，可以查看状态、切换智能体、调整思考级别等。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>让你不用快捷键也能完成所有操作，而且更精确。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>核心命令：`/help` 看帮助，`/status` 看当前状态，`/agent &lt;id&gt;` 切换智能体，`/session &lt;key&gt;` 切换会话，`/model &lt;provider/model&gt;` 切换模型。</li><li>会话控制命令：`/think &lt;off|minimal|low|medium|high&gt;` 设置思考级别，`/fast &lt;on|off&gt;` 开启快速模式，`/verbose &lt;on|full|off&gt;` 控制详细输出，`/trace &lt;on|off&gt;` 开启追踪，`/reasoning &lt;on|off|stream&gt;` 控制推理显示，`/usage &lt;off|tokens|full&gt;` 控制用量显示。</li><li>所有命令都可以在输入框里直接打，按 Enter 执行，结果会显示在聊天记录里。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`/status` 执行后，聊天记录里会显示当前连接状态、智能体、会话、模型等信息。</li><li>`/think high` 执行后，AI的回复会包含更详细的思考过程。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>斜杠命令是TUI的遥控器，想做什么就打什么。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>启动选项：定制你的TUI</h2>
-              <p>启动TUI时可以加参数，指定网关地址、令牌、密码、默认会话等。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>让你连接远程网关或自定义启动行为。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>`--url &lt;url&gt;`：指定网关的WebSocket地址，默认从配置文件读取或 `ws://127.0.0.1:&lt;port&gt;`。</li><li>`--token &lt;token&gt;` 和 `--password &lt;password&gt;`：如果网关需要认证，就传这两个参数。注意：如果你手动指定了 `--url`，TUI 不会自动从配置文件或环境变量读取令牌和密码，必须显式传递，否则报错。</li><li>`--session &lt;key&gt;`：指定启动时进入哪个会话，默认是 `main`（作用域为全局时是 `global`）。</li><li>`--deliver`：启动时直接开启交付，省得手动开。</li><li>`--thinking &lt;level&gt;`：覆盖发送消息时的思考级别。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`openclaw tui --url ws://192.168.1.100:8080 --token mytoken` 连接远程网关，需要提供令牌。</li><li>如果只传了 `--url` 没传 `--token`，TUI 会报错退出。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>启动参数就像给TUI的初始配置，远程连接必须显式提供认证。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-9">
-            <div class="section-heading">
-              <p class="section-kicker">第 9 站</p>
-              <h2>故障排查：发消息没反应怎么办</h2>
-              <p>如果发了消息没有任何输出，按步骤检查。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>帮你快速定位问题，而不是干等。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>先输入 `/status` 查看网关是否连接正常，状态是 idle 还是 busy。</li><li>查看网关日志：在另一个终端运行 `openclaw logs --follow`，看有没有错误。</li><li>确认智能体能运行：运行 `openclaw status` 和 `openclaw models status` 检查智能体和模型状态。</li><li>如果你期望消息出现在聊天频道里，记得开启交付（`/deliver on` 或 `--deliver`）。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`/status` 执行后，如果显示 `disconnected`，说明网关没连上。</li><li>`openclaw logs --follow` 会实时显示网关日志，看到错误信息就知道哪里出问题了。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>发消息没反应，先看状态，再看日志，最后检查交付。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-10">
-            <div class="section-heading">
-              <p class="section-kicker">第 10 站</p>
-              <h2>连接问题：连不上网关怎么办</h2>
-              <p>如果TUI显示 disconnected，或者选择器里没有智能体/会话，按下面步骤检查。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>帮你解决最常见的连接故障。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>如果状态显示 disconnected：确保网关正在运行，并且你输入的 `--url/--token/--password` 是正确的。</li><li>如果智能体选择器是空的：运行 `openclaw agents list` 检查智能体列表，并检查你的路由配置。</li><li>如果会话选择器是空的：你可能处于全局作用域（global scope），或者还没有创建任何会话。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`openclaw agents list` 会列出所有可用的智能体，如果列表为空，说明网关没有配置任何智能体。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>连不上先看网关，智能体空看列表，会话空看作用域。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-11">
-            <div class="section-heading">
-              <p class="section-kicker">第 11 站</p>
-              <h2>相关资源：更多入口</h2>
-              <p>除了TUI，还有网页控制界面和完整的CLI命令参考。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>让你知道还有别的工具可以用。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>Control UI：基于网页的控制界面，在浏览器里操作。</li><li>CLI Reference：完整的命令行参考，所有命令的详细说明。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>TUI之外，还有网页版和命令行大全。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>⌨️ TUI 就像“把 OpenClaw 总控室搬进你的终端里”</h2>
+      <p>如果 Dashboard 是浏览器里的总控室，那 TUI 就像把其中最常用的一套控制台塞进终端。你不用开网页，也能在命令行里聊天、切 agent、换 session、看工具卡片、调 thinking 和 delivery。</p>
+      <p>所以这页不是“又一个聊天方式”那么简单，它更像一块给终端用户准备的控制面板。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合喜欢终端、想尽量不离开 shell 的人</span>
+      <span>这页最重要的是先看懂：TUI 连的是 Gateway，不是本地单机聊天小窗</span>
+      <a href="https://docs.openclaw.ai/web/tui" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🖥 先想画面：你坐在终端里，但其实连着总控室</h2>
+    <p>官方 quick start 第一条就先让你启动 Gateway，这不是废话。它是在提醒你：TUI 本质上是 Gateway 的一个前台，不是脱离网关独立活着的聊天器。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway</code></div>
+      <p>像先把整栋楼的电闸打开。TUI 只是前台屏幕，屏幕后面的楼得先有电。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw tui</code></div>
+      <p>像在终端里打开这块前台屏幕。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--url ... --token ...</code></div>
+      <p>像你不是坐在本楼前台，而是远程接到另一栋楼的屏幕上，所以要带着地址和门票过去。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 一句话</div>
+      <p>TUI 是终端里的控制台，但背后仍然是 Gateway 在运转。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧭 这块屏幕上你到底会看到什么</h2>
+    <p>官方列 Header、Chat log、Status line、Footer、Input。翻成人话，就是一张结构很清楚的驾驶舱。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🪟</span>
+      <h2>Header</h2>
+      <p>像挡风玻璃上方那排状态：你连的是哪、现在是谁、在哪个会话里。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">💬</span>
+      <h2>Chat log</h2>
+      <p>像主视野，用户话、回复、系统提示、工具卡片都在这里流过。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📶</span>
+      <h2>Status / Footer</h2>
+      <p>像仪表盘，告诉你连接状态、模型、thinking、tokens、deliver 开没开。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⌨️</span>
+      <h2>Input</h2>
+      <p>像驾驶位上的操纵杆。你写消息、敲命令、补 directive，都是从这儿出手。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧠 Agents + Sessions 这段，其实是在讲“你现在坐在哪个工位、翻的是哪个抽屉”</h2>
+    <p>很多人第一次看 session key 会头大。其实你只要记住：agent 像工位，session 像这个工位里的具体抽屉。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧑 agent</div>
+      <p>像不同的工位，比如 <code>main</code>、<code>research</code>、<code>design</code>。每个工位负责不同风格的活。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🗂 session</div>
+      <p>像工位里的抽屉。同一个 agent 可以有很多抽屉，每个抽屉装一条任务线。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>agent:&lt;agentId&gt;:&lt;sessionKey&gt;</code></div>
+      <p>像完整抽屉标签：哪张桌子、哪个抽屉，一次写清楚。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 一句话</div>
+      <p>切 agent 像换桌子，切 session 像换抽屉。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🕹 slash commands 和快捷键，像驾驶舱上的按钮</h2>
+    <p>这页里按钮很多，但其实都能按“切视图、切档位、切对象、停当前动作”来记。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>/agent</code> / <code>/session</code> / <code>/model</code></div>
+      <p>像换桌子、换抽屉、换脑子，是最常见的切换按钮。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>/think</code> / <code>/fast</code> / <code>/verbose</code></div>
+      <p>像调当前驾驶模式，决定这次跑得快一点、想得深一点、还是把后台噪音多露出来一点。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Ctrl+L / Ctrl+G / Ctrl+P</div>
+      <p>像直接弹出模型、agent、session 选择器，不用每次手敲完整命令。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Esc / <code>/abort</code></div>
+      <p>像踩刹车，告诉当前这次跑得太久了，先停。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>📦 Tool cards 和本地 <code>!</code> 命令，是两套完全不同的能力</h2>
+    <p>这部分很容易混。一个是 Gateway 那边跑出来的工具卡片，一个是 TUI 自己本地 shell。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧰 Tool cards</div>
+      <p>像你看见后台某个工具正在干活、干了什么、结果如何。它属于 Gateway 那边的正式工具事件。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>!</code> 本地 shell</div>
+      <p>像你在 TUI 这台终端本机上临时开一个小外壳，跑一条本地命令。它不是把命令发给 Gateway 去远端执行。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔐 为什么本地 <code>!</code> 要先提示一次</div>
+      <p>因为这已经不是聊天，而是在你当前终端主机上直接动手。系统会先确认你真的愿意开这扇门。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>Tool cards 是看远端工具干活，<code>!</code> 是在眼前这台机器本地开 shell。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🧯 Troubleshooting 这一段其实很朴素：没反应时，先看是不是根本没连上</h2>
+    <p>官方最后给的排查顺序很务实，而且跟这整站的风格一样，应该先做基础检查。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>/status</code></div>
+      <p>像先看驾驶舱仪表盘：现在是连着、忙着、还是根本掉线了。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw logs --follow</code></div>
+      <p>像去后面看监控，确认消息有没有真的进楼、工具有没有跑起来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--url</code> 配了就别指望自动兜底</div>
+      <p>官方特别提醒：你一旦手动指定远端 URL，就别再指望系统自动从配置里帮你补 token / password。门牌你自己填了，门票也得你自己带齐。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 这节一句话</div>
+      <p>TUI 不出字时，先查连接和认证，别先怀疑模型人格突然变了。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 TUI 这页压成一句话</h2>
+    <p>TUI 就是终端里的 OpenClaw 控制台：你在 shell 里切 agent、切 session、看工具卡片、调思考档位，但它背后连的仍然是 Gateway 这栋楼。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议回头看 <code>/web/dashboard</code> 或继续看 <code>/web/webchat</code>。前者是浏览器里的总控室，后者是另一种“看起来像聊天，其实也直连 Gateway”的前台。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

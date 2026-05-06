@@ -4328,149 +4328,193 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>给OpenClaw装个“网络望远镜”🔭</h2>
-            <p>想让AI助手帮你查资料吗？OpenClaw可以连接Perplexity这个强大的搜索引擎。就像给AI装了个望远镜，它能帮你看到整个网络世界。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/tools/perplexity-search</span>
-            <span>故事卡片：5 张</span>
-            <a href="https://docs.openclaw.ai/tools/perplexity-search" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>两扇门，选哪一扇？🚪</h2>
-              <p>OpenClaw连接Perplexity有两种方式，就像有两扇不同的门可以进去。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>选错了门，你拿到的结果会完全不一样。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>第一扇门叫“原生搜索API”。走进去，你会拿到一叠整齐的搜索结果卡片，每张卡片都有标题、网址和简介。</li><li>第二扇门叫“兼容模式”。这是给以前用OpenRouter或Sonar的老用户留的后门。走进去，你会拿到一个AI帮你总结好的答案，还带着引用来源。</li><li>怎么选门？看你手里拿的是什么钥匙。如果钥匙是“pplx-...”开头的，就走第一扇门。如果钥匙是“sk-or-...”开头的，或者你设置了特定的地址和模型，系统会自动带你走第二扇门。</li><li>别担心走错，OpenClaw会根据你给的钥匙自动判断。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>钥匙决定你走哪扇门，看到不同的风景。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>去领你的钥匙🔑</h2>
-              <p>想用Perplexity，你得先去它家领一把专属钥匙。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>没有钥匙，OpenClaw连不上Perplexity的大门。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>打开浏览器，去perplexity.ai/settings/api这个地址。</li><li>登录你的Perplexity账号（没有就注册一个）。</li><li>在它的控制面板里，找到生成API密钥的地方，点一下。</li><li>一把新的钥匙（一串以“pplx-”开头的字符）就诞生了，把它复制下来。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>钥匙就在Perplexity网站的后台等着你。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>把钥匙交给门卫🗝️</h2>
-              <p>领到钥匙后，你得告诉OpenClaw的“门卫”钥匙放在哪里。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>门卫找不到钥匙，就不会放行你的搜索请求。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>方法一：把钥匙写进配置文件。运行 `openclaw configure --section web` 这个命令，就像把钥匙亲手交给管家，他会帮你存进家里的保险柜（~/.openclaw/openclaw.json 文件）。</li><li>方法二：把钥匙挂在门口。设置一个叫 `PERPLEXITY_API_KEY` 的环境变量，就像把钥匙挂在门外的挂钩上（~/.openclaw/.env 文件），OpenClaw启动时自己会去拿。</li><li>如果你是老用户，手里是OpenRouter的钥匙（“sk-or-...”开头），那就挂 `OPENROUTER_API_KEY` 这个挂钩。</li><li>如果门卫既在保险柜里找不到钥匙，门口挂钩也是空的，他就会立刻举手报告“启动失败”，不会让你蒙在鼓里。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>运行 `openclaw configure --section web`：这个命令会打开一个配置向导，引导你把钥匙（API Key）安全地存放到正确的位置。</li><li>设置 `PERPLEXITY_API_KEY` 环境变量：这就像在系统后台挂了一个小牌子，OpenClaw一抬头就能看到钥匙在哪。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>钥匙要么交给管家存好，要么挂在门口显眼处。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>调整望远镜的焦距🔍</h2>
-              <p>用原生搜索API这扇门时，你可以告诉望远镜具体想看什么。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>调好参数，搜出来的结果才更准、更合你意。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>`query`（查询词）：必须说！就像你对着望远镜喊“帮我找找猫咪图片！”。</li><li>`count`（数量）：想拿回几张结果卡片？1到10张，默认5张。</li><li>`country`（国家）和 `language`（语言）：告诉望远镜只看某个国家或某种语言的网站，比如“US”和“en”就是只看美国的英文网站。</li><li>`freshness`（新鲜度）：只要最近一天（`day`）、一周（`week`）、一个月（`month`）或一年（`year`）的新内容。</li><li>还可以用 `domain_filter` 这个工具来拦路或放行：写一个网站列表允许通过，或者在网站前加个“-”号（如“-reddit.com”）把它拦在门外。一次最多管20个网站，不能又拦又放混着用。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>告诉望远镜目标、数量、范围和新旧，它看得更清楚。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>一些重要的便签📌</h2>
-              <p>最后，记住这几个小细节，用起来更顺手。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>了解规则，避免意外。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>从原生API门拿到的搜索结果，默认会在OpenClaw家里存15分钟（缓存）。短时间内搜同样的东西，直接给你看存好的，更快。</li><li>如果你走了兼容模式那扇门（用OpenRouter或设置了特定地址），拿到的就不是一堆结果卡片，而是一个AI帮你写好的、带引用的完整答案。</li><li>搜过一次的结果，OpenClaw会记一会儿，下次马上给你，省得再跑一趟。</li><li>想了解更多？可以去看看OpenClaw的“所有网络搜索工具”地图，或者直接去Perplexity的官方说明书。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>结果会暂存，模式不同结果不同，还有更多工具等你发现。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧠 Perplexity Search 像一个“会找资料，还可能顺手先替你嚼一遍”的搜索员</h2>
+      <p>这页最绕的地方，不是参数多，而是它其实有两张脸。一张脸是老老实实带回结构化搜索结果，另一张脸是走兼容路线，直接给你带回“我先帮你总结过”的答案。</p>
+      <p>所以读这页时，第一件事不是看字段，而是先看你现在走的是“原生搜索 API”还是“旧 Sonar / OpenRouter 兼容路”。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想用 Perplexity 当网页搜索提供商的人</span>
+      <span>这页最重要的是分清：原生 Search API 和 OpenRouter / Sonar 兼容路径，不是同一种返回结果</span>
+      <a href="https://docs.openclaw.ai/tools/perplexity-search" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🪞 它为什么像有两张脸</h2>
+    <p>官方开头讲 compatibility，看起来像历史包袱，其实是非常实用的提醒：同样写着 <code>provider: "perplexity"</code>，返回的东西可能长得完全不一样。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📚</span>
+      <h2>原生 Search API</h2>
+      <p>像外勤把一张整齐的小报告交给你：标题、网址、摘要，规规矩矩三列。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🗣</span>
+      <h2>Sonar / OpenRouter 兼容路</h2>
+      <p>像它不只给你线索，还先把这些线索嚼了一遍，直接带回一段带引用的回答。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⚠️</span>
+      <h2>为什么要先分清</h2>
+      <p>因为后面很多参数只对原生搜索 API 有效。你走兼容路时，再扔这些参数过去，系统会明确报错。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⭐</span>
+      <h2>一句话先记住</h2>
+      <p>Perplexity 可以是“带回资料单”，也可以是“先帮你总结一嘴”。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔑 拿 key 和配置这段，翻成人话就是“给这位搜索员发哪张工牌”</h2>
+    <p>这部分主线很简单：你要么给它 Perplexity 自家的工牌，要么继续走以前 OpenRouter 那条兼容老路。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>PERPLEXITY_API_KEY</code></div>
+      <p>像给它发 Perplexity 自家的正式工牌。这样它更像按“原生搜索员”上岗。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>OPENROUTER_API_KEY</code></div>
+      <p>像告诉系统：“我们继续走以前那条兼容老路。”这时它更像 Sonar 聊天答案模式，而不是纯结构化搜索。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>baseUrl</code> / <code>model</code></div>
+      <p>这些字段像额外路标。只要你显式填了，系统就知道你不是在走最朴素的原生路子。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw configure --section web</code></div>
+      <p>像把“你想叫哪位搜索员出门、他拿哪张工牌”一次填进系统。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🎛 参数表其实都在讲“你要它搜得多细、带回多少料、排除哪几家”</h2>
+    <p>别被参数名吓到。翻成人话以后，大多数都很顺。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>count</code></div>
+      <p>像说：“先带 5 条线索回来，不用把整条街都翻遍。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>country</code> / <code>language</code></div>
+      <p>像交代这次先去哪个国家、哪种语言圈打听消息。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>freshness</code> / <code>date_after</code> / <code>date_before</code></div>
+      <p>像补一句：“我只要最近的，或者只要某个时间窗里的线索。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>max_tokens</code> / <code>max_tokens_per_page</code></div>
+      <p>像规定这次最多带多少内容回来，以及每一页最多抄多少，别一页就把背包塞爆。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🚧 <code>domain_filter</code> 像给搜索员一份“可以去哪些街区、不要去哪些街区”的名单</h2>
+    <p>这个功能很实用，因为很多时候你不是没答案，而是答案被不想看的站点淹掉了。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">✅ allowlist</div>
+      <p>像明确说：“这次只去 nature、science、.edu 这些街区打听。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚫 denylist</div>
+      <p>像说：“别去 reddit、pinterest 那几条街转了，太吵。”</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">❌ 不能混着写</div>
+      <p>因为这张名单要么是“只许去哪”，要么是“这些地方别去”，两种规矩不能一口气都贴给它。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 最大 20 个域名</div>
+      <p>像给搜索员的黑白名单不能无限长，不然它还没出门先被规则淹死了。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🪵 为什么兼容路有时会报“这个参数不支持”</h2>
+    <p>因为你一旦走的是 OpenRouter / Sonar 兼容路径，它干的已经不再是同一种搜索工作。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">📚 原生 Search API</div>
+      <p>像一个老老实实带结果清单回来的搜索员，所以国家、语言、日期、域名这些过滤器都能挂上去。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🗣 Sonar / OpenRouter</div>
+      <p>像另一个更爱先总结再回答的人。它能懂的旋钮少得多，主要只认 <code>query</code> 和 <code>freshness</code> 这种基础口令。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 这节一句话</div>
+      <p>不是参数坏了，而是你换了一条路，车就不是同一辆了。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🔐 fail fast 那句在讲什么</div>
+      <p>像你明明指定了要叫 Perplexity 出门，结果它的工牌没解出来。系统会选择立刻提醒你，而不是等半路才掉链子。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🧪 官方例子真正想教你的，不是语法，而是“怎么提更像一张靠谱搜索任务单”</h2>
+    <p>这些例子凑在一起看，主线很清楚：你可以按地区搜、按时间搜、按站点搜、按内容量搜。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">国家 / 语言搜索</div>
+      <p>像你明确指定“去德国那边打听，用德语结果”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">最近一周</div>
+      <p>像告诉它：“别翻旧报纸了，只要最近这周的消息。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">日期区间</div>
+      <p>像把资料窗口框得更窄，避免它把太旧或太新的都混进来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">更高 token 预算</div>
+      <p>像允许它多背一点资料回来，但这也意味着包更重、回得可能更慢。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Perplexity Search 这页压成一句话</h2>
+    <p>Perplexity Search 像一个会找资料的搜索员，但它既可以老老实实交结构化结果单，也可能顺手先帮你总结一嘴；读这页时，最先分清你走的是原生 Search API 还是兼容老路。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议接着看 <code>/tools/web</code> 或 <code>/tools/tavily</code>。这样你会更容易比较：同样是网页搜索，Perplexity、Tavily、Brave 到底各擅长哪种打法。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

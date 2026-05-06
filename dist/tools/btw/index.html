@@ -4328,269 +4328,186 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>悄悄问一句：/btw 怎么用？</h2>
-            <p>正在干活时，突然有个小问题想问。别打断主线，用 /btw 悄悄问。它像在耳边说悄悄话，问完就消失，主线任务继续跑。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/tools/btw</span>
-            <span>故事卡片：10 张</span>
-            <a href="https://docs.openclaw.ai/tools/btw" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>它是什么？</h2>
-              <p>一个让你在对话中间插嘴问小问题的命令。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>因为有时候你只是想知道“刚才那个文件叫啥”，不想让整个对话都绕过去。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>你正在和 OpenClaw 讨论一个复杂任务。</li><li>突然想起一个小细节，比如“刚才那个错误码是啥意思？”。</li><li>直接在输入框里打 /btw 加上你的问题。</li><li>OpenClaw 会看一眼当前的对话背景，然后悄悄回答你。</li><li>这个问答不会记到正式的聊天记录里，就像没发生过一样。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>/btw 是插嘴问小问题的快捷键。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>现场发生了什么？</h2>
-              <p>你敲下 /btw 命令后，后台悄悄走了一套流程。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>看看它怎么做到既回答问题，又不打扰主线。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>系统会立刻给当前的对话拍一张快照，当作背景知识。</li><li>然后单独开一个“小房间”，让模型只看快照来回答你的旁白问题。</li><li>模型在这个小房间里不能拿工具，也不能继续干主线任务。</li><li>回答完，这个小房间就拆了，答案用一条特殊的“旁白消息”发给你。</li><li>这条消息不会塞进聊天历史，刷新页面就没了。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>你输入 /btw what changed?，就像在主线任务旁边贴了张便利贴。</li><li>系统看到这个命令，会暂停一下，把当前的对话状态复印一份。</li><li>拿着这份复印件，去另一个安静的角落处理你的问题。</li><li>处理完，把答案写在另一张便利贴上递回来，原来的主线任务完全没动。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>它另开小灶处理你的问题，不碰主线厨房。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>它不会做什么？🚫</h2>
-              <p>它是个临时工，干完就走，不留痕迹。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>别指望用它来存东西或者接着干活。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>不会创建新的长期对话任务。</li><li>不会接着你还没干完的主线活继续干。</li><li>不能用任何工具（比如查网页、运行代码）。</li><li>问题和答案都不会写进正式的聊天记录本。</li><li>你在聊天历史里翻不到它。</li><li>刷新页面，它就消失了。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>/btw 是即用即抛的便利贴，不是记事本。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>它怎么知道背景？</h2>
-              <p>它只“偷听”主线对话，但不参与。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这样它回答得有根据，又不会帮倒忙。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>你把 /btw 问题扔进去时，主线任务可能正在跑。</li><li>系统会抓取那一刻的所有消息，当作背景故事讲给处理旁白的模型听。</li><li>但同时会明确告诉模型：“只回答旁白问题，别碰主线任务，别叫工具”。</li><li>这样模型既知道你们在聊什么，又不会手痒去改你们正在做的事。</li><li>旁白问题和主线任务之间，有一道透明的隔音玻璃。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>它带着耳朵听背景，但手被绑着，不能动主线。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>答案走哪条路送出来？</h2>
-              <p>答案不走普通聊天的大门，走旁边的小门。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>如果走正门，就会被当成正式对话存起来。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>普通的助理回复，走的是 chat 这条消息通道。</li><li>/btw 的答案，走的是 chat.side_result 这条旁白通道。</li><li>这是故意分开的。就像正式文件走前台归档，临时便条走侧门递给你。</li><li>客户端看到 side_result，就知道这是临时消息，不用存。</li><li>如果混用同一条路，客户端就会糊涂，把便条也钉进档案柜。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>旁白答案走侧门，不归档。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>在终端里长啥样？</h2>
-              <p>在终端窗口里，它像一块临时浮出来的小气泡。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>让你一眼看出这是临时回答，不是正式回复。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>答案会直接显示在你当前的会话窗口里。</li><li>但样子和普通的助理回复不一样，一眼就能区分。</li><li>你可以按回车或者 Esc 键把它关掉。</li><li>关掉就没了，重新加载窗口它也不会再出现。</li><li>它就像屏幕上临时贴的便签，撕掉就没了。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>终端里是即看即关的小气泡。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>在 Telegram 这些地方呢？</h2>
-              <p>在电报、WhatsApp 这些地方，它变成一条标清楚的独立消息。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>因为这些 App 没有那种临时浮层，只能用消息来模拟。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>在这些聊天软件里，/btw 的答案会作为一条单独的消息发给你。</li><li>消息上会打上明确的标签，告诉你这是旁白回答。</li><li>但它依然被系统当作 side_result 处理，不会存进会话历史。</li><li>看起来是一条消息，但底子里还是那张即用即抛的便利贴。</li><li>只是换了个地方，把便利贴贴在了聊天窗口里。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>在外部分发时，它是标了“临时”的独立消息。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>在网页控制台呢？</h2>
-              <p>后台已经准备好了，但网页前台的显示功能还在路上。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道现状，免得你在网页上找了半天没找到。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>后台网关已经能把 /btw 答案正确标记为 side_result 发出来。</li><li>答案也确实不会混进 chat.history 这个历史记录里。</li><li>但目前的网页控制台界面，还没专门写代码来接收和显示这种旁白消息。</li><li>所以，在终端和外部聊天软件里能用，在网页上暂时还看不到那个小气泡。</li><li>网页版的后台功能是齐的，只差前台把它画出来给你看。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>网页版功能已就位，只差界面显示。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-9">
-            <div class="section-heading">
-              <p class="section-kicker">第 9 站</p>
-              <h2>什么时候用它？🎯</h2>
-              <p>当你有个小疑问，又不想打断正事的时候。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>用对场景，它才是神器。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>想快速确认当前任务里的某个小细节（“我们在改哪个文件？”）。</li><li>主线任务跑得很慢时，先问个相关的小问题（“这个错误是啥意思？”）。</li><li>想要一个临时答案，不想让它影响后面的对话（“用一句话总结现在在干嘛？”）。</li><li>纯粹想算个数或者查个事实，但别记下来（“17乘19等于多少？”）。</li><li>核心是：问题要小，答案要快，别存档。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>/btw what file are we editing? – 偷偷看一眼当前文件名。</li><li>/btw what does this error mean? – 趁主线卡住时，先问问这个错误。</li><li>/btw summarize the current task in one sentence – 要个一句话总结，但别当真。</li><li>/btw what is 17 * 19? – 纯粹算个数，算完就忘。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>小问题，快回答，不存档。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-10">
-            <div class="section-heading">
-              <p class="section-kicker">第 10 站</p>
-              <h2>什么时候别用它？🚫</h2>
-              <p>当你希望答案成为后续对话的一部分时。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>用了它，答案就“蒸发”了，后面用不上。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>如果你希望 OpenClaw 记住这个答案，并在接下来的对话里参考它。</li><li>如果你问的问题本身就是主线任务下一步需要的关键信息。</li><li>这时候，你应该直接在聊天框里正常提问，而不是用 /btw。</li><li>正常提问，答案会踏踏实实走进聊天历史，成为团队的共同记忆。</li><li>/btw 是耳语，正常提问是开会发言。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>要留底的答案，请正常提问。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>💭 <code>/btw</code> 像你在主任务旁边悄悄问一句“顺便问下，现在到底啥情况？”</h2>
+      <p>这页讲的不是新会话，也不是插队抢活，而是一种很轻的“侧边提问”。主任务还在跑，你突然想问一句小问题，但又不想把主线聊天搞乱，这时候 <code>/btw</code> 就特别顺手。</p>
+      <p>它像你在老师正写黑板时，小声举手问一句：“那我们现在在改哪个文件呀？”老师回答完，主课继续，不会把这句插曲写进正式课堂笔记里。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合长任务进行中，临时想插一句小问题的人</span>
+      <span>这页最重要的是看懂：<code>/btw</code> 用的是当前上下文，但不会污染后面的正式会话</span>
+      <a href="https://docs.openclaw.ai/tools/btw" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧵 先想画面：主线在走，你从旁边插一句小问号</h2>
+    <p>官方开头写得很技术，但翻成人话其实很简单：<code>/btw</code> 会借用当前会话的背景，但把这次提问当成一次“路边小插曲”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🪄 用的是同一份背景</div>
+      <p>它不是失忆状态发问，所以会知道你们前面一直在聊什么、正在做什么。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">✂️ 但它是单独的一小次问答</div>
+      <p>它不是把主任务改道，而是从旁边开一个小窗问完就关。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🧼 不把地板弄脏</div>
+      <p>问完不会把这次旁支对话写进正式聊天历史，所以后面主任务不会背着这句小插曲继续跑。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⭐ 一句话先记住</div>
+      <p><code>/btw</code> 是“借背景、问小题、答完就散”的临时侧问。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🛠 那条命令在现场到底做了什么</h2>
+    <p>原文把流程拆成 6 点，听起来像协议文。其实你把它想成后台小动作就顺了。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>/btw what changed?</code></div>
+      <p>像你突然从主线旁边探个头问：“顺便说一句，刚刚到底改了啥？”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">1. snapshot 当前上下文</div>
+      <p>像先给现在的课桌拍一张快照，看看黑板写到哪儿、桌上摊着哪些纸。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">2. 单独跑一次无工具问答</div>
+      <p>像老师只靠脑子回答你这一句，不会再临时起身去翻抽屉、开浏览器、跑工具。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">3. 主线不改道</div>
+      <p>主任务该跑还继续跑，不会因为你顺嘴问了一句，小火车就整个拐弯。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🚫 <code>/btw</code> 不会做什么，这比它会做什么还重要</h2>
+    <p>这页最容易误会的地方，就是把 <code>/btw</code> 当成“小号会话”或者“轻量代理”。官方专门列一串“不会做”，就是为了防这个误会。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🪵</span>
+      <h2>不会变成长久会话</h2>
+      <p>它不是新开一个能一直聊下去的小房间。问完就没了。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🛠</span>
+      <h2>不会跑工具</h2>
+      <p>别指望它顺便读文件、开浏览器、敲命令。官方明确说了，它是 tool-less。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📜</span>
+      <h2>不会写进 transcript</h2>
+      <p>你的问题和它的回答，都不会进入正式会话历史。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">♻️</span>
+      <h2>刷新后不会回来</h2>
+      <p>它就是临时浮一下，页面重载后也不会像正式消息那样被重播出来。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>📦 为什么它“知道背景”，却又“不污染未来”</h2>
+    <p>这正是 <code>/btw</code> 最聪明的地方。它像借了主会话的空气，但没把自己留在房间里。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧠 背景上下文</div>
+      <p>如果主任务正在跑，OpenClaw 会先拍下这一刻的上下文，连同正在进行中的提示一起当背景塞给 <code>/btw</code>。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚧 明确告诉模型别越界</div>
+      <p>系统会明确交代它：只答侧问题，不要顺手接管主任务，也不要假装在跑工具。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 这节一句话</div>
+      <p>它像“借主线的脑海画面回答一嘴”，但不会把这句插话写进后面的故事里。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 所以什么时候特别好用</div>
+      <p>当你在长任务中只想确认一个小事实，比如“我们现在在改哪个文件”“刚刚那个报错啥意思”，它就非常顺手。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>📨 BTW 的回答为什么像“飘出来的一张小纸条”</h2>
+    <p>官方用了很多事件名来解释它的投递方式。翻成人话，就是：它故意不走正式聊天消息那条管道。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>chat.side_result</code></div>
+      <p>像一张从边上滑出来的小纸条，不是正式聊天记录里的标准气泡。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">为什么不走 <code>chat</code></div>
+      <p>因为一旦走普通聊天消息那条路，很多客户端就会把它当成“正式会话内容”收进历史里，这和 BTW 的设计初衷正好相反。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🖥 TUI 里像什么</div>
+      <p>像当前界面里飘出一条明显不同的小提示，你按一下就能收起来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📱 外部聊天通道里像什么</div>
+      <p>Telegram、Discord 这种地方没有本地临时浮层，所以它会看起来像一条特别标记过的一次性回复。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🎯 什么时候该用，什么时候别用</h2>
+    <p>这页最后最实用的，其实就是用法边界。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">✅ 适合用 BTW</div>
+      <p>你只想问一个小问题，而且不希望它影响后面正式会话的工作节奏和记忆。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">❌ 不适合用 BTW</div>
+      <p>你希望这句问答成为后面继续做事的正式背景。那就别走 <code>/btw</code>，直接在主会话里正常问。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🧪 官方例子翻成人话</div>
+      <ul>
+        <li><code>/btw what file are we editing?</code>：像抬头问一句“我们现在桌上摊开的到底是哪张纸？”</li>
+        <li><code>/btw what does this error mean?</code>：像顺手问“刚刚那声报警到底在说啥？”</li>
+        <li><code>/btw summarize the current task in one sentence</code>：像请人用一句话给你重新扶正思路。</li>
+      </ul>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话收住</div>
+      <p><code>/btw</code> 就是边上那句“顺便问下”，问完不留痕，不改主线。</p>
+    </div>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

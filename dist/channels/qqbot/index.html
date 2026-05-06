@@ -4328,233 +4328,104 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>给 OpenClaw 装一个 QQ 机器人</h2>
-            <p>这个插件让 OpenClaw 能通过 QQ 官方 API 连上你的机器人。它支持私聊、群 @、频道消息，还能发图片、语音、视频和文件。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/channels/qqbot</span>
-            <span>故事卡片：8 张</span>
-            <a href="https://docs.openclaw.ai/channels/qqbot" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>开箱自带，不用额外装</h2>
-              <p>QQ Bot 插件已经打包在 OpenClaw 里了，你拿到手就能用。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>省去手动安装的步骤，直接配置就能跑。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>它是个“捆绑插件”——OpenClaw 发行版里已经带上了。</li><li>你不需要再敲 `openclaw plugins install` 来安装。</li><li>解压即用，少一步操作。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>拿到 OpenClaw 就自带 QQ 机器人插件。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>开始设置：拿钥匙、开门</h2>
-              <p>去 QQ 开放平台注册机器人，拿到 AppID 和 AppSecret 这对钥匙。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>没有这对钥匙，机器人连不上门。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>打开 QQ 开放平台，用手机 QQ 扫码登录。</li><li>点“创建机器人”，给它起个名字，得到一个 AppID 和 AppSecret。</li><li>AppSecret 只显示一次——如果你关掉页面没保存，就得重新生成。</li><li>把 AppID 和 AppSecret 记下来，像保管家门钥匙一样。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>执行 `openclaw channels add --channel qqbot --token &quot;AppID:AppSecret&quot;` 这条命令，就是把钥匙插进门锁。</li><li>命令里把 AppID 和 AppSecret 用冒号连起来，放在引号里。</li><li>执行后，OpenClaw 就知道用哪个账号去连 QQ 机器人了。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>AppID 和 AppSecret 就是机器人的身份证和钥匙。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>配置：告诉 OpenClaw 你拿到了什么</h2>
-              <p>在配置里填上 AppID 和 AppSecret，机器人就能启动了。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>配置是让 OpenClaw 知道钥匙怎么用。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>在配置文件的 `channels.qqbot` 下，把 `appId` 和 `clientSecret` 填上。</li><li>也可以设环境变量 `QQBOT_APP_ID` 和 `QQBOT_CLIENT_SECRET`，省得写进文件。</li><li>把 `enabled` 设为 `true`，机器人就开始工作了。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>这段 JSON 配置就像在说：我要用这个 AppID 和这个 Secret 开启 QQ 频道。</li><li>环境变量方式适合不想把密码写进配置文件的人。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>填对 AppID 和 Secret，机器人就活了。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>多开几个机器人：一个 OpenClaw 管多个号</h2>
-              <p>你可以在一个 OpenClaw 实例里同时运行多个 QQ 机器人。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>适合要管理多个机器人账号的场景。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>在 `accounts` 下给每个机器人单独取名，比如 `bot2`。</li><li>每个机器人有自己的 AppID 和 AppSecret，互不干扰。</li><li>每个账号会独立建立 WebSocket 连接，token 缓存也按 AppID 隔离。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>配置里加一个 `accounts` 字段，里面再写一个机器人的配置。</li><li>每个机器人都能独立收发消息，像多个门卫各守各的门。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>一个 OpenClaw 能同时跑多个 QQ 机器人，各管各的。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>语音：让机器人能听会说</h2>
-              <p>配置语音识别（STT）和语音合成（TTS），机器人就能听懂语音并开口说话。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>没有语音配置，机器人对语音消息就装聋作哑。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>STT 把语音转成文字，TTS 把文字变成语音。</li><li>可以在频道级别单独设置，也可以使用全局默认配置。</li><li>如果频道级别没设，会自动降级到框架的全局设置。</li><li>把 `enabled` 设为 `false` 可以关掉语音功能。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>在 `channels.qqbot` 下加 `stt` 和 `tts` 字段，指定提供商和模型。</li><li>比如 `stt.provider` 填你的语音识别服务商，`stt.model` 填模型名。</li><li>TTS 还可以指定发音人 `voice`。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>配好 STT 和 TTS，机器人就能听语音、说人话。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>消息地址：机器人怎么找到你</h2>
-              <p>每个聊天场景都有一个固定的地址格式，机器人靠它找到正确的对话。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>地址错了，消息就送不到。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>私聊地址：`qqbot:c2c:OPENID`，其中 OPENID 是用户的唯一标识。</li><li>群聊地址：`qqbot:group:GROUP_OPENID`，其中 GROUP_OPENID 是群的标识。</li><li>频道地址：`qqbot:channel:CHANNEL_ID`，其中 CHANNEL_ID 是频道标识。</li><li>注意：不同机器人的 OpenID 不通用——A 机器人收到的 OpenID 不能发给 B 机器人。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>消息地址就像门牌号，格式是 `qqbot:类型:ID`。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>斜杠命令：敲几个字就能管机器人</h2>
-              <p>内置一组斜杠命令，用来测试、查版本、看帮助、升级、导出日志。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>不用进后台，聊天框里就能干很多事。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>`/bot-ping` 测延迟，看机器人反应快不快。</li><li>`/bot-version` 显示当前 OpenClaw 版本。</li><li>`/bot-help` 列出所有可用命令。</li><li>`/bot-upgrade` 显示升级指南链接。</li><li>`/bot-logs` 导出最近的网关日志文件。</li><li>任意命令后加 `?` 可以看用法，比如 `/bot-upgrade ?`。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>斜杠命令是机器人的快捷操作面板。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>出问题了？看这里</h2>
-              <p>常见问题以及怎么解决。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>快速定位问题，不用瞎猜。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>如果机器人回复“gone to Mars”，说明钥匙没配好或网关没启动。</li><li>收不到消息：检查 AppID 和 AppSecret 是否正确，机器人在开放平台是否已启用。</li><li>用 `--token-file` 方式配置后仍显示未配置：`--token-file` 只设了 AppSecret，你还需要在配置里写 `appId` 或设环境变量。</li><li>主动发消息收不到：QQ 可能拦截了机器人主动发的消息，如果用户最近没互动过。</li><li>语音没转文字：检查 STT 配置，确保语音服务提供商能连通。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>大部分问题出在钥匙或配置上，按列表排查很快。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🐧 QQ Bot 像给 OpenClaw 装上一扇“QQ 专用大门”</h2>
+      <p>它接的是官方 QQ Bot API，能收私聊、群里 @ 消息、频道消息，还能处理图片、语音、视频和文件。</p>
+      <p>这页最重要的不是“QQ 能不能接”，而是先知道它是一个 bundled 插件，正常安装里一般不用额外再装一遍。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想把 OpenClaw 接进 QQ 的人</span>
+      <span>重点是 AppID、AppSecret、token 这三样</span>
+      <a href="https://docs.openclaw.ai/channels/qqbot" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一步</p>
+    <h2>🪪 先去 QQ 开平台领门票</h2>
+    <p>官方流程像很普通的办卡动作：先注册，再创建机器人，再把卡号记下来。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>注册 / 登录</h2>
+      <p>像先去 QQ 开放平台门口排队。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>创建 Bot</h2>
+      <p>像给这扇门办一张新工牌。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>抄下 AppID / AppSecret</h2>
+      <p>像把门牌号和暗号写到小本本上。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>注意 AppSecret</h2>
+      <p>它不会明文一直摆着，离开页面不存就得重新生成。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二步</p>
+    <h2>🛠 添加频道的命令，其实是在说“这扇 QQ 门正式上岗”</h2>
+    <p>命令别死背，先看它在做什么。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw channels add --channel qqbot --token "AppID:AppSecret"</code></div>
+      <p>像把 QQ 门牌和暗号一起交给 Gatewa，让它知道这扇门怎么开。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw channels add</code></div>
+      <p>像走带路老师的图形版登记流程。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw configure --section channels</code></div>
+      <p>像直接打开“通道配置房间”，把 QQ 这一间也填进去。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三步</p>
+    <h2>📦 配置片段，就是给这扇门贴一张“值班表”</h2>
+    <p>官方给了两种放 secret 的方式：直接写，或者放到文件里。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>channels.qqbot.enabled</code></div>
+      <p>像把这扇门的开关拨到开。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>clientSecretFile</code></div>
+      <p>像把真正的暗号放进文件柜，不直接摊在桌上。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>QQBOT_APP_ID</code> / <code>QQBOT_CLIENT_SECRET</code></div>
+      <p>像给夜班门卫一份稳定的钥匙清单。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 QQ Bot 这页压成一句最好记的话</h2>
+    <p>QQ Bot 就是给 OpenClaw 接上一扇 QQ 专用门。先办号、记暗号，再把它登记到 channels 里，后面就能收私聊、群消息和频道消息。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

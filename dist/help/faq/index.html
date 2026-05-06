@@ -4328,322 +4328,53 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>遇到问题了？这里有最快答案</h2>
-            <p>OpenClaw 出状况了？别慌。这一页把最常见的问题拆成小卡片，每张卡片都告诉你“眼前发生了什么”和“下一步该做什么”。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/help/faq</span>
-            <span>故事卡片：11 张</span>
-            <a href="https://docs.openclaw.ai/help/faq" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>先花 60 秒看看哪里不对劲</h2>
-              <p>一秒钟跑一条命令，OpenClaw 会告诉你它的身体状态：系统、网络、服务、会话，哪一环断了。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>因为大多数问题看一眼状态就能找到方向，不用瞎猜。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>在终端里输入 openclaw status，OpenClaw 会像医生一样报出：操作系统版本、网关能不能连上、有哪些智能体在值班、配置有没有出错。</li><li>如果网关连不上，你会看到红色标记，就像门卫告诉你大门锁了。</li><li>这条命令只会输出本地摘要，不会泄露隐私，可以放心把结果贴给帮忙的人。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>openclaw status —— 跑完你会看到一排状态灯：绿色表示正常，红色表示有问题。</li><li>如果网关连不上，先检查网络或服务是否启动。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>遇到问题先跑 openclaw status，它是最快的体检报告。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>卡住了？最快的脱困方法是让 AI 看你的机器</h2>
-              <p>与其在群里描述问题，不如让一个能看见你电脑的 AI 助手直接帮你查。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>因为大部分卡住的问题都是本地配置或环境问题，远程的人看不见，AI 却可以。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>用 Claude Code 或 OpenAI Codex 这类工具，它们能读你的代码仓库、跑命令、翻日志，甚至帮你修 PATH、权限、认证文件。</li><li>给它们完整的源码目录，效果最好。安装方式是用 git 克隆：curl -fsSL https://openclaw.ai/install.sh | bash -s -- --install-method git。</li><li>这条命令会下载 OpenClaw 源码到当前目录，然后 AI 就能看到所有文件了。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>curl -fsSL https://openclaw.ai/install.sh | bash -s -- --install-method git —— 执行后会在当前目录创建一个 openclaw 文件夹，里面是完整的源代码。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>卡住时让 AI 看你的机器，比在群里喊人快十倍。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>OpenClaw 到底是什么？一句话讲清楚</h2>
-              <p>OpenClaw 是一个你可以在自己设备上运行的私人 AI 助手，它从你常用的聊天软件里接收消息，还能说话和画画。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>因为很多人以为它只是一个 Claude 壳子，其实它是一个本地优先的控制中心。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>你可以在 WhatsApp、Telegram、Slack、Discord 等聊天软件里直接跟它说话，它也能在支持的平台上语音回复和展示画板。</li><li>它的核心叫 Gateway，是一个永远在线的守护进程，负责接收消息、调度智能体、执行任务。</li><li>所有会话历史和工作区数据都保存在你的本地硬盘上，不经过别人的服务器。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>OpenClaw 是你自己的 AI 管家，住在你的电脑里，从聊天软件里听你吩咐。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>技能和自动化：怎么改技能而不弄脏仓库</h2>
-              <p>想自定义技能？不用改仓库里的文件，把改动放在专门的覆盖目录里就行。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这样你随时可以升级 OpenClaw 而不会丢失自己的修改。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>把你的技能文件放到 ~/.openclaw/skills/&lt;技能名&gt;/SKILL.md，系统会优先读取这个文件，而不是仓库里的。</li><li>你也可以通过配置 skills.load.extraDirs 添加额外的技能目录，优先级最低。</li><li>加载顺序是：工作区 skills → 工作区 .agents/skills → 用户 .agents/skills → 用户 .openclaw/skills → 内置技能 → extraDirs。</li><li>想为不同任务用不同模型？可以用定时任务设置模型覆盖、子智能体切换默认模型，或者在聊天里用 /model 命令随时切换。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>在 ~/.openclaw/openclaw.json 里添加 &quot;skills.load.extraDirs&quot;: [&quot;/path/to/extra-skills&quot;] 就能加载自定义文件夹里的技能。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>改技能就像贴便签，不用撕掉原书。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>沙箱与内存：Docker 里功能不全怎么办？</h2>
-              <p>Docker 默认镜像为了安全限制了很多功能，但你可以手动开启。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>因为默认镜像以 node 用户运行，没有系统包、Homebrew 和浏览器，需要你自己补充。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>想用浏览器功能？执行 node /app/node_modules/playwright-core/cli.js install chromium 安装 Chromium。</li><li>持久化 /home/node 目录：设置 OPENCLAW_HOME_VOLUME 环境变量，这样缓存不会丢失。</li><li>安装系统依赖：通过 OPENCLAW_DOCKER_APT_PACKAGES 环境变量传入包名，构建镜像时会自动安装。</li><li>设置 PLAYWRIGHT_BROWSERS_PATH 并确保路径持久化，这样浏览器才能被找到。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>node /app/node_modules/playwright-core/cli.js install chromium —— 在容器内执行，会下载 Chromium 浏览器。</li><li>设置环境变量 OPENCLAW_HOME_VOLUME=/path/to/volume 来持久化 /home/node 目录。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>Docker 默认是毛坯房，想住得舒服得自己装修。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>数据存在哪里？本地还是云端？</h2>
-              <p>OpenClaw 本身的状态全部存在本地，但你发送给外部服务的数据他们也会保存。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>明白数据流向才能保护隐私。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>你的工作区、会话历史、配置都放在 ~/.openclaw 和你的工作区目录里，完全归你管。</li><li>但当你让 OpenClaw 调用外部 API（比如翻译、搜索），那些服务会看到你发送的内容。</li><li>聊天平台（WhatsApp、Telegram 等）也会在它们的服务器上存储你的消息记录。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>本地数据你全权掌控，出门的数据别人也会看到。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>配置文件在哪里？格式是什么？</h2>
-              <p>OpenClaw 读取一个可选的 JSON5 配置文件，默认位置是 ~/.openclaw/openclaw.json。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>因为配置文件是 OpenClaw 的遥控器，所有行为都靠它设定。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>如果文件不存在，OpenClaw 会用一套安全的默认值，工作区默认在 ~/.openclaw/workspace。</li><li>你可以通过环境变量 OPENCLAW_CONFIG_PATH 指定其他位置。</li><li>如果你设置了 gateway.bind 为 lan 或 tailnet，必须同时配置有效的网关认证路径，否则 UI 会显示未授权。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>配置文件路径：$OPENCLAW_CONFIG_PATH 或 ~/.openclaw/openclaw.json。</li><li>如果 gateway.bind 设为 lan，记得设置 gateway.authPath 为正确的认证路径。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>配置文件是 OpenClaw 的遥控器，找不到就用默认。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>媒体和附件：为什么技能生成的图片发不出去？</h2>
-              <p>智能体生成的附件必须在消息中包含 MEDIA: 标记才能发送。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>因为 OpenClaw 需要明确知道哪个文件要发出去。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>在技能输出中，单独一行写上 MEDIA:/path/to/file.png，OpenClaw 就会把这个文件作为附件发送。</li><li>你也可以用命令行发送：openclaw message send --target +15555550123 --message &quot;给你&quot; --media /path/to/file.png。</li><li>如果还是发不出去，检查文件路径是否正确，以及智能体是否有权限读取该文件。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>openclaw message send --target +15555550123 --message &quot;Here you go&quot; --media /path/to/file.png —— 执行后指定号码会收到一条带附件的消息。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>发附件就像寄快递，必须贴好 MEDIA 标签。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-9">
-            <div class="section-heading">
-              <p class="section-kicker">第 9 站</p>
-              <h2>安全与访问控制：让别人给你发消息安全吗？</h2>
-              <p>默认情况下，陌生人的私信会被拦住，需要你手动批准才能对话。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>因为要防止恶意输入和滥用。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>在支持私信的频道上，陌生人发消息会收到一个配对码，机器人不会处理消息内容，直到你用 openclaw pairing approve 批准。</li><li>每个频道最多保留 3 个待处理的配对请求，如果没收到码，可以用 openclaw pairing list 查看。</li><li>想完全开放私信？需要显式设置 dmPolicy: &quot;open&quot; 和 allowlist &quot;*&quot;，但风险自负。</li><li>提示注入不只是公开机器人才有：如果你的助手会读取网页、邮件、附件等外部内容，那些内容也可能包含恶意指令。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>批准配对：openclaw pairing approve --channel telegram --account 123456789 配对码。</li><li>列出待处理请求：openclaw pairing list --channel telegram。</li><li>检查风险：openclaw doctor 会提示当前的私信策略是否安全。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>默认陌生人被挡在门外，想放人进来得你自己开门。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-10">
-            <div class="section-heading">
-              <p class="section-kicker">第 10 站</p>
-              <h2>聊天命令与停止任务：怎么关掉啰嗦的内部消息？</h2>
-              <p>大多数内部消息只在 verbose、trace 或 reasoning 模式开启时才会显示。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>因为调试信息默认是隐藏的，不小心打开了就会刷屏。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>在聊天里输入 /verbose off、/trace off、/reasoning off 就能关掉这些消息。</li><li>如果还是很多，检查控制 UI 里的会话设置，把 verbose 设为 inherit。</li><li>确认你没有使用一个设置了 verboseDefault 为 on 的机器人配置。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>/verbose off —— 关闭详细输出模式。</li><li>/trace off —— 关闭追踪模式。</li><li>/reasoning off —— 关闭推理过程显示。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>觉得太吵？三句命令让它安静。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-11">
-            <div class="section-heading">
-              <p class="section-kicker">第 11 站</p>
-              <h2>其他常见问题：默认模型是什么？</h2>
-              <p>在 OpenClaw 里，认证和模型选择是分开的。设置 API 密钥只是让认证通过，实际用哪个模型由配置决定。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>因为很多人以为设了 API 密钥就自动用上了对应模型，其实还要指定模型名称。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>设置 ANTHROPIC_API_KEY 只是让 OpenClaw 能用 Anthropic 的服务，但默认模型是 agents.defaults.model.primary 里配置的，比如 anthropic/claude-sonnet-4-6。</li><li>模型名称格式是 厂商/模型名，例如 openai/gpt-4o。</li><li>如果还是卡住，可以去 Discord 或 GitHub Discussions 提问。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>API 密钥是门票，模型配置是指定坐席。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>❓ FAQ，就是大家最常卡住的地方先替你答了</h2>
+      <p>这页是常见问题盒子。你还没问，很多问题它已经先摆出来了。</p>
+      <p>像门口小黑板，上面写着“如果你卡在这里，先看这几条”。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合先看常见坑</span>
+      <span>重点是别从零问起，先看看别人是不是也卡过</span>
+      <a href="https://docs.openclaw.ai/help/faq" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>📌 FAQ 的作用，是先帮你把重复问题放一边</h2>
+    <p>它像一个“常见卡住点清单”，先看这个，很多弯路就不用自己再走。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">问自己</div>
+      <p>是不是配置漏了。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">问环境</div>
+      <p>是不是版本不对。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">问权限</div>
+      <p>是不是门没开对。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>🎈 FAQ 不是懒，是先翻别人踩过的坑</h2>
+    <p>很多问题早就有人碰过，先看 FAQ 往往最快。</p>
+  </div>
+</section>
+
+
 
       <footer class="page-footer">
         <div>

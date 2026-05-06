@@ -4328,315 +4328,78 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>插件的里里外外：一张地图，一把钥匙，一个门卫</h2>
-            <p>这一页不讲怎么用，讲的是 OpenClaw 的插件系统是怎么搭起来的。你马上会看到：插件分几种形状、它们怎么注册、怎么被找到、怎么被放行。就像看一座楼的内部管道图。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/plugins/architecture</span>
-            <span>故事卡片：12 张</span>
-            <a href="https://docs.openclaw.ai/plugins/architecture" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>从哪开始看</h2>
-              <p>这不是新手教程，是给已经写过插件的人看的深层结构。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>免得你走错门——如果你只是想装插件或写第一个插件，这里指了更快的路。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>这一页是“内部构造参考”，不是使用手册。</li><li>想装插件？看“安装和使用插件”那页。</li><li>想写第一个插件？看“开始写插件”教程。</li><li>想写消息渠道插件？看“渠道插件”那一章。</li><li>想写模型提供方插件？看“提供方插件”那一章。</li><li>想了解整体SDK？看“SDK总览”。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>别在这页找入门，它是给已经进门的人看墙里面的线路。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>公开的能力模型</h2>
-              <p>每个原生插件都要注册一个或多个“能力”，就像每个快递员要说明自己能送什么货。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>能力是OpenClaw识别插件能干什么的唯一方式，搞懂了它，你就知道插件怎么跟系统握手。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>能力就是插件对外宣称的“我会做什么”。</li><li>文本推理能力：用 api.registerProvider(...) 注册，比如 openai、anthropic。</li><li>CLI推理后端：用 api.registerCliBackend(...) 注册，也是 openai、anthropic。</li><li>语音能力：用 api.registerSpeechProvider(...) 注册，比如 elevenlabs、microsoft。</li><li>实时转录：也有对应的注册方法。</li><li>如果一个插件什么能力都不注册，只提供钩子、工具或服务，那它属于旧式“钩子专用”插件，系统仍然支持。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>能力是插件的身份证，没注册能力就只能走老路。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>对外兼容的立场</h2>
-              <p>能力模型已经稳定在核心代码里，但对外部插件的兼容性还没到“冻结”的地步。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>让你知道哪些东西可以放心用，哪些可能还会变。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>能力模型已经落地，被内置插件使用。</li><li>但外部插件的兼容性还需要更严格的把关——不是所有导出都算承诺。</li><li>当前指导方针：以这个文档作为兼容基线。</li><li>供应商特有的“伸手”或新的钩子专用设计，不在兼容保证范围内。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>核心能力稳了，但外部插件别急着把所有导出当铁律。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>插件的形状</h2>
-              <p>OpenClaw 根据插件实际注册的行为（不是静态元数据）给每个插件分类。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>形状决定了系统怎么对待这个插件——是当纯提供方，还是当多功能工具箱。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>插件加载后，系统看它注册了什么，然后给它贴一个形状标签。</li><li>比如只注册了文本推理，就是“提供方专用插件”（像 mistral）。</li><li>如果注册了文本推理、语音、图片理解、图像生成，就是“多能力插件”（像 openai）。</li><li>如果只注册了工具、命令或服务，就是“工具型插件”。</li><li>形状不是写死的，是根据实际注册行为动态判断的。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>插件长什么样，看它注册了什么，不是看它自我介绍怎么写。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>旧式钩子</h2>
-              <p>before_agent_start 这个钩子还在用，作为旧式钩子专用插件的兼容通道。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>很多老插件依赖它，不能一刀砍掉，但新插件不应该再用。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>before_agent_start 仍然支持，不会立刻失效。</li><li>但它已经被标记为旧式（legacy），新代码不要再用。</li><li>想覆盖模型或提供方？用 before_model_resolve。</li><li>想修改提示词？用 before_prompt_build。</li><li>等实际使用量降下来、测试覆盖证明迁移安全后，才会移除它。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>老钩子还能走，但新路标已经立好了，别往旧路走。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>兼容性信号</h2>
-              <p>当你运行 openclaw doctor 或 openclaw plugins inspect 时，会看到几个标签，告诉你插件的健康状态。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>一眼就能看出你的插件有没有问题，是警告还是错误。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>config valid：配置解析正常，插件能加载。</li><li>compatibility advisory：插件用了支持的旧模式（比如钩子专用），只是提醒。</li><li>legacy warning：插件用了 before_agent_start，这是旧式用法，建议更新。</li><li>hard error：配置无效或插件加载失败，必须修。</li><li>这些信号也会出现在 openclaw status --all 和 openclaw plugins doctor 里。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>跑一下 doctor，插件健康一目了然。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>架构总览</h2>
-              <p>插件系统分四层：发现、启用、加载、运行。就像一栋楼的四道门。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>了解这四层，你就知道插件从文件到跑起来经历了什么。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>第一层：发现。系统从配置的路径、工作区根目录、全局扩展目录、内置扩展里找插件，先读 openclaw.plugin.json 清单。</li><li>第二层：启用与验证。核心决定这个插件是启用、禁用、阻止，还是被选为独占槽位（比如记忆）。</li><li>第三层：运行时加载。插件代码真正被加载执行。</li><li>对于插件CLI，根命令发现分两阶段：解析时从 registerCli 的 descriptors 拿元数据，真正的 CLI 模块可以懒加载，等第一次调用才执行。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>四层关卡：发现→验证→加载→运行，每一层都可能拦住或放行。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>渠道插件与共享消息工具</h2>
-              <p>渠道插件不需要自己注册发送、编辑、反应工具，OpenClaw 在核心维护了一个共享的 message 工具。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>避免每个渠道都重复造轮子，也保证消息行为一致。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>渠道插件只管渠道特有的发现和执行逻辑。</li><li>共享 message 工具负责记账和分发。</li><li>渠道插件提供渠道特有的 schema 片段（比如消息格式）。</li><li>这样渠道插件变轻了，核心也保持了控制。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>消息工具是公用的，渠道插件只做自己特有的那部分。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-9">
-            <div class="section-heading">
-              <p class="section-kicker">第 9 站</p>
-              <h2>上下文引擎插件</h2>
-              <p>上下文引擎插件负责会话上下文的编排：摄入、组装、压缩。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>如果你需要替换或扩展默认的上下文管道（不只是加记忆搜索或钩子），就用这个。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>用 api.registerContextEngine(id, factory) 注册。</li><li>然后在 plugins.slots.contextEngine 里选择激活哪个引擎。</li><li>如果引擎不拥有压缩算法，必须实现 compact() 并显式委托。</li><li>示例代码展示了注册一个“无损爪”引擎，它拥有压缩权。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>api.registerContextEngine(&quot;lossless-claw&quot;, () =&gt; ({...})) 注册一个引擎。</li><li>引擎对象需要提供 info、ingest、assemble 等方法。</li><li>如果 ownsCompaction 为 false，compact() 要自己调用其他引擎或默认实现。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>想换掉上下文处理方式？注册一个引擎，然后选它。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-10">
-            <div class="section-heading">
-              <p class="section-kicker">第 10 站</p>
-              <h2>添加新能力</h2>
-              <p>如果插件需要的行为现有API不支持，不要偷偷绕过插件系统，而是添加缺失的能力。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>保持系统开放且可扩展，而不是靠私有 hack。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>第一步：定义核心契约——决定核心应该拥有什么：策略、回退、配置合并、生命周期、渠道语义、运行时辅助形状。</li><li>第二步：添加带类型的插件注册/运行时接口——扩展 OpenClawPluginApi 或 api.runtime，加最小的有用能力接口。</li><li>第三步：连接核心和渠道/特性消费者——渠道插件和特性插件应该消费新能力。</li><li>这样OpenClaw就能保持有主见但不硬编码到某一个提供方的世界观。</li><li>参考“能力食谱”那页，有具体的文件清单和实例。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>能力不够就加一个，别绕路。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-11">
-            <div class="section-heading">
-              <p class="section-kicker">第 11 站</p>
-              <h2>能力清单</h2>
-              <p>添加一个新能力时，通常要触及这些文件。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>确保能力被完整集成，不留缺口。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>核心契约类型：src/&lt;能力&gt;/types.ts</li><li>核心运行器/运行时辅助：src/&lt;能力&gt;/runtime.ts</li><li>插件API注册接口：src/plugins/types.ts</li><li>插件注册表连线：src/plugins/registry.ts</li><li>插件运行时暴露：src/plugins/runtime/*（当特性或渠道需要时）</li><li>捕获/测试辅助：src/test-utils/plugin-registration.ts</li><li>如果少了其中一个，说明能力还没完全集成。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>加能力要动六七个文件，少一个就是半成品。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-12">
-            <div class="section-heading">
-              <p class="section-kicker">第 12 站</p>
-              <h2>能力模板</h2>
-              <p>一个最小可用的能力注册模式。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>给你一个可以直接抄的架子，不用从零想。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>先定义核心契约类型，比如 VideoGenerationProviderPlugin。</li><li>然后在插件API里用 api.registerVideoGenerationProvider(...) 注册。</li><li>最后写契约测试，确保能找到注册的提供方。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>核心契约：定义类型 VideoGenerationProviderPlugin，包含 id、label、generateVideo。</li><li>注册：api.registerVideoGenerationProvider({ id: &quot;openai&quot;, label: &quot;OpenAI&quot;, async generateVideo(req) {...} })</li><li>测试：expect(findVideoGenerationProviderIdsForPlugin(&quot;openai&quot;)).toEqual([&quot;openai&quot;])</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>注册一个能力就像填一张表：类型、注册、测试。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🏗 Plugin Internals，就是插件肚子里那张路线图</h2>
+      <p>这页讲的是插件内部怎么拼起来：入口、注册、生命周期、能力、运行时。</p>
+      <p>它不是单页功能说明，而是整个插件系统的“骨架图”。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想看插件内部怎么连线的人</span>
+      <span>重点是生命周期、注册流程、和能力边界</span>
+      <a href="https://docs.openclaw.ai/plugins/architecture" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧩 插件不是一块代码，而是一整套“从报到到上岗”的流程</h2>
+    <p>官方把内部结构摊开，是为了让你知道：插件真正运行时，哪些步骤先发生，哪些步骤后发生。</p>
+  </div>
+  <div class="story-grid">
+    <div class="home-card">
+      <span class="home-card-index">🪪</span>
+      <h2>身份</h2>
+      <p>先登记自己是谁。</p>
+    </div>
+    <div class="home-card">
+      <span class="home-card-index">🧰</span>
+      <h2>能力</h2>
+      <p>再说明自己能做什么。</p>
+    </div>
+    <div class="home-card">
+      <span class="home-card-index">🚦</span>
+      <h2>生命周期</h2>
+      <p>最后说明什么时候启动、什么时候退出。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🛠 代码像在做什么</h2>
+    <p>这页很多图和表，其实在讲同一件事：消息进来以后，谁先看、谁后看、谁最后决定。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">`register`</div>
+      <p>像在前台登记新员工。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">`capabilities`</div>
+      <p>像员工证上的技能标签。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">`runtime`</div>
+      <p>像上班后真的能用到的工具间。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>🎈 Architecture 不是为了难，而是为了让插件长得不乱</h2>
+    <p>骨架讲清楚了，后面做 manifest、runtime、testing 才不会混成一团。</p>
+  </div>
+</section>
+
+
 
       <footer class="page-footer">
         <div>

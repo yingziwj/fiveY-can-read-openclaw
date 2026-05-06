@@ -4328,126 +4328,64 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>打字小气泡：让对话有呼吸感</h2>
-            <p>想象一下，你发消息时，对方那边会亮起“正在输入…”。OpenClaw 里的小助手们也有这个功能。它就像个门铃，告诉你“我在想，马上回”。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/concepts/typing-indicators</span>
-            <span>故事卡片：4 张</span>
-            <a href="https://docs.openclaw.ai/concepts/typing-indicators" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>默认的“门铃”怎么响</h2>
-              <p>不特意设置时，小助手们会按老规矩亮起打字气泡。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道默认怎么响，你才知道要不要改它。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>一对一私聊：小助手一开始想，气泡就亮。</li><li>群里@它：一被点名，气泡马上亮。</li><li>群里没@它：等它真正开始打字，气泡才亮。</li><li>心跳任务：这种后台任务，气泡永远不亮。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>默认规则很简单：看场合，看有没有被点名。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>三种“门铃”模式</h2>
-              <p>你可以给小助手选个新门铃，决定它什么时候开始“叮咚”。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>选对模式，气泡亮得才合你心意。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>“消息”模式：只在真正要打字回你时亮气泡。如果它只想安静地回个标记，气泡就不亮。</li><li>“思考”模式：只要小助手开始“自言自语”地推理（像在草稿纸上写写画画），气泡就亮。但这需要你打开它的“推理流”开关。</li><li>“关闭”模式：直接把门铃拆了，永远不亮气泡。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>选“消息”看结果，选“思考”看过程，选“关闭”图清净。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>动手调门铃</h2>
-              <p>这是工具箱，告诉你怎么设置模式和叮咚间隔。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>照着写，小助手就会按你的规矩亮气泡。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>先给小助手定个全局规矩：比如，用“思考”模式，每6秒刷新一次气泡状态。</li><li>也可以单聊时临时改规矩：这次会话，用“消息”模式，每4秒刷新一次。</li><li>刷新间隔是告诉系统“隔多久检查一次要不要继续亮气泡”，不是决定“什么时候第一次亮”。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>{&quot;agent&quot;: {&quot;typingMode&quot;: &quot;thinking&quot;, &quot;typingIntervalSeconds&quot;: 6}} 这行命令是说：给所有小助手装上“思考”门铃，每6秒检查一下铃还响不响。</li><li>{&quot;session&quot;: {&quot;typingMode&quot;: &quot;message&quot;, &quot;typingIntervalSeconds&quot;: 4}} 这行命令是说：就这次聊天，换成“消息”门铃，检查得更勤点，每4秒一次。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>全局设定是默认装备，会话设定是临时道具。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>几个容易踩坑的地方</h2>
-              <p>门铃装好了，但有些角落容易没声，这里帮你标出来。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>看清这些，你的气泡提示才万无一失。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>“消息”模式有个例外：如果小助手整条回复都是个安静标记（比如“NO_REPLY”），气泡从头到尾都不会亮。</li><li>“思考”模式有个前提：你必须打开小助手的“推理流”开关，它“自言自语”时气泡才会亮。</li><li>心跳任务永远是静音模式：不管你怎么设，后台跑腿的任务绝不亮气泡。</li><li>刷新间隔是“持续检查”，不是“启动开关”：它管的是气泡亮起来后，多久闪一下表示“我还在”，不管第一次什么时候亮。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>记住例外和前提，别让门铃成了哑铃。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>⌨️ Typing Indicators 这页，其实是在讲“机器人什么时候开始显示正在输入，以及多久挥一次手说‘我还活着’”</h2>
+      <p>这不是花哨动效，而是聊天礼貌问题。</p>
+      <p>太早亮灯会显得乱，太晚亮灯又像死机。所以官方把“什么时候开始打字状态”单独做成了可调规则。</p>
+    </div>
+    <div class="overview-meta">
+      <span>输入中提示的启动时机和刷新节奏</span>
+      <span>重点是 typingMode 和 typingIntervalSeconds</span>
+      <a href="https://docs.openclaw.ai/concepts/typing-indicators" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>💡 <code>typingMode</code> 就是在决定“机器人多早举起‘我在写了’的小牌子”</h2>
+    <p>从最安静到最积极，官方给了四档。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card"><span class="home-card-index">🙈</span><h2><code>never</code></h2><p>永远不举牌，全程安静。</p></article>
+    <article class="home-card"><span class="home-card-index">💬</span><h2><code>message</code></h2><p>等真正开始吐正文时才亮灯，不会因为纯静默回复乱闪。</p></article>
+    <article class="home-card"><span class="home-card-index">🧠</span><h2><code>thinking</code></h2><p>一检测到 reasoning 流开始，就先亮“我在想”。</p></article>
+    <article class="home-card"><span class="home-card-index">⚡</span><h2><code>instant</code></h2><p>模型循环一开就立刻举牌，最积极。</p></article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>⏲️ <code>typingIntervalSeconds</code> 不是开始时间，而是“隔多久再挥一下手”</h2>
+    <p>很多人会把这两个开关混掉，所以官方特地提醒。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label">默认 6 秒</div><p>像每 6 秒提醒一次对面“别急，我还在写”。</p></div>
+    <div class="source-card"><div class="story-card-label">Session override</div><p>你也能在会话级别单独改成 4 秒、6 秒之类，像某次聊天临时换节奏。</p></div>
+    <div class="source-card"><div class="story-card-label">Heartbeat 例外</div><p>心跳任务永远不显示 typing。因为它更像后台巡逻，不像真人聊天。</p></div>
+    <div class="source-card"><div class="story-card-label">Silent replies</div><p>如果这轮其实不打算回正文，<code>message</code> 模式就不会乱亮灯。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🎈 最稳的理解方式是：一个开关管“什么时候开始”，另一个开关管“多久续一次命”</h2>
+    <p>把这两个角色分清，你就知道该调哪一边了。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>typingMode</code></div><p>决定举牌时机。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>typingIntervalSeconds</code></div><p>决定举牌后多久再刷新一次。</p></div>
+    <div class="source-card"><div class="story-card-label">推荐理解</div><p>你想“早点让人知道我在处理”，就调 mode；你想“别太频繁晃灯”，就调 interval。</p></div>
+    <div class="source-card"><div class="story-card-label">🎈 最后记一句</div><p>Typing indicators 讲的不是内容生成，而是聊天节奏感。</p></div>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

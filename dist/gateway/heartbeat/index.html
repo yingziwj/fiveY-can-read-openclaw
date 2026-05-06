@@ -4328,307 +4328,171 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>心跳：让 AI 定时找你聊聊</h2>
-            <p>心跳就像一个准时的门卫，每隔一段时间就来敲你的门，问一句“有什么需要我注意的吗？”。它不会一直烦你，也不会漏掉重要的事。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/gateway/heartbeat</span>
-            <span>故事卡片：11 张</span>
-            <a href="https://docs.openclaw.ai/gateway/heartbeat" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>心跳是什么？</h2>
-              <p>心跳是主会话里定时跑的一轮 AI 检查，不是后台任务。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>分清心跳和后台任务，才知道什么时候该用哪个。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>心跳就像 AI 每隔半小时（默认）主动来找你，而不是等你去找它。</li><li>它跑在主会话里，所以能看到聊天历史，但不会创建后台任务记录。</li><li>后台任务（比如跑脚本、定时发消息）是独立干活的，跟心跳不一样。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>心跳是 AI 主动敲门，不是后台搬砖。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>快速上手：三步设置</h2>
-              <p>打开默认设置，写个检查清单，决定消息送到哪。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>几分钟就能让 AI 定时帮你盯着事情。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>第一步：保持心跳开启，默认每30分钟一次（用 Anthropic 认证时是1小时）。</li><li>第二步：在工作区建一个 HEARTBEAT.md 文件，写上要检查的事项列表。</li><li>第三步：决定心跳消息送到哪——默认不送（target: &quot;none&quot;），也可以送到最近联系人（target: &quot;last&quot;）。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>配置里写 every: &quot;30m&quot; 就是每30分钟跑一次心跳。</li><li>target: &quot;last&quot; 让心跳消息发到最近跟你聊过的联系人。</li><li>lightContext: true 只加载 HEARTBEAT.md，省内存。</li><li>isolatedSession: true 每次心跳用新会话，不记旧历史。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>开开关、写清单、选路线，三步走完。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>默认行为：AI 会怎么做？</h2>
-              <p>AI 会读 HEARTBEAT.md，按清单检查，没事就回 HEARTBEAT_OK。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道 AI 的默认动作，你才能放心让它自己跑。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>AI 先看有没有 HEARTBEAT.md，有就严格照着做。</li><li>不会从以前的聊天里翻旧账。</li><li>如果所有事项都正常，AI 只回一句 HEARTBEAT_OK，不啰嗦。</li><li>如果设了活跃时间窗口，窗口外的心跳会被跳过。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>AI 像守规矩的门卫：看清单、做检查、没事就打个勾。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>心跳提示词：让 AI 知道该问什么</h2>
-              <p>默认提示词很宽泛：检查待办、日历、提醒，看看有没有紧急的事。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>提示词决定了 AI 会关注哪些事，你可以自己改。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>默认提示词让 AI 检查未完成的任务、日历、提醒，以及任何积压的工作。</li><li>还会提醒 AI 在白天关心一下你（比如问一句“需要帮忙吗？”）。</li><li>提示词里包含“检查你的主人白天过得怎么样”，但不会半夜打扰。</li><li>你可以自定义提示词，让 AI 只检查你关心的内容。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>提示词就是 AI 的检查清单，你说了算。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>回复规则：AI 该怎么回话？</h2>
-              <p>没事回 HEARTBEAT_OK，有事直接说事，不能混着来。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>规则清楚，AI 就不会乱说话。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>如果一切正常，AI 必须在回复的开头或结尾写上 HEARTBEAT_OK。</li><li>如果 HEARTBEAT_OK 出现在中间，不算数，消息会被丢掉。</li><li>如果有紧急情况，不要写 HEARTBEAT_OK，直接说警报内容。</li><li>如果回复只有 HEARTBEAT_OK（或少于300字符），消息会被静默丢弃。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>没事打勾，有事直说，别混在一起。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>配置详解：每个开关是干什么的？</h2>
-              <p>每个配置项就像心跳的按钮和旋钮，调对了就能精准控制。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>了解每个配置，你就能随心所欲地调整心跳行为。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>every: 设置间隔，比如 30m 或 1h，设为 0 就关闭心跳。</li><li>model: 可以指定用哪个 AI 模型跑心跳，比如用便宜的模型省钱。</li><li>target: 决定消息送到哪——none（不送）、last（最近联系人）、或指定频道ID。</li><li>lightContext: true 只加载 HEARTBEAT.md，省上下文。</li><li>isolatedSession: true 每次心跳都用新会话，不记聊天历史。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>includeReasoning: true 会额外发送一条 Reasoning: 消息，告诉你 AI 为什么这么判断。</li><li>activeHours: { start: &quot;08:00&quot;, end: &quot;24:00&quot; } 只在指定时间段内运行心跳。</li><li>to: &quot;+15551234567&quot; 可以覆盖 target 的收件人。</li><li>accountId: &quot;ops-bot&quot; 用于多账号频道指定账号。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>每个开关都有用，调对了心跳就听话。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>作用范围与优先级：谁说了算？</h2>
-              <p>配置可以全局、按智能体、按频道层层覆盖，像俄罗斯套娃。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道优先级，就不会出现“改了半天没生效”的情况。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>agents.defaults.heartbeat 设置全局默认心跳行为。</li><li>agents.list[].heartbeat 会覆盖全局设置，而且只要有一个智能体设了心跳块，就只有这些智能体会跑心跳。</li><li>channels.defaults.heartbeat 设置所有频道的可见性默认值。</li><li>channels.&lt;channel&gt;.heartbeat 覆盖单个频道的设置。</li><li>channels.&lt;channel&gt;.accounts.&lt;id&gt;.heartbeat 覆盖多账号频道中单个账号的设置。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>配置像套娃：全局→智能体→频道→账号，越具体越优先。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>按智能体设置心跳：让不同 AI 干不同的事</h2>
-              <p>可以只让部分智能体跑心跳，其他不跑。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>有些智能体负责监控，有些不用，分开设置更灵活。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>只要在 agents.list[] 里给某个智能体加了 heartbeat 块，就只有这些智能体会跑心跳。</li><li>每个智能体的设置会合并全局默认值，所以可以只改需要不同的部分。</li><li>示例：两个智能体，只有第二个（ops）跑心跳，第一个（main）不跑。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>在 agents.list 里，给 ops 智能体加上 heartbeat: { every: &quot;30m&quot;, target: &quot;last&quot; }，其他不加。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>让该跑的心跳跑，不该跑的不跑。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-9">
-            <div class="section-heading">
-              <p class="section-kicker">第 9 站</p>
-              <h2>手动唤醒：随时让 AI 跑一次心跳</h2>
-              <p>用命令让 AI 立即执行一次心跳检查。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>等不及定时了？手动触发一次。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>执行 openclaw system event --text &quot;检查紧急跟进事项&quot; --mode now 会立即触发所有配置了心跳的智能体。</li><li>用 --mode next-heartbeat 则等到下一次定时心跳再执行。</li><li>手动唤醒会发送你指定的文本作为心跳提示。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>命令：openclaw system event --text &quot;检查邮件&quot; --mode now</li><li>如果多个智能体都有心跳，这条命令会让它们都立即跑一次。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>等不及就手动敲一下门。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-10">
-            <div class="section-heading">
-              <p class="section-kicker">第 10 站</p>
-              <h2>推理过程可见吗？</h2>
-              <p>默认只送最终答案，但可以打开推理过程。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>想看到 AI 为什么决定联系你？打开这个开关。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>默认心跳只发送最终的回答，不解释为什么。</li><li>设置 includeReasoning: true 后，会额外发一条 Reasoning: 消息，告诉你 AI 的思考过程。</li><li>在群聊里建议关掉，避免泄露太多内部细节。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>agents.defaults.heartbeat.includeReasoning: true 开启推理消息。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>想透明就开，想简洁就关。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-11">
-            <div class="section-heading">
-              <p class="section-kicker">第 11 站</p>
-              <h2>省钱小技巧</h2>
-              <p>心跳跑一次就是一次 AI 调用，调不好会烧钱。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>省下来的钱可以干别的。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>用 isolatedSession: true 避免发送整个聊天历史，每次只花2-5K token。</li><li>用 lightContext: true 只加载 HEARTBEAT.md，不加载其他文件。</li><li>换个便宜的模型，比如 ollama/llama3.2:1b。</li><li>把 HEARTBEAT.md 写短一点。</li><li>如果不需要通知，设 target: &quot;none&quot;，只做内部状态更新。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>心跳虽好，别烧钱，省钱技巧用起来。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>💓 <code>Heartbeat</code> 像“定时出来巡一圈的小助手”</h2>
+      <p>它不是普通聊天，也不是固定闹钟广播。它更像 OpenClaw 每隔一段时间自己醒来一次，看看有没有事情需要提醒你，但又尽量别一直烦你。</p>
+      <p>所以这页真正讲的是三件事：多久巡一次、巡的时候看什么、没事时怎么安静退下。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想让 OpenClaw 定时帮你巡检和轻提醒的人</span>
+      <span>这页最重要的是记住：Heartbeat 是周期巡逻，不是 Cron 那种固定流程机</span>
+      <a href="https://docs.openclaw.ai/gateway/heartbeat" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一眼</p>
+    <h2>🕰 Heartbeat 和 Cron 不一样，一个像巡逻，一个像按时办事</h2>
+    <p>官方开头就把这个分野点出来了。Heartbeat 更像“看看有什么需要关注”，Cron 更像“按时去做那件固定事”。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">💓</span>
+      <h2>Heartbeat</h2>
+      <p>像助理隔一会儿出来巡一圈，看看你有没有漏掉的事，或者系统有没有该提醒的地方。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⏰</span>
+      <h2>Cron</h2>
+      <p>像定时工人，到点就干固定活，不太讲临场判断。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🤫</span>
+      <h2>不想吵人</h2>
+      <p>Heartbeat 的默认性格是“没事就安静一点”，不是每次都必须发很长一段话。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📌</span>
+      <h2>一句话</h2>
+      <p>Heartbeat 是会判断、会收敛的巡逻，不是死板的定时播报。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">快速上手</p>
+    <h2>🧭 官方那 7 步，其实就是“先定巡逻频率，再决定巡逻时带什么小纸条”</h2>
+    <p>这一段看着长，翻成动作后就很简单。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">1. 先决定多久巡一次</div>
+      <p>默认是 30 分钟一圈，某些 Anthropic 登录方式会变成 1 小时一圈。你也可以自己改。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">2. 可选放一张 <code>HEARTBEAT.md</code></div>
+      <p>像在巡逻员口袋里塞一张小清单，告诉它每次巡逻优先看什么。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">3. 决定提醒送到哪</div>
+      <p><code>target: "none"</code> 像“巡完先记着，不主动敲门”，<code>target: "last"</code> 像“去找最近联系的那个人”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">4. 可选开 reasoning、轻量上下文、独立会话、活动时间</div>
+      <p>这些都像给巡逻员换装备：要不要多讲一点、要不要轻装、要不要走单独巡逻本、要不要只在白天上班。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">命令与配置翻译</p>
+    <h2>🧾 这一段配置，不是在堆参数，而是在给巡逻员排班</h2>
+    <p>把配置块翻成人话后，就很像一份值班表。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>every: "30m"</code></div>
+      <p>像写在值班表上的“每 30 分钟出来巡一圈”。如果写成 <code>0m</code>，就等于今天不排班。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>target: "last"</code></div>
+      <p>像说“如果真有事，就去找上次联系的那个人”。默认的 <code>none</code> 则更保守。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>lightContext: true</code></div>
+      <p>像巡逻时只带一张最关键的小抄，不把整箱旧聊天记录都背在身上。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>isolatedSession: true</code></div>
+      <p>像每次巡逻都开一本新的巡逻记录本，不把之前长长的聊天故事又整本拖进来。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最重要的口令</p>
+    <h2>✅ <code>HEARTBEAT_OK</code> 像“巡逻完毕，一切正常”的回执章</h2>
+    <p>这块很关键。因为它决定了没事的时候，系统怎么优雅地安静下来。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🟢</span>
+      <h2><code>HEARTBEAT_OK</code></h2>
+      <p>像巡逻员回来说：“都正常。”如果只是这一句，OpenClaw 会把它当作安静确认，不再专门把它送出来吵你。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📏</span>
+      <h2><code>ackMaxChars</code></h2>
+      <p>像说“这张回执章后面最多还能跟多少小字”。太长就不算安静回执了。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🚨</span>
+      <h2>真有事就别写它</h2>
+      <p>如果是警报，就直接说警报，不要再贴 <code>HEARTBEAT_OK</code> 这枚“没事”章。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>一句话</h2>
+      <p><code>HEARTBEAT_OK</code> 是安静退场口令，不是万能装饰词。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">高级排班</p>
+    <h2>🌞 活动时间、多账号、每个 agent 各自排班，都像更细的值班表</h2>
+    <p>官方把这些场景都展开了。看成排班表就很容易懂。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>activeHours</code></div>
+      <p>像规定巡逻员只在白天上班。夜里别乱敲门。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Per-agent heartbeat</div>
+      <p>像大楼里有好几个小助理，但只有某几个需要轮流巡逻。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>accountId</code></div>
+      <p>像多账号通道时，明确说“这次让哪位值班机器人去送提醒”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">⚠️ 一个小坑</div>
+      <p>开始时间和结束时间别写成一样，不然就像排了一个宽度为零的班表，结果永远不上班。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把这页压成一句最短的话</h2>
+    <p>Heartbeat 就是 OpenClaw 的定时小巡逻：多久巡一次、巡逻时带什么小纸条、什么时候安静收工、什么时候把提醒送出来，全都靠这份排班表来定。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你想看“巡逻过程中留下的后台记录怎么查”，下一页可以去 <code>/gateway/logging</code>。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

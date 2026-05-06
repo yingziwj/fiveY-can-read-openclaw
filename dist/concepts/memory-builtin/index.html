@@ -4328,205 +4328,104 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>你的记忆小管家：内置引擎</h2>
-            <p>想象一下，每个AI助手都有一个自己的小本本。这个内置引擎就是那个小本本，它就在你电脑里，不用额外安装任何东西。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/concepts/memory-builtin</span>
-            <span>故事卡片：7 张</span>
-            <a href="https://docs.openclaw.ai/concepts/memory-builtin" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>它能帮你做什么？</h2>
-              <p>这个小本本有两种厉害的查找方式，还能把它们合起来用。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道它能怎么帮你找东西，你才知道怎么用它。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>**关键词查找**：就像在书里找某个词，它会根据词的重要程度给你打分。</li><li>**向量查找**：它能理解你话里的意思，帮你找到意思相近的内容。</li><li>**混合查找**：把上面两种方法一起用，结果更准。</li><li>**支持中文日文韩文**：专门处理这些语言的文字，不会乱拆。</li><li>**加速选项**：有个叫sqlite-vec的加速器，能让向量查找更快（可选）。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>它是个能理解意思、又能按词查找的聪明小本本。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>怎么开始用？</h2>
-              <p>如果你有某些AI服务的钥匙（API Key），它自己就能认出来，马上能用。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这样你就不用自己动手配了，省心。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>如果你有OpenAI、Gemini、Voyage或Mistral的钥匙，它一启动就自己找到了。</li><li>如果你想指定用谁家的服务，就告诉它一声。</li><li>要是没有这些钥匙，那就只能用关键词查找这一种方式了。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`{&quot;agents&quot;: {&quot;defaults&quot;: {&quot;memorySearch&quot;: {&quot;provider&quot;: &quot;openai&quot;}}}}` 这行命令就像在说：&#39;喂，小管家，以后就用OpenAI家的服务来理解意思吧。&#39; 说完它就会去连OpenAI的门。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>有钥匙就自动开门，没钥匙就手动指路。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>它认识哪些服务商？</h2>
-              <p>它认识好几家能理解意思的服务商，大部分能自动认出来。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道它能找谁帮忙，你才知道钥匙该给谁。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>**能自动认出来的**：OpenAI、Gemini、Voyage、Mistral。它按这个顺序，谁有钥匙就用谁。</li><li>**需要你明确指定的**：Ollama（本地跑的）。</li><li>**第一个能用的本地模型**：一个叫Local的选项，如果它先找到了，就用它。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>大部分服务商它都认识，会自动挑一个有钥匙的用。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>小本本是怎么记东西的？</h2>
-              <p>它会把你指定的笔记文件，撕成一张张小卡片，存进每个助手专属的数据库里。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道它怎么整理，东西丢了才好找。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>**它看哪些文件**：主要看`MEMORY.md`和`memory`文件夹里的`.md`文件。</li><li>**怎么撕卡片**：把长文章撕成大约400字的小段，相邻两张卡片会重叠80个字，防止意思断掉。</li><li>**小本本放哪儿**：在你电脑的`~/.openclaw/memory/`文件夹里，每个助手一个`.sqlite`文件。</li><li>**自动更新**：你改了笔记文件，它等1.5秒（防你一直改）就重新整理小本本。</li><li>**手动更新**：如果你觉得它没更新，就敲命令让它强制重做一遍。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`openclaw memory index --force` 这个命令就像你对着小管家喊：&#39;别管现在记的，把笔记全部重新抄一遍！&#39; 它就会立刻开始干活。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>自动监视文件变化，你改笔记，它重整理。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>什么时候该用它？</h2>
-              <p>对大多数人来说，用这个内置的小管家就足够了。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>帮你判断它是不是你的菜，省得瞎折腾。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>**开箱即用**：不用装别的，直接就能使。</li><li>**查找够用**：关键词和向量两种查找都管得挺好。</li><li>**服务商全**：上面提到的那些理解意思的服务它都支持。</li><li>**混合查找**：能把两种查找方式的结果揉在一起，给你最好的。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>适合绝大多数人的默认选择，省心又好用。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>出问题了怎么办？</h2>
-              <p>几个常见的小毛病和解决办法。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>提前知道哪儿容易卡住，真卡住了不慌。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>**查找功能没开？** 用`openclaw memory status`看看状态。如果没找到服务商，要么你明确指定一个，要么把对应的钥匙（API Key）给它。</li><li>**查到的结果不对？** 可能是小本本没更新。运行`openclaw memory index --force`命令，让它重新整理一遍。</li><li>**加速器没装上？** 如果sqlite-vec这个加速器没加载成功，它会自动用慢一点的方法顶上。具体错误可以看日志。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`openclaw memory status` 这个命令就像问小管家：&#39;你现在状态怎么样？钥匙有了吗？&#39; 它会告诉你当前情况。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>状态不对查状态，结果不对就重建。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>更多高级设置</h2>
-              <p>如果你想微调，还有很多旋钮可以拧。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>当你需要更精细的控制时，知道去哪儿找。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>比如调整混合查找的权重、让结果更多样、给旧记忆降权、一次处理很多文件、处理图片和声音、用那个加速器、或者让它也去整理工作区以外的笔记文件。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>基础功能够用了，高级玩法有专门的说明书。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🗃 Builtin Memory Engine，就是 OpenClaw 自带的记忆小抽屉</h2>
+      <p>它默认用 SQLite 存记忆索引，开箱就能跑，不需要你先去装一堆额外东西。</p>
+      <p>这页的核心不是高深搜索算法，而是“先让记忆能找得到”。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想先用默认记忆方案的人</span>
+      <span>重点是关键词、向量、混合检索</span>
+      <a href="https://docs.openclaw.ai/concepts/memory-builtin" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧺 先看它能做什么：在同一个抽屉里找字，也找意思</h2>
+    <p>Builtin engine 的厉害处，是能把简单关键词和更像人脑的语义搜索放一起。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🔎</span>
+      <h2>Keyword search</h2>
+      <p>像拿着词条手电筒，照到就找得到。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧠</span>
+      <h2>Vector search</h2>
+      <p>像按意思去找，不只看字面。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪢</span>
+      <h2>Hybrid search</h2>
+      <p>像把“字面”和“意思”两条路一起跑。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">中文支持</span>
+      <h2>CJK / trigram</h2>
+      <p>像给中文、日文、韩文都准备了更顺手的找法。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>⚙️ 默认就能开，但有 API key 时会更聪明</h2>
+    <p>如果你手边有常见 embedding provider，builtin engine 会自动把向量检索也打开。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">OpenAI / Gemini / Voyage / Mistral</div>
+      <p>像已经挂好的老师名单，系统能自己认出来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Ollama / Local</div>
+      <p>像你自己家里的老师，也可以手动加进去。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">没有 provider</div>
+      <p>也没关系，至少关键词搜索还能用。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>📦 SQLite + FTS5 + 可选向量，像一个够稳的记忆柜台</h2>
+    <p>这套默认方案的卖点就是稳，不折腾就能先跑起来。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">SQLite</div>
+      <p>像小巧但靠谱的抽屉柜。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">FTS5</div>
+      <p>像给抽屉加了全文检索标签。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">sqlite-vec</div>
+      <p>像给柜子里再塞一层向量加速层。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Builtin Memory 这页压成一句最好记的话</h2>
+    <p>它就是默认记忆柜台：先能存、先能搜，再慢慢把向量搜索和混合检索补齐。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

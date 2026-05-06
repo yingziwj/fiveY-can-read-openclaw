@@ -4328,103 +4328,64 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>用量追踪：你的AI工具箱还剩多少油</h2>
-            <p>想象一下，你的AI工具箱里有很多供应商的零件。用量追踪就是工具箱里的油量表，告诉你每个供应商的零件还剩多少能用。它不猜价格，只告诉你供应商自己报的剩余量。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/concepts/usage-tracking</span>
-            <span>故事卡片：3 张</span>
-            <a href="https://docs.openclaw.ai/concepts/usage-tracking" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>油量表怎么工作</h2>
-              <p>用量追踪直接从供应商那里拿数据，告诉你工具箱里还剩多少零件。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>不看这个，你就不知道什么时候该换供应商的零件了。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>工具箱会直接打电话给供应商，问‘你们家零件还剩多少？’</li><li>供应商会回答‘还剩X%’或者‘还剩Y个’，工具箱就原样记下来。</li><li>如果现场数零件数漏了，工具箱会翻旧账本补上缺的数。</li><li>工具箱永远相信供应商报的数，不自己瞎猜成本。</li><li>最后，工具箱会把所有数据统一成‘还剩X%’这样你看得懂的话。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>用量追踪只报供应商亲口说的数，不猜不编。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>油量表贴在哪里</h2>
-              <p>你会在聊天窗口、命令行和菜单栏里看到这个油量表。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道在哪看，你才能随时检查工具箱状态。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>在聊天窗口里，打`/status`会弹出一张带表情的卡片，上面写着这次聊天用了多少零件，如果用了API钥匙还会估个价。</li><li>打`/usage off|tokens|full`会在每条回复下面加个小脚注，告诉你这条回复用了多少零件。</li><li>打`/usage cost`会给你算个总账，把OpenClaw记的所有聊天零件加起来。</li><li>在命令行里，`openclaw status --usage`会把每个供应商的零件剩余情况全列出来。</li><li>`openclaw channels list`也会顺便把用量快照贴出来，不想看可以加`--no-usage`关掉。</li><li>在Mac电脑的菜单栏里，如果工具箱支持，你会在‘上下文’下面找到‘用量’这一栏。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`/status`：亮起一张状态卡片，现场数零件，有钥匙就估个价。</li><li>`/usage off|tokens|full`：在回复脚下贴小条，数这条用了多少零件。</li><li>`/usage cost`：翻所有聊天旧账，加出个总零件数。</li><li>`openclaw status --usage`：把每个供应商的油量表全打出来。</li><li>`openclaw channels list`：列供应商名单时，旁边附上用量快照。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>聊天、命令行、菜单栏，到处都能瞄一眼用量。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>供应商的钥匙和账本</h2>
-              <p>不同供应商的油量表长得不一样，工具箱得用对的钥匙开对的锁。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>用错钥匙，你就看不到真正的剩余零件数。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>比如MiniMax这家供应商，工具箱会把它几个不同的门（minimax, minimax-cn, minimax-portal）当成同一个零件库。</li><li>工具箱优先用存好的OAuth钥匙开门，如果找不到，就试试`MINIMAX_CODE_PLAN_KEY`、`MINIMAX_CODING_API_KEY`或`MINIMAX_API_KEY`这几把备用钥匙。</li><li>MiniMax报数有点特别，它说的‘用了X%’其实是‘还剩X%’，所以工具箱会把它倒过来再给你看。</li><li>如果供应商没明确说‘时间窗口是几小时’，工具箱就自己看零件上的生产日期和过期日期来猜。</li><li>工具箱还会把AI模型的名字也写进零件标签里，让你知道是哪个型号的零件。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>每家供应商的报数方式不同，工具箱会帮你翻译好。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>📊 Usage Tracking 这页，其实是在讲“别再自己瞎估费用了，能问 provider 就直接问 provider 账本”</h2>
+      <p>它主打的是实报实销式的查看，不是根据 token 硬猜一个大概数。</p>
+      <p>也就是说，能从官方 usage 接口直接拉到账单窗口，就直接拉；拉不到，就别装得很确定。</p>
+    </div>
+    <div class="overview-meta">
+      <span>优先 provider 真实 usage / quota</span>
+      <span>重点是 /status、/usage、CLI 状态卡</span>
+      <a href="https://docs.openclaw.ai/concepts/usage-tracking" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧾 这套追踪分两种：一种看 provider 真账本，一种看本地会话小账本</h2>
+    <p>别把这两个来源混成一个。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card"><span class="home-card-index">🏦</span><h2>Provider usage</h2><p>直接去供应商 usage/quota 接口拿真实窗口数据，最像官方账本。</p></article>
+    <article class="home-card"><span class="home-card-index">🧮</span><h2>Local cost summary</h2><p>像 OpenClaw 自己记的小账，按会话日志汇总，不等于 provider 官方账单。</p></article>
+    <article class="home-card"><span class="home-card-index">🙈</span><h2>拿不到就隐藏</h2><p>没有匹配凭据时，它宁可不显示，也不装作自己知道。</p></article>
+    <article class="home-card"><span class="home-card-index">🎯</span><h2>不主打估算</h2><p>官方这里明显偏向“有真数据就展示真数据”，而不是乱猜成本。</p></article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>📺 它会出现在好几个地方，就像同一份账单被贴在不同窗口</h2>
+    <p>读者最常碰到的是聊天里的状态卡和 CLI 的汇总。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>/status</code></div><p>像聊天窗口里的总览卡。会顺手展示当前 provider 的 usage 情况。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>/usage off|tokens|full</code></div><p>像给每次回复屁股后面加不加“小票尾巴”。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>/usage cost</code></div><p>这句更像看本地累计花费小账本，不是 provider 官方后台。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>openclaw status --usage</code></div><p>像把账单打印到终端里，做一份更完整的分 provider 清单。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🔐 能不能看到 usage，关键取决于你手上有没有对应 provider 的凭据</h2>
+    <p>没有钥匙，就进不了账房。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label">OAuth providers</div><p>像 Anthropic、Copilot、Gemini CLI 这类，通常靠 auth profile 里的 OAuth 身份去查。</p></div>
+    <div class="source-card"><div class="story-card-label">API key providers</div><p>像 MiniMax、z.ai 这种，则用 API key 去问账。</p></div>
+    <div class="source-card"><div class="story-card-label">当前 provider 优先</div><p>它更关心你当前正在用的模型供应商，不会一上来把全世界账本都摊一桌。</p></div>
+    <div class="source-card"><div class="story-card-label">🎈 最后记一句</div><p>Usage tracking 的核心不是“估个差不多”，而是“能拿真账单就拿真账单”。</p></div>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

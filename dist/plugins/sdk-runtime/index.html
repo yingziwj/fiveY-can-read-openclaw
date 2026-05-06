@@ -4328,355 +4328,82 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>插件工具箱：你口袋里的六把钥匙</h2>
-            <p>每个插件注册时，系统都会塞给它一个叫 api.runtime 的工具包。别自己去翻主机内部，用这里面的钥匙就行。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/plugins/sdk-runtime</span>
-            <span>故事卡片：12 张</span>
-            <a href="https://docs.openclaw.ai/plugins/sdk-runtime" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>先摸清门路</h2>
-              <p>插件一进门，api.runtime 就递到你手里。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>不用自己撬锁，系统已经帮你准备好了。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>register(api) 就像前台给你一张房卡，api.runtime 就是房卡上的钥匙串。</li><li>别自己去拆主机内部的螺丝，用这些现成的工具就好。</li><li>想一步步看怎么用？去翻频道插件或提供商插件的分步指南。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>register(api) 这段代码在插件启动时执行，就像你走进大厅，前台把钥匙串递到你手上。</li><li>const runtime = api.runtime; 这句就是把钥匙串从口袋里掏出来，随时准备开门。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>别自己造轮子，系统给的工具箱够用了。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>第一把钥匙：agent —— 代理的身份和地盘</h2>
-              <p>想知道代理是谁、它的工作目录在哪、怎么启动一个代理回合？用这把钥匙。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>代理需要知道自己的身份和文件放在哪，就像你进办公室要先知道自己的工位和工牌。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>resolveAgentDir(cfg) 告诉你代理的工作目录在哪，就像告诉你你的办公桌在哪个格子间。</li><li>resolveAgentWorkspaceDir(cfg) 告诉你代理的工作空间，相当于你的项目文件夹。</li><li>resolveAgentIdentity(cfg) 问出代理的名字和身份，就像看工牌。</li><li>resolveThinkingDefault(cfg, provider, model) 给出默认的思考深度，类似默认用多大力气想问题。</li><li>runEmbeddedAgent(...) 从插件代码里启动一个正常的代理回合，就像你按一下按钮，代理就开始干活。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>const agentDir = api.runtime.agent.resolveAgentDir(cfg); 执行后，agentDir 就拿到了一个路径，比如 /home/agent/workspace。</li><li>const identity = api.runtime.agent.resolveAgentIdentity(cfg); 执行后，identity 就拿到了代理的名字和 ID，就像看到工牌上的照片和姓名。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>代理的身份证和工位地图，全在这把钥匙上。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>第二把钥匙：agent.defaults —— 默认模型和提供商</h2>
-              <p>系统默认用哪个模型、哪个提供商？这里写着。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>不用每次都指定，系统已经给你选好了默认值。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>api.runtime.agent.defaults.model 就是默认的模型名字，比如 &quot;anthropic/claude-sonnet-4-6&quot;。</li><li>api.runtime.agent.defaults.provider 就是默认的提供商，比如 &quot;anthropic&quot;。</li><li>这些常量是写死的，就像出厂设置，一般不用改。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>const model = api.runtime.agent.defaults.model; 执行后，model 就拿到了一个字符串，比如 &quot;anthropic/claude-sonnet-4-6&quot;。</li><li>const provider = api.runtime.agent.defaults.provider; 执行后，provider 就拿到了 &quot;anthropic&quot;。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>默认配置就像自动挡，省心。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>第三把钥匙：subagent —— 后台小助手</h2>
-              <p>在后台启动一个子代理，让它自己干活，你等着结果就行。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>有些任务可以交给小弟去做，你继续忙你的。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>run() 启动一个子代理，给它一条消息和可选的模型，它就在后台跑起来了。</li><li>sessionKey 是子代理的会话钥匙，就像给它一个独立的小办公室。</li><li>deliver: false 表示子代理的结果不会自动送回来，你得主动去取。</li><li>waitForRun() 等着子代理干完活，可以设个超时时间，比如 30 秒。</li><li>注意：如果插件不可信，它想换模型会被系统拦住，除非管理员在配置文件里开了绿灯。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>const { runId } = await api.runtime.subagent.run({...}); 执行后，子代理开始工作，runId 就是它的任务编号，像快递单号。</li><li>const result = await api.runtime.subagent.waitForRun({ runId, timeoutMs: 30000 }); 执行后，程序会停在这里等，最多等 30 秒，然后 result 里就是子代理的成果。</li><li>如果插件想换模型但没权限，run() 会直接报错，就像小弟想用高级工具但被门卫拦下。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>派小弟去跑腿，自己喝杯咖啡。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>第四把钥匙：taskFlow —— 任务流水线</h2>
-              <p>创建和管理一连串的任务，就像搭一条流水线。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>当你有一系列任务要按顺序执行，比如先审查代码再发通知，用这个。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>fromToolContext(ctx) 从一个工具上下文里绑定任务流，就像从工具箱里拉出一条流水线。</li><li>createManaged() 创建一个受管理的任务流，指定控制器 ID 和目标。</li><li>runTask() 在流水线上添加一个具体任务，比如“审查 PR #123”。</li><li>bindSession() 用于你已经有一个可信的会话钥匙时，别从用户输入直接绑。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>const taskFlow = api.runtime.taskFlow.fromToolContext(ctx); 执行后，taskFlow 就是一条空的流水线，等着你放任务。</li><li>const created = taskFlow.createManaged({ controllerId: &quot;my-plugin/review-batch&quot;, goal: &quot;Review new pull requests&quot; }); 执行后，流水线创建好，created.flowId 就是它的编号。</li><li>const child = taskFlow.runTask({ flowId: created.flowId, runtime: &quot;acp&quot;, childSessionKey: &quot;agent:main:subagent:reviewer&quot;, task: &quot;Review PR #123&quot; }); 执行后，一个子任务被放到流水线上，开始运行。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>搭一条任务流水线，让工作自动流转。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>第五把钥匙：tts —— 让机器开口说话</h2>
-              <p>把文字变成语音，就像让电脑帮你念稿子。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>需要语音播报时，不用自己找语音库。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>textToSpeech() 把一段文字转成语音，返回 PCM 音频缓冲区和采样率。</li><li>textToSpeechTelephony() 专门为电话优化的语音合成，声音更清晰。</li><li>系统会使用核心的 messages.tts 配置和提供商选择。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>const clip = await api.runtime.tts.textToSpeech({ text: &quot;Hello from OpenClaw&quot;, cfg: api.config }); 执行后，clip 里就是一段音频数据，可以直接播放。</li><li>const telephonyClip = await api.runtime.tts.textToSpeechTelephony({ text: &quot;Hello from OpenClaw&quot;, cfg: api.config }); 执行后，telephonyClip 是电话专用的音频。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>让系统替你说话，声音还好听。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>第六把钥匙：mediaUnderstanding —— 看懂图片、听懂音频</h2>
-              <p>让系统分析图片、转录音频，就像给它一副眼镜和耳朵。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>插件需要理解媒体内容时，不用自己写复杂算法。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>describeImageFile() 描述一张图片的内容，比如“一张夕阳下的机器人绘画”。</li><li>transcribeAudioFile() 把音频文件转成文字，比如把录音变成笔记。</li><li>如果输入被跳过，会返回 { text: undefined }。</li><li>老版本的 stt.transcribeAudioFile 依然能用，但推荐用新的 mediaUnderstanding。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>const image = await api.runtime.mediaUnderstanding.describeImageFile({ filePath: &quot;/tmp/inbound-photo.jpg&quot;, cfg: api.config, agentDir: &quot;/tmp/agent&quot; }); 执行后，image 里就是图片的文字描述。</li><li>const { text } = await api.runtime.mediaUnderstanding.transcribeAudioFile({ filePath: &quot;/tmp/inbound-audio.ogg&quot;, cfg: api.config }); 执行后，text 里就是音频转成的文字。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>给系统装上眼睛和耳朵，它能看懂听懂。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>额外工具：imageGeneration —— 画图</h2>
-              <p>根据文字描述生成图片，就像让系统当画家。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>需要配图时，直接让系统画一张。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>generate() 根据提示词生成一张图片，比如“一个机器人在画夕阳”。</li><li>listProviders() 列出当前可用的图片生成提供商，就像查看有哪些画师在岗。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>const result = await api.runtime.imageGeneration.generate({ prompt: &quot;A robot painting a sunset&quot;, cfg: api.config }); 执行后，result 里就是生成的图片数据。</li><li>const providers = api.runtime.imageGeneration.listProviders({ cfg: api.config }); 执行后，providers 是一个提供商列表，比如 [&quot;openai&quot;, &quot;stability&quot;]。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>一句话，让系统给你画张图。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-9">
-            <div class="section-heading">
-              <p class="section-kicker">第 9 站</p>
-              <h2>频道专用钥匙：channel —— 处理@消息</h2>
-              <p>当频道插件加载时，这把钥匙帮你处理别人@你的消息。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>频道里别人@机器人时，需要判断是直接@还是回复，用这个。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>mentions.matchesMentionWithExplicit() 检查一段文本是否明确提到了机器人。</li><li>mentions.resolveInboundMentionDecision() 根据上下文决定是否应该响应。</li><li>mentions.implicitMentionKindWhen() 判断某种情况是否算作隐式提及，比如回复机器人的消息。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>const mentionMatch = api.runtime.channel.mentions.matchesMentionWithExplicit(text, { mentionRegexes, mentionPatterns }); 执行后，mentionMatch.matched 是 true 或 false，表示是否被@。</li><li>const decision = api.runtime.channel.mentions.resolveInboundMentionDecision({ facts: { canDetectMention: true, wasMentioned: mentionMatch.matched, ... } }); 执行后，decision 告诉你该不该回复。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>频道里谁@了你，这把钥匙帮你判断。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-10">
-            <div class="section-heading">
-              <p class="section-kicker">第 10 站</p>
-              <h2>怎么把钥匙放进口袋 —— 存储运行时引用</h2>
-              <p>把 api.runtime 存起来，方便在 register 之外的地方用。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>register 回调里拿到 runtime，但其他地方也需要，存起来最方便。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>createPluginRuntimeStore() 创建一个存储盒，把 runtime 放进去。</li><li>指定 pluginId 作为身份标识，就像给存储盒贴上标签。</li><li>如果同一个插件需要多个运行时槽，可以用更底层的 key 形式。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>import { createPluginRuntimeStore } from &quot;openclaw/plugin-sdk/runtime-store&quot;; 这行代码引入存储盒的构造函数。</li><li>const store = createPluginRuntimeStore&lt;PluginRuntime&gt;({ pluginId: &quot;my-plugin&quot;, errorMessage: &quot;my-plugin runtime not initialized&quot; }); 执行后，store 就是一个存储盒，可以在任何地方用 store.getRuntime() 取出 runtime。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>把钥匙存好，随时取用。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-11">
-            <div class="section-heading">
-              <p class="section-kicker">第 11 站</p>
-              <h2>其他门牌号 —— api 的其他字段</h2>
-              <p>除了 runtime，api 对象还给你一些基本信息。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>插件需要知道自己的 ID、名字、当前配置等。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>api.id 是插件的唯一 ID，就像身份证号。</li><li>api.name 是插件的显示名字，就像名片上的名字。</li><li>api.config 是当前的配置快照，就像当前的设置清单。</li><li>api.pluginConfig 是插件自己的配置，就像插件专属的设置项。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>除了工具箱，还有门牌号和名片。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-12">
-            <div class="section-heading">
-              <p class="section-kicker">第 12 站</p>
-              <h2>还想了解更多？</h2>
-              <p>相关文档链接，帮你深入探索。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这里只是入门，更多细节在其他页面。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>SDK 总览：看看整体架构。</li><li>SDK 入口点：了解 definePluginEntry 的选项。</li><li>插件内部机制：了解能力模型和注册表。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>这些链接是通往更深处的门。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🛠 Plugin Runtime Helpers，就是插件上班时的工具箱</h2>
+      <p>这页讲的是插件运行时能拿到什么帮手。不是写插件本体，而是写插件上班时怎么查路径、找配置、读环境。</p>
+      <p>你可以把 runtime 想成后台工具间。真正干活时，插件随手就能拿到铅笔、地图和对讲机。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想知道插件运行时能用哪些 helper</span>
+      <span>重点是路径、配置、环境和上下文</span>
+      <a href="https://docs.openclaw.ai/plugins/sdk-runtime" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧰 Runtime 不负责“定义身份”，它负责“上班时怎么用工具”</h2>
+    <p>SDK runtime 更像班主任给你发的工具包，不是你的名片。</p>
+  </div>
+  <div class="story-grid">
+    <div class="home-card">
+      <span class="home-card-index">📁</span>
+      <h2>路径工具</h2>
+      <p>像找自己的抽屉和工作目录。</p>
+    </div>
+    <div class="home-card">
+      <span class="home-card-index">🔐</span>
+      <h2>配置工具</h2>
+      <p>像把门口的设置卡拿出来翻一翻。</p>
+    </div>
+    <article class="home-card">
+      <span class="home-card-index">🌦</span>
+      <h2>环境工具</h2>
+      <p>像看今天外面是晴天还是下雨。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎈</span>
+      <h2>一句话</h2>
+      <p>Runtime 是插件上班时顺手可拿的工具盒。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🛠 代码像在做什么</h2>
+    <p>这些 helper 不是装饰，它们是在帮你少写很多重复的“去哪找、怎么读”的代码。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">`resolvePath(...)`</div>
+      <p>像拿着地图确认“这个文件到底在房间哪一角”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">`readConfig(...)`</div>
+      <p>像翻总账本里的某一页。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">`getEnv(...)`</div>
+      <p>像问门口的小风扇“今天设置了什么风向”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>🎈 Runtime 的任务，就是让插件别把时间浪费在找东西上</h2>
+    <p>该查的它帮你查，该拿的它帮你拿，插件就能把注意力放在真正的工作上。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

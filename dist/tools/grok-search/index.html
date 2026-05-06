@@ -4328,205 +4328,198 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>让AI帮你上网查资料</h2>
-            <p>OpenClaw里有个叫Grok的搜索帮手。它像个小侦探，能上网查最新信息，然后整理成带来源的答案给你。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/tools/grok-search</span>
-            <span>故事卡片：7 张</span>
-            <a href="https://docs.openclaw.ai/tools/grok-search" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>一把钥匙，开两扇门 🔑</h2>
-              <p>你只需要一把xAI的钥匙，就能同时用Grok上网搜，还能搜X（原推特）的帖子。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>省事，不用记两把钥匙。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>这把钥匙叫`XAI_API_KEY`。</li><li>把它交给OpenClaw，Grok搜索的门就开了。</li><li>如果你把钥匙放在`plugins.entries.xai.config.webSearch.apiKey`这个抽屉里，OpenClaw还会用它去开另一扇叫xAI模型的门。</li><li>想查X上某个具体帖子的转发、回复数？用`x_search`工具，直接告诉它帖子地址就行，别让它大海捞针。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>一把钥匙，通用两处。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>第一次见面，怎么打招呼</h2>
-              <p>告诉OpenClaw你想用Grok来上网搜索，它会顺便问你要不要也把X搜索一起开了。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>一次设置，两步到位。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>运行`openclaw onboard`或者`openclaw configure --section web`时，选Grok。</li><li>选完后，OpenClaw会多问一句：“用同一把钥匙，顺便把X搜索也开了吧？”</li><li>这个选项只在你选了Grok之后才会跳出来，不会一开始就让你眼花。</li><li>你还可以顺手选一下X搜索要用哪个AI模型。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`openclaw onboard`：这是第一次见面，OpenClaw会带你走一遍设置流程。</li><li>`openclaw configure --section web`：这是你后来想改上网搜索的配置了。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>选Grok，送X搜索。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>钥匙从哪来？</h2>
-              <p>去xAI的网站申请一把专属钥匙。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>没钥匙，门卫不让进。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>打开浏览器，去[xAI的网站](https://console.x.ai/)。</li><li>在那里申请一把属于你的`XAI_API_KEY`。</li><li>拿到钥匙后，要么把它放进OpenClaw大门的“环境变量”口袋里（叫`XAI_API_KEY`）。</li><li>要么，运行`openclaw configure --section web`命令，亲手把钥匙交给它。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`openclaw configure --section web`：运行这个命令，现场会弹出一个配置界面，让你把钥匙填进去。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>去xAI官网拿钥匙。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>钥匙放哪儿？</h2>
-              <p>告诉OpenClaw你的钥匙藏在哪里，它才能用。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>钥匙放错地方，它就找不着。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>最直接的方法：在配置文件里，找到`plugins.entries.xai.config.webSearch.apiKey`这个位置，把钥匙字符串贴进去。</li><li>如果你已经按上一节说的，把钥匙放进了环境变量`XAI_API_KEY`里，这里就可以不填了，OpenClaw会自己去找。</li><li>对于Gateway安装方式，环境变量文件通常藏在`~/.openclaw/.env`这个路径下。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>配置文件里写`&quot;apiKey&quot;: &quot;xai-...&quot;`：这就是在抽屉上贴标签，告诉OpenClaw钥匙在这。如果环境变量里已经有钥匙，这个标签可以不贴。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>钥匙要么放配置文件，要么放环境变量。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>Grok是怎么干活的？</h2>
-              <p>它接到你的问题，立刻跑去网上翻资料，然后把找到的信息揉成一个答案，还告诉你每句话是参考了哪里的资料。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道原理，用起来更放心。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>你问一个问题，Grok就像接到任务的秘书。</li><li>它不会直接给你一堆网页链接，而是自己上网去查。</li><li>查完后，它把有用的信息消化、整理，写成一个连贯的答案。</li><li>答案里有些句子会带着小数字标号，像脚注，点开就能看到它参考了哪个网页。</li><li>这跟Gemini搜索借用Google资料库的方式很像。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>它帮你查资料、写答案、标来源。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>你能告诉它什么？</h2>
-              <p>主要就告诉它你想查什么（query）。它很专注，一次只给你一个整理好的答案。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>别给它它处理不了的任务。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>你必须告诉它`query`，也就是你想搜的关键词或问题。这是它的行动指令。</li><li>为了兼容性，你也可以传一个`count`参数（比如想要几条结果），但Grok很固执：它永远只返回一个它自己整理好的、带引用的答案，而不是一堆结果列表。</li><li>目前还不能用更精细的过滤器（比如只搜某个网站、某个时间段）。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>告诉它问题，它给你一个整理好的答案。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>还想看看别的？</h2>
-              <p>OpenClaw里关于搜索的工具不止这一个。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>货比三家，选最顺手的。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>想了解所有上网搜索工具和自动选择机制？去看《Web Search overview》。</li><li>想深入了解那个专门的X（推特）搜索工具？去看《x_search in Web Search》。</li><li>想知道另一个也能整理答案的搜索工具（Gemini）？去看《Gemini Search》。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>搜索工具，不止Grok。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🚀 Grok Search 像一台“会看网页、也会顺手看 X 的小喇叭”</h2>
+      <p>这页讲的是 xAI 的网页搜索路线。它不是只给你链接，而是把 xAI 的 web-grounded responses 变成带引用的答案。</p>
+      <p>而且它和 X 搜索有点像一对兄弟。你拿同一把 <code>XAI_API_KEY</code>，不仅能做网页搜索，还可能顺手给 X（原 Twitter）搜索和某些模型提供后备能力。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合已经在用 xAI 生态，或者希望网页搜索和 X 搜索共用一把钥匙的人</span>
+      <span>这页最重要的是看懂 Grok、x_search、以及同一把 key 的关系</span>
+      <a href="https://docs.openclaw.ai/tools/grok-search" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧩 先把它想成“一个钥匙，多扇门”</h2>
+    <p>官方一开始就提醒你：Grok 这条线不只是网页搜索，它还可能顺手给 X 搜索和 xAI 模型提供后备支持。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🌐</span>
+      <h2><code>web_search</code></h2>
+      <p>像让 Grok 去网上找资料，再把结果讲成答案。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">𝕏</span>
+      <h2><code>x_search</code></h2>
+      <p>像专门去 X 上找帖子。它和网页搜索不是一回事。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔑</span>
+      <h2>同一把 key</h2>
+      <p><code>XAI_API_KEY</code> 还能同时供给这几条线，像一把万能门卡。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⭐</span>
+      <h2>先记一句</h2>
+      <p>Grok 不只是网页搜索，它还是 xAI 生态里的一扇口子。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🚀 它为什么和 Gemini 看起来像一对双胞胎</h2>
+    <p>因为它们都不是“只给链接”的搜索，而是“先找，再整理成答案”。只是背后的公司不同，地上的小路也不同。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">🧠 xAI web-grounded responses</div>
+      <p>像让 Grok 先去找资料，再把资料整理成可读的答案。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📝 有引用</div>
+      <p>答案不是拍脑袋来的，后面会挂上来源。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🔁 还能顺带当后备钥匙</div>
+      <p>如果你把 key 放在 xAI 的配置里，它还能给 bundled xAI model provider 做 fallback。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📌 这页真正的主线</div>
+      <p>Grok 是“答案型搜索”，不是“链接型搜索”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🛫 Onboarding 那一步，像“我先替你把两个门一起开好”</h2>
+    <p>官方特别提了 <code>openclaw onboard</code> 和 <code>openclaw configure --section web</code>，因为选 Grok 时，可能会顺手问你要不要把 X 搜索也一起开了。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">⚙️ 选 Grok 时的 follow-up</div>
+      <p>像你说“我想用这把钥匙”，系统顺手问你：“要不要连隔壁 X 那扇门也一起开？”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🧰 不是顶层单独入口</div>
+      <p>它不是一个独立的大类 web provider，而是 Grok 选择之后的一个后续动作。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">📍 如果先跳过也没关系</div>
+      <p>以后也能再把 x_search 打开，不是第一次没选就永远错过。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 一句话</div>
+      <p>选 Grok，常常等于顺便在问要不要把 X 搜索也装上。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🔑 API key 的动作不复杂，就是把 xAI 的门卡放进来</h2>
+    <p>这页的 key 逻辑很直接：去 xAI 拿 key，然后放进 Gateway 环境，或者让 OpenClaw 的 web 配置帮你写进去。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>XAI_API_KEY</code></div>
+      <p>像一张门卡。没它，Grok 这位小喇叭就没法上岗。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw configure --section web</code></div>
+      <p>像把网页搜索设置打开，然后把 Grok 填进去。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>provider: \"grok\"</code></div>
+      <p>像告诉总搜索台：“网页搜索先找 xAI 这条路。”</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🧠 还会复用到别的地方</div>
+      <p>如果你把 key 存在 xAI 的插件配置里，它还能被后面的 xAI 模型 provider 复用。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧪 x 搜索和网页搜索，像两个不同的放大镜</h2>
+    <p>官方特地提醒了一个小细节：如果你要的是帖子级别的信息，最好直接去用 <code>x_search</code>，别拿宽泛网页搜索硬找。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🗞</span>
+      <h2>网页搜索</h2>
+      <p>适合查网页、查文章、查一般资料。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">𝕏</span>
+      <h2>X 搜索</h2>
+      <p>适合查具体帖子，还能看 reposts、replies、bookmarks、views 这些细节。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🎯</span>
+      <h2>精确 URL / status ID</h2>
+      <p>如果你已经知道那条帖子在哪，直接拿门牌号去找最省事。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⭐</span>
+      <h2>先记一句</h2>
+      <p>找帖子就用 <code>x_search</code>，别把它塞进普通网页搜索里硬找。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>🧷 参数很少，说明它主打的是“直接讲答案”</h2>
+    <p>Grok Search 支持的参数也不多。它像 Gemini 一样，更偏答案型输出，而不是复杂筛选器型输出。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>query</code></div>
+      <p>你真正想问的问题。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>count</code></div>
+      <p>想让它带回来多少条结果。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">🚫 不支持太多花活</div>
+      <p>像国家、语言、时效、域名过滤这类细筛选，它这里都不主打。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">🎈 这一节的感觉</div>
+      <p>Grok 更像“把答案讲出来”，不是“给你一堆可拧的旋钮”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>把这页压成一句最好记的话</h2>
+    <p>Grok Search 是 xAI 的答案型网页搜索，和 X 搜索还能共用一把钥匙。它适合你想要“搜完就能讲”的场景。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>如果你下一页只想继续看一页，我建议看 <code>/tools/kimi-search</code>。它也走答案型网页搜索，但背后的路子换成了 Moonshot。</p>
+  </div>
+</section>
+
+
 
       <footer class="page-footer">
         <div>

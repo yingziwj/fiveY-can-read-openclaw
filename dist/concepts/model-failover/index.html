@@ -4328,315 +4328,64 @@
         </div>
       </div>
 
-      
       <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>当模型出错了，OpenClaw 怎么自己救自己？</h2>
-            <p>OpenClaw 不会因为一次请求失败就彻底放弃。它有两层自救手段：先换钥匙（认证配置），再换门（模型）。这一页讲的就是这套规则和背后的数据。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/concepts/model-failover</span>
-            <span>故事卡片：12 张</span>
-            <a href="https://docs.openclaw.ai/concepts/model-failover" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>两条路：先换钥匙，再换门</h2>
-              <p>OpenClaw 遇到失败时，分两步走：先在同一家提供商内部换一套认证配置，如果还不行，就换到备用模型。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道这个顺序，你才能理解为什么有时候换了模型还没好，有时候换了钥匙就好了。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>第一步：在当前提供商内部，轮换认证配置（API 密钥或 OAuth 登录）。</li><li>第二步：如果所有认证配置都失败了，就按照 `agents.defaults.model.fallbacks` 列表换到下一个模型。</li><li>如果当前会话是通过模型覆盖启动的，最后还会回到主模型再试一次。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>OpenClaw 先换钥匙，再换门，不会跳过任何一步。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>运行时流程：谁先上场？</h2>
-              <p>当一次普通文本请求进来，OpenClaw 会按顺序尝试三个候选：当前会话模型、备用模型列表、以及主模型（如果是从覆盖启动的）。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>明白这个顺序，你才能预测 OpenClaw 会先试哪个模型，以及为什么。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>先试当前会话正在用的模型。</li><li>如果失败，再一个个试 `agents.defaults.model.fallbacks` 里列出的备用模型。</li><li>如果请求是从模型覆盖（比如 `/model` 命令）启动的，最后还会回头试一下主模型。</li><li>在每个模型内部，OpenClaw 会先轮换认证配置，全部失败后才跳到下一个模型。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>OpenClaw 试模型就像排队：先试当前，再试备用，最后可能回到主模型。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>钥匙串和门禁卡：认证配置存在哪？</h2>
-              <p>OpenClaw 把 API 密钥和 OAuth 令牌都叫做“认证配置”，存在几个不同的文件里。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道文件在哪，你才能自己手动查看或备份钥匙。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>真正的密钥（秘密）存在 `~/.openclaw/agents/&lt;agentId&gt;/agent/auth-profiles.json` 里（旧版在 `~/.openclaw/agent/auth-profiles.json`）。</li><li>运行时的路由状态存在 `~/.openclaw/agents/&lt;agentId&gt;/agent/auth-state.json`。</li><li>配置文件里的 `auth.profiles` 和 `auth.order` 只记录元数据和路由顺序，不存秘密。</li><li>旧版的 OAuth 文件 `~/.openclaw/credentials/oauth.json` 只在第一次使用时被导入到 `auth-profiles.json`。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>查看当前代理的所有认证配置：`cat ~/.openclaw/agents/&lt;agentId&gt;/agent/auth-profiles.json`</li><li>查看路由状态：`cat ~/.openclaw/agents/&lt;agentId&gt;/agent/auth-state.json`</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>钥匙存在专门的保险箱里，配置文件只记门牌号。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>门牌号规范：认证配置的 ID 怎么编？</h2>
-              <p>每个认证配置都有一个唯一的 ID，OAuth 登录后会用邮箱作为 ID 的一部分，这样多个账号可以共存。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道 ID 的格式，你才能准确引用某个配置。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>默认情况：`provider:default`（没有邮箱时）。</li><li>有邮箱的 OAuth：`provider:邮箱地址`，比如 `google-antigravity:user@gmail.com`。</li><li>所有配置都列在 `auth-profiles.json` 的 `profiles` 字段下。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>每个钥匙都有唯一的门牌号，邮箱就是你的门牌。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>轮换顺序：OpenClaw 怎么决定用哪把钥匙？</h2>
-              <p>当一家提供商有多个认证配置时，OpenClaw 会按优先级顺序选择：先看显式配置，再看配置文件，最后看存储的记录。如果没有指定顺序，就用轮询（round-robin）。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>理解这个顺序，你才能控制 OpenClaw 优先用哪把钥匙。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>最高优先级：`auth.order[provider]` 显式指定的顺序。</li><li>其次：`auth.profiles` 里按提供商筛选出的配置。</li><li>最后：`auth-profiles.json` 里存储的所有该提供商配置。</li><li>轮询顺序：先试 OAuth（比 API 密钥优先），再试 API 密钥；同一类型内按最后使用时间排序，最早用的先试。</li><li>冷却中或已禁用的配置会被排到最后，按过期时间排序。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>你可以用 `auth.order` 指定钥匙顺序，否则 OpenClaw 会按“OAuth 优先、最早使用优先”轮换。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>会话粘性：选定钥匙后不随便换</h2>
-              <p>OpenClaw 会把选定的认证配置“粘”在会话上，不会每次请求都换，这样能保持提供商的缓存热度。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道什么时候换钥匙，你才能避免意外切换。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>选定的钥匙会一直用到会话被重置（`/new` 或 `/reset`）、或压缩完成、或钥匙进入冷却/禁用。</li><li>手动通过 `/model …@&lt;profileId&gt;` 选择的钥匙是用户覆盖，在当前会话内不会自动轮换。</li><li>自动粘住的钥匙只是“偏好”：OpenClaw 会先试它，但如果遇到限流或超时，可能会换到其他钥匙。</li><li>用户手动粘住的钥匙是“锁定”的：如果它失败了，OpenClaw 会换到下一个模型，而不是换钥匙。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>自动粘住的钥匙可以换，用户手动粘住的钥匙不换，只换模型。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>为什么 OAuth 看起来像“丢了”？</h2>
-              <p>如果你同时有 OAuth 和 API 密钥两种配置，轮询可能会在它们之间来回切换，除非你粘住一个。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>避免意外切换，你需要显式固定钥匙。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>用 `auth.order[provider] = [&quot;provider:profileId&quot;]` 固定顺序。</li><li>或者在每个会话里用 `/model` 命令手动覆盖（如果聊天界面支持）。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>不想 OAuth 和 API 密钥来回跳，就显式固定一把钥匙。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>冷却：钥匙被锁了怎么办？</h2>
-              <p>当一把钥匙因为认证失败或限流失败时，OpenClaw 会把它标记为“冷却”，然后换下一把。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道冷却规则，你才能理解为什么某些钥匙暂时不能用。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>冷却不仅针对 HTTP 429 状态码，还包括提供商的错误消息如 `Too many concurrent requests`、`ThrottlingException` 等。</li><li>冷却可以按模型范围：如果限流只针对某个模型，其他模型可能还能用。</li><li>冷却中的钥匙会被排到最后，按过期时间排序。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>钥匙被限流后会自动冷却，不会一直重试。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-9">
-            <div class="section-heading">
-              <p class="section-kicker">第 9 站</p>
-              <h2>冷却跳过与探针行为：不永远跳过提供商</h2>
-              <p>即使某个提供商的所有钥匙都在冷却中，OpenClaw 也不会永远跳过它。它会根据情况决定是否再试一次。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>避免因为临时故障而永久放弃一个提供商。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>如果失败看起来是暂时的（限流、过载、未知错误），OpenClaw 可能会再试一次，因为冷却可能很快过期。</li><li>如果失败是模型范围的，而其他模型可能还能用，OpenClaw 会尝试。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>冷却不是永久封禁，OpenClaw 会试探性地再给一次机会。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-10">
-            <div class="section-heading">
-              <p class="section-kicker">第 10 站</p>
-              <h2>会话覆盖与实时模型切换：小心冲突</h2>
-              <p>会话模型的变化是共享状态，多个操作（比如 `/model` 命令、压缩、会话更新）都可能读写同一个会话条目。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道这些操作会互相影响，你才能避免意外的模型切换。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>`/model` 命令、`session_status(model=...)`、`sessions.patch` 都会修改会话模型。</li><li>回退重试和实时模型切换需要协调：回退不会自动标记一个待处理的切换。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>模型切换和回退重试是两套系统，各自独立工作。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-11">
-            <div class="section-heading">
-              <p class="section-kicker">第 11 站</p>
-              <h2>观察与失败摘要：OpenClaw 记录了哪些信息？</h2>
-              <p>`runWithModelFallback(...)` 函数会记录每次尝试的详细信息，用于日志和用户提示。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道记录了什么，你才能调试失败原因。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>记录内容：尝试的提供商/模型、失败原因（限流、过载、计费、认证、模型未找到等）、状态码、可读的错误摘要。</li><li>当所有候选都失败时，OpenClaw 抛出 `FallbackSummaryError`，外层可以据此生成更具体的消息，比如“所有模型暂时受限”，并包含最早冷却过期时间。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>每次失败都有详细记录，最后会给你一个总结。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-12">
-            <div class="section-heading">
-              <p class="section-kicker">第 12 站</p>
-              <h2>相关配置：去哪里改这些行为？</h2>
-              <p>你可以在网关配置中调整认证配置、冷却时间和模型回退列表。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道配置项，你才能自定义行为。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>`auth.profiles` / `auth.order`：配置认证配置及其顺序。</li><li>`auth.cooldowns.*`：配置冷却时间、计费回退、失败窗口等。</li><li>`agents.defaults.model.primary` / `agents.defaults.model.fallbacks`：配置主模型和备用模型列表。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>查看完整配置项：参见 [网关配置](/gateway/configuration)</li><li>模型选择和回退总览：参见 [模型](/concepts/models)</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>所有行为都可以在配置里调整，钥匙、冷却、模型都能改。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🛟 Model Failover 这页，其实是在讲“当前这把钥匙开不了门时，OpenClaw 会先换钥匙，再换门”</h2>
+      <p>官方把失败处理分成两层：同一个 provider 里先轮换认证身份；还不行，再换备用模型。</p>
+      <p>所以这页最重要的不是失败本身，而是它到底按什么顺序救场。</p>
+    </div>
+    <div class="overview-meta">
+      <span>先轮换 auth profile，再切 fallback model</span>
+      <span>重点是 profile 顺序、session 粘性、手动锁定</span>
+      <a href="https://docs.openclaw.ai/concepts/model-failover" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🗝️ 同一个 provider 下面可以有多把钥匙，OpenClaw 会先试着换钥匙</h2>
+    <p>这里的钥匙就是 auth profile，既可能是 API key，也可能是 OAuth 登录。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card"><span class="home-card-index">🔑</span><h2>API key profile</h2><p>像普通钥匙，拿 key 直接开门。</p></article>
+    <article class="home-card"><span class="home-card-index">🎫</span><h2>OAuth profile</h2><p>像带时效的通行证，能和 API key 并存。</p></article>
+    <article class="home-card"><span class="home-card-index">📚</span><h2><code>auth-profiles.json</code></h2><p>像钥匙盒，真正的秘密材料都放这里，不放在公开配置说明里。</p></article>
+    <article class="home-card"><span class="home-card-index">🏷️</span><h2>Profile ID</h2><p>像钥匙标签，例如 <code>provider:default</code> 或 <code>provider:user@example.com</code>。</p></article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔄 轮换顺序不是乱抽签，而是先看你有没有手工指定，再看系统排班</h2>
+    <p>所以“为什么它这次换到另一把钥匙”通常是有规则可追的。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>auth.order[provider]</code></div><p>这像你手写的优先排班表。写了它，系统先听你的。</p></div>
+    <div class="source-card"><div class="story-card-label">Round-robin</div><p>没手写排班时，系统会自己轮换。官方还偏向 OAuth 先于 API key，然后再看谁最近更少被用。</p></div>
+    <div class="source-card"><div class="story-card-label">Cooldown / disabled</div><p>这些像“暂时休息的钥匙”，会被排到队伍后面，不会先推上去挡枪。</p></div>
+    <div class="source-card"><div class="story-card-label">Fallback models</div><p>如果同 provider 的钥匙都不行，才轮到下一扇备用模型门出场。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>📌 Session stickiness 像“这段对话先用同一把钥匙”，别每句话都换门卫</h2>
+    <p>这能保缓存，也让同一会话更稳定。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label">自动锁定</div><p>一旦系统为当前会话挑了一把钥匙，会尽量一直用它，直到重置、压缩后重开、或这把钥匙进冷却。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>/model …@&lt;profileId&gt;</code></div><p>这像你亲手指定“这次就用这把”。手动钉住后，系统不会随便帮你换成别的 profile。</p></div>
+    <div class="source-card"><div class="story-card-label">为什么 OAuth 像丢了</div><p>如果你同时有 OAuth 和 API key，而又没锁定，会轮换，看上去就像“刚刚那个登录怎么不见了”。</p></div>
+    <div class="source-card"><div class="story-card-label">🎈 最后记一句</div><p>Failover 的路线是：先换同门钥匙，再换备用模型门，不是上来就满场乱跑。</p></div>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>
