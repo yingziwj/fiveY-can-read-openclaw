@@ -1,0 +1,4440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rich output protocol | Fivey Can Read OpenClaw</title>
+  <meta name="description" content="Rich Output Protocol">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Fivey Can Read OpenClaw">
+  <meta property="og:title" content="Rich output protocol | Fivey Can Read OpenClaw">
+  <meta property="og:description" content="Rich Output Protocol">
+  <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/reference/rich-output-protocol/">
+  <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rich output protocol | Fivey Can Read OpenClaw">
+  <meta name="twitter:description" content="Rich Output Protocol">
+  <meta name="theme-color" content="#f5576c">
+  <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/reference/rich-output-protocol/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/assets/site.css" as="style">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Rich output protocol","description":"Rich Output Protocol","url":"https://fivey-can-read-openclaw.pages.dev/reference/rich-output-protocol/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Reference","item":"https://fivey-can-read-openclaw.pages.dev/reference/rich-output-protocol/"}]}</script>
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/">
+        <span class="brand-mark"><img src="/favicon.svg" alt="气球故事书"></span>
+        <span>
+          <strong>Fivey Can Read</strong>
+          <small>OpenClaw 绘本版文档站 · 气球故事书主题</small>
+        </span>
+      </a>
+      
+    <nav class="sidebar-nav">
+      
+            <details class="sidebar-group">
+              <summary>首页</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/index/">
+                  <span>OpenClaw 首页</span>
+                  <small>OpenClaw</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>快速开始</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/start/bootstrapping/">
+                  <span>代理启动引导</span>
+                  <small>Agent Bootstrapping</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/getting-started/">
+                  <span>快速开始</span>
+                  <small>Getting Started</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/onboarding/">
+                  <span>引导（macOS App）</span>
+                  <small>Onboarding (macOS App)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/onboarding-overview/">
+                  <span>引导概览</span>
+                  <small>Onboarding Overview</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/openclaw/">
+                  <span>Personal Assistant 设置</span>
+                  <small>Personal Assistant Setup</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/showcase/">
+                  <span>Showcase 入门</span>
+                  <small>Showcase</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/wizard/">
+                  <span>引导（CLI）</span>
+                  <small>Onboarding (CLI)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/wizard-cli-automation/">
+                  <span>CLI Automation 入门</span>
+                  <small>CLI Automation</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/wizard-cli-reference/">
+                  <span>CLI 设置参考</span>
+                  <small>CLI Setup Reference</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/docs-directory/">
+                  <span>Docs directory 入门</span>
+                  <small>Docs directory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/hubs/">
+                  <span>Docs Hubs 入门</span>
+                  <small>Docs Hubs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/lore/">
+                  <span>OpenClaw Lore 入门</span>
+                  <small>OpenClaw Lore</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/setup/">
+                  <span>设置</span>
+                  <small>Setup</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>安装部署</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/install/ansible/">
+                  <span>Ansible 安装</span>
+                  <small>Ansible</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/azure/">
+                  <span>Azure 安装</span>
+                  <small>Azure</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/bun/">
+                  <span>Bun（实验版）</span>
+                  <small>Bun (Experimental)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/clawdock/">
+                  <span>ClawDock 安装</span>
+                  <small>ClawDock</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/development-channels/">
+                  <span>发布通道</span>
+                  <small>Release Channels</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/digitalocean/">
+                  <span>DigitalOcean 安装</span>
+                  <small>DigitalOcean</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/docker/">
+                  <span>Docker 安装</span>
+                  <small>Docker</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/docker-vm-runtime/">
+                  <span>Docker VM 运行时</span>
+                  <small>Docker VM Runtime</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/exe-dev/">
+                  <span>exe.dev 安装</span>
+                  <small>exe.dev</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/fly/">
+                  <span>Fly.io 安装</span>
+                  <small>Fly.io</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/gcp/">
+                  <span>GCP 安装</span>
+                  <small>GCP</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/hetzner/">
+                  <span>Hetzner 安装</span>
+                  <small>Hetzner</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/hostinger/">
+                  <span>Hostinger 安装</span>
+                  <small>Hostinger</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/">
+                  <span>安装</span>
+                  <small>Install</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/installer/">
+                  <span>安装器内部机制</span>
+                  <small>Installer Internals</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/kubernetes/">
+                  <span>Kubernetes 安装</span>
+                  <small>Kubernetes</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/macos-vm/">
+                  <span>macOS VMs 安装</span>
+                  <small>macOS VMs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/migrating/">
+                  <span>迁移指南</span>
+                  <small>Migration Guide</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/migrating-matrix/">
+                  <span>Matrix 迁移</span>
+                  <small>Matrix migration</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/nix/">
+                  <span>Nix 安装</span>
+                  <small>Nix</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/node/">
+                  <span>Node.js 安装</span>
+                  <small>Node.js</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/northflank/">
+                  <span>Northflank 安装</span>
+                  <small>Northflank</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/oracle/">
+                  <span>Oracle Cloud 安装</span>
+                  <small>Oracle Cloud</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/podman/">
+                  <span>Podman 安装</span>
+                  <small>Podman</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/railway/">
+                  <span>Railway 安装</span>
+                  <small>Railway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/raspberry-pi/">
+                  <span>Raspberry Pi 安装</span>
+                  <small>Raspberry Pi</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/render/">
+                  <span>Render 安装</span>
+                  <small>Render</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/uninstall/">
+                  <span>Uninstall 安装</span>
+                  <small>Uninstall</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/updating/">
+                  <span>Updating 安装</span>
+                  <small>Updating</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>消息通道</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/channels/bluebubbles/">
+                  <span>BlueBubbles 通道</span>
+                  <small>BlueBubbles</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/broadcast-groups/">
+                  <span>广播群组</span>
+                  <small>Broadcast Groups</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/channel-routing/">
+                  <span>通道路由</span>
+                  <small>Channel Routing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/discord/">
+                  <span>Discord 通道</span>
+                  <small>Discord</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/feishu/">
+                  <span>Feishu 通道</span>
+                  <small>Feishu</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/googlechat/">
+                  <span>Google Chat 通道</span>
+                  <small>Google Chat</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/group-messages/">
+                  <span>群组消息</span>
+                  <small>Group Messages</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/groups/">
+                  <span>群组</span>
+                  <small>Groups</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/imessage/">
+                  <span>iMessage 通道</span>
+                  <small>iMessage</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/">
+                  <span>聊天通道</span>
+                  <small>Chat Channels</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/irc/">
+                  <span>IRC 通道</span>
+                  <small>IRC</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/line/">
+                  <span>LINE 通道</span>
+                  <small>LINE</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/location/">
+                  <span>通道位置解析</span>
+                  <small>Channel Location Parsing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/matrix/">
+                  <span>Matrix 通道</span>
+                  <small>Matrix</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/mattermost/">
+                  <span>Mattermost 通道</span>
+                  <small>Mattermost</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/msteams/">
+                  <span>Microsoft Teams 通道</span>
+                  <small>Microsoft Teams</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/nextcloud-talk/">
+                  <span>Nextcloud Talk 通道</span>
+                  <small>Nextcloud Talk</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/nostr/">
+                  <span>Nostr 通道</span>
+                  <small>Nostr</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/pairing/">
+                  <span>配对</span>
+                  <small>Pairing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/qqbot/">
+                  <span>QQ Bot 通道</span>
+                  <small>QQ Bot</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/signal/">
+                  <span>Signal 通道</span>
+                  <small>Signal</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/slack/">
+                  <span>Slack 通道</span>
+                  <small>Slack</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/synology-chat/">
+                  <span>Synology Chat 通道</span>
+                  <small>Synology Chat</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/telegram/">
+                  <span>Telegram 通道</span>
+                  <small>Telegram</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/tlon/">
+                  <span>Tlon 通道</span>
+                  <small>Tlon</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/troubleshooting/">
+                  <span>通道故障排查</span>
+                  <small>Channel Troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/twitch/">
+                  <span>Twitch 通道</span>
+                  <small>Twitch</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/whatsapp/">
+                  <span>WhatsApp 通道</span>
+                  <small>WhatsApp</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/zalo/">
+                  <span>Zalo 通道</span>
+                  <small>Zalo</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/zalouser/">
+                  <span>Zalo Personal 通道</span>
+                  <small>Zalo Personal</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>核心概念</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/concepts/active-memory/">
+                  <span>Active 记忆</span>
+                  <small>Active Memory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/agent/">
+                  <span>代理运行时</span>
+                  <small>Agent Runtime</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/agent-loop/">
+                  <span>代理循环</span>
+                  <small>Agent Loop</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/agent-workspace/">
+                  <span>代理工作区</span>
+                  <small>Agent Workspace</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/architecture/">
+                  <span>网关架构</span>
+                  <small>Gateway Architecture</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/compaction/">
+                  <span>压缩整理</span>
+                  <small>Compaction</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/context/">
+                  <span>上下文</span>
+                  <small>Context</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/context-engine/">
+                  <span>上下文 Engine</span>
+                  <small>Context Engine</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/delegate-architecture/">
+                  <span>Delegate 架构</span>
+                  <small>Delegate Architecture</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/dreaming/">
+                  <span>Dreaming</span>
+                  <small>Dreaming</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/experimental-features/">
+                  <span>实验版 Features</span>
+                  <small>Experimental Features</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/features/">
+                  <span>Features</span>
+                  <small>Features</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/memory/">
+                  <span>记忆概览</span>
+                  <small>Memory Overview</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/memory-builtin/">
+                  <span>Builtin 记忆 Engine</span>
+                  <small>Builtin Memory Engine</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/memory-honcho/">
+                  <span>Honcho 记忆</span>
+                  <small>Honcho Memory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/memory-qmd/">
+                  <span>QMD 记忆 Engine</span>
+                  <small>QMD Memory Engine</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/memory-search/">
+                  <span>记忆搜索</span>
+                  <small>Memory Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/messages/">
+                  <span>消息</span>
+                  <small>Messages</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/multi-agent/">
+                  <span>Multi-Agent Routing</span>
+                  <small>Multi-Agent Routing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/oauth/">
+                  <span>O认证</span>
+                  <small>OAuth</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/presence/">
+                  <span>Presence</span>
+                  <small>Presence</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/queue/">
+                  <span>Command Queue</span>
+                  <small>Command Queue</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/retry/">
+                  <span>Retry Policy</span>
+                  <small>Retry Policy</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/session/">
+                  <span>会话管理</span>
+                  <small>Session Management</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/session-pruning/">
+                  <span>Session Pruning</span>
+                  <small>Session Pruning</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/session-tool/">
+                  <span>Session 工具</span>
+                  <small>Session Tools</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/soul/">
+                  <span>SOUL.md Personality 指南</span>
+                  <small>SOUL.md Personality Guide</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/streaming/">
+                  <span>Streaming and Chunking</span>
+                  <small>Streaming and Chunking</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/system-prompt/">
+                  <span>System Prompt</span>
+                  <small>System Prompt</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/model-failover/">
+                  <span>模式l Failover</span>
+                  <small>Model Failover</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/model-providers/">
+                  <span>模式l 提供商s</span>
+                  <small>Model Providers</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/models/">
+                  <span>模式ls CLI</span>
+                  <small>Models CLI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/markdown-formatting/">
+                  <span>Markdown 格式</span>
+                  <small>Markdown Formatting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/timezone/">
+                  <span>Timezones</span>
+                  <small>Timezones</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/typebox/">
+                  <span>TypeBox</span>
+                  <small>TypeBox</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/typing-indicators/">
+                  <span>Typing Indicators</span>
+                  <small>Typing Indicators</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/usage-tracking/">
+                  <span>Usage Tracking</span>
+                  <small>Usage Tracking</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>工具大全</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/tools/">
+                  <span>工具和插件</span>
+                  <small>Tools and Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/acp-agents/">
+                  <span>ACP Agents 工具</span>
+                  <small>ACP Agents</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/agent-send/">
+                  <span>Agent Send 工具</span>
+                  <small>Agent Send</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/apply-patch/">
+                  <span>apply_patch 工具</span>
+                  <small>apply_patch Tool</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/brave-search/">
+                  <span>Brave 搜索</span>
+                  <small>Brave Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/browser/">
+                  <span>浏览器（OpenClaw 托管）</span>
+                  <small>Browser (OpenClaw-managed)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/browser-linux-troubleshooting/">
+                  <span>浏览器故障排查</span>
+                  <small>Browser Troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/browser-login/">
+                  <span>浏览器登录</span>
+                  <small>Browser Login</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/browser-wsl2-windows-remote-cdp-troubleshooting/">
+                  <span>WSL2 + Windows + remote Chrome CDP troubleshooting 工具</span>
+                  <small>WSL2 + Windows + remote Chrome CDP troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/btw/">
+                  <span>BTW 旁支问题</span>
+                  <small>BTW Side Questions</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/clawhub/">
+                  <span>ClawHub 工具</span>
+                  <small>ClawHub</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/code-execution/">
+                  <span>代码执行</span>
+                  <small>Code Execution</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/creating-skills/">
+                  <span>创建技能</span>
+                  <small>Creating Skills</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/diffs/">
+                  <span>Diffs 工具</span>
+                  <small>Diffs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/duckduckgo-search/">
+                  <span>DuckDuckGo 搜索</span>
+                  <small>DuckDuckGo Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/elevated/">
+                  <span>提权模式</span>
+                  <small>Elevated Mode</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/exa-search/">
+                  <span>Exa 搜索</span>
+                  <small>Exa Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/exec/">
+                  <span>Exec 工具</span>
+                  <small>Exec Tool</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/exec-approvals/">
+                  <span>Exec 授权审批</span>
+                  <small>Exec Approvals</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/firecrawl/">
+                  <span>Firecrawl 工具</span>
+                  <small>Firecrawl</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/gemini-search/">
+                  <span>Gemini 搜索</span>
+                  <small>Gemini Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/grok-search/">
+                  <span>Grok 搜索</span>
+                  <small>Grok Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/image-generation/">
+                  <span>Image Generation 工具</span>
+                  <small>Image Generation</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/kimi-search/">
+                  <span>Kimi 搜索</span>
+                  <small>Kimi Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/llm-task/">
+                  <span>LLM Task 工具</span>
+                  <small>LLM Task</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/lobster/">
+                  <span>Lobster 工具</span>
+                  <small>Lobster</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/loop-detection/">
+                  <span>工具-loop detection</span>
+                  <small>Tool-loop detection</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/media-overview/">
+                  <span>Media 概览</span>
+                  <small>Media Overview</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/minimax-search/">
+                  <span>MiniMax 搜索</span>
+                  <small>MiniMax Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/multi-agent-sandbox-tools/">
+                  <span>Multi-Agent 沙箱 &amp; 工具</span>
+                  <small>Multi-Agent Sandbox &amp; Tools</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/music-generation/">
+                  <span>Music Generation 工具</span>
+                  <small>Music Generation</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/ollama-search/">
+                  <span>Ollama Web 搜索</span>
+                  <small>Ollama Web Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/pdf/">
+                  <span>PDF 工具</span>
+                  <small>PDF Tool</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/perplexity-search/">
+                  <span>Perplexity 搜索</span>
+                  <small>Perplexity Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/plugin/">
+                  <span>插件</span>
+                  <small>Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/reactions/">
+                  <span>Reactions 工具</span>
+                  <small>Reactions</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/searxng-search/">
+                  <span>SearXNG 搜索</span>
+                  <small>SearXNG Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/skills/">
+                  <span>技能</span>
+                  <small>Skills</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/skills-config/">
+                  <span>技能配置</span>
+                  <small>Skills Config</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/slash-commands/">
+                  <span>Slash Commands 工具</span>
+                  <small>Slash Commands</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/subagents/">
+                  <span>Sub-Agents 工具</span>
+                  <small>Sub-Agents</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/tavily/">
+                  <span>Tavily 工具</span>
+                  <small>Tavily</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/thinking/">
+                  <span>Thinking Levels 工具</span>
+                  <small>Thinking Levels</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/video-generation/">
+                  <span>Video Generation 工具</span>
+                  <small>Video Generation</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/web/">
+                  <span>Web 搜索</span>
+                  <small>Web Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/web-fetch/">
+                  <span>Web Fetch 工具</span>
+                  <small>Web Fetch</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/tts/">
+                  <span>Text-to-Speech 工具</span>
+                  <small>Text-to-Speech</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>插件扩展</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/plugins/architecture/">
+                  <span>插件内部机制</span>
+                  <small>Plugin Internals</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/building-plugins/">
+                  <span>构建插件</span>
+                  <small>Building Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/bundles/">
+                  <span>插件捆绑包</span>
+                  <small>Plugin Bundles</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/codex-harness/">
+                  <span>Codex Harness 插件</span>
+                  <small>Codex Harness</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/community/">
+                  <span>社区插件</span>
+                  <small>Community Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/manifest/">
+                  <span>插件清单</span>
+                  <small>Plugin Manifest</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/memory-wiki/">
+                  <span>记忆 Wiki</span>
+                  <small>Memory Wiki</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-agent-harness/">
+                  <span>Agent Harness 插件</span>
+                  <small>Agent Harness Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-channel-plugins/">
+                  <span>构建通道插件</span>
+                  <small>Building Channel Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-entrypoints/">
+                  <span>插件入口点</span>
+                  <small>Plugin Entry Points</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-migration/">
+                  <span>插件 SDK 迁移</span>
+                  <small>Plugin SDK Migration</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-overview/">
+                  <span>插件 SDK 概览</span>
+                  <small>Plugin SDK Overview</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-provider-plugins/">
+                  <span>构建提供商插件</span>
+                  <small>Building Provider Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-runtime/">
+                  <span>插件运行时助手</span>
+                  <small>Plugin Runtime Helpers</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-setup/">
+                  <span>插件设置与配置</span>
+                  <small>Plugin Setup and Config</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-testing/">
+                  <span>插件测试</span>
+                  <small>Plugin Testing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/voice-call/">
+                  <span>语音通话插件</span>
+                  <small>Voice Call Plugin</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/webhooks/">
+                  <span>Webhooks 插件</span>
+                  <small>Webhooks Plugin</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/zalouser/">
+                  <span>Zalo Personal 插件</span>
+                  <small>Zalo Personal Plugin</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>模型提供商</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/providers/alibaba/">
+                  <span>Alibaba 模式l Studio</span>
+                  <small>Alibaba Model Studio</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/anthropic/">
+                  <span>Anthropic 提供商</span>
+                  <small>Anthropic</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/arcee/">
+                  <span>Arcee AI 提供商</span>
+                  <small>Arcee AI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/bedrock/">
+                  <span>Amazon Bedrock 提供商</span>
+                  <small>Amazon Bedrock</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/bedrock-mantle/">
+                  <span>Amazon Bedrock Mantle 提供商</span>
+                  <small>Amazon Bedrock Mantle</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/chutes/">
+                  <span>Chutes 提供商</span>
+                  <small>Chutes</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/claude-max-api-proxy/">
+                  <span>Claude Max API Proxy 提供商</span>
+                  <small>Claude Max API Proxy</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/cloudflare-ai-gateway/">
+                  <span>Cloudflare AI Gateway 提供商</span>
+                  <small>Cloudflare AI Gateway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/comfy/">
+                  <span>ComfyUI 提供商</span>
+                  <small>ComfyUI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/deepgram/">
+                  <span>Deepgram 提供商</span>
+                  <small>Deepgram</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/deepseek/">
+                  <span>DeepSeek 提供商</span>
+                  <small>DeepSeek</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/fal/">
+                  <span>fal 提供商</span>
+                  <small>fal</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/fireworks/">
+                  <span>Fireworks 提供商</span>
+                  <small>Fireworks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/github-copilot/">
+                  <span>GitHub Copilot 提供商</span>
+                  <small>GitHub Copilot</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/glm/">
+                  <span>GLM（Zhipu）</span>
+                  <small>GLM (Zhipu)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/google/">
+                  <span>Google（Gemini）</span>
+                  <small>Google (Gemini)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/groq/">
+                  <span>Groq 提供商</span>
+                  <small>Groq</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/huggingface/">
+                  <span>Hugging Face（Inference）</span>
+                  <small>Hugging Face (Inference)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/">
+                  <span>提供商目录</span>
+                  <small>Provider Directory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/inferrs/">
+                  <span>inferrs 提供商</span>
+                  <small>inferrs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/kilocode/">
+                  <span>Kilocode 提供商</span>
+                  <small>Kilocode</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/litellm/">
+                  <span>LiteLLM 提供商</span>
+                  <small>LiteLLM</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/lmstudio/">
+                  <span>LM Studio 提供商</span>
+                  <small>LM Studio</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/minimax/">
+                  <span>MiniMax 提供商</span>
+                  <small>MiniMax</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/mistral/">
+                  <span>Mistral 提供商</span>
+                  <small>Mistral</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/models/">
+                  <span>模型提供商快速开始</span>
+                  <small>Model Provider Quickstart</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/moonshot/">
+                  <span>Moonshot AI 提供商</span>
+                  <small>Moonshot AI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/nvidia/">
+                  <span>NVIDIA 提供商</span>
+                  <small>NVIDIA</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/ollama/">
+                  <span>Ollama 提供商</span>
+                  <small>Ollama</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/openai/">
+                  <span>OpenAI 提供商</span>
+                  <small>OpenAI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/opencode/">
+                  <span>OpenCode 提供商</span>
+                  <small>OpenCode</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/opencode-go/">
+                  <span>OpenCode Go 提供商</span>
+                  <small>OpenCode Go</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/openrouter/">
+                  <span>OpenRouter 提供商</span>
+                  <small>OpenRouter</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/perplexity-provider/">
+                  <span>Perplexity 提供商</span>
+                  <small>Perplexity</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/qianfan/">
+                  <span>Qianfan 提供商</span>
+                  <small>Qianfan</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/qwen/">
+                  <span>Qwen 提供商</span>
+                  <small>Qwen</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/runway/">
+                  <span>Runway 提供商</span>
+                  <small>Runway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/sglang/">
+                  <span>SGLang 提供商</span>
+                  <small>SGLang</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/stepfun/">
+                  <span>StepFun 提供商</span>
+                  <small>StepFun</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/synthetic/">
+                  <span>Synthetic 提供商</span>
+                  <small>Synthetic</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/together/">
+                  <span>Together AI 提供商</span>
+                  <small>Together AI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/venice/">
+                  <span>Venice AI 提供商</span>
+                  <small>Venice AI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/vercel-ai-gateway/">
+                  <span>Vercel AI Gateway 提供商</span>
+                  <small>Vercel AI Gateway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/vllm/">
+                  <span>vLLM 提供商</span>
+                  <small>vLLM</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/volcengine/">
+                  <span>Volcengine（Doubao）</span>
+                  <small>Volcengine (Doubao)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/vydra/">
+                  <span>Vydra 提供商</span>
+                  <small>Vydra</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/xai/">
+                  <span>xAI 提供商</span>
+                  <small>xAI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/xiaomi/">
+                  <span>Xiaomi MiMo 提供商</span>
+                  <small>Xiaomi MiMo</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/zai/">
+                  <span>Z.AI 提供商</span>
+                  <small>Z.AI</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>平台接入</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/platforms/android/">
+                  <span>Android 应用</span>
+                  <small>Android App</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/">
+                  <span>平台总览</span>
+                  <small>Platforms</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/ios/">
+                  <span>iOS 应用</span>
+                  <small>iOS App</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/linux/">
+                  <span>Linux 应用</span>
+                  <small>Linux App</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/bundled-gateway/">
+                  <span>macOS 上的网关</span>
+                  <small>Gateway on macOS</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/canvas/">
+                  <span>画布</span>
+                  <small>Canvas</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/child-process/">
+                  <span>Gateway 生命周期</span>
+                  <small>Gateway Lifecycle</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/dev-setup/">
+                  <span>macOS 开发设置</span>
+                  <small>macOS Dev Setup</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/health/">
+                  <span>健康检查（macOS）</span>
+                  <small>Health Checks (macOS)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/icon/">
+                  <span>菜单栏图标</span>
+                  <small>Menu Bar Icon</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/logging/">
+                  <span>macOS 日志</span>
+                  <small>macOS Logging</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/menu-bar/">
+                  <span>菜单栏</span>
+                  <small>Menu Bar</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/peekaboo/">
+                  <span>Peekaboo Bridge 平台</span>
+                  <small>Peekaboo Bridge</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/permissions/">
+                  <span>macOS 权限</span>
+                  <small>macOS Permissions</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/remote/">
+                  <span>远程控制</span>
+                  <small>Remote Control</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/signing/">
+                  <span>macOS Signing 平台</span>
+                  <small>macOS Signing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/skills/">
+                  <span>技能（macOS）</span>
+                  <small>Skills (macOS)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/voice-overlay/">
+                  <span>语音浮层</span>
+                  <small>Voice Overlay</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/voicewake/">
+                  <span>Voice Wake（macOS）</span>
+                  <small>Voice Wake (macOS)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/webchat/">
+                  <span>WebChat（macOS）</span>
+                  <small>WebChat (macOS)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/xpc/">
+                  <span>macOS IPC 平台</span>
+                  <small>macOS IPC</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/macos/">
+                  <span>macOS 应用</span>
+                  <small>macOS App</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/windows/">
+                  <span>Windows 平台</span>
+                  <small>Windows</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>网关</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/gateway/authentication/">
+                  <span>身份认证</span>
+                  <small>Authentication</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/background-process/">
+                  <span>后台 Exec 与进程工具</span>
+                  <small>Background Exec and Process Tool</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/bonjour/">
+                  <span>Bonjour 发现</span>
+                  <small>Bonjour Discovery</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/bridge-protocol/">
+                  <span>桥接协议</span>
+                  <small>Bridge Protocol</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/cli-backends/">
+                  <span>CLI 后端</span>
+                  <small>CLI Backends</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/configuration/">
+                  <span>配置</span>
+                  <small>Configuration</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/configuration-examples/">
+                  <span>配置示例</span>
+                  <small>Configuration Examples</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/configuration-reference/">
+                  <span>配置参考</span>
+                  <small>Configuration Reference</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/discovery/">
+                  <span>发现与传输</span>
+                  <small>Discovery and Transports</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/doctor/">
+                  <span>Doctor</span>
+                  <small>Doctor</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/gateway-lock/">
+                  <span>网关锁</span>
+                  <small>Gateway Lock</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/health/">
+                  <span>健康检查</span>
+                  <small>Health Checks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/heartbeat/">
+                  <span>Heartbeat</span>
+                  <small>Heartbeat</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/">
+                  <span>Gateway Runbook</span>
+                  <small>Gateway Runbook</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/local-models/">
+                  <span>本地模型</span>
+                  <small>Local Models</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/logging/">
+                  <span>Gateway 日志</span>
+                  <small>Gateway Logging</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/multiple-gateways/">
+                  <span>Multiple Gateways</span>
+                  <small>Multiple Gateways</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/network-model/">
+                  <span>Network model</span>
+                  <small>Network model</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/openai-http-api/">
+                  <span>OpenAI Chat Completions</span>
+                  <small>OpenAI Chat Completions</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/openresponses-http-api/">
+                  <span>OpenResponses API</span>
+                  <small>OpenResponses API</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/openshell/">
+                  <span>OpenShell</span>
+                  <small>OpenShell</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/pairing/">
+                  <span>Gateway-Owned 配对</span>
+                  <small>Gateway-Owned Pairing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/protocol/">
+                  <span>Gateway Protocol</span>
+                  <small>Gateway Protocol</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/remote/">
+                  <span>Remote Access</span>
+                  <small>Remote Access</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/remote-gateway-readme/">
+                  <span>Remote Gateway 设置</span>
+                  <small>Remote Gateway Setup</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/sandbox-vs-tool-policy-vs-elevated/">
+                  <span>沙箱 vs 工具 Policy vs Elevated</span>
+                  <small>Sandbox vs Tool Policy vs Elevated</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/sandboxing/">
+                  <span>沙箱ing</span>
+                  <small>Sandboxing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/secrets/">
+                  <span>Secrets Management</span>
+                  <small>Secrets Management</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/secrets-plan-contract/">
+                  <span>Secrets Apply Plan Contract</span>
+                  <small>Secrets Apply Plan Contract</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/security/">
+                  <span>安全</span>
+                  <small>Security</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/tailscale/">
+                  <span>Tailscale</span>
+                  <small>Tailscale</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/tools-invoke-http-api/">
+                  <span>工具 Invoke API</span>
+                  <small>Tools Invoke API</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/troubleshooting/">
+                  <span>故障排查</span>
+                  <small>Troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/trusted-proxy-auth/">
+                  <span>受信代理认证</span>
+                  <small>Trusted Proxy Auth</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>命令行</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/cli/acp/">
+                  <span>acp 命令</span>
+                  <small>acp</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/agent/">
+                  <span>agent 命令</span>
+                  <small>agent</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/agents/">
+                  <span>agents 命令</span>
+                  <small>agents</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/approvals/">
+                  <span>approvals 命令</span>
+                  <small>approvals</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/backup/">
+                  <span>backup 命令</span>
+                  <small>backup</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/browser/">
+                  <span>browser 命令</span>
+                  <small>browser</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/channels/">
+                  <span>channels 命令</span>
+                  <small>channels</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/clawbot/">
+                  <span>clawbot 命令</span>
+                  <small>clawbot</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/completion/">
+                  <span>completion 命令</span>
+                  <small>completion</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/config/">
+                  <span>config 命令</span>
+                  <small>config</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/configure/">
+                  <span>configure 命令</span>
+                  <small>configure</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/cron/">
+                  <span>cron 命令</span>
+                  <small>cron</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/daemon/">
+                  <span>daemon 命令</span>
+                  <small>daemon</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/dashboard/">
+                  <span>dashboard 命令</span>
+                  <small>dashboard</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/devices/">
+                  <span>devices 命令</span>
+                  <small>devices</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/directory/">
+                  <span>directory 命令</span>
+                  <small>directory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/dns/">
+                  <span>dns 命令</span>
+                  <small>dns</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/docs/">
+                  <span>docs 命令</span>
+                  <small>docs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/doctor/">
+                  <span>doctor 命令</span>
+                  <small>doctor</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/flows/">
+                  <span>flows（redirect）</span>
+                  <small>flows (redirect)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/gateway/">
+                  <span>gateway 命令</span>
+                  <small>gateway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/health/">
+                  <span>health 命令</span>
+                  <small>health</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/hooks/">
+                  <span>hooks 命令</span>
+                  <small>hooks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/">
+                  <span>CLI 参考</span>
+                  <small>CLI Reference</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/infer/">
+                  <span>Inference CLI 命令</span>
+                  <small>Inference CLI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/logs/">
+                  <span>logs 命令</span>
+                  <small>logs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/mcp/">
+                  <span>mcp 命令</span>
+                  <small>mcp</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/memory/">
+                  <span>memory 命令</span>
+                  <small>memory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/message/">
+                  <span>message 命令</span>
+                  <small>message</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/models/">
+                  <span>models 命令</span>
+                  <small>models</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/node/">
+                  <span>node 命令</span>
+                  <small>node</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/nodes/">
+                  <span>nodes 命令</span>
+                  <small>nodes</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/onboard/">
+                  <span>onboard 命令</span>
+                  <small>onboard</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/pairing/">
+                  <span>pairing 命令</span>
+                  <small>pairing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/plugins/">
+                  <span>plugins 命令</span>
+                  <small>plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/qr/">
+                  <span>qr 命令</span>
+                  <small>qr</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/reset/">
+                  <span>reset 命令</span>
+                  <small>reset</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/sandbox/">
+                  <span>沙箱 CLI</span>
+                  <small>Sandbox CLI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/secrets/">
+                  <span>secrets 命令</span>
+                  <small>secrets</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/security/">
+                  <span>security 命令</span>
+                  <small>security</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/sessions/">
+                  <span>sessions 命令</span>
+                  <small>sessions</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/setup/">
+                  <span>setup 命令</span>
+                  <small>setup</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/skills/">
+                  <span>skills 命令</span>
+                  <small>skills</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/status/">
+                  <span>status 命令</span>
+                  <small>status</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/system/">
+                  <span>system 命令</span>
+                  <small>system</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/tui/">
+                  <span>tui 命令</span>
+                  <small>tui</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/uninstall/">
+                  <span>uninstall 命令</span>
+                  <small>uninstall</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/update/">
+                  <span>update 命令</span>
+                  <small>update</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/voicecall/">
+                  <span>voicecall 命令</span>
+                  <small>voicecall</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/webhooks/">
+                  <span>webhooks 命令</span>
+                  <small>webhooks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/wiki/">
+                  <span>wiki 命令</span>
+                  <small>wiki</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>自动任务</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/automation/cron-jobs/">
+                  <span>Scheduled Tasks</span>
+                  <small>Scheduled Tasks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/hooks/">
+                  <span>Hooks</span>
+                  <small>Hooks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/">
+                  <span>Automation &amp; Tasks</span>
+                  <small>Automation &amp; Tasks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/standing-orders/">
+                  <span>Standing Orders</span>
+                  <small>Standing Orders</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/taskflow/">
+                  <span>Task Flow</span>
+                  <small>Task Flow</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/tasks/">
+                  <span>Background Tasks</span>
+                  <small>Background Tasks</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>Web 界面</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/web/control-ui/">
+                  <span>控制界面</span>
+                  <small>Control UI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/web/dashboard/">
+                  <span>控制台</span>
+                  <small>Dashboard</small>
+                </a>
+              
+                <a class="sidebar-link " href="/web/">
+                  <span>Web</span>
+                  <small>Web</small>
+                </a>
+              
+                <a class="sidebar-link " href="/web/webchat/">
+                  <span>WebChat</span>
+                  <small>WebChat</small>
+                </a>
+              
+                <a class="sidebar-link " href="/web/tui/">
+                  <span>TUI</span>
+                  <small>TUI</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>节点</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/nodes/audio/">
+                  <span>Audio and Voice Notes</span>
+                  <small>Audio and Voice Notes</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/camera/">
+                  <span>Camera Capture</span>
+                  <small>Camera Capture</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/images/">
+                  <span>Image and Media Support</span>
+                  <small>Image and Media Support</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/">
+                  <span>Nodes</span>
+                  <small>Nodes</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/location-command/">
+                  <span>Location Command</span>
+                  <small>Location Command</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/media-understanding/">
+                  <span>Media Understanding</span>
+                  <small>Media Understanding</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/talk/">
+                  <span>Talk 模式</span>
+                  <small>Talk Mode</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/troubleshooting/">
+                  <span>Node 故障排查</span>
+                  <small>Node Troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/voicewake/">
+                  <span>Voice Wake</span>
+                  <small>Voice Wake</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>安全</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/security/CONTRIBUTING-THREAT-MODEL/">
+                  <span>Contributing to the Threat 模式l</span>
+                  <small>Contributing to the Threat Model</small>
+                </a>
+              
+                <a class="sidebar-link " href="/security/THREAT-MODEL-ATLAS/">
+                  <span>Threat 模式l（MITRE ATLAS）</span>
+                  <small>Threat Model (MITRE ATLAS)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/security/formal-verification/">
+                  <span>形式化验证（安全模式ls）</span>
+                  <small>Formal Verification (Security Models)</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>日志</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/logging/">
+                  <span>日志概览</span>
+                  <small>Logging Overview</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>网络</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/network/">
+                  <span>Network</span>
+                  <small>Network</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>调试</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/debug/node-issue/">
+                  <span>Node + tsx Crash</span>
+                  <small>Node + tsx Crash</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>诊断</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/diagnostics/flags/">
+                  <span>Diagnostics Flags</span>
+                  <small>Diagnostics Flags</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>日期时间</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/date-time/">
+                  <span>Date and Time</span>
+                  <small>Date and Time</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>内容写作</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/prose/">
+                  <span>OpenProse 写作</span>
+                  <small>OpenProse</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>服务器部署</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/vps/">
+                  <span>Linux 服务器</span>
+                  <small>Linux Server</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>认证凭证</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/auth-credential-semantics/">
+                  <span>认证 Credential Semantics</span>
+                  <small>Auth Credential Semantics</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>树莓派</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/pi/">
+                  <span>Pi 集成架构</span>
+                  <small>Pi Integration Architecture</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>树莓派开发</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/pi-dev/">
+                  <span>Pi 开发elopment Workflow</span>
+                  <small>Pi Development Workflow</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group" open>
+              <summary>参考资料</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/reference/AGENTS.default/">
+                  <span>默认 AGENTS.md</span>
+                  <small>Default AGENTS.md</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/RELEASING/">
+                  <span>发布策略</span>
+                  <small>Release Policy</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/api-usage-costs/">
+                  <span>API 使用与成本</span>
+                  <small>API Usage and Costs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/credits/">
+                  <span>致谢</span>
+                  <small>Credits</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/device-models/">
+                  <span>设备型号数据库</span>
+                  <small>Device Model Database</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/memory-config/">
+                  <span>记忆配置参考</span>
+                  <small>Memory configuration reference</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/prompt-caching/">
+                  <span>提示缓存</span>
+                  <small>Prompt Caching</small>
+                </a>
+              
+                <a class="sidebar-link is-active" href="/reference/rich-output-protocol/">
+                  <span>Rich output protocol</span>
+                  <small>Rich output protocol</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/rpc/">
+                  <span>RPC 适配器</span>
+                  <small>RPC Adapters</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/secretref-credential-surface/">
+                  <span>SecretRef 凭证范围</span>
+                  <small>SecretRef Credential Surface</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/session-management-compaction/">
+                  <span>会话管理深入讲解</span>
+                  <small>Session Management Deep Dive</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/AGENTS/">
+                  <span>AGENTS.md 模板</span>
+                  <small>AGENTS.md Template</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/BOOT/">
+                  <span>BOOT.md 模板</span>
+                  <small>BOOT.md Template</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/BOOTSTRAP/">
+                  <span>BOOTSTRAP.md 模板</span>
+                  <small>BOOTSTRAP.md Template</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/HEARTBEAT/">
+                  <span>HEARTBEAT.md 模板</span>
+                  <small>HEARTBEAT.md Template</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/IDENTITY/">
+                  <span>IDENTITY 模板</span>
+                  <small>IDENTITY Template</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/SOUL/">
+                  <span>SOUL.md 模板</span>
+                  <small>SOUL.md Template</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/TOOLS/">
+                  <span>TOOLS.md 模板</span>
+                  <small>TOOLS.md Template</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/USER/">
+                  <span>USER 模板</span>
+                  <small>USER Template</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/test/">
+                  <span>Tests</span>
+                  <small>Tests</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/token-use/">
+                  <span>Token 使用 and Costs</span>
+                  <small>Token Use and Costs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/transcript-hygiene/">
+                  <span>Transcript Hygiene</span>
+                  <small>Transcript Hygiene</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/wizard/">
+                  <span>引导参考</span>
+                  <small>Onboarding Reference</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>帮助说明</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/help/debugging/">
+                  <span>Debugging</span>
+                  <small>Debugging</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/environment/">
+                  <span>Environment Variables</span>
+                  <small>Environment Variables</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/faq/">
+                  <span>FAQ</span>
+                  <small>FAQ</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/">
+                  <span>Help</span>
+                  <small>Help</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/scripts/">
+                  <span>Scripts</span>
+                  <small>Scripts</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/testing/">
+                  <span>测试</span>
+                  <small>Testing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/troubleshooting/">
+                  <span>常见故障排查</span>
+                  <small>General Troubleshooting</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>持续集成</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/ci/">
+                  <span>CI Pipeline</span>
+                  <small>CI Pipeline</small>
+                </a>
+              </div>
+            </details>
+          
+    </nav>
+  
+    </aside>
+
+    <main class="main">
+      <header class="hero">
+        <div class="hero-topbar">
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="打开菜单">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div class="hero-actions">
+            <a class="source-link" href="/theme-icons/">图标样例</a>
+            <a class="source-link" href="https://docs.openclaw.ai" target="_blank" rel="noreferrer">原始文档</a>
+          </div>
+        </div>
+        <p class="hero-eyebrow">Reference 导读</p>
+        <h1>Rich output protocol：把它当成字典看就不容易晕</h1>
+        <p class="hero-copy">这页更像参考字典。先别试图整页背下来，先抓住它在回答哪类具体问题、适合什么时候回来翻、哪些字段和表格是拿来当场查的。原文最想强调的那句话，可以先抓成：Rich Output Protocol。</p>
+      </header>
+
+      <div class="mobile-nav-shell" data-mobile-shell>
+        <button class="mobile-nav-backdrop" type="button" aria-label="关闭菜单" data-mobile-close></button>
+        <div id="mobile-nav" class="mobile-nav" role="dialog" aria-modal="true" aria-label="站点菜单">
+          <div class="mobile-nav-head">
+            <strong>站点菜单</strong>
+            <button class="mobile-nav-close" type="button" aria-label="关闭菜单" data-mobile-close>关闭</button>
+          </div>
+          
+    <nav class="sidebar-nav">
+      
+            <details class="sidebar-group">
+              <summary>首页</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/index/">
+                  <span>OpenClaw 首页</span>
+                  <small>OpenClaw</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>快速开始</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/start/bootstrapping/">
+                  <span>代理启动引导</span>
+                  <small>Agent Bootstrapping</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/getting-started/">
+                  <span>快速开始</span>
+                  <small>Getting Started</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/onboarding/">
+                  <span>引导（macOS App）</span>
+                  <small>Onboarding (macOS App)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/onboarding-overview/">
+                  <span>引导概览</span>
+                  <small>Onboarding Overview</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/openclaw/">
+                  <span>Personal Assistant 设置</span>
+                  <small>Personal Assistant Setup</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/showcase/">
+                  <span>Showcase 入门</span>
+                  <small>Showcase</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/wizard/">
+                  <span>引导（CLI）</span>
+                  <small>Onboarding (CLI)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/wizard-cli-automation/">
+                  <span>CLI Automation 入门</span>
+                  <small>CLI Automation</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/wizard-cli-reference/">
+                  <span>CLI 设置参考</span>
+                  <small>CLI Setup Reference</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/docs-directory/">
+                  <span>Docs directory 入门</span>
+                  <small>Docs directory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/hubs/">
+                  <span>Docs Hubs 入门</span>
+                  <small>Docs Hubs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/lore/">
+                  <span>OpenClaw Lore 入门</span>
+                  <small>OpenClaw Lore</small>
+                </a>
+              
+                <a class="sidebar-link " href="/start/setup/">
+                  <span>设置</span>
+                  <small>Setup</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>安装部署</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/install/ansible/">
+                  <span>Ansible 安装</span>
+                  <small>Ansible</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/azure/">
+                  <span>Azure 安装</span>
+                  <small>Azure</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/bun/">
+                  <span>Bun（实验版）</span>
+                  <small>Bun (Experimental)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/clawdock/">
+                  <span>ClawDock 安装</span>
+                  <small>ClawDock</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/development-channels/">
+                  <span>发布通道</span>
+                  <small>Release Channels</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/digitalocean/">
+                  <span>DigitalOcean 安装</span>
+                  <small>DigitalOcean</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/docker/">
+                  <span>Docker 安装</span>
+                  <small>Docker</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/docker-vm-runtime/">
+                  <span>Docker VM 运行时</span>
+                  <small>Docker VM Runtime</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/exe-dev/">
+                  <span>exe.dev 安装</span>
+                  <small>exe.dev</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/fly/">
+                  <span>Fly.io 安装</span>
+                  <small>Fly.io</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/gcp/">
+                  <span>GCP 安装</span>
+                  <small>GCP</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/hetzner/">
+                  <span>Hetzner 安装</span>
+                  <small>Hetzner</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/hostinger/">
+                  <span>Hostinger 安装</span>
+                  <small>Hostinger</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/">
+                  <span>安装</span>
+                  <small>Install</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/installer/">
+                  <span>安装器内部机制</span>
+                  <small>Installer Internals</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/kubernetes/">
+                  <span>Kubernetes 安装</span>
+                  <small>Kubernetes</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/macos-vm/">
+                  <span>macOS VMs 安装</span>
+                  <small>macOS VMs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/migrating/">
+                  <span>迁移指南</span>
+                  <small>Migration Guide</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/migrating-matrix/">
+                  <span>Matrix 迁移</span>
+                  <small>Matrix migration</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/nix/">
+                  <span>Nix 安装</span>
+                  <small>Nix</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/node/">
+                  <span>Node.js 安装</span>
+                  <small>Node.js</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/northflank/">
+                  <span>Northflank 安装</span>
+                  <small>Northflank</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/oracle/">
+                  <span>Oracle Cloud 安装</span>
+                  <small>Oracle Cloud</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/podman/">
+                  <span>Podman 安装</span>
+                  <small>Podman</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/railway/">
+                  <span>Railway 安装</span>
+                  <small>Railway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/raspberry-pi/">
+                  <span>Raspberry Pi 安装</span>
+                  <small>Raspberry Pi</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/render/">
+                  <span>Render 安装</span>
+                  <small>Render</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/uninstall/">
+                  <span>Uninstall 安装</span>
+                  <small>Uninstall</small>
+                </a>
+              
+                <a class="sidebar-link " href="/install/updating/">
+                  <span>Updating 安装</span>
+                  <small>Updating</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>消息通道</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/channels/bluebubbles/">
+                  <span>BlueBubbles 通道</span>
+                  <small>BlueBubbles</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/broadcast-groups/">
+                  <span>广播群组</span>
+                  <small>Broadcast Groups</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/channel-routing/">
+                  <span>通道路由</span>
+                  <small>Channel Routing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/discord/">
+                  <span>Discord 通道</span>
+                  <small>Discord</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/feishu/">
+                  <span>Feishu 通道</span>
+                  <small>Feishu</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/googlechat/">
+                  <span>Google Chat 通道</span>
+                  <small>Google Chat</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/group-messages/">
+                  <span>群组消息</span>
+                  <small>Group Messages</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/groups/">
+                  <span>群组</span>
+                  <small>Groups</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/imessage/">
+                  <span>iMessage 通道</span>
+                  <small>iMessage</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/">
+                  <span>聊天通道</span>
+                  <small>Chat Channels</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/irc/">
+                  <span>IRC 通道</span>
+                  <small>IRC</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/line/">
+                  <span>LINE 通道</span>
+                  <small>LINE</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/location/">
+                  <span>通道位置解析</span>
+                  <small>Channel Location Parsing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/matrix/">
+                  <span>Matrix 通道</span>
+                  <small>Matrix</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/mattermost/">
+                  <span>Mattermost 通道</span>
+                  <small>Mattermost</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/msteams/">
+                  <span>Microsoft Teams 通道</span>
+                  <small>Microsoft Teams</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/nextcloud-talk/">
+                  <span>Nextcloud Talk 通道</span>
+                  <small>Nextcloud Talk</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/nostr/">
+                  <span>Nostr 通道</span>
+                  <small>Nostr</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/pairing/">
+                  <span>配对</span>
+                  <small>Pairing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/qqbot/">
+                  <span>QQ Bot 通道</span>
+                  <small>QQ Bot</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/signal/">
+                  <span>Signal 通道</span>
+                  <small>Signal</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/slack/">
+                  <span>Slack 通道</span>
+                  <small>Slack</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/synology-chat/">
+                  <span>Synology Chat 通道</span>
+                  <small>Synology Chat</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/telegram/">
+                  <span>Telegram 通道</span>
+                  <small>Telegram</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/tlon/">
+                  <span>Tlon 通道</span>
+                  <small>Tlon</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/troubleshooting/">
+                  <span>通道故障排查</span>
+                  <small>Channel Troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/twitch/">
+                  <span>Twitch 通道</span>
+                  <small>Twitch</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/whatsapp/">
+                  <span>WhatsApp 通道</span>
+                  <small>WhatsApp</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/zalo/">
+                  <span>Zalo 通道</span>
+                  <small>Zalo</small>
+                </a>
+              
+                <a class="sidebar-link " href="/channels/zalouser/">
+                  <span>Zalo Personal 通道</span>
+                  <small>Zalo Personal</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>核心概念</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/concepts/active-memory/">
+                  <span>Active 记忆</span>
+                  <small>Active Memory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/agent/">
+                  <span>代理运行时</span>
+                  <small>Agent Runtime</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/agent-loop/">
+                  <span>代理循环</span>
+                  <small>Agent Loop</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/agent-workspace/">
+                  <span>代理工作区</span>
+                  <small>Agent Workspace</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/architecture/">
+                  <span>网关架构</span>
+                  <small>Gateway Architecture</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/compaction/">
+                  <span>压缩整理</span>
+                  <small>Compaction</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/context/">
+                  <span>上下文</span>
+                  <small>Context</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/context-engine/">
+                  <span>上下文 Engine</span>
+                  <small>Context Engine</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/delegate-architecture/">
+                  <span>Delegate 架构</span>
+                  <small>Delegate Architecture</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/dreaming/">
+                  <span>Dreaming</span>
+                  <small>Dreaming</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/experimental-features/">
+                  <span>实验版 Features</span>
+                  <small>Experimental Features</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/features/">
+                  <span>Features</span>
+                  <small>Features</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/memory/">
+                  <span>记忆概览</span>
+                  <small>Memory Overview</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/memory-builtin/">
+                  <span>Builtin 记忆 Engine</span>
+                  <small>Builtin Memory Engine</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/memory-honcho/">
+                  <span>Honcho 记忆</span>
+                  <small>Honcho Memory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/memory-qmd/">
+                  <span>QMD 记忆 Engine</span>
+                  <small>QMD Memory Engine</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/memory-search/">
+                  <span>记忆搜索</span>
+                  <small>Memory Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/messages/">
+                  <span>消息</span>
+                  <small>Messages</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/multi-agent/">
+                  <span>Multi-Agent Routing</span>
+                  <small>Multi-Agent Routing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/oauth/">
+                  <span>O认证</span>
+                  <small>OAuth</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/presence/">
+                  <span>Presence</span>
+                  <small>Presence</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/queue/">
+                  <span>Command Queue</span>
+                  <small>Command Queue</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/retry/">
+                  <span>Retry Policy</span>
+                  <small>Retry Policy</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/session/">
+                  <span>会话管理</span>
+                  <small>Session Management</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/session-pruning/">
+                  <span>Session Pruning</span>
+                  <small>Session Pruning</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/session-tool/">
+                  <span>Session 工具</span>
+                  <small>Session Tools</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/soul/">
+                  <span>SOUL.md Personality 指南</span>
+                  <small>SOUL.md Personality Guide</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/streaming/">
+                  <span>Streaming and Chunking</span>
+                  <small>Streaming and Chunking</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/system-prompt/">
+                  <span>System Prompt</span>
+                  <small>System Prompt</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/model-failover/">
+                  <span>模式l Failover</span>
+                  <small>Model Failover</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/model-providers/">
+                  <span>模式l 提供商s</span>
+                  <small>Model Providers</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/models/">
+                  <span>模式ls CLI</span>
+                  <small>Models CLI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/markdown-formatting/">
+                  <span>Markdown 格式</span>
+                  <small>Markdown Formatting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/timezone/">
+                  <span>Timezones</span>
+                  <small>Timezones</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/typebox/">
+                  <span>TypeBox</span>
+                  <small>TypeBox</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/typing-indicators/">
+                  <span>Typing Indicators</span>
+                  <small>Typing Indicators</small>
+                </a>
+              
+                <a class="sidebar-link " href="/concepts/usage-tracking/">
+                  <span>Usage Tracking</span>
+                  <small>Usage Tracking</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>工具大全</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/tools/">
+                  <span>工具和插件</span>
+                  <small>Tools and Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/acp-agents/">
+                  <span>ACP Agents 工具</span>
+                  <small>ACP Agents</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/agent-send/">
+                  <span>Agent Send 工具</span>
+                  <small>Agent Send</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/apply-patch/">
+                  <span>apply_patch 工具</span>
+                  <small>apply_patch Tool</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/brave-search/">
+                  <span>Brave 搜索</span>
+                  <small>Brave Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/browser/">
+                  <span>浏览器（OpenClaw 托管）</span>
+                  <small>Browser (OpenClaw-managed)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/browser-linux-troubleshooting/">
+                  <span>浏览器故障排查</span>
+                  <small>Browser Troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/browser-login/">
+                  <span>浏览器登录</span>
+                  <small>Browser Login</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/browser-wsl2-windows-remote-cdp-troubleshooting/">
+                  <span>WSL2 + Windows + remote Chrome CDP troubleshooting 工具</span>
+                  <small>WSL2 + Windows + remote Chrome CDP troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/btw/">
+                  <span>BTW 旁支问题</span>
+                  <small>BTW Side Questions</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/clawhub/">
+                  <span>ClawHub 工具</span>
+                  <small>ClawHub</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/code-execution/">
+                  <span>代码执行</span>
+                  <small>Code Execution</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/creating-skills/">
+                  <span>创建技能</span>
+                  <small>Creating Skills</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/diffs/">
+                  <span>Diffs 工具</span>
+                  <small>Diffs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/duckduckgo-search/">
+                  <span>DuckDuckGo 搜索</span>
+                  <small>DuckDuckGo Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/elevated/">
+                  <span>提权模式</span>
+                  <small>Elevated Mode</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/exa-search/">
+                  <span>Exa 搜索</span>
+                  <small>Exa Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/exec/">
+                  <span>Exec 工具</span>
+                  <small>Exec Tool</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/exec-approvals/">
+                  <span>Exec 授权审批</span>
+                  <small>Exec Approvals</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/firecrawl/">
+                  <span>Firecrawl 工具</span>
+                  <small>Firecrawl</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/gemini-search/">
+                  <span>Gemini 搜索</span>
+                  <small>Gemini Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/grok-search/">
+                  <span>Grok 搜索</span>
+                  <small>Grok Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/image-generation/">
+                  <span>Image Generation 工具</span>
+                  <small>Image Generation</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/kimi-search/">
+                  <span>Kimi 搜索</span>
+                  <small>Kimi Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/llm-task/">
+                  <span>LLM Task 工具</span>
+                  <small>LLM Task</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/lobster/">
+                  <span>Lobster 工具</span>
+                  <small>Lobster</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/loop-detection/">
+                  <span>工具-loop detection</span>
+                  <small>Tool-loop detection</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/media-overview/">
+                  <span>Media 概览</span>
+                  <small>Media Overview</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/minimax-search/">
+                  <span>MiniMax 搜索</span>
+                  <small>MiniMax Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/multi-agent-sandbox-tools/">
+                  <span>Multi-Agent 沙箱 &amp; 工具</span>
+                  <small>Multi-Agent Sandbox &amp; Tools</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/music-generation/">
+                  <span>Music Generation 工具</span>
+                  <small>Music Generation</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/ollama-search/">
+                  <span>Ollama Web 搜索</span>
+                  <small>Ollama Web Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/pdf/">
+                  <span>PDF 工具</span>
+                  <small>PDF Tool</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/perplexity-search/">
+                  <span>Perplexity 搜索</span>
+                  <small>Perplexity Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/plugin/">
+                  <span>插件</span>
+                  <small>Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/reactions/">
+                  <span>Reactions 工具</span>
+                  <small>Reactions</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/searxng-search/">
+                  <span>SearXNG 搜索</span>
+                  <small>SearXNG Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/skills/">
+                  <span>技能</span>
+                  <small>Skills</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/skills-config/">
+                  <span>技能配置</span>
+                  <small>Skills Config</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/slash-commands/">
+                  <span>Slash Commands 工具</span>
+                  <small>Slash Commands</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/subagents/">
+                  <span>Sub-Agents 工具</span>
+                  <small>Sub-Agents</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/tavily/">
+                  <span>Tavily 工具</span>
+                  <small>Tavily</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/thinking/">
+                  <span>Thinking Levels 工具</span>
+                  <small>Thinking Levels</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/video-generation/">
+                  <span>Video Generation 工具</span>
+                  <small>Video Generation</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/web/">
+                  <span>Web 搜索</span>
+                  <small>Web Search</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/web-fetch/">
+                  <span>Web Fetch 工具</span>
+                  <small>Web Fetch</small>
+                </a>
+              
+                <a class="sidebar-link " href="/tools/tts/">
+                  <span>Text-to-Speech 工具</span>
+                  <small>Text-to-Speech</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>插件扩展</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/plugins/architecture/">
+                  <span>插件内部机制</span>
+                  <small>Plugin Internals</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/building-plugins/">
+                  <span>构建插件</span>
+                  <small>Building Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/bundles/">
+                  <span>插件捆绑包</span>
+                  <small>Plugin Bundles</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/codex-harness/">
+                  <span>Codex Harness 插件</span>
+                  <small>Codex Harness</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/community/">
+                  <span>社区插件</span>
+                  <small>Community Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/manifest/">
+                  <span>插件清单</span>
+                  <small>Plugin Manifest</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/memory-wiki/">
+                  <span>记忆 Wiki</span>
+                  <small>Memory Wiki</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-agent-harness/">
+                  <span>Agent Harness 插件</span>
+                  <small>Agent Harness Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-channel-plugins/">
+                  <span>构建通道插件</span>
+                  <small>Building Channel Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-entrypoints/">
+                  <span>插件入口点</span>
+                  <small>Plugin Entry Points</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-migration/">
+                  <span>插件 SDK 迁移</span>
+                  <small>Plugin SDK Migration</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-overview/">
+                  <span>插件 SDK 概览</span>
+                  <small>Plugin SDK Overview</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-provider-plugins/">
+                  <span>构建提供商插件</span>
+                  <small>Building Provider Plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-runtime/">
+                  <span>插件运行时助手</span>
+                  <small>Plugin Runtime Helpers</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-setup/">
+                  <span>插件设置与配置</span>
+                  <small>Plugin Setup and Config</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/sdk-testing/">
+                  <span>插件测试</span>
+                  <small>Plugin Testing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/voice-call/">
+                  <span>语音通话插件</span>
+                  <small>Voice Call Plugin</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/webhooks/">
+                  <span>Webhooks 插件</span>
+                  <small>Webhooks Plugin</small>
+                </a>
+              
+                <a class="sidebar-link " href="/plugins/zalouser/">
+                  <span>Zalo Personal 插件</span>
+                  <small>Zalo Personal Plugin</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>模型提供商</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/providers/alibaba/">
+                  <span>Alibaba 模式l Studio</span>
+                  <small>Alibaba Model Studio</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/anthropic/">
+                  <span>Anthropic 提供商</span>
+                  <small>Anthropic</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/arcee/">
+                  <span>Arcee AI 提供商</span>
+                  <small>Arcee AI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/bedrock/">
+                  <span>Amazon Bedrock 提供商</span>
+                  <small>Amazon Bedrock</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/bedrock-mantle/">
+                  <span>Amazon Bedrock Mantle 提供商</span>
+                  <small>Amazon Bedrock Mantle</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/chutes/">
+                  <span>Chutes 提供商</span>
+                  <small>Chutes</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/claude-max-api-proxy/">
+                  <span>Claude Max API Proxy 提供商</span>
+                  <small>Claude Max API Proxy</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/cloudflare-ai-gateway/">
+                  <span>Cloudflare AI Gateway 提供商</span>
+                  <small>Cloudflare AI Gateway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/comfy/">
+                  <span>ComfyUI 提供商</span>
+                  <small>ComfyUI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/deepgram/">
+                  <span>Deepgram 提供商</span>
+                  <small>Deepgram</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/deepseek/">
+                  <span>DeepSeek 提供商</span>
+                  <small>DeepSeek</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/fal/">
+                  <span>fal 提供商</span>
+                  <small>fal</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/fireworks/">
+                  <span>Fireworks 提供商</span>
+                  <small>Fireworks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/github-copilot/">
+                  <span>GitHub Copilot 提供商</span>
+                  <small>GitHub Copilot</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/glm/">
+                  <span>GLM（Zhipu）</span>
+                  <small>GLM (Zhipu)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/google/">
+                  <span>Google（Gemini）</span>
+                  <small>Google (Gemini)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/groq/">
+                  <span>Groq 提供商</span>
+                  <small>Groq</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/huggingface/">
+                  <span>Hugging Face（Inference）</span>
+                  <small>Hugging Face (Inference)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/">
+                  <span>提供商目录</span>
+                  <small>Provider Directory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/inferrs/">
+                  <span>inferrs 提供商</span>
+                  <small>inferrs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/kilocode/">
+                  <span>Kilocode 提供商</span>
+                  <small>Kilocode</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/litellm/">
+                  <span>LiteLLM 提供商</span>
+                  <small>LiteLLM</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/lmstudio/">
+                  <span>LM Studio 提供商</span>
+                  <small>LM Studio</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/minimax/">
+                  <span>MiniMax 提供商</span>
+                  <small>MiniMax</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/mistral/">
+                  <span>Mistral 提供商</span>
+                  <small>Mistral</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/models/">
+                  <span>模型提供商快速开始</span>
+                  <small>Model Provider Quickstart</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/moonshot/">
+                  <span>Moonshot AI 提供商</span>
+                  <small>Moonshot AI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/nvidia/">
+                  <span>NVIDIA 提供商</span>
+                  <small>NVIDIA</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/ollama/">
+                  <span>Ollama 提供商</span>
+                  <small>Ollama</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/openai/">
+                  <span>OpenAI 提供商</span>
+                  <small>OpenAI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/opencode/">
+                  <span>OpenCode 提供商</span>
+                  <small>OpenCode</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/opencode-go/">
+                  <span>OpenCode Go 提供商</span>
+                  <small>OpenCode Go</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/openrouter/">
+                  <span>OpenRouter 提供商</span>
+                  <small>OpenRouter</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/perplexity-provider/">
+                  <span>Perplexity 提供商</span>
+                  <small>Perplexity</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/qianfan/">
+                  <span>Qianfan 提供商</span>
+                  <small>Qianfan</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/qwen/">
+                  <span>Qwen 提供商</span>
+                  <small>Qwen</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/runway/">
+                  <span>Runway 提供商</span>
+                  <small>Runway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/sglang/">
+                  <span>SGLang 提供商</span>
+                  <small>SGLang</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/stepfun/">
+                  <span>StepFun 提供商</span>
+                  <small>StepFun</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/synthetic/">
+                  <span>Synthetic 提供商</span>
+                  <small>Synthetic</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/together/">
+                  <span>Together AI 提供商</span>
+                  <small>Together AI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/venice/">
+                  <span>Venice AI 提供商</span>
+                  <small>Venice AI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/vercel-ai-gateway/">
+                  <span>Vercel AI Gateway 提供商</span>
+                  <small>Vercel AI Gateway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/vllm/">
+                  <span>vLLM 提供商</span>
+                  <small>vLLM</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/volcengine/">
+                  <span>Volcengine（Doubao）</span>
+                  <small>Volcengine (Doubao)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/vydra/">
+                  <span>Vydra 提供商</span>
+                  <small>Vydra</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/xai/">
+                  <span>xAI 提供商</span>
+                  <small>xAI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/xiaomi/">
+                  <span>Xiaomi MiMo 提供商</span>
+                  <small>Xiaomi MiMo</small>
+                </a>
+              
+                <a class="sidebar-link " href="/providers/zai/">
+                  <span>Z.AI 提供商</span>
+                  <small>Z.AI</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>平台接入</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/platforms/android/">
+                  <span>Android 应用</span>
+                  <small>Android App</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/">
+                  <span>平台总览</span>
+                  <small>Platforms</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/ios/">
+                  <span>iOS 应用</span>
+                  <small>iOS App</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/linux/">
+                  <span>Linux 应用</span>
+                  <small>Linux App</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/bundled-gateway/">
+                  <span>macOS 上的网关</span>
+                  <small>Gateway on macOS</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/canvas/">
+                  <span>画布</span>
+                  <small>Canvas</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/child-process/">
+                  <span>Gateway 生命周期</span>
+                  <small>Gateway Lifecycle</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/dev-setup/">
+                  <span>macOS 开发设置</span>
+                  <small>macOS Dev Setup</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/health/">
+                  <span>健康检查（macOS）</span>
+                  <small>Health Checks (macOS)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/icon/">
+                  <span>菜单栏图标</span>
+                  <small>Menu Bar Icon</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/logging/">
+                  <span>macOS 日志</span>
+                  <small>macOS Logging</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/menu-bar/">
+                  <span>菜单栏</span>
+                  <small>Menu Bar</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/peekaboo/">
+                  <span>Peekaboo Bridge 平台</span>
+                  <small>Peekaboo Bridge</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/permissions/">
+                  <span>macOS 权限</span>
+                  <small>macOS Permissions</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/remote/">
+                  <span>远程控制</span>
+                  <small>Remote Control</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/signing/">
+                  <span>macOS Signing 平台</span>
+                  <small>macOS Signing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/skills/">
+                  <span>技能（macOS）</span>
+                  <small>Skills (macOS)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/voice-overlay/">
+                  <span>语音浮层</span>
+                  <small>Voice Overlay</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/voicewake/">
+                  <span>Voice Wake（macOS）</span>
+                  <small>Voice Wake (macOS)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/webchat/">
+                  <span>WebChat（macOS）</span>
+                  <small>WebChat (macOS)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/mac/xpc/">
+                  <span>macOS IPC 平台</span>
+                  <small>macOS IPC</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/macos/">
+                  <span>macOS 应用</span>
+                  <small>macOS App</small>
+                </a>
+              
+                <a class="sidebar-link " href="/platforms/windows/">
+                  <span>Windows 平台</span>
+                  <small>Windows</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>网关</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/gateway/authentication/">
+                  <span>身份认证</span>
+                  <small>Authentication</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/background-process/">
+                  <span>后台 Exec 与进程工具</span>
+                  <small>Background Exec and Process Tool</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/bonjour/">
+                  <span>Bonjour 发现</span>
+                  <small>Bonjour Discovery</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/bridge-protocol/">
+                  <span>桥接协议</span>
+                  <small>Bridge Protocol</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/cli-backends/">
+                  <span>CLI 后端</span>
+                  <small>CLI Backends</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/configuration/">
+                  <span>配置</span>
+                  <small>Configuration</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/configuration-examples/">
+                  <span>配置示例</span>
+                  <small>Configuration Examples</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/configuration-reference/">
+                  <span>配置参考</span>
+                  <small>Configuration Reference</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/discovery/">
+                  <span>发现与传输</span>
+                  <small>Discovery and Transports</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/doctor/">
+                  <span>Doctor</span>
+                  <small>Doctor</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/gateway-lock/">
+                  <span>网关锁</span>
+                  <small>Gateway Lock</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/health/">
+                  <span>健康检查</span>
+                  <small>Health Checks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/heartbeat/">
+                  <span>Heartbeat</span>
+                  <small>Heartbeat</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/">
+                  <span>Gateway Runbook</span>
+                  <small>Gateway Runbook</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/local-models/">
+                  <span>本地模型</span>
+                  <small>Local Models</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/logging/">
+                  <span>Gateway 日志</span>
+                  <small>Gateway Logging</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/multiple-gateways/">
+                  <span>Multiple Gateways</span>
+                  <small>Multiple Gateways</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/network-model/">
+                  <span>Network model</span>
+                  <small>Network model</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/openai-http-api/">
+                  <span>OpenAI Chat Completions</span>
+                  <small>OpenAI Chat Completions</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/openresponses-http-api/">
+                  <span>OpenResponses API</span>
+                  <small>OpenResponses API</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/openshell/">
+                  <span>OpenShell</span>
+                  <small>OpenShell</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/pairing/">
+                  <span>Gateway-Owned 配对</span>
+                  <small>Gateway-Owned Pairing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/protocol/">
+                  <span>Gateway Protocol</span>
+                  <small>Gateway Protocol</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/remote/">
+                  <span>Remote Access</span>
+                  <small>Remote Access</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/remote-gateway-readme/">
+                  <span>Remote Gateway 设置</span>
+                  <small>Remote Gateway Setup</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/sandbox-vs-tool-policy-vs-elevated/">
+                  <span>沙箱 vs 工具 Policy vs Elevated</span>
+                  <small>Sandbox vs Tool Policy vs Elevated</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/sandboxing/">
+                  <span>沙箱ing</span>
+                  <small>Sandboxing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/secrets/">
+                  <span>Secrets Management</span>
+                  <small>Secrets Management</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/secrets-plan-contract/">
+                  <span>Secrets Apply Plan Contract</span>
+                  <small>Secrets Apply Plan Contract</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/security/">
+                  <span>安全</span>
+                  <small>Security</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/tailscale/">
+                  <span>Tailscale</span>
+                  <small>Tailscale</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/tools-invoke-http-api/">
+                  <span>工具 Invoke API</span>
+                  <small>Tools Invoke API</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/troubleshooting/">
+                  <span>故障排查</span>
+                  <small>Troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/gateway/trusted-proxy-auth/">
+                  <span>受信代理认证</span>
+                  <small>Trusted Proxy Auth</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>命令行</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/cli/acp/">
+                  <span>acp 命令</span>
+                  <small>acp</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/agent/">
+                  <span>agent 命令</span>
+                  <small>agent</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/agents/">
+                  <span>agents 命令</span>
+                  <small>agents</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/approvals/">
+                  <span>approvals 命令</span>
+                  <small>approvals</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/backup/">
+                  <span>backup 命令</span>
+                  <small>backup</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/browser/">
+                  <span>browser 命令</span>
+                  <small>browser</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/channels/">
+                  <span>channels 命令</span>
+                  <small>channels</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/clawbot/">
+                  <span>clawbot 命令</span>
+                  <small>clawbot</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/completion/">
+                  <span>completion 命令</span>
+                  <small>completion</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/config/">
+                  <span>config 命令</span>
+                  <small>config</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/configure/">
+                  <span>configure 命令</span>
+                  <small>configure</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/cron/">
+                  <span>cron 命令</span>
+                  <small>cron</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/daemon/">
+                  <span>daemon 命令</span>
+                  <small>daemon</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/dashboard/">
+                  <span>dashboard 命令</span>
+                  <small>dashboard</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/devices/">
+                  <span>devices 命令</span>
+                  <small>devices</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/directory/">
+                  <span>directory 命令</span>
+                  <small>directory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/dns/">
+                  <span>dns 命令</span>
+                  <small>dns</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/docs/">
+                  <span>docs 命令</span>
+                  <small>docs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/doctor/">
+                  <span>doctor 命令</span>
+                  <small>doctor</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/flows/">
+                  <span>flows（redirect）</span>
+                  <small>flows (redirect)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/gateway/">
+                  <span>gateway 命令</span>
+                  <small>gateway</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/health/">
+                  <span>health 命令</span>
+                  <small>health</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/hooks/">
+                  <span>hooks 命令</span>
+                  <small>hooks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/">
+                  <span>CLI 参考</span>
+                  <small>CLI Reference</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/infer/">
+                  <span>Inference CLI 命令</span>
+                  <small>Inference CLI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/logs/">
+                  <span>logs 命令</span>
+                  <small>logs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/mcp/">
+                  <span>mcp 命令</span>
+                  <small>mcp</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/memory/">
+                  <span>memory 命令</span>
+                  <small>memory</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/message/">
+                  <span>message 命令</span>
+                  <small>message</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/models/">
+                  <span>models 命令</span>
+                  <small>models</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/node/">
+                  <span>node 命令</span>
+                  <small>node</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/nodes/">
+                  <span>nodes 命令</span>
+                  <small>nodes</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/onboard/">
+                  <span>onboard 命令</span>
+                  <small>onboard</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/pairing/">
+                  <span>pairing 命令</span>
+                  <small>pairing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/plugins/">
+                  <span>plugins 命令</span>
+                  <small>plugins</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/qr/">
+                  <span>qr 命令</span>
+                  <small>qr</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/reset/">
+                  <span>reset 命令</span>
+                  <small>reset</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/sandbox/">
+                  <span>沙箱 CLI</span>
+                  <small>Sandbox CLI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/secrets/">
+                  <span>secrets 命令</span>
+                  <small>secrets</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/security/">
+                  <span>security 命令</span>
+                  <small>security</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/sessions/">
+                  <span>sessions 命令</span>
+                  <small>sessions</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/setup/">
+                  <span>setup 命令</span>
+                  <small>setup</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/skills/">
+                  <span>skills 命令</span>
+                  <small>skills</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/status/">
+                  <span>status 命令</span>
+                  <small>status</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/system/">
+                  <span>system 命令</span>
+                  <small>system</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/tui/">
+                  <span>tui 命令</span>
+                  <small>tui</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/uninstall/">
+                  <span>uninstall 命令</span>
+                  <small>uninstall</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/update/">
+                  <span>update 命令</span>
+                  <small>update</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/voicecall/">
+                  <span>voicecall 命令</span>
+                  <small>voicecall</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/webhooks/">
+                  <span>webhooks 命令</span>
+                  <small>webhooks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/cli/wiki/">
+                  <span>wiki 命令</span>
+                  <small>wiki</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>自动任务</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/automation/cron-jobs/">
+                  <span>Scheduled Tasks</span>
+                  <small>Scheduled Tasks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/hooks/">
+                  <span>Hooks</span>
+                  <small>Hooks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/">
+                  <span>Automation &amp; Tasks</span>
+                  <small>Automation &amp; Tasks</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/standing-orders/">
+                  <span>Standing Orders</span>
+                  <small>Standing Orders</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/taskflow/">
+                  <span>Task Flow</span>
+                  <small>Task Flow</small>
+                </a>
+              
+                <a class="sidebar-link " href="/automation/tasks/">
+                  <span>Background Tasks</span>
+                  <small>Background Tasks</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>Web 界面</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/web/control-ui/">
+                  <span>控制界面</span>
+                  <small>Control UI</small>
+                </a>
+              
+                <a class="sidebar-link " href="/web/dashboard/">
+                  <span>控制台</span>
+                  <small>Dashboard</small>
+                </a>
+              
+                <a class="sidebar-link " href="/web/">
+                  <span>Web</span>
+                  <small>Web</small>
+                </a>
+              
+                <a class="sidebar-link " href="/web/webchat/">
+                  <span>WebChat</span>
+                  <small>WebChat</small>
+                </a>
+              
+                <a class="sidebar-link " href="/web/tui/">
+                  <span>TUI</span>
+                  <small>TUI</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>节点</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/nodes/audio/">
+                  <span>Audio and Voice Notes</span>
+                  <small>Audio and Voice Notes</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/camera/">
+                  <span>Camera Capture</span>
+                  <small>Camera Capture</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/images/">
+                  <span>Image and Media Support</span>
+                  <small>Image and Media Support</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/">
+                  <span>Nodes</span>
+                  <small>Nodes</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/location-command/">
+                  <span>Location Command</span>
+                  <small>Location Command</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/media-understanding/">
+                  <span>Media Understanding</span>
+                  <small>Media Understanding</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/talk/">
+                  <span>Talk 模式</span>
+                  <small>Talk Mode</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/troubleshooting/">
+                  <span>Node 故障排查</span>
+                  <small>Node Troubleshooting</small>
+                </a>
+              
+                <a class="sidebar-link " href="/nodes/voicewake/">
+                  <span>Voice Wake</span>
+                  <small>Voice Wake</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>安全</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/security/CONTRIBUTING-THREAT-MODEL/">
+                  <span>Contributing to the Threat 模式l</span>
+                  <small>Contributing to the Threat Model</small>
+                </a>
+              
+                <a class="sidebar-link " href="/security/THREAT-MODEL-ATLAS/">
+                  <span>Threat 模式l（MITRE ATLAS）</span>
+                  <small>Threat Model (MITRE ATLAS)</small>
+                </a>
+              
+                <a class="sidebar-link " href="/security/formal-verification/">
+                  <span>形式化验证（安全模式ls）</span>
+                  <small>Formal Verification (Security Models)</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>日志</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/logging/">
+                  <span>日志概览</span>
+                  <small>Logging Overview</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>网络</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/network/">
+                  <span>Network</span>
+                  <small>Network</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>调试</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/debug/node-issue/">
+                  <span>Node + tsx Crash</span>
+                  <small>Node + tsx Crash</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>诊断</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/diagnostics/flags/">
+                  <span>Diagnostics Flags</span>
+                  <small>Diagnostics Flags</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>日期时间</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/date-time/">
+                  <span>Date and Time</span>
+                  <small>Date and Time</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>内容写作</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/prose/">
+                  <span>OpenProse 写作</span>
+                  <small>OpenProse</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>服务器部署</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/vps/">
+                  <span>Linux 服务器</span>
+                  <small>Linux Server</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>认证凭证</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/auth-credential-semantics/">
+                  <span>认证 Credential Semantics</span>
+                  <small>Auth Credential Semantics</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>树莓派</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/pi/">
+                  <span>Pi 集成架构</span>
+                  <small>Pi Integration Architecture</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>树莓派开发</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/pi-dev/">
+                  <span>Pi 开发elopment Workflow</span>
+                  <small>Pi Development Workflow</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group" open>
+              <summary>参考资料</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/reference/AGENTS.default/">
+                  <span>默认 AGENTS.md</span>
+                  <small>Default AGENTS.md</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/RELEASING/">
+                  <span>发布策略</span>
+                  <small>Release Policy</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/api-usage-costs/">
+                  <span>API 使用与成本</span>
+                  <small>API Usage and Costs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/credits/">
+                  <span>致谢</span>
+                  <small>Credits</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/device-models/">
+                  <span>设备型号数据库</span>
+                  <small>Device Model Database</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/memory-config/">
+                  <span>记忆配置参考</span>
+                  <small>Memory configuration reference</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/prompt-caching/">
+                  <span>提示缓存</span>
+                  <small>Prompt Caching</small>
+                </a>
+              
+                <a class="sidebar-link is-active" href="/reference/rich-output-protocol/">
+                  <span>Rich output protocol</span>
+                  <small>Rich output protocol</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/rpc/">
+                  <span>RPC 适配器</span>
+                  <small>RPC Adapters</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/secretref-credential-surface/">
+                  <span>SecretRef 凭证范围</span>
+                  <small>SecretRef Credential Surface</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/session-management-compaction/">
+                  <span>会话管理深入讲解</span>
+                  <small>Session Management Deep Dive</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/AGENTS/">
+                  <span>AGENTS.md 模板</span>
+                  <small>AGENTS.md Template</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/BOOT/">
+                  <span>BOOT.md 模板</span>
+                  <small>BOOT.md Template</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/BOOTSTRAP/">
+                  <span>BOOTSTRAP.md 模板</span>
+                  <small>BOOTSTRAP.md Template</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/HEARTBEAT/">
+                  <span>HEARTBEAT.md 模板</span>
+                  <small>HEARTBEAT.md Template</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/IDENTITY/">
+                  <span>IDENTITY 模板</span>
+                  <small>IDENTITY Template</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/SOUL/">
+                  <span>SOUL.md 模板</span>
+                  <small>SOUL.md Template</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/TOOLS/">
+                  <span>TOOLS.md 模板</span>
+                  <small>TOOLS.md Template</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/templates/USER/">
+                  <span>USER 模板</span>
+                  <small>USER Template</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/test/">
+                  <span>Tests</span>
+                  <small>Tests</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/token-use/">
+                  <span>Token 使用 and Costs</span>
+                  <small>Token Use and Costs</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/transcript-hygiene/">
+                  <span>Transcript Hygiene</span>
+                  <small>Transcript Hygiene</small>
+                </a>
+              
+                <a class="sidebar-link " href="/reference/wizard/">
+                  <span>引导参考</span>
+                  <small>Onboarding Reference</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>帮助说明</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/help/debugging/">
+                  <span>Debugging</span>
+                  <small>Debugging</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/environment/">
+                  <span>Environment Variables</span>
+                  <small>Environment Variables</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/faq/">
+                  <span>FAQ</span>
+                  <small>FAQ</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/">
+                  <span>Help</span>
+                  <small>Help</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/scripts/">
+                  <span>Scripts</span>
+                  <small>Scripts</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/testing/">
+                  <span>测试</span>
+                  <small>Testing</small>
+                </a>
+              
+                <a class="sidebar-link " href="/help/troubleshooting/">
+                  <span>常见故障排查</span>
+                  <small>General Troubleshooting</small>
+                </a>
+              </div>
+            </details>
+          
+            <details class="sidebar-group">
+              <summary>持续集成</summary>
+              <div class="sidebar-links">
+                <a class="sidebar-link " href="/ci/">
+                  <span>CI Pipeline</span>
+                  <small>CI Pipeline</small>
+                </a>
+              </div>
+            </details>
+          
+    </nav>
+  
+        </div>
+      </div>
+
+      
+      <section class="section-shell">
+        <div class="overview-card">
+          <div>
+            <p class="section-kicker">AI 绘本解读版</p>
+            <h2>给消息加点料：OpenClaw的“魔法标签”</h2>
+            <p>想象一下，你给朋友发消息，不仅能打字，还能悄悄塞张照片、让语音自动播放、或者贴个动态小卡片。OpenClaw就有几枚这样的“魔法标签”，能让你的助手把话说得更漂亮。</p>
+          </div>
+          <div class="overview-meta">
+            <span>原始路径：/reference/rich-output-protocol</span>
+            <span>故事卡片：3 张</span>
+            <a href="https://docs.openclaw.ai/reference/rich-output-protocol" target="_blank" rel="noreferrer">查看官方原文</a>
+          </div>
+        </div>
+      </section>
+      
+          <section class="section-shell" id="section-1">
+            <div class="section-heading">
+              <p class="section-kicker">第 1 站</p>
+              <h2>工具箱里的几件宝贝</h2>
+              <p>助手发消息时，可以带上几个小指令，就像在信封上贴不同的邮票。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>看看助手能玩出什么花样，别只用干巴巴的文字。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>`MEDIA:` 是“附件通道”，专门用来递送文件，像塞一个包裹进信封。</li><li>`[[audio_as_voice]]` 是“语音播放条”，告诉系统“这段音频请直接当语音放出来”。</li><li>`[[reply_to_current]]` 是“回信地址条”，悄悄标记“这条消息是在回复谁”。</li><li>`[embed ...]` 是“动态卡片制作器”，专门在网页上变出会动的信息板。</li><li>这些指令各管各的，互不干扰。前三个管“怎么送”，最后一个管“网页上怎么秀”。</li></ul>
+              </div>
+              
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>助手有四枚小邮票，能让消息活起来。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-2">
+            <div class="section-heading">
+              <p class="section-kicker">第 2 站</p>
+              <h2>魔法卡片：[embed ...]</h2>
+              <p>这是助手在控制台网页里，变出漂亮卡片的唯一咒语。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>想在网页消息里插个动态图表或状态面板？就靠它。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>它只在网页版的“控制台”里生效，像专为舞台设计的灯光。</li><li>咒语很短，比如 `[embed ref=&quot;cv_123&quot; title=&quot;状态&quot; /]`。</li><li>`ref` 是卡片的“身份证号”，系统靠它找到对应的设计图。</li><li>`title` 是卡片的“门牌”，告诉别人这里展示什么。</li><li>写完后，网页上就会原地“长”出一块信息板，而不是一串枯燥的文字。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
+              <ul><li>执行 `[embed ref=&quot;cv_123&quot; title=&quot;状态&quot; /]` 时，系统会立刻去仓库里翻找编号 `cv_123` 的设计图。</li><li>找到后，就在你打字的地方，“砰”一下替换成一块标题为“状态”的互动区域。</li><li>如果编号写错了，比如 `cv_999` 不存在，那里就会留下一块空白，或者显示“图纸丢失”。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>一句 `[embed]`，网页消息里就能嵌块动态板。</p>
+              </div>
+            </div>
+          </section>
+        
+          <section class="section-shell" id="section-3">
+            <div class="section-heading">
+              <p class="section-kicker">第 3 站</p>
+              <h2>卡片在仓库里的样子</h2>
+              <p>系统把你写的 `[embed]` 咒语，转换成一张标准的“图纸”存起来。</p>
+            </div>
+            <div class="story-grid">
+              <div class="story-card">
+                <div class="story-card-label">🌟 为什么要看</div>
+                <p>看看魔法背后的真实模样，就知道它为什么能稳定工作。</p>
+              </div>
+              <div class="source-card">
+                <div class="story-card-label">🧠 这节要记住什么</div>
+                <ul><li>存进数据库的，不是一个简单的标签，而是一个结构完整的 `canvas`（画布）对象。</li><li>这张“图纸”里写明了：种类是画布、用在助手消息区、渲染方式是网页链接。</li><li>关键信息是 `viewId`（视图编号）和 `url`（网页地址），系统靠它们去加载真正的卡片。</li><li>还有 `title`（标题）和 `preferredHeight`（建议高度），告诉界面怎么摆放它。</li><li>系统只认这种 `canvas` 图纸。如果你乱写一个 `present_view` 指令，它根本看不懂，会直接忽略。</li></ul>
+              </div>
+              
+            <div class="source-card">
+              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
+              <ul><li>当你发送 `[embed ref=&quot;cv_123&quot; title=&quot;状态&quot; /]`，系统后台默默把它打包成：`{&quot;type&quot;: &quot;canvas&quot;, &quot;preview&quot;: {&quot;kind&quot;: &quot;canvas&quot;, &quot;viewId&quot;: &quot;cv_123&quot;, &quot;url&quot;: &quot;/__openclaw__/canvas/documents/cv_123/index.html&quot;, &quot;title&quot;: &quot;状态&quot; ...}}`。</li><li>这个JSON对象就是卡片的“身份证”和“地址簿”，前端拿到后，就按图索骥去 `url` 那里把真正的卡片内容拉过来展示。</li></ul>
+            </div>
+          
+              <div class="story-card">
+                <div class="story-card-label">🎈 最后记一句</div>
+                <p>`[embed]` 咒语背后，是一张标准的 canvas 图纸。</p>
+              </div>
+            </div>
+          </section>
+        
+      <section class="section-shell">
+        <div class="ad-placeholder">
+          <p>这里预留给未来的 Google AdSense 模块。</p>
+          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
+        </div>
+      </section>
+    
+
+      <footer class="page-footer">
+        <div>
+          <strong>Fivey Can Read OpenClaw</strong>
+          <p>同步时间：2026年4月16日 22:31</p>
+        </div>
+      </footer>
+    </main>
+  </div>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>
