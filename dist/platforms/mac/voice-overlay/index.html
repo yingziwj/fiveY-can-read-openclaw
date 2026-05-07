@@ -12,9 +12,11 @@
   <meta property="og:description" content="这一页讲的是 macOS 语音浮层在唤醒词和按键通话重叠时的生命周期规则。核心改动是：按键通话会“接管”唤醒词已有的文本，而不是重置它；每个捕获会话都带 token，旧 token 的回调会被丢弃。调试时先看日志中是否只有一个活跃 session token，并确认按键通话释放时一定调用了 endCapture。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/platforms/mac/voice-overlay/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
+  <meta property="og:image:alt" content="Voice Overlay 的中文故事化导读页面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Voice Overlay | Fivey Can Read OpenClaw">
   <meta name="twitter:description" content="这一页讲的是 macOS 语音浮层在唤醒词和按键通话重叠时的生命周期规则。核心改动是：按键通话会“接管”唤醒词已有的文本，而不是重置它；每个捕获会话都带 token，旧 token 的回调会被丢弃。调试时先看日志中是否只有一个活跃 session token，并确认按键通话释放时一定调用了 endCapture。">
+  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/platforms/mac/voice-overlay/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">

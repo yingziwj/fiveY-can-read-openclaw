@@ -12,9 +12,11 @@
   <meta property="og:description" content="自动回复的 LLM 调用很贵，多条消息同时进来会抢资源、超限。这个队列按会话和全局两层串行化，默认主线程并发 4、子代理 8，每个会话同一时间只跑一个 run。最容易搞错的是消息模式：steer 会打断当前 run 插入新消息，collect 把多条合并成一次回复，steer-backlog 则既插入又保留后续回复，…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/concepts/queue/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
+  <meta property="og:image:alt" content="Command Queue 的中文故事化导读页面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Command Queue | Fivey Can Read OpenClaw">
   <meta name="twitter:description" content="自动回复的 LLM 调用很贵，多条消息同时进来会抢资源、超限。这个队列按会话和全局两层串行化，默认主线程并发 4、子代理 8，每个会话同一时间只跑一个 run。最容易搞错的是消息模式：steer 会打断当前 run 插入新消息，collect 把多条合并成一次回复，steer-backlog 则既插入又保留后续回复，…">
+  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/concepts/queue/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">

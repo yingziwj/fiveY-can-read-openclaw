@@ -12,9 +12,11 @@
   <meta property="og:description" content="inferrs 不是专用 provider，而是通过 openai-completions 通用路径接入。先配好 baseUrl 和模型名，最容易踩的坑是 content 必须为字符串，需设置 compat.requiresStringContent: true。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/providers/inferrs/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
+  <meta property="og:image:alt" content="inferrs 的中文故事化导读页面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="inferrs | Fivey Can Read OpenClaw">
   <meta name="twitter:description" content="inferrs 不是专用 provider，而是通过 openai-completions 通用路径接入。先配好 baseUrl 和模型名，最容易踩的坑是 content 必须为字符串，需设置 compat.requiresStringContent: true。">
+  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/providers/inferrs/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -4324,159 +4326,205 @@
         </div>
       </div>
 
-      
-      <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>让自家模型开口说话</h2>
-            <p>inferrs 像一台本地翻译机，能让你的模型听懂 OpenAI 的话。OpenClaw 通过一扇叫 `openai-completions` 的门，就能和它握手。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/providers/inferrs</span>
-            <span>故事卡片：5 张</span>
-            <a href="https://docs.openclaw.ai/providers/inferrs" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>先认识一下</h2>
-              <p>inferrs 不是 OpenClaw 的专属插件，更像一个你自己搭的、会说 OpenAI 方言的后台。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道它是谁，才知道怎么用它。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>把它想象成你家客厅的翻译官，专门把本地模型的话转成 OpenAI 能懂的格式。</li><li>OpenClaw 通过一条通用通道 `openai-completions` 和它联系，就像走一条固定的快递路线。</li><li>它现在是个‘通用后台’，不是‘定制插件’，所以有些地方需要手动调一调。</li><li>别把它想得太复杂，核心就是‘本地模型 + OpenAI 接口’这个组合。</li><li>用对了，你的模型就能在 OpenClaw 的世界里跑起来。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>它是个翻译官，不是管家。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>三步，让它动起来</h2>
-              <p>启动 inferrs，检查它是否在线，然后告诉 OpenClaw 去哪里找它。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>跟着做，你的模型就能接上电。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>第一步：打开终端，敲下启动命令。这就像给翻译机插上电源，选好要用的模型（比如 Gemma 4），告诉它在家里的哪个房间（127.0.0.1:8080）待命。命令里的 `--device metal` 是说‘用上电脑里最快的硬件来干活’。</li><li>第二步：用 `curl` 命令轻轻敲两下门。先敲 `/health` 看看翻译机是不是醒着，再敲 `/v1/models` 问问它现在能翻译哪几个模型。看到正常的回复，就说明门开了，翻译机在线。</li><li>第三步：去 OpenClaw 的配置文件里，加一个新地址。就像在通讯录里新建一个联系人，名字叫 `inferrs/google/gemma-4-E2B-it`，地址就填你刚才启动的那个门牌（127.0.0.1:8080）。还要告诉 OpenClaw：‘以后默认就用这个联系人’。</li><li>这三步走完，通道就打通了。OpenClaw 发来的 OpenAI 格式请求，会送到这个地址，inferrs 翻译给本地模型，再把模型的回答翻译回去。</li><li>如果卡在哪一步，就回头看看：电源插了吗？门敲响了吗？地址写对了吗？</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`inferrs serve ...`：这条命令是点火开关。执行后，你的电脑会默默启动一个服务，在后台开始翻译工作。</li><li>`curl http://127.0.0.1:8080/health`：这是敲门声。执行后，如果返回‘OK’，你眼前的终端会显示一行成功信息，证明那扇门背后有人应答。</li><li>`curl http://127.0.0.1:8080/v1/models`：这是问‘你是谁’。执行后，终端会列出现在可用的模型清单，就像门卫递给你一份住户名单。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>插电，敲门，存地址。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>配置文件长这样</h2>
-              <p>下面是一个完整的配置例子，用的是本地 inferrs 上的 Gemma 4 模型。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>照葫芦画瓢，不容易出错。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>看，配置文件里专门给 inferrs 的 Gemma 4 模型开了一个‘房间’。</li><li>`primary: &quot;inferrs/google/gemma-4-E2B-it&quot;` 这句话是核心，意思是：‘默认就找这个房间里的这位’。</li><li>`alias: &quot;Gemma 4 (inferrs)&quot;` 是给这个房间起个外号，方便你在别的地方认出它。</li><li>整个配置的作用，就是把 OpenClaw 的‘默认呼叫路线’，指向你刚刚启动的那个本地翻译服务。</li><li>你不需要理解每一行，关键是模仿这个结构，把你自己的模型名字和地址对号入座。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`{ &quot;primary&quot;: &quot;inferrs/google/gemma-4-E2B-it&quot; }`：这行配置是‘路线选择器’。写进去之后，OpenClaw 就会自动把请求发往你指定的 inferrs 地址。</li><li>`&quot;alias&quot;: &quot;Gemma 4 (inferrs)&quot;`：这行是‘姓名贴’。它不会改变路线，只是让这个模型在日志和界面里显示一个你认得清的名字。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>模仿这个结构，换掉模型名。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>可能会卡住的地方</h2>
-              <p>inferrs 有些小脾气，提前知道能省很多事。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>绕过坑，路才顺。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>最常见的一个坑：inferrs 的聊天接口有时只认‘纯文字纸条’，不认 OpenClaw 发来的‘带格式的包裹’。</li><li>如果你看到报错说 `messages[].content` 类型不对，像‘收到了一个包裹，但我只收纸条’，那就需要打开一个开关。</li><li>在模型的配置里，加上 `compat.requiresStringContent: true`。这等于告诉 OpenClaw：‘给 inferrs 发消息时，把所有内容都打包成一张纯文字纸条再寄过去。’</li><li>另一个坑是关于‘工具’描述的。有些模型（比如 Gemma）处理不了复杂的工具定义。如果直接调用成功，但通过 OpenClaw 运行代理就失败，可以试试把 `compat.supportsTools` 设为 `false`。这等于说：‘暂时别跟它聊工具那些复杂事了。’</li><li>如果调了这些，inferrs 还是在处理大段对话时崩溃，那可能是它本身或者模型的能力上限到了。这时要么减轻对话负担，要么考虑换一个更健壮的后台或模型。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`compat.requiresStringContent: true`：这是一个‘格式转换开关’。打开它，OpenClaw 会在发送前把消息内容统一转换成纯文本字符串，避免 inferrs 拒收。</li><li>`compat.supportsTools: false`：这是一个‘功能降级开关’。打开它，OpenClaw 会暂时隐藏工具相关的复杂信息，用更简单的方式和 inferrs 对话。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>纸条格式不对？加个转换开关。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>出问题了？先看这里</h2>
-              <p>门敲不开、纸条被退回、或者翻译机突然哑火，可以按顺序排查。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>快速定位，马上解决。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>如果 `curl /v1/models` 没反应：翻译机没开机，或者你记错了门牌号。回去检查启动命令和地址。</li><li>如果报错‘纸条格式不对’：立刻去配置里加上 `requiresStringContent: true`，让 OpenClaw 重新打包。</li><li>如果直接调用成功，但 OpenClaw 代理运行失败：试试把 `supportsTools` 设为 `false`，可能是工具描述太复杂，翻译机处理不了。</li><li>如果以上都调了，翻译机还是在处理长对话时崩溃：这可能是翻译机（inferrs）或模型本身的力气不够了。试着让对话短一点、简单一点，或者换个更有劲的后台。</li><li>记住这个顺序：先保证门能敲开（服务在线），再保证纸条能递进去（格式正确），最后考虑是不是对话太重了（负载问题）。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>先查门，再查纸，最后看对话重不重。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+      <!-- handcrafted-source:providers.inferrs.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>inferrs：本地模型跑 OpenAI 兼容接口，OpenClaw 走通用通道</h2>
+      <p>inferrs 不是专用 provider，而是通过 openai-completions 通用路径接入。先配好 baseUrl 和模型名，最容易踩的坑是 content 必须为字符串，需设置 compat.requiresStringContent: true。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/providers/inferrs</span>
+      <a href="https://docs.openclaw.ai/providers/inferrs" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🔌 三步接上线：启动、敲门、登记地址</h2>
+    <p>把 inferrs 接进 OpenClaw，最小路线就是这三步。</p>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">启动和验活</div>
+    <pre><code class="language-bash">inferrs serve google/gemma-4-E2B-it \
+  --host 127.0.0.1 \
+  --port 8080 \
+  --device metal
+
+curl http://127.0.0.1:8080/health
+curl http://127.0.0.1:8080/v1/models</code></pre>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">启动 inferrs</div>
+      <p>像先把本地模型服务开起来，告诉它用哪个模型、监听哪个地址和端口。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">敲 <code>/health</code></div>
+      <p>确认服务真的醒着，不是配置写了但后台没跑。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">敲 <code>/v1/models</code></div>
+      <p>确认 OpenAI-compatible 模型列表能被读到。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">登记到 OpenClaw</div>
+      <p>然后在配置里新增 provider，把默认模型指向 <code>inferrs/google/gemma-4-E2B-it</code> 这类 model ref。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧾 配置里最关键的是 provider entry</h2>
+    <p>这份配置的意思是：OpenClaw 以后看到 <code>inferrs/google/gemma-4-E2B-it</code>，就把请求送到本地 <code>http://127.0.0.1:8080/v1</code>。</p>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">精简版配置骨架</div>
+    <pre><code class="language-json5">{
+  agents: {
+    defaults: {
+      model: { primary: "inferrs/google/gemma-4-E2B-it" },
+      models: {
+        "inferrs/google/gemma-4-E2B-it": {
+          alias: "Gemma 4 (inferrs)",
+        },
+      },
+    },
+  },
+  models: {
+    mode: "merge",
+    providers: {
+      inferrs: {
+        baseUrl: "http://127.0.0.1:8080/v1",
+        apiKey: "inferrs-local",
+        api: "openai-completions",
+        models: [{
+          id: "google/gemma-4-E2B-it",
+          name: "Gemma 4 E2B (inferrs)",
+          reasoning: false,
+          input: ["text"],
+          cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+          contextWindow: 131072,
+          maxTokens: 4096,
+          compat: { requiresStringContent: true },
+        }],
+      },
+    },
+  },
+}</code></pre>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📍</span>
+      <h2><code>baseUrl</code></h2>
+      <p>本地服务的 OpenAI-compatible <code>/v1</code> 地址。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔑</span>
+      <h2><code>apiKey</code></h2>
+      <p>本地占位 key 也要填，因为这条通用路径按 OpenAI 风格走。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🛤️</span>
+      <h2><code>api</code></h2>
+      <p><code>openai-completions</code> 说明它走的是兼容 Chat Completions 的通用路线。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧩</span>
+      <h2><code>compat</code></h2>
+      <p>本地后端不一定支持所有 OpenAI 形状，兼容开关就是用来收窄格式的。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>⚠️ 两个兼容开关最重要</h2>
+    <p>inferrs 能接通，不代表每种 OpenClaw agent turn 都能顺利跑。遇到格式或工具 schema 问题时，先看这两个开关。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>requiresStringContent</code></div>
+      <pre><code class="language-json5">compat: {
+  requiresStringContent: true,
+}</code></pre>
+      <p>如果报 <code>messages[].content</code> 类型不对，说明后端只想收纯字符串内容。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>supportsTools</code></div>
+      <pre><code class="language-json5">compat: {
+  requiresStringContent: true,
+  supportsTools: false,
+}</code></pre>
+      <p>如果小的 direct request 能过，但完整 agent turn 被工具 schema 压垮，可以先禁用工具面。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">别套 OpenAI 专属整形</div>
+      <p>自定义 <code>inferrs</code> base URL 不会注入 OpenAI 原生 reasoning、service tier、Responses store、prompt-cache hints 那些专属处理。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">问题可能在上游</div>
+      <p>如果兼容开关都调了，大 turn 仍然崩，往往是 inferrs 或模型本身限制，不一定是 OpenClaw transport 坏了。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧪 排查时同时测两层</h2>
+    <p>直接测 inferrs 和通过 OpenClaw 测，是两件事。前者证明服务能答，后者证明 OpenClaw 这条路线也能跑。</p>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">手动 smoke test</div>
+    <pre><code class="language-bash">curl http://127.0.0.1:8080/v1/chat/completions \
+  -H 'content-type: application/json' \
+  -d '{"model":"google/gemma-4-E2B-it","messages":[{"role":"user","content":"What is 2 + 2?"}],"stream":false}'
+
+openclaw infer model run \
+  --model inferrs/google/gemma-4-E2B-it \
+  --prompt "What is 2 + 2? Reply with one short sentence." \
+  --json</code></pre>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2><code>/v1/models</code> 失败</h2>
+      <p>先查服务有没有启动、host/port 是否和配置一致。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>content 类型失败</h2>
+      <p>加 <code>compat.requiresStringContent: true</code>。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>OpenClaw agent turn 失败</h2>
+      <p>试 <code>compat.supportsTools: false</code>，减少工具 schema 压力。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>大对话仍崩</h2>
+      <p>减轻 prompt 压力，或换更稳的本地后端和模型。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 inferrs 这页压成一句话</h2>
+    <p>inferrs 在 OpenClaw 里应当先当作“自托管 OpenAI-compatible 后端”来配：服务先跑通，再写 provider entry，最后用 <code>compat</code> 开关处理本地模型的格式和工具限制。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

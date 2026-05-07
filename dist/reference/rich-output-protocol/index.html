@@ -12,9 +12,11 @@
   <meta property="og:description" content="这一页定义了助手输出中携带富媒体指令的协议。最核心的是 [embed ...] 短代码，它能在 Control UI 中嵌入可渲染的卡片或视图，而 MEDIA: 只负责附件投递，不要混用。注意 [view ...] 已废弃，新输出必须用 [embed]，且只有 URL 形式的嵌入才会被渲染。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/reference/rich-output-protocol/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
+  <meta property="og:image:alt" content="Rich output protocol 的中文故事化导读页面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rich output protocol | Fivey Can Read OpenClaw">
   <meta name="twitter:description" content="这一页定义了助手输出中携带富媒体指令的协议。最核心的是 [embed ...] 短代码，它能在 Control UI 中嵌入可渲染的卡片或视图，而 MEDIA: 只负责附件投递，不要混用。注意 [view ...] 已废弃，新输出必须用 [embed]，且只有 URL 形式的嵌入才会被渲染。">
+  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/reference/rich-output-protocol/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -4324,108 +4326,131 @@
         </div>
       </div>
 
-      
-      <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>给消息加点料：OpenClaw的“魔法标签”</h2>
-            <p>想象一下，你给朋友发消息，不仅能打字，还能悄悄塞张照片、让语音自动播放、或者贴个动态小卡片。OpenClaw就有几枚这样的“魔法标签”，能让你的助手把话说得更漂亮。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/reference/rich-output-protocol</span>
-            <span>故事卡片：3 张</span>
-            <a href="https://docs.openclaw.ai/reference/rich-output-protocol" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>工具箱里的几件宝贝</h2>
-              <p>助手发消息时，可以带上几个小指令，就像在信封上贴不同的邮票。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>看看助手能玩出什么花样，别只用干巴巴的文字。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>`MEDIA:` 是“附件通道”，专门用来递送文件，像塞一个包裹进信封。</li><li>`[[audio_as_voice]]` 是“语音播放条”，告诉系统“这段音频请直接当语音放出来”。</li><li>`[[reply_to_current]]` 是“回信地址条”，悄悄标记“这条消息是在回复谁”。</li><li>`[embed ...]` 是“动态卡片制作器”，专门在网页上变出会动的信息板。</li><li>这些指令各管各的，互不干扰。前三个管“怎么送”，最后一个管“网页上怎么秀”。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>助手有四枚小邮票，能让消息活起来。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>魔法卡片：[embed ...]</h2>
-              <p>这是助手在控制台网页里，变出漂亮卡片的唯一咒语。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>想在网页消息里插个动态图表或状态面板？就靠它。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>它只在网页版的“控制台”里生效，像专为舞台设计的灯光。</li><li>咒语很短，比如 `[embed ref=&quot;cv_123&quot; title=&quot;状态&quot; /]`。</li><li>`ref` 是卡片的“身份证号”，系统靠它找到对应的设计图。</li><li>`title` 是卡片的“门牌”，告诉别人这里展示什么。</li><li>写完后，网页上就会原地“长”出一块信息板，而不是一串枯燥的文字。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>执行 `[embed ref=&quot;cv_123&quot; title=&quot;状态&quot; /]` 时，系统会立刻去仓库里翻找编号 `cv_123` 的设计图。</li><li>找到后，就在你打字的地方，“砰”一下替换成一块标题为“状态”的互动区域。</li><li>如果编号写错了，比如 `cv_999` 不存在，那里就会留下一块空白，或者显示“图纸丢失”。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>一句 `[embed]`，网页消息里就能嵌块动态板。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>卡片在仓库里的样子</h2>
-              <p>系统把你写的 `[embed]` 咒语，转换成一张标准的“图纸”存起来。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>看看魔法背后的真实模样，就知道它为什么能稳定工作。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>存进数据库的，不是一个简单的标签，而是一个结构完整的 `canvas`（画布）对象。</li><li>这张“图纸”里写明了：种类是画布、用在助手消息区、渲染方式是网页链接。</li><li>关键信息是 `viewId`（视图编号）和 `url`（网页地址），系统靠它们去加载真正的卡片。</li><li>还有 `title`（标题）和 `preferredHeight`（建议高度），告诉界面怎么摆放它。</li><li>系统只认这种 `canvas` 图纸。如果你乱写一个 `present_view` 指令，它根本看不懂，会直接忽略。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>当你发送 `[embed ref=&quot;cv_123&quot; title=&quot;状态&quot; /]`，系统后台默默把它打包成：`{&quot;type&quot;: &quot;canvas&quot;, &quot;preview&quot;: {&quot;kind&quot;: &quot;canvas&quot;, &quot;viewId&quot;: &quot;cv_123&quot;, &quot;url&quot;: &quot;/__openclaw__/canvas/documents/cv_123/index.html&quot;, &quot;title&quot;: &quot;状态&quot; ...}}`。</li><li>这个JSON对象就是卡片的“身份证”和“地址簿”，前端拿到后，就按图索骥去 `url` 那里把真正的卡片内容拉过来展示。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>`[embed]` 咒语背后，是一张标准的 canvas 图纸。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+      <!-- handcrafted-source:reference.rich-output-protocol.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>让助手输出带上富媒体：`[embed]` 是唯一入口</h2>
+      <p>这一页定义了助手输出中携带富媒体指令的协议。最核心的是 `[embed ...]` 短代码，它能在 Control UI 中嵌入可渲染的卡片或视图，而 `MEDIA:` 只负责附件投递，不要混用。注意 `[view ...]` 已废弃，新输出必须用 `[embed]`，且只有 URL 形式的嵌入才会被渲染。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 3 节，先看 Start Here</span>
+      <span>路径：/reference/rich-output-protocol</span>
+      <a href="https://docs.openclaw.ai/reference/rich-output-protocol" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🏷️ 先把四类标签分清</h2>
+    <p>它们都写在助手输出附近，但作用完全不同。分清以后，这页就很短。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">📎</span>
+      <h2><code>MEDIA:</code></h2>
+      <p>用于附件投递，像告诉客户端“这里有文件要送”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔊</span>
+      <h2><code>[[audio_as_voice]]</code></h2>
+      <p>用于音频展示提示，像说“这段音频请按语音消息处理”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">↩️</span>
+      <h2><code>[[reply_to_current]]</code></h2>
+      <p>用于回复元数据，像在信封上写“回上一条”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🖼️</span>
+      <h2><code>[embed ...]</code></h2>
+      <p>用于 Control UI 的网页 rich rendering，是这页唯一的 agent-facing rich render 语法。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧱 <code>[embed ...]</code> 只负责网页内嵌渲染</h2>
+    <p>如果你想在 Control UI 的 assistant message surface 里显示一个 URL-backed embed，就用这个短码。</p>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">自闭合写法</div>
+    <pre><code class="language-text">[embed ref="cv_123" title="Status" /]</code></pre>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>[view ...]</code> 不再是新写法</div>
+      <p>新输出不要再用 <code>[view ...]</code>。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">只渲染 URL-backed embed</div>
+      <p>使用 <code>ref="..."</code> 或 <code>url="..."</code>，让前端能找到真正要打开的页面。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">短码会从可见文字里拿掉</div>
+      <p>Web UI 会剥掉短码本身，在消息里原地渲染 embed。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">别混用</div>
+      <p><code>MEDIA:</code> 不是 embed alias。要递附件用 <code>MEDIA:</code>，要网页内嵌显示用 <code>[embed ...]</code>。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🗂 存起来以后，它会变成 <code>canvas</code> 结构</h2>
+    <p>前端最终认的不是一句短码，而是标准化后的结构化内容块。</p>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">Stored rendering shape</div>
+    <pre><code class="language-json">{
+  "type": "canvas",
+  "preview": {
+    "kind": "canvas",
+    "surface": "assistant_message",
+    "render": "url",
+    "viewId": "cv_123",
+    "url": "/__openclaw__/canvas/documents/cv_123/index.html",
+    "title": "Status",
+    "preferredHeight": 320
+  }
+}</code></pre>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>surface</code></div>
+      <p>说明这块内容放在 assistant message 里。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>render: "url"</code></div>
+      <p>说明它通过 URL 加载和渲染。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>viewId</code> 和 <code>url</code></div>
+      <p>一个像编号，一个像地址，前端靠它们找到要显示的内容。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">别写旧形状</div>
+      <p><code>present_view</code> 不被识别。存储和渲染请走 <code>canvas</code> shape。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 Rich Output Protocol 压成一句话</h2>
+    <p>富输出指令要分工明确：附件、语音和回复标签管投递元数据；Control UI 的内嵌网页展示只用 <code>[embed ...]</code>，最终存成 <code>canvas</code> 内容块。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

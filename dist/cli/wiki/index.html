@@ -12,9 +12,11 @@
   <meta property="og:description" content="先跑 openclaw wiki status 确认 vault 是否初始化、bridge 模式是否健康，再决定下一步。wiki doctor 能自动检查常见配置错误，比如 bridge 模式缺少公开 artifact 或 Obsidian CLI 未安装。常用操作包括 ingest 导入笔记、compile 编译、…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/cli/wiki/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
+  <meta property="og:image:alt" content="wiki 的中文故事化导读页面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="wiki | Fivey Can Read OpenClaw">
   <meta name="twitter:description" content="先跑 openclaw wiki status 确认 vault 是否初始化、bridge 模式是否健康，再决定下一步。wiki doctor 能自动检查常见配置错误，比如 bridge 模式缺少公开 artifact 或 Obsidian CLI 未安装。常用操作包括 ingest 导入笔记、compile 编译、…">
+  <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/cli/wiki/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -4324,304 +4326,161 @@
         </div>
       </div>
 
-      
-      <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>打开你的私人知识保险柜：openclaw wiki 到底在干嘛？</h2>
-            <p>想象你有一个装满笔记、网页摘录、随手想法的大箱子。openclaw wiki 就像给你配了一个管家，帮你把箱子里的东西整理成一本随时能查、能找矛盾、能自动更新的百科全书。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/cli/wiki</span>
-            <span>故事卡片：10 张</span>
-            <a href="https://docs.openclaw.ai/cli/wiki" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-      
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>这玩意儿是干什么的？</h2>
-              <p>openclaw wiki 是一个知识保险柜，专门存放你整理好的笔记和资料。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>你不需要记住所有东西，只需要知道怎么问它。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>它自带搜索和阅读功能，像一本能翻页的百科全书。</li><li>它知道每一条信息是从哪来的，像给每段话贴了门牌号。</li><li>它会告诉你哪些说法互相打架，哪些内容已经过时了。</li><li>它可以从另一个叫 memory 的插件里拉资料，像从隔壁仓库搬货。</li><li>如果你用 Obsidian 记笔记，它还能帮你搭桥，直接调用 Obsidian 的工具。</li></ul>
-              </div>
-              
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>openclaw wiki 是你的知识管家，不是另一个记笔记的地方。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>先看看保险柜的状态</h2>
-              <p>用 openclaw wiki status 看一眼，就知道保险柜有没有上锁、有没有坏掉。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>动手之前先检查，免得后面出问题。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>它会告诉你保险柜现在是什么模式：是初始化了，还是待机中。</li><li>它会检查桥接模式是否正常，比如隔壁仓库的门有没有打开。</li><li>它还会看 Obsidian 工具能不能用，像检查手机有没有信号。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>执行 openclaw wiki status，终端会打印出一行状态信息，比如 vault mode: bridge, health: ok。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>不知道保险柜好不好？先跑一次 status。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>给保险柜做个体检</h2>
-              <p>openclaw wiki doctor 像医生一样，帮你的知识库做全面检查。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>有些问题藏得深，不查不知道。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>它会检查桥接模式有没有开着，但隔壁仓库却是空的。</li><li>它会看保险柜的布局对不对，有没有缺文件夹。</li><li>如果你开了 Obsidian 模式，它会检查 obsidian 命令行工具装没装。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>运行 openclaw wiki doctor，如果一切正常，终端会显示 All checks passed。如果有问题，会列出具体警告。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>定期体检，知识库才不会生病。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>第一次使用：初始化</h2>
-              <p>openclaw wiki init 像给保险柜画好隔层、贴好标签。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>不初始化，后面所有功能都用不了。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>它会创建顶层索引，像目录页。</li><li>它会建好缓存目录，像临时货架。</li><li>它还会生成一些起始页面，让你马上能放东西。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>执行 openclaw wiki init，终端会提示 Created vault structure，然后你可以在文件夹里看到 .openclaw-wiki 目录。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>先用 init 铺好路，再往里放东西。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>往保险柜里放东西</h2>
-              <p>openclaw wiki ingest 像把新买的书放上书架。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知识库要不断更新才有用。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>你可以放本地文件，也可以放网页链接。</li><li>每放进去一条，它都会记录来源，像在书脊上贴标签。</li><li>如果配置了自动编译，放完后它会自动重新整理书架。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>openclaw wiki ingest ./notes/alpha.md 会把 alpha.md 里的内容导入，并在文件头部加上来源信息。</li><li>如果放网页链接，需要先开启 ingest.allowUrlIngest 配置，否则会被拦住。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>放东西时记得来源，后面查起来才安心。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>整理整个书架</h2>
-              <p>openclaw wiki compile 像把散落的纸片重新装订成册。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>内容多了会乱，compile 让一切井井有条。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>它会重建所有索引，像重新编目录。</li><li>它会生成摘要文件，存在 .openclaw-wiki/cache/ 里。</li><li>如果开启了仪表盘功能，它还会刷新报告页面。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>运行 openclaw wiki compile，终端会显示 Rebuilding indexes... 然后生成 agent-digest.json 和 claims.jsonl。</li><li>这些文件是给机器看的，不要手动改。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>每次大改动后，记得 compile 一次。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>从本地文件夹搬货</h2>
-              <p>openclaw wiki unsafe-local import 像从隔壁房间直接搬箱子过来。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>有时候你需要导入不在标准位置的资料。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>它只能从你明确指定的本地路径导入，防止乱搬。</li><li>这个功能是实验性的，可能不稳定。</li><li>只能在同一个机器上用，不能跨网络。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>需要先在配置里设置 unsafe-local 允许的路径，然后执行 openclaw wiki unsafe-local import /some/path。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>unsafe-local 是快捷通道，但小心使用。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>和 Obsidian 手拉手</h2>
-              <p>openclaw wiki obsidian 像给你的保险柜装了个对讲机，直接呼叫 Obsidian。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>如果你用 Obsidian 记笔记，这个功能让你不用来回切换。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>可以查状态、搜内容、打开笔记、执行命令、创建每日笔记。</li><li>需要 obsidian 命令行工具在系统路径里。</li><li>如果开启了 obsidian.useOfficialCli，它就会用官方工具。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>openclaw wiki obsidian status 会显示 Obsidian 是否连接。</li><li>openclaw wiki obsidian search &quot;alpha&quot; 会返回 Obsidian 里的搜索结果。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>Obsidian 用户，这个对讲机很值。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-9">
-            <div class="section-heading">
-              <p class="section-kicker">第 9 站</p>
-              <h2>日常使用小贴士</h2>
-              <p>这些命令帮你更聪明地使用知识库。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>工具不用就浪费了。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>用 wiki search + wiki get 查资料，能看到来源和页面身份。</li><li>用 wiki apply 修改自动生成的内容，不要手写，否则下次编译会被覆盖。</li><li>用 wiki lint 检查内容有没有矛盾或低置信度。</li><li>批量导入或改完内容后，用 wiki compile 刷新所有摘要。</li><li>如果用了桥接模式，用 wiki bridge import 拉取最新的记忆。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>openclaw wiki search &quot;alpha&quot; 搜索包含 alpha 的内容。</li><li>openclaw wiki get entity.alpha --from 1 --lines 80 获取 entity.alpha 的第1到80行。</li><li>openclaw wiki apply synthesis &quot;Alpha Summary&quot; --body &quot;Short synthesis body&quot; --source-id source.alpha 创建一个摘要。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>search + get 是你的日常查询组合，apply 和 lint 是质量控制工具。</p>
-              </div>
-            </div>
-          </section>
-        
-          <section class="section-shell" id="section-10">
-            <div class="section-heading">
-              <p class="section-kicker">第 10 站</p>
-              <h2>怎么调教这个保险柜</h2>
-              <p>openclaw wiki 的行为由几个配置控制。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>想让它按你的习惯工作，就得调配置。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>vaultMode 决定保险柜是独立运行还是桥接模式。</li><li>search.backend 和 search.corpus 决定搜索用哪个引擎和哪些内容。</li><li>bridge.* 控制桥接的细节，比如从哪个仓库搬货。</li><li>obsidian.* 控制 Obsidian 集成。</li><li>render.* 控制是否生成仪表盘等报告。</li></ul>
-              </div>
-              
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>配置在 plugins.entries.memory-wiki.config 下，具体参考 Memory Wiki 插件文档。</li></ul>
-            </div>
-          
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>配置是方向盘，调好了才能开得顺手。</p>
-              </div>
-            </div>
-          </section>
-        
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
-    
+      <!-- handcrafted-source:cli.wiki.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>用 openclaw wiki 管理你的知识库：查状态、修问题、搜内容</h2>
+      <p>先跑 `openclaw wiki status` 确认 vault 是否初始化、bridge 模式是否健康，再决定下一步。`wiki doctor` 能自动检查常见配置错误，比如 bridge 模式缺少公开 artifact 或 Obsidian CLI 未安装。常用操作包括 ingest 导入笔记、compile 编译、search 搜索、get 读取实体，以及 apply synthesis 创建综合摘要。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 17 节，先看 Start Here</span>
+      <span>路径：/cli/wiki</span>
+      <a href="https://docs.openclaw.ai/cli/wiki" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧭 先记住 4 个日常动作</h2>
+    <p>这页命令很多，但可以先分成四组：检查、放入、整理、查询。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🩺</span>
+      <h2><code>status</code> / <code>doctor</code></h2>
+      <p>一个看当前状态，一个做更完整的体检。刚接触时先跑它们。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📥</span>
+      <h2><code>init</code> / <code>ingest</code></h2>
+      <p><code>init</code> 搭好 vault 架子，<code>ingest</code> 把文件或 URL 放进来源层。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧱</span>
+      <h2><code>compile</code> / <code>lint</code></h2>
+      <p><code>compile</code> 重建索引和摘要，<code>lint</code> 报告矛盾、过期和低置信内容。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔎</span>
+      <h2><code>search</code> / <code>get</code></h2>
+      <p>先搜到候选，再按页面 id 或路径精读具体内容。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🛠 一组命令看完整工作流</h2>
+    <p>这组命令像从“空书架”到“能查资料”的一条小路线。</p>
+  </div>
+  <div class="source-card">
+    <div class="story-card-label">常用命令清单</div>
+    <pre><code class="language-bash">openclaw wiki status
+openclaw wiki doctor
+openclaw wiki init
+openclaw wiki ingest ./notes/alpha.md
+openclaw wiki compile
+openclaw wiki lint
+openclaw wiki search "alpha"
+openclaw wiki get entity.alpha --from 1 --lines 80</code></pre>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">先检查</div>
+      <p><code>status</code> 像看仪表盘，<code>doctor</code> 像打开机盖检查哪里松了。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">再导入</div>
+      <p><code>ingest</code> 会保留来源信息。以后你看到一句结论，能知道它从哪里来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">再编译</div>
+      <p><code>compile</code> 会刷新索引、相关块、dashboard 和给机器看的 digest。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">最后查和读</div>
+      <p><code>search</code> 负责找候选，<code>get</code> 负责把某一页按行读出来，适合 agent 精确引用。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>✍️ <code>wiki apply</code> 是“别乱改管理区”的安全笔</h2>
+    <p>这页特别提醒：wiki 里有些内容是被管理的，直接手写容易被下次编译覆盖。<code>wiki apply</code> 就是更窄、更安全的修改入口。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">写一页 synthesis</div>
+      <pre><code class="language-bash">openclaw wiki apply synthesis "Alpha Summary" \
+  --body "Short synthesis body" \
+  --source-id source.alpha</code></pre>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">更新 metadata</div>
+      <pre><code class="language-bash">openclaw wiki apply metadata entity.alpha \
+  --source-id source.alpha \
+  --status review \
+  --question "Still active?"</code></pre>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">它适合做什么</div>
+      <p>创建或更新 synthesis、补 source id、加问题、加矛盾、改 confidence 和 status。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">为什么要这样</div>
+      <p>像只给你一支细笔，让你改该改的字段，而不是把整本书拆开重写。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🔌 桥接和 Obsidian 是两条外接路线</h2>
+    <p>wiki 不一定孤零零运行。它可以从 Active Memory 的公开产物导入，也可以借 Obsidian CLI 帮你搜和打开笔记。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🌉</span>
+      <h2><code>wiki bridge import</code></h2>
+      <p>在 bridge 模式下，把 active memory 插件导出的公开 memory artifacts 拉进 wiki。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📂</span>
+      <h2><code>unsafe-local import</code></h2>
+      <p>只从明确允许的本地路径导入。名字里带 unsafe，是提醒你别把范围放太大。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🪨</span>
+      <h2><code>wiki obsidian ...</code></h2>
+      <p>可以查状态、搜内容、打开笔记、执行 Obsidian 命令、创建 daily note。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⚙️</span>
+      <h2>配置项</h2>
+      <p><code>vaultMode</code>、<code>search.backend</code>、<code>bridge.*</code>、<code>obsidian.*</code> 会决定这些路线怎么跑。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>🎈 把 <code>openclaw wiki</code> 压成一句话</h2>
+    <p><code>openclaw wiki</code> 是 memory-wiki vault 的维护工具：先检查，再导入，再编译，再 lint，最后用 search 和 get 把有来源的知识读出来。</p>
+  </div>
+  <div class="ad-placeholder">
+    <p>相关页可以接着看 <code>/plugins/memory-wiki</code>、<code>/concepts/memory</code> 和 <code>/cli/memory</code>。这三页分别讲插件本体、记忆概念和普通 memory CLI。</p>
+  </div>
+</section>
+
 
       <footer class="page-footer">
         <div>

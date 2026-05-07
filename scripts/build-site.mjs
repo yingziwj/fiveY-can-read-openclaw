@@ -128,6 +128,7 @@ const handcraftedPageMap = new Map([
   ["/cli/gateway", path.resolve("content/handcrafted/cli.gateway.zh.html")],
   ["/cli/health", path.resolve("content/handcrafted/cli.health.zh.html")],
   ["/cli/hooks", path.resolve("content/handcrafted/cli.hooks.zh.html")],
+  ["/cli/infer", path.resolve("content/handcrafted/cli.infer.zh.html")],
   ["/cli/index", path.resolve("content/handcrafted/cli.index.zh.html")],
   ["/cli/mcp", path.resolve("content/handcrafted/cli.mcp.zh.html")],
   ["/cli/memory", path.resolve("content/handcrafted/cli.memory.zh.html")],
@@ -153,6 +154,7 @@ const handcraftedPageMap = new Map([
   ["/cli/uninstall", path.resolve("content/handcrafted/cli.uninstall.zh.html")],
   ["/cli/voicecall", path.resolve("content/handcrafted/cli.voicecall.zh.html")],
   ["/cli/webhooks", path.resolve("content/handcrafted/cli.webhooks.zh.html")],
+  ["/cli/wiki", path.resolve("content/handcrafted/cli.wiki.zh.html")],
   ["/cli/logs", path.resolve("content/handcrafted/cli.logs.zh.html")],
   ["/cli/doctor", path.resolve("content/handcrafted/cli.doctor.zh.html")],
   ["/start/docs-directory", path.resolve("content/handcrafted/start.docs-directory.zh.html")],
@@ -276,6 +278,7 @@ const handcraftedPageMap = new Map([
   ["/concepts/compaction", path.resolve("content/handcrafted/concepts.compaction.zh.html")],
   ["/concepts/context", path.resolve("content/handcrafted/concepts.context.zh.html")],
   ["/concepts/context-engine", path.resolve("content/handcrafted/concepts.context-engine.zh.html")],
+  ["/concepts/active-memory", path.resolve("content/handcrafted/concepts.active-memory.zh.html")],
   ["/concepts/delegate-architecture", path.resolve("content/handcrafted/concepts.delegate-architecture.zh.html")],
   ["/concepts/dreaming", path.resolve("content/handcrafted/concepts.dreaming.zh.html")],
   ["/concepts/messages", path.resolve("content/handcrafted/concepts.messages.zh.html")],
@@ -355,6 +358,7 @@ const handcraftedPageMap = new Map([
   ["/providers/github-copilot", path.resolve("content/handcrafted/providers.github-copilot.zh.html")],
   ["/providers/groq", path.resolve("content/handcrafted/providers.groq.zh.html")],
   ["/providers/huggingface", path.resolve("content/handcrafted/providers.huggingface.zh.html")],
+  ["/providers/inferrs", path.resolve("content/handcrafted/providers.inferrs.zh.html")],
   ["/providers/index", path.resolve("content/handcrafted/providers.index.zh.html")],
   ["/providers/kilocode", path.resolve("content/handcrafted/providers.kilocode.zh.html")],
   ["/providers/litellm", path.resolve("content/handcrafted/providers.litellm.zh.html")],
@@ -392,6 +396,7 @@ const handcraftedPageMap = new Map([
   ["/reference/device-models", path.resolve("content/handcrafted/reference.device-models.zh.html")],
   ["/reference/memory-config", path.resolve("content/handcrafted/reference.memory-config.zh.html")],
   ["/reference/prompt-caching", path.resolve("content/handcrafted/reference.prompt-caching.zh.html")],
+  ["/reference/rich-output-protocol", path.resolve("content/handcrafted/reference.rich-output-protocol.zh.html")],
   ["/reference/rpc", path.resolve("content/handcrafted/reference.rpc.zh.html")],
   ["/reference/secretref-credential-surface", path.resolve("content/handcrafted/reference.secretref-credential-surface.zh.html")],
   ["/reference/session-management-compaction", path.resolve("content/handcrafted/reference.session-management-compaction.zh.html")],
@@ -840,9 +845,11 @@ function renderPageLayout({ title, description, pathname, heroEyebrow, heroTitle
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:url" content="${escapeHtml(canonical)}">
   <meta property="og:image" content="${escapeHtml(`${SITE_URL}/og-image.svg`)}">
+  <meta property="og:image:alt" content="${escapeHtml(`${title} 的中文故事化导读页面`)}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(pageTitle)}">
   <meta name="twitter:description" content="${escapeHtml(description)}">
+  <meta name="twitter:image" content="${escapeHtml(`${SITE_URL}/og-image.svg`)}">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="${escapeHtml(canonical)}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -1996,6 +2003,7 @@ for (const page of siteData.pages) {
 
 const sitemapEntries = [
   "/",
+  "/theme-icons/",
   ...siteData.pages.map((page) => publicPathname(page.pathname))
 ]
   .map((pathname) => {
