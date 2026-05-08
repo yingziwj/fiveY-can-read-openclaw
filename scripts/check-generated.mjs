@@ -1,9 +1,8 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { DATA_PATH, DIST_DIR } from "./site-lib.mjs";
+import { HANDCRAFTED_DIR, handcraftedPages } from "./handcrafted-pages.mjs";
 
-const HANDCRAFTED_DIR = path.resolve("content/handcrafted");
-const BUILD_SCRIPT_PATH = path.resolve("scripts/build-site.mjs");
 
 function pageOutputPath(pathname) {
   if (!pathname || pathname === "/") {
@@ -25,18 +24,12 @@ function duplicates(values) {
   return Array.from(repeated).sort();
 }
 
-function parseHandcraftedPageMap(source) {
-  const entryPattern = /\["([^"]+)", path\.resolve\("content\/handcrafted\/([^"]+)"\)\]/g;
-  return Array.from(source.matchAll(entryPattern), (match) => ({
-    pathname: match[1],
-    fileName: match[2],
-    filePath: path.resolve("content/handcrafted", match[2])
-  }));
-}
-
 async function assertHandcraftedWiring() {
-  const buildScript = await fs.readFile(BUILD_SCRIPT_PATH, "utf8");
-  const mapEntries = parseHandcraftedPageMap(buildScript);
+  const mapEntries = handcraftedPages.map(([pathname, fileName]) => ({
+    pathname,
+    fileName,
+    filePath: path.join(HANDCRAFTED_DIR, fileName)
+  }));
   const handcraftedFiles = (await fs.readdir(HANDCRAFTED_DIR))
     .filter((fileName) => fileName.endsWith(".zh.html"))
     .sort();
@@ -52,19 +45,19 @@ async function assertHandcraftedWiring() {
 
   const errors = [];
   if (!mapEntries.length) {
-    errors.push("No handcraftedPageMap entries were found in scripts/build-site.mjs.");
+    errors.push("No handcrafted page entries were found in scripts/handcrafted-pages.mjs.");
   }
   if (missingMapEntries.length) {
-    errors.push(`Handcrafted files missing from handcraftedPageMap:\n${missingMapEntries.map((fileName) => `- ${fileName}`).join("\n")}`);
+    errors.push(`Handcrafted files missing from handcrafted page manifest:\n${missingMapEntries.map((fileName) => `- ${fileName}`).join("\n")}`);
   }
   if (missingFiles.length) {
-    errors.push(`handcraftedPageMap points to missing files:\n${missingFiles.map((item) => `- ${item}`).join("\n")}`);
+    errors.push(`handcrafted page manifest points to missing files:\n${missingFiles.map((item) => `- ${item}`).join("\n")}`);
   }
   if (duplicateRoutes.length) {
     errors.push(`Duplicate handcrafted routes:\n${duplicateRoutes.map((route) => `- ${route}`).join("\n")}`);
   }
   if (duplicateFiles.length) {
-    errors.push(`Duplicate handcrafted files in handcraftedPageMap:\n${duplicateFiles.map((fileName) => `- ${fileName}`).join("\n")}`);
+    errors.push(`Duplicate handcrafted files in handcrafted page manifest:\n${duplicateFiles.map((fileName) => `- ${fileName}`).join("\n")}`);
   }
 
   if (errors.length) {
