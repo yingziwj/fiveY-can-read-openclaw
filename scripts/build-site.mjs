@@ -2,14 +2,11 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import {
   DATA_PATH,
-  DOCS_SOURCE_URL,
   DIST_DIR,
-  RAW_DOC_PATH,
   SITE_NAME,
   SITE_URL,
   buildDocHeroText,
   buildDocHeroTitle,
-  buildSiteData,
   ensureDir,
   escapeHtml,
   excerpt,
@@ -22,31 +19,18 @@ import {
   storyForParagraph,
   storyLead,
   translateMenuTitle,
-  translateSectionLabel,
-  writeJson
+  translateSectionLabel
 } from "./site-lib.mjs";
 import { handcraftedPageMap } from "./handcrafted-pages.mjs";
 
 async function loadSiteData() {
   try {
     return await readJson(DATA_PATH);
-  } catch {
-    const response = await fetch(DOCS_SOURCE_URL, {
-      headers: {
-        "user-agent": "fivey-can-read-openclaw-build/0.1"
-      }
-    });
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch ${DOCS_SOURCE_URL}: ${response.status} ${response.statusText}`);
-    }
-
-    const raw = await response.text();
-    const liveSiteData = buildSiteData(raw);
-    await ensureDir(path.dirname(RAW_DOC_PATH));
-    await fs.writeFile(RAW_DOC_PATH, raw, "utf8");
-    await writeJson(DATA_PATH, liveSiteData);
-    return liveSiteData;
+  } catch (error) {
+    throw new Error(
+      `Missing generated site data at ${DATA_PATH}. Run npm run sync before npm run build.`,
+      { cause: error }
+    );
   }
 }
 

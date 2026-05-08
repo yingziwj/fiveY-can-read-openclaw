@@ -5,16 +5,18 @@
 站点采用“零框架静态生成”方案：
 - `npm run sync` 会抓取 `https://docs.openclaw.ai/llms-full.txt`，解析出导航顺序、章节和原文内容。
 - `npm run build` 会把这些数据渲染为故事化静态页面，输出到 `dist/`。
-- 如果构建时本地还没有同步数据，`npm run build` 也会自动兜底抓取一次，方便 Cloudflare Pages 直接构建。
+- 如果需要从线上文档重新同步后再构建，使用 `npm run build:fresh`。
 - 默认品牌主题已经定为 `concept-balloon-book.svg`，并会同步生成 `og-image.svg` 作为社交分享图。
 
 ## 本地流程
 
-1. 安装依赖：`npm install`。当前项目没有第三方依赖，这一步主要用于保持 CI/Cloudflare 流程一致。
+1. 安装依赖：`npm ci`。当前项目没有第三方依赖，这一步主要用于保持 CI/Cloudflare 流程一致。
 2. 同步内容：`npm run sync`。
 3. 构建输出：`npm run build`。
 4. 本地预览：`npm run dev`，默认打开 `http://localhost:4173`。
 5. 快速校验生成物：`npm run check`。
+
+如果想把同步和构建合成一步，可以运行 `npm run build:fresh`。默认 `npm run build` 只读取本地 `generated/site-data.json`，避免构建阶段悄悄联网或改写同步数据。
 
 ## 同步与构建说明
 
@@ -32,7 +34,7 @@
 ## Cloudflare Pages 部署
 
 1. 使用 `yingziwj/fivey-can-read-openclaw` 仓库创建 Cloudflare Pages 项目，选择 `main`（或主分支）作为源。
-2. 构建命令填 `npm run build`。
+2. 构建命令填 `npm run build`。如果希望 Cloudflare 每次部署都先抓取最新官方文档，可改填 `npm run build:fresh`。
 3. 输出目录设为 `dist`。
 4. 环境变量中至少保留 `CI=1`，必要时再补充（例如：`NODE_ENV=production`）。
 5. 关联自定义域 `fivey-can-read-openclaw.pages.dev`，启用 HTTPS（系统会自动完成）。
