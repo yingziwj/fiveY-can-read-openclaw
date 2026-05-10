@@ -11,6 +11,8 @@
 7. Build output directory 填 `dist`
 8. 部署完成后确认域名是 `https://fivey-can-read-openclaw.pages.dev`
 
+如果希望 Cloudflare 每次部署都先同步最新官方文档，第 6 步可以改填 `npm run build:fresh`。
+
 做完以后，本地运行：
 
 ```bash

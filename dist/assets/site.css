@@ -43,6 +43,7 @@ code, pre {
   display: grid;
   grid-template-columns: 320px minmax(0, 1fr);
   min-height: 100vh;
+  min-width: 0;
 }
 
 .sidebar {
@@ -161,6 +162,7 @@ code, pre {
 
 .main {
   padding: 28px 28px 56px;
+  min-width: 0;
 }
 
 .hero {
@@ -305,6 +307,7 @@ code, pre {
 
 .section-shell {
   margin-top: 24px;
+  min-width: 0;
 }
 
 .spotlight-card,
@@ -315,6 +318,7 @@ code, pre {
   border-radius: 30px;
   padding: 26px;
   box-shadow: var(--shadow);
+  min-width: 0;
 }
 
 .brand-overview {
@@ -471,6 +475,7 @@ code, pre {
   background: var(--card);
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
+  min-width: 0;
 }
 
 .story-card-label {
@@ -495,9 +500,25 @@ code, pre {
   margin: 14px 0 0;
   padding: 18px;
   overflow: auto;
+  max-width: 100%;
   border-radius: 22px;
   background: #2d2b45;
   color: #f7f5ff;
+}
+
+.section-heading p,
+.spotlight-card p,
+.overview-card p,
+.story-card p,
+.source-card p,
+.ad-placeholder p,
+.source-card li,
+.source-card a,
+.source-card code,
+.overview-meta span,
+.overview-meta a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .source-card code {
@@ -509,6 +530,40 @@ code, pre {
 .source-card pre code {
   padding: 0;
   background: transparent;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.source-table-scroll {
+  margin: 14px 0 0;
+  overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.source-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  color: var(--soft-ink);
+  line-height: 1.6;
+}
+
+.source-table th,
+.source-table td {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.source-table th {
+  color: var(--ink);
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.source-table-fallback {
+  overflow-wrap: anywhere;
 }
 
 .overview-meta {

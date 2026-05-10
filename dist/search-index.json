@@ -1,18 +1,18 @@
 [
   {
-    "title": "BlueBubbles",
-    "pathname": "/channels/bluebubbles",
+    "title": "Access groups",
+    "pathname": "/channels/access-groups",
     "section": "Channels",
-    "description": "BlueBubbles (macOS REST)"
+    "description": "Access groups are named sender lists you define once and reference from channel allowlists with accessGroup:<name>."
   },
   {
-    "title": "Broadcast Groups",
+    "title": "Broadcast groups",
     "pathname": "/channels/broadcast-groups",
     "section": "Channels",
-    "description": "Broadcast Groups"
+    "description": "<Note> **Status:** Experimental. Added in 2026.1.9. </Note>"
   },
   {
-    "title": "Channel Routing",
+    "title": "Channel routing",
     "pathname": "/channels/channel-routing",
     "section": "Channels",
     "description": "Channels & routing"
@@ -21,337 +21,325 @@
     "title": "Discord",
     "pathname": "/channels/discord",
     "section": "Channels",
-    "description": "Discord (Bot API)"
+    "description": "Ready for DMs and guild channels via the official Discord gateway."
   },
   {
     "title": "Feishu",
     "pathname": "/channels/feishu",
     "section": "Channels",
-    "description": "Feishu / Lark"
+    "description": "Feishu/Lark is an all-in-one collaboration platform where teams chat, share documents, manage calendars, and get work done together."
   },
   {
     "title": "Google Chat",
     "pathname": "/channels/googlechat",
     "section": "Channels",
-    "description": "Google Chat (Chat API)"
+    "description": "Status: downloadable plugin for DMs + spaces via Google Chat API webhooks (HTTP only)."
   },
   {
-    "title": "Group Messages",
+    "title": "WhatsApp group messages",
     "pathname": "/channels/group-messages",
     "section": "Channels",
-    "description": "Group messages (WhatsApp web channel)"
+    "description": "For the cross-channel groups model (Discord, iMessage, Matrix, Microsoft Teams, Signal, Slack, Telegram, WhatsApp, Zalo), see Groups. This page covers the WhatsApp-specific behavi…"
   },
   {
     "title": "Groups",
     "pathname": "/channels/groups",
     "section": "Channels",
-    "description": "Groups"
+    "description": "OpenClaw treats group chats consistently across surfaces: Discord, iMessage, Matrix, Microsoft Teams, Signal, Slack, Telegram, WhatsApp, Zalo."
   },
   {
     "title": "iMessage",
     "pathname": "/channels/imessage",
     "section": "Channels",
-    "description": "iMessage (legacy: imsg)"
+    "description": "<Note> For OpenClaw iMessage deployments, use imsg on a signed-in macOS Messages host. If your Gateway runs on Linux or Windows, point channels.imessage.cliPath at an SSH wrapper…"
   },
   {
-    "title": "Chat Channels",
+    "title": "Coming from BlueBubbles",
+    "pathname": "/channels/imessage-from-bluebubbles",
+    "section": "Channels",
+    "description": "The bundled imessage plugin now reaches the same private API surface as BlueBubbles (react, edit, unsend, reply, sendWithEffect, group management, attachments) by driving steipete…"
+  },
+  {
+    "title": "Chat channels",
     "pathname": "/channels/index",
     "section": "Channels",
-    "description": "Chat Channels"
+    "description": "OpenClaw can talk to you on any chat app you already use. Each channel connects via the Gateway. Text is supported everywhere; media and reactions vary by channel."
   },
   {
     "title": "IRC",
     "pathname": "/channels/irc",
     "section": "Channels",
-    "description": "IRC"
+    "description": "Use IRC when you want OpenClaw in classic channels (#room) and direct messages. IRC ships as a bundled plugin, but it is configured in the main config under channels.irc."
   },
   {
     "title": "LINE",
     "pathname": "/channels/line",
     "section": "Channels",
-    "description": "LINE"
+    "description": "LINE connects to OpenClaw via the LINE Messaging API. The plugin runs as a webhook receiver on the gateway and uses your channel access token + channel secret for authentication."
   },
   {
-    "title": "Channel Location Parsing",
+    "title": "Channel location parsing",
     "pathname": "/channels/location",
     "section": "Channels",
-    "description": "Channel location parsing"
+    "description": "OpenClaw normalizes shared locations from chat channels into:"
   },
   {
     "title": "Matrix",
     "pathname": "/channels/matrix",
     "section": "Channels",
-    "description": "Matrix"
+    "description": "Matrix is a downloadable channel plugin for OpenClaw. It uses the official matrix-js-sdk and supports DMs, rooms, threads, media, reactions, polls, location, and E2EE."
+  },
+  {
+    "title": "Matrix migration",
+    "pathname": "/channels/matrix-migration",
+    "section": "Channels",
+    "description": "Upgrade from the previous public matrix plugin to the current implementation."
+  },
+  {
+    "title": "Matrix presentation metadata",
+    "pathname": "/channels/matrix-presentation",
+    "section": "Channels",
+    "description": "OpenClaw can attach normalized MessagePresentation metadata to outbound Matrix m.room.message events under com.openclaw.presentation."
+  },
+  {
+    "title": "Matrix push rules for quiet previews",
+    "pathname": "/channels/matrix-push-rules",
+    "section": "Channels",
+    "description": "When channels.matrix.streaming is \"quiet\", OpenClaw edits a single preview event in place and marks the finalized edit with a custom content flag. Matrix clients notify on the fin…"
   },
   {
     "title": "Mattermost",
     "pathname": "/channels/mattermost",
     "section": "Channels",
-    "description": "Mattermost"
+    "description": "Status: downloadable plugin (bot token + WebSocket events). Channels, groups, and DMs are supported. Mattermost is a self-hostable team messaging platform; see the official site a…"
   },
   {
     "title": "Microsoft Teams",
     "pathname": "/channels/msteams",
     "section": "Channels",
-    "description": "Microsoft Teams"
+    "description": "Status: text + DM attachments are supported; channel/group file sending requires sharePointSiteId + Graph permissions (see Sending files in group chats). Polls are sent via Adapti…"
   },
   {
     "title": "Nextcloud Talk",
     "pathname": "/channels/nextcloud-talk",
     "section": "Channels",
-    "description": "Nextcloud Talk"
+    "description": "Status: bundled plugin (webhook bot). Direct messages, rooms, reactions, and markdown messages are supported."
   },
   {
     "title": "Nostr",
     "pathname": "/channels/nostr",
     "section": "Channels",
-    "description": "Nostr"
+    "description": "**Status:** Optional bundled plugin (disabled by default until configured)."
   },
   {
     "title": "Pairing",
     "pathname": "/channels/pairing",
     "section": "Channels",
-    "description": "Pairing"
+    "description": "\"Pairing\" is OpenClaw's explicit access approval step. It is used in two places:"
   },
   {
-    "title": "QQ Bot",
+    "title": "QA channel",
+    "pathname": "/channels/qa-channel",
+    "section": "Channels",
+    "description": "qa-channel is a bundled synthetic message transport for automated OpenClaw QA. It is not a production channel - it exists to exercise the same channel plugin boundary used by real…"
+  },
+  {
+    "title": "QQ bot",
     "pathname": "/channels/qqbot",
     "section": "Channels",
-    "description": "QQ Bot"
+    "description": "QQ Bot connects to OpenClaw via the official QQ Bot API (WebSocket gateway). The plugin supports C2C private chat, group @messages, and guild channel messages with rich media (ima…"
   },
   {
     "title": "Signal",
     "pathname": "/channels/signal",
     "section": "Channels",
-    "description": "Signal (signal-cli)"
+    "description": "Status: external CLI integration. Gateway talks to signal-cli over HTTP JSON-RPC + SSE."
   },
   {
     "title": "Slack",
     "pathname": "/channels/slack",
     "section": "Channels",
-    "description": "Slack"
+    "description": "Production-ready for DMs and channels via Slack app integrations. Default mode is Socket Mode; HTTP Request URLs are also supported."
   },
   {
     "title": "Synology Chat",
     "pathname": "/channels/synology-chat",
     "section": "Channels",
-    "description": "Synology Chat"
+    "description": "Status: bundled plugin direct-message channel using Synology Chat webhooks. The plugin accepts inbound messages from Synology Chat outgoing webhooks and sends replies through a Sy…"
   },
   {
     "title": "Telegram",
     "pathname": "/channels/telegram",
     "section": "Channels",
-    "description": "Telegram (Bot API)"
+    "description": "Production-ready for bot DMs and groups via grammY. Long polling is the default mode; webhook mode is optional."
   },
   {
     "title": "Tlon",
     "pathname": "/channels/tlon",
     "section": "Channels",
-    "description": "Tlon"
+    "description": "Tlon is a decentralized messenger built on Urbit. OpenClaw connects to your Urbit ship and can respond to DMs and group chat messages. Group replies require an @ mention by defaul…"
   },
   {
-    "title": "Channel Troubleshooting",
+    "title": "Channel troubleshooting",
     "pathname": "/channels/troubleshooting",
     "section": "Channels",
-    "description": "Channel troubleshooting"
+    "description": "Use this page when a channel connects but behavior is wrong."
   },
   {
     "title": "Twitch",
     "pathname": "/channels/twitch",
     "section": "Channels",
-    "description": "Twitch"
+    "description": "Twitch chat support via IRC connection. OpenClaw connects as a Twitch user (bot account) to receive and send messages in channels."
+  },
+  {
+    "title": "WeChat",
+    "pathname": "/channels/wechat",
+    "section": "Channels",
+    "description": "OpenClaw connects to WeChat through Tencent's external @tencent-weixin/openclaw-weixin channel plugin."
   },
   {
     "title": "WhatsApp",
     "pathname": "/channels/whatsapp",
     "section": "Channels",
-    "description": "WhatsApp (Web channel)"
+    "description": "Status: production-ready via WhatsApp Web (Baileys). Gateway owns linked session(s)."
+  },
+  {
+    "title": "Yuanbao",
+    "pathname": "/channels/yuanbao",
+    "section": "Channels",
+    "description": "Tencent Yuanbao is Tencent's AI assistant platform. The OpenClaw channel plugin connects Yuanbao bots to OpenClaw over WebSocket so they can interact with users through direct mes…"
   },
   {
     "title": "Zalo",
     "pathname": "/channels/zalo",
     "section": "Channels",
-    "description": "Zalo (Bot API)"
+    "description": "Status: experimental. DMs are supported. The Capabilities section below reflects current Marketplace-bot behavior."
   },
   {
-    "title": "Zalo Personal",
+    "title": "Zalo personal",
     "pathname": "/channels/zalouser",
     "section": "Channels",
-    "description": "Zalo Personal (unofficial)"
+    "description": "Status: experimental. This integration automates a **personal Zalo account** via native zca-js inside OpenClaw."
   },
   {
-    "title": "Active Memory",
-    "pathname": "/concepts/active-memory",
-    "section": "Concepts",
-    "description": "Active Memory"
-  },
-  {
-    "title": "Agent Runtime",
+    "title": "Agent runtime",
     "pathname": "/concepts/agent",
     "section": "Concepts",
-    "description": "Agent Runtime"
+    "description": "OpenClaw runs a **single embedded agent runtime** - one agent process per Gateway, with its own workspace, bootstrap files, and session store. This page covers that runtime contra…"
   },
   {
-    "title": "Agent Loop",
+    "title": "Agent loop",
     "pathname": "/concepts/agent-loop",
     "section": "Concepts",
-    "description": "Agent Loop (OpenClaw)"
+    "description": "An agentic loop is the full \"real\" run of an agent: intake → context assembly → model inference → tool execution → streaming replies → persistence. It's the authoritative path tha…"
   },
   {
-    "title": "Agent Workspace",
+    "title": "Agent runtimes",
+    "pathname": "/concepts/agent-runtimes",
+    "section": "Concepts",
+    "description": "An **agent runtime** is the component that owns one prepared model loop: it receives the prompt, drives model output, handles native tool calls, and returns the finished turn to O…"
+  },
+  {
+    "title": "Agent workspace",
     "pathname": "/concepts/agent-workspace",
     "section": "Concepts",
-    "description": "Agent workspace"
+    "description": "The workspace is the agent's home. It is the only working directory used for file tools and for workspace context. Keep it private and treat it as memory."
   },
   {
-    "title": "Gateway Architecture",
+    "title": "Gateway architecture",
     "pathname": "/concepts/architecture",
     "section": "Concepts",
-    "description": "Gateway architecture"
+    "description": "Baileys, Telegram via grammY, Slack, Discord, Signal, iMessage, WebChat)."
   },
   {
-    "title": "Compaction",
-    "pathname": "/concepts/compaction",
+    "title": "Channel docking",
+    "pathname": "/concepts/channel-docking",
     "section": "Concepts",
-    "description": "Compaction"
+    "description": "Channel docking is call forwarding for one OpenClaw session."
   },
   {
     "title": "Context",
     "pathname": "/concepts/context",
     "section": "Concepts",
-    "description": "Context"
+    "description": "\"Context\" is **everything OpenClaw sends to the model for a run**. It is bounded by the model's **context window** (token limit)."
   },
   {
-    "title": "Context Engine",
+    "title": "Context engine",
     "pathname": "/concepts/context-engine",
     "section": "Concepts",
-    "description": "Context Engine"
+    "description": "A **context engine** controls how OpenClaw builds model context for each run: which messages to include, how to summarize older history, and how to manage context across subagent…"
   },
   {
-    "title": "Delegate Architecture",
-    "pathname": "/concepts/delegate-architecture",
-    "section": "Concepts",
-    "description": "Delegate Architecture"
-  },
-  {
-    "title": "Dreaming",
-    "pathname": "/concepts/dreaming",
-    "section": "Concepts",
-    "description": "Dreaming"
-  },
-  {
-    "title": "Experimental Features",
+    "title": "Experimental features",
     "pathname": "/concepts/experimental-features",
     "section": "Concepts",
-    "description": "Experimental features"
+    "description": "Experimental features in OpenClaw are **opt-in preview surfaces**. They are behind explicit flags because they still need real-world mileage before they deserve a stable default o…"
   },
   {
     "title": "Features",
     "pathname": "/concepts/features",
     "section": "Concepts",
-    "description": "Features"
+    "description": "<Columns> <Card title=\"Channels\" icon=\"message-square\" href=\"/channels\"> Discord, iMessage, Signal, Slack, Telegram, WhatsApp, WebChat, and more with a single Gateway. </Card>"
   },
   {
-    "title": "Memory Overview",
+    "title": "Memory overview",
     "pathname": "/concepts/memory",
     "section": "Concepts",
-    "description": "Memory Overview"
+    "description": "OpenClaw remembers things by writing **plain Markdown files** in your agent's workspace. The model only \"remembers\" what gets saved to disk — there is no hidden state."
   },
   {
-    "title": "Builtin Memory Engine",
+    "title": "Builtin memory engine",
     "pathname": "/concepts/memory-builtin",
     "section": "Concepts",
-    "description": "Builtin Memory Engine"
-  },
-  {
-    "title": "Honcho Memory",
-    "pathname": "/concepts/memory-honcho",
-    "section": "Concepts",
-    "description": "Honcho Memory"
-  },
-  {
-    "title": "QMD Memory Engine",
-    "pathname": "/concepts/memory-qmd",
-    "section": "Concepts",
-    "description": "QMD Memory Engine"
-  },
-  {
-    "title": "Memory Search",
-    "pathname": "/concepts/memory-search",
-    "section": "Concepts",
-    "description": "Memory Search"
-  },
-  {
-    "title": "Messages",
-    "pathname": "/concepts/messages",
-    "section": "Concepts",
-    "description": "Messages"
-  },
-  {
-    "title": "Multi-Agent Routing",
-    "pathname": "/concepts/multi-agent",
-    "section": "Concepts",
-    "description": "Multi-Agent Routing"
+    "description": "The builtin engine is the default memory backend. It stores your memory index in a per-agent SQLite database and needs no extra dependencies to get started."
   },
   {
     "title": "OAuth",
     "pathname": "/concepts/oauth",
     "section": "Concepts",
-    "description": "OAuth"
+    "description": "OpenClaw supports \"subscription auth\" via OAuth for providers that offer it (notably **OpenAI Codex (ChatGPT OAuth)**). For Anthropic, the practical split is now:"
   },
   {
-    "title": "Presence",
-    "pathname": "/concepts/presence",
+    "title": "QA overview",
+    "pathname": "/concepts/qa-e2e-automation",
     "section": "Concepts",
-    "description": "Presence"
+    "description": "The private QA stack is meant to exercise OpenClaw in a more realistic, channel-shaped way than a single unit test can."
   },
   {
-    "title": "Command Queue",
-    "pathname": "/concepts/queue",
+    "title": "Matrix QA",
+    "pathname": "/concepts/qa-matrix",
     "section": "Concepts",
-    "description": "Command Queue (2026-01-16)"
+    "description": "The Matrix QA lane runs the bundled @openclaw/matrix plugin against a disposable Tuwunel homeserver in Docker, with temporary driver, SUT, and observer accounts plus seeded rooms.…"
   },
   {
-    "title": "Retry Policy",
-    "pathname": "/concepts/retry",
-    "section": "Concepts",
-    "description": "Retry policy"
-  },
-  {
-    "title": "Session Management",
+    "title": "Session management",
     "pathname": "/concepts/session",
     "section": "Concepts",
-    "description": "Session Management"
+    "description": "OpenClaw organizes conversations into **sessions**. Each message is routed to a session based on where it came from -- DMs, group chats, cron jobs, etc."
   },
   {
-    "title": "Session Pruning",
+    "title": "Session pruning",
     "pathname": "/concepts/session-pruning",
     "section": "Concepts",
-    "description": "Session Pruning"
+    "description": "Session pruning trims **old tool results** from the context before each LLM call. It reduces context bloat from accumulated tool outputs (exec results, file reads, search results)…"
   },
   {
-    "title": "Session Tools",
+    "title": "Session tools",
     "pathname": "/concepts/session-tool",
     "section": "Concepts",
-    "description": "Session Tools"
+    "description": "OpenClaw gives agents tools to work across sessions, inspect status, and orchestrate sub-agents."
   },
   {
-    "title": "SOUL.md Personality Guide",
+    "title": "SOUL.md personality guide",
     "pathname": "/concepts/soul",
     "section": "Concepts",
-    "description": "SOUL.md Personality Guide"
+    "description": "SOUL.md is where your agent's voice lives."
   },
   {
-    "title": "Streaming and Chunking",
-    "pathname": "/concepts/streaming",
-    "section": "Concepts",
-    "description": "Streaming + chunking"
-  },
-  {
-    "title": "System Prompt",
+    "title": "System prompt",
     "pathname": "/concepts/system-prompt",
     "section": "Concepts",
-    "description": "System Prompt"
+    "description": "OpenClaw builds a custom system prompt for every agent run. The prompt is **OpenClaw-owned** and does not use the pi-coding-agent default prompt."
   },
   {
     "title": "OpenClaw",
@@ -363,1228 +351,1978 @@
     "title": "Ansible",
     "pathname": "/install/ansible",
     "section": "Install",
-    "description": "Ansible Installation"
+    "description": "Deploy OpenClaw to production servers with **openclaw-ansible** -- an automated installer with security-first architecture."
   },
   {
     "title": "Azure",
     "pathname": "/install/azure",
     "section": "Install",
-    "description": "OpenClaw on Azure Linux VM"
+    "description": "This guide sets up an Azure Linux VM with the Azure CLI, applies Network Security Group (NSG) hardening, configures Azure Bastion for SSH access, and installs OpenClaw."
   },
   {
-    "title": "Bun (Experimental)",
+    "title": "Bun (experimental)",
     "pathname": "/install/bun",
     "section": "Install",
-    "description": "Bun (Experimental)"
+    "description": "<Warning> Bun is **not recommended for gateway runtime** (known issues with WhatsApp and Telegram). Use Node for production. </Warning>"
   },
   {
     "title": "ClawDock",
     "pathname": "/install/clawdock",
     "section": "Install",
-    "description": "ClawDock"
+    "description": "ClawDock is a small shell-helper layer for Docker-based OpenClaw installs."
   },
   {
-    "title": "Release Channels",
+    "title": "Release channels",
     "pathname": "/install/development-channels",
     "section": "Install",
-    "description": "Development channels"
+    "description": "OpenClaw ships three update channels:"
   },
   {
     "title": "DigitalOcean",
     "pathname": "/install/digitalocean",
     "section": "Install",
-    "description": "DigitalOcean"
+    "description": "Run a persistent OpenClaw Gateway on a DigitalOcean Droplet (\\~\\$6/month for the 1 GB Basic plan)."
   },
   {
     "title": "Docker",
     "pathname": "/install/docker",
     "section": "Install",
-    "description": "Docker (optional)"
+    "description": "Docker is **optional**. Use it only if you want a containerized gateway or to validate the Docker flow."
   },
   {
-    "title": "Docker VM Runtime",
+    "title": "Docker VM runtime",
     "pathname": "/install/docker-vm-runtime",
     "section": "Install",
-    "description": "Docker VM Runtime"
+    "description": "Shared runtime steps for VM-based Docker installs such as GCP, Hetzner, and similar VPS providers."
   },
   {
     "title": "exe.dev",
     "pathname": "/install/exe-dev",
     "section": "Install",
-    "description": "exe.dev"
+    "description": "Goal: OpenClaw Gateway running on an exe.dev VM, reachable from your laptop via: https://<vm-name>.exe.xyz"
   },
   {
     "title": "Fly.io",
     "pathname": "/install/fly",
     "section": "Install",
-    "description": "Fly.io Deployment"
+    "description": "**Goal:** OpenClaw Gateway running on a Fly.io machine with persistent storage, automatic HTTPS, and Discord/channel access."
   },
   {
     "title": "GCP",
     "pathname": "/install/gcp",
     "section": "Install",
-    "description": "OpenClaw on GCP Compute Engine (Docker, Production VPS Guide)"
+    "description": "Run a persistent OpenClaw Gateway on a GCP Compute Engine VM using Docker, with durable state, baked-in binaries, and safe restart behavior."
   },
   {
     "title": "Hetzner",
     "pathname": "/install/hetzner",
     "section": "Install",
-    "description": "OpenClaw on Hetzner (Docker, Production VPS Guide)"
+    "description": "Run a persistent OpenClaw Gateway on a Hetzner VPS using Docker, with durable state, baked-in binaries, and safe restart behavior."
   },
   {
     "title": "Hostinger",
     "pathname": "/install/hostinger",
     "section": "Install",
-    "description": "Hostinger"
+    "description": "Run a persistent OpenClaw Gateway on Hostinger via a **1-Click** managed deployment or a **VPS** install."
   },
   {
     "title": "Install",
     "pathname": "/install/index",
     "section": "Install",
-    "description": "Install"
+    "description": "**Node 24** (recommended) or Node 22.16+ - the installer script handles this automatically **macOS, Linux, or Windows** - both native Windows and WSL2 are supported; WSL2 is more…"
   },
   {
-    "title": "Installer Internals",
+    "title": "Installer internals",
     "pathname": "/install/installer",
     "section": "Install",
-    "description": "Installer internals"
+    "description": "OpenClaw ships three installer scripts, served from openclaw.ai."
   },
   {
     "title": "Kubernetes",
     "pathname": "/install/kubernetes",
     "section": "Install",
-    "description": "OpenClaw on Kubernetes"
+    "description": "A minimal starting point for running OpenClaw on Kubernetes — not a production-ready deployment. It covers the core resources and is meant to be adapted to your environment."
   },
   {
     "title": "macOS VMs",
     "pathname": "/install/macos-vm",
     "section": "Install",
-    "description": "OpenClaw on macOS VMs (Sandboxing)"
+    "description": "**Small Linux VPS** for an always-on Gateway and low cost. See VPS hosting. **Dedicated hardware** (Mac mini or Linux box) if you want full control and a **residential IP** for br…"
   },
   {
-    "title": "Migration Guide",
+    "title": "Migration guide",
     "pathname": "/install/migrating",
     "section": "Install",
-    "description": "Migrating OpenClaw to a New Machine"
+    "description": "OpenClaw supports three migration paths: importing from another agent system, moving an existing install to a new machine, and upgrading a plugin in place."
   },
   {
-    "title": "Matrix migration",
-    "pathname": "/install/migrating-matrix",
+    "title": "Migrating from Claude",
+    "pathname": "/install/migrating-claude",
     "section": "Install",
-    "description": "Matrix migration"
+    "description": "OpenClaw imports local Claude state through the bundled Claude migration provider. The provider previews every item before changing state, redacts secrets in plans and reports, an…"
+  },
+  {
+    "title": "Migrating from Hermes",
+    "pathname": "/install/migrating-hermes",
+    "section": "Install",
+    "description": "OpenClaw imports Hermes state through a bundled migration provider. The provider previews everything before changing state, redacts secrets in plans and reports, and creates a ver…"
   },
   {
     "title": "Nix",
     "pathname": "/install/nix",
     "section": "Install",
-    "description": "Nix Installation"
+    "description": "Install OpenClaw declaratively with **nix-openclaw** - the first-party, batteries-included Home Manager module."
   },
   {
     "title": "Node.js",
     "pathname": "/install/node",
     "section": "Install",
-    "description": "Node.js"
+    "description": "OpenClaw requires **Node 22.16 or newer**. **Node 24 is the default and recommended runtime** for installs, CI, and release workflows. Node 22 remains supported via the active LTS…"
   },
   {
     "title": "Northflank",
     "pathname": "/install/northflank",
     "section": "Install",
-    "description": "Deploy OpenClaw on Northflank with a one-click template and access it through the web Control UI. This is the easiest \"no terminal on the server\" path: Northflank runs the Gateway…"
+    "description": "Northflank"
   },
   {
     "title": "Oracle Cloud",
     "pathname": "/install/oracle",
     "section": "Install",
-    "description": "Oracle Cloud"
+    "description": "Run a persistent OpenClaw Gateway on Oracle Cloud's **Always Free** ARM tier (up to 4 OCPU, 24 GB RAM, 200 GB storage) at no cost."
   },
   {
     "title": "Podman",
     "pathname": "/install/podman",
     "section": "Install",
-    "description": "Podman"
+    "description": "Run the OpenClaw Gateway in a rootless Podman container, managed by your current non-root user."
   },
   {
     "title": "Railway",
     "pathname": "/install/railway",
     "section": "Install",
-    "description": "Deploy OpenClaw on Railway with a one-click template and access it through the web Control UI. This is the easiest \"no terminal on the server\" path: Railway runs the Gateway for y…"
+    "description": "Railway"
   },
   {
     "title": "Raspberry Pi",
     "pathname": "/install/raspberry-pi",
     "section": "Install",
-    "description": "Raspberry Pi"
+    "description": "Run a persistent, always-on OpenClaw Gateway on a Raspberry Pi. Since the Pi is just the gateway (models run in the cloud via API), even a modest Pi handles the workload well — ty…"
   },
   {
     "title": "Render",
     "pathname": "/install/render",
     "section": "Install",
-    "description": "Deploy OpenClaw on Render using Infrastructure as Code. The included render.yaml Blueprint defines your entire stack declaratively, service, disk, environment variables, so you ca…"
+    "description": "Render"
   },
   {
     "title": "Uninstall",
     "pathname": "/install/uninstall",
     "section": "Install",
-    "description": "Uninstall"
+    "description": "Two paths:"
   },
   {
     "title": "Updating",
     "pathname": "/install/updating",
     "section": "Install",
-    "description": "Updating"
+    "description": "Keep OpenClaw up to date."
   },
   {
-    "title": "Agent Bootstrapping",
+    "title": "Pi development workflow",
+    "pathname": "/pi-dev",
+    "section": "Pi Dev",
+    "description": "A sane workflow for working on the Pi integration in OpenClaw."
+  },
+  {
+    "title": "Agent bootstrapping",
     "pathname": "/start/bootstrapping",
     "section": "Start",
-    "description": "Agent Bootstrapping"
+    "description": "Bootstrapping is the **first-run** ritual that prepares an agent workspace and collects identity details. It happens after onboarding, when the agent starts for the first time."
   },
   {
-    "title": "Getting Started",
+    "title": "Getting started",
     "pathname": "/start/getting-started",
     "section": "Start",
-    "description": "Getting Started"
+    "description": "Install OpenClaw, run onboarding, and chat with your AI assistant — all in about 5 minutes. By the end you will have a running Gateway, configured auth, and a working chat session."
   },
   {
-    "title": "Onboarding (macOS App)",
+    "title": "Onboarding (macOS app)",
     "pathname": "/start/onboarding",
     "section": "Start",
-    "description": "Onboarding (macOS App)"
+    "description": "This doc describes the **current** first-run setup flow. The goal is a smooth \"day 0\" experience: pick where the Gateway runs, connect auth, run the wizard, and let the agent boot…"
   },
   {
-    "title": "Onboarding Overview",
+    "title": "Onboarding overview",
     "pathname": "/start/onboarding-overview",
     "section": "Start",
-    "description": "Onboarding Overview"
+    "description": "OpenClaw has two onboarding paths. Both configure auth, the Gateway, and optional chat channels — they just differ in how you interact with the setup."
   },
   {
-    "title": "Personal Assistant Setup",
+    "title": "Personal assistant setup",
     "pathname": "/start/openclaw",
     "section": "Start",
-    "description": "Building a personal assistant with OpenClaw"
+    "description": "OpenClaw is a self-hosted gateway that connects Discord, Google Chat, iMessage, Matrix, Microsoft Teams, Signal, Slack, Telegram, WhatsApp, Zalo, and more to AI agents. This guide…"
+  },
+  {
+    "title": "Setup",
+    "pathname": "/start/setup",
+    "section": "Start",
+    "description": "<Note> If you are setting up for the first time, start with Getting Started. For onboarding details, see Onboarding (CLI). </Note>"
   },
   {
     "title": "Showcase",
     "pathname": "/start/showcase",
     "section": "Start",
-    "description": "Showcase"
+    "description": "Real-world OpenClaw projects from the community"
   },
   {
     "title": "Onboarding (CLI)",
     "pathname": "/start/wizard",
     "section": "Start",
-    "description": "Onboarding (CLI)"
+    "description": "CLI onboarding is the **recommended** way to set up OpenClaw on macOS, Linux, or Windows (via WSL2; strongly recommended). It configures a local Gateway or a remote Gateway connec…"
   },
   {
-    "title": "CLI Automation",
+    "title": "CLI automation",
     "pathname": "/start/wizard-cli-automation",
     "section": "Start",
-    "description": "CLI Automation"
+    "description": "Use --non-interactive to automate openclaw onboard."
   },
   {
-    "title": "CLI Setup Reference",
+    "title": "CLI setup reference",
     "pathname": "/start/wizard-cli-reference",
     "section": "Start",
-    "description": "CLI Setup Reference"
+    "description": "This page is the full reference for openclaw onboard. For the short guide, see Onboarding (CLI)."
   },
   {
-    "title": "Tools and Plugins",
-    "pathname": "/tools/index",
-    "section": "Tools",
-    "description": "Tools and Plugins"
-  },
-  {
-    "title": "Linux Server",
+    "title": "Linux server",
     "pathname": "/vps",
     "section": "Vps",
-    "description": "Linux Server"
+    "description": "Run the OpenClaw Gateway on any Linux server or cloud VPS. This page helps you pick a provider, explains how cloud deployments work, and covers generic Linux tuning that applies e…"
   },
   {
-    "title": "Scheduled Tasks",
+    "title": "Scheduled tasks",
     "pathname": "/automation/cron-jobs",
     "section": "Automation",
-    "description": "Scheduled Tasks (Cron)"
+    "description": "Cron is the Gateway's built-in scheduler. It persists jobs, wakes the agent at the right time, and can deliver output back to a chat channel or webhook endpoint."
   },
   {
     "title": "Hooks",
     "pathname": "/automation/hooks",
     "section": "Automation",
-    "description": "Hooks"
+    "description": "Hooks are small scripts that run when something happens inside the Gateway. They can be discovered from directories and inspected with openclaw hooks. The Gateway loads internal h…"
   },
   {
-    "title": "Automation & Tasks",
+    "title": "Automation and tasks",
     "pathname": "/automation/index",
     "section": "Automation",
-    "description": "Automation & Tasks"
+    "description": "OpenClaw runs work in the background through tasks, scheduled jobs, inferred commitments, event hooks, and standing instructions. This page helps you choose the right mechanism an…"
   },
   {
-    "title": "Standing Orders",
+    "title": "Standing orders",
     "pathname": "/automation/standing-orders",
     "section": "Automation",
-    "description": "Standing Orders"
+    "description": "Standing orders grant your agent **permanent operating authority** for defined programs. Instead of giving individual task instructions each time, you define programs with clear s…"
   },
   {
-    "title": "Task Flow",
+    "title": "Task flow",
     "pathname": "/automation/taskflow",
     "section": "Automation",
-    "description": "Task Flow"
+    "description": "Task Flow is the flow orchestration substrate that sits above background tasks. It manages durable multi-step flows with their own state, revision tracking, and sync semantics whi…"
   },
   {
-    "title": "Background Tasks",
+    "title": "Background tasks",
     "pathname": "/automation/tasks",
     "section": "Automation",
-    "description": "Background Tasks"
+    "description": "<Note> Looking for scheduling? See Automation and tasks for choosing the right mechanism. This page is the activity ledger for background work, not the scheduler. </Note>"
   },
   {
-    "title": "Model Failover",
-    "pathname": "/concepts/model-failover",
+    "title": "Active memory",
+    "pathname": "/concepts/active-memory",
     "section": "Concepts",
-    "description": "Model failover"
+    "description": "Active memory is an optional plugin-owned blocking memory sub-agent that runs before the main reply for eligible conversational sessions."
   },
   {
-    "title": "Model Providers",
-    "pathname": "/concepts/model-providers",
+    "title": "Inferred commitments",
+    "pathname": "/concepts/commitments",
     "section": "Concepts",
-    "description": "Model providers"
+    "description": "Commitments are short-lived follow-up memories. When enabled, OpenClaw can notice that a conversation created a future check-in opportunity and remember to bring it back later."
   },
   {
-    "title": "Models CLI",
-    "pathname": "/concepts/models",
+    "title": "Compaction",
+    "pathname": "/concepts/compaction",
     "section": "Concepts",
-    "description": "Models CLI"
+    "description": "Every model has a context window: the maximum number of tokens it can process. When a conversation approaches that limit, OpenClaw **compacts** older messages into a summary so th…"
   },
   {
-    "title": "Plugin Internals",
+    "title": "Delegate architecture",
+    "pathname": "/concepts/delegate-architecture",
+    "section": "Concepts",
+    "description": "Goal: run OpenClaw as a **named delegate** - an agent with its own identity that acts \"on behalf of\" people in an organization. The agent never impersonates a human. It sends, rea…"
+  },
+  {
+    "title": "Dreaming",
+    "pathname": "/concepts/dreaming",
+    "section": "Concepts",
+    "description": "Dreaming is the background memory consolidation system in memory-core. It helps OpenClaw move strong short-term signals into durable memory while keeping the process explainable a…"
+  },
+  {
+    "title": "Honcho memory",
+    "pathname": "/concepts/memory-honcho",
+    "section": "Concepts",
+    "description": "Honcho adds AI-native memory to OpenClaw. It persists conversations to a dedicated service and builds user and agent models over time, giving your agent cross-session context that…"
+  },
+  {
+    "title": "QMD memory engine",
+    "pathname": "/concepts/memory-qmd",
+    "section": "Concepts",
+    "description": "QMD is a local-first search sidecar that runs alongside OpenClaw. It combines BM25, vector search, and reranking in a single binary, and can index content beyond your workspace me…"
+  },
+  {
+    "title": "Memory search",
+    "pathname": "/concepts/memory-search",
+    "section": "Concepts",
+    "description": "memory_search finds relevant notes from your memory files, even when the wording differs from the original text. It works by indexing memory into small chunks and searching them u…"
+  },
+  {
+    "title": "Message lifecycle refactor",
+    "pathname": "/concepts/message-lifecycle-refactor",
+    "section": "Concepts",
+    "description": "This page is the target design for replacing scattered channel turn, reply dispatch, preview streaming, and outbound delivery helpers with one durable message lifecycle."
+  },
+  {
+    "title": "Messages",
+    "pathname": "/concepts/messages",
+    "section": "Concepts",
+    "description": "OpenClaw handles inbound messages through a pipeline of session resolution, queueing, streaming, tool execution, and reasoning visibility. This page maps the path from inbound mes…"
+  },
+  {
+    "title": "Multi-agent routing",
+    "pathname": "/concepts/multi-agent",
+    "section": "Concepts",
+    "description": "Run multiple *isolated* agents — each with its own workspace, state directory (agentDir), and session history — plus multiple channel accounts (e.g. two WhatsApps) in one running…"
+  },
+  {
+    "title": "Parallel specialist lanes",
+    "pathname": "/concepts/parallel-specialist-lanes",
+    "section": "Concepts",
+    "description": "Parallel specialist lanes let one Gateway route different chats or rooms to different agents, while keeping the user experience fast. The trick is to treat parallelism as a scarce…"
+  },
+  {
+    "title": "Presence",
+    "pathname": "/concepts/presence",
+    "section": "Concepts",
+    "description": "OpenClaw \"presence\" is a lightweight, best-effort view of:"
+  },
+  {
+    "title": "Progress drafts",
+    "pathname": "/concepts/progress-drafts",
+    "section": "Concepts",
+    "description": "Progress drafts make long-running agent turns feel alive in chat without turning the conversation into a stack of temporary status replies."
+  },
+  {
+    "title": "Command queue",
+    "pathname": "/concepts/queue",
+    "section": "Concepts",
+    "description": "We serialize inbound auto-reply runs (all channels) through a tiny in-process queue to prevent multiple agent runs from colliding, while still allowing safe parallelism across ses…"
+  },
+  {
+    "title": "Steering queue",
+    "pathname": "/concepts/queue-steering",
+    "section": "Concepts",
+    "description": "When a message arrives while a session run is already streaming, OpenClaw can send that message into the active runtime instead of starting another run for the same session. The p…"
+  },
+  {
+    "title": "Retry policy",
+    "pathname": "/concepts/retry",
+    "section": "Concepts",
+    "description": "Retry per HTTP request, not per multi-step flow. Preserve ordering by retrying only the current step. Avoid duplicating non-idempotent operations."
+  },
+  {
+    "title": "Streaming and chunking",
+    "pathname": "/concepts/streaming",
+    "section": "Concepts",
+    "description": "OpenClaw has two separate streaming layers:"
+  },
+  {
+    "title": "Adding capabilities (contributor guide)",
+    "pathname": "/plugins/adding-capabilities",
+    "section": "Plugins",
+    "description": "<Info> This is a **contributor guide** for OpenClaw core developers. If you are building an external plugin, see Building plugins instead. For the deep architecture reference (cap…"
+  },
+  {
+    "title": "Plugin internals",
     "pathname": "/plugins/architecture",
     "section": "Plugins",
-    "description": "Plugin Internals"
+    "description": "This is the **deep architecture reference** for the OpenClaw plugin system. For practical guides, start with one of the focused pages below."
   },
   {
-    "title": "Building Plugins",
+    "title": "Plugin architecture internals",
+    "pathname": "/plugins/architecture-internals",
+    "section": "Plugins",
+    "description": "For the public capability model, plugin shapes, and ownership/execution contracts, see Plugin architecture. This page is the reference for the internal mechanics: load pipeline, r…"
+  },
+  {
+    "title": "Building plugins",
     "pathname": "/plugins/building-plugins",
     "section": "Plugins",
-    "description": "Building Plugins"
+    "description": "Plugins extend OpenClaw with new capabilities: channels, model providers, speech, realtime transcription, realtime voice, media understanding, image generation, video generation,…"
   },
   {
-    "title": "Plugin Bundles",
+    "title": "Plugin bundles",
     "pathname": "/plugins/bundles",
     "section": "Plugins",
-    "description": "Plugin Bundles"
+    "description": "OpenClaw can install plugins from three external ecosystems: **Codex**, **Claude**, and **Cursor**. These are called **bundles** — content and metadata packs that OpenClaw maps in…"
   },
   {
-    "title": "Codex Harness",
+    "title": "Building CLI backend plugins",
+    "pathname": "/plugins/cli-backend-plugins",
+    "section": "Plugins",
+    "description": "CLI backend plugins let OpenClaw call a local AI CLI as a text inference backend. The backend appears as a provider prefix in model refs:"
+  },
+  {
+    "title": "Codex Computer Use",
+    "pathname": "/plugins/codex-computer-use",
+    "section": "Plugins",
+    "description": "Computer Use is a Codex-native MCP plugin for local desktop control. OpenClaw does not vendor the desktop app, execute desktop actions itself, or bypass Codex permissions. The bun…"
+  },
+  {
+    "title": "Codex harness",
     "pathname": "/plugins/codex-harness",
     "section": "Plugins",
-    "description": "Codex Harness"
+    "description": "The bundled codex plugin lets OpenClaw run embedded agent turns through the Codex app-server instead of the built-in PI harness."
   },
   {
-    "title": "Community Plugins",
+    "title": "Community plugins",
     "pathname": "/plugins/community",
     "section": "Plugins",
-    "description": "Community Plugins"
+    "description": "Community plugins are third-party packages that extend OpenClaw with new channels, tools, providers, or other capabilities. They are built and maintained by the community, usually…"
   },
   {
-    "title": "Plugin Manifest",
+    "title": "Plugin compatibility",
+    "pathname": "/plugins/compatibility",
+    "section": "Plugins",
+    "description": "OpenClaw keeps older plugin contracts wired through named compatibility adapters before removing them. This protects existing bundled and external plugins while the SDK, manifest,…"
+  },
+  {
+    "title": "Plugin dependency resolution",
+    "pathname": "/plugins/dependency-resolution",
+    "section": "Plugins",
+    "description": "OpenClaw keeps plugin dependency work at install/update time. Runtime loading does not run package managers, repair dependency trees, or mutate the OpenClaw package directory."
+  },
+  {
+    "title": "Google Meet plugin",
+    "pathname": "/plugins/google-meet",
+    "section": "Plugins",
+    "description": "Google Meet participant support for OpenClaw — the plugin is explicit by design:"
+  },
+  {
+    "title": "Plugin hooks",
+    "pathname": "/plugins/hooks",
+    "section": "Plugins",
+    "description": "Plugin hooks are in-process extension points for OpenClaw plugins. Use them when a plugin needs to inspect or change agent runs, tool calls, message flow, session lifecycle, subag…"
+  },
+  {
+    "title": "Plugin install overrides",
+    "pathname": "/plugins/install-overrides",
+    "section": "Plugins",
+    "description": "Plugin install overrides let maintainers test setup-time plugin installs against a specific npm package or local npm-pack tarball. They are for E2E and package validation only. No…"
+  },
+  {
+    "title": "Manage plugins",
+    "pathname": "/plugins/manage-plugins",
+    "section": "Plugins",
+    "description": "Most plugin workflows are a few commands: search, install, restart the Gateway, verify, and uninstall when you no longer need the plugin."
+  },
+  {
+    "title": "Plugin manifest",
     "pathname": "/plugins/manifest",
     "section": "Plugins",
-    "description": "Plugin manifest (openclaw\\.plugin.json)"
+    "description": "This page is for the **native OpenClaw plugin manifest** only."
   },
   {
-    "title": "Memory Wiki",
+    "title": "Memory LanceDB",
+    "pathname": "/plugins/memory-lancedb",
+    "section": "Plugins",
+    "description": "memory-lancedb is a bundled memory plugin that stores long-term memory in LanceDB and uses embeddings for recall. It can automatically recall relevant memories before a model turn…"
+  },
+  {
+    "title": "Memory wiki",
     "pathname": "/plugins/memory-wiki",
     "section": "Plugins",
-    "description": "Memory Wiki"
+    "description": "memory-wiki is a bundled plugin that turns durable memory into a compiled knowledge vault."
   },
   {
-    "title": "Agent Harness Plugins",
+    "title": "Message presentation",
+    "pathname": "/plugins/message-presentation",
+    "section": "Plugins",
+    "description": "Message presentation is OpenClaw's shared contract for rich outbound chat UI. It lets agents, CLI commands, approval flows, and plugins describe the message intent once, while eac…"
+  },
+  {
+    "title": "OC Path plugin",
+    "pathname": "/plugins/oc-path",
+    "section": "Plugins",
+    "description": "The bundled oc-path plugin adds the openclaw path CLI for the oc:// workspace-file addressing scheme. It ships in the OpenClaw repo under extensions/oc-path/ but is opt-in — insta…"
+  },
+  {
+    "title": "Plugin inventory",
+    "pathname": "/plugins/plugin-inventory",
+    "section": "Plugins",
+    "description": "Plugin inventory"
+  },
+  {
+    "title": "Plugin reference",
+    "pathname": "/plugins/reference",
+    "section": "Plugins",
+    "description": "Plugin reference"
+  },
+  {
+    "title": "Agent harness plugins",
     "pathname": "/plugins/sdk-agent-harness",
     "section": "Plugins",
-    "description": "Agent Harness Plugins"
+    "description": "An **agent harness** is the low level executor for one prepared OpenClaw agent turn. It is not a model provider, not a channel, and not a tool registry. For the user-facing mental…"
   },
   {
-    "title": "Building Channel Plugins",
+    "title": "Channel message API",
+    "pathname": "/plugins/sdk-channel-message",
+    "section": "Plugins",
+    "description": "Channel plugins should expose one message adapter from openclaw/plugin-sdk/channel-message. The adapter describes the native message lifecycle that the platform supports:"
+  },
+  {
+    "title": "Building channel plugins",
     "pathname": "/plugins/sdk-channel-plugins",
     "section": "Plugins",
-    "description": "Building Channel Plugins"
+    "description": "This guide walks through building a channel plugin that connects OpenClaw to a messaging platform. By the end you will have a working channel with DM security, pairing, reply thre…"
   },
   {
-    "title": "Plugin Entry Points",
+    "title": "Channel turn kernel",
+    "pathname": "/plugins/sdk-channel-turn",
+    "section": "Plugins",
+    "description": "The channel turn kernel is the shared inbound state machine that turns a normalized platform event into an agent turn. Channel plugins provide the platform facts and the delivery…"
+  },
+  {
+    "title": "Plugin entry points",
     "pathname": "/plugins/sdk-entrypoints",
     "section": "Plugins",
-    "description": "Plugin Entry Points"
+    "description": "Every plugin exports a default entry object. The SDK provides three helpers for creating them."
   },
   {
-    "title": "Plugin SDK Migration",
+    "title": "Plugin SDK migration",
     "pathname": "/plugins/sdk-migration",
     "section": "Plugins",
-    "description": "Plugin SDK Migration"
+    "description": "OpenClaw has moved from a broad backwards-compatibility layer to a modern plugin architecture with focused, documented imports. If your plugin was built before the new architectur…"
   },
   {
-    "title": "Plugin SDK Overview",
+    "title": "Plugin SDK overview",
     "pathname": "/plugins/sdk-overview",
     "section": "Plugins",
-    "description": "Plugin SDK Overview"
+    "description": "The plugin SDK is the typed contract between plugins and core. This page is the reference for **what to import** and **what you can register**."
   },
   {
-    "title": "Building Provider Plugins",
+    "title": "Building provider plugins",
     "pathname": "/plugins/sdk-provider-plugins",
     "section": "Plugins",
-    "description": "Building Provider Plugins"
+    "description": "This guide walks through building a provider plugin that adds a model provider (LLM) to OpenClaw. By the end you will have a provider with a model catalog, API key auth, and dynam…"
   },
   {
-    "title": "Plugin Runtime Helpers",
+    "title": "Plugin runtime helpers",
     "pathname": "/plugins/sdk-runtime",
     "section": "Plugins",
-    "description": "Plugin Runtime Helpers"
+    "description": "Reference for the api.runtime object injected into every plugin during registration. Use these helpers instead of importing host internals directly."
   },
   {
-    "title": "Plugin Setup and Config",
+    "title": "Plugin setup and config",
     "pathname": "/plugins/sdk-setup",
     "section": "Plugins",
-    "description": "Plugin Setup and Config"
+    "description": "Reference for plugin packaging (package.json metadata), manifests (openclaw.plugin.json), setup entries, and config schemas."
   },
   {
-    "title": "Plugin Testing",
+    "title": "Plugin SDK subpaths",
+    "pathname": "/plugins/sdk-subpaths",
+    "section": "Plugins",
+    "description": "The plugin SDK is exposed as a set of narrow subpaths under openclaw/plugin-sdk/. This page catalogs the commonly used subpaths grouped by purpose. The generated full list of 200+…"
+  },
+  {
+    "title": "Plugin testing",
     "pathname": "/plugins/sdk-testing",
     "section": "Plugins",
-    "description": "Plugin Testing"
+    "description": "Reference for test utilities, patterns, and lint enforcement for OpenClaw plugins."
   },
   {
-    "title": "Voice Call Plugin",
+    "title": "Skill workshop plugin",
+    "pathname": "/plugins/skill-workshop",
+    "section": "Plugins",
+    "description": "Skill Workshop is **experimental**. It is disabled by default, its capture heuristics and reviewer prompts may change between releases, and automatic writes should be used only in…"
+  },
+  {
+    "title": "Voice call plugin",
     "pathname": "/plugins/voice-call",
     "section": "Plugins",
-    "description": "Voice Call (plugin)"
+    "description": "Voice calls for OpenClaw via a plugin. Supports outbound notifications, multi-turn conversations, full-duplex realtime voice, streaming transcription, and inbound calls with allow…"
   },
   {
-    "title": "Webhooks Plugin",
+    "title": "Webhooks plugin",
     "pathname": "/plugins/webhooks",
     "section": "Plugins",
-    "description": "Webhooks (plugin)"
+    "description": "The Webhooks plugin adds authenticated HTTP routes that bind external automation to OpenClaw TaskFlows."
   },
   {
-    "title": "Zalo Personal Plugin",
+    "title": "Zalo personal plugin",
     "pathname": "/plugins/zalouser",
     "section": "Plugins",
-    "description": "Zalo Personal (plugin)"
+    "description": "Zalo Personal support for OpenClaw via a plugin, using native zca-js to automate a normal Zalo user account."
   },
   {
     "title": "OpenProse",
     "pathname": "/prose",
     "section": "Prose",
-    "description": "OpenProse"
+    "description": "OpenProse is a portable, markdown-first workflow format for orchestrating AI sessions. In OpenClaw it ships as a plugin that installs an OpenProse skill pack plus a /prose slash c…"
   },
   {
-    "title": "Alibaba Model Studio",
-    "pathname": "/providers/alibaba",
-    "section": "Providers",
-    "description": "Alibaba Model Studio"
-  },
-  {
-    "title": "Anthropic",
-    "pathname": "/providers/anthropic",
-    "section": "Providers",
-    "description": "Anthropic (Claude)"
-  },
-  {
-    "title": "Arcee AI",
-    "pathname": "/providers/arcee",
-    "section": "Providers",
-    "description": "Arcee AI"
-  },
-  {
-    "title": "Amazon Bedrock",
-    "pathname": "/providers/bedrock",
-    "section": "Providers",
-    "description": "Amazon Bedrock"
-  },
-  {
-    "title": "Amazon Bedrock Mantle",
-    "pathname": "/providers/bedrock-mantle",
-    "section": "Providers",
-    "description": "Amazon Bedrock Mantle"
-  },
-  {
-    "title": "Chutes",
-    "pathname": "/providers/chutes",
-    "section": "Providers",
-    "description": "Chutes"
-  },
-  {
-    "title": "Claude Max API Proxy",
-    "pathname": "/providers/claude-max-api-proxy",
-    "section": "Providers",
-    "description": "Claude Max API Proxy"
-  },
-  {
-    "title": "Cloudflare AI Gateway",
-    "pathname": "/providers/cloudflare-ai-gateway",
-    "section": "Providers",
-    "description": "Cloudflare AI Gateway"
-  },
-  {
-    "title": "ComfyUI",
-    "pathname": "/providers/comfy",
-    "section": "Providers",
-    "description": "ComfyUI"
-  },
-  {
-    "title": "Deepgram",
-    "pathname": "/providers/deepgram",
-    "section": "Providers",
-    "description": "Deepgram (Audio Transcription)"
-  },
-  {
-    "title": "DeepSeek",
-    "pathname": "/providers/deepseek",
-    "section": "Providers",
-    "description": "DeepSeek"
-  },
-  {
-    "title": "fal",
-    "pathname": "/providers/fal",
-    "section": "Providers",
-    "description": "fal"
-  },
-  {
-    "title": "Fireworks",
-    "pathname": "/providers/fireworks",
-    "section": "Providers",
-    "description": "Fireworks"
-  },
-  {
-    "title": "GitHub Copilot",
-    "pathname": "/providers/github-copilot",
-    "section": "Providers",
-    "description": "GitHub Copilot"
-  },
-  {
-    "title": "GLM (Zhipu)",
-    "pathname": "/providers/glm",
-    "section": "Providers",
-    "description": "GLM models"
-  },
-  {
-    "title": "Google (Gemini)",
-    "pathname": "/providers/google",
-    "section": "Providers",
-    "description": "Google (Gemini)"
-  },
-  {
-    "title": "Groq",
-    "pathname": "/providers/groq",
-    "section": "Providers",
-    "description": "Groq"
-  },
-  {
-    "title": "Hugging Face (Inference)",
-    "pathname": "/providers/huggingface",
-    "section": "Providers",
-    "description": "Hugging Face (Inference)"
-  },
-  {
-    "title": "Provider Directory",
-    "pathname": "/providers/index",
-    "section": "Providers",
-    "description": "Model Providers"
-  },
-  {
-    "title": "inferrs",
-    "pathname": "/providers/inferrs",
-    "section": "Providers",
-    "description": "inferrs"
-  },
-  {
-    "title": "Kilocode",
-    "pathname": "/providers/kilocode",
-    "section": "Providers",
-    "description": "Kilo Gateway"
-  },
-  {
-    "title": "LiteLLM",
-    "pathname": "/providers/litellm",
-    "section": "Providers",
-    "description": "LiteLLM"
-  },
-  {
-    "title": "LM Studio",
-    "pathname": "/providers/lmstudio",
-    "section": "Providers",
-    "description": "LM Studio"
-  },
-  {
-    "title": "MiniMax",
-    "pathname": "/providers/minimax",
-    "section": "Providers",
-    "description": "MiniMax"
-  },
-  {
-    "title": "Mistral",
-    "pathname": "/providers/mistral",
-    "section": "Providers",
-    "description": "Mistral"
-  },
-  {
-    "title": "Model Provider Quickstart",
-    "pathname": "/providers/models",
-    "section": "Providers",
-    "description": "Model Providers"
-  },
-  {
-    "title": "ACP Agents",
-    "pathname": "/tools/acp-agents",
-    "section": "Tools",
-    "description": "ACP agents"
-  },
-  {
-    "title": "Agent Send",
-    "pathname": "/tools/agent-send",
-    "section": "Tools",
-    "description": "Agent Send"
-  },
-  {
-    "title": "apply_patch Tool",
+    "title": "apply_patch tool",
     "pathname": "/tools/apply-patch",
     "section": "Tools",
-    "description": "apply\\_patch tool"
+    "description": "Apply file changes using a structured patch format. This is ideal for multi-file or multi-hunk edits where a single edit call would be brittle."
   },
   {
-    "title": "Brave Search",
+    "title": "Brave search",
     "pathname": "/tools/brave-search",
     "section": "Tools",
-    "description": "Brave Search API"
+    "description": "OpenClaw supports Brave Search API as a web_search provider."
   },
   {
     "title": "Browser (OpenClaw-managed)",
     "pathname": "/tools/browser",
     "section": "Tools",
-    "description": "Browser (openclaw-managed)"
+    "description": "OpenClaw can run a **dedicated Chrome/Brave/Edge/Chromium profile** that the agent controls. It is isolated from your personal browser and is managed through a small local control…"
   },
   {
-    "title": "Browser Troubleshooting",
+    "title": "Browser control API",
+    "pathname": "/tools/browser-control",
+    "section": "Tools",
+    "description": "For setup, configuration, and troubleshooting, see Browser. This page is the reference for the local control HTTP API, the openclaw browser CLI, and scripting patterns (snapshots,…"
+  },
+  {
+    "title": "Browser troubleshooting",
     "pathname": "/tools/browser-linux-troubleshooting",
     "section": "Tools",
-    "description": "Browser Troubleshooting (Linux)"
+    "description": "OpenClaw's browser control server fails to launch Chrome/Brave/Edge/Chromium with the error:"
   },
   {
-    "title": "Browser Login",
+    "title": "Browser login",
     "pathname": "/tools/browser-login",
     "section": "Tools",
-    "description": "Browser login + X/Twitter posting"
+    "description": "When a site requires login, **sign in manually** in the **host** browser profile (the openclaw browser)."
   },
   {
     "title": "WSL2 + Windows + remote Chrome CDP troubleshooting",
     "pathname": "/tools/browser-wsl2-windows-remote-cdp-troubleshooting",
     "section": "Tools",
-    "description": "WSL2 + Windows + remote Chrome CDP troubleshooting"
+    "description": "In the common split-host setup, OpenClaw Gateway runs inside WSL2, Chrome runs on Windows, and browser control must cross the WSL2 and Windows boundary. The layered failure patter…"
   },
   {
-    "title": "BTW Side Questions",
+    "title": "BTW side questions",
     "pathname": "/tools/btw",
     "section": "Tools",
-    "description": "BTW Side Questions"
+    "description": "/btw lets you ask a quick side question about the **current session** without turning that question into normal conversation history. /side is an alias."
   },
   {
-    "title": "ClawHub",
-    "pathname": "/tools/clawhub",
-    "section": "Tools",
-    "description": "ClawHub"
-  },
-  {
-    "title": "Code Execution",
+    "title": "Code execution",
     "pathname": "/tools/code-execution",
     "section": "Tools",
-    "description": "Code Execution"
+    "description": "code_execution runs sandboxed remote Python analysis on xAI's Responses API. It is registered by the bundled xai plugin (under the tools contract) and dispatches to the same https…"
   },
   {
-    "title": "Creating Skills",
+    "title": "Creating skills",
     "pathname": "/tools/creating-skills",
     "section": "Tools",
-    "description": "Creating Skills"
+    "description": "Skills teach the agent how and when to use tools. Each skill is a directory containing a SKILL.md file with YAML frontmatter and markdown instructions."
   },
   {
     "title": "Diffs",
     "pathname": "/tools/diffs",
     "section": "Tools",
-    "description": "Diffs"
+    "description": "diffs is an optional plugin tool with short built-in system guidance and a companion skill that turns change content into a read-only diff artifact for agents."
   },
   {
-    "title": "DuckDuckGo Search",
+    "title": "DuckDuckGo search",
     "pathname": "/tools/duckduckgo-search",
     "section": "Tools",
-    "description": "DuckDuckGo Search"
+    "description": "OpenClaw supports DuckDuckGo as a **key-free** web_search provider. No API key or account is required."
   },
   {
-    "title": "Elevated Mode",
+    "title": "Elevated mode",
     "pathname": "/tools/elevated",
     "section": "Tools",
-    "description": "Elevated Mode"
+    "description": "When an agent runs inside a sandbox, its exec commands are confined to the sandbox environment. **Elevated mode** lets the agent break out and run commands outside the sandbox ins…"
   },
   {
-    "title": "Exa Search",
+    "title": "Exa search",
     "pathname": "/tools/exa-search",
     "section": "Tools",
-    "description": "Exa Search"
+    "description": "OpenClaw supports Exa AI as a web_search provider. Exa offers neural, keyword, and hybrid search modes with built-in content extraction (highlights, text, summaries)."
   },
   {
-    "title": "Exec Tool",
+    "title": "Exec tool",
     "pathname": "/tools/exec",
     "section": "Tools",
-    "description": "Exec tool"
+    "description": "Run shell commands in the workspace. exec is a mutating shell surface: commands can create, edit, or delete files wherever the selected host or sandbox filesystem permits. Disabli…"
   },
   {
-    "title": "Exec Approvals",
+    "title": "Exec approvals",
     "pathname": "/tools/exec-approvals",
     "section": "Tools",
-    "description": "Exec approvals"
+    "description": "Exec approvals are the **companion app / node host guardrail** for letting a sandboxed agent run commands on a real host (gateway or node). A safety interlock: commands are allowe…"
   },
   {
-    "title": "Firecrawl",
-    "pathname": "/tools/firecrawl",
+    "title": "Exec approvals — advanced",
+    "pathname": "/tools/exec-approvals-advanced",
     "section": "Tools",
-    "description": "Firecrawl"
+    "description": "Advanced exec-approval topics: the safeBins fast-path, interpreter/runtime binding, and approval-forwarding to chat channels (including native delivery). For the core policy and a…"
   },
   {
-    "title": "Gemini Search",
-    "pathname": "/tools/gemini-search",
-    "section": "Tools",
-    "description": "Gemini Search"
-  },
-  {
-    "title": "Grok Search",
-    "pathname": "/tools/grok-search",
-    "section": "Tools",
-    "description": "Grok Search"
-  },
-  {
-    "title": "Image Generation",
+    "title": "Image generation",
     "pathname": "/tools/image-generation",
     "section": "Tools",
-    "description": "Image Generation"
+    "description": "The image_generate tool lets the agent create and edit images using your configured providers. Generated images are delivered automatically as media attachments in the agent's rep…"
   },
   {
-    "title": "Kimi Search",
-    "pathname": "/tools/kimi-search",
+    "title": "Tools and plugins",
+    "pathname": "/tools/index",
     "section": "Tools",
-    "description": "Kimi Search"
+    "description": "Everything the agent does beyond generating text happens through **tools**. Tools are how the agent reads files, runs commands, browses the web, sends messages, and interacts with…"
   },
   {
-    "title": "LLM Task",
+    "title": "LLM task",
     "pathname": "/tools/llm-task",
     "section": "Tools",
-    "description": "LLM Task"
+    "description": "llm-task is an **optional plugin tool** that runs a JSON-only LLM task and returns structured output (optionally validated against JSON Schema)."
   },
   {
     "title": "Lobster",
     "pathname": "/tools/lobster",
     "section": "Tools",
-    "description": "Lobster"
+    "description": "Lobster is a workflow shell that lets OpenClaw run multi-step tool sequences as a single, deterministic operation with explicit approval checkpoints."
   },
   {
     "title": "Tool-loop detection",
     "pathname": "/tools/loop-detection",
     "section": "Tools",
-    "description": "Tool-loop detection"
+    "description": "OpenClaw has two cooperating guardrails for repetitive tool-call patterns:"
   },
   {
-    "title": "Media Overview",
+    "title": "Media overview",
     "pathname": "/tools/media-overview",
     "section": "Tools",
-    "description": "Media Generation and Understanding"
+    "description": "OpenClaw generates images, videos, and music, understands inbound media (images, audio, video), and speaks replies aloud with text-to-speech. All media capabilities are tool-drive…"
   },
   {
-    "title": "MiniMax Search",
-    "pathname": "/tools/minimax-search",
-    "section": "Tools",
-    "description": "MiniMax Search"
-  },
-  {
-    "title": "Multi-Agent Sandbox & Tools",
-    "pathname": "/tools/multi-agent-sandbox-tools",
-    "section": "Tools",
-    "description": "Multi-Agent Sandbox & Tools Configuration"
-  },
-  {
-    "title": "Music Generation",
+    "title": "Music generation",
     "pathname": "/tools/music-generation",
     "section": "Tools",
-    "description": "Music Generation"
+    "description": "The music_generate tool lets the agent create music or audio through the shared music-generation capability with configured providers — Google, MiniMax, and workflow-configured Co…"
   },
   {
-    "title": "Ollama Web Search",
-    "pathname": "/tools/ollama-search",
-    "section": "Tools",
-    "description": "Ollama Web Search"
-  },
-  {
-    "title": "PDF Tool",
+    "title": "PDF tool",
     "pathname": "/tools/pdf",
     "section": "Tools",
-    "description": "PDF tool"
-  },
-  {
-    "title": "Perplexity Search",
-    "pathname": "/tools/perplexity-search",
-    "section": "Tools",
-    "description": "Perplexity Search API"
+    "description": "pdf analyzes one or more PDF documents and returns text."
   },
   {
     "title": "Plugins",
     "pathname": "/tools/plugin",
     "section": "Tools",
-    "description": "Plugins"
+    "description": "Plugins extend OpenClaw with new capabilities: channels, model providers, agent harnesses, tools, skills, speech, realtime transcription, realtime voice, media-understanding, imag…"
   },
   {
     "title": "Reactions",
     "pathname": "/tools/reactions",
     "section": "Tools",
-    "description": "Reactions"
-  },
-  {
-    "title": "SearXNG Search",
-    "pathname": "/tools/searxng-search",
-    "section": "Tools",
-    "description": "SearXNG Search"
+    "description": "The agent can add and remove emoji reactions on messages using the message tool with the react action. Reaction behavior varies by channel and transport."
   },
   {
     "title": "Skills",
     "pathname": "/tools/skills",
     "section": "Tools",
-    "description": "Skills (OpenClaw)"
+    "description": "OpenClaw uses **AgentSkills-compatible** skill folders to teach the agent how to use tools. Each skill is a directory containing a SKILL.md with YAML frontmatter and instructions.…"
   },
   {
-    "title": "Skills Config",
+    "title": "Skills config",
     "pathname": "/tools/skills-config",
     "section": "Tools",
-    "description": "Skills Config"
+    "description": "Most skills loader/install configuration lives under skills in ~/.openclaw/openclaw.json. Agent-specific skill visibility lives under agents.defaults.skills and agents.list[].skil…"
   },
   {
-    "title": "Slash Commands",
+    "title": "Slash commands",
     "pathname": "/tools/slash-commands",
     "section": "Tools",
-    "description": "Slash commands"
+    "description": "Commands are handled by the Gateway. Most commands must be sent as a **standalone** message that starts with /. The host-only bash chat command uses ! <cmd> (with /bash <cmd> as a…"
   },
   {
-    "title": "Sub-Agents",
-    "pathname": "/tools/subagents",
-    "section": "Tools",
-    "description": "Sub-agents"
-  },
-  {
-    "title": "Tavily",
-    "pathname": "/tools/tavily",
-    "section": "Tools",
-    "description": "Tavily"
-  },
-  {
-    "title": "Thinking Levels",
+    "title": "Thinking levels",
     "pathname": "/tools/thinking",
     "section": "Tools",
-    "description": "Thinking Levels (/think directives)"
+    "description": "Inline directive in any inbound body: /t <level>, /think:<level>, or /thinking <level>. Levels (aliases): off minimal low medium high xhigh adaptive max minimal → \"think\" low → \"t…"
   },
   {
-    "title": "Video Generation",
+    "title": "Tokenjuice",
+    "pathname": "/tools/tokenjuice",
+    "section": "Tools",
+    "description": "tokenjuice is an optional bundled plugin that compacts noisy exec and bash tool results after the command has already run."
+  },
+  {
+    "title": "Trajectory bundles",
+    "pathname": "/tools/trajectory",
+    "section": "Tools",
+    "description": "Trajectory capture is OpenClaw's per-session flight recorder. It records a structured timeline for each agent run, then /export-trajectory packages the current session into a reda…"
+  },
+  {
+    "title": "Text-to-speech",
+    "pathname": "/tools/tts",
+    "section": "Tools",
+    "description": "OpenClaw can convert outbound replies into audio across **14 speech providers** and deliver native voice messages on Feishu, Matrix, Telegram, and WhatsApp, audio attachments ever…"
+  },
+  {
+    "title": "Video generation",
     "pathname": "/tools/video-generation",
     "section": "Tools",
-    "description": "Video Generation"
+    "description": "OpenClaw agents can generate videos from text prompts, reference images, or existing videos. Sixteen provider backends are supported, each with different model options, input mode…"
   },
   {
-    "title": "Web Search",
+    "title": "Web search",
     "pathname": "/tools/web",
     "section": "Tools",
-    "description": "Web Search"
+    "description": "The web_search tool searches the web using your configured provider and returns results. Results are cached by query for 15 minutes (configurable)."
   },
   {
-    "title": "Web Fetch",
+    "title": "Web fetch",
     "pathname": "/tools/web-fetch",
     "section": "Tools",
-    "description": "Web Fetch"
+    "description": "The web_fetch tool does a plain HTTP GET and extracts readable content (HTML to markdown or text). It does **not** execute JavaScript."
   },
   {
-    "title": "Auth Credential Semantics",
-    "pathname": "/auth-credential-semantics",
-    "section": "Auth Credential Semantics",
-    "description": "Auth Credential Semantics"
+    "title": "Acceptable usage",
+    "pathname": "/clawhub/acceptable-usage",
+    "section": "Clawhub",
+    "description": "Acceptable Usage"
   },
   {
-    "title": "Authentication",
-    "pathname": "/gateway/authentication",
-    "section": "Gateway",
-    "description": "Authentication (Model Providers)"
+    "title": "Api",
+    "pathname": "/clawhub/api",
+    "section": "Clawhub",
+    "description": "API v1"
   },
   {
-    "title": "Background Exec and Process Tool",
-    "pathname": "/gateway/background-process",
-    "section": "Gateway",
-    "description": "Background Exec + Process Tool"
+    "title": "Auth",
+    "pathname": "/clawhub/auth",
+    "section": "Clawhub",
+    "description": "Auth"
   },
   {
-    "title": "Bonjour Discovery",
-    "pathname": "/gateway/bonjour",
-    "section": "Gateway",
-    "description": "Bonjour / mDNS discovery"
+    "title": "Cli",
+    "pathname": "/clawhub/cli",
+    "section": "Clawhub",
+    "description": "CLI"
   },
   {
-    "title": "Bridge Protocol",
-    "pathname": "/gateway/bridge-protocol",
-    "section": "Gateway",
-    "description": "Bridge protocol (legacy node transport)"
+    "title": "How it works",
+    "pathname": "/clawhub/how-it-works",
+    "section": "Clawhub",
+    "description": "How ClawHub Works"
   },
   {
-    "title": "CLI Backends",
-    "pathname": "/gateway/cli-backends",
-    "section": "Gateway",
-    "description": "CLI backends (fallback runtime)"
+    "title": "Http api",
+    "pathname": "/clawhub/http-api",
+    "section": "Clawhub",
+    "description": "HTTP API"
   },
   {
-    "title": "Configuration",
-    "pathname": "/gateway/configuration",
-    "section": "Gateway",
-    "description": "Configuration"
+    "title": "ClawHub",
+    "pathname": "/clawhub/index",
+    "section": "Clawhub",
+    "description": "ClawHub"
   },
   {
-    "title": "Configuration Examples",
-    "pathname": "/gateway/configuration-examples",
-    "section": "Gateway",
-    "description": "Configuration Examples"
+    "title": "Publishing",
+    "pathname": "/clawhub/publishing",
+    "section": "Clawhub",
+    "description": "Publishing"
   },
   {
-    "title": "Configuration Reference",
-    "pathname": "/gateway/configuration-reference",
-    "section": "Gateway",
-    "description": "Configuration Reference"
-  },
-  {
-    "title": "Discovery and Transports",
-    "pathname": "/gateway/discovery",
-    "section": "Gateway",
-    "description": "Discovery & transports"
-  },
-  {
-    "title": "Doctor",
-    "pathname": "/gateway/doctor",
-    "section": "Gateway",
-    "description": "Doctor"
-  },
-  {
-    "title": "Gateway Lock",
-    "pathname": "/gateway/gateway-lock",
-    "section": "Gateway",
-    "description": "Gateway lock"
-  },
-  {
-    "title": "Health Checks",
-    "pathname": "/gateway/health",
-    "section": "Gateway",
-    "description": "Health Checks (CLI)"
-  },
-  {
-    "title": "Heartbeat",
-    "pathname": "/gateway/heartbeat",
-    "section": "Gateway",
-    "description": "Heartbeat (Gateway)"
-  },
-  {
-    "title": "Gateway Runbook",
-    "pathname": "/gateway/index",
-    "section": "Gateway",
-    "description": "Gateway runbook"
-  },
-  {
-    "title": "Local Models",
-    "pathname": "/gateway/local-models",
-    "section": "Gateway",
-    "description": "Local models"
-  },
-  {
-    "title": "Gateway Logging",
-    "pathname": "/gateway/logging",
-    "section": "Gateway",
-    "description": "Logging"
-  },
-  {
-    "title": "Multiple Gateways",
-    "pathname": "/gateway/multiple-gateways",
-    "section": "Gateway",
-    "description": "Multiple Gateways (same host)"
-  },
-  {
-    "title": "Network model",
-    "pathname": "/gateway/network-model",
-    "section": "Gateway",
-    "description": "Network Model"
-  },
-  {
-    "title": "OpenAI Chat Completions",
-    "pathname": "/gateway/openai-http-api",
-    "section": "Gateway",
-    "description": "OpenAI Chat Completions (HTTP)"
-  },
-  {
-    "title": "OpenResponses API",
-    "pathname": "/gateway/openresponses-http-api",
-    "section": "Gateway",
-    "description": "OpenResponses API (HTTP)"
-  },
-  {
-    "title": "OpenShell",
-    "pathname": "/gateway/openshell",
-    "section": "Gateway",
-    "description": "OpenShell"
-  },
-  {
-    "title": "Gateway-Owned Pairing",
-    "pathname": "/gateway/pairing",
-    "section": "Gateway",
-    "description": "Gateway-owned pairing (Option B)"
-  },
-  {
-    "title": "Gateway Protocol",
-    "pathname": "/gateway/protocol",
-    "section": "Gateway",
-    "description": "Gateway protocol (WebSocket)"
-  },
-  {
-    "title": "Remote Access",
-    "pathname": "/gateway/remote",
-    "section": "Gateway",
-    "description": "Remote access (SSH, tunnels, and tailnets)"
-  },
-  {
-    "title": "Remote Gateway Setup",
-    "pathname": "/gateway/remote-gateway-readme",
-    "section": "Gateway",
-    "description": "> This content has been merged into Remote Access. See that page for the current guide."
-  },
-  {
-    "title": "Sandbox vs Tool Policy vs Elevated",
-    "pathname": "/gateway/sandbox-vs-tool-policy-vs-elevated",
-    "section": "Gateway",
-    "description": "Sandbox vs Tool Policy vs Elevated"
-  },
-  {
-    "title": "Sandboxing",
-    "pathname": "/gateway/sandboxing",
-    "section": "Gateway",
-    "description": "Sandboxing"
-  },
-  {
-    "title": "Secrets Management",
-    "pathname": "/gateway/secrets",
-    "section": "Gateway",
-    "description": "Secrets management"
-  },
-  {
-    "title": "Secrets Apply Plan Contract",
-    "pathname": "/gateway/secrets-plan-contract",
-    "section": "Gateway",
-    "description": "Secrets apply plan contract"
+    "title": "Quickstart",
+    "pathname": "/clawhub/quickstart",
+    "section": "Clawhub",
+    "description": "Quickstart"
   },
   {
     "title": "Security",
-    "pathname": "/gateway/security/index",
-    "section": "Gateway",
-    "description": "Security"
+    "pathname": "/clawhub/security",
+    "section": "Clawhub",
+    "description": "Security + Moderation"
   },
   {
-    "title": "Tailscale",
-    "pathname": "/gateway/tailscale",
-    "section": "Gateway",
-    "description": "Tailscale (Gateway dashboard)"
+    "title": "Skill format",
+    "pathname": "/clawhub/skill-format",
+    "section": "Clawhub",
+    "description": "Skill format"
   },
   {
-    "title": "Tools Invoke API",
-    "pathname": "/gateway/tools-invoke-http-api",
-    "section": "Gateway",
-    "description": "Tools Invoke (HTTP)"
+    "title": "Soul format",
+    "pathname": "/clawhub/soul-format",
+    "section": "Clawhub",
+    "description": "Soul format"
+  },
+  {
+    "title": "Telemetry",
+    "pathname": "/clawhub/telemetry",
+    "section": "Clawhub",
+    "description": "Telemetry"
   },
   {
     "title": "Troubleshooting",
-    "pathname": "/gateway/troubleshooting",
-    "section": "Gateway",
-    "description": "Gateway troubleshooting"
+    "pathname": "/clawhub/troubleshooting",
+    "section": "Clawhub",
+    "description": "Troubleshooting"
   },
   {
-    "title": "Trusted Proxy Auth",
-    "pathname": "/gateway/trusted-proxy-auth",
-    "section": "Gateway",
-    "description": "Trusted Proxy Auth"
+    "title": "Model failover",
+    "pathname": "/concepts/model-failover",
+    "section": "Concepts",
+    "description": "OpenClaw handles failures in two stages:"
   },
   {
-    "title": "Logging Overview",
-    "pathname": "/logging",
-    "section": "Logging",
-    "description": "Logging"
+    "title": "Model providers",
+    "pathname": "/concepts/model-providers",
+    "section": "Concepts",
+    "description": "Reference for **LLM/model providers** (not chat channels like WhatsApp/Telegram). For model selection rules, see Models."
   },
   {
-    "title": "Network",
-    "pathname": "/network",
-    "section": "Network",
-    "description": "Network hub"
+    "title": "Models CLI",
+    "pathname": "/concepts/models",
+    "section": "Concepts",
+    "description": "<CardGroup> <Card title=\"Model failover\" href=\"/concepts/model-failover\"> Auth profile rotation, cooldowns, and how that interacts with fallbacks. </Card>"
   },
   {
-    "title": "Audio and Voice Notes",
-    "pathname": "/nodes/audio",
-    "section": "Nodes",
-    "description": "Audio / Voice Notes (2026-01-17)"
-  },
-  {
-    "title": "Camera Capture",
-    "pathname": "/nodes/camera",
-    "section": "Nodes",
-    "description": "Camera capture (agent)"
-  },
-  {
-    "title": "Image and Media Support",
-    "pathname": "/nodes/images",
-    "section": "Nodes",
-    "description": "Image & Media Support (2025-12-05)"
-  },
-  {
-    "title": "Nodes",
-    "pathname": "/nodes/index",
-    "section": "Nodes",
-    "description": "Nodes"
-  },
-  {
-    "title": "Location Command",
-    "pathname": "/nodes/location-command",
-    "section": "Nodes",
-    "description": "Location command (nodes)"
-  },
-  {
-    "title": "Media Understanding",
-    "pathname": "/nodes/media-understanding",
-    "section": "Nodes",
-    "description": "Media Understanding - Inbound (2026-01-17)"
-  },
-  {
-    "title": "Talk Mode",
-    "pathname": "/nodes/talk",
-    "section": "Nodes",
-    "description": "Talk Mode"
-  },
-  {
-    "title": "Node Troubleshooting",
-    "pathname": "/nodes/troubleshooting",
-    "section": "Nodes",
-    "description": "Node troubleshooting"
-  },
-  {
-    "title": "Voice Wake",
-    "pathname": "/nodes/voicewake",
-    "section": "Nodes",
-    "description": "Voice Wake (Global Wake Words)"
-  },
-  {
-    "title": "Android App",
+    "title": "Android app",
     "pathname": "/platforms/android",
     "section": "Platforms",
-    "description": "Android App (Node)"
+    "description": "<Note> The Android app has not been publicly released yet. The source code is available in the OpenClaw repository under apps/android. You can build it yourself using Java 17 and…"
   },
   {
     "title": "Platforms",
     "pathname": "/platforms/index",
     "section": "Platforms",
-    "description": "Platforms"
+    "description": "OpenClaw core is written in TypeScript. **Node is the recommended runtime**. Bun is not recommended for the Gateway — known issues with WhatsApp and Telegram channels; see Bun (ex…"
   },
   {
-    "title": "iOS App",
+    "title": "iOS app",
     "pathname": "/platforms/ios",
     "section": "Platforms",
-    "description": "iOS App (Node)"
+    "description": "Availability: internal preview. The iOS app is not publicly distributed yet."
   },
   {
-    "title": "Linux App",
+    "title": "Linux app",
     "pathname": "/platforms/linux",
     "section": "Platforms",
-    "description": "Linux App"
+    "description": "The Gateway is fully supported on Linux. **Node is the recommended runtime**. Bun is not recommended for the Gateway (WhatsApp/Telegram bugs)."
   },
   {
-    "title": "Gateway on macOS",
-    "pathname": "/platforms/mac/bundled-gateway",
-    "section": "Platforms",
-    "description": "Gateway on macOS (external launchd)"
-  },
-  {
-    "title": "Canvas",
-    "pathname": "/platforms/mac/canvas",
-    "section": "Platforms",
-    "description": "Canvas (macOS app)"
-  },
-  {
-    "title": "Gateway Lifecycle",
-    "pathname": "/platforms/mac/child-process",
-    "section": "Platforms",
-    "description": "Gateway lifecycle on macOS"
-  },
-  {
-    "title": "macOS Dev Setup",
+    "title": "macOS dev setup",
     "pathname": "/platforms/mac/dev-setup",
     "section": "Platforms",
-    "description": "macOS Developer Setup"
+    "description": "macOS developer setup"
   },
   {
-    "title": "Health Checks (macOS)",
-    "pathname": "/platforms/mac/health",
-    "section": "Platforms",
-    "description": "Health Checks on macOS"
-  },
-  {
-    "title": "Menu Bar Icon",
+    "title": "Menu bar icon",
     "pathname": "/platforms/mac/icon",
     "section": "Platforms",
     "description": "Menu Bar Icon States"
   },
   {
-    "title": "macOS Logging",
-    "pathname": "/platforms/mac/logging",
-    "section": "Platforms",
-    "description": "Logging (macOS)"
-  },
-  {
-    "title": "Menu Bar",
+    "title": "Menu bar",
     "pathname": "/platforms/mac/menu-bar",
     "section": "Platforms",
-    "description": "Menu Bar Status Logic"
+    "description": "We surface the current agent work state in the menu bar icon and in the first status row of the menu. Health status is hidden while work is active; it returns when all sessions ar…"
   },
   {
-    "title": "Peekaboo Bridge",
-    "pathname": "/platforms/mac/peekaboo",
-    "section": "Platforms",
-    "description": "Peekaboo Bridge (macOS UI automation)"
-  },
-  {
-    "title": "macOS Permissions",
+    "title": "macOS permissions",
     "pathname": "/platforms/mac/permissions",
     "section": "Platforms",
-    "description": "macOS permissions (TCC)"
+    "description": "macOS permission grants are fragile. TCC associates a permission grant with the app's code signature, bundle identifier, and on-disk path. If any of those change, macOS treats the…"
   },
   {
-    "title": "Remote Control",
-    "pathname": "/platforms/mac/remote",
-    "section": "Platforms",
-    "description": "Remote OpenClaw (macOS ⇄ remote host)"
-  },
-  {
-    "title": "macOS Signing",
+    "title": "macOS signing",
     "pathname": "/platforms/mac/signing",
     "section": "Platforms",
     "description": "mac signing (debug builds)"
   },
   {
+    "title": "macOS app",
+    "pathname": "/platforms/macos",
+    "section": "Platforms",
+    "description": "The macOS app is the **menu-bar companion** for OpenClaw. It owns permissions, manages/attaches to the Gateway locally (launchd or manual), and exposes macOS capabilities to the a…"
+  },
+  {
+    "title": "Windows",
+    "pathname": "/platforms/windows",
+    "section": "Platforms",
+    "description": "OpenClaw supports both **native Windows** and **WSL2**. WSL2 is the more stable path and recommended for the full experience — the CLI, Gateway, and tooling run inside Linux with…"
+  },
+  {
+    "title": "Alibaba Model Studio",
+    "pathname": "/providers/alibaba",
+    "section": "Providers",
+    "description": "OpenClaw ships a bundled alibaba plugin that registers a video-generation provider for Wan models on Alibaba Model Studio (the international name for DashScope). The plugin is ena…"
+  },
+  {
+    "title": "Anthropic",
+    "pathname": "/providers/anthropic",
+    "section": "Providers",
+    "description": "Anthropic builds the **Claude** model family. OpenClaw supports two auth routes:"
+  },
+  {
+    "title": "Arcee AI",
+    "pathname": "/providers/arcee",
+    "section": "Providers",
+    "description": "Arcee AI provides access to the Trinity family of mixture-of-experts models through an OpenAI-compatible API. All Trinity models are Apache 2.0 licensed."
+  },
+  {
+    "title": "Azure Speech",
+    "pathname": "/providers/azure-speech",
+    "section": "Providers",
+    "description": "Azure Speech is an Azure AI Speech text-to-speech provider. In OpenClaw it synthesizes outbound reply audio as MP3 by default, native Ogg/Opus for voice notes, and 8 kHz mulaw aud…"
+  },
+  {
+    "title": "Amazon Bedrock",
+    "pathname": "/providers/bedrock",
+    "section": "Providers",
+    "description": "OpenClaw can use **Amazon Bedrock** models via pi-ai's **Bedrock Converse** streaming provider. Bedrock auth uses the **AWS SDK default credential chain**, not an API key."
+  },
+  {
+    "title": "Amazon Bedrock Mantle",
+    "pathname": "/providers/bedrock-mantle",
+    "section": "Providers",
+    "description": "OpenClaw includes a bundled **Amazon Bedrock Mantle** provider that connects to the Mantle OpenAI-compatible endpoint. Mantle hosts open-source and third-party models (GPT-OSS, Qw…"
+  },
+  {
+    "title": "Cerebras",
+    "pathname": "/providers/cerebras",
+    "section": "Providers",
+    "description": "Cerebras provides high-speed OpenAI-compatible inference on custom inference hardware. OpenClaw includes a bundled Cerebras provider plugin with a static four-model catalog."
+  },
+  {
+    "title": "Chutes",
+    "pathname": "/providers/chutes",
+    "section": "Providers",
+    "description": "Chutes exposes open-source model catalogs through an OpenAI-compatible API. OpenClaw supports both browser OAuth and direct API-key auth for the bundled chutes provider."
+  },
+  {
+    "title": "Claude Max API proxy",
+    "pathname": "/providers/claude-max-api-proxy",
+    "section": "Providers",
+    "description": "**claude-max-api-proxy** is a community tool that exposes your Claude Max/Pro subscription as an OpenAI-compatible API endpoint. This allows you to use your subscription with any…"
+  },
+  {
+    "title": "Cloudflare AI gateway",
+    "pathname": "/providers/cloudflare-ai-gateway",
+    "section": "Providers",
+    "description": "Cloudflare AI Gateway sits in front of provider APIs and lets you add analytics, caching, and controls. For Anthropic, OpenClaw uses the Anthropic Messages API through your Gatewa…"
+  },
+  {
+    "title": "ComfyUI",
+    "pathname": "/providers/comfy",
+    "section": "Providers",
+    "description": "OpenClaw ships a bundled comfy plugin for workflow-driven ComfyUI runs. The plugin is entirely workflow-driven, so OpenClaw does not try to map generic size, aspectRatio, resoluti…"
+  },
+  {
+    "title": "Deepgram",
+    "pathname": "/providers/deepgram",
+    "section": "Providers",
+    "description": "Deepgram is a speech-to-text API. In OpenClaw it is used for inbound audio/voice-note transcription through tools.media.audio and for Voice Call streaming STT through plugins.entr…"
+  },
+  {
+    "title": "DeepInfra",
+    "pathname": "/providers/deepinfra",
+    "section": "Providers",
+    "description": "DeepInfra provides a **unified API** that routes requests to the most popular open source and frontier models behind a single endpoint and API key. It is OpenAI-compatible, so mos…"
+  },
+  {
+    "title": "DeepSeek",
+    "pathname": "/providers/deepseek",
+    "section": "Providers",
+    "description": "DeepSeek provides powerful AI models with an OpenAI-compatible API."
+  },
+  {
+    "title": "ElevenLabs",
+    "pathname": "/providers/elevenlabs",
+    "section": "Providers",
+    "description": "OpenClaw uses ElevenLabs for text-to-speech, batch speech-to-text with Scribe v2, and streaming STT with Scribe v2 Realtime."
+  },
+  {
+    "title": "Fal",
+    "pathname": "/providers/fal",
+    "section": "Providers",
+    "description": "OpenClaw ships a bundled fal provider for hosted image and video generation."
+  },
+  {
+    "title": "Fireworks",
+    "pathname": "/providers/fireworks",
+    "section": "Providers",
+    "description": "Fireworks exposes open-weight and routed models through an OpenAI-compatible API. OpenClaw includes a bundled Fireworks provider plugin that ships with two pre-cataloged Kimi mode…"
+  },
+  {
+    "title": "GitHub Copilot",
+    "pathname": "/providers/github-copilot",
+    "section": "Providers",
+    "description": "GitHub Copilot is GitHub's AI coding assistant. It provides access to Copilot models for your GitHub account and plan. OpenClaw can use Copilot as a model provider in two differen…"
+  },
+  {
+    "title": "GLM (Zhipu)",
+    "pathname": "/providers/glm",
+    "section": "Providers",
+    "description": "GLM is a model family (not a company) available through the Z.AI platform. In OpenClaw, GLM models are accessed through the bundled zai provider with refs like zai/glm-5.1."
+  },
+  {
+    "title": "Google (Gemini)",
+    "pathname": "/providers/google",
+    "section": "Providers",
+    "description": "The Google plugin provides access to Gemini models through Google AI Studio, plus image generation, media understanding (image/audio/video), text-to-speech, and web search via Gem…"
+  },
+  {
+    "title": "Gradium",
+    "pathname": "/providers/gradium",
+    "section": "Providers",
+    "description": "Gradium is a bundled text-to-speech provider for OpenClaw. It can generate normal audio replies, voice-note-compatible Opus output, and 8 kHz u-law audio for telephony surfaces."
+  },
+  {
+    "title": "Groq",
+    "pathname": "/providers/groq",
+    "section": "Providers",
+    "description": "Groq provides ultra-fast inference on open-weight models (Llama, Gemma, Kimi, Qwen, GPT OSS, and more) using custom LPU hardware. OpenClaw includes a bundled Groq plugin that regi…"
+  },
+  {
+    "title": "Hugging Face (inference)",
+    "pathname": "/providers/huggingface",
+    "section": "Providers",
+    "description": "Hugging Face Inference Providers offer OpenAI-compatible chat completions through a single router API. You get access to many models (DeepSeek, Llama, and more) with one token. Op…"
+  },
+  {
+    "title": "Provider directory",
+    "pathname": "/providers/index",
+    "section": "Providers",
+    "description": "OpenClaw can use many LLM providers. Pick a provider, authenticate, then set the default model as provider/model."
+  },
+  {
+    "title": "Inferrs",
+    "pathname": "/providers/inferrs",
+    "section": "Providers",
+    "description": "inferrs can serve local models behind an OpenAI-compatible /v1 API. OpenClaw works with inferrs through the generic openai-completions path."
+  },
+  {
+    "title": "Inworld",
+    "pathname": "/providers/inworld",
+    "section": "Providers",
+    "description": "Inworld is a streaming text-to-speech (TTS) provider. In OpenClaw it synthesizes outbound reply audio (MP3 by default, OGG\\_OPUS for voice notes) and PCM audio for telephony chann…"
+  },
+  {
+    "title": "Kilo Gateway",
+    "pathname": "/providers/kilocode",
+    "section": "Providers",
+    "description": "Kilo Gateway provides a **unified API** that routes requests to many models behind a single endpoint and API key. It is OpenAI-compatible, so most OpenAI SDKs work by switching th…"
+  },
+  {
+    "title": "LiteLLM",
+    "pathname": "/providers/litellm",
+    "section": "Providers",
+    "description": "LiteLLM is an open-source LLM gateway that provides a unified API to 100+ model providers. Route OpenClaw through LiteLLM to get centralized cost tracking, logging, and the flexib…"
+  },
+  {
+    "title": "LM Studio",
+    "pathname": "/providers/lmstudio",
+    "section": "Providers",
+    "description": "LM Studio is a friendly yet powerful app for running open-weight models on your own hardware. It lets you run llama.cpp (GGUF) or MLX models (Apple Silicon). Comes in a GUI packag…"
+  },
+  {
+    "title": "MiniMax",
+    "pathname": "/providers/minimax",
+    "section": "Providers",
+    "description": "OpenClaw's MiniMax provider defaults to **MiniMax M2.7**."
+  },
+  {
+    "title": "Mistral",
+    "pathname": "/providers/mistral",
+    "section": "Providers",
+    "description": "OpenClaw includes a bundled Mistral plugin that registers four contracts: chat completions, media understanding (Voxtral batch transcription), realtime STT for Voice Call (Voxtral…"
+  },
+  {
+    "title": "Model provider quickstart",
+    "pathname": "/providers/models",
+    "section": "Providers",
+    "description": "OpenClaw can use many LLM providers. Pick one, authenticate, then set the default model as provider/model."
+  },
+  {
+    "title": "Moonshot AI",
+    "pathname": "/providers/moonshot",
+    "section": "Providers",
+    "description": "Moonshot provides the Kimi API with OpenAI-compatible endpoints. Configure the provider and set the default model to moonshot/kimi-k2.6, or use Kimi Coding with kimi/kimi-code."
+  },
+  {
+    "title": "NVIDIA",
+    "pathname": "/providers/nvidia",
+    "section": "Providers",
+    "description": "NVIDIA provides an OpenAI-compatible API at https://integrate.api.nvidia.com/v1 for open models for free. Authenticate with an API key from build.nvidia.com."
+  },
+  {
+    "title": "Ollama",
+    "pathname": "/providers/ollama",
+    "section": "Providers",
+    "description": "OpenClaw integrates with Ollama's native API (/api/chat) for hosted cloud models and local/self-hosted Ollama servers. You can use Ollama in three modes: Cloud + Local through a r…"
+  },
+  {
+    "title": "OpenAI",
+    "pathname": "/providers/openai",
+    "section": "Providers",
+    "description": "OpenAI provides developer APIs for GPT models, and Codex is also available as a ChatGPT-plan coding agent through OpenAI's Codex clients. OpenClaw keeps those surfaces separate so…"
+  },
+  {
+    "title": "OpenCode",
+    "pathname": "/providers/opencode",
+    "section": "Providers",
+    "description": "OpenCode exposes two hosted catalogs in OpenClaw:"
+  },
+  {
+    "title": "OpenCode Go",
+    "pathname": "/providers/opencode-go",
+    "section": "Providers",
+    "description": "OpenCode Go is the Go catalog within OpenCode. It uses the same OPENCODE_API_KEY as the Zen catalog, but keeps the runtime provider id opencode-go so upstream per-model routing st…"
+  },
+  {
+    "title": "OpenRouter",
+    "pathname": "/providers/openrouter",
+    "section": "Providers",
+    "description": "OpenRouter provides a **unified API** that routes requests to many models behind a single endpoint and API key. It is OpenAI-compatible, so most OpenAI SDKs work by switching the…"
+  },
+  {
+    "title": "Perplexity",
+    "pathname": "/providers/perplexity-provider",
+    "section": "Providers",
+    "description": "The Perplexity plugin provides web search capabilities through the Perplexity Search API or Perplexity Sonar via OpenRouter."
+  },
+  {
+    "title": "Qianfan",
+    "pathname": "/providers/qianfan",
+    "section": "Providers",
+    "description": "Qianfan is Baidu's MaaS platform, providing a **unified API** that routes requests to many models behind a single endpoint and API key. It is OpenAI-compatible, so most OpenAI SDK…"
+  },
+  {
+    "title": "Qwen",
+    "pathname": "/providers/qwen",
+    "section": "Providers",
+    "description": "<Warning> **Qwen OAuth has been removed.** The free-tier OAuth integration (qwen-portal) that used portal.qwen.ai endpoints is no longer available. See Issue #49557 for background…"
+  },
+  {
+    "title": "Runway",
+    "pathname": "/providers/runway",
+    "section": "Providers",
+    "description": "OpenClaw ships a bundled runway provider for hosted video generation. The plugin is enabled by default and registers the runway provider against the videoGenerationProviders contr…"
+  },
+  {
+    "title": "SenseAudio",
+    "pathname": "/providers/senseaudio",
+    "section": "Providers",
+    "description": "SenseAudio can transcribe inbound audio and voice-note attachments through OpenClaw's shared tools.media.audio pipeline. OpenClaw posts multipart audio to the OpenAI-compatible tr…"
+  },
+  {
+    "title": "SGLang",
+    "pathname": "/providers/sglang",
+    "section": "Providers",
+    "description": "SGLang serves open-weight models via an OpenAI-compatible HTTP API. OpenClaw connects to SGLang using the openai-completions provider family with auto-discovery of available model…"
+  },
+  {
+    "title": "StepFun",
+    "pathname": "/providers/stepfun",
+    "section": "Providers",
+    "description": "OpenClaw includes a bundled StepFun provider plugin with two provider ids:"
+  },
+  {
+    "title": "Synthetic",
+    "pathname": "/providers/synthetic",
+    "section": "Providers",
+    "description": "Synthetic exposes Anthropic-compatible endpoints. OpenClaw registers it as the synthetic provider and uses the Anthropic Messages API."
+  },
+  {
+    "title": "Tencent Cloud (TokenHub)",
+    "pathname": "/providers/tencent",
+    "section": "Providers",
+    "description": "Tencent Cloud ships as a bundled provider plugin in OpenClaw. It gives access to Tencent Hy3 preview through the TokenHub endpoint (tencent-tokenhub) using an OpenAI-compatible AP…"
+  },
+  {
+    "title": "Together AI",
+    "pathname": "/providers/together",
+    "section": "Providers",
+    "description": "Together AI provides access to leading open-source models including Llama, DeepSeek, Kimi, and more through a unified API."
+  },
+  {
+    "title": "Venice AI",
+    "pathname": "/providers/venice",
+    "section": "Providers",
+    "description": "Venice AI provides **privacy-focused AI inference** with support for uncensored models and access to major proprietary models through their anonymized proxy. All inference is priv…"
+  },
+  {
+    "title": "Vercel AI gateway",
+    "pathname": "/providers/vercel-ai-gateway",
+    "section": "Providers",
+    "description": "The Vercel AI Gateway provides a unified API to access hundreds of models through a single endpoint."
+  },
+  {
+    "title": "vLLM",
+    "pathname": "/providers/vllm",
+    "section": "Providers",
+    "description": "vLLM can serve open-source (and some custom) models via an **OpenAI-compatible** HTTP API. OpenClaw connects to vLLM using the openai-completions API."
+  },
+  {
+    "title": "Volcengine (Doubao)",
+    "pathname": "/providers/volcengine",
+    "section": "Providers",
+    "description": "The Volcengine provider gives access to Doubao models and third-party models hosted on Volcano Engine, with separate endpoints for general and coding workloads. The same bundled p…"
+  },
+  {
+    "title": "Vydra",
+    "pathname": "/providers/vydra",
+    "section": "Providers",
+    "description": "The bundled Vydra plugin adds:"
+  },
+  {
+    "title": "xAI",
+    "pathname": "/providers/xai",
+    "section": "Providers",
+    "description": "OpenClaw ships a bundled xai provider plugin for Grok models."
+  },
+  {
+    "title": "Xiaomi MiMo",
+    "pathname": "/providers/xiaomi",
+    "section": "Providers",
+    "description": "Xiaomi MiMo is the API platform for **MiMo** models. OpenClaw includes a bundled xiaomi plugin that registers both an OpenAI-compatible chat provider and a speech (TTS) provider a…"
+  },
+  {
+    "title": "Z.AI",
+    "pathname": "/providers/zai",
+    "section": "Providers",
+    "description": "Z.AI is the API platform for **GLM** models. It provides REST APIs for GLM and uses API keys for authentication. Create your API key in the Z.AI console. OpenClaw uses the zai pro…"
+  },
+  {
+    "title": "ACP agents",
+    "pathname": "/tools/acp-agents",
+    "section": "Tools",
+    "description": "Agent Client Protocol (ACP) sessions let OpenClaw run external coding harnesses (for example Pi, Claude Code, Cursor, Copilot, Droid, OpenClaw ACP, OpenCode, Gemini CLI, and other…"
+  },
+  {
+    "title": "ACP agents — setup",
+    "pathname": "/tools/acp-agents-setup",
+    "section": "Tools",
+    "description": "For the overview, operator runbook, and concepts, see ACP agents."
+  },
+  {
+    "title": "Agent send",
+    "pathname": "/tools/agent-send",
+    "section": "Tools",
+    "description": "openclaw agent runs a single agent turn from the command line without needing an inbound chat message. Use it for scripted workflows, testing, and programmatic delivery."
+  },
+  {
+    "title": "Firecrawl",
+    "pathname": "/tools/firecrawl",
+    "section": "Tools",
+    "description": "OpenClaw can use **Firecrawl** in three ways:"
+  },
+  {
+    "title": "Gemini search",
+    "pathname": "/tools/gemini-search",
+    "section": "Tools",
+    "description": "OpenClaw supports Gemini models with built-in Google Search grounding, which returns AI-synthesized answers backed by live Google Search results with citations."
+  },
+  {
+    "title": "Grok search",
+    "pathname": "/tools/grok-search",
+    "section": "Tools",
+    "description": "OpenClaw supports Grok as a web_search provider, using xAI web-grounded responses to produce AI-synthesized answers backed by live search results with citations."
+  },
+  {
+    "title": "Kimi search",
+    "pathname": "/tools/kimi-search",
+    "section": "Tools",
+    "description": "OpenClaw supports Kimi as a web_search provider, using Moonshot web search to produce AI-synthesized answers with citations."
+  },
+  {
+    "title": "MiniMax search",
+    "pathname": "/tools/minimax-search",
+    "section": "Tools",
+    "description": "OpenClaw supports MiniMax as a web_search provider through the MiniMax Token Plan search API. It returns structured search results with titles, URLs, snippets, and related queries."
+  },
+  {
+    "title": "Multi-agent sandbox and tools",
+    "pathname": "/tools/multi-agent-sandbox-tools",
+    "section": "Tools",
+    "description": "Each agent in a multi-agent setup can override the global sandbox and tool policy. This page covers per-agent configuration, precedence rules, and examples."
+  },
+  {
+    "title": "Ollama web search",
+    "pathname": "/tools/ollama-search",
+    "section": "Tools",
+    "description": "OpenClaw supports **Ollama Web Search** as a bundled web_search provider. It uses Ollama's web-search API and returns structured results with titles, URLs, and snippets."
+  },
+  {
+    "title": "Perplexity search",
+    "pathname": "/tools/perplexity-search",
+    "section": "Tools",
+    "description": "OpenClaw supports Perplexity Search API as a web_search provider. It returns structured results with title, url, and snippet fields."
+  },
+  {
+    "title": "SearXNG search",
+    "pathname": "/tools/searxng-search",
+    "section": "Tools",
+    "description": "OpenClaw supports SearXNG as a **self-hosted, key-free** web_search provider. SearXNG is an open-source meta-search engine that aggregates results from Google, Bing, DuckDuckGo, a…"
+  },
+  {
+    "title": "Steer",
+    "pathname": "/tools/steer",
+    "section": "Tools",
+    "description": "/steer sends guidance to an already-active run. It is for \"adjust this run while it is still working\" moments, not for starting a new turn."
+  },
+  {
+    "title": "Sub-agents",
+    "pathname": "/tools/subagents",
+    "section": "Tools",
+    "description": "Sub-agents are background agent runs spawned from an existing agent run. They run in their own session (agent:<agentId>:subagent:<uuid>) and, when finished, **announce** their res…"
+  },
+  {
+    "title": "Tavily",
+    "pathname": "/tools/tavily",
+    "section": "Tools",
+    "description": "OpenClaw can use **Tavily** in two ways:"
+  },
+  {
+    "title": "Auth credential semantics",
+    "pathname": "/auth-credential-semantics",
+    "section": "Auth Credential Semantics",
+    "description": "This document defines the canonical credential eligibility and resolution semantics used across:"
+  },
+  {
+    "title": "Agent",
+    "pathname": "/cli/agent",
+    "section": "Cli",
+    "description": "openclaw agent"
+  },
+  {
+    "title": "Agents",
+    "pathname": "/cli/agents",
+    "section": "Cli",
+    "description": "openclaw agents"
+  },
+  {
+    "title": "Backup",
+    "pathname": "/cli/backup",
+    "section": "Cli",
+    "description": "openclaw backup"
+  },
+  {
+    "title": "`openclaw commitments`",
+    "pathname": "/cli/commitments",
+    "section": "Cli",
+    "description": "List and manage inferred follow-up commitments."
+  },
+  {
+    "title": "Crestodian",
+    "pathname": "/cli/crestodian",
+    "section": "Cli",
+    "description": "openclaw crestodian"
+  },
+  {
+    "title": "Daemon",
+    "pathname": "/cli/daemon",
+    "section": "Cli",
+    "description": "openclaw daemon"
+  },
+  {
+    "title": "Doctor",
+    "pathname": "/cli/doctor",
+    "section": "Cli",
+    "description": "openclaw doctor"
+  },
+  {
+    "title": "Gateway",
+    "pathname": "/cli/gateway",
+    "section": "Cli",
+    "description": "The Gateway is OpenClaw's WebSocket server (channels, nodes, sessions, hooks). Subcommands in this page live under openclaw gateway …."
+  },
+  {
+    "title": "Health",
+    "pathname": "/cli/health",
+    "section": "Cli",
+    "description": "openclaw health"
+  },
+  {
+    "title": "Hooks",
+    "pathname": "/cli/hooks",
+    "section": "Cli",
+    "description": "openclaw hooks"
+  },
+  {
+    "title": "CLI reference",
+    "pathname": "/cli/index",
+    "section": "Cli",
+    "description": "openclaw is the main CLI entry point. Each core command has either a dedicated reference page or is documented with the command it aliases; this index lists the commands, the glob…"
+  },
+  {
+    "title": "Inference CLI",
+    "pathname": "/cli/infer",
+    "section": "Cli",
+    "description": "openclaw infer is the canonical headless surface for provider-backed inference workflows."
+  },
+  {
+    "title": "Logs",
+    "pathname": "/cli/logs",
+    "section": "Cli",
+    "description": "openclaw logs"
+  },
+  {
+    "title": "Memory",
+    "pathname": "/cli/memory",
+    "section": "Cli",
+    "description": "openclaw memory"
+  },
+  {
+    "title": "Message",
+    "pathname": "/cli/message",
+    "section": "Cli",
+    "description": "openclaw message"
+  },
+  {
+    "title": "Migrate",
+    "pathname": "/cli/migrate",
+    "section": "Cli",
+    "description": "openclaw migrate"
+  },
+  {
+    "title": "Onboard",
+    "pathname": "/cli/onboard",
+    "section": "Cli",
+    "description": "openclaw onboard"
+  },
+  {
+    "title": "Reset",
+    "pathname": "/cli/reset",
+    "section": "Cli",
+    "description": "openclaw reset"
+  },
+  {
+    "title": "Secrets",
+    "pathname": "/cli/secrets",
+    "section": "Cli",
+    "description": "openclaw secrets"
+  },
+  {
+    "title": "Security",
+    "pathname": "/cli/security",
+    "section": "Cli",
+    "description": "openclaw security"
+  },
+  {
+    "title": "Setup",
+    "pathname": "/cli/setup",
+    "section": "Cli",
+    "description": "openclaw setup"
+  },
+  {
+    "title": "openclaw status",
+    "pathname": "/cli/status",
+    "section": "Cli",
+    "description": "Diagnostics for channels + sessions."
+  },
+  {
+    "title": "Uninstall",
+    "pathname": "/cli/uninstall",
+    "section": "Cli",
+    "description": "openclaw uninstall"
+  },
+  {
+    "title": "Update",
+    "pathname": "/cli/update",
+    "section": "Cli",
+    "description": "openclaw update"
+  },
+  {
+    "title": "Authentication",
+    "pathname": "/gateway/authentication",
+    "section": "Gateway",
+    "description": "<Note> This page is the **model provider** authentication reference (API keys, OAuth, Claude CLI reuse, and Anthropic setup-token). For **gateway connection** authentication (toke…"
+  },
+  {
+    "title": "Background exec and process tool",
+    "pathname": "/gateway/background-process",
+    "section": "Gateway",
+    "description": "OpenClaw runs shell commands through the exec tool and keeps long-running tasks in memory. The process tool manages those background sessions."
+  },
+  {
+    "title": "Bonjour discovery",
+    "pathname": "/gateway/bonjour",
+    "section": "Gateway",
+    "description": "OpenClaw can use Bonjour (mDNS / DNS-SD) to discover an active Gateway (WebSocket endpoint). Multicast local. browsing is a **LAN-only convenience**. The bundled bonjour plugin ow…"
+  },
+  {
+    "title": "Bridge protocol",
+    "pathname": "/gateway/bridge-protocol",
+    "section": "Gateway",
+    "description": "<Warning> The TCP bridge has been **removed**. Current OpenClaw builds do not ship the bridge listener and bridge.* config keys are no longer in the schema. This page is kept for…"
+  },
+  {
+    "title": "CLI backends",
+    "pathname": "/gateway/cli-backends",
+    "section": "Gateway",
+    "description": "OpenClaw can run **local AI CLIs** as a **text-only fallback** when API providers are down, rate-limited, or temporarily misbehaving. This is intentionally conservative:"
+  },
+  {
+    "title": "Configuration — agents",
+    "pathname": "/gateway/config-agents",
+    "section": "Gateway",
+    "description": "Agent-scoped configuration keys under agents.*, multiAgent.*, session.*, messages.*, and talk.*. For channels, tools, gateway runtime, and other top-level keys, see Configuration…"
+  },
+  {
+    "title": "Configuration — channels",
+    "pathname": "/gateway/config-channels",
+    "section": "Gateway",
+    "description": "Per-channel configuration keys under channels.*. Covers DM and group access, multi-account setups, mention gating, and per-channel keys for Slack, Discord, Telegram, WhatsApp, Mat…"
+  },
+  {
+    "title": "Configuration — tools and custom providers",
+    "pathname": "/gateway/config-tools",
+    "section": "Gateway",
+    "description": "tools.* config keys and custom provider / base-URL setup. For agents, channels, and other top-level config keys, see Configuration reference."
+  },
+  {
+    "title": "Configuration",
+    "pathname": "/gateway/configuration",
+    "section": "Gateway",
+    "description": "OpenClaw reads an optional <Tooltip>**JSON5**</Tooltip> config from ~/.openclaw/openclaw.json. The active config path must be a regular file. Symlinked openclaw.json layouts are u…"
+  },
+  {
+    "title": "Configuration examples",
+    "pathname": "/gateway/configuration-examples",
+    "section": "Gateway",
+    "description": "Examples below are aligned with the current config schema. For the exhaustive reference and per-field notes, see Configuration."
+  },
+  {
+    "title": "Configuration reference",
+    "pathname": "/gateway/configuration-reference",
+    "section": "Gateway",
+    "description": "Core config reference for ~/.openclaw/openclaw.json. For a task-oriented overview, see Configuration."
+  },
+  {
+    "title": "Diagnostics export",
+    "pathname": "/gateway/diagnostics",
+    "section": "Gateway",
+    "description": "OpenClaw can create a local diagnostics zip for bug reports. It combines sanitized Gateway status, health, logs, config shape, and recent payload-free stability events."
+  },
+  {
+    "title": "Discovery and transports",
+    "pathname": "/gateway/discovery",
+    "section": "Gateway",
+    "description": "OpenClaw has two distinct problems that look similar on the surface:"
+  },
+  {
+    "title": "Doctor",
+    "pathname": "/gateway/doctor",
+    "section": "Gateway",
+    "description": "openclaw doctor is the repair + migration tool for OpenClaw. It fixes stale config/state, checks health, and provides actionable repair steps."
+  },
+  {
+    "title": "Gateway lock",
+    "pathname": "/gateway/gateway-lock",
+    "section": "Gateway",
+    "description": "Ensure only one gateway instance runs per base port on the same host; additional gateways must use isolated profiles and unique ports. Survive crashes/SIGKILL without leaving stal…"
+  },
+  {
+    "title": "Health checks",
+    "pathname": "/gateway/health",
+    "section": "Gateway",
+    "description": "Short guide to verify channel connectivity without guessing."
+  },
+  {
+    "title": "Heartbeat",
+    "pathname": "/gateway/heartbeat",
+    "section": "Gateway",
+    "description": "<Note> **Heartbeat vs cron?** See Automation & Tasks for guidance on when to use each. </Note>"
+  },
+  {
+    "title": "Gateway runbook",
+    "pathname": "/gateway/index",
+    "section": "Gateway",
+    "description": "Use this page for day-1 startup and day-2 operations of the Gateway service."
+  },
+  {
+    "title": "Local models",
+    "pathname": "/gateway/local-models",
+    "section": "Gateway",
+    "description": "Local models are doable. They also raise the bar on hardware, context size, and prompt-injection defense — small or aggressively quantized cards truncate context and leak safety.…"
+  },
+  {
+    "title": "Gateway logging",
+    "pathname": "/gateway/logging",
+    "section": "Gateway",
+    "description": "Logging"
+  },
+  {
+    "title": "Multiple gateways",
+    "pathname": "/gateway/multiple-gateways",
+    "section": "Gateway",
+    "description": "Most setups should use one Gateway because a single Gateway can handle multiple messaging connections and agents. If you need stronger isolation or redundancy (e.g., a rescue bot)…"
+  },
+  {
+    "title": "OpenAI chat completions",
+    "pathname": "/gateway/openai-http-api",
+    "section": "Gateway",
+    "description": "OpenClaw's Gateway can serve a small OpenAI-compatible Chat Completions endpoint."
+  },
+  {
+    "title": "OpenResponses API",
+    "pathname": "/gateway/openresponses-http-api",
+    "section": "Gateway",
+    "description": "OpenClaw's Gateway can serve an OpenResponses-compatible POST /v1/responses endpoint."
+  },
+  {
+    "title": "OpenShell",
+    "pathname": "/gateway/openshell",
+    "section": "Gateway",
+    "description": "OpenShell is a managed sandbox backend for OpenClaw. Instead of running Docker containers locally, OpenClaw delegates sandbox lifecycle to the openshell CLI, which provisions remo…"
+  },
+  {
+    "title": "OpenTelemetry export",
+    "pathname": "/gateway/opentelemetry",
+    "section": "Gateway",
+    "description": "OpenClaw exports diagnostics through the official diagnostics-otel plugin using **OTLP/HTTP (protobuf)**. Any collector or backend that accepts OTLP/HTTP works without code change…"
+  },
+  {
+    "title": "Operator scopes",
+    "pathname": "/gateway/operator-scopes",
+    "section": "Gateway",
+    "description": "Operator scopes define what a Gateway client may do after it authenticates. They are a control-plane guardrail inside one trusted Gateway operator domain, not hostile multi-tenant…"
+  },
+  {
+    "title": "Gateway-owned pairing",
+    "pathname": "/gateway/pairing",
+    "section": "Gateway",
+    "description": "In Gateway-owned pairing, the **Gateway** is the source of truth for which nodes are allowed to join. UIs (macOS app, future clients) are just frontends that approve or reject pen…"
+  },
+  {
+    "title": "Prometheus metrics",
+    "pathname": "/gateway/prometheus",
+    "section": "Gateway",
+    "description": "OpenClaw can expose diagnostics metrics through the official diagnostics-prometheus plugin. It listens to trusted internal diagnostics and renders a Prometheus text endpoint at:"
+  },
+  {
+    "title": "Gateway protocol",
+    "pathname": "/gateway/protocol",
+    "section": "Gateway",
+    "description": "The Gateway WS protocol is the **single control plane + node transport** for OpenClaw. All clients (CLI, web UI, macOS app, iOS/Android nodes, headless nodes) connect over WebSock…"
+  },
+  {
+    "title": "Remote access",
+    "pathname": "/gateway/remote",
+    "section": "Gateway",
+    "description": "This repo supports \"remote over SSH\" by keeping a single Gateway (the master) running on a dedicated host (desktop/server) and connecting clients to it."
+  },
+  {
+    "title": "Remote gateway setup",
+    "pathname": "/gateway/remote-gateway-readme",
+    "section": "Gateway",
+    "description": "> This content has been merged into Remote Access. See that page for the current guide."
+  },
+  {
+    "title": "Sandbox vs tool policy vs elevated",
+    "pathname": "/gateway/sandbox-vs-tool-policy-vs-elevated",
+    "section": "Gateway",
+    "description": "OpenClaw has three related (but different) controls:"
+  },
+  {
+    "title": "Sandboxing",
+    "pathname": "/gateway/sandboxing",
+    "section": "Gateway",
+    "description": "OpenClaw can run **tools inside sandbox backends** to reduce blast radius. This is **optional** and controlled by configuration (agents.defaults.sandbox or agents.list[].sandbox).…"
+  },
+  {
+    "title": "Secrets management",
+    "pathname": "/gateway/secrets",
+    "section": "Gateway",
+    "description": "OpenClaw supports additive SecretRefs so supported credentials do not need to be stored as plaintext in configuration."
+  },
+  {
+    "title": "Secrets apply plan contract",
+    "pathname": "/gateway/secrets-plan-contract",
+    "section": "Gateway",
+    "description": "This page defines the strict contract enforced by openclaw secrets apply."
+  },
+  {
+    "title": "Security audit checks",
+    "pathname": "/gateway/security/audit-checks",
+    "section": "Gateway",
+    "description": "openclaw security audit emits structured findings keyed by checkId. This page is the reference catalog for those IDs. For the high-level threat model and hardening guidance, see S…"
+  },
+  {
+    "title": "Security",
+    "pathname": "/gateway/security/index",
+    "section": "Gateway",
+    "description": "<Warning> **Personal assistant trust model.** This guidance assumes one trusted operator boundary per gateway (single-user, personal-assistant model). OpenClaw is **not** a hostil…"
+  },
+  {
+    "title": "Secure file operations",
+    "pathname": "/gateway/security/secure-file-operations",
+    "section": "Gateway",
+    "description": "OpenClaw uses @openclaw/fs-safe for security-sensitive local file operations: root-bounded reads/writes, atomic replacement, archive extraction, temp workspaces, JSON state, and s…"
+  },
+  {
+    "title": "Tailscale",
+    "pathname": "/gateway/tailscale",
+    "section": "Gateway",
+    "description": "OpenClaw can auto-configure Tailscale **Serve** (tailnet) or **Funnel** (public) for the Gateway dashboard and WebSocket port. This keeps the Gateway bound to loopback while Tails…"
+  },
+  {
+    "title": "Tools invoke API",
+    "pathname": "/gateway/tools-invoke-http-api",
+    "section": "Gateway",
+    "description": "OpenClaw's Gateway exposes a simple HTTP endpoint for invoking a single tool directly. It is always enabled and uses Gateway auth plus tool policy. Like the OpenAI-compatible /v1/…"
+  },
+  {
+    "title": "Troubleshooting",
+    "pathname": "/gateway/troubleshooting",
+    "section": "Gateway",
+    "description": "This page is the deep runbook. Start at /help/troubleshooting if you want the fast triage flow first."
+  },
+  {
+    "title": "Trusted proxy auth",
+    "pathname": "/gateway/trusted-proxy-auth",
+    "section": "Gateway",
+    "description": "<Warning> **Security-sensitive feature.** This mode delegates authentication entirely to your reverse proxy. Misconfiguration can expose your Gateway to unauthorized access. Read…"
+  },
+  {
+    "title": "Logging",
+    "pathname": "/logging",
+    "section": "Logging",
+    "description": "OpenClaw has two main log surfaces:"
+  },
+  {
+    "title": "Network",
+    "pathname": "/network",
+    "section": "Network",
+    "description": "This hub links the core docs for how OpenClaw connects, pairs, and secures devices across localhost, LAN, and tailnet."
+  },
+  {
+    "title": "Audio and voice notes",
+    "pathname": "/nodes/audio",
+    "section": "Nodes",
+    "description": "1. Locates the first audio attachment (local path or URL) and downloads it if needed. 2. Enforces maxBytes before sending to each model entry. 3. Runs the first eligible model ent…"
+  },
+  {
+    "title": "Camera capture",
+    "pathname": "/nodes/camera",
+    "section": "Nodes",
+    "description": "OpenClaw supports **camera capture** for agent workflows:"
+  },
+  {
+    "title": "Image and media support",
+    "pathname": "/nodes/images",
+    "section": "Nodes",
+    "description": "The WhatsApp channel runs via **Baileys Web**. This document captures the current media handling rules for send, gateway, and agent replies."
+  },
+  {
+    "title": "Nodes",
+    "pathname": "/nodes/index",
+    "section": "Nodes",
+    "description": "A **node** is a companion device (macOS/iOS/Android/headless) that connects to the Gateway **WebSocket** (same port as operators) with role: \"node\" and exposes a command surface (…"
+  },
+  {
+    "title": "Location command",
+    "pathname": "/nodes/location-command",
+    "section": "Nodes",
+    "description": "location.get is a node command (via node.invoke). Off by default. Android app settings use a selector: Off / While Using. Separate toggle: Precise Location."
+  },
+  {
+    "title": "Media understanding",
+    "pathname": "/nodes/media-understanding",
+    "section": "Nodes",
+    "description": "OpenClaw can **summarize inbound media** (image/audio/video) before the reply pipeline runs. It auto-detects when local tools or provider keys are available, and can be disabled o…"
+  },
+  {
+    "title": "Talk mode",
+    "pathname": "/nodes/talk",
+    "section": "Nodes",
+    "description": "Talk mode has two runtime shapes:"
+  },
+  {
+    "title": "Node troubleshooting",
+    "pathname": "/nodes/troubleshooting",
+    "section": "Nodes",
+    "description": "Use this page when a node is visible in status but node tools fail."
+  },
+  {
+    "title": "Voice wake",
+    "pathname": "/nodes/voicewake",
+    "section": "Nodes",
+    "description": "OpenClaw treats **wake words as a single global list** owned by the **Gateway**."
+  },
+  {
+    "title": "Gateway on macOS",
+    "pathname": "/platforms/mac/bundled-gateway",
+    "section": "Platforms",
+    "description": "OpenClaw\\.app no longer bundles Node/Bun or the Gateway runtime. The macOS app expects an **external** openclaw CLI install, does not spawn the Gateway as a child process, and man…"
+  },
+  {
+    "title": "Canvas",
+    "pathname": "/platforms/mac/canvas",
+    "section": "Platforms",
+    "description": "The macOS app embeds an agent-controlled **Canvas panel** using WKWebView. It is a lightweight visual workspace for HTML/CSS/JS, A2UI, and small interactive UI surfaces."
+  },
+  {
+    "title": "Gateway lifecycle on macOS",
+    "pathname": "/platforms/mac/child-process",
+    "section": "Platforms",
+    "description": "The macOS app **manages the Gateway via launchd** by default and does not spawn the Gateway as a child process. It first tries to attach to an already-running Gateway on the confi…"
+  },
+  {
+    "title": "Health checks (macOS)",
+    "pathname": "/platforms/mac/health",
+    "section": "Platforms",
+    "description": "Health Checks on macOS"
+  },
+  {
+    "title": "macOS logging",
+    "pathname": "/platforms/mac/logging",
+    "section": "Platforms",
+    "description": "Logging (macOS)"
+  },
+  {
+    "title": "Peekaboo bridge",
+    "pathname": "/platforms/mac/peekaboo",
+    "section": "Platforms",
+    "description": "OpenClaw can host **PeekabooBridge** as a local, permission-aware UI automation broker. This lets the peekaboo CLI drive UI automation while reusing the macOS app's TCC permission…"
+  },
+  {
+    "title": "Remote control",
+    "pathname": "/platforms/mac/remote",
+    "section": "Platforms",
+    "description": "This flow lets the macOS app act as a full remote control for an OpenClaw gateway running on another host (desktop/server). It's the app's **Remote over SSH** (remote run) feature…"
+  },
+  {
     "title": "Skills (macOS)",
     "pathname": "/platforms/mac/skills",
     "section": "Platforms",
-    "description": "Skills (macOS)"
+    "description": "The macOS app surfaces OpenClaw skills via the gateway; it does not parse skills locally."
   },
   {
-    "title": "Voice Overlay",
+    "title": "Voice overlay",
     "pathname": "/platforms/mac/voice-overlay",
     "section": "Platforms",
     "description": "Voice Overlay Lifecycle (macOS)"
   },
   {
-    "title": "Voice Wake (macOS)",
+    "title": "Voice wake (macOS)",
     "pathname": "/platforms/mac/voicewake",
     "section": "Platforms",
     "description": "Voice Wake & Push-to-Talk"
@@ -1593,7 +2331,7 @@
     "title": "WebChat (macOS)",
     "pathname": "/platforms/mac/webchat",
     "section": "Platforms",
-    "description": "WebChat (macOS app)"
+    "description": "The macOS menu bar app embeds the WebChat UI as a native SwiftUI view. It connects to the Gateway and defaults to the **main session** for the selected agent (with a session switc…"
   },
   {
     "title": "macOS IPC",
@@ -1602,727 +2340,535 @@
     "description": "OpenClaw macOS IPC architecture"
   },
   {
-    "title": "macOS App",
-    "pathname": "/platforms/macos",
-    "section": "Platforms",
-    "description": "OpenClaw macOS Companion (menu bar + gateway broker)"
-  },
-  {
-    "title": "Windows",
-    "pathname": "/platforms/windows",
-    "section": "Platforms",
-    "description": "Windows"
-  },
-  {
-    "title": "Moonshot AI",
-    "pathname": "/providers/moonshot",
-    "section": "Providers",
-    "description": "Moonshot AI (Kimi)"
-  },
-  {
-    "title": "NVIDIA",
-    "pathname": "/providers/nvidia",
-    "section": "Providers",
-    "description": "NVIDIA"
-  },
-  {
-    "title": "Ollama",
-    "pathname": "/providers/ollama",
-    "section": "Providers",
-    "description": "Ollama"
-  },
-  {
-    "title": "OpenAI",
-    "pathname": "/providers/openai",
-    "section": "Providers",
-    "description": "OpenAI"
-  },
-  {
-    "title": "OpenCode",
-    "pathname": "/providers/opencode",
-    "section": "Providers",
-    "description": "OpenCode"
-  },
-  {
-    "title": "OpenCode Go",
-    "pathname": "/providers/opencode-go",
-    "section": "Providers",
-    "description": "OpenCode Go"
-  },
-  {
-    "title": "OpenRouter",
-    "pathname": "/providers/openrouter",
-    "section": "Providers",
-    "description": "OpenRouter"
-  },
-  {
-    "title": "Perplexity",
-    "pathname": "/providers/perplexity-provider",
-    "section": "Providers",
-    "description": "Perplexity (Web Search Provider)"
-  },
-  {
-    "title": "Qianfan",
-    "pathname": "/providers/qianfan",
-    "section": "Providers",
-    "description": "Qianfan"
-  },
-  {
-    "title": "Qwen",
-    "pathname": "/providers/qwen",
-    "section": "Providers",
-    "description": "Qwen"
-  },
-  {
-    "title": "Runway",
-    "pathname": "/providers/runway",
-    "section": "Providers",
-    "description": "Runway"
-  },
-  {
-    "title": "SGLang",
-    "pathname": "/providers/sglang",
-    "section": "Providers",
-    "description": "SGLang"
-  },
-  {
-    "title": "StepFun",
-    "pathname": "/providers/stepfun",
-    "section": "Providers",
-    "description": "StepFun"
-  },
-  {
-    "title": "Synthetic",
-    "pathname": "/providers/synthetic",
-    "section": "Providers",
-    "description": "Synthetic"
-  },
-  {
-    "title": "Together AI",
-    "pathname": "/providers/together",
-    "section": "Providers",
-    "description": "Together AI"
-  },
-  {
-    "title": "Venice AI",
-    "pathname": "/providers/venice",
-    "section": "Providers",
-    "description": "Venice AI"
-  },
-  {
-    "title": "Vercel AI Gateway",
-    "pathname": "/providers/vercel-ai-gateway",
-    "section": "Providers",
-    "description": "Vercel AI Gateway"
-  },
-  {
-    "title": "vLLM",
-    "pathname": "/providers/vllm",
-    "section": "Providers",
-    "description": "vLLM"
-  },
-  {
-    "title": "Volcengine (Doubao)",
-    "pathname": "/providers/volcengine",
-    "section": "Providers",
-    "description": "Volcengine (Doubao)"
-  },
-  {
-    "title": "Vydra",
-    "pathname": "/providers/vydra",
-    "section": "Providers",
-    "description": "Vydra"
-  },
-  {
-    "title": "xAI",
-    "pathname": "/providers/xai",
-    "section": "Providers",
-    "description": "xAI"
-  },
-  {
-    "title": "Xiaomi MiMo",
-    "pathname": "/providers/xiaomi",
-    "section": "Providers",
-    "description": "Xiaomi MiMo"
-  },
-  {
-    "title": "Z.AI",
-    "pathname": "/providers/zai",
-    "section": "Providers",
-    "description": "Z.AI"
-  },
-  {
-    "title": "Contributing to the Threat Model",
+    "title": "Contributing to the threat model",
     "pathname": "/security/CONTRIBUTING-THREAT-MODEL",
     "section": "Security",
-    "description": "Contributing to the OpenClaw Threat Model"
+    "description": "Thanks for helping make OpenClaw more secure. This threat model is a living document and we welcome contributions from anyone - you don't need to be a security expert."
   },
   {
-    "title": "Threat Model (MITRE ATLAS)",
+    "title": "Threat model (MITRE ATLAS)",
     "pathname": "/security/THREAT-MODEL-ATLAS",
     "section": "Security",
-    "description": "OpenClaw Threat Model v1.0"
+    "description": "**Version:** 1.0-draft **Last Updated:** 2026-02-04 **Methodology:** MITRE ATLAS + Data Flow Diagrams **Framework:** MITRE ATLAS (Adversarial Threat Landscape for AI Systems)"
   },
   {
-    "title": "Formal Verification (Security Models)",
+    "title": "Formal verification (security models)",
     "pathname": "/security/formal-verification",
     "section": "Security",
-    "description": "Formal Verification (Security Models)"
+    "description": "This page tracks OpenClaw's **formal security models** (TLA+/TLC today; more as needed)."
   },
   {
-    "title": "Text-to-Speech",
+    "title": "Network proxy",
+    "pathname": "/security/network-proxy",
+    "section": "Security",
+    "description": "OpenClaw can route runtime HTTP and WebSocket traffic through an operator-managed forward proxy. This is optional defense in depth for deployments that want central egress control…"
+  },
+  {
+    "title": "Text-to-speech",
     "pathname": "/tools/tts",
     "section": "Tools",
-    "description": "Text-to-speech (TTS)"
+    "description": "OpenClaw can convert outbound replies into audio across **14 speech providers** and deliver native voice messages on Feishu, Matrix, Telegram, and WhatsApp, audio attachments ever…"
   },
   {
     "title": "Control UI",
     "pathname": "/web/control-ui",
     "section": "Web",
-    "description": "Control UI (browser)"
+    "description": "The Control UI is a small **Vite + Lit** single-page app served by the Gateway:"
   },
   {
     "title": "Dashboard",
     "pathname": "/web/dashboard",
     "section": "Web",
-    "description": "Dashboard (Control UI)"
+    "description": "The Gateway dashboard is the browser Control UI served at / by default (override with gateway.controlUi.basePath)."
   },
   {
     "title": "Web",
     "pathname": "/web/index",
     "section": "Web",
-    "description": "Web (Gateway)"
+    "description": "The Gateway serves a small **browser Control UI** (Vite + Lit) from the same port as the Gateway WebSocket:"
+  },
+  {
+    "title": "TUI",
+    "pathname": "/web/tui",
+    "section": "Web",
+    "description": "1. Start the Gateway."
   },
   {
     "title": "WebChat",
     "pathname": "/web/webchat",
     "section": "Web",
-    "description": "WebChat (Gateway WebSocket UI)"
+    "description": "Status: the macOS/iOS SwiftUI chat UI talks directly to the Gateway WebSocket."
   },
   {
-    "title": "CI Pipeline",
+    "title": "CI pipeline",
     "pathname": "/ci",
     "section": "Ci",
-    "description": "CI Pipeline"
+    "description": "OpenClaw CI runs on every push to main and every pull request. The preflight job classifies the diff and turns expensive lanes off when only unrelated areas changed. Manual workfl…"
   },
   {
-    "title": "acp",
+    "title": "ACP",
     "pathname": "/cli/acp",
     "section": "Cli",
-    "description": "acp"
+    "description": "Run the Agent Client Protocol (ACP) bridge that talks to an OpenClaw Gateway."
   },
   {
-    "title": "agent",
-    "pathname": "/cli/agent",
-    "section": "Cli",
-    "description": "openclaw agent"
-  },
-  {
-    "title": "agents",
-    "pathname": "/cli/agents",
-    "section": "Cli",
-    "description": "openclaw agents"
-  },
-  {
-    "title": "approvals",
+    "title": "Approvals",
     "pathname": "/cli/approvals",
     "section": "Cli",
     "description": "openclaw approvals"
   },
   {
-    "title": "backup",
-    "pathname": "/cli/backup",
-    "section": "Cli",
-    "description": "openclaw backup"
-  },
-  {
-    "title": "browser",
+    "title": "Browser",
     "pathname": "/cli/browser",
     "section": "Cli",
     "description": "openclaw browser"
   },
   {
-    "title": "channels",
+    "title": "Channels",
     "pathname": "/cli/channels",
     "section": "Cli",
     "description": "openclaw channels"
   },
   {
-    "title": "clawbot",
+    "title": "Clawbot",
     "pathname": "/cli/clawbot",
     "section": "Cli",
     "description": "openclaw clawbot"
   },
   {
-    "title": "completion",
+    "title": "Completion",
     "pathname": "/cli/completion",
     "section": "Cli",
     "description": "openclaw completion"
   },
   {
-    "title": "config",
+    "title": "Config",
     "pathname": "/cli/config",
     "section": "Cli",
-    "description": "openclaw config"
+    "description": "Config helpers for non-interactive edits in openclaw.json: get/set/patch/unset/file/schema/validate values by path and print the active config file. Run without a subcommand to op…"
   },
   {
-    "title": "configure",
+    "title": "Configure",
     "pathname": "/cli/configure",
     "section": "Cli",
     "description": "openclaw configure"
   },
   {
-    "title": "cron",
+    "title": "Cron",
     "pathname": "/cli/cron",
     "section": "Cli",
     "description": "openclaw cron"
   },
   {
-    "title": "daemon",
-    "pathname": "/cli/daemon",
-    "section": "Cli",
-    "description": "openclaw daemon"
-  },
-  {
-    "title": "dashboard",
+    "title": "Dashboard",
     "pathname": "/cli/dashboard",
     "section": "Cli",
     "description": "openclaw dashboard"
   },
   {
-    "title": "devices",
+    "title": "Devices",
     "pathname": "/cli/devices",
     "section": "Cli",
     "description": "openclaw devices"
   },
   {
-    "title": "directory",
+    "title": "Directory",
     "pathname": "/cli/directory",
     "section": "Cli",
     "description": "openclaw directory"
   },
   {
-    "title": "dns",
+    "title": "DNS",
     "pathname": "/cli/dns",
     "section": "Cli",
     "description": "openclaw dns"
   },
   {
-    "title": "docs",
+    "title": "Docs",
     "pathname": "/cli/docs",
     "section": "Cli",
     "description": "openclaw docs"
   },
   {
-    "title": "doctor",
-    "pathname": "/cli/doctor",
-    "section": "Cli",
-    "description": "openclaw doctor"
-  },
-  {
-    "title": "flows (redirect)",
+    "title": "Flows (redirect)",
     "pathname": "/cli/flows",
     "section": "Cli",
     "description": "openclaw tasks flow"
   },
   {
-    "title": "gateway",
-    "pathname": "/cli/gateway",
-    "section": "Cli",
-    "description": "Gateway CLI"
-  },
-  {
-    "title": "health",
-    "pathname": "/cli/health",
-    "section": "Cli",
-    "description": "openclaw health"
-  },
-  {
-    "title": "hooks",
-    "pathname": "/cli/hooks",
-    "section": "Cli",
-    "description": "openclaw hooks"
-  },
-  {
-    "title": "CLI Reference",
-    "pathname": "/cli/index",
-    "section": "Cli",
-    "description": "CLI reference"
-  },
-  {
-    "title": "Inference CLI",
-    "pathname": "/cli/infer",
-    "section": "Cli",
-    "description": "Inference CLI"
-  },
-  {
-    "title": "logs",
-    "pathname": "/cli/logs",
-    "section": "Cli",
-    "description": "openclaw logs"
-  },
-  {
-    "title": "mcp",
+    "title": "MCP",
     "pathname": "/cli/mcp",
     "section": "Cli",
-    "description": "mcp"
+    "description": "openclaw mcp has two jobs:"
   },
   {
-    "title": "memory",
-    "pathname": "/cli/memory",
-    "section": "Cli",
-    "description": "openclaw memory"
-  },
-  {
-    "title": "message",
-    "pathname": "/cli/message",
-    "section": "Cli",
-    "description": "openclaw message"
-  },
-  {
-    "title": "models",
+    "title": "Models",
     "pathname": "/cli/models",
     "section": "Cli",
     "description": "openclaw models"
   },
   {
-    "title": "node",
+    "title": "Node",
     "pathname": "/cli/node",
     "section": "Cli",
     "description": "openclaw node"
   },
   {
-    "title": "nodes",
+    "title": "Nodes",
     "pathname": "/cli/nodes",
     "section": "Cli",
     "description": "openclaw nodes"
   },
   {
-    "title": "onboard",
-    "pathname": "/cli/onboard",
-    "section": "Cli",
-    "description": "openclaw onboard"
-  },
-  {
-    "title": "pairing",
+    "title": "Pairing",
     "pathname": "/cli/pairing",
     "section": "Cli",
     "description": "openclaw pairing"
   },
   {
-    "title": "plugins",
-    "pathname": "/cli/plugins",
+    "title": "Path",
+    "pathname": "/cli/path",
     "section": "Cli",
-    "description": "openclaw plugins"
+    "description": "openclaw path"
   },
   {
-    "title": "qr",
+    "title": "Plugins",
+    "pathname": "/cli/plugins",
+    "section": "Cli",
+    "description": "Manage Gateway plugins, hook packs, and compatible bundles."
+  },
+  {
+    "title": "Proxy",
+    "pathname": "/cli/proxy",
+    "section": "Cli",
+    "description": "openclaw proxy"
+  },
+  {
+    "title": "QR",
     "pathname": "/cli/qr",
     "section": "Cli",
     "description": "openclaw qr"
   },
   {
-    "title": "reset",
-    "pathname": "/cli/reset",
-    "section": "Cli",
-    "description": "openclaw reset"
-  },
-  {
     "title": "Sandbox CLI",
     "pathname": "/cli/sandbox",
     "section": "Cli",
-    "description": "Sandbox CLI"
+    "description": "Manage sandbox runtimes for isolated agent execution."
   },
   {
-    "title": "secrets",
-    "pathname": "/cli/secrets",
-    "section": "Cli",
-    "description": "openclaw secrets"
-  },
-  {
-    "title": "security",
-    "pathname": "/cli/security",
-    "section": "Cli",
-    "description": "openclaw security"
-  },
-  {
-    "title": "sessions",
+    "title": "Sessions",
     "pathname": "/cli/sessions",
     "section": "Cli",
     "description": "openclaw sessions"
   },
   {
-    "title": "setup",
-    "pathname": "/cli/setup",
-    "section": "Cli",
-    "description": "openclaw setup"
-  },
-  {
-    "title": "skills",
+    "title": "Skills",
     "pathname": "/cli/skills",
     "section": "Cli",
     "description": "openclaw skills"
   },
   {
-    "title": "status",
-    "pathname": "/cli/status",
-    "section": "Cli",
-    "description": "openclaw status"
-  },
-  {
-    "title": "system",
+    "title": "System",
     "pathname": "/cli/system",
     "section": "Cli",
     "description": "openclaw system"
   },
   {
-    "title": "tui",
+    "title": "`openclaw tasks`",
+    "pathname": "/cli/tasks",
+    "section": "Cli",
+    "description": "Inspect durable background tasks and Task Flow state. With no subcommand, openclaw tasks is equivalent to openclaw tasks list."
+  },
+  {
+    "title": "TUI",
     "pathname": "/cli/tui",
     "section": "Cli",
     "description": "openclaw tui"
   },
   {
-    "title": "uninstall",
-    "pathname": "/cli/uninstall",
-    "section": "Cli",
-    "description": "openclaw uninstall"
-  },
-  {
-    "title": "update",
-    "pathname": "/cli/update",
-    "section": "Cli",
-    "description": "openclaw update"
-  },
-  {
-    "title": "voicecall",
+    "title": "Voicecall",
     "pathname": "/cli/voicecall",
     "section": "Cli",
     "description": "openclaw voicecall"
   },
   {
-    "title": "webhooks",
+    "title": "Webhooks",
     "pathname": "/cli/webhooks",
     "section": "Cli",
     "description": "openclaw webhooks"
   },
   {
-    "title": "wiki",
+    "title": "Wiki",
     "pathname": "/cli/wiki",
     "section": "Cli",
     "description": "openclaw wiki"
   },
   {
-    "title": "Markdown Formatting",
+    "title": "Markdown formatting",
     "pathname": "/concepts/markdown-formatting",
     "section": "Concepts",
-    "description": "Markdown formatting"
+    "description": "OpenClaw formats outbound Markdown by converting it into a shared intermediate representation (IR) before rendering channel-specific output. The IR keeps the source text intact wh…"
+  },
+  {
+    "title": "OpenClaw App SDK",
+    "pathname": "/concepts/openclaw-sdk",
+    "section": "Concepts",
+    "description": "The **OpenClaw App SDK** is the public client API for apps outside the OpenClaw process. Use @openclaw/sdk when a script, dashboard, CI job, IDE extension, or other external app w…"
   },
   {
     "title": "Timezones",
     "pathname": "/concepts/timezone",
     "section": "Concepts",
-    "description": "Timezones"
+    "description": "OpenClaw standardizes timestamps so the model sees a **single reference time** instead of a mix of provider-local clocks. There are three surfaces where timezones show up, each wi…"
   },
   {
     "title": "TypeBox",
     "pathname": "/concepts/typebox",
     "section": "Concepts",
-    "description": "TypeBox as protocol source of truth"
+    "description": "TypeBox is a TypeScript-first schema library. We use it to define the **Gateway WebSocket protocol** (handshake, request/response, server events). Those schemas drive **runtime va…"
   },
   {
-    "title": "Typing Indicators",
+    "title": "Typing indicators",
     "pathname": "/concepts/typing-indicators",
     "section": "Concepts",
-    "description": "Typing indicators"
+    "description": "Typing indicators are sent to the chat channel while a run is active. Use agents.defaults.typingMode to control **when** typing starts and typingIntervalSeconds to control **how o…"
   },
   {
-    "title": "Usage Tracking",
+    "title": "Usage tracking",
     "pathname": "/concepts/usage-tracking",
     "section": "Concepts",
-    "description": "Usage tracking"
+    "description": "upstream API reports consumed quota, remaining quota, or only raw counts."
   },
   {
-    "title": "Date and Time",
+    "title": "Date and time",
     "pathname": "/date-time",
     "section": "Date Time",
-    "description": "Date & Time"
+    "description": "OpenClaw defaults to **host-local time for transport timestamps** and **user timezone only in the system prompt**. Provider timestamps are preserved so tools keep their native sem…"
   },
   {
-    "title": "Node + tsx Crash",
+    "title": "Node + tsx crash",
     "pathname": "/debug/node-issue",
     "section": "Debug",
     "description": "Node + tsx \"\\_\\_name is not a function\" crash"
   },
   {
-    "title": "Diagnostics Flags",
+    "title": "Diagnostics flags",
     "pathname": "/diagnostics/flags",
     "section": "Diagnostics",
-    "description": "Diagnostics Flags"
+    "description": "Diagnostics flags let you enable targeted debug logs without turning on verbose logging everywhere. Flags are opt-in and have no effect unless a subsystem checks them."
   },
   {
     "title": "Debugging",
     "pathname": "/help/debugging",
     "section": "Help",
-    "description": "Debugging"
+    "description": "Debugging helpers for streaming output, especially when a provider mixes reasoning into normal text."
   },
   {
-    "title": "Environment Variables",
+    "title": "Environment variables",
     "pathname": "/help/environment",
     "section": "Help",
-    "description": "Environment variables"
+    "description": "OpenClaw pulls environment variables from multiple sources. The rule is **never override existing values**."
   },
   {
     "title": "FAQ",
     "pathname": "/help/faq",
     "section": "Help",
-    "description": "FAQ"
+    "description": "Quick answers plus deeper troubleshooting for real-world setups (local dev, VPS, multi-agent, OAuth/API keys, model failover). For runtime diagnostics, see Troubleshooting. For th…"
+  },
+  {
+    "title": "FAQ: first-run setup",
+    "pathname": "/help/faq-first-run",
+    "section": "Help",
+    "description": "Quick-start and first-run Q\\&A. For everyday operations, models, auth, sessions, and troubleshooting see the main FAQ."
+  },
+  {
+    "title": "FAQ: models and auth",
+    "pathname": "/help/faq-models",
+    "section": "Help",
+    "description": "Model- and auth-profile Q\\&A. For setup, sessions, gateway, channels, and troubleshooting, see the main FAQ."
+  },
+  {
+    "title": "GPT-5.5 / Codex agentic parity",
+    "pathname": "/help/gpt55-codex-agentic-parity",
+    "section": "Help",
+    "description": "OpenClaw already worked well with tool-using frontier models, but GPT-5.5 and Codex-style models were still underperforming in a few practical ways:"
+  },
+  {
+    "title": "GPT-5.5 / Codex parity maintainer notes",
+    "pathname": "/help/gpt55-codex-agentic-parity-maintainers",
+    "section": "Help",
+    "description": "This note explains how to review the GPT-5.5 / Codex parity program as four merge units without losing the original six-contract architecture."
   },
   {
     "title": "Help",
     "pathname": "/help/index",
     "section": "Help",
-    "description": "Help"
+    "description": "Quick \"get unstuck\" path for the most common problems:"
   },
   {
     "title": "Scripts",
     "pathname": "/help/scripts",
     "section": "Help",
-    "description": "Scripts"
+    "description": "The scripts/ directory contains helper scripts for local workflows and ops tasks. Use these when a task is clearly tied to a script; otherwise prefer the CLI."
   },
   {
     "title": "Testing",
     "pathname": "/help/testing",
     "section": "Help",
-    "description": "Testing"
+    "description": "OpenClaw has three Vitest suites (unit/integration, e2e, live) and a small set of Docker runners. This doc is a \"how we test\" guide:"
   },
   {
-    "title": "General Troubleshooting",
+    "title": "Testing: live suites",
+    "pathname": "/help/testing-live",
+    "section": "Help",
+    "description": "For quick start, QA runners, unit/integration suites, and Docker flows, see Testing. This page covers the **live** (network-touching) test suites: model matrix, CLI backends, ACP,…"
+  },
+  {
+    "title": "Testing: updates and plugins",
+    "pathname": "/help/testing-updates-plugins",
+    "section": "Help",
+    "description": "This is the dedicated checklist for update and plugin validation. The goal is simple: prove the installable package can update real user state, repair stale legacy state through d…"
+  },
+  {
+    "title": "General troubleshooting",
     "pathname": "/help/troubleshooting",
     "section": "Help",
-    "description": "Troubleshooting"
+    "description": "If you only have 2 minutes, use this page as a triage front door."
   },
   {
-    "title": "Pi Integration Architecture",
+    "title": "Pi integration architecture",
     "pathname": "/pi",
     "section": "Pi",
-    "description": "Pi Integration Architecture"
-  },
-  {
-    "title": "Pi Development Workflow",
-    "pathname": "/pi-dev",
-    "section": "Pi Dev",
-    "description": "Pi Development Workflow"
+    "description": "OpenClaw integrates with pi-coding-agent and its sibling packages (pi-ai, pi-agent-core, pi-tui) to power its AI agent capabilities."
   },
   {
     "title": "Default AGENTS.md",
     "pathname": "/reference/AGENTS.default",
     "section": "Reference",
-    "description": "AGENTS.md - OpenClaw Personal Assistant (default)"
+    "description": "OpenClaw uses a dedicated workspace directory for the agent. Default: ~/.openclaw/workspace (configurable via agents.defaults.workspace)."
   },
   {
-    "title": "Release Policy",
+    "title": "Release policy",
     "pathname": "/reference/RELEASING",
     "section": "Reference",
-    "description": "Release Policy"
+    "description": "OpenClaw has three public release lanes:"
   },
   {
-    "title": "API Usage and Costs",
+    "title": "API usage and costs",
     "pathname": "/reference/api-usage-costs",
     "section": "Reference",
-    "description": "API usage & costs"
+    "description": "This doc lists **features that can invoke API keys** and where their costs show up. It focuses on OpenClaw features that can generate provider usage or paid API calls."
+  },
+  {
+    "title": "Application modernization plan",
+    "pathname": "/reference/application-modernization-plan",
+    "section": "Reference",
+    "description": "Move the application toward a cleaner, faster, more maintainable product without breaking current workflows or hiding risk in broad refactors. The work should land as small, revie…"
   },
   {
     "title": "Credits",
     "pathname": "/reference/credits",
     "section": "Reference",
-    "description": "Credits and Acknowledgments"
+    "description": "OpenClaw = CLAW + TARDIS, because every space lobster needs a time and space machine."
   },
   {
-    "title": "Device Model Database",
+    "title": "Device model database",
     "pathname": "/reference/device-models",
     "section": "Reference",
-    "description": "Device model database (friendly names)"
+    "description": "The macOS companion app shows friendly Apple device model names in the **Instances** UI by mapping Apple model identifiers (e.g. iPad16,6, Mac16,6) to human-readable names."
+  },
+  {
+    "title": "Full release validation",
+    "pathname": "/reference/full-release-validation",
+    "section": "Reference",
+    "description": "Full Release Validation is the release umbrella. It is the single manual entrypoint for pre-release proof, but most work happens in child workflows so a failed box can be rerun wi…"
   },
   {
     "title": "Memory configuration reference",
     "pathname": "/reference/memory-config",
     "section": "Reference",
-    "description": "Memory configuration reference"
+    "description": "This page lists every configuration knob for OpenClaw memory search. For conceptual overviews, see:"
   },
   {
-    "title": "Prompt Caching",
+    "title": "OpenClaw App SDK API design",
+    "pathname": "/reference/openclaw-sdk-api-design",
+    "section": "Reference",
+    "description": "This page is the detailed API reference design for the public OpenClaw App SDK. It is intentionally separate from the Plugin SDK."
+  },
+  {
+    "title": "Prompt caching",
     "pathname": "/reference/prompt-caching",
     "section": "Reference",
-    "description": "Prompt caching"
+    "description": "Prompt caching means the model provider can reuse unchanged prompt prefixes (usually system/developer instructions and other stable context) across turns instead of re-processing…"
   },
   {
     "title": "Rich output protocol",
     "pathname": "/reference/rich-output-protocol",
     "section": "Reference",
-    "description": "Rich Output Protocol"
+    "description": "Assistant output can carry a small set of delivery/render directives:"
   },
   {
-    "title": "RPC Adapters",
+    "title": "RPC adapters",
     "pathname": "/reference/rpc",
     "section": "Reference",
-    "description": "RPC adapters"
+    "description": "OpenClaw integrates external CLIs via JSON-RPC. Two patterns are used today."
   },
   {
-    "title": "SecretRef Credential Surface",
+    "title": "SecretRef credential surface",
     "pathname": "/reference/secretref-credential-surface",
     "section": "Reference",
-    "description": "SecretRef credential surface"
+    "description": "This page defines the canonical SecretRef credential surface."
   },
   {
-    "title": "Session Management Deep Dive",
+    "title": "Session management deep dive",
     "pathname": "/reference/session-management-compaction",
     "section": "Reference",
-    "description": "Session Management & Compaction (Deep Dive)"
+    "description": "OpenClaw manages sessions end-to-end across these areas:"
   },
   {
-    "title": "AGENTS.md Template",
+    "title": "AGENTS.md template",
     "pathname": "/reference/templates/AGENTS",
     "section": "Reference",
     "description": "AGENTS.md - Your Workspace"
   },
   {
-    "title": "BOOT.md Template",
+    "title": "BOOT.md template",
     "pathname": "/reference/templates/BOOT",
     "section": "Reference",
     "description": "BOOT.md"
   },
   {
-    "title": "BOOTSTRAP.md Template",
+    "title": "BOOTSTRAP.md template",
     "pathname": "/reference/templates/BOOTSTRAP",
     "section": "Reference",
     "description": "BOOTSTRAP.md - Hello, World"
   },
   {
-    "title": "HEARTBEAT.md Template",
+    "title": "HEARTBEAT.md template",
     "pathname": "/reference/templates/HEARTBEAT",
     "section": "Reference",
-    "description": "HEARTBEAT.md Template"
+    "description": "Heartbeat config"
   },
   {
-    "title": "IDENTITY Template",
+    "title": "IDENTITY template",
     "pathname": "/reference/templates/IDENTITY",
     "section": "Reference",
     "description": "IDENTITY.md - Who Am I?"
   },
   {
-    "title": "SOUL.md Template",
+    "title": "SOUL.md template",
     "pathname": "/reference/templates/SOUL",
     "section": "Reference",
     "description": "SOUL.md - Who You Are"
   },
   {
-    "title": "TOOLS.md Template",
+    "title": "TOOLS.md template",
     "pathname": "/reference/templates/TOOLS",
     "section": "Reference",
     "description": "TOOLS.md - Local Notes"
   },
   {
-    "title": "USER Template",
+    "title": "USER template",
     "pathname": "/reference/templates/USER",
     "section": "Reference",
     "description": "USER.md - About Your Human"
@@ -2331,54 +2877,42 @@
     "title": "Tests",
     "pathname": "/reference/test",
     "section": "Reference",
-    "description": "Tests"
+    "description": "Full testing kit (suites, live, Docker): Testing"
   },
   {
-    "title": "Token Use and Costs",
+    "title": "Token use and costs",
     "pathname": "/reference/token-use",
     "section": "Reference",
-    "description": "Token use & costs"
+    "description": "OpenClaw tracks **tokens**, not characters. Tokens are model-specific, but most OpenAI-style models average \\~4 characters per token for English text."
   },
   {
-    "title": "Transcript Hygiene",
+    "title": "Transcript hygiene",
     "pathname": "/reference/transcript-hygiene",
     "section": "Reference",
-    "description": "Transcript Hygiene (Provider Fixups)"
+    "description": "OpenClaw applies **provider-specific fixes** to transcripts before a run (building model context). Most of these are **in-memory** adjustments used to satisfy strict provider requ…"
   },
   {
-    "title": "Onboarding Reference",
+    "title": "Onboarding reference",
     "pathname": "/reference/wizard",
     "section": "Reference",
-    "description": "Onboarding Reference"
+    "description": "This is the full reference for openclaw onboard. For a high-level overview, see Onboarding (CLI)."
   },
   {
     "title": "Docs directory",
     "pathname": "/start/docs-directory",
     "section": "Start",
-    "description": "Docs Directory"
+    "description": "<Note> This page is a curated index. If you are new, start with Getting Started. For a complete map of the docs, see Docs hubs. </Note>"
   },
   {
-    "title": "Docs Hubs",
+    "title": "Docs hubs",
     "pathname": "/start/hubs",
     "section": "Start",
-    "description": "Docs hubs"
+    "description": "<Note> If you are new to OpenClaw, start with Getting Started. </Note>"
   },
   {
-    "title": "OpenClaw Lore",
+    "title": "OpenClaw lore",
     "pathname": "/start/lore",
     "section": "Start",
     "description": "The Lore of OpenClaw 🦞📖"
-  },
-  {
-    "title": "Setup",
-    "pathname": "/start/setup",
-    "section": "Start",
-    "description": "Setup"
-  },
-  {
-    "title": "TUI",
-    "pathname": "/web/tui",
-    "section": "Web",
-    "description": "TUI (Terminal UI)"
   }
 ]

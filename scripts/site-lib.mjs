@@ -560,6 +560,7 @@ export function parseMarkdownSections(markdown) {
   };
   let paragraphBuffer = [];
   let listBuffer = [];
+  let tableBuffer = [];
   let codeBuffer = [];
   let codeLanguage = "text";
   let inCode = false;
@@ -579,6 +580,18 @@ export function parseMarkdownSections(markdown) {
     listBuffer = [];
   };
 
+  const flushTable = () => {
+    if (tableBuffer.length >= 2) {
+      currentSection.blocks.push({ type: "table", rows: [...tableBuffer] });
+    } else if (tableBuffer.length) {
+      const text = normalizeWhitespace(tableBuffer.join(" "));
+      if (text) {
+        currentSection.blocks.push({ type: "paragraph", text });
+      }
+    }
+    tableBuffer = [];
+  };
+
   const flushCode = () => {
     if (codeBuffer.length) {
       currentSection.blocks.push({
@@ -594,6 +607,7 @@ export function parseMarkdownSections(markdown) {
   const pushSection = () => {
     flushParagraph();
     flushList();
+    flushTable();
     flushCode();
 
     if (currentSection.blocks.length || currentSection.title !== "Start Here") {
@@ -605,6 +619,7 @@ export function parseMarkdownSections(markdown) {
     if (line.startsWith("```")) {
       flushParagraph();
       flushList();
+      flushTable();
 
       if (inCode) {
         flushCode();
@@ -635,16 +650,27 @@ export function parseMarkdownSections(markdown) {
     const listMatch = line.match(/^\s*[*-]\s+(.*)$/);
     if (listMatch) {
       flushParagraph();
+      flushTable();
       listBuffer.push(listMatch[1].trim());
+      continue;
+    }
+
+    const tableMatch = line.match(/^\s*\|.+\|\s*$/);
+    if (tableMatch) {
+      flushParagraph();
+      flushList();
+      tableBuffer.push(line.trim());
       continue;
     }
 
     if (!line.trim()) {
       flushParagraph();
       flushList();
+      flushTable();
       continue;
     }
 
+    flushTable();
     paragraphBuffer.push(line.trim());
   }
 
