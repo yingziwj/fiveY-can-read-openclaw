@@ -133,6 +133,43 @@ function renderInline(text) {
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noreferrer">$1</a>');
 }
 
+function splitMarkdownTableRow(row) {
+  return row
+    .trim()
+    .replace(/^\|/, "")
+    .replace(/\|$/, "")
+    .split("|")
+    .map((cell) => cell.trim());
+}
+
+function isMarkdownTableDivider(row) {
+  const cells = splitMarkdownTableRow(row);
+  return cells.length > 0 && cells.every((cell) => /^:?-{3,}:?$/.test(cell));
+}
+
+function renderTableRows(rows) {
+  const dataRows = rows.filter((row) => !isMarkdownTableDivider(row));
+  if (dataRows.length < 2) {
+    return `<p class="source-table-fallback">${renderInline(rows.join(" "))}</p>`;
+  }
+
+  const [headerRow, ...bodyRows] = dataRows.map(splitMarkdownTableRow);
+  return `
+    <div class="source-table-scroll">
+      <table class="source-table">
+        <thead>
+          <tr>${headerRow.map((cell) => `<th>${renderInline(cell)}</th>`).join("")}</tr>
+        </thead>
+        <tbody>
+          ${bodyRows
+            .map((row) => `<tr>${row.map((cell) => `<td>${renderInline(cell)}</td>`).join("")}</tr>`)
+            .join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
 function renderOriginalBlock(block) {
   if (block.type === "paragraph") {
     return `<p>${renderInline(block.text)}</p>`;
@@ -140,6 +177,10 @@ function renderOriginalBlock(block) {
 
   if (block.type === "list") {
     return `<ul>${block.items.map((item) => `<li>${renderInline(item)}</li>`).join("")}</ul>`;
+  }
+
+  if (block.type === "table") {
+    return renderTableRows(block.rows);
   }
 
   if (block.type === "code") {
@@ -171,6 +212,19 @@ function renderStoryBlock(block, sectionTitle) {
       </div>
       <div class="source-card">
         <div class="story-card-label">原文小纸条</div>
+        ${renderOriginalBlock(block)}
+      </div>
+    `;
+  }
+
+  if (block.type === "table") {
+    return `
+      <div class="story-card">
+        <div class="story-card-label">像整理表格</div>
+        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
+      </div>
+      <div class="source-card">
+        <div class="story-card-label">原文表格</div>
         ${renderOriginalBlock(block)}
       </div>
     `;
@@ -827,6 +881,7 @@ code, pre {
   display: grid;
   grid-template-columns: 320px minmax(0, 1fr);
   min-height: 100vh;
+  min-width: 0;
 }
 
 .sidebar {
@@ -945,6 +1000,7 @@ code, pre {
 
 .main {
   padding: 28px 28px 56px;
+  min-width: 0;
 }
 
 .hero {
@@ -1089,6 +1145,7 @@ code, pre {
 
 .section-shell {
   margin-top: 24px;
+  min-width: 0;
 }
 
 .spotlight-card,
@@ -1099,6 +1156,7 @@ code, pre {
   border-radius: 30px;
   padding: 26px;
   box-shadow: var(--shadow);
+  min-width: 0;
 }
 
 .brand-overview {
@@ -1255,6 +1313,7 @@ code, pre {
   background: var(--card);
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
+  min-width: 0;
 }
 
 .story-card-label {
@@ -1279,9 +1338,25 @@ code, pre {
   margin: 14px 0 0;
   padding: 18px;
   overflow: auto;
+  max-width: 100%;
   border-radius: 22px;
   background: #2d2b45;
   color: #f7f5ff;
+}
+
+.section-heading p,
+.spotlight-card p,
+.overview-card p,
+.story-card p,
+.source-card p,
+.ad-placeholder p,
+.source-card li,
+.source-card a,
+.source-card code,
+.overview-meta span,
+.overview-meta a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .source-card code {
@@ -1293,6 +1368,40 @@ code, pre {
 .source-card pre code {
   padding: 0;
   background: transparent;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.source-table-scroll {
+  margin: 14px 0 0;
+  overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.source-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  color: var(--soft-ink);
+  line-height: 1.6;
+}
+
+.source-table th,
+.source-table td {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.source-table th {
+  color: var(--ink);
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.source-table-fallback {
+  overflow-wrap: anywhere;
 }
 
 .overview-meta {
@@ -1567,22 +1676,30 @@ const ogImage = `<?xml version="1.0" encoding="UTF-8"?>
 </svg>
 `;
 
-await fs.writeFile(path.join(DIST_DIR, "assets", "site.css"), css.trimStart(), "utf8");
-await fs.writeFile(path.join(DIST_DIR, "assets", "site.js"), js.trimStart(), "utf8");
-await fs.writeFile(path.join(DIST_DIR, "og-image.svg"), ogImage, "utf8");
-await fs.writeFile(path.join(DIST_DIR, "index.html"), renderHomePage(), "utf8");
+function cleanOutput(value) {
+  return value.trimStart().replace(/[ \t]+$/gm, "");
+}
+
+async function writeTextFile(filePath, value) {
+  await fs.writeFile(filePath, cleanOutput(value), "utf8");
+}
+
+await writeTextFile(path.join(DIST_DIR, "assets", "site.css"), css);
+await writeTextFile(path.join(DIST_DIR, "assets", "site.js"), js);
+await writeTextFile(path.join(DIST_DIR, "og-image.svg"), ogImage);
+await writeTextFile(path.join(DIST_DIR, "index.html"), renderHomePage());
 await ensureDir(path.join(DIST_DIR, "theme-icons"));
-await fs.writeFile(path.join(DIST_DIR, "theme-icons", "index.html"), renderIconPage(), "utf8");
+await writeTextFile(path.join(DIST_DIR, "theme-icons", "index.html"), renderIconPage());
 
 for (const page of siteData.pages) {
   const outputPath = pageOutputPath(page.pathname);
   await ensureDir(path.dirname(outputPath));
-  await fs.writeFile(outputPath, await renderDocPage(page), "utf8");
+  await writeTextFile(outputPath, await renderDocPage(page));
 
   if (page.pathname !== "/index" && page.pathname.endsWith("/index")) {
     const aliasOutputPath = path.join(DIST_DIR, page.pathname.slice(1, -"/index".length), "index.html");
     await ensureDir(path.dirname(aliasOutputPath));
-    await fs.writeFile(aliasOutputPath, await renderDocPage(page), "utf8");
+    await writeTextFile(aliasOutputPath, await renderDocPage(page));
   }
 }
 
@@ -1638,10 +1755,10 @@ const searchIndex = siteData.pages.map((page) => ({
   description: page.description
 }));
 
-await fs.writeFile(path.join(DIST_DIR, "sitemap.xml"), sitemap, "utf8");
-await fs.writeFile(path.join(DIST_DIR, "robots.txt"), robots, "utf8");
-await fs.writeFile(path.join(DIST_DIR, "ads.txt"), ads, "utf8");
-await fs.writeFile(path.join(DIST_DIR, "site.webmanifest"), manifest, "utf8");
-await fs.writeFile(path.join(DIST_DIR, "search-index.json"), `${JSON.stringify(searchIndex, null, 2)}\n`, "utf8");
+await writeTextFile(path.join(DIST_DIR, "sitemap.xml"), sitemap);
+await writeTextFile(path.join(DIST_DIR, "robots.txt"), robots);
+await writeTextFile(path.join(DIST_DIR, "ads.txt"), ads);
+await writeTextFile(path.join(DIST_DIR, "site.webmanifest"), manifest);
+await writeTextFile(path.join(DIST_DIR, "search-index.json"), `${JSON.stringify(searchIndex, null, 2)}\n`);
 
 console.log(`Built ${siteData.pages.length} documentation pages into ${DIST_DIR}`);
