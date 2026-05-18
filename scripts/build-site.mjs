@@ -39,6 +39,8 @@ await fs.rm(DIST_DIR, { recursive: true, force: true });
 await ensureDir(DIST_DIR);
 await ensureDir(path.join(DIST_DIR, "assets"));
 
+const adsenseClientId = "ca-pub-3833673520933536";
+
 const defaultIconSource = path.resolve("assets/icons/concept-balloon-book.svg");
 const iconOutput = path.join(DIST_DIR, "favicon.svg");
 await fs.copyFile(defaultIconSource, iconOutput);
@@ -497,6 +499,7 @@ function renderPageLayout({ title, description, pathname, heroEyebrow, heroTitle
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="${asset("site.css")}" as="style">
   <link rel="stylesheet" href="${asset("site.css")}">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}" crossorigin="anonymous"></script>
   <script type="application/ld+json">${jsonLd({
     "@context": "https://schema.org",
     "@type": "WebPage",
