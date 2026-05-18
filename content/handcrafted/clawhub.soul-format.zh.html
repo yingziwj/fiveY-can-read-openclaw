@@ -1,0 +1,63 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>Soul format 像给“角色灵魂卡”规定统一纸张</h2>
+      <p>soul 不是一大箱杂物，而是一张主要说明纸：<code>SOUL.md</code>。ClawHub 需要它足够干净，才能读出简介、生成搜索文字，并知道这个 soul 叫什么。</p>
+      <p>这页很短，但意思很实用：只放该放的文件，名字要像网址那样安全，每次发布都会形成新版本。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合要发布 soul 的人</span>
+      <span>重点是 SOUL.md、frontmatter、slug、版本标签</span>
+      <a href="https://docs.openclaw.ai/clawhub/soul-format" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">盒子里放什么</p>
+    <h2>现在只认一张核心说明纸：<code>SOUL.md</code></h2>
+    <p>官方写得很硬：soul 是单文件格式，文件名可以是 <code>SOUL.md</code> 或 <code>soul.md</code>。额外文件目前会被拒绝，因为系统不想猜“这些附件到底算不算灵魂的一部分”。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>SOUL.md</code></div><p>像角色卡正面，写清它是谁、怎么表达、有什么设定。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>soul.md</code></div><p>小写名字也可以认。</p></div>
+    <div class="story-card"><div class="story-card-label">不要塞附件</div><p>现在的规则更像“只收一张纸”，多出来的文件会让发布失败。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">纸头小标签</p>
+    <h2>frontmatter 负责给搜索和界面一眼可读的信息</h2>
+    <p><code>SOUL.md</code> 是 Markdown，可以带 YAML frontmatter。服务器发布时会从这里抽取元数据，其中 <code>description</code> 会变成 UI 和搜索里的简介。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card"><span class="home-card-index">M</span><h2>Markdown</h2><p>正文像普通说明书，给人读，也给系统做 embedding。</p></article>
+    <article class="home-card"><span class="home-card-index">Y</span><h2>YAML frontmatter</h2><p>像贴在纸头上的小标签，让机器快速读懂。</p></article>
+    <article class="home-card"><span class="home-card-index">D</span><h2><code>description</code></h2><p>像一句橱窗介绍，别人搜索和浏览时会先看到它。</p></article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">名字和大小</p>
+    <h2>slug 要像安全门牌，bundle 也有大小上限</h2>
+    <p>slug 默认从文件夹名来，但必须小写、URL-safe，不能乱放空格和奇怪符号。整体 bundle 上限是 <code>50MB</code>，而用于 embedding 的文字只来自 <code>SOUL.md</code>。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>^[a-z0-9][a-z0-9-]*$</code></div><p>像门牌规则：小写字母、数字和短横线，开头也要稳。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>50MB</code></div><p>像邮包上限，别把一整柜东西塞进去。</p></div>
+    <div class="source-card"><div class="story-card-label">embedding text</div><p>只读 <code>SOUL.md</code>，所以关键说明别藏在别处。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">版本</p>
+    <h2>每次发布都是一个版本，tag 是贴在版本上的便签</h2>
+    <p>发布会创建新版本，通常用 semver。<code>latest</code> 这类 tag 像可移动便签，指向当前想让大家默认拿到的版本。</p>
+  </div>
+</section>
+

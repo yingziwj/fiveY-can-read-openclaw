@@ -1,0 +1,83 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>Telemetry 这页是在讲“ClawHub 怎么数安装量，但尽量少看你的东西”</h2>
+      <p>ClawHub 需要知道哪些 skill 真的被安装，才能显示当前安装数、历史安装数和趋势排序。但它不需要知道你的完整路径、文件内容、提示词或终端输出。</p>
+      <p>这页最关键的是边界：只有登录 CLI、运行 <code>clawhub sync</code> 且没有禁用时才会上报；你也可以查看、导出和删除自己的 telemetry。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合关心隐私和安装统计的人</span>
+      <span>重点是 sync 触发、rootId 哈希、用户控制</span>
+      <a href="https://docs.openclaw.ai/clawhub/telemetry" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">什么时候会报数</p>
+    <h2>不是一打开电脑就偷偷报，触发条件很明确</h2>
+    <p>Telemetry 只在几个条件同时满足时发送：你已经登录 CLI，运行了 <code>clawhub sync</code>，并且没有设置禁用开关。没登录时，不会上报。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label">已登录 CLI</div><p>像柜台知道是哪位用户在同步。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>clawhub sync</code></div><p>像你主动请它整理本地货架清单。</p></div>
+    <div class="source-card"><div class="story-card-label">未禁用 telemetry</div><p>如果你拉下禁用开关，它就不发。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">它看见什么</p>
+    <h2>它上报的是“某个根目录里有哪些已知 skill”，不是你的整台电脑</h2>
+    <p>每次 sync 会按扫描 root 报一个完整快照。root 的真实绝对路径不会直接发给服务器，而是变成 SHA-256 哈希 <code>rootId</code>，再配一个短短的显示标签。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card"><span class="home-card-index">R</span><h2><code>rootId</code></h2><p>真实路径的 SHA-256 哈希，像把地址揉成看不回去的编号。</p></article>
+    <article class="home-card"><span class="home-card-index">L</span><h2><code>label</code></h2><p>来自最后两段路径的短标签，home 路径会用 <code>~</code> 表示。</p></article>
+    <article class="home-card"><span class="home-card-index">S</span><h2><code>skillId</code></h2><p>只追踪 registry 里认得的 skill，未知 slug 会被忽略。</p></article>
+    <article class="home-card"><span class="home-card-index">T</span><h2>时间戳</h2><p>记录首次看到、最后看到、是否后来消失。</p></article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">它不看什么</p>
+    <h2>隐私边界写得很直接：不收文件内容和对话内容</h2>
+    <p>官方明确列出“不收”的内容，是为了让你知道安装计数不是全量监控。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label">不收 raw absolute paths</div><p>服务器不拿你的完整真实路径。</p></div>
+    <div class="source-card"><div class="story-card-label">不收 file contents</div><p>skill 文件内容不会被 telemetry 上传。</p></div>
+    <div class="source-card"><div class="story-card-label">不收 prompts / CLI output</div><p>不会把你的聊天、日志或终端输出拿去计数。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">安装数怎么数</p>
+    <h2>当前安装数会变，历史安装数通常只增不减</h2>
+    <p><code>installsCurrent</code> 看现在还有多少独立用户安装着；<code>installsAllTime</code> 看曾经有多少独立用户装过。多个 root 会分开看，只要任一活跃 root 里还有这个 skill，就算当前仍安装。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>installsCurrent</code></div><p>像“现在还有多少人书包里放着这张卡”。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>installsAllTime</code></div><p>像“历史上有多少人曾经拿过这张卡”。</p></div>
+    <div class="source-card"><div class="story-card-label">120 days</div><p>root 太久没同步会变 stale，不再算进当前安装数。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">你能控制</p>
+    <h2>可以查看、导出、删除，也可以直接关掉</h2>
+    <p>ClawHub 在个人 profile 里提供私有的 Installed 标签页。只有你能看自己的 root 和 installed skills，别人只看到汇总数字。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label">Installed tab</div><p>像自己的安装账本，别人不能翻。</p></div>
+    <div class="source-card"><div class="story-card-label">JSON export</div><p>把服务器知道的 telemetry 导出来检查。</p></div>
+    <div class="source-card"><div class="story-card-label">Delete telemetry</div><p>删除账号 telemetry；删除账号也会删除 telemetry 数据。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>CLAWHUB_DISABLE_TELEMETRY=1</code></div><p>环境变量禁用开关，设置后 sync 不发送 telemetry。</p></div>
+  </div>
+</section>
+

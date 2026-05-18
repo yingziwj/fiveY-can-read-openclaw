@@ -1,0 +1,78 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>How ClawHub Works 像在讲“技能商店后台怎么运转”</h2>
+      <p>ClawHub 是 OpenClaw 的登记处和货架：用户来发现 skill 和 plugin，发布者来上传版本，OpenClaw 来读取元数据并安装更新。</p>
+      <p>这页的主线很简单：先有 registry record，再有版本和文件；用户安装时记住来源；安全扫描和审核负责看门。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想先看全局图的人</span>
+      <span>重点是 registry、版本、安装来源、安全状态</span>
+      <a href="https://docs.openclaw.ai/clawhub/how-it-works" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">一张登记卡</p>
+    <h2>每个公开条目都是一张 registry record</h2>
+    <p>它不只是一个名字。ClawHub 会记住谁发布的、叫什么、有哪些版本、摘要、文件、来源、变更记录、安装和下载信号，以及安全审核状态。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label">owner + slug/package name</div><p>像“谁家的哪一盒”，避免大家叫混。</p></div>
+    <div class="source-card"><div class="story-card-label">versions + tags</div><p>像每一版说明书和“latest”小贴纸。</p></div>
+    <div class="source-card"><div class="story-card-label">stats + comments</div><p>像别人拿过多少次、有没有留下提醒。</p></div>
+    <div class="source-card"><div class="story-card-label">scan + moderation</div><p>像安全检查章，帮助用户先判断风险。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">两类货</p>
+    <h2>skill 是说明书资料袋，plugin 是能插进 OpenClaw 的扩展盒</h2>
+    <p>skill 围绕 <code>SKILL.md</code>，更像教 OpenClaw 做某件事的一套文本和材料。plugin 是打包的扩展，可能带代码、工具、通道或其他运行能力。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card"><span class="home-card-index">S</span><h2>Skill</h2><p>核心是 <code>SKILL.md</code> 和 frontmatter，元数据越清楚，搜索和安全判断越靠谱。</p></article>
+    <article class="home-card"><span class="home-card-index">P</span><h2>Plugin</h2><p>会带包元数据、兼容性、源码信息、artifact 和版本记录。</p></article>
+    <article class="home-card"><span class="home-card-index">C</span><h2>Compatibility</h2><p>安装 plugin 前，OpenClaw 会看它声明的 API、Gateway 版本和 host target。</p></article>
+    <article class="home-card"><span class="home-card-index">A</span><h2>Artifact digest</h2><p>像给下载包贴指纹，方便确认拿到的是同一份。</p></article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">发布</p>
+    <h2>发布会生成一个不可随便改的版本记录</h2>
+    <p>发布者用 <code>clawhub</code> CLI 上传。建议先 dry-run 看看将要送上去的内容，再真正发布，像交作业前先预览一遍。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>clawhub skill publish ./my-skill</code></div><p>把一个 skill 文件夹上架。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>clawhub package publish ... --dry-run</code></div><p>先演练，不真正改货架。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>clawhub package publish ...</code></div><p>确认没问题后，再发布 plugin/package。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">安装和更新</p>
+    <h2>OpenClaw 会记住东西是从 ClawHub 拿来的</h2>
+    <p>这样以后更新时，它知道应该回同一个 registry 找同一个包，而不是在别的地方乱猜。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>openclaw skills install &lt;skill-slug&gt;</code></div><p>安装 skill，像从登记处领一份资料袋。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>openclaw plugins install clawhub:&lt;package&gt;</code></div><p>明确说“这盒 plugin 从 ClawHub 货架拿”。</p></div>
+    <div class="story-card"><div class="story-card-label">source metadata</div><p>像收据，未来更新和排查时能知道来源。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">安全门</p>
+    <h2>开放发布不等于没有检查</h2>
+    <p>上传门槛、自动扫描、用户报告和管理员操作会一起工作。被隐藏、拦截或等待审核的内容，可能不会出现在公开搜索和安装流程里。</p>
+  </div>
+</section>
+
