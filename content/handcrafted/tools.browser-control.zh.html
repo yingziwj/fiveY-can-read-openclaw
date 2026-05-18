@@ -1,0 +1,104 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>Browser Control API 像给浏览器装了一个本地遥控器</h2>
+      <p>这页不是教你怎么登录网站，也不是普通的网页搜索。它在讲：OpenClaw 怎样通过本机的小 HTTP 接口和命令行，让浏览器打开网页、切换标签、截图、点按钮、输入文字。</p>
+    </div>
+    <div class="overview-meta">
+      <span>本地浏览器遥控器</span>
+      <span>重点是 API、CLI、snapshot、ref、调试</span>
+      <a href="https://docs.openclaw.ai/tools/browser-control" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>先分清：这是“遥控浏览器”，不是“搜索网页”</h2>
+    <p>如果 <code>web_search</code> 像派人出去打听消息，那 Browser Control 更像你已经坐在电脑前，用遥控器控制一个真的浏览器。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">能做什么</div>
+      <p>可以启动或停止浏览器、打开标签页、聚焦标签页、截图、抓页面结构，还能通过 <code>/act</code> 做点击和输入。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">在哪里用</div>
+      <p>这些接口主要给本地集成使用，地址跑在 Gateway 附近，不是给公网随便调用的万能入口。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>?profile=&lt;name&gt;</code></div>
+      <p>像告诉遥控器：“这次控制哪个浏览器小房间？”不同 profile 可以有不同登录状态和配置。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">一句话</div>
+      <p>这一页是浏览器工具的遥控器说明书，适合写脚本、调试页面、检查自动化动作。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>CLI 命令像一排按钮：先看，再点，再等</h2>
+    <p>官方列了很多 <code>openclaw browser</code> 命令，不用硬背。把它们分成几类就清楚了。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>看状态</h2>
+      <p><code>status</code>、<code>tabs</code>、<code>snapshot</code> 像先看看浏览器在哪里、页面上有什么。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>做动作</h2>
+      <p><code>open</code>、<code>click</code>、<code>type</code>、<code>navigate</code> 像按遥控器按钮，让页面真的动起来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>等结果</h2>
+      <p><code>wait</code> 可以等 URL、文字、加载状态。像告诉 OpenClaw：“别急，等门真的打开再说。”</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>查问题</h2>
+      <p><code>console</code>、<code>errors</code>、<code>requests</code>、<code>trace</code> 用来找页面为什么点不动、看不见、加载失败。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>Snapshot 和 ref 是“给页面上的东西贴编号”</h2>
+    <p>浏览器页面很复杂，不能总说“点那个蓝色按钮”。OpenClaw 会先拍一张文字快照，给能操作的东西贴上编号或角色引用。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">数字 ref</div>
+      <p>像页面上每个可点的地方贴了小号码。你可以说 <code>click 12</code>，比描述颜色和位置更稳。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">interactive snapshot</div>
+      <p>像拿到一张更适合动手的清单，特别适合先看编号，再点击或输入。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">失败时怎么办</div>
+      <p>如果提示不可见、被盖住、匹配太多，可以先重新 snapshot，再 highlight ref，看 OpenClaw 到底瞄准了哪里。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">安全提醒</div>
+      <p>浏览器 profile 里可能有登录状态。能执行页面脚本的功能要小心，没必要时可以关掉 <code>browser.evaluateEnabled</code>。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>把 Browser Control API 压成一句话</h2>
+    <p>它是给本地浏览器用的遥控器和检查工具：先拿 snapshot 看清页面，再用 ref 做动作，失败时用截图、日志、trace 一步步查。</p>
+  </div>
+</section>

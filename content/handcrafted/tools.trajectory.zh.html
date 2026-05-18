@@ -1,0 +1,104 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>Trajectory bundles 像给每次 agent 工作装了飞行记录仪</h2>
+      <p>当一次回答出问题时，只看最后一句话常常不够。Trajectory 会记录这次运行的时间线，再用 <code>/export-trajectory</code> 打包成可排查、会脱敏的支持包。</p>
+    </div>
+    <div class="overview-meta">
+      <span>会脱敏的调试记录包</span>
+      <span>重点是记录什么、导出什么、隐私边界</span>
+      <a href="https://docs.openclaw.ai/tools/trajectory" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>它回答的是“刚才到底发生了什么”</h2>
+    <p>排查 agent 问题时，你会想知道模型收到了什么、用了哪些工具、有没有超时、有没有被中断、当时开了哪些插件和技能。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">像飞行记录仪</div>
+      <p>飞机落地后如果要复盘，不能只问乘客感受，还要看仪表记录。Trajectory 做的就是这类记录。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">什么时候用</div>
+      <p>适合“为什么这轮没按预期做”“工具到底调了没”“是不是 provider 或超时问题”这类排查。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>/export-trajectory</code></div>
+      <p>这是导出当前 session 支持包的命令。它像把这一轮相关资料装进一个文件袋。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">owner command</div>
+      <p>导出不是谁都能做，发送者要通过正常命令授权和 owner 检查。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>包里不是只有聊天记录，还有运行侧的脚印</h2>
+    <p>Trajectory 默认会记录 OpenClaw agent run 的运行事件。导出的 bundle 里会有 <code>manifest.json</code>，告诉你这次包里实际放了哪些文件。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>会话时间线</h2>
+      <p>例如 session started、context compiled、prompt submitted 这类关键节点。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>提示和上下文</h2>
+      <p>帮助你确认模型当时看到的材料是不是完整，是否被压缩或裁剪过。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>工具和 provider</h2>
+      <p>帮助你查“工具有没有调用”“provider 有没有报错”“模型设置是不是对的”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>缺失也有信息</h2>
+      <p>如果某些文件没有出现，可能是这次运行没捕获到对应数据，先看 <code>manifest.json</code>。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>隐私边界要先讲清：这是支持包，不是公开帖</h2>
+    <p>Trajectory 会做脱敏和大小限制，但它仍然是为了支持和调试准备的资料包，不适合随手公开发布。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">会脱敏什么</div>
+      <p>凭据、像秘密的字段、图片数据、本地状态路径、工作区路径等会被处理，工作区路径会替换成 <code>$WORKSPACE_DIR</code>。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">怎样关闭记录</div>
+      <p>启动前设置 <code>OPENCLAW_TRAJECTORY=0</code> 可以关闭运行侧 trajectory 捕获。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">flush timeout</div>
+      <p>慢磁盘或大数据时，可以调 <code>OPENCLAW_TRAJECTORY_FLUSH_TIMEOUT_MS</code>，这是清理阶段等待写完记录的时间。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">排查空包</div>
+      <p>如果导出里没有运行事件，先确认没关掉 trajectory、目录可写，并再跑一条消息后重新导出。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>把 Trajectory 压成一句话</h2>
+    <p>它是 OpenClaw 的运行记录袋：出问题时用来复盘过程，导出前会尽量脱敏，但仍要像处理调试资料一样谨慎。</p>
+  </div>
+</section>

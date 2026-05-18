@@ -1,0 +1,100 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>ACP agents setup 像给外部编程工人搭一条专用上班通道</h2>
+      <p>ACP agents 的概念页讲“为什么要请外部 harness”。这一页更像安装清单：怎么启用 acpx、怎么装插件、怎么开 MCP bridge、权限怎么处理。</p>
+    </div>
+    <div class="overview-meta">
+      <span>ACP/acpx 设置清单</span>
+      <span>重点是配置顺序、桥接工具、非交互权限</span>
+      <a href="https://docs.openclaw.ai/tools/acp-agents-setup" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>先确认你走的是 ACP/acpx 这条路</h2>
+    <p>如果你只是用 OpenClaw 原生运行时，不一定需要这页。这里主要服务 ACP/acpx route，也就是让 Codex、Claude Code、Copilot、Cursor 这类 harness 接进来。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">核心开关</div>
+      <p><code>acp.enabled</code> 像总电闸，<code>dispatch.enabled</code> 像是否真的派单，<code>backend: "acpx"</code> 像指定走 acpx 后门。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">agentId</div>
+      <p>内置别名包括 <code>claude</code>、<code>codex</code>、<code>copilot</code>、<code>cursor</code>。像给不同外部工人做工牌。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">别混页面</div>
+      <p>原生 Codex app-server runtime 看 <code>/plugins/codex-harness</code>；模型 provider 和 API key 看 provider 页面。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">一句话</div>
+      <p>这页不是 ACP 概念课，而是 ACP/acpx 真正落地时的接线图。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>插件像发动机，bridge 像工具传送带</h2>
+    <p>打包安装会使用官方 <code>@openclaw/acpx</code> runtime plugin。装好并启用以后，ACP harness 才能稳定开工。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">安装 acpx 插件</div>
+      <p><code>openclaw plugins install @openclaw/acpx</code> 像把专用发动机装进机房。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">plugin tools bridge</div>
+      <p>打开 <code>pluginToolsMcpBridge</code> 后，ACP agent 才能通过桥看到 OpenClaw 插件注册的工具。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">openClawToolsMcpBridge</div>
+      <p>这是另一条桥，给内置 OpenClaw 工具用，例如让 ACP agent 调 selected built-in tools。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">timeoutSeconds</div>
+      <p>有些 harness 启动慢，可以把 acpx runtime 操作超时从默认 120 秒调高。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>权限配置要当成“无人值守时怎么办”来理解</h2>
+    <p>ACP sessions 通常没有 TTY，没法弹出一个人来点批准或拒绝。所以权限策略必须提前说清楚。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>permissionMode</code></div>
+      <p>决定 harness agent 哪些操作可以不用现场问人。它像工人的长期门禁等级。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>nonInteractivePermissions</code></div>
+      <p>决定如果本来该弹审批、但现场没人能点时怎么办。常见稳妥做法是失败，而不是偷偷放行。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">和 exec approvals 分开</div>
+      <p>ACPX harness 权限不是 OpenClaw exec approvals，也不是某个 CLI vendor 的 bypass flag。别把三把钥匙混成一把。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">改完要重启</div>
+      <p>插件配置、probe agent、timeout、权限这些设置改完后，通常要重启 Gateway 才算换上新规则。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>把 ACP setup 压成一句话</h2>
+    <p>它是 ACP/acpx 的落地清单：开 ACP，装 acpx，按需打开工具桥，提前设好非交互权限，再重启检查。</p>
+  </div>
+</section>

@@ -1,0 +1,104 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>Tokenjuice 像把很吵的命令输出榨成一杯更小的果汁</h2>
+      <p>有些 <code>exec</code> 或 <code>bash</code> 结果很长，会把上下文塞得满满的。Tokenjuice 是一个可选插件，它在命令已经跑完之后，把返回给会话的工具结果压短、整理。</p>
+    </div>
+    <div class="overview-meta">
+      <span>工具结果压缩插件</span>
+      <span>重点是只改 tool_result，不改命令和退出码</span>
+      <a href="https://docs.openclaw.ai/tools/tokenjuice" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>它整理的是“回来的结果”，不是“出去的命令”</h2>
+    <p>这是理解 Tokenjuice 最重要的一点。命令照常执行，退出码照常保留；插件只是在结果回到 harness session 之前，把噪音压一压。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">不会重跑命令</div>
+      <p>它不是觉得输出太长就重新试一次，也不会偷偷改 shell 输入。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">不会改变成败</div>
+      <p>命令成功就是成功，失败就是失败。Tokenjuice 只整理呈现，不改事实。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">适用位置</div>
+      <p>目前它作用在 PI embedded runs 和 Codex app-server harness 的 OpenClaw dynamic tools 上。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">一句话</div>
+      <p>它是结果压缩器，不是命令代理。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>什么时候它很有用</h2>
+    <p>当一个命令输出特别啰嗦，而 agent 只需要知道重点时，Tokenjuice 可以帮忙省上下文。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>长输出</h2>
+      <p>例如特别长的状态、日志、列表，原样塞回去会占很多 token。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>结构化一点</h2>
+      <p>它会尽量把噪音变短，让 agent 更快看出哪里重要。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>保留原样场景</h2>
+      <p>精确读文件内容这类场景不该乱压缩，Tokenjuice 会尽量保留原始内容。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>保持可选</h2>
+      <p>如果你要所有输出都逐字逐句原样回来，可以关掉这个插件。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>开关很简单，验证也很简单</h2>
+    <p>启用时设置 <code>plugins.entries.tokenjuice.enabled true</code>；关闭时设成 <code>false</code>，或用插件禁用命令。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">启用</div>
+      <p><code>openclaw config set plugins.entries.tokenjuice.enabled true</code></p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">关闭</div>
+      <p><code>openclaw config set plugins.entries.tokenjuice.enabled false</code>，也可以 <code>openclaw plugins disable tokenjuice</code>。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">怎么确认</div>
+      <p>启用后跑一个比较吵的命令，比如 <code>git status</code>，看回来的工具结果是不是更短、更整齐。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">记住边界</div>
+      <p>如果你在排查“命令到底原样吐了什么”，那就先关掉它，避免压缩影响判断。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>把 Tokenjuice 压成一句话</h2>
+    <p>它是可选的工具结果压缩器：命令照跑、退出码照算，只把太吵的输出整理得更省上下文。</p>
+  </div>
+</section>

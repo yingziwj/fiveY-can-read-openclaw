@@ -5346,869 +5346,117 @@
         </div>
       </div>
 
-
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Trajectory bundles</h2>
-          <p>这一页不是在堆术语，它像把“Trajectory bundles”这台小机器搬到桌上，当着你的面拆开给你看。你先不用全记住，先抓住它到底在忙什么：Trajectory capture is OpenClaw&#39;s per-session flight recorder. It records a structured timeline…。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/tools/trajectory</span>
-          <span>章节数量：11</span>
-          <a href="https://docs.openclaw.ai/tools/trajectory" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Trajectory capture is OpenClaw&#39;s per-session flight recorder. It records a structured timeline for each 机器人朋友 run, then…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Trajectory capture is OpenClaw&#39;s per-session flight recorder. It records a structured timeline for each 机器人朋友 run, then…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Trajectory capture is OpenClaw&#39;s per-session flight recorder. It records a structured timeline for each agent run, then <code>/export-trajectory</code> packages the current session into a redacted support bundle.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use it when you need to answer questions like:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use it when you need to answer questions like:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Start Here”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：What prompt, system prompt, and 工具小帮手s we…、Which transcript 小纸条消息s and 工具小帮手 calls l…、Did the run time out, abort, compact, or…、Which 聪明脑袋模型, 新本领插件s, skills, and runtime…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>What prompt, system prompt, and tools were sent to the model?</li><li>Which transcript messages and tool calls led to this answer?</li><li>Did the run time out, abort, compact, or hit a provider error?</li><li>Which model, plugins, skills, and runtime settings were active?</li><li>What usage and prompt-cache metadata did the provider return?</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：If you are filing a broad support report for a live 门口的小门卫 issue, start with /diagnostics. Diagnostics collects the san…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If you are filing a broad support report for a live Gateway issue, start with <a href="/gateway/diagnostics#chat-command" target="_blank" rel="noreferrer"><code>/diagnostics</code></a>. Diagnostics collects the sanitized Gateway bundle and, for OpenAI Codex harness sessions, can also send Codex feedback to OpenAI servers after approval. Use <code>/export-trajectory</code> when you specifically need the detailed per-session prompt, tool, and transcript timeline.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Quick start</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Send this in the active session: Alias: OpenClaw writes the bundle under the workspace: You can choose a relative outpu…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Send this in the active session:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Send this in the active session:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“/export-trajectory”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">/export-trajectory</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Alias:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Alias:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“/trajectory”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">/trajectory</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：OpenClaw writes the bundle under the workspace:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw writes the bundle under the workspace:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“.openclaw/trajectory-exports/openclaw-trajectory-&lt;session&gt;-&lt;timestamp&gt;/”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">.openclaw/trajectory-exports/openclaw-trajectory-&lt;session&gt;-&lt;timestamp&gt;/</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：You can choose a relative output directory name:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>You can choose a relative output directory name:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“/export-trajectory bug-1234”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">/export-trajectory bug-1234</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The custom path is resolved inside .openclaw/trajectory-exports/. Absolute paths and ~ paths are rejected.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The custom path is resolved inside <code>.openclaw/trajectory-exports/</code>. Absolute paths and <code>~</code> paths are rejected.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Trajectory bundles can contain prompts, 聪明脑袋模型 小纸条消息s, 工具小帮手 schemas, 工具小帮手 results, runtime events, and local paths. T…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Trajectory bundles can contain prompts, model messages, tool schemas, tool results, runtime events, and local paths. The chat slash command therefore runs through exec approval every time. Approve the export once when you intend to create the bundle; do not use allow-all. In group chats, OpenClaw sends the approval prompt and export result to the owner privately instead of posting the trajectory details back to the shared room.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：For local inspection or support workflows, you can also run the approved 魔法口令 path directly:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For local inspection or support workflows, you can also run the approved command path directly:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，像你把任务清清楚楚塞到它手里。</p>
-        <ul class="code-steps">
-          <li>这里在给“openclaw sessions export-trajectory --session-key agent”挂牌子，告诉系统它该指向“main:telegram:direct:123 --workspace .”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw sessions export-trajectory --session-key &quot;agent:main:telegram:direct:123&quot; --workspace .</code></pre>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Access</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Trajectory export is an owner 魔法口令. The sender must pass the normal 魔法口令 authorization checks and owner checks for the…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Trajectory export is an owner 魔法口令. The sender must pass the normal 魔法口令 authorization checks and owner checks for the…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Trajectory export is an owner command. The sender must pass the normal command authorization checks and owner checks for the channel.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>What gets recorded</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Trajectory capture is on by default for OpenClaw 机器人朋友 runs. Runtime events include: Transcript events are also reconst…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Trajectory capture is on by default for OpenClaw 机器人朋友 runs.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Trajectory capture is on by default for OpenClaw agent runs.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Runtime events include:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Runtime events include:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“What gets recorded”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：session.started、trace.metadata、context.compiled、prompt.submitted。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>session.started</code></li><li><code>trace.metadata</code></li><li><code>context.compiled</code></li><li><code>prompt.submitted</code></li><li><code>model.fallback_step</code>, including the source model, next model, failure reason/detail, chain position, and whether fallback advanced, succeeded, or exhausted the chain</li><li><code>model.completed</code></li><li><code>trace.artifacts</code></li><li><code>session.ended</code></li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Transcript events are also reconstructed from the active session branch:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Transcript events are also reconstructed from the active session branch:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“What gets recorded”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：user 小纸条消息s、assistant 小纸条消息s、工具小帮手 calls、工具小帮手 results。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>user messages</li><li>assistant messages</li><li>tool calls</li><li>tool results</li><li>compactions</li><li>model changes</li><li>labels and custom session entries</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Events are written as JSON Lines with this schema marker:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Events are written as JSON Lines with this schema marker:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。</p>
-        <ul class="code-steps">
-          <li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li><li>这里在给“traceSchema”挂牌子，告诉系统它该指向“openclaw-trajectory”。</li><li>这里在给“schemaVersion”挂牌子，告诉系统它该指向“1”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{
-  &quot;traceSchema&quot;: &quot;openclaw-trajectory&quot;,
-  &quot;schemaVersion&quot;: 1
-}</code></pre>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Bundle files</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：An exported bundle can contain: manifest.json lists the files present in that bundle. Some files are omitted when the s…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：An exported bundle can contain:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>An exported bundle can contain:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>File</th><th>Contents</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>manifest.json</code></td><td>Bundle schema, source files, event counts, and generated file list</td></tr><tr><td><code>events.jsonl</code></td><td>Ordered runtime and transcript timeline</td></tr><tr><td><code>session-branch.json</code></td><td>Redacted active transcript branch and session header</td></tr><tr><td><code>metadata.json</code></td><td>OpenClaw version, OS/runtime, model, config snapshot, plugins, skills, and prompt metadata</td></tr><tr><td><code>artifacts.json</code></td><td>Final status, errors, usage, prompt cache, compaction count, assistant text, and tool metadata</td></tr><tr><td><code>prompts.json</code></td><td>Submitted prompts and selected prompt-building details</td></tr><tr><td><code>system-prompt.txt</code></td><td>Latest compiled system prompt, when captured</td></tr><tr><td><code>tools.json</code></td><td>Tool definitions sent to the model, when captured</td></tr>
-        </tbody>
-      </table>
+      <!-- handcrafted-source:tools.trajectory.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Trajectory bundles：它会替你伸哪只手</h2>
+      <p>Trajectory bundles 不是名词卡片，而是一只会伸出来帮忙的手。你要看清它什么时候出手、抓进去什么、递回来什么，还有每个参数到底像哪颗按钮。原文最响的一记鼓点，其实是：Trajectory capture is OpenClaw&#39;s per-session flight recorder. It records a structured t…。</p>
     </div>
+    <div class="overview-meta">
+      <span>原文共 11 节，先看 Start Here</span>
+      <span>路径：/tools/trajectory</span>
+      <a href="https://docs.openclaw.ai/tools/trajectory" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
-      </div>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>它回答的是“刚才到底发生了什么”</h2>
+    <p>排查 agent 问题时，你会想知道模型收到了什么、用了哪些工具、有没有超时、有没有被中断、当时开了哪些插件和技能。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">像飞行记录仪</div>
+      <p>飞机落地后如果要复盘，不能只问乘客感受，还要看仪表记录。Trajectory 做的就是这类记录。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">什么时候用</div>
+      <p>适合“为什么这轮没按预期做”“工具到底调了没”“是不是 provider 或超时问题”这类排查。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>/export-trajectory</code></div>
+      <p>这是导出当前 session 支持包的命令。它像把这一轮相关资料装进一个文件袋。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">owner command</div>
+      <p>导出不是谁都能做，发送者要通过正常命令授权和 owner 检查。</p>
+    </div>
+  </div>
+</section>
 
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：manifest.json lists the files present in that bundle. Some files are omitted when the session did not capture the corre…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>manifest.json</code> lists the files present in that bundle. Some files are omitted when the session did not capture the corresponding runtime data.</p>
-      </div>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>包里不是只有聊天记录，还有运行侧的脚印</h2>
+    <p>Trajectory 默认会记录 OpenClaw agent run 的运行事件。导出的 bundle 里会有 <code>manifest.json</code>，告诉你这次包里实际放了哪些文件。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>会话时间线</h2>
+      <p>例如 session started、context compiled、prompt submitted 这类关键节点。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>提示和上下文</h2>
+      <p>帮助你确认模型当时看到的材料是不是完整，是否被压缩或裁剪过。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>工具和 provider</h2>
+      <p>帮助你查“工具有没有调用”“provider 有没有报错”“模型设置是不是对的”。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>缺失也有信息</h2>
+      <p>如果某些文件没有出现，可能是这次运行没捕获到对应数据，先看 <code>manifest.json</code>。</p>
+    </article>
+  </div>
+</section>
 
-          </div>
-        </section>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>隐私边界要先讲清：这是支持包，不是公开帖</h2>
+    <p>Trajectory 会做脱敏和大小限制，但它仍然是为了支持和调试准备的资料包，不适合随手公开发布。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">会脱敏什么</div>
+      <p>凭据、像秘密的字段、图片数据、本地状态路径、工作区路径等会被处理，工作区路径会替换成 <code>$WORKSPACE_DIR</code>。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">怎样关闭记录</div>
+      <p>启动前设置 <code>OPENCLAW_TRAJECTORY=0</code> 可以关闭运行侧 trajectory 捕获。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">flush timeout</div>
+      <p>慢磁盘或大数据时，可以调 <code>OPENCLAW_TRAJECTORY_FLUSH_TIMEOUT_MS</code>，这是清理阶段等待写完记录的时间。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">排查空包</div>
+      <p>如果导出里没有运行事件，先确认没关掉 trajectory、目录可写，并再跑一条消息后重新导出。</p>
+    </div>
+  </div>
+</section>
 
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Capture location</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：By default, runtime trajectory events are written beside the session file: OpenClaw also writes a best-effort pointer f…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：By default, runtime trajectory events are written beside the session file:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>By default, runtime trajectory events are written beside the session file:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“&lt;session&gt;.trajectory.jsonl”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">&lt;session&gt;.trajectory.jsonl</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：OpenClaw also writes a best-effort pointer file beside the session:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw also writes a best-effort pointer file beside the session:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“&lt;session&gt;.trajectory-path.json”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">&lt;session&gt;.trajectory-path.json</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Set OPENCLAW_TRAJECTORY_DIR to store runtime trajectory sidecars in a dedicated directory:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Set <code>OPENCLAW_TRAJECTORY_DIR</code> to store runtime trajectory sidecars in a dedicated directory:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端口令，像你站在控制台前，一下下按按钮让机器醒过来。</p>
-        <ul class="code-steps">
-          <li>这一行“export OPENCLAW_TRAJECTORY_DIR=/var/lib/openclaw/trajectories”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">export OPENCLAW_TRAJECTORY_DIR=/var/lib/openclaw/trajectories</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：When this variable is set, OpenClaw writes one JSONL file per session id in that directory.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When this variable is set, OpenClaw writes one JSONL file per session id in that directory.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Session maintenance removes trajectory sidecars when their owning session entry is pruned, capped, or evicted by the se…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Session maintenance removes trajectory sidecars when their owning session entry is pruned, capped, or evicted by the sessions disk budget. Runtime files outside the sessions directory are removed only when the pointer target still proves it belongs to that session.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Disable capture</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Set OPENCLAW_TRAJECTORY=0 before starting OpenClaw: This disables runtime trajectory capture. /export-trajectory can st…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Set OPENCLAW_TRAJECTORY=0 before starting OpenClaw:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Set <code>OPENCLAW_TRAJECTORY=0</code> before starting OpenClaw:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端口令，像你站在控制台前，一下下按按钮让机器醒过来。</p>
-        <ul class="code-steps">
-          <li>这一行“export OPENCLAW_TRAJECTORY=0”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">export OPENCLAW_TRAJECTORY=0</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：This disables runtime trajectory capture. /export-trajectory can still export the transcript branch, but runtime-only f…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>This disables runtime trajectory capture. <code>/export-trajectory</code> can still export the transcript branch, but runtime-only files such as compiled context, provider artifacts, and prompt metadata may be missing.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>Tune flush timeout</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：OpenClaw flushes runtime trajectory sidecars during 机器人朋友 cleanup. The default cleanup timeout is 10,000 ms. On slow di…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：OpenClaw flushes runtime trajectory sidecars during 机器人朋友 cleanup. The default cleanup timeout is 10,000 ms. On slow di…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw flushes runtime trajectory sidecars during agent cleanup. The default cleanup timeout is 10,000 ms. On slow disks or large stores, set <code>OPENCLAW_TRAJECTORY_FLUSH_TIMEOUT_MS</code> before starting OpenClaw:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端口令，像你站在控制台前，一下下按按钮让机器醒过来。</p>
-        <ul class="code-steps">
-          <li>这一行“export OPENCLAW_TRAJECTORY_FLUSH_TIMEOUT_MS=30000”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">export OPENCLAW_TRAJECTORY_FLUSH_TIMEOUT_MS=30000</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：This controls when OpenClaw logs a pi-trajectory-flush timeout and continues. It does not change the trajectory size ca…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>This controls when OpenClaw logs a <code>pi-trajectory-flush</code> timeout and continues. It does not change the trajectory size caps. To tune all agent cleanup steps that do not pass an explicit timeout, set <code>OPENCLAW_AGENT_CLEANUP_TIMEOUT_MS</code>.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>Privacy and limits</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Trajectory bundles are designed for support and debugging, not public posting. OpenClaw redacts sensitive values before…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Trajectory bundles are designed for support and debugging, not public posting. OpenClaw redacts sensitive values before…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Trajectory bundles are designed for support and debugging, not public posting. OpenClaw redacts sensitive values before writing export files:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Privacy and limits”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：credentials and known secret-like payload…、image data、local state paths、workspace paths, replaced with $WORKSPACE…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>credentials and known secret-like payload fields</li><li>image data</li><li>local state paths</li><li>workspace paths, replaced with <code>$WORKSPACE_DIR</code></li><li>home directory paths, where detected</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The exporter also bounds input size:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The exporter also bounds input size:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Privacy and limits”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：runtime sidecar files: live capture stops…、session files: 50 MiB、runtime events: 200,000、total exported events: 250,000。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>runtime sidecar files: live capture stops at 10 MiB and records a truncation event when space remains; export accepts existing runtime sidecars up to 50 MiB</li><li>session files: 50 MiB</li><li>runtime events: 200,000</li><li>total exported events: 250,000</li><li>individual runtime event lines are truncated above 256 KiB</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Review bundles before sharing them outside your team. Redaction is best-effort and cannot know every application-specif…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Review bundles before sharing them outside your team. Redaction is best-effort and cannot know every application-specific secret.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>Troubleshooting</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：If the export has no runtime events: If the 魔法口令 rejects the output path: If the export fails with a size error, the se…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：If the export has no runtime events:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If the export has no runtime events:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Troubleshooting”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：confirm OpenClaw was started without OPEN…、check whether OPENCLAW_TRAJECTORY_DIR poi…、run another 小纸条消息 in the session, then ex…、inspect manifest.json for runtimeEventCou…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>confirm OpenClaw was started without <code>OPENCLAW_TRAJECTORY=0</code></li><li>check whether <code>OPENCLAW_TRAJECTORY_DIR</code> points to a writable directory</li><li>run another message in the session, then export again</li><li>inspect <code>manifest.json</code> for <code>runtimeEventCount</code></li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：If the 魔法口令 rejects the output path:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If the command rejects the output path:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Troubleshooting”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：use a relative name like bug-1234、do not pass /tmp/... or ~/...、keep the export inside .openclaw/trajecto…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>use a relative name like <code>bug-1234</code></li><li>do not pass <code>/tmp/...</code> or <code>~/...</code></li><li>keep the export inside <code>.openclaw/trajectory-exports/</code></li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：If the export fails with a size error, the session or sidecar exceeded the export safety limits. Start a new session or…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If the export fails with a size error, the session or sidecar exceeded the export safety limits. Start a new session or export a smaller reproduction.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-11">
-          <div class="section-heading">
-            <p class="section-kicker">第 11 站</p>
-            <h2>Related</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Related”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：Diffs、Session management、Exec 工具小帮手。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><a href="/tools/diffs" target="_blank" rel="noreferrer">Diffs</a></li><li><a href="/concepts/session" target="_blank" rel="noreferrer">Session management</a></li><li><a href="/tools/exec" target="_blank" rel="noreferrer">Exec tool</a></li></ul>
-      </div>
-
-          </div>
-        </section>
-
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>把 Trajectory 压成一句话</h2>
+    <p>它是 OpenClaw 的运行记录袋：出问题时用来复盘过程，导出前会尽量脱敏，但仍要像处理调试资料一样谨慎。</p>
+  </div>
+</section>
 
 
       <footer class="page-footer">
         <div>
           <strong>Fivey Can Read OpenClaw</strong>
-          <p>同步时间：2026年5月18日 16:51</p>
+          <p>同步时间：2026年5月18日 17:09</p>
         </div>
       </footer>
     </main>

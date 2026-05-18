@@ -5346,228 +5346,113 @@
         </div>
       </div>
 
+      <!-- handcrafted-source:tools.minimax-search.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>接入 MiniMax 搜索，先拿 Coding Plan 密钥</h2>
+      <p>MiniMax Search 作为 web_search provider 接入，需要先申请 Coding Plan 密钥（不是普通 API Key）。配置时注意 region 选择：Global 用 minimax.io，CN 用 minimaxi.com，未设置时会自动从已有配置推断。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 6 节，先看 Start Here</span>
+      <span>路径：/tools/minimax-search</span>
+      <a href="https://docs.openclaw.ai/tools/minimax-search" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
-      <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>给OpenClaw配一把MiniMax的搜索钥匙🔑</h2>
-            <p>想让OpenClaw帮你上网搜东西吗？它需要一把特别的钥匙。这把钥匙叫MiniMax Coding Plan key。拿到钥匙，告诉OpenClaw放在哪，它就能为你打开网络搜索的大门。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/tools/minimax-search</span>
-            <span>故事卡片：8 张</span>
-            <a href="https://docs.openclaw.ai/tools/minimax-search" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>先拿工牌：Token Plan key</h2>
+    <p>MiniMax Search 需要凭据。你可以从 MiniMax Platform 创建或复制 Token Plan key；如果是 OAuth 设置，也可以复用 <code>MINIMAX_OAUTH_TOKEN</code>。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">放在哪里</div>
+      <p>可以放进 Gateway 环境变量，比如 <code>MINIMAX_CODE_PLAN_KEY</code>，也可以通过 <code>openclaw configure --section web</code> 配置。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Gateway 安装</div>
+      <p>如果是 Gateway 部署，环境变量通常放在 <code>~/.openclaw/.env</code>。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">其他可识别变量</div>
+      <p><code>MINIMAX_CODING_API_KEY</code>、<code>MINIMAX_OAUTH_TOKEN</code>、<code>MINIMAX_API_KEY</code> 也可作为替代来源。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">一句话</div>
+      <p>没有 MiniMax 工牌，OpenClaw 就不能派这位外勤去查网页。</p>
+    </div>
+  </div>
+</section>
 
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>这把钥匙是干什么的？</h2>
-              <p>OpenClaw可以调用MiniMax的“编程计划搜索”服务，帮你从网上找答案。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这样你问OpenClaw问题，它不仅能自己答，还能去网上帮你找资料。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>想象OpenClaw是个聪明的管家。</li><li>你问它一个问题，它除了自己思考，还能派个‘小信使’去网上图书馆查资料。</li><li>这个‘小信使’就是MiniMax的搜索服务。</li><li>它会把查到的网页标题、链接和内容摘要，整整齐齐地带回来。</li><li>管家再把这些信息整理好，讲给你听。</li></ul>
-              </div>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>Region 像选择服务窗口：Global 还是 CN</h2>
+    <p>MiniMax Search 有 global 和 CN 两个 endpoint。OpenClaw 会根据配置和凭据线索来决定该去哪一个窗口。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">Global</div>
+      <p><code>https://api.minimax.io/v1/coding_plan/search</code></p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">CN</div>
+      <p><code>https://api.minimaxi.com/v1/coding_plan/search</code></p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">未设置 region</div>
+      <p>如果没写明 region，OpenClaw 会按自己的顺序推断。读配置时先看有没有显式设置。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">为什么重要</div>
+      <p>选错窗口可能表现为认证失败、访问失败或结果不符合预期。</p>
+    </div>
+  </div>
+</section>
 
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>给管家配个会跑腿查资料的小信使。</p>
-              </div>
-            </div>
-          </section>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>它是 provider 页面，不是搜索技巧大全</h2>
+    <p>这页重点是让 MiniMax 接入 <code>web_search</code>。provider-specific filters 目前不支持，所以别期待这里有很多 MiniMax 专属过滤器。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">返回什么</div>
+      <p>结构化搜索结果，包括标题、URL、snippet 和 related queries。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">和总览页关系</div>
+      <p>所有 provider 怎么选、web search 和 web fetch 怎么分，回到 <code>/tools/web</code> 看总览更合适。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">和 MiniMax provider 页关系</div>
+      <p>模型、图像、语音和认证整体设置，看 <code>/providers/minimax</code>。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">一句话</div>
+      <p>这页只解决“把 MiniMax 当成网页搜索外勤接进 OpenClaw”。</p>
+    </div>
+  </div>
+</section>
 
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>第一步：去MiniMax平台领钥匙</h2>
-              <p>你得先去MiniMax的官方网站，申请或复制一把专属的‘编程计划密钥’。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>没有这把钥匙，OpenClaw的‘小信使’连MiniMax搜索服务的大门都进不去。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>打开MiniMax平台的用户中心，找到‘接口密钥’管理页面。</li><li>在那里，创建一把新的‘Coding Plan’钥匙，或者复制一把现成的。</li><li>这把钥匙长得像‘sk-cp-...’这样的一串神秘字符。</li><li>保管好它，这是你家的‘搜索信使’唯一的通行证。</li></ul>
-              </div>
-
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>钥匙长这样：sk-cp-...（一串字母数字）</p>
-              </div>
-            </div>
-          </section>
-
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>第二步：把钥匙交给管家OpenClaw</h2>
-              <p>拿到钥匙后，你得告诉OpenClaw管家钥匙放在哪里，它才知道怎么用。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>管家不会读心术，你得明确地告诉它钥匙的位置。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>最简单的方法：把钥匙写在一张叫‘环境变量’的小纸条上。</li><li>纸条的名字就叫‘MINIMAX_CODE_PLAN_KEY’，把钥匙内容抄上去。</li><li>把这张纸条放在OpenClaw管家一定能看到的地方，比如它工作间的‘~/.openclaw/.env’文件里。</li><li>或者，你也可以直接走到管家面前，用一条命令当面告诉它。</li></ul>
-              </div>
-
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>执行 `openclaw configure --section web` 这条命令。</li><li>就像你走到管家面前，打开它的‘网络配置’工具箱。</li><li>然后亲手把钥匙（apiKey）放进去，并告诉它这是给MiniMax搜索用的。</li><li>管家会记住这个设置，以后每次需要搜索时，都会自动从这里拿钥匙。</li></ul>
-            </div>
-
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>要么写张纸条放它桌上，要么当面打开工具箱放进去。</p>
-              </div>
-            </div>
-          </section>
-
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>关于钥匙的别名和后门</h2>
-              <p>OpenClaw管家认好几把钥匙的名字，还留了个后门兼容老钥匙。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>防止你记错钥匙的名字，或者你用的是一把旧款式的钥匙。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>你写的纸条如果叫‘MINIMAX_CODING_API_KEY’，管家也认得，和正主一样好使。</li><li>如果你有一把更老的、叫‘MINIMAX_API_KEY’的钥匙，管家也会试着用它。</li><li>但前提是，这把老钥匙本身必须能打开‘编程计划搜索’这扇门才行。</li><li>不然管家试了也白试，信使还是出不去。</li></ul>
-              </div>
-
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>钥匙可以有小名，老钥匙也可能管用。</p>
-              </div>
-            </div>
-          </section>
-
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>管家工具箱里的详细配置（可选）</h2>
-              <p>除了给钥匙，你还可以在管家的配置地图上，更精细地指挥搜索信使。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>比如，你想指定信使是去‘全球总部’还是‘中国分部’办事。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>打开OpenClaw的配置文件，找到给MiniMax工具画的地图。</li><li>在地图上，你可以明确写上钥匙（apiKey），这样就不用依赖环境变量那张纸条了。</li><li>更重要的是，你可以指定一个‘区域’（region）。</li><li>选‘global’，信使就去全球总部（api.minimax.io）查资料。</li><li>选‘cn’，信使就去中国分部（api.minimaxi.com）查资料。</li></ul>
-              </div>
-
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>在配置里写 `&quot;region&quot;: &quot;global&quot;`。</li><li>就像在地图上用图钉标出‘全球总部’的位置。</li><li>信使出发时，就会直奔这个地址去敲门。</li><li>如果这里不标，管家会按照一套默认的顺序去猜信使该去哪。</li></ul>
-            </div>
-
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>在地图上标清楚，信使该去哪个地址敲门。</p>
-              </div>
-            </div>
-          </section>
-
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>如果没标地址，管家怎么猜？</h2>
-              <p>如果你没在配置里指定区域，OpenClaw管家会按照一个固定顺序，自己推断信使该去哪。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>确保即使你没明确指示，搜索任务也有很大概率能成功派出去。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>管家首先看工具箱里有没有专门给‘网络搜索’标的地图。</li><li>没有的话，它会看看有没有一张叫‘MINIMAX_API_HOST’的地址条。</li><li>再没有，它会去查给MiniMax大模型画的总地图，看看上面的基地地址。</li><li>还不行，就再查查另一张叫‘minimax-portal’的备用地图。</li><li>按这个顺序，找到第一个能用的地址，就派信使出发。</li></ul>
-              </div>
-
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>管家很聪明，会按顺序找地址，但最好你直接告诉它。</p>
-              </div>
-            </div>
-          </section>
-
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>搜索信使能帮你查什么？</h2>
-              <p>目前，这个信使主要能帮你做两件事：传话和控制数量。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>了解信使的能力边界，你就知道该让它去查什么样的问题。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>你必须告诉信使一个明确的‘查询内容’（query），它才能出发。比如‘Python怎么安装？’。</li><li>你可以告诉信使‘最多带回来几条结果’（count）。比如你要5条，它就不会带10条回来。</li><li>OpenClaw管家收到结果后，会严格按照你要的数量来整理汇报。</li><li>目前，信使还不能接受更复杂的筛选指令，比如‘只要最近一周的新闻’。</li></ul>
-              </div>
-
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>告诉它查什么，和要几条结果。</p>
-              </div>
-            </div>
-          </section>
-
-          <section class="section-shell" id="section-8">
-            <div class="section-heading">
-              <p class="section-kicker">第 8 站</p>
-              <h2>还想了解更多？</h2>
-              <p>MiniMax搜索只是OpenClaw‘网络搜索’能力的一部分。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>OpenClaw还能用其他搜索服务，而且MiniMax本身也不止搜索这一个功能。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>想看看OpenClaw总共能派哪些公司的信使去搜索？有专门的‘网络搜索总览’地图。</li><li>想用MiniMax做更多事，比如聊天、画图、语音？有完整的‘MiniMax供应商’使用手册。</li><li>这些手册就像管家技能树的另外几个分支，等着你去探索。</li></ul>
-              </div>
-
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>搜索只是开始，OpenClaw和MiniMax还能做很多。</p>
-              </div>
-            </div>
-          </section>
-
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-        </div>
-      </section>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>把 MiniMax Search 压成一句话</h2>
+    <p>准备好 MiniMax Token Plan key，选好 region，把它接到 <code>web_search</code>，OpenClaw 就能让 MiniMax 带回结构化网页线索。</p>
+  </div>
+</section>
 
 
       <footer class="page-footer">
         <div>
           <strong>Fivey Can Read OpenClaw</strong>
-          <p>同步时间：2026年5月18日 16:51</p>
+          <p>同步时间：2026年5月18日 17:09</p>
         </div>
       </footer>
     </main>

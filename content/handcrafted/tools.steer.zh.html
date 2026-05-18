@@ -1,0 +1,104 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2><code>/steer</code> 像趁小助手还在干活时，递一张“方向修正纸条”</h2>
+      <p>它不是重新开一个任务，而是尽量把你的新指示送进正在运行的那一轮里。若当前运行时不能接住这张纸条，OpenClaw 会把它当普通消息处理，不会直接丢掉。</p>
+    </div>
+    <div class="overview-meta">
+      <span>运行中转向</span>
+      <span>重点是当前 session、队列、sub-agent、ACP</span>
+      <a href="https://docs.openclaw.ai/tools/steer" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>用在“它还没做完，但我想改方向”的时刻</h2>
+    <p>比如你发现 agent 正在做一个太大的补丁，可以发 <code>/steer prefer the smaller patch</code>。这像在旁边轻轻提醒：“别拆那么大，收窄一点。”</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">当前 session</div>
+      <p>顶层 <code>/steer</code> 只瞄准当前 session 的 active run，不会自动去选某个子 agent。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">不是强行打断</div>
+      <p>它会在运行时支持的边界尝试注入指导，像等对方抬头时递纸条。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">失败后怎么办</div>
+      <p>如果当前 runtime 不能 steer，OpenClaw 会退成普通 prompt，而不是让你的话消失。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>/tell</code></div>
+      <p>官方示例也提到 <code>/tell</code>，它更像普通告诉一句；<code>/steer</code> 的重点是“尽量送进正在跑的任务”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2><code>/steer</code> 和 <code>/queue steer</code> 的区别</h2>
+    <p>这两个名字像，但使用感觉不一样。一个是你明确发一条转向命令，另一个是让普通入站消息在有 active run 时也尝试转向。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">S</span>
+      <h2><code>/steer</code></h2>
+      <p>手动、明确、这一次就要把这句话送进当前 active run。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">Q</span>
+      <h2><code>/queue steer</code></h2>
+      <p>像改一条会话规则：之后普通消息如果碰上 active run，也先试试当成 steering。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">?</span>
+      <h2>什么时候选谁</h2>
+      <p>临时补一句，用 <code>/steer</code>。希望一段时间内入站消息都这样处理，再看队列设置。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">!</span>
+      <h2>别误会</h2>
+      <p>steer 是调整方向，不是保证对方立刻停止手上所有动作。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>子 agent 和 ACP session 要用各自的门牌</h2>
+    <p>如果目标不是当前主运行，而是子 agent 或 ACP harness session，就要走对应命令。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>/subagents steer 2 ...</code></div>
+      <p>像点名第 2 个子工人：“你只关注 API 表面。”顶层 <code>/steer</code> 不会替你选编号。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>/acp steer --session ...</code></div>
+      <p>像给外部 ACP 工人递转向纸条，需要说明具体 session 门牌。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">相关页面</div>
+      <p>子 agent 的编号和控制看 <code>/tools/subagents</code>；ACP 行为看 <code>/tools/acp-agents</code>。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">一句话</div>
+      <p>想转向谁，就用那条运行线自己的门牌和命令。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>把 <code>/steer</code> 压成一句话</h2>
+    <p>它是运行中的方向修正纸条：主 session 用 <code>/steer</code>，子 agent 用 <code>/subagents steer</code>，ACP session 用 <code>/acp steer</code>。</p>
+  </div>
+</section>

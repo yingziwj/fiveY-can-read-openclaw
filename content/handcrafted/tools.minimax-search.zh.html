@@ -1,0 +1,100 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>MiniMax Search 像给 Web Search 换上一位 MiniMax 外勤同学</h2>
+      <p>OpenClaw 的 <code>web_search</code> 可以接不同 provider。MiniMax Search 这页讲的是：怎样用 MiniMax Token Plan search API 带回标题、链接、摘要和相关问题。</p>
+    </div>
+    <div class="overview-meta">
+      <span>MiniMax 网页搜索提供商</span>
+      <span>重点是 key、region、环境变量、参数边界</span>
+      <a href="https://docs.openclaw.ai/tools/minimax-search" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>先拿工牌：Token Plan key</h2>
+    <p>MiniMax Search 需要凭据。你可以从 MiniMax Platform 创建或复制 Token Plan key；如果是 OAuth 设置，也可以复用 <code>MINIMAX_OAUTH_TOKEN</code>。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">放在哪里</div>
+      <p>可以放进 Gateway 环境变量，比如 <code>MINIMAX_CODE_PLAN_KEY</code>，也可以通过 <code>openclaw configure --section web</code> 配置。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Gateway 安装</div>
+      <p>如果是 Gateway 部署，环境变量通常放在 <code>~/.openclaw/.env</code>。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">其他可识别变量</div>
+      <p><code>MINIMAX_CODING_API_KEY</code>、<code>MINIMAX_OAUTH_TOKEN</code>、<code>MINIMAX_API_KEY</code> 也可作为替代来源。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">一句话</div>
+      <p>没有 MiniMax 工牌，OpenClaw 就不能派这位外勤去查网页。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>Region 像选择服务窗口：Global 还是 CN</h2>
+    <p>MiniMax Search 有 global 和 CN 两个 endpoint。OpenClaw 会根据配置和凭据线索来决定该去哪一个窗口。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">Global</div>
+      <p><code>https://api.minimax.io/v1/coding_plan/search</code></p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">CN</div>
+      <p><code>https://api.minimaxi.com/v1/coding_plan/search</code></p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">未设置 region</div>
+      <p>如果没写明 region，OpenClaw 会按自己的顺序推断。读配置时先看有没有显式设置。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">为什么重要</div>
+      <p>选错窗口可能表现为认证失败、访问失败或结果不符合预期。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>它是 provider 页面，不是搜索技巧大全</h2>
+    <p>这页重点是让 MiniMax 接入 <code>web_search</code>。provider-specific filters 目前不支持，所以别期待这里有很多 MiniMax 专属过滤器。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">返回什么</div>
+      <p>结构化搜索结果，包括标题、URL、snippet 和 related queries。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">和总览页关系</div>
+      <p>所有 provider 怎么选、web search 和 web fetch 怎么分，回到 <code>/tools/web</code> 看总览更合适。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">和 MiniMax provider 页关系</div>
+      <p>模型、图像、语音和认证整体设置，看 <code>/providers/minimax</code>。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">一句话</div>
+      <p>这页只解决“把 MiniMax 当成网页搜索外勤接进 OpenClaw”。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>把 MiniMax Search 压成一句话</h2>
+    <p>准备好 MiniMax Token Plan key，选好 region，把它接到 <code>web_search</code>，OpenClaw 就能让 MiniMax 带回结构化网页线索。</p>
+  </div>
+</section>

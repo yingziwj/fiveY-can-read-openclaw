@@ -1,0 +1,100 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>Exec Approvals Advanced 像给“能不能跑命令”这件事加细规则</h2>
+      <p>基础页讲的是：跑命令要不要审批。这一页讲得更细：哪些很安全的小工具可以快一点通过，解释器为什么要格外小心，审批消息怎么送到聊天通道。</p>
+    </div>
+    <div class="overview-meta">
+      <span>命令审批高级规则</span>
+      <span>重点是 safeBins、解释器绑定、审批转发</span>
+      <a href="https://docs.openclaw.ai/tools/exec-approvals-advanced" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2><code>safeBins</code> 像“只能处理递进来的纸条”的小剪刀</h2>
+    <p>有些命令很小，只负责整理输入内容，比如从一段文本里剪出几列。OpenClaw 可以把这类命令放进 <code>safeBins</code>，让它们在 allowlist 模式下更顺畅。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">为什么叫 stdin-only</div>
+      <p>它只能吃别人递给它的输入，不能自己拿文件路径去翻主机里的东西。像小剪刀只能剪桌上的纸，不能开抽屉。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">为什么不能放解释器</div>
+      <p><code>python3</code>、<code>node</code>、<code>bash</code> 这类工具会执行代码，能力太大，不能当成“小剪刀”快放行。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">验证方式</div>
+      <p>OpenClaw 看的是参数形状，不靠“这个文件存不存在”来判断，避免让命令审批变成探测文件的小缝。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">可信目录</div>
+      <p>safe bin 必须从可信二进制目录里找到，默认很收紧，比如 <code>/bin</code> 和 <code>/usr/bin</code>。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>解释器和 shell 像万能工具箱，所以要绑得更紧</h2>
+    <p>普通命令可能只是做一件事，解释器却能读文件、跑代码、再叫别的命令。高级审批会把这类运行方式看得更严。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">shell 链式命令</div>
+      <p><code>&amp;&amp;</code>、<code>;</code>、管道这类组合，必须每一段都满足规则。像一串小火车，每节车厢都要验票。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">wrapper 会被拆开看</div>
+      <p><code>npx</code>、<code>npm exec</code>、<code>pnpm exec</code> 这类包装纸会被拆开，不能靠换一层外衣绕过审批。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">环境变量</div>
+      <p>shell wrapper 只允许很小一组请求级环境变量，例如颜色和语言相关项，减少偷偷带东西进去的机会。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">核心判断</div>
+      <p>能执行代码的工具，就不应该享受 safe bin 的快速通道。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>审批转发像把“请签字”纸条送到聊天软件</h2>
+    <p>审批不一定只留在本地页面。OpenClaw 可以把 exec 或 plugin 审批请求送到 Slack、Matrix、Teams、Discord、Telegram 等通道，让有权限的人用 <code>/approve</code> 处理。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">same-chat approval</div>
+      <p>如果请求本来就从可投递聊天里来，通常可以在同一个聊天里批准，像原地递回签字纸。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">native approval</div>
+      <p>有些通道还能用原生按钮或卡片，体验更像真正的审批弹窗。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">exec 和 plugin 分开配</div>
+      <p><code>approvals.exec</code> 和 <code>approvals.plugin</code> 是两套开关。开一个，不代表另一个也开。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">macOS IPC</div>
+      <p>macOS 伴随应用的审批链路会用本地 socket、token、HMAC 和短时效校验，尽量保证“签字纸”没被别人调包。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>把高级审批压成一句话</h2>
+    <p>这一页是在教你把命令审批做细：小而受限的工具可以快一点，万能解释器必须严一点，审批纸条可以安全地送到合适的聊天通道。</p>
+  </div>
+</section>
