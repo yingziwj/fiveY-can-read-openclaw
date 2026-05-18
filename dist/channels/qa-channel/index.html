@@ -5346,391 +5346,143 @@
         </div>
       </div>
 
+      <!-- handcrafted-source:channels.qa-channel.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>QA 消息通道：消息从哪扇门跑进来</h2>
+      <p>QA 消息通道 像一扇接消息的门。你要看清门铃装在哪、钥匙交给谁、什么人能进来，以及门口最容易被绊一跤的是哪块砖。原文最响的一记鼓点，其实是：qa-消息通道 is a bundled synthetic 小纸条消息 transport for automated OpenClaw QA. It is not a p…。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 5 节，先看 Start Here</span>
+      <span>路径：/channels/qa-channel</span>
+      <a href="https://docs.openclaw.ai/channels/qa-channel" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>QA channel</h2>
-          <p>这一页不是在堆术语，它像把“QA 消息通道”这台小机器搬到桌上，当着你的面拆开给你看。你先不用全记住，先抓住它到底在忙什么：qa-消息通道 is a bundled synthetic 小纸条消息 transport for automated OpenClaw QA. It is not a productio…。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/channels/qa-channel</span>
-          <span>章节数量：5</span>
-          <a href="https://docs.openclaw.ai/channels/qa-channel" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>把它想成一间可以反复布置的测试教室</h2>
+    <p>真实聊天软件会有网络、真人和平台规则的变化；QA channel 则把这些变量变得可检查、可重放。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">dm</span>
+      <h2><code>dm:&lt;user&gt;</code></h2>
+      <p>模拟一个用户和机器人私聊。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">room</span>
+      <h2><code>channel:&lt;room&gt;</code> / <code>group:&lt;room&gt;</code></h2>
+      <p>模拟共享房间，测试机器人在群里该不该可见回复。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">thread</span>
+      <h2><code>thread:&lt;room&gt;/&lt;thread&gt;</code></h2>
+      <p>模拟线程里的对话，看看消息路由会不会跑偏。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">report</span>
+      <h2><code>.artifacts/qa-e2e/</code></h2>
+      <p>自检跑完会把 Markdown 报告写到这里，方便回头查。</p>
+    </article>
+  </div>
+</section>
 
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：qa-消息通道 is a bundled synthetic 小纸条消息 transport for automated OpenClaw QA. It is not a production 消息通道 - it exists to ex…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>配置里的字段，就是给这间教室摆桌椅和点名册</h2>
+    <p>最小配置会告诉 OpenClaw：测试 bus 在哪儿，机器人叫什么，谁可以发消息。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>baseUrl: "http://127.0.0.1:43123"</code></div>
+      <p>这是合成消息 bus 的门牌号，测试消息从这里进进出出。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>botUserId: "openclaw"</code></div>
+      <p>像给测试机器人发一个固定学生证，方便所有脚本都认得它。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>allowFrom: ["*"]</code></div>
+      <p>测试时可以先允许所有合成发送者，方便覆盖更多场景。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>pollTimeoutMs</code></div>
+      <p>这是长轮询等多久，范围从 100 到 30000 毫秒，像老师等学生交纸条的时间。</p>
+    </div>
+  </div>
+</section>
 
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：qa-消息通道 is a bundled synthetic 小纸条消息 transport for automated OpenClaw QA. It is not a production 消息通道 - it exists to ex…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>qa-channel</code> is a bundled synthetic message transport for automated OpenClaw QA. It is not a production channel - it exists to exercise the same channel plugin boundary used by real transports while keeping state deterministic and fully inspectable.</p>
-      </div>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>它能测的不只是“发一句话”，还包括很多聊天动作</h2>
+    <p>QA channel 之所以有用，是因为它能穿过和真实通道相同的插件边界。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">入站注入</div>
+      <p>测试脚本可以往 bus 里塞一条消息，像假装有人刚刚发来问题。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">出站记录</div>
+      <p>机器人回了什么，会被记录下来，方便检查文字、目标房间和线程是否正确。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">反应、编辑、删除、搜索</div>
+      <p>这些都能按动作开关管控，像给每种课堂活动单独发许可。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>groupPolicy</code> / <code>groupAllowFrom</code></div>
+      <p>共享房间也可以设置开放、名单或关闭，模拟真实群聊的守门规则。</p>
+    </div>
+  </div>
+</section>
 
-          </div>
-        </section>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>跑测试时，有三条常见路线</h2>
+    <p>不同命令对应不同大小的检查：从本机自检，到完整场景套件，再到带调试 UI 的 QA Lab。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>pnpm qa:e2e</code></div>
+      <p>像做一次本机小测验。它会启动 QA bus，跑确定性自检，并写出 Markdown 报告。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>pnpm openclaw qa suite</code></div>
+      <p>像跑完整考试卷，多个场景会并行通过 QA gateway lane 执行。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>pnpm qa:lab:up</code></div>
+      <p>像打开一间带观察窗的实验室，可以在 QA Lab 里挑场景、选模型通道、看运行结果。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">别当生产通道</div>
+      <p>它是练习教室，不是正式门店。真实用户聊天还是要走 Slack、Discord、Telegram 等通道。</p>
+    </div>
+  </div>
+</section>
 
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>What it does</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“What it does”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：Slack-class target grammar:、dm:&lt;user&gt;、消息通道:&lt;room&gt;、大家一起的房间:&lt;room&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Slack-class target grammar:</li><li><code>dm:&lt;user&gt;</code></li><li><code>channel:&lt;room&gt;</code></li><li><code>group:&lt;room&gt;</code></li><li><code>thread:&lt;room&gt;/&lt;thread&gt;</code></li><li>Shared <code>channel:</code> and <code>group:</code> conversations are surfaced to agents as group/channel room turns, so they exercise the same visible-reply and message-tool routing policy used by Discord, Slack, Telegram, and similar transports.</li><li>HTTP-backed synthetic bus for inbound message injection, outbound transcript capture, thread creation, reactions, edits, deletes, and search/read actions.</li><li>Host-side self-check runner that writes a Markdown report to <code>.artifacts/qa-e2e/</code>.</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>设置说明书</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Account keys: allowlisted 大家一起的房间 policy both use these synthetic sender ids. &quot;disabled&quot;. &quot;allowlist&quot;, QA 消息通道 falls ba…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。</p>
-        <ul class="code-steps">
-          <li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li><li>这里在给“channels”挂牌子，告诉系统它该指向“{”。</li><li>这里在给“qa-channel”挂牌子，告诉系统它该指向“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{
-  &quot;channels&quot;: {
-    &quot;qa-channel&quot;: {
-      &quot;baseUrl&quot;: &quot;http://127.0.0.1:43123&quot;,
-      &quot;botUserId&quot;: &quot;openclaw&quot;,
-      &quot;botDisplayName&quot;: &quot;OpenClaw QA&quot;,
-      &quot;allowFrom&quot;: [&quot;*&quot;],
-      &quot;pollTimeoutMs&quot;: 1000
-    }
-  }
-}</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Account keys:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Account keys:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：allowlisted 大家一起的房间 policy both use these synthetic sender ids.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>allowlisted group policy both use these synthetic sender ids.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&quot;disabled&quot;.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>&quot;disabled&quot;</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&quot;allowlist&quot;, QA 消息通道 falls back to allowFrom.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>&quot;allowlist&quot;</code>, QA Channel falls back to <code>allowFrom</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：specific 大家一起的房间/消息通道 room. 大家一起的房间s.&quot;*&quot; sets the default.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>specific group/channel room. <code>groups.&quot;*&quot;</code> sets the default.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Config”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：enabled - master toggle for this account.、name - optional display label.、baseUrl - synthetic bus URL.、botUserId - Matrix-style bot user id used…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>enabled</code> - master toggle for this account.</li><li><code>name</code> - optional display label.</li><li><code>baseUrl</code> - synthetic bus URL.</li><li><code>botUserId</code> - Matrix-style bot user id used in target grammar.</li><li><code>botDisplayName</code> - display name for outbound messages.</li><li><code>pollTimeoutMs</code> - long-poll wait window. Integer between 100 and 30000.</li><li><code>allowFrom</code> - sender allowlist (user ids or <code>&quot;*&quot;</code>). Direct messages and</li><li><code>groupPolicy</code> - shared-room policy: <code>&quot;open&quot;</code> (default), <code>&quot;allowlist&quot;</code>, or</li><li><code>groupAllowFrom</code> - optional shared-room sender allowlist. When omitted under</li><li><code>groups.&lt;room&gt;.requireMention</code> - require a bot mention before replying in a</li><li><code>defaultTo</code> - fallback target when none is supplied.</li><li><code>actions.messages</code> / <code>actions.reactions</code> / <code>actions.search</code> / <code>actions.threads</code> - per-action tool gating.</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Multi-account keys at the top level:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Multi-account keys at the top level:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Config”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：accounts - record of named per-account ov…、defaultAccount - preferred account id whe…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>accounts</code> - record of named per-account overrides keyed by account id.</li><li><code>defaultAccount</code> - preferred account id when multiple are configured.</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Runners</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Host-side self-check (writes a Markdown report under .artifacts/qa-e2e/): This routes through qa-lab, starts the in-rep…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Host-side self-check (writes a Markdown report under .artifacts/qa-e2e/):。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Host-side self-check (writes a Markdown report under <code>.artifacts/qa-e2e/</code>):</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端口令，像你站在控制台前，一下下按按钮让机器醒过来。</p>
-        <ul class="code-steps">
-          <li>这里在给“pnpm qa”挂牌子，告诉系统它该指向“e2e”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">pnpm qa:e2e</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：This routes through qa-lab, starts the in-repo QA bus, boots the bundled qa-消息通道 runtime slice, and runs a deterministi…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>This routes through <code>qa-lab</code>, starts the in-repo QA bus, boots the bundled <code>qa-channel</code> runtime slice, and runs a deterministic self-check.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Full repo-backed scenario suite:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Full repo-backed scenario suite:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端口令，像你站在控制台前，一下下按按钮让机器醒过来。</p>
-        <ul class="code-steps">
-          <li>这一句像在终端上按下启动钮：“pnpm openclaw qa suite”。它会让电脑去请求、安装或者把东西搭起来。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">pnpm openclaw qa suite</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Runs scenarios in parallel against the QA 门口的小门卫 lane. See QA overview for scenarios, profiles, and provider modes.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Runs scenarios in parallel against the QA gateway lane. See <a href="/concepts/qa-e2e-automation" target="_blank" rel="noreferrer">QA overview</a> for scenarios, profiles, and provider modes.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Docker-backed QA site (门口的小门卫 + QA Lab debugger UI in one stack):。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Docker-backed QA site (gateway + QA Lab debugger UI in one stack):</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端口令，像你站在控制台前，一下下按按钮让机器醒过来。</p>
-        <ul class="code-steps">
-          <li>这里在给“pnpm qa”挂牌子，告诉系统它该指向“lab:up”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">pnpm qa:lab:up</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Builds the QA site, starts the Docker-backed 门口的小门卫 + QA Lab stack, and prints the QA Lab URL. From there you can pick…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Builds the QA site, starts the Docker-backed gateway + QA Lab stack, and prints the QA Lab URL. From there you can pick scenarios, choose the model lane, launch individual runs, and watch results live. The QA Lab debugger is separate from the shipped Control UI bundle.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Related</h2>
-            <p>这一节主要在解释“Related”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Related”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Related”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：QA overview - overall stack, transport ad…、Matrix QA - example live-transport runner…、Pairing、大家一起的房间s。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><a href="/concepts/qa-e2e-automation" target="_blank" rel="noreferrer">QA overview</a> - overall stack, transport adapters, scenario authoring</li><li><a href="/concepts/qa-matrix" target="_blank" rel="noreferrer">Matrix QA</a> - example live-transport runner that drives a real channel</li><li><a href="/channels/pairing" target="_blank" rel="noreferrer">Pairing</a></li><li><a href="/channels/groups" target="_blank" rel="noreferrer">Groups</a></li><li><a href="/channels" target="_blank" rel="noreferrer">Channels overview</a></li></ul>
-      </div>
-
-          </div>
-        </section>
-
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>把 QA channel 这页压成一句话</h2>
+    <p>QA channel 是给测试用的假聊天世界：它让 OpenClaw 像接真实通道一样收发消息，但所有动作都能被脚本安排、记录和检查。</p>
+  </div>
+</section>
 
 
       <footer class="page-footer">
         <div>
           <strong>Fivey Can Read OpenClaw</strong>
-          <p>同步时间：2026年5月18日 17:09</p>
+          <p>同步时间：2026年5月18日 17:31</p>
         </div>
       </footer>
     </main>

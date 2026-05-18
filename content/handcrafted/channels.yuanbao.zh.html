@@ -1,0 +1,157 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>Yuanbao 这页，是给 OpenClaw 接上“腾讯元宝机器人门口”</h2>
+      <p>元宝通道用 WebSocket 连接 OpenClaw，让元宝里的机器人可以收私聊、进群聊、发图片文件和一段段回消息。</p>
+      <p>最先要记住三件事：OpenClaw 版本要够新，<code>appKey:appSecret</code> 要填对，群聊默认需要 @ 机器人。</p>
+    </div>
+    <div class="overview-meta">
+      <span>生产可用的 bot DM + 群聊通道</span>
+      <span>重点是 WebSocket、App Key、App Secret 和群聊 @ 规则</span>
+      <a href="https://docs.openclaw.ai/channels/yuanbao" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>快速启动像给机器人发一张“元宝门票”</h2>
+    <p>这页要求 OpenClaw 2026.4.10 或以上。版本太旧时，先更新再配通道。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw --version</code></div>
+      <p>先看自己是不是新版本，像进门前检查票是不是今天能用。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw channels add --channel yuanbao --token "appKey:appSecret"</code></div>
+      <p><code>appKey</code> 和 <code>appSecret</code> 中间用冒号连起来，像把门牌号和暗号一起交给 OpenClaw。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw channels login --channel yuanbao</code></div>
+      <p>如果不想一次写完整命令，也可以走互动向导，让它一步步问你 App ID 和 App Secret。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway restart</code></div>
+      <p>配好后要重启 Gateway，新的元宝门口才会正式开始值班。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>私聊门口有四种守门方式</h2>
+    <p><code>dm.policy</code> 决定谁能直接和机器人说话。默认是 <code>open</code>，也就是都能来。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">open</span>
+      <h2>全部放行</h2>
+      <p>适合公开机器人，但也要注意别让陌生流量太随便进来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">pairing</span>
+      <h2>先领号码牌</h2>
+      <p>陌生人先拿配对码，你审核后再继续聊。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">allowlist</span>
+      <h2>只认名单</h2>
+      <p>只有 <code>allowFrom</code> 里写到的人可以进门。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">disabled</span>
+      <h2>关掉私聊</h2>
+      <p>如果只想处理群聊或暂时停用私聊，就把这扇门锁上。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>群聊默认要 @，这是为了不让机器人乱插话</h2>
+    <p>元宝群聊里，默认 <code>requireMention: true</code>。别人直接回复机器人的消息，也算一种隐含 @。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>requireMention: true</code></div>
+      <p>像课堂上先举手叫机器人，它才回答，不会听到任何一句话都冲出来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>requireMention: false</code></div>
+      <p>如果你明确想让它不用 @ 也响应，可以关掉这个要求，但群里会更容易热闹过头。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>historyLimit</code></div>
+      <p>这是给群聊带多少历史消息。默认 100 条，设成 0 就是不带历史。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>replyToMode</code></div>
+      <p>决定回群聊时要不要引用消息：不引用、只引用第一条，或每条都引用。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>长回复不是硬塞一大坨，而是按策略分段送出</h2>
+    <p>元宝通道很在意消息大小和发送节奏，因为平台对单条消息和媒体都有上限。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>outboundQueueStrategy: "merge-text"</code></div>
+      <p>像先把短句攒成一段再送，默认更适合读长回答。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>outboundQueueStrategy: "immediate"</code></div>
+      <p>像生成一点就立刻发一点，适合希望更快看到动静的场景。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>maxChars</code> / <code>mediaMaxMb</code></div>
+      <p>一个管文字单条最多多少字，另一个管媒体包裹最大能有多重。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>disableBlockStreaming</code></div>
+      <p>默认会块级流式输出；打开这个禁用项后，就等完整回复写完再一次发。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>排查问题时，先按“钥匙、门、喊没喊名字”来查</h2>
+    <p>元宝这页的故障排查，其实可以缩成几个很直白的问题。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">机器人没收到消息</div>
+      <p>检查元宝应用里的机器人是否创建并通过审核，<code>appKey</code> 和 <code>appSecret</code> 是否写对，Gateway 是否在运行。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">群里没反应</div>
+      <p>先确认机器人在群里，再确认有没有 @ 它，最后看 <code>openclaw logs --follow</code>。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">回复为空或走兜底话术</div>
+      <p>先看模型有没有真的返回内容；默认兜底句是“暂时无法解答，你可以换个问题问问我哦”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">App Secret 泄漏</div>
+      <p>不要犹豫：在元宝应用里重置 secret，更新配置，然后重启 Gateway。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后总结</p>
+    <h2>把 Yuanbao 这页压成一句话</h2>
+    <p>元宝通道就是给 OpenClaw 接上一台腾讯元宝机器人：拿好 <code>appKey:appSecret</code>，守好私聊和群聊规则，再按消息长度和流式策略把回复稳稳送出去。</p>
+  </div>
+</section>
