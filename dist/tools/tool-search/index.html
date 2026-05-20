@@ -4,18 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tool Search | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="工具小帮手 Search 不是名词卡片，而是一只会伸出来帮忙的手。你要看清它什么时候出手、抓进去什么、递回来什么，还有每个参数到底像哪颗按钮。原文最响的一记鼓点，其实是：工具小帮手 Search is an experimental OpenClaw PI-机器人朋友 feature. It gives PI 机器人…">
+  <meta name="description" content="Tool Search 是 OpenClaw PI agent 的实验能力：工具很多时，模型先搜索轻量目录，再描述选中的工具，最后仍通过 OpenClaw 正常调用。它适合大工具目录，不是 Codex harness 的原生工具搜索；策略、审批、hook、日志和失败关闭规则仍然照常生效。">
   <meta name="robots" content="index,follow">
+  <meta name="google-adsense-account" content="ca-pub-3833673520933536">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Tool Search | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="工具小帮手 Search 不是名词卡片，而是一只会伸出来帮忙的手。你要看清它什么时候出手、抓进去什么、递回来什么，还有每个参数到底像哪颗按钮。原文最响的一记鼓点，其实是：工具小帮手 Search is an experimental OpenClaw PI-机器人朋友 feature. It gives PI 机器人…">
+  <meta property="og:description" content="Tool Search 是 OpenClaw PI agent 的实验能力：工具很多时，模型先搜索轻量目录，再描述选中的工具，最后仍通过 OpenClaw 正常调用。它适合大工具目录，不是 Codex harness 的原生工具搜索；策略、审批、hook、日志和失败关闭规则仍然照常生效。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/tools/tool-search/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta property="og:image:alt" content="Tool Search 的中文故事化导读页面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tool Search | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="工具小帮手 Search 不是名词卡片，而是一只会伸出来帮忙的手。你要看清它什么时候出手、抓进去什么、递回来什么，还有每个参数到底像哪颗按钮。原文最响的一记鼓点，其实是：工具小帮手 Search is an experimental OpenClaw PI-机器人朋友 feature. It gives PI 机器人…">
+  <meta name="twitter:description" content="Tool Search 是 OpenClaw PI agent 的实验能力：工具很多时，模型先搜索轻量目录，再描述选中的工具，最后仍通过 OpenClaw 正常调用。它适合大工具目录，不是 Codex harness 的原生工具搜索；策略、审批、hook、日志和失败关闭规则仍然照常生效。">
   <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/tools/tool-search/">
@@ -23,7 +24,8 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Tool Search","description":"工具小帮手 Search 不是名词卡片，而是一只会伸出来帮忙的手。你要看清它什么时候出手、抓进去什么、递回来什么，还有每个参数到底像哪颗按钮。原文最响的一记鼓点，其实是：工具小帮手 Search is an experimental OpenClaw PI-机器人朋友 feature. It gives PI 机器人…","url":"https://fivey-can-read-openclaw.pages.dev/tools/tool-search/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3833673520933536" crossorigin="anonymous"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Tool Search","description":"Tool Search 是 OpenClaw PI agent 的实验能力：工具很多时，模型先搜索轻量目录，再描述选中的工具，最后仍通过 OpenClaw 正常调用。它适合大工具目录，不是 Codex harness 的原生工具搜索；策略、审批、hook、日志和失败关闭规则仍然照常生效。","url":"https://fivey-can-read-openclaw.pages.dev/tools/tool-search/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://fivey-can-read-openclaw.pages.dev/tools/tool-search/"}]}</script>
 </head>
 <body>
@@ -722,11 +724,6 @@
                   <small>ACP agents</small>
                 </a>
 
-                <a class="sidebar-link " href="/tools/acp-agents-setup/">
-                  <span>ACP agents — setup</span>
-                  <small>ACP agents — setup</small>
-                </a>
-
                 <a class="sidebar-link " href="/tools/agent-send/">
                   <span>Agent send 工具</span>
                   <small>Agent send</small>
@@ -977,6 +974,11 @@
                   <small>Web fetch</small>
                 </a>
 
+                <a class="sidebar-link " href="/tools/acp-agents-setup/">
+                  <span>ACP agents — setup</span>
+                  <small>ACP agents — setup</small>
+                </a>
+
                 <a class="sidebar-link " href="/tools/multi-agent-sandbox-tools/">
                   <span>Multi-agent sandbox and tools 工具</span>
                   <small>Multi-agent sandbox and tools</small>
@@ -1075,6 +1077,11 @@
                 <a class="sidebar-link " href="/plugins/skill-workshop/">
                   <span>技能 workshop plugin</span>
                   <small>Skill workshop plugin</small>
+                </a>
+
+                <a class="sidebar-link " href="/plugins/tool-plugins/">
+                  <span>工具 plugins</span>
+                  <small>Tool plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/voice-call/">
@@ -1627,11 +1634,6 @@
             <details class="sidebar-group">
               <summary>网关</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/gateway/configuration/">
-                  <span>配置</span>
-                  <small>Configuration</small>
-                </a>
-
                 <a class="sidebar-link " href="/gateway/">
                   <span>Gateway runbook</span>
                   <small>Gateway runbook</small>
@@ -1675,6 +1677,11 @@
                 <a class="sidebar-link " href="/gateway/config-tools/">
                   <span>配置 — tools and custom providers</span>
                   <small>Configuration — tools and custom providers</small>
+                </a>
+
+                <a class="sidebar-link " href="/gateway/configuration/">
+                  <span>配置</span>
+                  <small>Configuration</small>
                 </a>
 
                 <a class="sidebar-link " href="/gateway/configuration-examples/">
@@ -1887,11 +1894,6 @@
                   <small>Crestodian</small>
                 </a>
 
-                <a class="sidebar-link " href="/cli/cron/">
-                  <span>Cron 命令</span>
-                  <small>Cron</small>
-                </a>
-
                 <a class="sidebar-link " href="/cli/daemon/">
                   <span>Daemon 命令</span>
                   <small>Daemon</small>
@@ -2055,6 +2057,11 @@
                 <a class="sidebar-link " href="/cli/configure/">
                   <span>配置ure</span>
                   <small>Configure</small>
+                </a>
+
+                <a class="sidebar-link " href="/cli/cron/">
+                  <span>Cron 命令</span>
+                  <small>Cron</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/dashboard/">
@@ -2692,8 +2699,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Tools 导读</p>
-        <h1>工具小帮手 Search：它会替你伸哪只手</h1>
-        <p class="hero-copy">工具小帮手 Search 不是名词卡片，而是一只会伸出来帮忙的手。你要看清它什么时候出手、抓进去什么、递回来什么，还有每个参数到底像哪颗按钮。原文最响的一记鼓点，其实是：工具小帮手 Search is an experimental OpenClaw PI-机器人朋友 feature. It gives PI 机器人朋友s one compa…。</p>
+        <h1>Tool Search 给 PI agent 一张轻便工具目录卡</h1>
+        <p class="hero-copy">Tool Search 是 OpenClaw PI agent 的实验能力：工具很多时，模型先搜索轻量目录，再描述选中的工具，最后仍通过 OpenClaw 正常调用。它适合大工具目录，不是 Codex harness 的原生工具搜索；策略、审批、hook、日志和失败关闭规则仍然照常生效。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -3389,11 +3396,6 @@
                   <small>ACP agents</small>
                 </a>
 
-                <a class="sidebar-link " href="/tools/acp-agents-setup/">
-                  <span>ACP agents — setup</span>
-                  <small>ACP agents — setup</small>
-                </a>
-
                 <a class="sidebar-link " href="/tools/agent-send/">
                   <span>Agent send 工具</span>
                   <small>Agent send</small>
@@ -3644,6 +3646,11 @@
                   <small>Web fetch</small>
                 </a>
 
+                <a class="sidebar-link " href="/tools/acp-agents-setup/">
+                  <span>ACP agents — setup</span>
+                  <small>ACP agents — setup</small>
+                </a>
+
                 <a class="sidebar-link " href="/tools/multi-agent-sandbox-tools/">
                   <span>Multi-agent sandbox and tools 工具</span>
                   <small>Multi-agent sandbox and tools</small>
@@ -3742,6 +3749,11 @@
                 <a class="sidebar-link " href="/plugins/skill-workshop/">
                   <span>技能 workshop plugin</span>
                   <small>Skill workshop plugin</small>
+                </a>
+
+                <a class="sidebar-link " href="/plugins/tool-plugins/">
+                  <span>工具 plugins</span>
+                  <small>Tool plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/voice-call/">
@@ -4294,11 +4306,6 @@
             <details class="sidebar-group">
               <summary>网关</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/gateway/configuration/">
-                  <span>配置</span>
-                  <small>Configuration</small>
-                </a>
-
                 <a class="sidebar-link " href="/gateway/">
                   <span>Gateway runbook</span>
                   <small>Gateway runbook</small>
@@ -4342,6 +4349,11 @@
                 <a class="sidebar-link " href="/gateway/config-tools/">
                   <span>配置 — tools and custom providers</span>
                   <small>Configuration — tools and custom providers</small>
+                </a>
+
+                <a class="sidebar-link " href="/gateway/configuration/">
+                  <span>配置</span>
+                  <small>Configuration</small>
                 </a>
 
                 <a class="sidebar-link " href="/gateway/configuration-examples/">
@@ -4554,11 +4566,6 @@
                   <small>Crestodian</small>
                 </a>
 
-                <a class="sidebar-link " href="/cli/cron/">
-                  <span>Cron 命令</span>
-                  <small>Cron</small>
-                </a>
-
                 <a class="sidebar-link " href="/cli/daemon/">
                   <span>Daemon 命令</span>
                   <small>Daemon</small>
@@ -4722,6 +4729,11 @@
                 <a class="sidebar-link " href="/cli/configure/">
                   <span>配置ure</span>
                   <small>Configure</small>
+                </a>
+
+                <a class="sidebar-link " href="/cli/cron/">
+                  <span>Cron 命令</span>
+                  <small>Cron</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/dashboard/">
@@ -5346,964 +5358,169 @@
         </div>
       </div>
 
-
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Tool Search</h2>
-          <p>这一页不是在堆术语，它像把“工具小帮手 Search”这台小机器搬到桌上，当着你的面拆开给你看。你先不用全记住，先抓住它到底在忙什么：工具小帮手 Search is an experimental OpenClaw PI-机器人朋友 feature. It gives PI 机器人朋友s one compact way t…。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/tools/tool-search</span>
-          <span>章节数量：11</span>
-          <a href="https://docs.openclaw.ai/tools/tool-search" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：工具小帮手 Search is an experimental OpenClaw PI-机器人朋友 feature. It gives PI 机器人朋友s one compact way to discover and call larg…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：工具小帮手 Search is an experimental OpenClaw PI-机器人朋友 feature. It gives PI 机器人朋友s one compact way to discover and call larg…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Tool Search is an experimental OpenClaw PI-agent feature. It gives PI agents one compact way to discover and call large tool catalogs. It is useful when the run has many available tools but the model is likely to need only a few of them.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：This page documents OpenClaw PI 工具小帮手 Search. It is not the Codex-native 工具小帮手 search or dynamic-工具小帮手s surface. Codex-…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>This page documents OpenClaw PI Tool Search. It is not the Codex-native tool search or dynamic-tools surface. Codex-native code mode, tool search, deferred dynamic tools, and nested tool calls are stable Codex harness surfaces and do not depend on <code>tools.toolSearch</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：When enabled for PI, the 聪明脑袋模型 receives one 工具小帮手_search_code 工具小帮手 by default. That 工具小帮手 runs a short JavaScript bod…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When enabled for PI, the model receives one <code>tool_search_code</code> tool by default. That tool runs a short JavaScript body in an isolated Node subprocess with an <code>openclaw.tools</code> bridge:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“const hits = await openclaw.tools.search(&quot;create a GitHub issue&quot;);”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“const tool = await openclaw.tools.describe(hits[0].id);”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“return await openclaw.tools.call(tool.id, {”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-js">const hits = await openclaw.tools.search(&quot;create a GitHub issue&quot;);
-const tool = await openclaw.tools.describe(hits[0].id);
-return await openclaw.tools.call(tool.id, {
-  title: &quot;Crash on startup&quot;,
-  body: &quot;Steps to reproduce...&quot;,
-});</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The catalog can include OpenClaw 工具小帮手s, 新本领插件 工具小帮手s, MCP 工具小帮手s, and 来帮忙的小伙伴-provided 工具小帮手s. The 聪明脑袋模型 does not see…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The catalog can include OpenClaw tools, plugin tools, MCP tools, and client-provided tools. The model does not see every full schema up front. Instead, it searches compact descriptors, describes one selected tool when it needs the exact schema, and calls that tool through OpenClaw.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Codex harness runs do not receive these experimental OpenClaw 工具小帮手 Search controls. OpenClaw passes product capabiliti…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Codex harness runs do not receive these experimental OpenClaw Tool Search controls. OpenClaw passes product capabilities to Codex as dynamic tools, and Codex owns the stable native code mode, native tool search, deferred dynamic tools, and nested tool calls.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>How a turn runs</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：At planning time the PI embedded runner builds the effective catalog for the run: 1. Resolve the active 工具小帮手 policy fo…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：At planning time the PI embedded runner builds the effective catalog for the run:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>At planning time the PI embedded runner builds the effective catalog for the run:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：1. Resolve the active 工具小帮手 policy for the 机器人朋友, profile, sandbox, and session. 2. List eligible OpenClaw and 新本领插件 工具…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. Resolve the active tool policy for the agent, profile, sandbox, and session. 2. List eligible OpenClaw and plugin tools. 3. List eligible MCP tools through the session MCP runtime. 4. Add eligible client tools supplied for the current run. 5. Index compact descriptors for search. 6. Expose either the PI code bridge or the structured fallback tools to the model.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：At execution time every real 工具小帮手 call returns to OpenClaw. The isolated Node runtime does not hold 新本领插件 implementati…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>At execution time every real tool call returns to OpenClaw. The isolated Node runtime does not hold plugin implementations, MCP client objects, or secrets. <code>openclaw.tools.call(...)</code> crosses the bridge back into the Gateway, where the normal policy, approval, hook, logging, and result handling still apply.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Modes</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：工具小帮手s.工具小帮手Search has two 聪明脑袋模型-facing modes: structured 工具小帮手s for providers that should not receive code. Both mode…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：工具小帮手s.工具小帮手Search has two 聪明脑袋模型-facing modes:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>tools.toolSearch</code> has two model-facing modes:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：structured 工具小帮手s for providers that should not receive code.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>structured tools for providers that should not receive code.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Modes”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：code: exposes 工具小帮手_search_code, the defa…、工具小帮手s: exposes 工具小帮手_search, 工具小帮手_descr…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>code</code>: exposes <code>tool_search_code</code>, the default compact JavaScript bridge.</li><li><code>tools</code>: exposes <code>tool_search</code>, <code>tool_describe</code>, and <code>tool_call</code> as plain</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Both modes use the same catalog and execution path. The only difference is the shape the 聪明脑袋模型 sees. If the current ru…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Both modes use the same catalog and execution path. The only difference is the shape the model sees. If the current runtime cannot launch the isolated Node code-mode child process, the default <code>code</code> mode falls back to <code>tools</code> before catalog compaction.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Both modes are experimental. Prefer direct 工具小帮手 exposure for small PI 工具小帮手 catalogs, and prefer the Codex-native stab…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Both modes are experimental. Prefer direct tool exposure for small PI tool catalogs, and prefer the Codex-native stable surfaces for Codex harness runs.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：There is no separate source-selection 设置说明书. When 工具小帮手 Search is enabled, the catalog includes eligible OpenClaw, MCP,…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>There is no separate source-selection config. When Tool Search is enabled, the catalog includes eligible OpenClaw, MCP, and client tools after normal policy filtering.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Why this exists</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Large catalogs are useful but expensive. Sending every 工具小帮手 schema to the 聪明脑袋模型 makes the request larger, slows plann…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Large catalogs are useful but expensive. Sending every 工具小帮手 schema to the 聪明脑袋模型 makes the request larger, slows plann…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Large catalogs are useful but expensive. Sending every tool schema to the model makes the request larger, slows planning, and increases accidental tool selection.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：工具小帮手 Search changes the shape:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Tool Search changes the shape:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：contract。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>contract</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：工具小帮手s。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>tools</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Why this exists”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：direct 工具小帮手s: the 聪明脑袋模型 sees every sele…、工具小帮手 Search code mode: the 聪明脑袋模型 sees o…、工具小帮手 Search 工具小帮手s mode: the 聪明脑袋模型 sees…、during the turn: the 聪明脑袋模型 loads only th…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>direct tools: the model sees every selected schema before the first token</li><li>Tool Search code mode: the model sees one compact code tool and a short API</li><li>Tool Search tools mode: the model sees three compact structured fallback</li><li>during the turn: the model loads only the tool schemas it actually needs</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Direct 工具小帮手 exposure is still the right default for small catalogs. 工具小帮手 Search is best when one run can see many 工具小…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Direct tool exposure is still the right default for small catalogs. Tool Search is best when one run can see many tools, especially from MCP servers or client-provided app tools.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>对话接口</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：openclaw.工具小帮手s.search(query, options?) Searches the effective catalog for the current run. Results are compact and saf…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：openclaw.工具小帮手s.search(query, options?)。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>openclaw.tools.search(query, options?)</code></p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Searches the effective catalog for the current run. Results are compact and safe to put back into prompt context.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Searches the effective catalog for the current run. Results are compact and safe to put back into prompt context.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这里在给“const hits = await openclaw.tools.search(calendar event { limit”挂牌子，告诉系统它该指向“5 });”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-js">const hits = await openclaw.tools.search(&quot;calendar event&quot;, { limit: 5 });</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：openclaw.工具小帮手s.describe(id)。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>openclaw.tools.describe(id)</code></p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Loads full metadata for one search result, including the exact input schema.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Loads full metadata for one search result, including the exact input schema.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这里在给“const calendarCreate = await openclaw.tools.describe(mcp”挂牌子，告诉系统它该指向“calendar:create_event);”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-js">const calendarCreate = await openclaw.tools.describe(&quot;mcp:calendar:create_event&quot;);</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：openclaw.工具小帮手s.call(id, args)。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>openclaw.tools.call(id, args)</code></p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Calls a selected 工具小帮手 through OpenClaw.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Calls a selected tool through OpenClaw.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“await openclaw.tools.call(calendarCreate.id, {”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这里在给“summary”挂牌子，告诉系统它该指向“Planning”。</li><li>这里在给“start”挂牌子，告诉系统它该指向“2026-05-09T14:00:00Z”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-js">await openclaw.tools.call(calendarCreate.id, {
-  summary: &quot;Planning&quot;,
-  start: &quot;2026-05-09T14:00:00Z&quot;,
-});</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The structured fallback mode exposes the same operations as 工具小帮手s:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The structured fallback mode exposes the same operations as tools:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“API”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：工具小帮手_search、工具小帮手_describe、工具小帮手_call。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>tool_search</code></li><li><code>tool_describe</code></li><li><code>tool_call</code></li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Runtime boundary</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The code bridge runs in a short-lived Node subprocess. The subprocess starts with Node permission mode enabled, an empt…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The code bridge runs in a short-lived Node subprocess. The subprocess starts with Node permission mode enabled, an empt…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The code bridge runs in a short-lived Node subprocess. The subprocess starts with Node permission mode enabled, an empty environment, no filesystem or network grants, and no child-process or worker grants. OpenClaw enforces a parent-process wall-clock timeout and kills the subprocess on timeout, including after async continuations.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The runtime exposes only:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The runtime exposes only:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Runtime boundary”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：console.log, console.warn, and console.er…、openclaw.工具小帮手s.search、openclaw.工具小帮手s.describe、openclaw.工具小帮手s.call。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>console.log</code>, <code>console.warn</code>, and <code>console.error</code></li><li><code>openclaw.tools.search</code></li><li><code>openclaw.tools.describe</code></li><li><code>openclaw.tools.call</code></li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Normal OpenClaw behavior still applies to final calls:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Normal OpenClaw behavior still applies to final calls:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Runtime boundary”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：工具小帮手 allow and deny policies、per-机器人朋友 and per-sandbox 工具小帮手 restricti…、owner-only gating、approval hooks。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>tool allow and deny policies</li><li>per-agent and per-sandbox tool restrictions</li><li>owner-only gating</li><li>approval hooks</li><li>plugin <code>before_tool_call</code> hooks</li><li>session identity, logs, and telemetry</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>设置说明书</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Enable 工具小帮手 Search for PI runs with the default code bridge: Equivalent JSON: Use the structured fallback 工具小帮手s inste…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Enable 工具小帮手 Search for PI runs with the default code bridge:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Enable Tool Search for PI runs with the default code bridge:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，像你把任务清清楚楚塞到它手里。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 动起来：“openclaw config set tools.toolSearch true”。你可以把它想成一句说出口就要执行的差事。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw config set tools.toolSearch true</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Equivalent JSON:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Equivalent JSON:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。</p>
-        <ul class="code-steps">
-          <li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li><li>这里在给“tools”挂牌子，告诉系统它该指向“{”。</li><li>这里在给“toolSearch”挂牌子，告诉系统它该指向“true”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  tools: {
-    toolSearch: true,
-  },
-}</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use the structured fallback 工具小帮手s instead for PI runs:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use the structured fallback tools instead for PI runs:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。</p>
-        <ul class="code-steps">
-          <li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li><li>这里在给“tools”挂牌子，告诉系统它该指向“{”。</li><li>这里在给“toolSearch”挂牌子，告诉系统它该指向“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  tools: {
-    toolSearch: {
-      mode: &quot;tools&quot;,
-    },
-  },
-}</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Tune code-mode timeout and search result limits:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Tune code-mode timeout and search result limits:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。</p>
-        <ul class="code-steps">
-          <li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li><li>这里在给“tools”挂牌子，告诉系统它该指向“{”。</li><li>这里在给“toolSearch”挂牌子，告诉系统它该指向“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  tools: {
-    toolSearch: {
-      mode: &quot;code&quot;,
-      codeTimeoutMs: 10000,
-      searchDefaultLimit: 8,
-      maxSearchLimit: 20,
-    },
-  },
-}</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Disable it:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Disable it:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。</p>
-        <ul class="code-steps">
-          <li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li><li>这里在给“tools”挂牌子，告诉系统它该指向“{”。</li><li>这里在给“toolSearch”挂牌子，告诉系统它该指向“false”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  tools: {
-    toolSearch: false,
-  },
-}</code></pre>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>Prompt and telemetry</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：工具小帮手 Search records enough telemetry to compare it with direct 工具小帮手 exposure: Session logs should make it possible to…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：工具小帮手 Search records enough telemetry to compare it with direct 工具小帮手 exposure:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Tool Search records enough telemetry to compare it with direct tool exposure:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Prompt and telemetry”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：total serialized 工具小帮手 and prompt bytes s…、catalog size and source breakdown、search, describe, and call counts、final 工具小帮手 calls executed through OpenCl…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>total serialized tool and prompt bytes sent to the harness</li><li>catalog size and source breakdown</li><li>search, describe, and call counts</li><li>final tool calls executed through OpenClaw</li><li>selected tool ids and sources</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Session logs should make it possible to answer:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Session logs should make it possible to answer:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Prompt and telemetry”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：how many 工具小帮手 schemas the 聪明脑袋模型 saw up…、how many search and describe operations i…、which final 工具小帮手 was called、whether the result came from OpenClaw, MC…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>how many tool schemas the model saw up front</li><li>how many search and describe operations it performed</li><li>which final tool was called</li><li>whether the result came from OpenClaw, MCP, or a client tool</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>E2E validation</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The 门口的小门卫 E2E runner proves both paths with the PI harness: It creates a temporary fake 新本领插件 with a large 工具小帮手 catal…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The 门口的小门卫 E2E runner proves both paths with the PI harness:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The gateway E2E runner proves both paths with the PI harness:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端口令，像你站在控制台前，一下下按按钮让机器醒过来。</p>
-        <ul class="code-steps">
-          <li>这一行“node --import tsx scripts/tool-search-gateway-e2e.ts”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">node --import tsx scripts/tool-search-gateway-e2e.ts</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：It creates a temporary fake 新本领插件 with a large 工具小帮手 catalog, starts the mock OpenAI provider, starts a 门口的小门卫 once in…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>It creates a temporary fake plugin with a large tool catalog, starts the mock OpenAI provider, starts a Gateway once in direct mode and once with Tool Search enabled, then compares provider request payloads and session logs.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The regression proves:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The regression proves:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：1. Direct mode can call the fake 新本领插件 工具小帮手. 2. 工具小帮手 Search can call the same fake 新本领插件 工具小帮手. 3. Direct mode expose…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. Direct mode can call the fake plugin tool. 2. Tool Search can call the same fake plugin tool. 3. Direct mode exposes the fake plugin tool schemas directly to the provider. 4. Tool Search exposes only the compact bridge. 5. The Tool Search request payload is smaller for the large fake catalog. 6. Session logs show the expected tool-call counts and bridged call telemetry.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>Failure behavior</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：工具小帮手 Search should fail closed: block instead of bypassing it disable 工具小帮手 Search for that deployment。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：工具小帮手 Search should fail closed:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Tool Search should fail closed:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：block instead of bypassing it。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>block instead of bypassing it</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：disable 工具小帮手 Search for that deployment。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>disable Tool Search for that deployment</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Failure behavior”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：if a 工具小帮手 is not in the effective policy…、if a selected 工具小帮手 becomes unavailable,…、if policy or approval blocks execution, t…、if the code bridge cannot create an isola…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>if a tool is not in the effective policy, search should not return it</li><li>if a selected tool becomes unavailable, <code>tool_call</code> should fail</li><li>if policy or approval blocks execution, the call result should report that</li><li>if the code bridge cannot create an isolated runtime, use <code>mode: &quot;tools&quot;</code> or</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-11">
-          <div class="section-heading">
-            <p class="section-kicker">第 11 站</p>
-            <h2>Related</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Related”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：工具小帮手s and 新本领插件s、Multi-机器人朋友 sandbox and 工具小帮手s、Exec 工具小帮手、ACP 机器人朋友s setup。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><a href="/tools" target="_blank" rel="noreferrer">Tools and plugins</a></li><li><a href="/tools/multi-agent-sandbox-tools" target="_blank" rel="noreferrer">Multi-agent sandbox and tools</a></li><li><a href="/tools/exec" target="_blank" rel="noreferrer">Exec tool</a></li><li><a href="/tools/acp-agents-setup" target="_blank" rel="noreferrer">ACP agents setup</a></li><li><a href="/plugins/building-plugins" target="_blank" rel="noreferrer">Building plugins</a></li></ul>
-      </div>
-
-          </div>
-        </section>
-
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
+      <!-- handcrafted-source:tools.tool-search.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Tool Search 给 PI agent 一张轻便工具目录卡</h2>
+      <p>Tool Search 是 OpenClaw PI agent 的实验能力：工具很多时，模型先搜索轻量目录，再描述选中的工具，最后仍通过 OpenClaw 正常调用。它适合大工具目录，不是 Codex harness 的原生工具搜索；策略、审批、hook、日志和失败关闭规则仍然照常生效。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 11 节，先看 Start Here</span>
+      <span>路径：/tools/tool-search</span>
+      <a href="https://docs.openclaw.ai/tools/tool-search" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">先别混淆</p>
+    <h2>这页讲 PI 的 Tool Search，不是 Codex 自己的原生工具搜索</h2>
+    <p>Codex harness 有自己的稳定 code mode、native tool search、deferred dynamic tools 和 nested tool calls。这里的 <code>tools.toolSearch</code> 是给 OpenClaw PI embedded runner 用的实验能力。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">PI Tool Search</div>
+      <p>像给 PI agent 一张可搜索目录卡，适合大工具目录但只会用到少数工具的场景。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Codex native search</div>
+      <p>属于 Codex harness 自己的运行表面，不依赖 <code>tools.toolSearch</code> 这个开关。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">直接暴露工具</div>
+      <p>工具少时仍然是好选择，模型一开始就能看到完整 schema。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">一句话</div>
+      <p>不要把“PI 的实验目录卡”和“Codex 的原生工具能力”看成同一个按钮。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">一次调用怎么走</p>
+    <h2>先搜目录，再看说明，最后回到 OpenClaw 真正执行</h2>
+    <p>Tool Search 的小运行时不会拿着插件实现、MCP client 或 secret 自己开工。真正的调用会跨回 Gateway，让平常的策略、审批、hook、日志和结果处理继续生效。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2><code>search</code></h2>
+      <p>像在目录里搜“创建日历事件”或“创建 GitHub issue”，拿到轻量候选项。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2><code>describe</code></h2>
+      <p>选中一个候选工具后，再看它真正需要哪些输入字段。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2><code>call</code></h2>
+      <p>把参数交给 OpenClaw，由 Gateway 按正常规则执行。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>策略仍在</h2>
+      <p>不在有效工具策略里的工具不会被搜出来；审批或权限挡住时也不能绕过去。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">两种模式</p>
+    <h2><code>code</code> 像小脚本桥，<code>tools</code> 像三枚普通按钮</h2>
+    <p>默认的 <code>code</code> 模式给模型一个 <code>tool_search_code</code> 工具，让它在隔离 Node 子进程里写很短的 JavaScript。不能或不该给代码形态时，可以改用结构化 fallback。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>mode: "code"</code></div>
+      <p>暴露一个紧凑的代码桥，适合模型在一个小脚本里完成搜索、描述和调用。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>mode: "tools"</code></div>
+      <p>暴露 <code>tool_search</code>、<code>tool_describe</code>、<code>tool_call</code> 三个普通结构化工具。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">同一条后端路</div>
+      <p>两种模式看到的形状不同，但目录、策略和最终执行路径一样。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">实验能力</div>
+      <p>大目录时可以试；小目录或 Codex harness 场景不要硬套。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">配置记法</p>
+    <h2>打开它是一颗开关，调细节才需要更多字段</h2>
+    <p>最简单是设置 <code>tools.toolSearch</code> 为 <code>true</code>。需要控制模式、超时和搜索结果数量时，再展开成对象。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">默认开启</div>
+      <p><code>openclaw config set tools.toolSearch true</code> 会启用默认 code bridge。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">结构化模式</div>
+      <p><code>{ tools: { toolSearch: { mode: "tools" } } }</code> 适合不想给 provider 代码形态的部署。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">调节边界</div>
+      <p><code>codeTimeoutMs</code>、<code>searchDefaultLimit</code>、<code>maxSearchLimit</code> 控制小桥跑多久、一次看多少结果。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">关闭</div>
+      <p><code>{ tools: { toolSearch: false } }</code> 会回到不用 Tool Search 的路。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">安全边界</p>
+    <h2>隔离小脚本只负责找路，不负责偷偷搬东西</h2>
+    <p>代码桥运行在短命 Node 子进程里，环境为空，没有文件系统、网络、子进程或 worker 权限。它只暴露日志和 <code>openclaw.tools</code> 三个方法。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">没有 secret</div>
+      <p>子进程不持有插件实现、MCP client 对象或凭据。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">超时会停</div>
+      <p>父进程有墙钟超时，异步没结束也会被杀掉。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">失败关闭</div>
+      <p>工具不可用、策略不允许、审批不通过，都应该报告阻塞，而不是绕路执行。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">日志可复盘</div>
+      <p>telemetry 会记录目录大小、搜索/描述/调用次数、最终工具来源等信息，方便比较直接暴露和 Tool Search 的差异。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>Tool Search 不是让工具少受管，而是让大目录更省、更清楚</h2>
+    <p>它帮 PI agent 少背完整 schema，但真正执行仍回到 OpenClaw 的规则系统。大工具目录可以用它减负；Codex harness 和小工具目录通常不需要它。</p>
+  </div>
+</section>
 
 
       <footer class="page-footer">
         <div>
           <strong>Fivey Can Read OpenClaw</strong>
-          <p>同步时间：2026年5月18日 17:31</p>
+          <p>同步时间：2026年5月20日 18:59</p>
         </div>
       </footer>
     </main>

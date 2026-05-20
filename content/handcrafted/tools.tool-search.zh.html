@@ -1,0 +1,157 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>Tool Search 像给 PI agent 一张工具目录卡，而不是把整间工具房都塞进书包</h2>
+      <p>有些运行里工具特别多：OpenClaw 自己的工具、插件工具、MCP 工具、客户端临时给的工具。直接把每个工具的完整说明都交给模型，会很重，也更容易选错。</p>
+      <p><code>tools.toolSearch</code> 的想法很简单：先给 PI agent 一个小搜索入口。它先搜目录，再看某个工具的详细说明，最后仍然通过 OpenClaw 正常调用工具。</p>
+    </div>
+    <div class="overview-meta">
+      <span>实验性的 PI agent 工具发现能力</span>
+      <span>重点是大工具目录、搜索、描述、调用和失败关闭</span>
+      <a href="https://docs.openclaw.ai/tools/tool-search" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">先别混淆</p>
+    <h2>这页讲 PI 的 Tool Search，不是 Codex 自己的原生工具搜索</h2>
+    <p>Codex harness 有自己的稳定 code mode、native tool search、deferred dynamic tools 和 nested tool calls。这里的 <code>tools.toolSearch</code> 是给 OpenClaw PI embedded runner 用的实验能力。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">PI Tool Search</div>
+      <p>像给 PI agent 一张可搜索目录卡，适合大工具目录但只会用到少数工具的场景。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Codex native search</div>
+      <p>属于 Codex harness 自己的运行表面，不依赖 <code>tools.toolSearch</code> 这个开关。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">直接暴露工具</div>
+      <p>工具少时仍然是好选择，模型一开始就能看到完整 schema。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">一句话</div>
+      <p>不要把“PI 的实验目录卡”和“Codex 的原生工具能力”看成同一个按钮。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">一次调用怎么走</p>
+    <h2>先搜目录，再看说明，最后回到 OpenClaw 真正执行</h2>
+    <p>Tool Search 的小运行时不会拿着插件实现、MCP client 或 secret 自己开工。真正的调用会跨回 Gateway，让平常的策略、审批、hook、日志和结果处理继续生效。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2><code>search</code></h2>
+      <p>像在目录里搜“创建日历事件”或“创建 GitHub issue”，拿到轻量候选项。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2><code>describe</code></h2>
+      <p>选中一个候选工具后，再看它真正需要哪些输入字段。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2><code>call</code></h2>
+      <p>把参数交给 OpenClaw，由 Gateway 按正常规则执行。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>策略仍在</h2>
+      <p>不在有效工具策略里的工具不会被搜出来；审批或权限挡住时也不能绕过去。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">两种模式</p>
+    <h2><code>code</code> 像小脚本桥，<code>tools</code> 像三枚普通按钮</h2>
+    <p>默认的 <code>code</code> 模式给模型一个 <code>tool_search_code</code> 工具，让它在隔离 Node 子进程里写很短的 JavaScript。不能或不该给代码形态时，可以改用结构化 fallback。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>mode: "code"</code></div>
+      <p>暴露一个紧凑的代码桥，适合模型在一个小脚本里完成搜索、描述和调用。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>mode: "tools"</code></div>
+      <p>暴露 <code>tool_search</code>、<code>tool_describe</code>、<code>tool_call</code> 三个普通结构化工具。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">同一条后端路</div>
+      <p>两种模式看到的形状不同，但目录、策略和最终执行路径一样。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">实验能力</div>
+      <p>大目录时可以试；小目录或 Codex harness 场景不要硬套。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">配置记法</p>
+    <h2>打开它是一颗开关，调细节才需要更多字段</h2>
+    <p>最简单是设置 <code>tools.toolSearch</code> 为 <code>true</code>。需要控制模式、超时和搜索结果数量时，再展开成对象。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">默认开启</div>
+      <p><code>openclaw config set tools.toolSearch true</code> 会启用默认 code bridge。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">结构化模式</div>
+      <p><code>{ tools: { toolSearch: { mode: "tools" } } }</code> 适合不想给 provider 代码形态的部署。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">调节边界</div>
+      <p><code>codeTimeoutMs</code>、<code>searchDefaultLimit</code>、<code>maxSearchLimit</code> 控制小桥跑多久、一次看多少结果。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">关闭</div>
+      <p><code>{ tools: { toolSearch: false } }</code> 会回到不用 Tool Search 的路。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">安全边界</p>
+    <h2>隔离小脚本只负责找路，不负责偷偷搬东西</h2>
+    <p>代码桥运行在短命 Node 子进程里，环境为空，没有文件系统、网络、子进程或 worker 权限。它只暴露日志和 <code>openclaw.tools</code> 三个方法。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">没有 secret</div>
+      <p>子进程不持有插件实现、MCP client 对象或凭据。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">超时会停</div>
+      <p>父进程有墙钟超时，异步没结束也会被杀掉。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">失败关闭</div>
+      <p>工具不可用、策略不允许、审批不通过，都应该报告阻塞，而不是绕路执行。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">日志可复盘</div>
+      <p>telemetry 会记录目录大小、搜索/描述/调用次数、最终工具来源等信息，方便比较直接暴露和 Tool Search 的差异。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>Tool Search 不是让工具少受管，而是让大目录更省、更清楚</h2>
+    <p>它帮 PI agent 少背完整 schema，但真正执行仍回到 OpenClaw 的规则系统。大工具目录可以用它减负；Codex harness 和小工具目录通常不需要它。</p>
+  </div>
+</section>

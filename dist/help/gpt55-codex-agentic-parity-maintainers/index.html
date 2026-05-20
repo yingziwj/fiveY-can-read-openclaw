@@ -4,18 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GPT-5.5 / Codex parity maintainer notes | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="GPT-5.5 / Codex parity maintainer notes 像排雷图。先认症状，再找该翻哪条命令或日志，最后才决定要不要动配置，不要一上来就把整面墙都拆了。原文最响的一记鼓点，其实是：This note explains how to review the GPT-5.5 / Codex pari…">
+  <meta name="description" content="这页给 reviewer 和 maintainer 使用：PR A 管 strict-agentic 执行，PR B 管 runtime truthfulness，PR C 管工具 schema 与 replay/liveness 正确性，PR D 管同场景 parity harness 和 release gate…">
   <meta name="robots" content="index,follow">
+  <meta name="google-adsense-account" content="ca-pub-3833673520933536">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="GPT-5.5 / Codex parity maintainer notes | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="GPT-5.5 / Codex parity maintainer notes 像排雷图。先认症状，再找该翻哪条命令或日志，最后才决定要不要动配置，不要一上来就把整面墙都拆了。原文最响的一记鼓点，其实是：This note explains how to review the GPT-5.5 / Codex pari…">
+  <meta property="og:description" content="这页给 reviewer 和 maintainer 使用：PR A 管 strict-agentic 执行，PR B 管 runtime truthfulness，PR C 管工具 schema 与 replay/liveness 正确性，PR D 管同场景 parity harness 和 release gate…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/help/gpt55-codex-agentic-parity-maintainers/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta property="og:image:alt" content="GPT-5.5 / Codex parity maintainer notes 的中文故事化导读页面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="GPT-5.5 / Codex parity maintainer notes | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="GPT-5.5 / Codex parity maintainer notes 像排雷图。先认症状，再找该翻哪条命令或日志，最后才决定要不要动配置，不要一上来就把整面墙都拆了。原文最响的一记鼓点，其实是：This note explains how to review the GPT-5.5 / Codex pari…">
+  <meta name="twitter:description" content="这页给 reviewer 和 maintainer 使用：PR A 管 strict-agentic 执行，PR B 管 runtime truthfulness，PR C 管工具 schema 与 replay/liveness 正确性，PR D 管同场景 parity harness 和 release gate…">
   <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/help/gpt55-codex-agentic-parity-maintainers/">
@@ -23,7 +24,8 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"GPT-5.5 / Codex parity maintainer notes","description":"GPT-5.5 / Codex parity maintainer notes 像排雷图。先认症状，再找该翻哪条命令或日志，最后才决定要不要动配置，不要一上来就把整面墙都拆了。原文最响的一记鼓点，其实是：This note explains how to review the GPT-5.5 / Codex pari…","url":"https://fivey-can-read-openclaw.pages.dev/help/gpt55-codex-agentic-parity-maintainers/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3833673520933536" crossorigin="anonymous"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"GPT-5.5 / Codex parity maintainer notes","description":"这页给 reviewer 和 maintainer 使用：PR A 管 strict-agentic 执行，PR B 管 runtime truthfulness，PR C 管工具 schema 与 replay/liveness 正确性，PR D 管同场景 parity harness 和 release gate…","url":"https://fivey-can-read-openclaw.pages.dev/help/gpt55-codex-agentic-parity-maintainers/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Help","item":"https://fivey-can-read-openclaw.pages.dev/help/gpt55-codex-agentic-parity-maintainers/"}]}</script>
 </head>
 <body>
@@ -722,11 +724,6 @@
                   <small>ACP agents</small>
                 </a>
 
-                <a class="sidebar-link " href="/tools/acp-agents-setup/">
-                  <span>ACP agents — setup</span>
-                  <small>ACP agents — setup</small>
-                </a>
-
                 <a class="sidebar-link " href="/tools/agent-send/">
                   <span>Agent send 工具</span>
                   <small>Agent send</small>
@@ -977,6 +974,11 @@
                   <small>Web fetch</small>
                 </a>
 
+                <a class="sidebar-link " href="/tools/acp-agents-setup/">
+                  <span>ACP agents — setup</span>
+                  <small>ACP agents — setup</small>
+                </a>
+
                 <a class="sidebar-link " href="/tools/multi-agent-sandbox-tools/">
                   <span>Multi-agent sandbox and tools 工具</span>
                   <small>Multi-agent sandbox and tools</small>
@@ -1075,6 +1077,11 @@
                 <a class="sidebar-link " href="/plugins/skill-workshop/">
                   <span>技能 workshop plugin</span>
                   <small>Skill workshop plugin</small>
+                </a>
+
+                <a class="sidebar-link " href="/plugins/tool-plugins/">
+                  <span>工具 plugins</span>
+                  <small>Tool plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/voice-call/">
@@ -1627,11 +1634,6 @@
             <details class="sidebar-group">
               <summary>网关</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/gateway/configuration/">
-                  <span>配置</span>
-                  <small>Configuration</small>
-                </a>
-
                 <a class="sidebar-link " href="/gateway/">
                   <span>Gateway runbook</span>
                   <small>Gateway runbook</small>
@@ -1675,6 +1677,11 @@
                 <a class="sidebar-link " href="/gateway/config-tools/">
                   <span>配置 — tools and custom providers</span>
                   <small>Configuration — tools and custom providers</small>
+                </a>
+
+                <a class="sidebar-link " href="/gateway/configuration/">
+                  <span>配置</span>
+                  <small>Configuration</small>
                 </a>
 
                 <a class="sidebar-link " href="/gateway/configuration-examples/">
@@ -1887,11 +1894,6 @@
                   <small>Crestodian</small>
                 </a>
 
-                <a class="sidebar-link " href="/cli/cron/">
-                  <span>Cron 命令</span>
-                  <small>Cron</small>
-                </a>
-
                 <a class="sidebar-link " href="/cli/daemon/">
                   <span>Daemon 命令</span>
                   <small>Daemon</small>
@@ -2055,6 +2057,11 @@
                 <a class="sidebar-link " href="/cli/configure/">
                   <span>配置ure</span>
                   <small>Configure</small>
+                </a>
+
+                <a class="sidebar-link " href="/cli/cron/">
+                  <span>Cron 命令</span>
+                  <small>Cron</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/dashboard/">
@@ -2692,8 +2699,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Help 导读</p>
-        <h1>GPT-5.5 / Codex parity maintainer notes：这回它在替你排哪颗雷</h1>
-        <p class="hero-copy">GPT-5.5 / Codex parity maintainer notes 像排雷图。先认症状，再找该翻哪条命令或日志，最后才决定要不要动配置，不要一上来就把整面墙都拆了。原文最响的一记鼓点，其实是：This note explains how to review the GPT-5.5 / Codex parity program as four merge units…。</p>
+        <h1>Maintainer notes 把 GPT-5.5 parity 的四个 PR 边界讲清楚</h1>
+        <p class="hero-copy">这页给 reviewer 和 maintainer 使用：PR A 管 strict-agentic 执行，PR B 管 runtime truthfulness，PR C 管工具 schema 与 replay/liveness 正确性，PR D 管同场景 parity harness 和 release gate。只有 runtime 修复、truthfulness 套件和 parity verdict 都过关，才能说 GPT-5.5 达到 parity。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -3389,11 +3396,6 @@
                   <small>ACP agents</small>
                 </a>
 
-                <a class="sidebar-link " href="/tools/acp-agents-setup/">
-                  <span>ACP agents — setup</span>
-                  <small>ACP agents — setup</small>
-                </a>
-
                 <a class="sidebar-link " href="/tools/agent-send/">
                   <span>Agent send 工具</span>
                   <small>Agent send</small>
@@ -3644,6 +3646,11 @@
                   <small>Web fetch</small>
                 </a>
 
+                <a class="sidebar-link " href="/tools/acp-agents-setup/">
+                  <span>ACP agents — setup</span>
+                  <small>ACP agents — setup</small>
+                </a>
+
                 <a class="sidebar-link " href="/tools/multi-agent-sandbox-tools/">
                   <span>Multi-agent sandbox and tools 工具</span>
                   <small>Multi-agent sandbox and tools</small>
@@ -3742,6 +3749,11 @@
                 <a class="sidebar-link " href="/plugins/skill-workshop/">
                   <span>技能 workshop plugin</span>
                   <small>Skill workshop plugin</small>
+                </a>
+
+                <a class="sidebar-link " href="/plugins/tool-plugins/">
+                  <span>工具 plugins</span>
+                  <small>Tool plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/voice-call/">
@@ -4294,11 +4306,6 @@
             <details class="sidebar-group">
               <summary>网关</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/gateway/configuration/">
-                  <span>配置</span>
-                  <small>Configuration</small>
-                </a>
-
                 <a class="sidebar-link " href="/gateway/">
                   <span>Gateway runbook</span>
                   <small>Gateway runbook</small>
@@ -4342,6 +4349,11 @@
                 <a class="sidebar-link " href="/gateway/config-tools/">
                   <span>配置 — tools and custom providers</span>
                   <small>Configuration — tools and custom providers</small>
+                </a>
+
+                <a class="sidebar-link " href="/gateway/configuration/">
+                  <span>配置</span>
+                  <small>Configuration</small>
                 </a>
 
                 <a class="sidebar-link " href="/gateway/configuration-examples/">
@@ -4554,11 +4566,6 @@
                   <small>Crestodian</small>
                 </a>
 
-                <a class="sidebar-link " href="/cli/cron/">
-                  <span>Cron 命令</span>
-                  <small>Cron</small>
-                </a>
-
                 <a class="sidebar-link " href="/cli/daemon/">
                   <span>Daemon 命令</span>
                   <small>Daemon</small>
@@ -4722,6 +4729,11 @@
                 <a class="sidebar-link " href="/cli/configure/">
                   <span>配置ure</span>
                   <small>Configure</small>
+                </a>
+
+                <a class="sidebar-link " href="/cli/cron/">
+                  <span>Cron 命令</span>
+                  <small>Cron</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/dashboard/">
@@ -5346,923 +5358,143 @@
         </div>
       </div>
 
-
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>GPT-5.5 / Codex parity maintainer notes</h2>
-          <p>这一页不是在堆术语，它像把“GPT-5.5 / Codex parity maintainer notes”这台小机器搬到桌上，当着你的面拆开给你看。你先不用全记住，先抓住它到底在忙什么：This note explains how to review the GPT-5.5 / Codex parity program as four merge units without…。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/help/gpt55-codex-agentic-parity-maintainers</span>
-          <span>章节数量：16</span>
-          <a href="https://docs.openclaw.ai/help/gpt55-codex-agentic-parity-maintainers" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节主要在解释“Start Here”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Start Here”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：This note explains how to review the GPT-5.5 / Codex parity program as four merge units without losing the original six…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：This note explains how to review the GPT-5.5 / Codex parity program as four merge units without losing the original six…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>This note explains how to review the GPT-5.5 / Codex parity program as four merge units without losing the original six-contract architecture.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>PR A: strict-机器人朋友ic execution</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Owns: Does not own:。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Owns:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Owns:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“PR A: strict-agentic execution”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：executionContract、GPT-5-first same-turn follow-through、update_plan as non-terminal progress trac…、explicit blocked states instead of plan-o…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>executionContract</code></li><li>GPT-5-first same-turn follow-through</li><li><code>update_plan</code> as non-terminal progress tracking</li><li>explicit blocked states instead of plan-only silent stops</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Does not own:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Does not own:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“PR A: strict-agentic execution”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：auth/runtime failure classification、permission truthfulness、replay/continuation redesign、parity benchmarking。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>auth/runtime failure classification</li><li>permission truthfulness</li><li>replay/continuation redesign</li><li>parity benchmarking</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>PR B: runtime truthfulness</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Owns: Does not own:。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Owns:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Owns:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“PR B: runtime truthfulness”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：Codex OAuth scope correctness、typed provider/runtime failure classifica…、truthful /elevated full availability and…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Codex OAuth scope correctness</li><li>typed provider/runtime failure classification</li><li>truthful <code>/elevated full</code> availability and blocked reasons</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Does not own:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Does not own:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“PR B: runtime truthfulness”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：工具小帮手 schema normalization、replay/liveness state、benchmark gating。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>tool schema normalization</li><li>replay/liveness state</li><li>benchmark gating</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>PR C: execution correctness</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Owns: Does not own:。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Owns:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Owns:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“PR C: execution correctness”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：provider-owned OpenAI/Codex 工具小帮手 compati…、parameter-free strict schema handling、replay-invalid surfacing、paused, blocked, and abandoned long-task…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>provider-owned OpenAI/Codex tool compatibility</li><li>parameter-free strict schema handling</li><li>replay-invalid surfacing</li><li>paused, blocked, and abandoned long-task state visibility</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Does not own:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Does not own:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“PR C: execution correctness”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：self-elected continuation、generic Codex dialect behavior outside pr…、benchmark gating。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>self-elected continuation</li><li>generic Codex dialect behavior outside provider hooks</li><li>benchmark gating</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>PR D: parity harness</h2>
-            <p>这一节主要在解释“PR D: parity harness”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“PR D: parity harness”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Owns: Does not own:。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Owns:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Owns:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“PR D: parity harness”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：first-wave GPT-5.5 vs Opus 4.6 scenario p…、parity documentation、parity report and release-gate mechanics。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>first-wave GPT-5.5 vs Opus 4.6 scenario pack</li><li>parity documentation</li><li>parity report and release-gate mechanics</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Does not own:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Does not own:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“PR D: parity harness”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：runtime behavior changes outside QA-lab、auth/proxy/DNS simulation inside the harn…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>runtime behavior changes outside QA-lab</li><li>auth/proxy/DNS simulation inside the harness</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Mapping back to the original six contracts</h2>
-            <p>这一节主要在解释“Mapping back to the original six contracts”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Mapping back to the original six contracts”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Original contract</th><th>Merge unit</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Provider transport/auth correctness</td><td>PR B</td></tr><tr><td>Tool contract/schema compatibility</td><td>PR C</td></tr><tr><td>Same-turn execution</td><td>PR A</td></tr><tr><td>Permission truthfulness</td><td>PR B</td></tr><tr><td>Replay/continuation/liveness correctness</td><td>PR C</td></tr><tr><td>Benchmark/release gate</td><td>PR D</td></tr>
-        </tbody>
-      </table>
+      <!-- handcrafted-source:help.gpt55-codex-agentic-parity-maintainers.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Maintainer notes 把 GPT-5.5 parity 的四个 PR 边界讲清楚</h2>
+      <p>这页给 reviewer 和 maintainer 使用：PR A 管 strict-agentic 执行，PR B 管 runtime truthfulness，PR C 管工具 schema 与 replay/liveness 正确性，PR D 管同场景 parity harness 和 release gate。只有 runtime 修复、truthfulness 套件和 parity verdict 都过关，才能说 GPT-5.5 达到 parity。</p>
     </div>
-
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Review order</h2>
-            <p>这一节主要在解释“Review order”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Review order”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：1. PR A 2. PR B 3. PR C 4. PR D PR D is the proof layer. It should not be the reason runtime-correctness PRs are delaye…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：1. PR A 2. PR B 3. PR C 4. PR D。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. PR A 2. PR B 3. PR C 4. PR D</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：PR D is the proof layer. It should not be the reason runtime-correctness PRs are delayed.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>PR D is the proof layer. It should not be the reason runtime-correctness PRs are delayed.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>PR A</h2>
-            <p>这一节主要在解释“PR A”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“PR A”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“PR A”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：GPT-5 runs act or fail closed instead of…、update_plan no longer looks like progress…、behavior stays GPT-5-first and embedded-P…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>GPT-5 runs act or fail closed instead of stopping at commentary</li><li><code>update_plan</code> no longer looks like progress by itself</li><li>behavior stays GPT-5-first and embedded-Pi scoped</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>PR B</h2>
-            <p>这一节主要在解释“PR B”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“PR B”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“PR B”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：auth/proxy/runtime failures stop collapsi…、/elevated full is only described as avail…、blocked reasons are visible to both the 聪…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>auth/proxy/runtime failures stop collapsing into generic &quot;model failed&quot; handling</li><li><code>/elevated full</code> is only described as available when it is actually available</li><li>blocked reasons are visible to both the model and the user-facing runtime</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>PR C</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“PR C”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：strict OpenAI/Codex 工具小帮手 registration be…、parameter-free 工具小帮手s do not fail strict…、replay and compaction outcomes preserve t…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>strict OpenAI/Codex tool registration behaves predictably</li><li>parameter-free tools do not fail strict schema checks</li><li>replay and compaction outcomes preserve truthful liveness state</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-11">
-          <div class="section-heading">
-            <p class="section-kicker">第 11 站</p>
-            <h2>PR D</h2>
-            <p>这一节主要在解释“PR D”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“PR D”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Expected artifacts from PR D:。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“PR D”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：the scenario pack is understandable and r…、the pack includes a mutating replay-safet…、reports are readable by humans and 自动小闹钟、parity claims are evidence-backed, not an…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>the scenario pack is understandable and reproducible</li><li>the pack includes a mutating replay-safety lane, not only read-only flows</li><li>reports are readable by humans and automation</li><li>parity claims are evidence-backed, not anecdotal</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Expected artifacts from PR D:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Expected artifacts from PR D:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“PR D”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：qa-suite-report.md / qa-suite-summary.jso…、qa-机器人朋友ic-parity-report.md with aggregat…、qa-机器人朋友ic-parity-summary.json with a mac…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>qa-suite-report.md</code> / <code>qa-suite-summary.json</code> for each model run</li><li><code>qa-agentic-parity-report.md</code> with aggregate and scenario-level comparison</li><li><code>qa-agentic-parity-summary.json</code> with a machine-readable verdict</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-12">
-          <div class="section-heading">
-            <p class="section-kicker">第 12 站</p>
-            <h2>Release gate</h2>
-            <p>这一节主要在解释“Release gate”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Release gate”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Do not claim GPT-5.5 parity or superiority over Opus 4.6 until: The parity harness is not the only evidence source. Kee…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Do not claim GPT-5.5 parity or superiority over Opus 4.6 until:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Do not claim GPT-5.5 parity or superiority over Opus 4.6 until:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Release gate”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：PR A, PR B, and PR C are merged、PR D runs the first-wave parity pack clea…、runtime-truthfulness regression suites re…、the parity report shows no fake-success c…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>PR A, PR B, and PR C are merged</li><li>PR D runs the first-wave parity pack cleanly</li><li>runtime-truthfulness regression suites remain green</li><li>the parity report shows no fake-success cases and no regression in stop behavior</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“flowchart LR”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“A[&quot;PR A-C merged&quot;] --&gt; B[&quot;Run GPT-5.5 parity pack&quot;]”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“A --&gt; C[&quot;Run Opus 4.6 parity pack&quot;]”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-mermaid">flowchart LR
-    A[&quot;PR A-C merged&quot;] --&gt; B[&quot;Run GPT-5.5 parity pack&quot;]
-    A --&gt; C[&quot;Run Opus 4.6 parity pack&quot;]
-    B --&gt; D[&quot;qa-suite-summary.json&quot;]
-    C --&gt; E[&quot;qa-suite-summary.json&quot;]
-    D --&gt; F[&quot;qa parity-report&quot;]
-    E --&gt; F
-    F --&gt; G[&quot;Markdown report + JSON verdict&quot;]
-    G --&gt; H{&quot;Pass?&quot;}
-    H -- &quot;yes&quot; --&gt; I[&quot;Parity claim allowed&quot;]
-    H -- &quot;no&quot; --&gt; J[&quot;Keep runtime fixes / review loop open&quot;]</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The parity harness is not the only evidence source. Keep this split explicit in review:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The parity harness is not the only evidence source. Keep this split explicit in review:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Release gate”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：PR D owns the scenario-based GPT-5.5 vs O…、PR B deterministic suites still own auth/…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>PR D owns the scenario-based GPT-5.5 vs Opus 4.6 comparison</li><li>PR B deterministic suites still own auth/proxy/DNS and full-access truthfulness evidence</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-13">
-          <div class="section-heading">
-            <p class="section-kicker">第 13 站</p>
-            <h2>Quick maintainer merge workflow</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use this when you are ready to land a parity PR and want a repeatable, low-risk sequence. 1. Confirm evidence bar is me…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use this when you are ready to land a parity PR and want a repeatable, low-risk sequence.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use this when you are ready to land a parity PR and want a repeatable, low-risk sequence.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：1. Confirm evidence bar is met before merge:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. Confirm evidence bar is met before merge:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：2. Triage/label before merge:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>2. Triage/label before merge:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：3. Validate locally on the touched surface:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>3. Validate locally on the touched surface:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：4. Land with the standard maintainer flow (/landpr process), then verify:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>4. Land with the standard maintainer flow (<code>/landpr</code> process), then verify:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：5. After landing, run duplicate search for related open PRs/issues and close only with a canonical reference.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>5. After landing, run duplicate search for related open PRs/issues and close only with a canonical reference.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Quick maintainer merge workflow”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：reproducible symptom or failing test、verified root cause in touched code、fix in the implicated path、regression test or explicit manual verifi…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>reproducible symptom or failing test</li><li>verified root cause in touched code</li><li>fix in the implicated path</li><li>regression test or explicit manual verification note</li><li>apply any <code>r:*</code> auto-close labels when the PR should not land</li><li>keep merge candidates free of unresolved blocker threads</li><li><code>pnpm check:changed</code></li><li><code>pnpm test:changed</code> when tests changed or bug-fix confidence depends on test coverage</li><li>linked issues auto-close behavior</li><li>CI and post-merge status on <code>main</code></li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：If any one of the evidence bar items is missing, request changes instead of merging.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If any one of the evidence bar items is missing, request changes instead of merging.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-14">
-          <div class="section-heading">
-            <p class="section-kicker">第 14 站</p>
-            <h2>Goal-to-evidence map</h2>
-            <p>这一节主要在解释“Goal-to-evidence map”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Goal-to-evidence map”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Completion gate item</th><th>Primary owner</th><th>Review artifact</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>No plan-only stalls</td><td>PR A</td><td>strict-agentic runtime tests and <code>approval-turn-tool-followthrough</code></td></tr><tr><td>No fake progress or fake tool completion</td><td>PR A + PR D</td><td>parity fake-success count plus scenario-level report details</td></tr><tr><td>No false <code>/elevated full</code> guidance</td><td>PR B</td><td>deterministic runtime-truthfulness suites</td></tr><tr><td>Replay/liveness failures remain explicit</td><td>PR C + PR D</td><td>lifecycle/replay suites plus <code>compaction-retry-mutating-tool</code></td></tr><tr><td>GPT-5.5 matches or beats Opus 4.6</td><td>PR D</td><td><code>qa-agentic-parity-report.md</code> and <code>qa-agentic-parity-summary.json</code></td></tr>
-        </tbody>
-      </table>
+    <div class="overview-meta">
+      <span>原文共 16 节，先看 Start Here</span>
+      <span>路径：/help/gpt55-codex-agentic-parity-maintainers</span>
+      <a href="https://docs.openclaw.ai/help/gpt55-codex-agentic-parity-maintainers" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
+  </div>
+</section>
 
-      </div>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">先分清责任</p>
+    <h2>四个 PR 像四个柜子，每个柜子只放自己的工具</h2>
+    <p>Maintainer review 最怕一个 PR 既想修 runtime，又想改 benchmark，还顺手重写权限语义。官方把边界列清，是为了让每块都能独立判断。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">A</span>
+      <h2>strict-agentic</h2>
+      <p>负责 <code>executionContract</code>、same-turn follow-through、<code>update_plan</code> 非终点语义、明确 blocked states。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">B</span>
+      <h2>truthfulness</h2>
+      <p>负责 Codex OAuth scope、typed provider/runtime failure、<code>/elevated full</code> 是否真的可用。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">C</span>
+      <h2>correctness</h2>
+      <p>负责 OpenAI/Codex tool compatibility、parameter-free strict schema、replay-invalid 和 liveness state。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">D</span>
+      <h2>harness</h2>
+      <p>负责 GPT-5.5 vs Opus 4.6 scenario pack、parity docs、report 和 release-gate mechanics。</p>
+    </article>
+  </div>
+</section>
 
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-15">
-          <div class="section-heading">
-            <p class="section-kicker">第 15 站</p>
-            <h2>Reviewer shorthand: before vs after</h2>
-            <p>这一节主要在解释“Reviewer shorthand: before vs after”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Reviewer shorthand: before vs after”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>User-visible problem before</th><th>Review signal after</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>GPT-5.5 stopped after planning</td><td>PR A shows act-or-block behavior instead of commentary-only completion</td></tr><tr><td>Tool use felt brittle with strict OpenAI/Codex schemas</td><td>PR C keeps tool registration and parameter-free invocation predictable</td></tr><tr><td><code>/elevated full</code> hints were sometimes misleading</td><td>PR B ties guidance to actual runtime capability and blocked reasons</td></tr><tr><td>Long tasks could disappear into replay/compaction ambiguity</td><td>PR C emits explicit paused, blocked, abandoned, and replay-invalid state</td></tr><tr><td>Parity claims were anecdotal</td><td>PR D produces a report plus JSON verdict with the same scenario coverage on both models</td></tr>
-        </tbody>
-      </table>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">Review 顺序</p>
+    <h2>先合 runtime 修路，再用 PR D 当证明层</h2>
+    <p>推荐顺序是 PR A、PR B、PR C、PR D。PR D 是 proof layer，不应该反过来拖住 runtime-correctness PR，也不应该假装自己修了 runtime 行为。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">看 PR A</div>
+      <p>GPT-5 runs 是否 act or fail closed；<code>update_plan</code> 是否不再被当成终点；scope 是否保持 GPT-5-first 和 embedded-PI。</p>
     </div>
+    <div class="story-card">
+      <div class="story-card-label">看 PR B</div>
+      <p>auth、proxy、runtime failure 是否不再压成 generic error；full-access blocked reasons 是否给模型和用户都能看见。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">看 PR C</div>
+      <p>strict tool registration 是否 predictable；空参数工具是否通过 schema；replay 和 compaction 状态是否诚实。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">看 PR D</div>
+      <p>场景包是否可复现，是否包含 mutating replay-safety lane，报告是否人和自动化都能读。</p>
+    </div>
+  </div>
+</section>
 
-      </div>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">Release gate</p>
+    <h2>没有四盏绿灯，就不要说 GPT-5.5 parity 或 superiority</h2>
+    <p>放行条件包括：PR A/B/C 已合并，PR D 在合并后的 runtime 上干净跑完第一波 pack，runtime-truthfulness 回归仍然绿色，parity report 没有 fake-success，也没有 stop behavior 回退。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">PR D 证据</div>
+      <p>提供 GPT-5.5 和 Opus 4.6 同场景比较，产物包括 <code>qa-suite-summary.json</code> 和 parity report。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">PR B 证据</div>
+      <p>auth、proxy、DNS 和 full-access truthfulness 仍由 deterministic suites 证明。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">不能替代</div>
+      <p>场景 harness 不替代 runtime truthfulness；truthfulness 套件也不替代同场景 parity 比较。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">机器 verdict</div>
+      <p><code>qa-agentic-parity-summary.json</code> 是自动化可读的通过或失败判断。</p>
+    </div>
+  </div>
+</section>
 
-          </div>
-        </section>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">合并工作流</p>
+    <h2>准备落 PR 时，先问“证据条够不够”</h2>
+    <p>维护者流程强调低风险、可重复：先确认问题可复现、根因在 touched code、修复在相关路径、回归测试或手动验证说明到位，再进入标准 landing 流程。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">证据条</div>
+      <p>症状、根因、修复路径、测试或验证说明都要能对上。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">标签和线程</div>
+      <p>该 auto-close 的标签要处理；有 blocker review thread 时不要硬合。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">本地验证</div>
+      <p>至少按 touched surface 跑 <code>pnpm check:changed</code>，测试相关改动再跑 <code>pnpm test:changed</code>。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">合并后</div>
+      <p>检查 linked issues auto-close、CI、main 上状态，并搜索重复 PR 或 issue，只用 canonical reference 关闭。</p>
+    </div>
+  </div>
+</section>
 
-        <section class="section-shell" id="section-16">
-          <div class="section-heading">
-            <p class="section-kicker">第 16 站</p>
-            <h2>Related</h2>
-            <p>这一节主要在解释“Related”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Related”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Related”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：GPT-5.5 / Codex 机器人朋友ic parity。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><a href="/help/gpt55-codex-agentic-parity" target="_blank" rel="noreferrer">GPT-5.5 / Codex agentic parity</a></li></ul>
-      </div>
-
-          </div>
-        </section>
-
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>维护者页的目标，是让 parity 结论经得起复查</h2>
+    <p>不要让一个 PR 偷偷承担所有责任。按边界 review，按证据放行，最后的 parity claim 才不是“我们感觉更好了”，而是“同一规则下，它真的过了”。</p>
+  </div>
+</section>
 
 
       <footer class="page-footer">
         <div>
           <strong>Fivey Can Read OpenClaw</strong>
-          <p>同步时间：2026年5月18日 17:31</p>
+          <p>同步时间：2026年5月20日 18:59</p>
         </div>
       </footer>
     </main>

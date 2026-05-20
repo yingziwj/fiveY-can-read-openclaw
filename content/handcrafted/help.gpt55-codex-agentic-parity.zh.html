@@ -1,0 +1,149 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>GPT-5.5 / Codex agentic parity 像一场“别只说计划，要真的干活”的修路工程</h2>
+      <p>OpenClaw 已经能和会用工具的前沿模型合作，但 GPT-5.5 和 Codex 风格模型在一些实际任务上会输得很冤：会停在计划、会被严格工具 schema 绊倒、会误要不可能的权限、会在长任务回放或压缩时丢状态。</p>
+      <p>这组 parity 工作把问题拆成四块，让 GPT-5.5 不是学着模仿 Opus，而是在 OpenClaw 里得到更清楚的执行契约和证据检验。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合理解 GPT-5.5 / Codex parity 计划的人</span>
+      <span>重点是 strict-agentic、runtime truthfulness、execution correctness 和 parity harness</span>
+      <a href="https://docs.openclaw.ai/help/gpt55-codex-agentic-parity" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">为什么要做</p>
+    <h2>以前的问题不是“模型没想法”，而是“想完没有可靠地往前走”</h2>
+    <p>用户说“好，执行吧”时，agent 应该开始做第一步，而不是只复述计划。运行时也应该把权限、认证、网络、回放和压缩状态讲明白，而不是把所有失败压成一句模糊错误。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">计划后停住</div>
+      <p>像小队长说“我要去拿工具”，然后站在原地不动。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">schema 摩擦</div>
+      <p>严格 OpenAI/Codex 工具注册要求更精确，参数为空或根对象不对都可能绊住。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">权限假信号</div>
+      <p>如果 <code>/elevated full</code> 根本不可用，运行时就应该诚实说明，别让模型一直要不存在的钥匙。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">长任务状态</div>
+      <p>暂停、阻塞、遗弃、回放不安全，都要浮上来，而不是消失在普通失败文案里。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">四块 PR</p>
+    <h2>像修四段路：行动契约、真实错误、执行正确、证据跑道</h2>
+    <p>这次 parity 计划被拆成四个可 review 的 slice。前三块改 runtime 行为，第四块用同一组场景证明 GPT-5.5 和 Opus 4.6 的表现可以比较。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">A</span>
+      <h2>strict-agentic</h2>
+      <p>模型不能只交计划就算完成。该动手时要调用工具或产生真实进展，否则被 steer 后仍不动就明确 blocked。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">B</span>
+      <h2>runtime truthfulness</h2>
+      <p>把 auth、scope、HTML 403、proxy、DNS、timeout、full-access 不可用等失败原因说清。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">C</span>
+      <h2>execution correctness</h2>
+      <p>修 OpenAI/Codex tool schema 兼容，也让 replay、compaction 和长任务 liveness 更可见。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">D</span>
+      <h2>parity harness</h2>
+      <p>同一批场景跑 GPT-5.5 和 Opus 4.6，用报告和 JSON verdict 说话。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">场景包</p>
+    <h2>测试不是问“感觉像不像”，而是看五类任务有没有真做成</h2>
+    <p>第一波 parity pack 覆盖短批准后的跟进、模型切换后的工具连续性、源码文档发现报告、图片附件理解，以及压缩/重试里带真实写入的 replay 安全。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">approval follow-through</div>
+      <p>用户批准后，不停在“我会做”，而是在同一 turn 采取第一个具体动作。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">model switch continuity</div>
+      <p>跨模型或 runtime 边界时，工具工作不应突然变成泛泛聊天。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">source docs report</div>
+      <p>能读源码和文档、综合发现，并继续 agentic 地推进，而不是薄薄总结就停。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">attachment + replay</div>
+      <p>图片任务要可行动；带写入的任务在压缩、重试、丢 reply state 时要把 replay 风险说清。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">放行标准</p>
+    <h2>能说 parity 前，必须同时有 runtime 绿灯和 harness 证据</h2>
+    <p>GPT-5.5 要被认为达到或超过 Opus 4.6，不能只靠某次演示顺利。它需要通过 parity pack，还要保持 runtime truthfulness 回归套件绿色。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">必须避免</div>
+      <p>计划停住、假完成、错误 <code>/elevated full</code> 建议、静默 replay 或 compaction abandonment。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">比较指标</div>
+      <p>completion rate、unintended-stop rate、valid-tool-call rate、fake-success count。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">JSON verdict</div>
+      <p><code>qa-agentic-parity-summary.json</code> 是第一波 parity pack 的机器可读最终判断。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">CI 噪音</div>
+      <p>共享或基础 CI 问题不是 parity 结论。要等干净的 merged-runtime 执行再判断。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">什么时候启用</p>
+    <h2><code>strict-agentic</code> 适合“下一步很明显，就该动手”的 agent</h2>
+    <p>如果主要 runtime 是 GPT-5.5 或 Codex-family 模型，并且你宁愿看到明确 blocked state，也不想看到“看似帮忙的复述”，就适合启用。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">适合</div>
+      <p>代码任务、短 follow-up、明显下一步、需要工具执行的工作流。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">不一定适合</div>
+      <p>想保留旧的宽松行为、不是 GPT-5-family 模型、或只是测试 prompt 文案。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>Parity 不是一句宣传语，是“该行动时行动，该失败时诚实失败”的证据链</h2>
+    <p>这组工作让 GPT-5.5 在 OpenClaw 里少停、少猜、少假装成功；如果不能做，也要把原因讲清楚，让人和机器都能继续判断。</p>
+  </div>
+</section>

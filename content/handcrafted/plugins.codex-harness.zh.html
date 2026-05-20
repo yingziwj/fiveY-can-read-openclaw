@@ -1,0 +1,149 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>Codex harness 像把底层驾驶交给 Codex，OpenClaw 继续当调度台</h2>
+      <p>启用内置 <code>codex</code> 插件后，OpenClaw 可以让 Codex app-server 负责低层 agent 会话：线程恢复、工具续跑、原生压缩和 app-server 执行。</p>
+      <p>但 OpenClaw 没有退场。聊天频道、会话文件、模型选择、OpenClaw 动态工具、审批、媒体发送和看得见的聊天镜像，仍然由 OpenClaw 负责。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合想用 Codex 跑 OpenAI agent turns 的用户</span>
+      <span>重点是 runtime、model ref、auth、routing 和验证</span>
+      <a href="https://docs.openclaw.ai/plugins/codex-harness" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">先分工</p>
+    <h2>Codex 管原生线程，OpenClaw 管外面的世界</h2>
+    <p>这页最容易理解错的地方，是把 Codex harness 当成“换一个 provider”。其实更像换了底层驾驶舱：模型调用和线程循环交给 Codex，外层产品能力还在 OpenClaw。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">Codex owns</div>
+      <p>原生 thread、native model loop、tool continuation、native compaction。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">OpenClaw owns</div>
+      <p>频道、session 文件、动态工具、审批、媒体和可见 transcript mirror。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">模型写法</div>
+      <p>常规写 <code>openai/gpt-5.5</code> 这类 canonical OpenAI model ref，不要新写 <code>openai-codex/gpt-*</code>。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">runtime 写法</div>
+      <p><code>codex</code> 是 runtime。Telegram、Discord、Slack 等仍只是外面的聊天入口。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">快速开始</p>
+    <h2>登录、启插件、选模型，然后重启 Gateway</h2>
+    <p>大多数用户走这条路：先用 Codex OAuth 登录，再启用 bundled <code>codex</code> 插件，把 agent model 设成 <code>openai/gpt-*</code>。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>登录 Codex</h2>
+      <p><code>openclaw models auth login --provider openai-codex</code> 像给 Codex app-server 准备账号。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>启用插件</h2>
+      <p>在 <code>plugins.entries.codex.enabled</code> 里打开。如果用了 <code>plugins.allow</code>，也要把 <code>codex</code> 放进去。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>选择模型</h2>
+      <p>把默认模型设成 <code>openai/gpt-5.5</code> 或其他 <code>openai/gpt-*</code> agent model。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>重启和新会话</h2>
+      <p>改插件配置后重启 Gateway；已有聊天用 <code>/new</code> 或 <code>/reset</code> 测试新 runtime。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">路由规则</p>
+    <h2>别把 provider、model ref 和 runtime 混成一团</h2>
+    <p><code>openai/gpt-*</code> 是模型引用，<code>codex</code> 是运行时。API key fallback 也只是认证备选，不表示自动切回 PI 或普通 OpenAI Responses。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>auth.order.openai</code></div>
+      <p>推荐把订阅登录和 API key 备选放在 OpenAI auth 顺序下。旧的 <code>openai-codex</code> 资料仍兼容，但新配置不要继续扩散旧 model ref。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>agentRuntime.id</code></div>
+      <p>普通 OpenAI auto mode 不一定要写；想在 Codex 不可用时 fail closed，明确写 <code>"codex"</code> 更清楚。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>agentRuntime.id: "pi"</code></div>
+      <p>表示故意走直接 PI 行为，不是 Codex harness。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">ACP/acpx</div>
+      <p>这是另一条外部 harness 路。用户明确要 ACP、Claude Code、Copilot 或 Cursor 接入时，再看 ACP setup。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">压缩和上下文</p>
+    <h2>Codex 默认自己压缩，除非 OpenClaw 的 context engine 明确接管</h2>
+    <p>不要在 Codex-backed agent 上随手设置 <code>compaction.model</code> 或 <code>compaction.provider</code>。没有 context engine 接管时，Codex 会通过 app-server native thread state 做自己的压缩。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">Codex native compaction</div>
+      <p>像 Codex 自己整理工作笔记，OpenClaw 不再叠一层本地 summarizer。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Lossless context engine</div>
+      <p>如果用 <code>lossless-claw</code>，应通过 <code>plugins.slots.contextEngine</code> 和插件 config 配置。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>ownsCompaction: true</code></div>
+      <p>当 context engine 说“压缩我来管”，OpenClaw 会让下一次 Codex turn 从 engine 管理的上下文重新开始。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>doctor --fix</code></div>
+      <p>可以修复 legacy refs 和旧 compaction 配置形状，减少“看起来能跑、实际走错路”的配置。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">怎么确认</p>
+    <h2>先看 <code>/status</code>，再看 <code>/codex status</code></h2>
+    <p>在你期待走 Codex 的聊天里，<code>/status</code> 应该显示 <code>Runtime: OpenAI Codex</code>。然后用 <code>/codex status</code> 看 app-server 连接、账号、rate limit、MCP servers 和 skills。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>/codex models</code></div>
+      <p>列出当前 harness 和账号能看到的 live Codex app-server 模型目录。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">如果结果意外</div>
+      <p>检查插件是否启用、<code>plugins.allow</code> 是否挡住、旧 session 是否 pin 住旧 route、model ref 是否写错。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>Codex harness 的核心不是“换名字”，而是“谁掌握 agent loop”</h2>
+    <p>选 <code>openai/gpt-*</code>，启 <code>codex</code> runtime，让 Codex 管原生线程；OpenClaw 继续管产品外壳、工具接线、审批、媒体和可见聊天。</p>
+  </div>
+</section>

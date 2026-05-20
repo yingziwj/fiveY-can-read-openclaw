@@ -1,0 +1,157 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>Codex harness runtime 像一份边界协议：这件事谁说了算</h2>
+      <p>Codex mode 不是“PI 下面换了个模型请求”。Codex 掌握更多原生 agent loop，OpenClaw 要围着这条边界接工具、会话、审批、hook、媒体和诊断。</p>
+      <p>读这页时，不必先背所有字段，只要抓住一句话：Codex 是原生线程的主人，OpenClaw 是外层产品和桥接的主人。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合维护 Codex runtime 行为的人</span>
+      <span>重点是线程绑定、可见回复、hook、权限、队列和 compaction</span>
+      <a href="https://docs.openclaw.ai/plugins/codex-harness-runtime" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">总边界</p>
+    <h2>Codex 不是 OpenClaw 造出来的小模型盒子，它有自己的原生线程</h2>
+    <p>OpenClaw 仍然负责频道路由、session 文件、可见消息、OpenClaw 动态工具、审批、媒体和 transcript mirror。Codex 负责 canonical native thread、native model loop、native tool continuation 和 native compaction。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">Native thread</div>
+      <p>像 Codex 自己的作业本。模型切换时，OpenClaw 会把当前 model、approval policy、sandbox 和 service tier 再发给 app-server。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">Transcript mirror</div>
+      <p>像 OpenClaw 留的一份外层影印本，用于频道历史、搜索、<code>/new</code>、<code>/reset</code> 和未来切换。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">模型变化</div>
+      <p>从 <code>openai/gpt-5.5</code> 切到 <code>openai/gpt-5.2</code>，可以保留 thread binding，同时要求 Codex 用新模型继续。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">不是 PI 换皮</div>
+      <p>很多 lifecycle 和 hook 只能投影或观察，不能把 Codex 原生记录当成 OpenClaw 自己的记录随意改写。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">可见回复</p>
+    <h2>Codex 可以私下完成 turn，是否发到聊天要看 OpenClaw 消息工具</h2>
+    <p>默认情况下，源聊天里的可见回复走 OpenClaw <code>message</code> 工具。Agent 可以结束 Codex turn，但只有调用 <code>message(action="send")</code> 时才发到频道。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>message</code></div>
+      <p>像“把结果贴到聊天窗口”的按钮。没有按按钮，Codex turn 可以完成但不一定发言。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>visibleReplies</code></div>
+      <p>设成 <code>"automatic"</code> 时，可以保留 direct-chat final reply 的旧自动发送路径。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>heartbeat_respond</code></div>
+      <p>Heartbeat turn 默认也能看到这个工具，用来说明这次唤醒要安静记录还是通知用户。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Collaboration mode</div>
+      <p>Heartbeat 的主动性指导只在 heartbeat turn 注入，普通聊天会回到 Codex Default mode。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">Hook 边界</p>
+    <h2>有些 hook 是 OpenClaw 能执行的，有些只是 Codex 原生世界的影子</h2>
+    <p>OpenClaw 不用项目或全局 Codex <code>hooks.json</code> 来路由 OpenClaw 插件行为。它会为支持的 native tool 和 permission bridge 注入每个线程的 Codex config。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>动态工具</h2>
+      <p>Codex 请求 OpenClaw dynamic tool 后，由 OpenClaw 执行，因此 OpenClaw 能跑自己拥有的 plugin 和 middleware 行为。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>Codex-native tools</h2>
+      <p>Codex 掌握 canonical tool record。OpenClaw 可以镜像部分事件，但不能随意重写原生线程。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>PermissionRequest</h2>
+      <p>app-server approvals 开启时，默认让 Codex reviewer 和 OpenClaw approval bridge 处理真实 escalations。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>Telemetry</h2>
+      <p>native hook started/completed 通知会投影成 agent events，主要用于 trajectory 和调试。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">权限和询问</p>
+    <h2>没有明确 allow 就不是 allow，问用户也要走原聊天</h2>
+    <p>对 Codex native permission request，OpenClaw 只有在策略决定时才返回明确 allow 或 deny。没有决定并不等于允许，而是让 Codex 继续走自己的 guardian 或用户审批路径。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">Exact match</div>
+      <p><code>allow-always</code> 只记住同一 provider、session、tool input 和 cwd 指纹；命令或参数变了就要重新判断。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">MCP approval</div>
+      <p>Codex MCP tool approval elicitation 会在标记为 <code>mcp_tool_call</code> 时路由到 OpenClaw 插件审批流。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>request_user_input</code></div>
+      <p>Codex 发起的问题会回到原聊天，下一条排队 follow-up 会作为回答，而不是普通补充上下文。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">其他 elicitation</div>
+      <p>没有被支持的 MCP elicitation 请求会失败关闭。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">队列和诊断</p>
+    <h2>正在跑时的新消息，可以变成 Codex 的 <code>turn/steer</code></h2>
+    <p>默认 <code>messages.queue.mode: "steer"</code> 时，OpenClaw 会把安静窗口里的 steer-mode 消息按顺序合成一条 <code>turn/steer</code> 发给 app-server。review 和手动压缩 turn 可能拒绝 same-turn steering。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>/queue followup</code></div>
+      <p>希望默认排队而不是 steer 时，用 queue 命令表达。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>/diagnostics</code></div>
+      <p>获得批准后，Codex harness session 还能把相关 Codex thread 的反馈上传给 app-server。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>/codex diagnostics</code></div>
+      <p>只想上传当前 Codex thread 反馈，而不是完整 Gateway diagnostics bundle 时使用。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">隐私边界</div>
+      <p>如果你拒绝或忽略审批，OpenClaw 不会打印 Codex ids，也不会发送 Codex feedback。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>Runtime 页是在保护一条清楚边界：Codex 原生负责原生，OpenClaw 外层负责外层</h2>
+    <p>线程、工具、hook、权限、媒体、诊断、compaction 都要先问“这件事的 canonical owner 是谁”。问清楚了，很多看似奇怪的行为就能解释。</p>
+  </div>
+</section>

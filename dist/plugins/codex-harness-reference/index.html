@@ -4,18 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Codex harness reference | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Codex harness reference 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：This reference covers the detailed…">
+  <meta name="description" content="这页不是从零启用 Codex 的入口，而是给维护者查字段的参考页。认证顺序、app-server 命令、模型发现、环境隔离、权限、超时、native plugins 和 Computer Use 等细节，都应在这里按边界查清楚，再回到 Codex harness 主页面和 runtime 页面理解整体路线。">
   <meta name="robots" content="index,follow">
+  <meta name="google-adsense-account" content="ca-pub-3833673520933536">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Codex harness reference | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Codex harness reference 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：This reference covers the detailed…">
+  <meta property="og:description" content="这页不是从零启用 Codex 的入口，而是给维护者查字段的参考页。认证顺序、app-server 命令、模型发现、环境隔离、权限、超时、native plugins 和 Computer Use 等细节，都应在这里按边界查清楚，再回到 Codex harness 主页面和 runtime 页面理解整体路线。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/plugins/codex-harness-reference/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta property="og:image:alt" content="Codex harness reference 的中文故事化导读页面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Codex harness reference | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Codex harness reference 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：This reference covers the detailed…">
+  <meta name="twitter:description" content="这页不是从零启用 Codex 的入口，而是给维护者查字段的参考页。认证顺序、app-server 命令、模型发现、环境隔离、权限、超时、native plugins 和 Computer Use 等细节，都应在这里按边界查清楚，再回到 Codex harness 主页面和 runtime 页面理解整体路线。">
   <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/plugins/codex-harness-reference/">
@@ -23,7 +24,8 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Codex harness reference","description":"Codex harness reference 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：This reference covers the detailed…","url":"https://fivey-can-read-openclaw.pages.dev/plugins/codex-harness-reference/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3833673520933536" crossorigin="anonymous"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Codex harness reference","description":"这页不是从零启用 Codex 的入口，而是给维护者查字段的参考页。认证顺序、app-server 命令、模型发现、环境隔离、权限、超时、native plugins 和 Computer Use 等细节，都应在这里按边界查清楚，再回到 Codex harness 主页面和 runtime 页面理解整体路线。","url":"https://fivey-can-read-openclaw.pages.dev/plugins/codex-harness-reference/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Plugins","item":"https://fivey-can-read-openclaw.pages.dev/plugins/codex-harness-reference/"}]}</script>
 </head>
 <body>
@@ -722,11 +724,6 @@
                   <small>ACP agents</small>
                 </a>
 
-                <a class="sidebar-link " href="/tools/acp-agents-setup/">
-                  <span>ACP agents — setup</span>
-                  <small>ACP agents — setup</small>
-                </a>
-
                 <a class="sidebar-link " href="/tools/agent-send/">
                   <span>Agent send 工具</span>
                   <small>Agent send</small>
@@ -977,6 +974,11 @@
                   <small>Web fetch</small>
                 </a>
 
+                <a class="sidebar-link " href="/tools/acp-agents-setup/">
+                  <span>ACP agents — setup</span>
+                  <small>ACP agents — setup</small>
+                </a>
+
                 <a class="sidebar-link " href="/tools/multi-agent-sandbox-tools/">
                   <span>Multi-agent sandbox and tools 工具</span>
                   <small>Multi-agent sandbox and tools</small>
@@ -1075,6 +1077,11 @@
                 <a class="sidebar-link " href="/plugins/skill-workshop/">
                   <span>技能 workshop plugin</span>
                   <small>Skill workshop plugin</small>
+                </a>
+
+                <a class="sidebar-link " href="/plugins/tool-plugins/">
+                  <span>工具 plugins</span>
+                  <small>Tool plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/voice-call/">
@@ -1627,11 +1634,6 @@
             <details class="sidebar-group">
               <summary>网关</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/gateway/configuration/">
-                  <span>配置</span>
-                  <small>Configuration</small>
-                </a>
-
                 <a class="sidebar-link " href="/gateway/">
                   <span>Gateway runbook</span>
                   <small>Gateway runbook</small>
@@ -1675,6 +1677,11 @@
                 <a class="sidebar-link " href="/gateway/config-tools/">
                   <span>配置 — tools and custom providers</span>
                   <small>Configuration — tools and custom providers</small>
+                </a>
+
+                <a class="sidebar-link " href="/gateway/configuration/">
+                  <span>配置</span>
+                  <small>Configuration</small>
                 </a>
 
                 <a class="sidebar-link " href="/gateway/configuration-examples/">
@@ -1887,11 +1894,6 @@
                   <small>Crestodian</small>
                 </a>
 
-                <a class="sidebar-link " href="/cli/cron/">
-                  <span>Cron 命令</span>
-                  <small>Cron</small>
-                </a>
-
                 <a class="sidebar-link " href="/cli/daemon/">
                   <span>Daemon 命令</span>
                   <small>Daemon</small>
@@ -2055,6 +2057,11 @@
                 <a class="sidebar-link " href="/cli/configure/">
                   <span>配置ure</span>
                   <small>Configure</small>
+                </a>
+
+                <a class="sidebar-link " href="/cli/cron/">
+                  <span>Cron 命令</span>
+                  <small>Cron</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/dashboard/">
@@ -2692,8 +2699,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Plugins 导读</p>
-        <h1>Codex harness reference：这块新积木往哪儿卡</h1>
-        <p class="hero-copy">Codex harness reference 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：This reference covers the detailed 设置说明书uration for the bundled codex 新本领插件. For setup…。</p>
+        <h1>Codex harness reference 是所有配置旋钮的说明图</h1>
+        <p class="hero-copy">这页不是从零启用 Codex 的入口，而是给维护者查字段的参考页。认证顺序、app-server 命令、模型发现、环境隔离、权限、超时、native plugins 和 Computer Use 等细节，都应在这里按边界查清楚，再回到 Codex harness 主页面和 runtime 页面理解整体路线。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -3389,11 +3396,6 @@
                   <small>ACP agents</small>
                 </a>
 
-                <a class="sidebar-link " href="/tools/acp-agents-setup/">
-                  <span>ACP agents — setup</span>
-                  <small>ACP agents — setup</small>
-                </a>
-
                 <a class="sidebar-link " href="/tools/agent-send/">
                   <span>Agent send 工具</span>
                   <small>Agent send</small>
@@ -3644,6 +3646,11 @@
                   <small>Web fetch</small>
                 </a>
 
+                <a class="sidebar-link " href="/tools/acp-agents-setup/">
+                  <span>ACP agents — setup</span>
+                  <small>ACP agents — setup</small>
+                </a>
+
                 <a class="sidebar-link " href="/tools/multi-agent-sandbox-tools/">
                   <span>Multi-agent sandbox and tools 工具</span>
                   <small>Multi-agent sandbox and tools</small>
@@ -3742,6 +3749,11 @@
                 <a class="sidebar-link " href="/plugins/skill-workshop/">
                   <span>技能 workshop plugin</span>
                   <small>Skill workshop plugin</small>
+                </a>
+
+                <a class="sidebar-link " href="/plugins/tool-plugins/">
+                  <span>工具 plugins</span>
+                  <small>Tool plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/voice-call/">
@@ -4294,11 +4306,6 @@
             <details class="sidebar-group">
               <summary>网关</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/gateway/configuration/">
-                  <span>配置</span>
-                  <small>Configuration</small>
-                </a>
-
                 <a class="sidebar-link " href="/gateway/">
                   <span>Gateway runbook</span>
                   <small>Gateway runbook</small>
@@ -4342,6 +4349,11 @@
                 <a class="sidebar-link " href="/gateway/config-tools/">
                   <span>配置 — tools and custom providers</span>
                   <small>Configuration — tools and custom providers</small>
+                </a>
+
+                <a class="sidebar-link " href="/gateway/configuration/">
+                  <span>配置</span>
+                  <small>Configuration</small>
                 </a>
 
                 <a class="sidebar-link " href="/gateway/configuration-examples/">
@@ -4554,11 +4566,6 @@
                   <small>Crestodian</small>
                 </a>
 
-                <a class="sidebar-link " href="/cli/cron/">
-                  <span>Cron 命令</span>
-                  <small>Cron</small>
-                </a>
-
                 <a class="sidebar-link " href="/cli/daemon/">
                   <span>Daemon 命令</span>
                   <small>Daemon</small>
@@ -4722,6 +4729,11 @@
                 <a class="sidebar-link " href="/cli/configure/">
                   <span>配置ure</span>
                   <small>Configure</small>
+                </a>
+
+                <a class="sidebar-link " href="/cli/cron/">
+                  <span>Cron 命令</span>
+                  <small>Cron</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/dashboard/">
@@ -5346,1003 +5358,169 @@
         </div>
       </div>
 
-
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Codex harness reference</h2>
-          <p>这一页不是在堆术语，它像把“Codex harness reference”这台小机器搬到桌上，当着你的面拆开给你看。你先不用全记住，先抓住它到底在忙什么：This reference covers the detailed 设置说明书uration for the bundled codex 新本领插件. For setup and rout…。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/plugins/codex-harness-reference</span>
-          <span>章节数量：11</span>
-          <a href="https://docs.openclaw.ai/plugins/codex-harness-reference" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：This reference covers the detailed 设置说明书uration for the bundled codex 新本领插件. For setup and routing decisions, start wit…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：This reference covers the detailed 设置说明书uration for the bundled codex 新本领插件. For setup and routing decisions, start wit…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>This reference covers the detailed configuration for the bundled <code>codex</code> plugin. For setup and routing decisions, start with <a href="/plugins/codex-harness" target="_blank" rel="noreferrer">Codex harness</a>.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>新本领插件 设置说明书 surface</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：All Codex harness settings live under 新本领插件s.entries.codex.设置说明书. Supported top-level fields:。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：All Codex harness settings live under 新本领插件s.entries.codex.设置说明书.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>All Codex harness settings live under <code>plugins.entries.codex.config</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。</p>
-        <ul class="code-steps">
-          <li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li><li>这里在给“plugins”挂牌子，告诉系统它该指向“{”。</li><li>这里在给“entries”挂牌子，告诉系统它该指向“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  plugins: {
-    entries: {
-      codex: {
-        enabled: true,
-        config: {
-          discovery: {
-            enabled: true,
-            timeoutMs: 2500,
-          },
-          appServer: {
-            mode: &quot;guardian&quot;,
-          },
-        },
-      },
-    },
-  },
-}</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Supported top-level fields:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Supported top-level fields:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Field</th><th>Default</th><th>Meaning</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>discovery</code></td><td>enabled</td><td>Model discovery settings for Codex app-server <code>model/list</code>.</td></tr><tr><td><code>appServer</code></td><td>managed stdio app-server</td><td>Transport, command, auth, approval, sandbox, and timeout settings.</td></tr><tr><td><code>codexDynamicToolsLoading</code></td><td><code>&quot;searchable&quot;</code></td><td>Use <code>&quot;direct&quot;</code> to put OpenClaw dynamic tools directly in the initial Codex tool context.</td></tr><tr><td><code>codexDynamicToolsExclude</code></td><td><code>[]</code></td><td>Additional OpenClaw dynamic tool names to omit from Codex app-server turns.</td></tr><tr><td><code>codexPlugins</code></td><td>disabled</td><td>Native Codex plugin/app support for migrated source-installed curated plugins. See <a href="/plugins/codex-native-plugins" target="_blank" rel="noreferrer">Native Codex plugins</a>.</td></tr><tr><td><code>computerUse</code></td><td>disabled</td><td>Codex Computer Use setup. See <a href="/plugins/codex-computer-use" target="_blank" rel="noreferrer">Codex Computer Use</a>.</td></tr>
-        </tbody>
-      </table>
+      <!-- handcrafted-source:plugins.codex-harness-reference.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Codex harness reference 是所有配置旋钮的说明图</h2>
+      <p>这页不是从零启用 Codex 的入口，而是给维护者查字段的参考页。认证顺序、app-server 命令、模型发现、环境隔离、权限、超时、native plugins 和 Computer Use 等细节，都应在这里按边界查清楚，再回到 Codex harness 主页面和 runtime 页面理解整体路线。</p>
     </div>
-
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>App-大房子服务器 transport</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：By default, OpenClaw starts the managed Codex binary shipped with the bundled 新本领插件: This keeps the app-大房子服务器 version…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：By default, OpenClaw starts the managed Codex binary shipped with the bundled 新本领插件:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>By default, OpenClaw starts the managed Codex binary shipped with the bundled plugin:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端口令，像你站在控制台前，一下下按按钮让机器醒过来。</p>
-        <ul class="code-steps">
-          <li>这里在给“codex app-server --listen stdio”挂牌子，告诉系统它该指向“//”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">codex app-server --listen stdio://</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：This keeps the app-大房子服务器 version tied to the bundled codex 新本领插件 instead of whichever separate Codex CLI happens to be…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>This keeps the app-server version tied to the bundled <code>codex</code> plugin instead of whichever separate Codex CLI happens to be installed locally. Set <code>appServer.command</code> only when you intentionally want to run a different executable.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：For an already-running app-大房子服务器, use WebSocket transport:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For an already-running app-server, use WebSocket transport:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。</p>
-        <ul class="code-steps">
-          <li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li><li>这里在给“plugins”挂牌子，告诉系统它该指向“{”。</li><li>这里在给“entries”挂牌子，告诉系统它该指向“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  plugins: {
-    entries: {
-      codex: {
-        enabled: true,
-        config: {
-          appServer: {
-            transport: &quot;websocket&quot;,
-            url: &quot;ws://gateway-host:39175&quot;,
-            authToken: &quot;${CODEX_APP_SERVER_TOKEN}&quot;,
-            requestTimeoutMs: 60000,
-          },
-        },
-      },
-    },
-  },
-}</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Supported app大房子服务器 fields:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Supported <code>appServer</code> fields:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Field</th><th>Default</th><th>Meaning</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>transport</code></td><td><code>&quot;stdio&quot;</code></td><td><code>&quot;stdio&quot;</code> spawns Codex; <code>&quot;websocket&quot;</code> connects to <code>url</code>.</td></tr><tr><td><code>command</code></td><td>managed Codex binary</td><td>Executable for stdio transport. Leave unset to use the managed binary.</td></tr><tr><td><code>args</code></td><td><code>[&quot;app-server&quot;, &quot;--listen&quot;, &quot;stdio://&quot;]</code></td><td>Arguments for stdio transport.</td></tr><tr><td><code>url</code></td><td>unset</td><td>WebSocket app-server URL.</td></tr><tr><td><code>authToken</code></td><td>unset</td><td>Bearer token for WebSocket transport.</td></tr><tr><td><code>headers</code></td><td><code>{}</code></td><td>Extra WebSocket headers.</td></tr><tr><td><code>clearEnv</code></td><td><code>[]</code></td><td>Extra environment variable names removed from the spawned stdio app-server process after OpenClaw builds its inherited environment.</td></tr><tr><td><code>requestTimeoutMs</code></td><td><code>60000</code></td><td>Timeout for app-server control-plane calls.</td></tr><tr><td><code>turnCompletionIdleTimeoutMs</code></td><td><code>60000</code></td><td>Quiet window after Codex accepts a turn or after a turn-scoped app-server request while OpenClaw waits for <code>turn/completed</code>.</td></tr><tr><td><code>mode</code></td><td><code>&quot;yolo&quot;</code> unless local Codex requirements disallow YOLO</td><td>Preset for YOLO or guardian-reviewed execution.</td></tr><tr><td><code>approvalPolicy</code></td><td><code>&quot;never&quot;</code> or an allowed guardian approval policy</td><td>Native Codex approval policy sent to thread start, resume, and turn.</td></tr><tr><td><code>sandbox</code></td><td><code>&quot;danger-full-access&quot;</code> or an allowed guardian sandbox</td><td>Native Codex sandbox mode sent to thread start and resume.</td></tr><tr><td><code>approvalsReviewer</code></td><td><code>&quot;user&quot;</code> or an allowed guardian reviewer</td><td>Use <code>&quot;auto_review&quot;</code> to let Codex review native approval prompts when allowed.</td></tr><tr><td><code>defaultWorkspaceDir</code></td><td>current process directory</td><td>Workspace used by <code>/codex bind</code> when <code>--cwd</code> is omitted.</td></tr><tr><td><code>serviceTier</code></td><td>unset</td><td>Optional Codex app-server service tier. <code>&quot;priority&quot;</code> enables fast-mode routing, <code>&quot;flex&quot;</code> requests flex processing, and <code>null</code> clears the override. Legacy <code>&quot;fast&quot;</code> is accepted as <code>&quot;priority&quot;</code>.</td></tr>
-        </tbody>
-      </table>
+    <div class="overview-meta">
+      <span>原文共 11 节，先看 Start Here</span>
+      <span>路径：/plugins/codex-harness-reference</span>
+      <a href="https://docs.openclaw.ai/plugins/codex-harness-reference" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
+  </div>
+</section>
 
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The 新本领插件 blocks older or unversioned app-大房子服务器 handshakes. Codex app-大房子服务器 must report stable version 0.125.0 or new…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The plugin blocks older or unversioned app-server handshakes. Codex app-server must report stable version <code>0.125.0</code> or newer.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Approval and sandbox modes</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Local stdio app-大房子服务器 sessions default to YOLO mode: approvalPolicy: &quot;never&quot;, approvalsReviewer: &quot;user&quot;, and sandbox:…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Local stdio app-大房子服务器 sessions default to YOLO mode: approvalPolicy: &quot;never&quot;, approvalsReviewer: &quot;user&quot;, and sandbox:…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Local stdio app-server sessions default to YOLO mode: <code>approvalPolicy: &quot;never&quot;</code>, <code>approvalsReviewer: &quot;user&quot;</code>, and <code>sandbox: &quot;danger-full-access&quot;</code>. This trusted local operator posture lets unattended OpenClaw turns and heartbeats make progress without native approval prompts that nobody is around to answer.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：If Codex&#39;s local system requirements file disallows implicit YOLO approval, reviewer, or sandbox values, OpenClaw treat…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If Codex&#39;s local system requirements file disallows implicit YOLO approval, reviewer, or sandbox values, OpenClaw treats the implicit default as guardian instead and selects allowed guardian permissions. Hostname-matching <code>[[remote_sandbox_config]]</code> entries in the same requirements file are honored for the sandbox default decision.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Set app大房子服务器.mode: &quot;guardian&quot; for Codex guardian-reviewed approvals:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Set <code>appServer.mode: &quot;guardian&quot;</code> for Codex guardian-reviewed approvals:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。</p>
-        <ul class="code-steps">
-          <li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li><li>这里在给“plugins”挂牌子，告诉系统它该指向“{”。</li><li>这里在给“entries”挂牌子，告诉系统它该指向“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  plugins: {
-    entries: {
-      codex: {
-        enabled: true,
-        config: {
-          appServer: {
-            mode: &quot;guardian&quot;,
-            serviceTier: &quot;priority&quot;,
-          },
-        },
-      },
-    },
-  },
-}</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The guardian preset expands to approvalPolicy: &quot;on-request&quot;, approvalsReviewer: &quot;auto_review&quot;, and sandbox: &quot;workspace-…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The <code>guardian</code> preset expands to <code>approvalPolicy: &quot;on-request&quot;</code>, <code>approvalsReviewer: &quot;auto_review&quot;</code>, and <code>sandbox: &quot;workspace-write&quot;</code> when those values are allowed. Individual policy fields override <code>mode</code>. The older <code>guardian_subagent</code> reviewer value is still accepted as a compatibility alias, but new configs should use <code>auto_review</code>.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Auth and environment isolation</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Auth is selected in this order: 1. An explicit OpenClaw Codex auth profile for the 机器人朋友. 2. The app-大房子服务器&#39;s existing…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Auth is selected in this order:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Auth is selected in this order:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：1. An explicit OpenClaw Codex auth profile for the 机器人朋友. 2. The app-大房子服务器&#39;s existing account in that 机器人朋友&#39;s Codex ho…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. An explicit OpenClaw Codex auth profile for the agent. 2. The app-server&#39;s existing account in that agent&#39;s Codex home. 3. For local stdio app-server launches only, <code>CODEX_API_KEY</code>, then <code>OPENAI_API_KEY</code>, when no app-server account is present and OpenAI auth is still required.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：When OpenClaw sees a ChatGPT subscription-style Codex auth profile, it removes CODEX_对话接口_KEY and OPENAI_对话接口_KEY from…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When OpenClaw sees a ChatGPT subscription-style Codex auth profile, it removes <code>CODEX_API_KEY</code> and <code>OPENAI_API_KEY</code> from the spawned Codex child process. That keeps Gateway-level API keys available for embeddings or direct OpenAI models without making native Codex app-server turns bill through the API by accident.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Explicit Codex 对话接口-key profiles and local stdio env-key fallback use app-大房子服务器 login instead of inherited child-proce…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Explicit Codex API-key profiles and local stdio env-key fallback use app-server login instead of inherited child-process env. WebSocket app-server connections do not receive Gateway env API-key fallback; use an explicit auth profile or the remote app-server&#39;s own account.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Stdio app-大房子服务器 launches inherit OpenClaw&#39;s process environment by default. OpenClaw owns the Codex app-大房子服务器 account…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Stdio app-server launches inherit OpenClaw&#39;s process environment by default. OpenClaw owns the Codex app-server account bridge and sets <code>CODEX_HOME</code> to a per-agent directory under that agent&#39;s OpenClaw state. That keeps Codex config, accounts, plugin cache/data, and thread state scoped to the OpenClaw agent instead of leaking in from the operator&#39;s personal <code>~/.codex</code> home.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：OpenClaw does not rewrite HOME for normal local app-大房子服务器 launches. Codex-run subprocesses such as openclaw, gh, git,…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw does not rewrite <code>HOME</code> for normal local app-server launches. Codex-run subprocesses such as <code>openclaw</code>, <code>gh</code>, <code>git</code>, cloud CLIs, and shell commands see the normal process home and can find user-home config and tokens. Codex may also discover <code>$HOME/.agents/skills</code> and <code>$HOME/.agents/plugins/marketplace.json</code>; that <code>.agents</code> discovery is intentionally shared with the operator home and is separate from isolated <code>~/.codex</code> state.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：OpenClaw 新本领插件s and OpenClaw skill snapshots still flow through OpenClaw&#39;s own 新本领插件 registry and skill loader. Persona…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw plugins and OpenClaw skill snapshots still flow through OpenClaw&#39;s own plugin registry and skill loader. Personal Codex <code>~/.codex</code> assets do not. If you have useful Codex CLI skills or plugins from a Codex home that should become part of an OpenClaw agent, inventory them explicitly:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，像你把任务清清楚楚塞到它手里。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 动起来：“openclaw migrate codex --dry-run”。你可以把它想成一句说出口就要执行的差事。</li><li>这一句是在直接叫 OpenClaw 动起来：“openclaw migrate apply codex --yes”。你可以把它想成一句说出口就要执行的差事。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw migrate codex --dry-run
-openclaw migrate apply codex --yes</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：If a deployment needs additional environment isolation, add those variables to app大房子服务器.clearEnv:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If a deployment needs additional environment isolation, add those variables to <code>appServer.clearEnv</code>:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。</p>
-        <ul class="code-steps">
-          <li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li><li>这里在给“plugins”挂牌子，告诉系统它该指向“{”。</li><li>这里在给“entries”挂牌子，告诉系统它该指向“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  plugins: {
-    entries: {
-      codex: {
-        enabled: true,
-        config: {
-          appServer: {
-            clearEnv: [&quot;CODEX_API_KEY&quot;, &quot;OPENAI_API_KEY&quot;],
-          },
-        },
-      },
-    },
-  },
-}</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：app大房子服务器.clearEnv only affects the spawned Codex app-大房子服务器 child process. OpenClaw removes CODEX_HOME and HOME from t…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>appServer.clearEnv</code> only affects the spawned Codex app-server child process. OpenClaw removes <code>CODEX_HOME</code> and <code>HOME</code> from this list during local launch normalization: <code>CODEX_HOME</code> stays per-agent, and <code>HOME</code> stays inherited so subprocesses can use normal user-home state.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Dynamic 工具小帮手s</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Codex dynamic 工具小帮手s default to searchable loading. OpenClaw does not expose dynamic 工具小帮手s that duplicate Codex-native…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Codex dynamic 工具小帮手s default to searchable loading. OpenClaw does not expose dynamic 工具小帮手s that duplicate Codex-native…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Codex dynamic tools default to <code>searchable</code> loading. OpenClaw does not expose dynamic tools that duplicate Codex-native workspace operations:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Dynamic tools”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：read、write、edit、apply_patch。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>read</code></li><li><code>write</code></li><li><code>edit</code></li><li><code>apply_patch</code></li><li><code>exec</code></li><li><code>process</code></li><li><code>update_plan</code></li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Remaining OpenClaw integration 工具小帮手s, such as messaging, sessions, media, cron, browser, nodes, 门口的小门卫, heartbeat_resp…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Remaining OpenClaw integration tools, such as messaging, sessions, media, cron, browser, nodes, gateway, <code>heartbeat_respond</code>, and <code>web_search</code>, are available through Codex tool search under the <code>openclaw</code> namespace. This keeps the initial model context smaller. <code>sessions_yield</code> and message-tool-only source replies stay direct because those are turn-control contracts.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Set codexDynamic工具小帮手sLoading: &quot;direct&quot; only when connecting to a custom Codex app-大房子服务器 that cannot search deferred d…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Set <code>codexDynamicToolsLoading: &quot;direct&quot;</code> only when connecting to a custom Codex app-server that cannot search deferred dynamic tools or when debugging the full tool payload.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Timeouts</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：OpenClaw-owned dynamic 工具小帮手 calls are bounded independently from app大房子服务器.requestTimeoutMs. Each Codex item/工具小帮手/cal…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：OpenClaw-owned dynamic 工具小帮手 calls are bounded independently from app大房子服务器.requestTimeoutMs. Each Codex item/工具小帮手/cal…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw-owned dynamic tool calls are bounded independently from <code>appServer.requestTimeoutMs</code>. Each Codex <code>item/tool/call</code> request uses the first available timeout in this order:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：converted to milliseconds, or the 60 second media default.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>converted to milliseconds, or the 60 second media default.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Timeouts”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：A positive per-call timeoutMs argument.、For image_generate, 机器人朋友s.defaults.image…、For the media-understanding image 工具小帮手,…、The 30 second dynamic-工具小帮手 default.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>A positive per-call <code>timeoutMs</code> argument.</li><li>For <code>image_generate</code>, <code>agents.defaults.imageGenerationModel.timeoutMs</code>.</li><li>For the media-understanding <code>image</code> tool, <code>tools.media.image.timeoutSeconds</code></li><li>The 30 second dynamic-tool default.</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Dynamic 工具小帮手 budgets are capped at 600000 ms. On timeout, OpenClaw aborts the 工具小帮手 signal where supported and returns…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Dynamic tool budgets are capped at 600000 ms. On timeout, OpenClaw aborts the tool signal where supported and returns a failed dynamic-tool response to Codex so the turn can continue instead of leaving the session in <code>processing</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：After Codex accepts a turn, and after OpenClaw responds to a turn-scoped app-大房子服务器 request, the harness expects Codex…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>After Codex accepts a turn, and after OpenClaw responds to a turn-scoped app-server request, the harness expects Codex to make current-turn progress and eventually finish the native turn with <code>turn/completed</code>. If the app-server goes quiet for <code>appServer.turnCompletionIdleTimeoutMs</code>, OpenClaw best-effort interrupts the Codex turn, records a diagnostic timeout, and releases the OpenClaw session lane so follow-up chat messages are not queued behind a stale native turn.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Most non-terminal notifications for the same turn disarm that short watchdog because Codex has proven the turn is still…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Most non-terminal notifications for the same turn disarm that short watchdog because Codex has proven the turn is still alive. Raw <code>custom_tool_call_output</code> completions keep the short post-tool watchdog armed because they are the turn-scoped tool-result handoff. Completed <code>agentMessage</code> items and pre-tool raw assistant <code>rawResponseItem/completed</code> items arm the assistant-output release: if Codex then goes quiet without <code>turn/completed</code>, OpenClaw best-effort interrupts the native turn and releases the session lane. Post-tool raw assistant progress keeps waiting for <code>turn/completed</code> or the terminal watchdog. Timeout diagnostics include the last app-server notification method and, for raw assistant response items, the item type, role, id, and a bounded assistant text preview.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>聪明脑袋模型 discovery</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：By default, the Codex 新本领插件 asks the app-大房子服务器 for available 聪明脑袋模型s. 聪明脑袋模型 availability is owned by Codex app-大房子服务器…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：By default, the Codex 新本领插件 asks the app-大房子服务器 for available 聪明脑袋模型s. 聪明脑袋模型 availability is owned by Codex app-大房子服务器…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>By default, the Codex plugin asks the app-server for available models. Model availability is owned by Codex app-server, so the list can change when OpenClaw upgrades the bundled <code>@openai/codex</code> version or when a deployment points <code>appServer.command</code> at a different Codex binary. Availability can also be account-scoped. Use <code>/codex models</code> on a running gateway to see the live catalog for that harness and account.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：If discovery fails or times out, OpenClaw uses a bundled fallback catalog for:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If discovery fails or times out, OpenClaw uses a bundled fallback catalog for:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Model discovery”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：GPT-5.5、GPT-5.4 mini、GPT-5.2。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>GPT-5.5</li><li>GPT-5.4 mini</li><li>GPT-5.2</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The current bundled harness is @openai/codex 0.130.0. A 聪明脑袋模型/list probe against that bundled app-大房子服务器 returned:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The current bundled harness is <code>@openai/codex</code> <code>0.130.0</code>. A <code>model/list</code> probe against that bundled app-server returned:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Model id</th><th>Default</th><th>Hidden</th><th>Input modalities</th><th>Reasoning efforts</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>gpt-5.5</code></td><td>Yes</td><td>No</td><td>text, image</td><td>low, medium, high, xhigh</td></tr><tr><td><code>gpt-5.4</code></td><td>No</td><td>No</td><td>text, image</td><td>low, medium, high, xhigh</td></tr><tr><td><code>gpt-5.4-mini</code></td><td>No</td><td>No</td><td>text, image</td><td>low, medium, high, xhigh</td></tr><tr><td><code>gpt-5.3-codex</code></td><td>No</td><td>No</td><td>text, image</td><td>low, medium, high, xhigh</td></tr><tr><td><code>gpt-5.3-codex-spark</code></td><td>No</td><td>No</td><td>text</td><td>low, medium, high, xhigh</td></tr><tr><td><code>gpt-5.2</code></td><td>No</td><td>No</td><td>text, image</td><td>low, medium, high, xhigh</td></tr>
-        </tbody>
-      </table>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">先确定用途</p>
+    <h2>主页面教你开车，这页教你看仪表盘</h2>
+    <p>这页详细覆盖 bundled <code>codex</code> 插件的配置。普通 setup、routing 选择和“我应该走 Codex 还是 PI”，先回到 Codex harness 主页面。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">主页面</div>
+      <p>告诉你为什么用、怎么启、怎么验证。</p>
     </div>
+    <div class="story-card">
+      <div class="story-card-label">Reference</div>
+      <p>告诉你每个字段、默认值、取值和边界。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Runtime page</div>
+      <p>解释运行时契约：线程、hook、权限、compaction 和 transcript mirror 怎么分工。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">一句话</div>
+      <p>这里是查旋钮的，不是给新手从零开始看的唯一入口。</p>
+    </div>
+  </div>
+</section>
 
-      </div>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">认证顺序</p>
+    <h2>先找哪把钥匙，要写在 <code>auth.order.openai</code> 里</h2>
+    <p>Codex-backed OpenAI agent turns 推荐使用 canonical <code>openai/gpt-*</code> model refs。订阅登录、Codex profile、API key fallback 的顺序，要让配置清楚表达。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>订阅优先</h2>
+      <p>ChatGPT/Codex 登录适合多数 app-server 使用场景。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>API key 备选</h2>
+      <p>可以作为认证 fallback，但不表示换成 PI 或普通 OpenAI Responses。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>旧 profile 兼容</h2>
+      <p><code>openai-codex:*</code> 旧资料仍能服务已有安装。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>新 ref 别写旧形状</h2>
+      <p>新模型引用用 <code>openai/gpt-*</code>，不要继续写 <code>openai-codex/gpt-*</code>。</p>
+    </article>
+  </div>
+</section>
 
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Hidden 聪明脑袋模型s can be returned by the app-大房子服务器 catalog for internal or specialized flows, but they are not normal 聪明脑…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Hidden models can be returned by the app-server catalog for internal or specialized flows, but they are not normal model-picker choices.</p>
-      </div>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">app-server</p>
+    <h2>默认用插件管理的 app-server，只有特殊部署才改命令</h2>
+    <p>普通 harness startup 不依赖本机 <code>PATH</code> 上的 <code>codex</code> 命令。参考页里的 app-server 字段，主要给自定义二进制、参数、transport、timeout、mode 和 sandbox 策略使用。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">managed binary</div>
+      <p>像插件自带合适版本的发动机，普通用户不必自己找。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">custom command</div>
+      <p>只有本地测试、特殊发布或运维策略需要时，才用 <code>appServer.command</code> 覆盖。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">guardian / yolo</div>
+      <p>app-server mode 应写在 config 里，临时环境变量只适合一次性测试。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">timeouts</div>
+      <p>启动、请求和 discovery 相关超时要按部署环境调，不要用“永远等”的思路盖住问题。</p>
+    </div>
+  </div>
+</section>
 
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Tune discovery under 新本领插件s.entries.codex.设置说明书.discovery:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Tune discovery under <code>plugins.entries.codex.config.discovery</code>:</p>
-      </div>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">发现和隔离</p>
+    <h2>模型目录可以 live 探测，也可以用 fallback 目录保守启动</h2>
+    <p>Discovery 会去问 Codex app-server 当前账号和 harness 能看到哪些模型。需要避免启动探测时，可以关掉 discovery，改用 fallback catalog。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>discovery.enabled</code></div>
+      <p>打开时更贴近真实账号；关闭时启动更少依赖外部探测。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">environment isolation</div>
+      <p>Codex app-server 环境应按插件配置隔离，避免把无关 shell 环境和 secret 一股脑带进去。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">native plugins</div>
+      <p>需要让 Codex 原生插件进入 app-server 时，参考页会说明应该从哪个字段接入。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Computer Use</div>
+      <p>桌面控制相关能力要和权限、Codex 原生插件、OpenClaw 插件边界分开理解。</p>
+    </div>
+  </div>
+</section>
 
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。</p>
-        <ul class="code-steps">
-          <li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li><li>这里在给“plugins”挂牌子，告诉系统它该指向“{”。</li><li>这里在给“entries”挂牌子，告诉系统它该指向“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  plugins: {
-    entries: {
-      codex: {
-        enabled: true,
-        config: {
-          discovery: {
-            enabled: true,
-            timeoutMs: 2500,
-          },
-        },
-      },
-    },
-  },
-}</code></pre>
-      </div>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">排查入口</p>
+    <h2>配置页最有用的时候，通常是“为什么没走到我想的那条路”</h2>
+    <p>遇到模型没出现、runtime 没切、认证失败、app-server 起不来、权限行为不对，先用状态命令确认当前实际路线，再回到 reference 查字段。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label"><code>/status</code></div>
+      <p>先确认当前聊天看到的 runtime 是不是 OpenAI Codex。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label"><code>/codex status</code></div>
+      <p>再看 app-server 连接、账号、rate limits、MCP servers 和 skills。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>/codex models</code></div>
+      <p>确认 live catalog 里到底有什么模型。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw doctor --fix</code></div>
+      <p>修复 legacy refs、stale session route pins 和旧配置形状时很有用。</p>
+    </div>
+  </div>
+</section>
 
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Disable discovery when you want startup to avoid probing Codex and use only the fallback catalog:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Disable discovery when you want startup to avoid probing Codex and use only the fallback catalog:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。</p>
-        <ul class="code-steps">
-          <li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li><li>这里在给“plugins”挂牌子，告诉系统它该指向“{”。</li><li>这里在给“entries”挂牌子，告诉系统它该指向“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json5">{
-  plugins: {
-    entries: {
-      codex: {
-        enabled: true,
-        config: {
-          discovery: {
-            enabled: false,
-          },
-        },
-      },
-    },
-  },
-}</code></pre>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>Workspace bootstrap files</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Codex handles 机器人朋友S.md itself through native project-doc discovery. OpenClaw does not write synthetic Codex project-do…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Codex handles 机器人朋友S.md itself through native project-doc discovery. OpenClaw does not write synthetic Codex project-do…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Codex handles <code>AGENTS.md</code> itself through native project-doc discovery. OpenClaw does not write synthetic Codex project-doc files or depend on Codex fallback filenames for persona files, because Codex fallbacks only apply when <code>AGENTS.md</code> is missing.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：For OpenClaw workspace parity, the Codex harness resolves the other bootstrap files, including SOUL.md, 工具小帮手S.md, IDEN…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For OpenClaw workspace parity, the Codex harness resolves the other bootstrap files, including <code>SOUL.md</code>, <code>TOOLS.md</code>, <code>IDENTITY.md</code>, <code>USER.md</code>, <code>HEARTBEAT.md</code>, <code>BOOTSTRAP.md</code>, and <code>MEMORY.md</code> when present, and forwards them through Codex developer instructions on <code>thread/start</code> and <code>thread/resume</code>. This keeps workspace persona and profile context visible on the native Codex behavior-shaping lane without duplicating <code>AGENTS.md</code>.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>Environment overrides</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Environment overrides remain available for local testing: OPENCLAW_CODEX_APP_大房子服务器_BIN bypasses the managed binary whe…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Environment overrides remain available for local testing:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Environment overrides remain available for local testing:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Environment overrides”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：OPENCLAW_CODEX_APP_大房子服务器_BIN、OPENCLAW_CODEX_APP_大房子服务器_ARGS、OPENCLAW_CODEX_APP_大房子服务器_MODE=yolo guard…、OPENCLAW_CODEX_APP_大房子服务器_APPROVAL_POLICY。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>OPENCLAW_CODEX_APP_SERVER_BIN</code></li><li><code>OPENCLAW_CODEX_APP_SERVER_ARGS</code></li><li><code>OPENCLAW_CODEX_APP_SERVER_MODE=yolo|guardian</code></li><li><code>OPENCLAW_CODEX_APP_SERVER_APPROVAL_POLICY</code></li><li><code>OPENCLAW_CODEX_APP_SERVER_SANDBOX</code></li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：OPENCLAW_CODEX_APP_大房子服务器_BIN bypasses the managed binary when app大房子服务器.魔法口令 is unset.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>OPENCLAW_CODEX_APP_SERVER_BIN</code> bypasses the managed binary when <code>appServer.command</code> is unset.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：OPENCLAW_CODEX_APP_大房子服务器_GUARDIAN=1 was removed. Use 新本领插件s.entries.codex.设置说明书.app大房子服务器.mode: &quot;guardian&quot; instead, or…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>OPENCLAW_CODEX_APP_SERVER_GUARDIAN=1</code> was removed. Use <code>plugins.entries.codex.config.appServer.mode: &quot;guardian&quot;</code> instead, or <code>OPENCLAW_CODEX_APP_SERVER_MODE=guardian</code> for one-off local testing. Config is preferred for repeatable deployments because it keeps the plugin behavior in the same reviewed file as the rest of the Codex harness setup.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-11">
-          <div class="section-heading">
-            <p class="section-kicker">第 11 站</p>
-            <h2>Related</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Related”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：Codex harness、Codex harness runtime、Native Codex 新本领插件s、Codex Computer Use。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><a href="/plugins/codex-harness" target="_blank" rel="noreferrer">Codex harness</a></li><li><a href="/plugins/codex-harness-runtime" target="_blank" rel="noreferrer">Codex harness runtime</a></li><li><a href="/plugins/codex-native-plugins" target="_blank" rel="noreferrer">Native Codex plugins</a></li><li><a href="/plugins/codex-computer-use" target="_blank" rel="noreferrer">Codex Computer Use</a></li><li><a href="/providers/openai" target="_blank" rel="noreferrer">OpenAI provider</a></li><li><a href="/gateway/configuration-reference" target="_blank" rel="noreferrer">Configuration reference</a></li></ul>
-      </div>
-
-          </div>
-        </section>
-
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
-      </div>
-    </section>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>Reference 页是“精确查字段”的地图，不是每次都要全读完的故事书</h2>
+    <p>先用主页面判断要不要启 Codex，再用 runtime 页理解边界；当你真的要改认证、app-server、发现、隔离、权限或超时时，再回到这页查旋钮。</p>
+  </div>
+</section>
 
 
       <footer class="page-footer">
         <div>
           <strong>Fivey Can Read OpenClaw</strong>
-          <p>同步时间：2026年5月18日 17:31</p>
+          <p>同步时间：2026年5月20日 18:59</p>
         </div>
       </footer>
     </main>

@@ -429,7 +429,7 @@
     "title": "Install",
     "pathname": "/install/index",
     "section": "Install",
-    "description": "**Node 24** (recommended) or Node 22.16+ - the installer script handles this automatically **macOS, Linux, or Windows** - both native Windows and WSL2 are supported; WSL2 is more…"
+    "description": "**Node 24** (recommended) or Node 22.19+ - the installer script handles this automatically **macOS, Linux, or Windows** - both native Windows and WSL2 are supported; WSL2 is more…"
   },
   {
     "title": "Installer internals",
@@ -477,7 +477,7 @@
     "title": "Node.js",
     "pathname": "/install/node",
     "section": "Install",
-    "description": "OpenClaw requires **Node 22.16 or newer**. **Node 24 is the default and recommended runtime** for installs, CI, and release workflows. Node 22 remains supported via the active LTS…"
+    "description": "OpenClaw requires **Node 22.19 or newer**. **Node 24 is the default and recommended runtime** for installs, CI, and release workflows. Node 22 remains supported via the active LTS…"
   },
   {
     "title": "Northflank",
@@ -777,7 +777,7 @@
     "title": "Building plugins",
     "pathname": "/plugins/building-plugins",
     "section": "Plugins",
-    "description": "Plugins extend OpenClaw with new capabilities: channels, model providers, speech, realtime transcription, realtime voice, media understanding, image generation, video generation,…"
+    "description": "Plugins extend OpenClaw without changing core. A plugin can add a messaging channel, model provider, local CLI backend, agent tool, hook, media provider, or another plugin-owned c…"
   },
   {
     "title": "Plugin bundles",
@@ -864,6 +864,12 @@
     "description": "Skill Workshop is **experimental**. It is disabled by default, its capture heuristics and reviewer prompts may change between releases, and automatic writes should be used only in…"
   },
   {
+    "title": "Tool plugins",
+    "pathname": "/plugins/tool-plugins",
+    "section": "Plugins",
+    "description": "Tool plugins add agent-callable tools to OpenClaw without adding a channel, model provider, hook, service, or setup backend. Use defineToolPlugin when the plugin owns a fixed list…"
+  },
+  {
     "title": "Voice call plugin",
     "pathname": "/plugins/voice-call",
     "section": "Plugins",
@@ -892,12 +898,6 @@
     "pathname": "/tools/acp-agents",
     "section": "Tools",
     "description": "Agent Client Protocol (ACP) sessions let OpenClaw run external coding harnesses (for example Pi, Claude Code, Cursor, Copilot, Droid, OpenClaw ACP, OpenCode, Gemini CLI, and other…"
-  },
-  {
-    "title": "ACP agents — setup",
-    "pathname": "/tools/acp-agents-setup",
-    "section": "Tools",
-    "description": "For the overview, operator runbook, and concepts, see ACP agents."
   },
   {
     "title": "Agent send",
@@ -1294,12 +1294,6 @@
     "pathname": "/concepts/models",
     "section": "Concepts",
     "description": "<CardGroup> <Card title=\"Model failover\" href=\"/concepts/model-failover\"> Auth profile rotation, cooldowns, and how that interacts with fallbacks. </Card>"
-  },
-  {
-    "title": "Configuration",
-    "pathname": "/gateway/configuration",
-    "section": "Gateway",
-    "description": "OpenClaw reads an optional <Tooltip>**JSON5**</Tooltip> config from ~/.openclaw/openclaw.json. The active config path must be a regular file. Symlinked openclaw.json layouts are u…"
   },
   {
     "title": "Gateway runbook",
@@ -1794,6 +1788,12 @@
     "description": "Z.AI is the API platform for **GLM** models. It provides REST APIs for GLM and uses API keys for authentication. Create your API key in the Z.AI console. OpenClaw uses the zai pro…"
   },
   {
+    "title": "ACP agents — setup",
+    "pathname": "/tools/acp-agents-setup",
+    "section": "Tools",
+    "description": "For the overview, operator runbook, and concepts, see ACP agents."
+  },
+  {
     "title": "Multi-agent sandbox and tools",
     "pathname": "/tools/multi-agent-sandbox-tools",
     "section": "Tools",
@@ -1852,12 +1852,6 @@
     "pathname": "/cli/crestodian",
     "section": "Cli",
     "description": "openclaw crestodian"
-  },
-  {
-    "title": "Cron",
-    "pathname": "/cli/cron",
-    "section": "Cli",
-    "description": "openclaw cron"
   },
   {
     "title": "Daemon",
@@ -2074,6 +2068,12 @@
     "pathname": "/gateway/config-tools",
     "section": "Gateway",
     "description": "tools.* config keys and custom provider / base-URL setup. For agents, channels, and other top-level config keys, see Configuration reference."
+  },
+  {
+    "title": "Configuration",
+    "pathname": "/gateway/configuration",
+    "section": "Gateway",
+    "description": "OpenClaw reads an optional <Tooltip>**JSON5**</Tooltip> config from ~/.openclaw/openclaw.json. The active config path must be a regular file. Symlinked openclaw.json layouts are u…"
   },
   {
     "title": "Configuration examples",
@@ -2436,6 +2436,12 @@
     "description": "openclaw configure"
   },
   {
+    "title": "Cron",
+    "pathname": "/cli/cron",
+    "section": "Cli",
+    "description": "openclaw cron"
+  },
+  {
     "title": "Dashboard",
     "pathname": "/cli/dashboard",
     "section": "Cli",
@@ -2763,7 +2769,7 @@
     "title": "Plugin entry points",
     "pathname": "/plugins/sdk-entrypoints",
     "section": "Plugins",
-    "description": "Every plugin exports a default entry object. The SDK provides three helpers for creating them."
+    "description": "Every plugin exports a default entry object. The SDK provides helpers for creating them."
   },
   {
     "title": "Plugin SDK migration",

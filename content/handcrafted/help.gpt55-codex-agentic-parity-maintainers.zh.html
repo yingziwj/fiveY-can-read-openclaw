@@ -1,0 +1,131 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>Maintainer notes 像给 review 队伍的一张分工表</h2>
+      <p>用户页讲“为什么 parity 重要”。这页给维护者看：四个 PR 各自负责什么、不负责什么，怎么按顺序 review，什么时候才能合并和声称 GPT-5.5 parity。</p>
+      <p>它的核心不是多写几条测试名，而是避免把行动契约、运行时真实错误、schema 正确性和 benchmark 证据混成一团。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合 reviewer 和 maintainer</span>
+      <span>重点是 PR 边界、review 顺序、release gate 和证据条</span>
+      <a href="https://docs.openclaw.ai/help/gpt55-codex-agentic-parity-maintainers" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">先分清责任</p>
+    <h2>四个 PR 像四个柜子，每个柜子只放自己的工具</h2>
+    <p>Maintainer review 最怕一个 PR 既想修 runtime，又想改 benchmark，还顺手重写权限语义。官方把边界列清，是为了让每块都能独立判断。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">A</span>
+      <h2>strict-agentic</h2>
+      <p>负责 <code>executionContract</code>、same-turn follow-through、<code>update_plan</code> 非终点语义、明确 blocked states。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">B</span>
+      <h2>truthfulness</h2>
+      <p>负责 Codex OAuth scope、typed provider/runtime failure、<code>/elevated full</code> 是否真的可用。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">C</span>
+      <h2>correctness</h2>
+      <p>负责 OpenAI/Codex tool compatibility、parameter-free strict schema、replay-invalid 和 liveness state。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">D</span>
+      <h2>harness</h2>
+      <p>负责 GPT-5.5 vs Opus 4.6 scenario pack、parity docs、report 和 release-gate mechanics。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">Review 顺序</p>
+    <h2>先合 runtime 修路，再用 PR D 当证明层</h2>
+    <p>推荐顺序是 PR A、PR B、PR C、PR D。PR D 是 proof layer，不应该反过来拖住 runtime-correctness PR，也不应该假装自己修了 runtime 行为。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">看 PR A</div>
+      <p>GPT-5 runs 是否 act or fail closed；<code>update_plan</code> 是否不再被当成终点；scope 是否保持 GPT-5-first 和 embedded-PI。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">看 PR B</div>
+      <p>auth、proxy、runtime failure 是否不再压成 generic error；full-access blocked reasons 是否给模型和用户都能看见。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">看 PR C</div>
+      <p>strict tool registration 是否 predictable；空参数工具是否通过 schema；replay 和 compaction 状态是否诚实。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">看 PR D</div>
+      <p>场景包是否可复现，是否包含 mutating replay-safety lane，报告是否人和自动化都能读。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">Release gate</p>
+    <h2>没有四盏绿灯，就不要说 GPT-5.5 parity 或 superiority</h2>
+    <p>放行条件包括：PR A/B/C 已合并，PR D 在合并后的 runtime 上干净跑完第一波 pack，runtime-truthfulness 回归仍然绿色，parity report 没有 fake-success，也没有 stop behavior 回退。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">PR D 证据</div>
+      <p>提供 GPT-5.5 和 Opus 4.6 同场景比较，产物包括 <code>qa-suite-summary.json</code> 和 parity report。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">PR B 证据</div>
+      <p>auth、proxy、DNS 和 full-access truthfulness 仍由 deterministic suites 证明。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">不能替代</div>
+      <p>场景 harness 不替代 runtime truthfulness；truthfulness 套件也不替代同场景 parity 比较。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">机器 verdict</div>
+      <p><code>qa-agentic-parity-summary.json</code> 是自动化可读的通过或失败判断。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">合并工作流</p>
+    <h2>准备落 PR 时，先问“证据条够不够”</h2>
+    <p>维护者流程强调低风险、可重复：先确认问题可复现、根因在 touched code、修复在相关路径、回归测试或手动验证说明到位，再进入标准 landing 流程。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">证据条</div>
+      <p>症状、根因、修复路径、测试或验证说明都要能对上。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">标签和线程</div>
+      <p>该 auto-close 的标签要处理；有 blocker review thread 时不要硬合。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">本地验证</div>
+      <p>至少按 touched surface 跑 <code>pnpm check:changed</code>，测试相关改动再跑 <code>pnpm test:changed</code>。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">合并后</div>
+      <p>检查 linked issues auto-close、CI、main 上状态，并搜索重复 PR 或 issue，只用 canonical reference 关闭。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>维护者页的目标，是让 parity 结论经得起复查</h2>
+    <p>不要让一个 PR 偷偷承担所有责任。按边界 review，按证据放行，最后的 parity claim 才不是“我们感觉更好了”，而是“同一规则下，它真的过了”。</p>
+  </div>
+</section>
