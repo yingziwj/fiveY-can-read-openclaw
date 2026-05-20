@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Migrating from Hermes | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Migrating from Hermes 这条路像进场搭台。你先看谁适合走这条路、包里要先带什么、做完后现场该亮起哪盏灯，以及哪些命令只是搬箱子、哪些才是真正开机。原文最响的一记鼓点，其实是：OpenClaw imports Hermes state through a bundled migration prov…">
+  <meta name="description" content="这页教 Hermes 用户把模型配置、MCP servers、工作区文件、记忆和 skills 导入 OpenClaw。默认先预览、打码、备份，再应用；API key 默认不搬，只有明确使用 --include-secrets 时才会导入支持的 .env secrets。">
   <meta name="robots" content="index,follow">
   <meta name="google-adsense-account" content="ca-pub-3833673520933536">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Migrating from Hermes | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Migrating from Hermes 这条路像进场搭台。你先看谁适合走这条路、包里要先带什么、做完后现场该亮起哪盏灯，以及哪些命令只是搬箱子、哪些才是真正开机。原文最响的一记鼓点，其实是：OpenClaw imports Hermes state through a bundled migration prov…">
+  <meta property="og:description" content="这页教 Hermes 用户把模型配置、MCP servers、工作区文件、记忆和 skills 导入 OpenClaw。默认先预览、打码、备份，再应用；API key 默认不搬，只有明确使用 --include-secrets 时才会导入支持的 .env secrets。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/install/migrating-hermes/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta property="og:image:alt" content="Migrating from Hermes 的中文故事化导读页面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Migrating from Hermes | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Migrating from Hermes 这条路像进场搭台。你先看谁适合走这条路、包里要先带什么、做完后现场该亮起哪盏灯，以及哪些命令只是搬箱子、哪些才是真正开机。原文最响的一记鼓点，其实是：OpenClaw imports Hermes state through a bundled migration prov…">
+  <meta name="twitter:description" content="这页教 Hermes 用户把模型配置、MCP servers、工作区文件、记忆和 skills 导入 OpenClaw。默认先预览、打码、备份，再应用；API key 默认不搬，只有明确使用 --include-secrets 时才会导入支持的 .env secrets。">
   <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/install/migrating-hermes/">
@@ -25,7 +25,7 @@
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3833673520933536" crossorigin="anonymous"></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Migrating from Hermes","description":"Migrating from Hermes 这条路像进场搭台。你先看谁适合走这条路、包里要先带什么、做完后现场该亮起哪盏灯，以及哪些命令只是搬箱子、哪些才是真正开机。原文最响的一记鼓点，其实是：OpenClaw imports Hermes state through a bundled migration prov…","url":"https://fivey-can-read-openclaw.pages.dev/install/migrating-hermes/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Migrating from Hermes","description":"这页教 Hermes 用户把模型配置、MCP servers、工作区文件、记忆和 skills 导入 OpenClaw。默认先预览、打码、备份，再应用；API key 默认不搬，只有明确使用 --include-secrets 时才会导入支持的 .env secrets。","url":"https://fivey-can-read-openclaw.pages.dev/install/migrating-hermes/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Install","item":"https://fivey-can-read-openclaw.pages.dev/install/migrating-hermes/"}]}</script>
 </head>
 <body>
@@ -2699,8 +2699,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Install 导读</p>
-        <h1>Migrating from Hermes：先把这条路走顺</h1>
-        <p class="hero-copy">Migrating from Hermes 这条路像进场搭台。你先看谁适合走这条路、包里要先带什么、做完后现场该亮起哪盏灯，以及哪些命令只是搬箱子、哪些才是真正开机。原文最响的一记鼓点，其实是：OpenClaw imports Hermes state through a bundled migration provider. The provider previe…。</p>
+        <h1>Migrating from Hermes：整理模型、记忆、技能和钥匙</h1>
+        <p class="hero-copy">这页教 Hermes 用户把模型配置、MCP servers、工作区文件、记忆和 skills 导入 OpenClaw。默认先预览、打码、备份，再应用；API key 默认不搬，只有明确使用 --include-secrets 时才会导入支持的 .env secrets。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -5358,716 +5358,144 @@
         </div>
       </div>
 
+      <!-- handcrafted-source:install.migrating-hermes.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Migrating from Hermes：整理模型、记忆、技能和钥匙</h2>
+      <p>这页教 Hermes 用户把模型配置、MCP servers、工作区文件、记忆和 skills 导入 OpenClaw。默认先预览、打码、备份，再应用；API key 默认不搬，只有明确使用 --include-secrets 时才会导入支持的 .env secrets。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 10 节，先看 Start Here</span>
+      <span>路径：/install/migrating-hermes</span>
+      <a href="https://docs.openclaw.ai/install/migrating-hermes" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧭 先选路：第一次用向导，想可重复就用 CLI</h2>
+    <p>Hermes 默认位置通常是 <code>~/.hermes</code>，但你也可以手动指定来源。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw onboard --flow import</code></div>
+      <p>像打开新家入住向导。它发现 <code>~/.hermes</code> 后，会先给你看搬家预览。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw onboard --import-from hermes --import-source ~/.hermes</code></div>
+      <p>如果 Hermes 不在默认柜子里，就把柜子地址讲清楚。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw migrate hermes --dry-run</code></div>
+      <p>只看清单，不动现场。适合先让人放心。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw migrate apply hermes --yes</code></div>
+      <p>确认后才真正导入。它会先做并验证备份。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>📦 会搬哪些行李：模型、工具、记忆、技能</h2>
+    <p>这页的主体其实是在分拣 Hermes 状态。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🤖</span>
+      <h2>模型配置</h2>
+      <p><code>config.yaml</code> 里的默认模型、providers 和自定义 OpenAI-compatible endpoints 会被整理过来。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧰</span>
+      <h2>MCP servers</h2>
+      <p><code>mcp_servers</code> 或 <code>mcp.servers</code> 里的工具服务器定义会被识别。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📚</span>
+      <h2>工作区和记忆</h2>
+      <p><code>SOUL.md</code>、<code>AGENTS.md</code> 会复制；<code>MEMORY.md</code>、<code>USER.md</code> 会追加，不是粗暴覆盖。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">✨</span>
+      <h2>Skills</h2>
+      <p><code>skills/&lt;name&gt;/SKILL.md</code> 和相关技能配置会跟着搬。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🔐 secrets 默认留在原地，因为钥匙不能随便塞进口袋</h2>
+    <p>这是 Hermes 迁移最该讲清楚的一条安全线。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">默认不搬</div>
+      <p>API keys 不会自动复制。这样就算你只是试跑迁移，也不会不小心把钥匙带进新系统。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--include-secrets</code></div>
+      <p>只有你明确加这个开关，OpenClaw 才会导入支持名单里的 <code>.env</code> key。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">支持的 key</div>
+      <p>包括 <code>OPENAI_API_KEY</code>、<code>ANTHROPIC_API_KEY</code>、<code>OPENROUTER_API_KEY</code>、<code>GOOGLE_API_KEY</code>、<code>GEMINI_API_KEY</code> 等常见供应商钥匙。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">SecretRef 怎么办</div>
+      <p>SecretRef 管理的凭据要在导入后单独配置来源，不要指望迁移命令替你猜。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>📁 有些旧物只进档案盒，不会直接变成 live 配置</h2>
+    <p>这不是偷懒，而是因为两个系统对“信任这些状态”的规则可能不同。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">只归档</div>
+      <p><code>plugins/</code>、<code>sessions/</code>、<code>logs/</code>、<code>cron/</code>、<code>mcp-tokens/</code>、<code>auth.json</code>、<code>state.db</code> 会进迁移报告目录供人工检查。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">为什么不直接用</div>
+      <p>旧格式和信任边界可能已经变了。OpenClaw 不会自动执行或信任这些状态。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--overwrite</code></div>
+      <p>只有你确定要替换已有目标时才用。否则冲突时 apply 会停下来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">中途冲突</div>
+      <p>如果一个配置文件突然冲突，后面依赖它的项目会标成 <code>skipped</code>，不会写一半留一半。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>🎈 Hermes 迁移像整理行李箱：能用的放进衣柜，危险的先贴标签</h2>
+    <p>最稳的顺序是：<code>--dry-run</code> 看计划，apply 导入，按需 <code>--include-secrets</code>，再跑 <code>openclaw doctor</code>、重启 Gateway、看 <code>openclaw status</code>。</p>
+  </div>
+</section>
 
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Migrating from Hermes</h2>
-          <p>这一页不是在堆术语，它像把“Migrating from Hermes”这台小机器搬到桌上，当着你的面拆开给你看。你先不用全记住，先抓住它到底在忙什么：OpenClaw imports Hermes state through a bundled migration provider. The provider previews every…。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/install/migrating-hermes</span>
-          <span>章节数量：10</span>
-          <a href="https://docs.openclaw.ai/install/migrating-hermes" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：OpenClaw imports Hermes state through a bundled migration provider. The provider previews everything before changing st…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：OpenClaw imports Hermes state through a bundled migration provider. The provider previews everything before changing st…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw imports Hermes state through a bundled migration provider. The provider previews everything before changing state, redacts secrets in plans and reports, and creates a verified backup before apply.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Note&gt; Imports require a fresh OpenClaw setup. If you already have local OpenClaw state, reset 设置说明书, credentials, sess…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Note&gt; Imports require a fresh OpenClaw setup. If you already have local OpenClaw state, reset config, credentials, sessions, and the workspace first, or use <code>openclaw migrate</code> directly with <code>--overwrite</code> after reviewing the plan. &lt;/Note&gt;</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Two ways to import</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Tabs&gt; &lt;Tab title=&quot;Onboarding wizard&quot;&gt; The fastest path. The wizard detects Hermes at ~/.hermes and shows a preview bef…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Tabs&gt; &lt;Tab title=&quot;Onboarding wizard&quot;&gt; The fastest path. The wizard detects Hermes at ~/.hermes and shows a preview bef…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Tabs&gt; &lt;Tab title=&quot;Onboarding wizard&quot;&gt; The fastest path. The wizard detects Hermes at <code>~/.hermes</code> and shows a preview before applying.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw onboard --flow import </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Or point at a specific source:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Or point at a specific source:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;/Tab&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw onboard --import-from hermes --import-source ~/.hermes </code>`` &lt;/Tab&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Tab title=&quot;CLI&quot;&gt; Use openclaw migrate for scripted or repeatable runs. See openclaw migrate for the full reference.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Tab title=&quot;CLI&quot;&gt; Use <code>openclaw migrate</code> for scripted or repeatable runs. See <a href="/cli/migrate" target="_blank" rel="noreferrer"><code>openclaw migrate</code></a> for the full reference.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw migrate hermes --dry-run # preview only openclaw migrate apply hermes --yes # apply with confirmation skipped </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Add --from &lt;path&gt; when Hermes lives outside ~/.hermes. &lt;/Tab&gt; &lt;/Tabs&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Add <code>--from &lt;path&gt;</code> when Hermes lives outside <code>~/.hermes</code>. &lt;/Tab&gt; &lt;/Tabs&gt;</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>What gets imported</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion大家一起的房间&gt; &lt;Accordion title=&quot;聪明脑袋模型 设置说明书uration&quot;&gt; &lt;/Accordion&gt; &lt;Accordion title=&quot;MCP 大房子服务器s&quot;&gt; MCP 大房子服务器 defi…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion大家一起的房间&gt; &lt;Accordion title=&quot;聪明脑袋模型 设置说明书uration&quot;&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;AccordionGroup&gt; &lt;Accordion title=&quot;Model configuration&quot;&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“What gets imported”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：Default 聪明脑袋模型 selection from Hermes 设置说明…、设置说明书ured 聪明脑袋模型 providers and custom Ope…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Default model selection from Hermes <code>config.yaml</code>.</li><li>Configured model providers and custom OpenAI-compatible endpoints from <code>providers</code> and <code>custom_providers</code>.</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;MCP 大房子服务器s&quot;&gt; MCP 大房子服务器 definitions from mcp_大房子服务器s or mcp.大房子服务器s. &lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;MCP servers&quot;&gt; MCP server definitions from <code>mcp_servers</code> or <code>mcp.servers</code>. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;Workspace files&quot;&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Workspace files&quot;&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“What gets imported”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：SOUL.md and 机器人朋友S.md are copied into the…、memories/MEMORY.md and memories/USER.md a…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>SOUL.md</code> and <code>AGENTS.md</code> are copied into the OpenClaw agent workspace.</li><li><code>memories/MEMORY.md</code> and <code>memories/USER.md</code> are **appended** to the matching OpenClaw memory files instead of overwriting them.</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;Memory 设置说明书uration&quot;&gt; Memory 设置说明书 defaults for OpenClaw file memory. External memory providers such…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Memory configuration&quot;&gt; Memory config defaults for OpenClaw file memory. External memory providers such as Honcho are recorded as archive or manual-review items so you can move them deliberately. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;Skills&quot;&gt; Skills with a SKILL.md file under skills/&lt;name&gt;/ are copied, along with per-skill 设置说明书 valu…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Skills&quot;&gt; Skills with a <code>SKILL.md</code> file under <code>skills/&lt;name&gt;/</code> are copied, along with per-skill config values from <code>skills.config</code>. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;对话接口 keys (opt-in)&quot;&gt; Set --include-secrets to import supported .env keys: OPENAI_对话接口_KEY, ANTHROPIC_…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;API keys (opt-in)&quot;&gt; Set <code>--include-secrets</code> to import supported <code>.env</code> keys: <code>OPENAI_API_KEY</code>, <code>ANTHROPIC_API_KEY</code>, <code>OPENROUTER_API_KEY</code>, <code>GOOGLE_API_KEY</code>, <code>GEMINI_API_KEY</code>, <code>GROQ_API_KEY</code>, <code>XAI_API_KEY</code>, <code>MISTRAL_API_KEY</code>, <code>DEEPSEEK_API_KEY</code>. Without the flag, secrets are never copied. &lt;/Accordion&gt; &lt;/AccordionGroup&gt;</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>What stays archive-only</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The provider copies these into the migration report directory for manual review, but does **not** load them into live O…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The provider copies these into the migration report directory for manual review, but does **not** load them into live O…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The provider copies these into the migration report directory for manual review, but does **not** load them into live OpenClaw config or credentials:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“What stays archive-only”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：新本领插件s/、sessions/、logs/、cron/。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>plugins/</code></li><li><code>sessions/</code></li><li><code>logs/</code></li><li><code>cron/</code></li><li><code>mcp-tokens/</code></li><li><code>auth.json</code></li><li><code>state.db</code></li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：OpenClaw refuses to execute or trust this state automatically because the formats and trust assumptions can drift betwe…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw refuses to execute or trust this state automatically because the formats and trust assumptions can drift between systems. Move what you need by hand after reviewing the archive.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Recommended flow</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Steps&gt; &lt;Step title=&quot;Preview the plan&quot;&gt; The plan lists everything that will change, including conflicts, skipped items,…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Steps&gt; &lt;Step title=&quot;Preview the plan&quot;&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Steps&gt; &lt;Step title=&quot;Preview the plan&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw migrate hermes --dry-run </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The plan lists everything that will change, including conflicts, skipped items, and any sensitive items. Plan output re…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The plan lists everything that will change, including conflicts, skipped items, and any sensitive items. Plan output redacts nested secret-looking keys. &lt;/Step&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Step title=&quot;Apply with backup&quot;&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Apply with backup&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw migrate apply hermes --yes </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：OpenClaw creates and verifies a backup before applying. If you need 对话接口 keys imported, add --include-secrets. &lt;/Step&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw creates and verifies a backup before applying. If you need API keys imported, add <code>--include-secrets</code>. &lt;/Step&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Step title=&quot;Run doctor&quot;&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Run doctor&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw doctor </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Doctor reapplies any pending 设置说明书 migrations and checks for issues introduced during the import. &lt;/Step&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><a href="/gateway/doctor" target="_blank" rel="noreferrer">Doctor</a> reapplies any pending config migrations and checks for issues introduced during the import. &lt;/Step&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Step title=&quot;Restart and verify&quot;&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Step title=&quot;Restart and verify&quot;&gt; ``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw gateway restart openclaw status </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Confirm the 门口的小门卫 is healthy and your imported 聪明脑袋模型, memory, and skills are loaded. &lt;/Step&gt; &lt;/Steps&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Confirm the gateway is healthy and your imported model, memory, and skills are loaded. &lt;/Step&gt; &lt;/Steps&gt;</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Conflict handling</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Apply refuses to continue when the plan reports conflicts (a file or 设置说明书 value already exists at the target). &lt;Warnin…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Apply refuses to continue when the plan reports conflicts (a file or 设置说明书 value already exists at the target).</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Apply refuses to continue when the plan reports conflicts (a file or config value already exists at the target).</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Warning&gt; Rerun with --overwrite only when replacing the existing target is intentional. Providers may still write item…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Warning&gt; Rerun with <code>--overwrite</code> only when replacing the existing target is intentional. Providers may still write item-level backups for overwritten files in the migration report directory. &lt;/Warning&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：For a fresh OpenClaw install, conflicts are unusual. They typically appear when you re-run the import on a setup that a…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For a fresh OpenClaw install, conflicts are unusual. They typically appear when you re-run the import on a setup that already has user edits.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：If a conflict surfaces mid-apply (for example, an unexpected race on a 设置说明书 file), Hermes marks remaining dependent 设置…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If a conflict surfaces mid-apply (for example, an unexpected race on a config file), Hermes marks remaining dependent config items as <code>skipped</code> with reason <code>blocked by earlier apply conflict</code> instead of writing them partially. The migration report records each blocked item so you can resolve the original conflict and rerun the import.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Secrets</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Secrets are never imported by default.</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Secrets are never imported by default.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Secrets are never imported by default.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Secrets”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：Run openclaw migrate apply hermes --yes f…、If you also want supported .env keys copi…、For SecretRef-managed credentials, 设置说明书u…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Run <code>openclaw migrate apply hermes --yes</code> first to import non-secret state.</li><li>If you also want supported <code>.env</code> keys copied across, rerun with <code>--include-secrets</code>.</li><li>For SecretRef-managed credentials, configure the SecretRef source after the import completes.</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>JSON output for 自动小闹钟</h2>
-            <p>这一节主要在解释“JSON output for 自动小闹钟”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“JSON output for 自动小闹钟”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：With --json and no --yes, apply prints the plan and does not mutate state. This is the safest mode for CI and shared sc…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，像你把任务清清楚楚塞到它手里。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 动起来：“openclaw migrate hermes --dry-run --json”。你可以把它想成一句说出口就要执行的差事。</li><li>这一句是在直接叫 OpenClaw 动起来：“openclaw migrate apply hermes --json --yes”。你可以把它想成一句说出口就要执行的差事。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw migrate hermes --dry-run --json
-openclaw migrate apply hermes --json --yes</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：With --json and no --yes, apply prints the plan and does not mutate state. This is the safest mode for CI and shared sc…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>With <code>--json</code> and no <code>--yes</code>, apply prints the plan and does not mutate state. This is the safest mode for CI and shared scripts.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>Troubleshooting</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion大家一起的房间&gt; &lt;Accordion title=&quot;Apply refuses with conflicts&quot;&gt; Inspect the plan output. Each conflict identifies t…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion大家一起的房间&gt; &lt;Accordion title=&quot;Apply refuses with conflicts&quot;&gt; Inspect the plan output. Each conflict identifies t…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;AccordionGroup&gt; &lt;Accordion title=&quot;Apply refuses with conflicts&quot;&gt; Inspect the plan output. Each conflict identifies the source path and the existing target. Decide per item whether to skip, edit the target, or rerun with <code>--overwrite</code>. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;Hermes lives outside ~/.hermes&quot;&gt; Pass --from /actual/path (CLI) or --import-source /actual/path (onbo…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Hermes lives outside ~/.hermes&quot;&gt; Pass <code>--from /actual/path</code> (CLI) or <code>--import-source /actual/path</code> (onboarding). &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;Onboarding refuses to import on an existing setup&quot;&gt; Onboarding imports require a fresh setup. Either…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Onboarding refuses to import on an existing setup&quot;&gt; Onboarding imports require a fresh setup. Either reset state and re-onboard, or use <code>openclaw migrate apply hermes</code> directly, which supports <code>--overwrite</code> and explicit backup control. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;对话接口 keys did not import&quot;&gt; --include-secrets is required, and only the keys listed above are recogniz…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;API keys did not import&quot;&gt; <code>--include-secrets</code> is required, and only the keys listed above are recognized. Other variables in <code>.env</code> are ignored. &lt;/Accordion&gt; &lt;/AccordionGroup&gt;</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>Related</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Related”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：openclaw migrate: full CLI reference, 新本领…、Onboarding: wizard flow and non-interacti…、Migrating: move an OpenClaw install betwe…、Doctor: post-migration health check.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><a href="/cli/migrate" target="_blank" rel="noreferrer"><code>openclaw migrate</code></a>: full CLI reference, plugin contract, and JSON shapes.</li><li><a href="/cli/onboard" target="_blank" rel="noreferrer">Onboarding</a>: wizard flow and non-interactive flags.</li><li><a href="/install/migrating" target="_blank" rel="noreferrer">Migrating</a>: move an OpenClaw install between machines.</li><li><a href="/gateway/doctor" target="_blank" rel="noreferrer">Doctor</a>: post-migration health check.</li><li><a href="/concepts/agent-workspace" target="_blank" rel="noreferrer">Agent workspace</a>: where <code>SOUL.md</code>, <code>AGENTS.md</code>, and memory files live.</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>AdSense 连接验证已经放在页面头部；广告单元等站点审批通过后再启用。</p>
-        <code>google-adsense-account: ca-pub-3833673520933536</code>
-      </div>
-    </section>
 
 
       <footer class="page-footer">
         <div>
           <strong>Fivey Can Read OpenClaw</strong>
-          <p>同步时间：2026年5月20日 18:59</p>
+          <p>同步时间：2026年5月20日 20:58</p>
         </div>
       </footer>
     </main>

@@ -1,0 +1,158 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🤖 FAQ: models and auth 是“模型和钥匙为什么没接上”的问答盒</h2>
+      <p>这页在回答：默认模型是什么、怎么切模型、provider/model 为什么要写全、auth profile 去哪找、failover 为什么会换路。</p>
+      <p>低龄版可以这样记：模型像不同老师，provider 像学校，auth profile 像你的学生证。学校、老师、学生证要对上，OpenClaw 才能顺利提问。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合模型切换和认证排错</span>
+      <span>重点是 provider/model、auth profiles、fallback、allowlist</span>
+      <a href="https://docs.openclaw.ai/help/faq-models" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🏷️ 写模型时，最好写完整的 <code>provider/model</code></h2>
+    <p>只写模型名有时会让系统猜；写全路径，OpenClaw 才知道该敲哪扇门。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🎯</span>
+      <h2>默认模型</h2>
+      <p>主要看 <code>agents.defaults.model.primary</code>。推荐明确写成 <code>openai/gpt-5.5</code> 这类完整形式。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧭</span>
+      <h2>别让它猜</h2>
+      <p>如果两个 provider 都有同名模型，<code>provider/model</code> 能防止走错学校找错老师。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⚠️</span>
+      <h2>高风险任务</h2>
+      <p>能用工具、会接触不可信输入的 agent，优先用更强模型，不要只看便宜。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧱</span>
+      <h2>本地小模型</h2>
+      <p>Ollama、vLLM、llama.cpp 可以用；但小模型或过度量化模型更容易被 prompt injection 绕晕。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔄 切模型要像换铅笔，只改铅笔，不要掀翻整个书桌</h2>
+    <p>官方最怕你用整块 config apply，把不该动的配置也替换掉。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>/model</code></div>
+      <p>聊天里最快的临时切换。可以用 picker、编号，也可以用别名。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw models set ...</code></div>
+      <p>CLI 里只更新模型配置，适合不想手改 JSON 的时候。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw configure --section model</code></div>
+      <p>交互式改模型相关部分，避免碰到别的配置。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">少用整块替换</div>
+      <p>不要用部分对象乱跑 <code>config.apply</code>，除非你就是想替换整段配置。RPC 编辑优先查 schema，再 patch。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🔑 auth profile 是模型门口的学生证</h2>
+    <p>模型选对了，但学生证不在 Gateway 主机上，也会进不了门。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>~/.openclaw/agents/&lt;agentId&gt;/agent/auth-profiles.json</code></div>
+      <p>这是当前 auth profiles 的主要存放位置。多 agent 时，每个 agent 可能有自己的证件夹。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw models auth list</code></div>
+      <p>查看保存了哪些 profile，但不要把秘密值倒出来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw models status --probe</code></div>
+      <p>像试刷学生证，能看到哪个 profile 会被尝试，哪个被 order 排除或冷却。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">远程模式要注意</div>
+      <p>认证文件在 Gateway 主机上，不一定在你手边那台 laptop 上。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🚦 “All models failed” 不一定是所有老师都坏了，可能是路牌或学生证错了</h2>
+    <p>Failover 会先在同 provider 的 auth profiles 间轮换，再尝试配置里的 model fallbacks。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">rate limit</div>
+      <p>并发太多、资源耗尽、周期额度窗口等，可能会让某个 profile 进入冷却，然后换下一个。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">context 太长</div>
+      <p>输入超出上下文不是普通失败，它会走压缩或重试路径，不应该随便跳到别的模型。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">billing / credits</div>
+      <p>账单、余额、组织限额类问题可能让 profile 暂时不可用。先看错误文字，不要盲目重试。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>No credentials found for profile ...</code></div>
+      <p>常见意思是系统想用某个 profile，但在期望位置没找到证件。检查 Gateway 主机、env、auth order 和 agent ID。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧱 allowlist 像模型名单，名单里没有就不会回答</h2>
+    <p>如果设置了 <code>agents.defaults.models</code>，它会成为 <code>/model</code> 和 session override 的允许名单。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>Model "provider/model" is not allowed</code></div>
+      <p>这不是模型坏了，而是它没在允许名单里。要么加入精确模型，要么加 provider wildcard，要么移除 allowlist。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>Unknown model: minimax/MiniMax-M2.7</code></div>
+      <p>通常是 provider 没配置好，或 auth 没被注入。先升级、重启 Gateway，再用 <code>openclaw models list</code> 看可用模型。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">别名会变</div>
+      <p><code>opus</code>、<code>sonnet</code>、<code>gpt</code> 这类快捷名只有在配置里存在对应模型时才好用；自定义 alias 会覆盖默认别名。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">profile suffix</div>
+      <p><code>/model opus@anthropic:work</code> 会固定某个 profile；想取消固定，就重新发不带 <code>@profile</code> 的模型命令。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>🎈 模型问题先查三件事：名字、名单、钥匙</h2>
+    <p>模型名写完整，allowlist 看清楚，auth profile 确认在 Gateway 主机上。三件事对齐后，再去看 fallback 和 provider 错误。</p>
+  </div>
+</section>
+

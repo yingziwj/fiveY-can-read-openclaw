@@ -1,0 +1,132 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🎒 Migrating from Claude 这页，是在教你把 Claude 里的书包整理进 OpenClaw</h2>
+      <p>Claude 里可能放着项目说明、个人习惯、MCP 工具、技能和命令。OpenClaw 不会偷偷乱搬，而是先给你看清单，再备份，再真正放进新家。</p>
+      <p>最重要的提醒是：最好从一个干净的 OpenClaw 开始导入；如果已经有东西，就先看计划，确认冲突，再决定要不要覆盖。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合 Claude Code / Claude Desktop 用户搬家</span>
+      <span>重点是预览、备份、冲突、doctor</span>
+      <a href="https://docs.openclaw.ai/install/migrating-claude" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🧾 OpenClaw 会先拿出搬家清单，而不是直接翻你的抽屉</h2>
+    <p>Claude 迁移 provider 的核心动作是：预览每一项、遮住秘密、先做可验证备份。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">👀</span>
+      <h2>先预览</h2>
+      <p><code>--dry-run</code> 像先把要搬的箱子摆出来，让你看清楚会改哪里。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔒</span>
+      <h2>遮住秘密</h2>
+      <p>MCP 的 <code>env</code>、<code>headers</code> 等敏感字段会在计划和报告里打码。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📦</span>
+      <h2>先备份</h2>
+      <p>真正 apply 前会创建并验证备份，像搬家前先拍照留底。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🛑</span>
+      <h2>有冲突就停</h2>
+      <p>目标位置已经有文件或配置时，默认不会硬塞进去。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🛤️ 有两条路：向导适合第一次，CLI 适合反复练习</h2>
+    <p>你可以让 onboarding 帮忙，也可以自己用迁移命令一步步控制。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw onboard --flow import</code></div>
+      <p>像让搬家向导带路。它发现本地 Claude 状态后，会把 Claude 作为可导入来源摆给你选。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw onboard --import-from claude --import-source ~/.claude</code></div>
+      <p>如果 Claude 的东西不在默认位置，就像告诉搬家公司“旧家门牌在这里”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw migrate claude --dry-run</code></div>
+      <p>脚本化场景先跑预览，适合写自动化或想反复确认的人。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw migrate apply claude --yes</code></div>
+      <p>看完计划没问题后再应用。这个动作会真的改变 OpenClaw 状态。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🧩 哪些会搬进新书包，哪些只放进“旧物盒”</h2>
+    <p>这页最适合低龄读者记成两堆：一堆能直接用，一堆只能留给大人慢慢检查。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">✅ 会导入：说明和记忆</div>
+      <p><code>CLAUDE.md</code>、<code>.claude/CLAUDE.md</code> 会整理进 OpenClaw 的 <code>AGENTS.md</code>，用户级说明会追加到 <code>USER.md</code>。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">✅ 会导入：MCP 工具</div>
+      <p>项目里的 <code>.mcp.json</code>、Claude Code 状态、Claude Desktop 配置里能识别的 MCP server 会被带过来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">✅ 会导入：技能和命令</div>
+      <p>有 <code>SKILL.md</code> 的 Claude skills 会复制；Claude commands 会变成 OpenClaw skills，但默认不让模型自动调用。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">📁 只进档案盒</div>
+      <p>hooks、宽泛权限、环境默认值、本地私有说明、旧缓存、Desktop 扩展和系统凭据不会自动变成 live 配置。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🧭 最稳的流程：预览、应用、体检、重启</h2>
+    <p>把官方长步骤压成四个动作，就像搬完家后检查灯、水、门锁。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw migrate claude --dry-run</code></div>
+      <p>先看计划：会改什么、跳过什么、哪里有冲突。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw migrate apply claude --yes</code></div>
+      <p>确认后再真正搬。遇到已有目标时，除非你明确加 <code>--overwrite</code>，否则它会拒绝硬覆盖。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw doctor</code></div>
+      <p>像请医生检查导入后的配置和状态，看看有没有搬歪。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway restart</code> / <code>openclaw status</code></div>
+      <p>最后重启 Gateway，看新搬来的说明、MCP servers 和 skills 有没有真的被加载。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>🎈 Claude 迁移不是“相信旧规则”，而是“把能读懂的东西安全带过来”</h2>
+    <p>OpenClaw 会拒绝自动执行 hooks、相信宽泛权限或破解看不懂的凭据。能搬的先搬，危险的先放进报告，人再决定。</p>
+  </div>
+</section>
+

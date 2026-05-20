@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQ: models and auth | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="FAQ: 聪明脑袋模型s and auth 像排雷图。先认症状，再找该翻哪条命令或日志，最后才决定要不要动配置，不要一上来就把整面墙都拆了。原文最响的一记鼓点，其实是：聪明脑袋模型- and auth-profile Q\&amp;A. For setup, sessions, 门口的小门卫, 消息通道s, and trou…">
+  <meta name="description" content="这页解释默认模型、provider/model 写法、/model 切换、auth profile、allowlist、fallback 和 All models failed。小口诀是先查模型名是否完整，再看 agents.defaults.models 允许名单，最后确认 auth profile 在 Gatew…">
   <meta name="robots" content="index,follow">
   <meta name="google-adsense-account" content="ca-pub-3833673520933536">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="FAQ: models and auth | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="FAQ: 聪明脑袋模型s and auth 像排雷图。先认症状，再找该翻哪条命令或日志，最后才决定要不要动配置，不要一上来就把整面墙都拆了。原文最响的一记鼓点，其实是：聪明脑袋模型- and auth-profile Q\&amp;A. For setup, sessions, 门口的小门卫, 消息通道s, and trou…">
+  <meta property="og:description" content="这页解释默认模型、provider/model 写法、/model 切换、auth profile、allowlist、fallback 和 All models failed。小口诀是先查模型名是否完整，再看 agents.defaults.models 允许名单，最后确认 auth profile 在 Gatew…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/help/faq-models/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta property="og:image:alt" content="FAQ: models and auth 的中文故事化导读页面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="FAQ: models and auth | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="FAQ: 聪明脑袋模型s and auth 像排雷图。先认症状，再找该翻哪条命令或日志，最后才决定要不要动配置，不要一上来就把整面墙都拆了。原文最响的一记鼓点，其实是：聪明脑袋模型- and auth-profile Q\&amp;A. For setup, sessions, 门口的小门卫, 消息通道s, and trou…">
+  <meta name="twitter:description" content="这页解释默认模型、provider/model 写法、/model 切换、auth profile、allowlist、fallback 和 All models failed。小口诀是先查模型名是否完整，再看 agents.defaults.models 允许名单，最后确认 auth profile 在 Gatew…">
   <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/help/faq-models/">
@@ -25,7 +25,7 @@
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3833673520933536" crossorigin="anonymous"></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"FAQ: models and auth","description":"FAQ: 聪明脑袋模型s and auth 像排雷图。先认症状，再找该翻哪条命令或日志，最后才决定要不要动配置，不要一上来就把整面墙都拆了。原文最响的一记鼓点，其实是：聪明脑袋模型- and auth-profile Q\\&A. For setup, sessions, 门口的小门卫, 消息通道s, and trou…","url":"https://fivey-can-read-openclaw.pages.dev/help/faq-models/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"FAQ: models and auth","description":"这页解释默认模型、provider/model 写法、/model 切换、auth profile、allowlist、fallback 和 All models failed。小口诀是先查模型名是否完整，再看 agents.defaults.models 允许名单，最后确认 auth profile 在 Gatew…","url":"https://fivey-can-read-openclaw.pages.dev/help/faq-models/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Help","item":"https://fivey-can-read-openclaw.pages.dev/help/faq-models/"}]}</script>
 </head>
 <body>
@@ -2699,8 +2699,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Help 导读</p>
-        <h1>FAQ: 聪明脑袋模型s and auth：这回它在替你排哪颗雷</h1>
-        <p class="hero-copy">FAQ: 聪明脑袋模型s and auth 像排雷图。先认症状，再找该翻哪条命令或日志，最后才决定要不要动配置，不要一上来就把整面墙都拆了。原文最响的一记鼓点，其实是：聪明脑袋模型- and auth-profile Q\&amp;A. For setup, sessions, 门口的小门卫, 消息通道s, and troubleshooting,…。</p>
+        <h1>FAQ: models and auth：模型名字、允许名单和钥匙要对齐</h1>
+        <p class="hero-copy">这页解释默认模型、provider/model 写法、/model 切换、auth profile、allowlist、fallback 和 All models failed。小口诀是先查模型名是否完整，再看 agents.defaults.models 允许名单，最后确认 auth profile 在 Gateway 主机上。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -5358,1359 +5358,170 @@
         </div>
       </div>
 
+      <!-- handcrafted-source:help.faq-models.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>FAQ: models and auth：模型名字、允许名单和钥匙要对齐</h2>
+      <p>这页解释默认模型、provider/model 写法、/model 切换、auth profile、allowlist、fallback 和 All models failed。小口诀是先查模型名是否完整，再看 agents.defaults.models 允许名单，最后确认 auth profile 在 Gateway 主机上。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 5 节，先看 Start Here</span>
+      <span>路径：/help/faq-models</span>
+      <a href="https://docs.openclaw.ai/help/faq-models" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🏷️ 写模型时，最好写完整的 <code>provider/model</code></h2>
+    <p>只写模型名有时会让系统猜；写全路径，OpenClaw 才知道该敲哪扇门。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🎯</span>
+      <h2>默认模型</h2>
+      <p>主要看 <code>agents.defaults.model.primary</code>。推荐明确写成 <code>openai/gpt-5.5</code> 这类完整形式。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧭</span>
+      <h2>别让它猜</h2>
+      <p>如果两个 provider 都有同名模型，<code>provider/model</code> 能防止走错学校找错老师。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">⚠️</span>
+      <h2>高风险任务</h2>
+      <p>能用工具、会接触不可信输入的 agent，优先用更强模型，不要只看便宜。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🧱</span>
+      <h2>本地小模型</h2>
+      <p>Ollama、vLLM、llama.cpp 可以用；但小模型或过度量化模型更容易被 prompt injection 绕晕。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🔄 切模型要像换铅笔，只改铅笔，不要掀翻整个书桌</h2>
+    <p>官方最怕你用整块 config apply，把不该动的配置也替换掉。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>/model</code></div>
+      <p>聊天里最快的临时切换。可以用 picker、编号，也可以用别名。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw models set ...</code></div>
+      <p>CLI 里只更新模型配置，适合不想手改 JSON 的时候。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw configure --section model</code></div>
+      <p>交互式改模型相关部分，避免碰到别的配置。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">少用整块替换</div>
+      <p>不要用部分对象乱跑 <code>config.apply</code>，除非你就是想替换整段配置。RPC 编辑优先查 schema，再 patch。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🔑 auth profile 是模型门口的学生证</h2>
+    <p>模型选对了，但学生证不在 Gateway 主机上，也会进不了门。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>~/.openclaw/agents/&lt;agentId&gt;/agent/auth-profiles.json</code></div>
+      <p>这是当前 auth profiles 的主要存放位置。多 agent 时，每个 agent 可能有自己的证件夹。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw models auth list</code></div>
+      <p>查看保存了哪些 profile，但不要把秘密值倒出来。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw models status --probe</code></div>
+      <p>像试刷学生证，能看到哪个 profile 会被尝试，哪个被 order 排除或冷却。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">远程模式要注意</div>
+      <p>认证文件在 Gateway 主机上，不一定在你手边那台 laptop 上。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🚦 “All models failed” 不一定是所有老师都坏了，可能是路牌或学生证错了</h2>
+    <p>Failover 会先在同 provider 的 auth profiles 间轮换，再尝试配置里的 model fallbacks。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">rate limit</div>
+      <p>并发太多、资源耗尽、周期额度窗口等，可能会让某个 profile 进入冷却，然后换下一个。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">context 太长</div>
+      <p>输入超出上下文不是普通失败，它会走压缩或重试路径，不应该随便跳到别的模型。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">billing / credits</div>
+      <p>账单、余额、组织限额类问题可能让 profile 暂时不可用。先看错误文字，不要盲目重试。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>No credentials found for profile ...</code></div>
+      <p>常见意思是系统想用某个 profile，但在期望位置没找到证件。检查 Gateway 主机、env、auth order 和 agent ID。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>🧱 allowlist 像模型名单，名单里没有就不会回答</h2>
+    <p>如果设置了 <code>agents.defaults.models</code>，它会成为 <code>/model</code> 和 session override 的允许名单。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>Model "provider/model" is not allowed</code></div>
+      <p>这不是模型坏了，而是它没在允许名单里。要么加入精确模型，要么加 provider wildcard，要么移除 allowlist。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>Unknown model: minimax/MiniMax-M2.7</code></div>
+      <p>通常是 provider 没配置好，或 auth 没被注入。先升级、重启 Gateway，再用 <code>openclaw models list</code> 看可用模型。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">别名会变</div>
+      <p><code>opus</code>、<code>sonnet</code>、<code>gpt</code> 这类快捷名只有在配置里存在对应模型时才好用；自定义 alias 会覆盖默认别名。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">profile suffix</div>
+      <p><code>/model opus@anthropic:work</code> 会固定某个 profile；想取消固定，就重新发不带 <code>@profile</code> 的模型命令。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>🎈 模型问题先查三件事：名字、名单、钥匙</h2>
+    <p>模型名写完整，allowlist 看清楚，auth profile 确认在 Gateway 主机上。三件事对齐后，再去看 fallback 和 provider 错误。</p>
+  </div>
+</section>
 
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>FAQ: models and auth</h2>
-          <p>这一页不是在堆术语，它像把“FAQ: 聪明脑袋模型s and auth”这台小机器搬到桌上，当着你的面拆开给你看。你先不用全记住，先抓住它到底在忙什么：聪明脑袋模型- and auth-profile Q\&amp;A. For setup, sessions, 门口的小门卫, 消息通道s, and troubleshooting, see the…。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/help/faq-models</span>
-          <span>章节数量：5</span>
-          <a href="https://docs.openclaw.ai/help/faq-models" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：聪明脑袋模型- and auth-profile Q\&amp;A. For setup, sessions, 门口的小门卫, 消息通道s, and troubleshooting, see the main FAQ.</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：聪明脑袋模型- and auth-profile Q\&amp;A. For setup, sessions, 门口的小门卫, 消息通道s, and troubleshooting, see the main FAQ.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Model- and auth-profile Q\&amp;A. For setup, sessions, gateway, channels, and troubleshooting, see the main <a href="/help/faq" target="_blank" rel="noreferrer">FAQ</a>.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>聪明脑袋模型s: defaults, selection, aliases, switching</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion大家一起的房间&gt; &lt;Accordion title=&quot;What is the &amp;#x22;default 聪明脑袋模型&amp;#x22;?&quot;&gt; OpenClaw&#39;s default 聪明脑袋模型 is whatever yo…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion大家一起的房间&gt; &lt;Accordion title=&quot;What is the &amp;#x22;default 聪明脑袋模型&amp;#x22;?&quot;&gt; OpenClaw&#39;s default 聪明脑袋模型 is whatever yo…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;AccordionGroup&gt; &lt;Accordion title=&quot;What is the &amp;#x22;default model&amp;#x22;?&quot;&gt; OpenClaw&#39;s default model is whatever you set as:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code> agents.defaults.model.primary </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：聪明脑袋模型s are referenced as provider/聪明脑袋模型 (example: openai/gpt-5.5 or anthropic/claude-sonnet-4-6). If you omit the pro…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Models are referenced as <code>provider/model</code> (example: <code>openai/gpt-5.5</code> or <code>anthropic/claude-sonnet-4-6</code>). If you omit the provider, OpenClaw first tries an alias, then a unique configured-provider match for that exact model id, and only then falls back to the configured default provider as a deprecated compatibility path. If that provider no longer exposes the configured default model, OpenClaw falls back to the first configured provider/model instead of surfacing a stale removed-provider default. You should still **explicitly** set <code>provider/model</code>. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;What 聪明脑袋模型 do you recommend?&quot;&gt; **Recommended default:** use the strongest latest-generation 聪明脑袋模型 a…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;What model do you recommend?&quot;&gt; **Recommended default:** use the strongest latest-generation model available in your provider stack. **For tool-enabled or untrusted-input agents:** prioritize model strength over cost. **For routine/low-stakes chat:** use cheaper fallback models and route by agent role.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：MiniMax has its own docs: MiniMax and Local 聪明脑袋模型s.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>MiniMax has its own docs: <a href="/providers/minimax" target="_blank" rel="noreferrer">MiniMax</a> and <a href="/gateway/local-models" target="_blank" rel="noreferrer">Local models</a>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Rule of thumb: use the **best 聪明脑袋模型 you can afford** for high-stakes work, and a cheaper 聪明脑袋模型 for routine chat or su…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Rule of thumb: use the **best model you can afford** for high-stakes work, and a cheaper model for routine chat or summaries. You can route models per agent and use sub-agents to parallelize long tasks (each sub-agent consumes tokens). See <a href="/concepts/models" target="_blank" rel="noreferrer">Models</a> and <a href="/tools/subagents" target="_blank" rel="noreferrer">Sub-agents</a>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Strong warning: weaker/over-quantized 聪明脑袋模型s are more vulnerable to prompt injection and unsafe behavior. See 安全守门员.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Strong warning: weaker/over-quantized models are more vulnerable to prompt injection and unsafe behavior. See <a href="/gateway/security" target="_blank" rel="noreferrer">Security</a>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：More context: 聪明脑袋模型s. &lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>More context: <a href="/concepts/models" target="_blank" rel="noreferrer">Models</a>. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;How do I switch 聪明脑袋模型s without wiping my 设置说明书?&quot;&gt; Use **聪明脑袋模型 魔法口令s** or edit only the **聪明脑袋模型** f…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;How do I switch models without wiping my config?&quot;&gt; Use **model commands** or edit only the **model** fields. Avoid full config replaces.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Safe options:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Safe options:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Models: defaults, selection, aliases, switching”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：/聪明脑袋模型 in chat (quick, per-session)、openclaw 聪明脑袋模型s set ... (updates just 聪明…、openclaw 设置说明书ure --section 聪明脑袋模型 (inter…、edit 机器人朋友s.defaults.聪明脑袋模型 in ~/.opencla…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>/model</code> in chat (quick, per-session)</li><li><code>openclaw models set ...</code> (updates just model config)</li><li><code>openclaw configure --section model</code> (interactive)</li><li>edit <code>agents.defaults.model</code> in <code>~/.openclaw/openclaw.json</code></li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Avoid 设置说明书.apply with a partial object unless you intend to replace the whole 设置说明书. For RPC edits, inspect with 设置说明书…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Avoid <code>config.apply</code> with a partial object unless you intend to replace the whole config. For RPC edits, inspect with <code>config.schema.lookup</code> first and prefer <code>config.patch</code>. The lookup payload gives you the normalized path, shallow schema docs/constraints, and immediate child summaries. for partial updates. If you did overwrite config, restore from backup or re-run <code>openclaw doctor</code> to repair.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Docs: 聪明脑袋模型s, 设置说明书ure, 设置说明书, Doctor. &lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Docs: <a href="/concepts/models" target="_blank" rel="noreferrer">Models</a>, <a href="/cli/configure" target="_blank" rel="noreferrer">Configure</a>, <a href="/cli/config" target="_blank" rel="noreferrer">Config</a>, <a href="/gateway/doctor" target="_blank" rel="noreferrer">Doctor</a>. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;Can I use self-hosted 聪明脑袋模型s (llama.cpp, vLLM, Ollama)?&quot;&gt; Yes. Ollama is the easiest path for local…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Can I use self-hosted models (llama.cpp, vLLM, Ollama)?&quot;&gt; Yes. Ollama is the easiest path for local models.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Quickest setup:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Quickest setup:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：1. Install Ollama from https://ollama.com/download 2. Pull a local 聪明脑袋模型 such as ollama pull gemma4 3. If you want clo…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. Install Ollama from <code>https://ollama.com/download</code> 2. Pull a local model such as <code>ollama pull gemma4</code> 3. If you want cloud models too, run <code>ollama signin</code> 4. Run <code>openclaw onboard</code> and choose <code>Ollama</code> 5. Pick <code>Local</code> or <code>Cloud + Local</code></p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Notes:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Notes:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Models: defaults, selection, aliases, switching”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：Cloud + Local gives you cloud 聪明脑袋模型s plu…、cloud 聪明脑袋模型s such as kimi-k2.5:cloud do…、for manual switching, use openclaw 聪明脑袋模型…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>Cloud + Local</code> gives you cloud models plus your local Ollama models</li><li>cloud models such as <code>kimi-k2.5:cloud</code> do not need a local pull</li><li>for manual switching, use <code>openclaw models list</code> and <code>openclaw models set ollama/&lt;model&gt;</code></li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：安全守门员 note: smaller or heavily quantized 聪明脑袋模型s are more vulnerable to prompt injection. We strongly recommend **large…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Security note: smaller or heavily quantized models are more vulnerable to prompt injection. We strongly recommend **large models** for any bot that can use tools. If you still want small models, enable sandboxing and strict tool allowlists.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Docs: Ollama, Local 聪明脑袋模型s, 聪明脑袋模型 providers, 安全守门员, Sandboxing. &lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Docs: <a href="/providers/ollama" target="_blank" rel="noreferrer">Ollama</a>, <a href="/gateway/local-models" target="_blank" rel="noreferrer">Local models</a>, <a href="/concepts/model-providers" target="_blank" rel="noreferrer">Model providers</a>, <a href="/gateway/security" target="_blank" rel="noreferrer">Security</a>, <a href="/gateway/sandboxing" target="_blank" rel="noreferrer">Sandboxing</a>. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;What do OpenClaw, Flawd, and Krill use for 聪明脑袋模型s?&quot;&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;What do OpenClaw, Flawd, and Krill use for models?&quot;&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Models: defaults, selection, aliases, switching”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：These deployments can differ and may chan…、Check the current runtime setting on each…、For 安全守门员-sensitive/工具小帮手-enabled 机器人朋友s,…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>These deployments can differ and may change over time; there is no fixed provider recommendation.</li><li>Check the current runtime setting on each gateway with <code>openclaw models status</code>.</li><li>For security-sensitive/tool-enabled agents, use the strongest latest-generation model available.</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;How do I switch 聪明脑袋模型s on the fly (without restarting)?&quot;&gt; Use the /聪明脑袋模型 魔法口令 as a standalone 小纸条消息:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;How do I switch models on the fly (without restarting)?&quot;&gt; Use the <code>/model</code> command as a standalone message:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code> /model sonnet /model opus /model gpt /model gpt-mini /model gemini /model gemini-flash /model gemini-flash-lite </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：These are the built-in aliases. Custom aliases can be added via 机器人朋友s.defaults.聪明脑袋模型s.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>These are the built-in aliases. Custom aliases can be added via <code>agents.defaults.models</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：You can list available 聪明脑袋模型s with /聪明脑袋模型, /聪明脑袋模型 list, or /聪明脑袋模型 status.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>You can list available models with <code>/model</code>, <code>/model list</code>, or <code>/model status</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：/聪明脑袋模型 (and /聪明脑袋模型 list) shows a compact, numbered picker. Select by number:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>/model</code> (and <code>/model list</code>) shows a compact, numbered picker. Select by number:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code> /model 3 </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：You can also force a specific auth profile for the provider (per session):。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>You can also force a specific auth profile for the provider (per session):</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code> /model opus@anthropic:default /model opus@anthropic:work </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Tip: /聪明脑袋模型 status shows which 机器人朋友 is active, which auth-profiles.json file is being used, and which auth profile wi…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Tip: <code>/model status</code> shows which agent is active, which <code>auth-profiles.json</code> file is being used, and which auth profile will be tried next. It also shows the configured provider endpoint (<code>baseUrl</code>) and API mode (<code>api</code>) when available.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：**How do I unpin a profile I set with @profile?**。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**How do I unpin a profile I set with @profile?**</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Re-run /聪明脑袋模型 **without** the @profile suffix:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Re-run <code>/model</code> **without** the <code>@profile</code> suffix:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code> /model anthropic/claude-opus-4-6 </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：If you want to return to the default, pick it from /聪明脑袋模型 (or send /聪明脑袋模型 &lt;default provider/聪明脑袋模型&gt;). Use /聪明脑袋模型 sta…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If you want to return to the default, pick it from <code>/model</code> (or send <code>/model &lt;default provider/model&gt;</code>). Use <code>/model status</code> to confirm which auth profile is active. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;If two providers expose the same 聪明脑袋模型 id, which one does /聪明脑袋模型 use?&quot;&gt; /聪明脑袋模型 provider/聪明脑袋模型 sel…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;If two providers expose the same model id, which one does /model use?&quot;&gt; <code>/model provider/model</code> selects that exact provider route for the session.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：For example, qianfan/deepseek-v4-flash and deepseek/deepseek-v4-flash are different 聪明脑袋模型 refs even though both contai…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For example, <code>qianfan/deepseek-v4-flash</code> and <code>deepseek/deepseek-v4-flash</code> are different model refs even though both contain <code>deepseek-v4-flash</code>. OpenClaw should not silently switch from one provider to the other just because the bare model id matches.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：A user-selected /聪明脑袋模型 ref is also strict for fallback policy. If that selected provider/聪明脑袋模型 is unavailable, the re…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>A user-selected <code>/model</code> ref is also strict for fallback policy. If that selected provider/model is unavailable, the reply fails visibly instead of answering from <code>agents.defaults.model.fallbacks</code>. Configured fallback chains still apply to configured defaults, cron job primaries, and auto-selected fallback state.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：If a run that started from a non-session override is allowed to use fallback, OpenClaw tries the requested provider/聪明脑…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If a run that started from a non-session override is allowed to use fallback, OpenClaw tries the requested provider/model first, then configured fallbacks, and only then the configured primary. That prevents duplicate bare model ids from jumping directly back to the default provider.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：See 聪明脑袋模型s and 聪明脑袋模型 failover. &lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>See <a href="/concepts/models" target="_blank" rel="noreferrer">Models</a> and <a href="/concepts/model-failover" target="_blank" rel="noreferrer">Model failover</a>. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;Can I use GPT 5.5 for daily tasks and Codex 5.5 for coding?&quot;&gt; Yes. Treat 聪明脑袋模型 choice and runtime ch…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Can I use GPT 5.5 for daily tasks and Codex 5.5 for coding?&quot;&gt; Yes. Treat model choice and runtime choice separately:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Models: defaults, selection, aliases, switching”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：**Native Codex coding 机器人朋友:** set 机器人朋友s…、**Direct OpenAI 对话接口 tasks outside the 机器…、**OpenAI 机器人朋友 对话接口-key auth:** use /聪明脑袋…、**Sub-机器人朋友s:** route coding tasks to a C…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Native Codex coding agent:** set <code>agents.defaults.model.primary</code> to <code>openai/gpt-5.5</code>. Sign in with <code>openclaw models auth login --provider openai-codex</code> when you want ChatGPT/Codex subscription auth.</li><li>**Direct OpenAI API tasks outside the agent loop:** configure <code>OPENAI_API_KEY</code> for images, embeddings, speech, realtime, and other non-agent OpenAI API surfaces.</li><li>**OpenAI agent API-key auth:** use <code>/model openai/gpt-5.5</code> with an ordered <code>openai-codex</code> API-key profile.</li><li>**Sub-agents:** route coding tasks to a Codex-focused agent with its own <code>openai/gpt-5.5</code> model.</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：See 聪明脑袋模型s and Slash 魔法口令s. &lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>See <a href="/concepts/models" target="_blank" rel="noreferrer">Models</a> and <a href="/tools/slash-commands" target="_blank" rel="noreferrer">Slash commands</a>. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;How do I 设置说明书ure fast mode for GPT 5.5?&quot;&gt; Use either a session toggle or a 设置说明书 default:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;How do I configure fast mode for GPT 5.5?&quot;&gt; Use either a session toggle or a config default:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Models: defaults, selection, aliases, switching”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：**Per session:** send /fast on while the…、**Per 聪明脑袋模型 default:** set 机器人朋友s.defaul…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Per session:** send <code>/fast on</code> while the session is using <code>openai/gpt-5.5</code>.</li><li>**Per model default:** set <code>agents.defaults.models[&quot;openai/gpt-5.5&quot;].params.fastMode</code> to <code>true</code>.</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Example:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Example:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>json5 theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} { agents: { defaults: { models: { &quot;openai/gpt-5.5&quot;: { params: { fastMode: true, }, }, }, }, }, } </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：For OpenAI, fast mode maps to service_tier = &quot;priority&quot; on supported native Responses requests. Session /fast overrides…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For OpenAI, fast mode maps to <code>service_tier = &quot;priority&quot;</code> on supported native Responses requests. Session <code>/fast</code> overrides beat config defaults.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：See Thinking and fast mode and OpenAI fast mode. &lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>See <a href="/tools/thinking" target="_blank" rel="noreferrer">Thinking and fast mode</a> and <a href="/providers/openai#fast-mode" target="_blank" rel="noreferrer">OpenAI fast mode</a>. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;Why do I see &amp;#x22;聪明脑袋模型 ... is not allowed&amp;#x22; and then no reply?&quot;&gt; If 机器人朋友s.defaults.聪明脑袋模型s is…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Why do I see &amp;#x22;Model ... is not allowed&amp;#x22; and then no reply?&quot;&gt; If <code>agents.defaults.models</code> is set, it becomes the **allowlist** for <code>/model</code> and any session overrides. Choosing a model that isn&#39;t in that list returns:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code> Model &quot;provider/model&quot; is not allowed. Use /models to list providers, or /models &lt;provider&gt; to list models. Add it with: openclaw config set agents.defaults.models &#39;{&quot;provider/model&quot;:{}}&#39; --strict-json --merge </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：That error is returned **instead of** a normal reply. Fix: add the exact 聪明脑袋模型 to 机器人朋友s.defaults.聪明脑袋模型s, add a provi…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>That error is returned **instead of** a normal reply. Fix: add the exact model to <code>agents.defaults.models</code>, add a provider wildcard such as <code>&quot;provider/*&quot;: {}</code> for dynamic provider catalogs, remove the allowlist, or pick a model from <code>/model list</code>. If the command also included <code>--runtime codex</code>, update the allowlist first and then retry the same <code>/model provider/model --runtime codex</code> command. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;Why do I see &amp;#x22;Unknown 聪明脑袋模型: minimax/MiniMax-M2.7&amp;#x22;?&quot;&gt; This means the **provider isn&#39;t 设置说明…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Why do I see &amp;#x22;Unknown model: minimax/MiniMax-M2.7&amp;#x22;?&quot;&gt; This means the **provider isn&#39;t configured** (no MiniMax provider config or auth profile was found), so the model can&#39;t be resolved.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Fix checklist:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Fix checklist:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：1. Upgrade to a current OpenClaw release (or run from source main), then restart the 门口的小门卫. 2. Make sure MiniMax is 设置…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. Upgrade to a current OpenClaw release (or run from source <code>main</code>), then restart the gateway. 2. Make sure MiniMax is configured (wizard or JSON), or that MiniMax auth exists in env/auth profiles so the matching provider can be injected (<code>MINIMAX_API_KEY</code> for <code>minimax</code>, <code>MINIMAX_OAUTH_TOKEN</code> or stored MiniMax OAuth for <code>minimax-portal</code>). 3. Use the exact model id (case-sensitive) for your auth path: <code>minimax/MiniMax-M2.7</code> or <code>minimax/MiniMax-M2.7-highspeed</code> for API-key setup, or <code>minimax-portal/MiniMax-M2.7</code> / <code>minimax-portal/MiniMax-M2.7-highspeed</code> for OAuth setup. 4. Run:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw models list </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：and pick from the list (or /聪明脑袋模型 list in chat).</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>and pick from the list (or <code>/model list</code> in chat).</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：See MiniMax and 聪明脑袋模型s. &lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>See <a href="/providers/minimax" target="_blank" rel="noreferrer">MiniMax</a> and <a href="/concepts/models" target="_blank" rel="noreferrer">Models</a>. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;Can I use MiniMax as my default and OpenAI for complex tasks?&quot;&gt; Yes. Use **MiniMax as the default** a…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Can I use MiniMax as my default and OpenAI for complex tasks?&quot;&gt; Yes. Use **MiniMax as the default** and switch models **per session** when needed. Fallbacks are for **errors**, not &quot;hard tasks,&quot; so use <code>/model</code> or a separate agent.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：**Option A: switch per session**。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Option A: switch per session**</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>json5 theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} { env: { MINIMAX_API_KEY: &quot;sk-...&quot;, OPENAI_API_KEY: &quot;sk-...&quot; }, agents: { defaults: { model: { primary: &quot;minimax/MiniMax-M2.7&quot; }, models: { &quot;minimax/MiniMax-M2.7&quot;: { alias: &quot;minimax&quot; }, &quot;openai/gpt-5.5&quot;: { alias: &quot;gpt&quot; }, }, }, }, } </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Then:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Then:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code> /model gpt </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：**Option B: separate 机器人朋友s**。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Option B: separate agents**</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Models: defaults, selection, aliases, switching”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：机器人朋友 A default: MiniMax、机器人朋友 B default: OpenAI、Route by 机器人朋友 or use /机器人朋友 to switch。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Agent A default: MiniMax</li><li>Agent B default: OpenAI</li><li>Route by agent or use <code>/agent</code> to switch</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Docs: 聪明脑袋模型s, Multi-机器人朋友 Routing, MiniMax, OpenAI. &lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Docs: <a href="/concepts/models" target="_blank" rel="noreferrer">Models</a>, <a href="/concepts/multi-agent" target="_blank" rel="noreferrer">Multi-Agent Routing</a>, <a href="/providers/minimax" target="_blank" rel="noreferrer">MiniMax</a>, <a href="/providers/openai" target="_blank" rel="noreferrer">OpenAI</a>. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;Are opus / sonnet / gpt built-in shortcuts?&quot;&gt; Yes. OpenClaw ships a few default shorthands (only appl…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Are opus / sonnet / gpt built-in shortcuts?&quot;&gt; Yes. OpenClaw ships a few default shorthands (only applied when the model exists in <code>agents.defaults.models</code>):</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Models: defaults, selection, aliases, switching”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：opus → anthropic/claude-opus-4-7、sonnet → anthropic/claude-sonnet-4-6、gpt → openai/gpt-5.4、gpt-mini → openai/gpt-5.4-mini。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>opus</code> → <code>anthropic/claude-opus-4-7</code></li><li><code>sonnet</code> → <code>anthropic/claude-sonnet-4-6</code></li><li><code>gpt</code> → <code>openai/gpt-5.4</code></li><li><code>gpt-mini</code> → <code>openai/gpt-5.4-mini</code></li><li><code>gpt-nano</code> → <code>openai/gpt-5.4-nano</code></li><li><code>gemini</code> → <code>google/gemini-3.1-pro-preview</code></li><li><code>gemini-flash</code> → <code>google/gemini-3-flash-preview</code></li><li><code>gemini-flash-lite</code> → <code>google/gemini-3.1-flash-lite-preview</code></li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：If you set your own alias with the same name, your value wins. &lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If you set your own alias with the same name, your value wins. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;How do I define/override 聪明脑袋模型 shortcuts (aliases)?&quot;&gt; Aliases come from 机器人朋友s.defaults.聪明脑袋模型s.&lt;聪明脑…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;How do I define/override model shortcuts (aliases)?&quot;&gt; Aliases come from <code>agents.defaults.models.&lt;modelId&gt;.alias</code>. Example:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>json5 theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} { agents: { defaults: { model: { primary: &quot;anthropic/claude-opus-4-6&quot; }, models: { &quot;anthropic/claude-opus-4-6&quot;: { alias: &quot;opus&quot; }, &quot;anthropic/claude-sonnet-4-6&quot;: { alias: &quot;sonnet&quot; }, &quot;anthropic/claude-haiku-4-5&quot;: { alias: &quot;haiku&quot; }, }, }, }, } </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Then /聪明脑袋模型 sonnet (or /&lt;alias&gt; when supported) resolves to that 聪明脑袋模型 ID. &lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Then <code>/model sonnet</code> (or <code>/&lt;alias&gt;</code> when supported) resolves to that model ID. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;How do I add 聪明脑袋模型s from other providers like OpenRouter or Z.AI?&quot;&gt; OpenRouter (pay-per-token; many…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;How do I add models from other providers like OpenRouter or Z.AI?&quot;&gt; OpenRouter (pay-per-token; many models):</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>json5 theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} { agents: { defaults: { model: { primary: &quot;openrouter/anthropic/claude-sonnet-4-6&quot; }, models: { &quot;openrouter/anthropic/claude-sonnet-4-6&quot;: {} }, }, }, env: { OPENROUTER_API_KEY: &quot;sk-or-...&quot; }, } </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Z.AI (GLM 聪明脑袋模型s):。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Z.AI (GLM models):</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>json5 theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} { agents: { defaults: { model: { primary: &quot;zai/glm-5&quot; }, models: { &quot;zai/glm-5&quot;: {} }, }, }, env: { ZAI_API_KEY: &quot;...&quot; }, } </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：If you reference a provider/聪明脑袋模型 but the required provider key is missing, you&#39;ll get a runtime auth error (e.g. No 对…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If you reference a provider/model but the required provider key is missing, you&#39;ll get a runtime auth error (e.g. <code>No API key found for provider &quot;zai&quot;</code>).</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：**No 对话接口 key found for provider after adding a new 机器人朋友**。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**No API key found for provider after adding a new agent**</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：This usually means the **new 机器人朋友** has an empty auth store. Auth is per-机器人朋友 and stored in:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>This usually means the **new agent** has an empty auth store. Auth is per-agent and stored in:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code> ~/.openclaw/agents/&lt;agentId&gt;/agent/auth-profiles.json </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Fix options:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Fix options:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Models: defaults, selection, aliases, switching”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：Run openclaw 机器人朋友s add &lt;id&gt; and 设置说明书ure…、Or copy only portable static 对话接口_key / t…、For OAuth profiles, sign in from the new…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Run <code>openclaw agents add &lt;id&gt;</code> and configure auth during the wizard.</li><li>Or copy only portable static <code>api_key</code> / <code>token</code> profiles from the main agent&#39;s auth store into the new agent&#39;s auth store.</li><li>For OAuth profiles, sign in from the new agent when it needs its own account; otherwise OpenClaw can read through to the default/main agent without cloning refresh tokens.</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Do **not** reuse 机器人朋友Dir across 机器人朋友s; it causes auth/session collisions. &lt;/Accordion&gt; &lt;/Accordion大家一起的房间&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Do **not** reuse <code>agentDir</code> across agents; it causes auth/session collisions. &lt;/Accordion&gt; &lt;/AccordionGroup&gt;</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>聪明脑袋模型 failover and &quot;All 聪明脑袋模型s failed&quot;</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion大家一起的房间&gt; &lt;Accordion title=&quot;How does failover work?&quot;&gt; Failover happens in two stages: 1. **Auth profile rotati…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion大家一起的房间&gt; &lt;Accordion title=&quot;How does failover work?&quot;&gt; Failover happens in two stages:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;AccordionGroup&gt; &lt;Accordion title=&quot;How does failover work?&quot;&gt; Failover happens in two stages:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：1. **Auth profile rotation** within the same provider. 2. **聪明脑袋模型 fallback** to the next 聪明脑袋模型 in 机器人朋友s.defaults.聪明脑…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. **Auth profile rotation** within the same provider. 2. **Model fallback** to the next model in <code>agents.defaults.model.fallbacks</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Cooldowns apply to failing profiles (exponential backoff), so OpenClaw can keep responding even when a provider is rate…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Cooldowns apply to failing profiles (exponential backoff), so OpenClaw can keep responding even when a provider is rate-limited or temporarily failing.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The rate-limit bucket includes more than plain 429 responses. OpenClaw also treats 小纸条消息s like Too many concurrent requ…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The rate-limit bucket includes more than plain <code>429</code> responses. OpenClaw also treats messages like <code>Too many concurrent requests</code>, <code>ThrottlingException</code>, <code>concurrency limit reached</code>, <code>workers_ai ... quota limit exceeded</code>, <code>resource exhausted</code>, and periodic usage-window limits (<code>weekly/monthly limit reached</code>) as failover-worthy rate limits.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Some billing-looking responses are not 402, and some HTTP 402 responses also stay in that transient bucket. If a provid…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Some billing-looking responses are not <code>402</code>, and some HTTP <code>402</code> responses also stay in that transient bucket. If a provider returns explicit billing text on <code>401</code> or <code>403</code>, OpenClaw can still keep that in the billing lane, but provider-specific text matchers stay scoped to the provider that owns them (for example OpenRouter <code>Key limit exceeded</code>). If a <code>402</code> message instead looks like a retryable usage-window or organization/workspace spend limit (<code>daily limit reached, resets tomorrow</code>, <code>organization spending limit exceeded</code>), OpenClaw treats it as <code>rate_limit</code>, not a long billing disable.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Context-overflow errors are different: signatures such as request_too_large, input exceeds the maximum number of tokens…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Context-overflow errors are different: signatures such as <code>request_too_large</code>, <code>input exceeds the maximum number of tokens</code>, <code>input token count exceeds the maximum number of input tokens</code>, <code>input is too long for the model</code>, or <code>ollama error: context length exceeded</code> stay on the compaction/retry path instead of advancing model fallback.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Generic 大房子服务器-error text is intentionally narrower than &quot;anything with unknown/error in it&quot;. OpenClaw does treat provi…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Generic server-error text is intentionally narrower than &quot;anything with unknown/error in it&quot;. OpenClaw does treat provider-scoped transient shapes such as Anthropic bare <code>An unknown error occurred</code>, OpenRouter bare <code>Provider returned error</code>, stop-reason errors like <code>Unhandled stop reason: error</code>, JSON <code>api_error</code> payloads with transient server text (<code>internal server error</code>, <code>unknown error, 520</code>, <code>upstream error</code>, <code>backend error</code>), and provider-busy errors such as <code>ModelNotReadyException</code> as failover-worthy timeout/overloaded signals when the provider context matches. Generic internal fallback text like <code>LLM request failed with an unknown error.</code> stays conservative and does not trigger model fallback by itself. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;What does &amp;#x22;No credentials found for profile anthropic:default&amp;#x22; mean?&quot;&gt; It means the system…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;What does &amp;#x22;No credentials found for profile anthropic:default&amp;#x22; mean?&quot;&gt; It means the system attempted to use the auth profile ID <code>anthropic:default</code>, but could not find credentials for it in the expected auth store.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：**Fix checklist:**。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Fix checklist:**</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Model failover and &quot;All models failed&quot;”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：**Confirm where auth profiles live** (new…、Current: ~/.openclaw/机器人朋友s/&lt;机器人朋友Id&gt;/机器人…、Legacy: ~/.openclaw/机器人朋友/* (migrated by…、**Confirm your env var is loaded by the 门…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Confirm where auth profiles live** (new vs legacy paths)</li><li>Current: <code>~/.openclaw/agents/&lt;agentId&gt;/agent/auth-profiles.json</code></li><li>Legacy: <code>~/.openclaw/agent/*</code> (migrated by <code>openclaw doctor</code>)</li><li>**Confirm your env var is loaded by the Gateway**</li><li>If you set <code>ANTHROPIC_API_KEY</code> in your shell but run the Gateway via systemd/launchd, it may not inherit it. Put it in <code>~/.openclaw/.env</code> or enable <code>env.shellEnv</code>.</li><li>**Make sure you&#39;re editing the correct agent**</li><li>Multi-agent setups mean there can be multiple <code>auth-profiles.json</code> files.</li><li>**Sanity-check model/auth status**</li><li>Use <code>openclaw models status</code> to see configured models and whether providers are authenticated.</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：**Fix checklist for &quot;No credentials found for profile anthropic&quot;**。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Fix checklist for &quot;No credentials found for profile anthropic&quot;**</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：This means the run is pinned to an Anthropic auth profile, but the 门口的小门卫 can&#39;t find it in its auth store.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>This means the run is pinned to an Anthropic auth profile, but the Gateway can&#39;t find it in its auth store.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Model failover and &quot;All models failed&quot;”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：**Use Claude CLI**、Run openclaw 聪明脑袋模型s auth login --provide…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Use Claude CLI**</li><li>Run <code>openclaw models auth login --provider anthropic --method cli --set-default</code> on the gateway host.</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Model failover and &quot;All models failed&quot;”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：**If you want to use an 对话接口 key instead**、Put ANTHROPIC_对话接口_KEY in ~/.openclaw/.en…、Clear any pinned order that forces a miss…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**If you want to use an API key instead**</li><li>Put <code>ANTHROPIC_API_KEY</code> in <code>~/.openclaw/.env</code> on the **gateway host**.</li><li>Clear any pinned order that forces a missing profile:</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw models auth order clear --provider anthropic </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Model failover and &quot;All models failed&quot;”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：**Confirm you&#39;re running 魔法口令s on the 门口的…、In remote mode, auth profiles live on the…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**Confirm you&#39;re running commands on the gateway host**</li><li>In remote mode, auth profiles live on the gateway machine, not your laptop.</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;Why did it also try Google Gemini and fail?&quot;&gt; If your 聪明脑袋模型 设置说明书 includes Google Gemini as a fallba…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Why did it also try Google Gemini and fail?&quot;&gt; If your model config includes Google Gemini as a fallback (or you switched to a Gemini shorthand), OpenClaw will try it during model fallback. If you haven&#39;t configured Google credentials, you&#39;ll see <code>No API key found for provider &quot;google&quot;</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Fix: either provide Google auth, or remove/avoid Google 聪明脑袋模型s in 机器人朋友s.defaults.聪明脑袋模型.fallbacks / aliases so fallba…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Fix: either provide Google auth, or remove/avoid Google models in <code>agents.defaults.model.fallbacks</code> / aliases so fallback doesn&#39;t route there.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：**LLM request rejected: thinking signature required (Google Antigravity)**。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**LLM request rejected: thinking signature required (Google Antigravity)**</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Cause: the session history contains **thinking blocks without signatures** (often from an aborted/partial 一边说一边送). Goog…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Cause: the session history contains **thinking blocks without signatures** (often from an aborted/partial stream). Google Antigravity requires signatures for thinking blocks.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Fix: OpenClaw now strips unsigned thinking blocks for Google Antigravity Claude. If it still appears, start a **new ses…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Fix: OpenClaw now strips unsigned thinking blocks for Google Antigravity Claude. If it still appears, start a **new session** or set <code>/thinking off</code> for that agent. &lt;/Accordion&gt; &lt;/AccordionGroup&gt;</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Auth profiles: what they are and how to manage them</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Related: /concepts/oauth (OAuth flows, token storage, multi-account patterns) &lt;Accordion大家一起的房间&gt; &lt;Accordion title=&quot;What…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Related: /concepts/oauth (OAuth flows, token storage, multi-account patterns)。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Related: <a href="/concepts/oauth" target="_blank" rel="noreferrer">/concepts/oauth</a> (OAuth flows, token storage, multi-account patterns)</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion大家一起的房间&gt; &lt;Accordion title=&quot;What is an auth profile?&quot;&gt; An auth profile is a named credential record (OAuth or…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;AccordionGroup&gt; &lt;Accordion title=&quot;What is an auth profile?&quot;&gt; An auth profile is a named credential record (OAuth or API key) tied to a provider. Profiles live in:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code> ~/.openclaw/agents/&lt;agentId&gt;/agent/auth-profiles.json </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：To inspect saved profiles without dumping secrets, run openclaw 聪明脑袋模型s auth list (optionally --provider &lt;id&gt; or --json…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>To inspect saved profiles without dumping secrets, run <code>openclaw models auth list</code> (optionally <code>--provider &lt;id&gt;</code> or <code>--json</code>). See <a href="/cli/models#auth-profiles" target="_blank" rel="noreferrer">Models CLI</a> for details. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;What are typical profile IDs?&quot;&gt; OpenClaw uses provider-prefixed IDs like:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;What are typical profile IDs?&quot;&gt; OpenClaw uses provider-prefixed IDs like:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Auth profiles: what they are and how to manage them”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：anthropic:default (common when no email i…、anthropic:&lt;email&gt; for OAuth identities、custom IDs you choose (e.g. anthropic:wor…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>anthropic:default</code> (common when no email identity exists)</li><li><code>anthropic:&lt;email&gt;</code> for OAuth identities</li><li>custom IDs you choose (e.g. <code>anthropic:work</code>)</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;Can I control which auth profile is tried first?&quot;&gt; Yes. 设置说明书 supports optional metadata for profiles…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Can I control which auth profile is tried first?&quot;&gt; Yes. Config supports optional metadata for profiles and an ordering per provider (<code>auth.order.&lt;provider&gt;</code>). This does **not** store secrets; it maps IDs to provider/mode and sets rotation order.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：OpenClaw may temporarily skip a profile if it&#39;s in a short **cooldown** (rate limits/timeouts/auth failures) or a longe…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw may temporarily skip a profile if it&#39;s in a short **cooldown** (rate limits/timeouts/auth failures) or a longer **disabled** state (billing/insufficient credits). To inspect this, run <code>openclaw models status --json</code> and check <code>auth.unusableProfiles</code>. Tuning: <code>auth.cooldowns.billingBackoffHours*</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Rate-limit cooldowns can be 聪明脑袋模型-scoped. A profile that is cooling down for one 聪明脑袋模型 can still be usable for a sibl…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Rate-limit cooldowns can be model-scoped. A profile that is cooling down for one model can still be usable for a sibling model on the same provider, while billing/disabled windows still block the whole profile.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：You can also set a **per-机器人朋友** order override (stored in that 机器人朋友&#39;s auth-state.json) via the CLI:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>You can also set a **per-agent** order override (stored in that agent&#39;s <code>auth-state.json</code>) via the CLI:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：```bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} # Defaults to the 设置说明书ured default 机器人朋友 (omit --机器人朋友…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>```bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} # Defaults to the configured default agent (omit --agent) openclaw models auth order get --provider anthropic</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Lock rotation to a single profile (only try this one) openclaw 聪明脑袋模型s auth order set --provider anthropic anthropic:de…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Lock rotation to a single profile (only try this one) openclaw models auth order set --provider anthropic anthropic:default</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Or set an explicit order (fallback within provider) openclaw 聪明脑袋模型s auth order set --provider anthropic anthropic:work…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Or set an explicit order (fallback within provider) openclaw models auth order set --provider anthropic anthropic:work anthropic:default</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Clear override (fall back to 设置说明书 auth.order / round-robin) openclaw 聪明脑袋模型s auth order clear --provider anthropic ```。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p># Clear override (fall back to config auth.order / round-robin) openclaw models auth order clear --provider anthropic ```</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：To target a specific 机器人朋友:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>To target a specific agent:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw models auth order set --provider anthropic --agent main anthropic:default </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：To verify what will actually be tried, use:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>To verify what will actually be tried, use:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>``<code>bash theme={&quot;theme&quot;:{&quot;light&quot;:&quot;min-light&quot;,&quot;dark&quot;:&quot;min-dark&quot;}} openclaw models status --probe </code>``</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：If a stored profile is omitted from the explicit order, probe reports excluded_by_auth_order for that profile instead o…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If a stored profile is omitted from the explicit order, probe reports <code>excluded_by_auth_order</code> for that profile instead of trying it silently. &lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;OAuth vs 对话接口 key - what is the difference?&quot;&gt; OpenClaw supports both:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;OAuth vs API key - what is the difference?&quot;&gt; OpenClaw supports both:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Auth profiles: what they are and how to manage them”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：**OAuth** often leverages subscription ac…、**对话接口 keys** use pay-per-token billing.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**OAuth** often leverages subscription access (where applicable).</li><li>**API keys** use pay-per-token billing.</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The wizard explicitly supports Anthropic Claude CLI, OpenAI Codex OAuth, and 对话接口 keys. &lt;/Accordion&gt; &lt;/Accordion大家一起的房间&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The wizard explicitly supports Anthropic Claude CLI, OpenAI Codex OAuth, and API keys. &lt;/Accordion&gt; &lt;/AccordionGroup&gt;</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Related</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Related”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：FAQ — the main FAQ、FAQ — quick start and first-run setup、聪明脑袋模型 selection、聪明脑袋模型 failover。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><a href="/help/faq" target="_blank" rel="noreferrer">FAQ</a> — the main FAQ</li><li><a href="/help/faq-first-run" target="_blank" rel="noreferrer">FAQ — quick start and first-run setup</a></li><li><a href="/concepts/model-providers" target="_blank" rel="noreferrer">Model selection</a></li><li><a href="/concepts/model-failover" target="_blank" rel="noreferrer">Model failover</a></li></ul>
-      </div>
-
-          </div>
-        </section>
-
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>AdSense 连接验证已经放在页面头部；广告单元等站点审批通过后再启用。</p>
-        <code>google-adsense-account: ca-pub-3833673520933536</code>
-      </div>
-    </section>
 
 
       <footer class="page-footer">
         <div>
           <strong>Fivey Can Read OpenClaw</strong>
-          <p>同步时间：2026年5月20日 18:59</p>
+          <p>同步时间：2026年5月20日 20:58</p>
         </div>
       </footer>
     </main>

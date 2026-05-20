@@ -1,0 +1,158 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>🧰 FAQ: first-run setup 是“第一次启动卡住时先看这个急救盒”</h2>
+      <p>这页不是从头讲理论，而是把第一次安装、打开 dashboard、认证、Gateway 卡住、Pi 安装、迁移旧机器这些常见问题先摆在桌上。</p>
+      <p>小朋友版口诀：先看状态，再看模型，再让 doctor 检查；如果还是不行，把日志和命令输出交给能看你机器的本地 AI 助手。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合第一次安装和第一次打不开的人</span>
+      <span>重点是 status、models status、doctor、dashboard auth</span>
+      <a href="https://docs.openclaw.ai/help/faq-first-run" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>🩺 卡住的前一分钟，先做三次小体检</h2>
+    <p>官方反复让你分享这些输出，因为很多问题其实是本机环境、权限、服务或认证没接好。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw status</code></div>
+      <p>像看仪表盘：Gateway 和 agent 有没有活着，基本配置是不是看起来正常。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw models status</code></div>
+      <p>像检查电话卡：模型 provider 有没有登录、模型能不能用。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw doctor</code></div>
+      <p>像请医生来修常见小毛病，配置、状态、迁移细节都能帮你查一遍。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw logs --follow</code></div>
+      <p>像盯着机器说话的纸带。求助时带上日志，别人才能知道它在哪一步摔倒。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>🧑‍🏫 最快求助方式，是让能看本机的 AI 助手当陪跑老师</h2>
+    <p>远处的人常常看不到你的 PATH、服务、权限和 auth 文件；本地助手能读代码、跑命令、看日志。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">适合的助手</div>
+      <p>Claude Code 或 OpenAI Codex 这类能操作本地 repo 的工具，更适合排查“我这台机器为什么不行”。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>--install-method git</code></div>
+      <p>用 git checkout 安装时，助手能看到完整源码和文档，判断会更准。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">怎么请它帮忙</div>
+      <p>让它先计划并监督修复，再只执行必要命令。这样改动小，也更容易回头检查。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">真的发现 bug</div>
+      <p>如果最后确认是 OpenClaw 自己的问题，就去 GitHub issue 或 PR 留下线索，帮助后面的人少踩坑。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>🚪 Dashboard 打不开时，先分清“本机门”和“远程门”</h2>
+    <p>同一台机器访问和远程访问，认证方式不一样。混起来最容易迷路。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">🏠</span>
+      <h2>本机 localhost</h2>
+      <p>打开 <code>http://127.0.0.1:18789/</code>。如果要求 shared secret，就粘贴 token 或 password。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🔑</span>
+      <h2>没有 token</h2>
+      <p>用 <code>openclaw doctor --generate-gateway-token</code> 生成，或检查 <code>gateway.auth.token</code> / 环境变量。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">🛣️</span>
+      <h2>远程访问</h2>
+      <p>优先 Tailscale Serve、SSH tunnel 或可信反向代理。远程时共享密钥和身份头要按模式配对。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">📍</span>
+      <h2>看准 Gateway</h2>
+      <p>UI 必须指向真正运行 Gateway 的机器。远程模式里，session 和 workspace 在 Gateway 主机上。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>🥚 “wake up my friend” 没回音，多半是 agent 没真正跑起来</h2>
+    <p>这不是一句神秘咒语，它只是第一次 hatch 时发出的测试消息。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw gateway restart</code></div>
+      <p>先让 Gateway 重新站好。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw status</code> / <code>openclaw models status</code></div>
+      <p>再看服务和模型认证是不是都在线。tokens 一直是 0，通常说明 agent 根本没开始回复。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw logs --follow</code></div>
+      <p>边重试边看日志，能看到卡在认证、模型、网络还是权限。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw doctor</code></div>
+      <p>如果还不行，让 doctor 做一次完整检查。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>📦 换新机器时，别只搬 workspace，也要搬状态目录</h2>
+    <p>这条和迁移页互相呼应：workspace 像书桌，state dir 像抽屉和钥匙盒。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">要搬两样</div>
+      <p><code>$OPENCLAW_STATE_DIR</code> 默认是 <code>~/.openclaw</code>；workspace 默认在 <code>~/.openclaw/workspace</code>。两边都要看。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">GitHub 备份不够</div>
+      <p>只提交 workspace 只保住记忆和引导文件，不会保住 session history 或 auth。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>openclaw doctor</code></div>
+      <p>搬到新机器后跑一次 doctor，再重启 Gateway。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">小机器也能跑</div>
+      <p>Raspberry Pi 4 可以跑 Gateway；Node 要 >= 22，64-bit OS 更稳，先少开插件和通道。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>🎈 第一次启动卡住时，不要乱改一大片，先拿诊断结果说话</h2>
+    <p>最可靠的小路线是：status、models status、doctor、logs。看清楚哪里红了，再动手修哪里。</p>
+  </div>
+</section>
+
