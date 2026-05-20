@@ -39,7 +39,8 @@ await fs.rm(DIST_DIR, { recursive: true, force: true });
 await ensureDir(DIST_DIR);
 await ensureDir(path.join(DIST_DIR, "assets"));
 
-const adsenseClientId = "ca-pub-3833673520933536";
+const adsensePublisherId = "pub-3833673520933536";
+const adsenseClientId = `ca-${adsensePublisherId}`;
 
 const defaultIconSource = path.resolve("assets/icons/concept-balloon-book.svg");
 const iconOutput = path.join(DIST_DIR, "favicon.svg");
@@ -360,8 +361,8 @@ async function renderAiPageContent(page) {
       ${sectionsHtml}
       <section class="section-shell">
         <div class="ad-placeholder">
-          <p>这里预留给未来的 Google AdSense 模块。</p>
-          <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
+          <p>AdSense 连接验证已经放在页面头部；广告单元等站点审批通过后再启用。</p>
+          <code>google-adsense-account: ${adsenseClientId}</code>
         </div>
       </section>
     `;
@@ -482,6 +483,7 @@ function renderPageLayout({ title, description, pathname, heroEyebrow, heroTitle
   <title>${escapeHtml(pageTitle)}</title>
   <meta name="description" content="${escapeHtml(description)}">
   <meta name="robots" content="index,follow">
+  <meta name="google-adsense-account" content="${adsenseClientId}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="${escapeHtml(SITE_NAME)}">
   <meta property="og:title" content="${escapeHtml(pageTitle)}">
@@ -667,19 +669,19 @@ function renderHomePage() {
         </div>
         <div class="story-card">
           <div class="story-card-label">第四步</div>
-          <p>默认图标我已经定成 <code>${escapeHtml(selectedTheme.chineseName)}</code> 主题；后面如果要接 Google AdSense，我再把广告占位改成正式接入口。</p>
+          <p>默认图标我已经定成 <code>${escapeHtml(selectedTheme.chineseName)}</code> 主题；AdSense 连接验证、加载脚本和 <code>ads.txt</code> 已经随构建一起输出。</p>
         </div>
       </div>
     </section>
 
     <section class="section-shell">
       <div class="section-heading">
-        <p class="section-kicker">未来广告位预留</p>
-        <h2>这个位置以后可以接入 Google AdSense</h2>
+        <p class="section-kicker">广告审核准备</p>
+        <h2>AdSense 连接信号已经放好</h2>
       </div>
       <div class="ad-placeholder">
-        <p>当前先保留干净占位，不插入广告脚本。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
+        <p>页面头部包含 AdSense 账户验证 meta 和加载脚本；广告单元等站点审批通过后再开启。</p>
+        <code>google-adsense-account: ${adsenseClientId}</code>
       </div>
     </section>
   `;
@@ -815,8 +817,8 @@ async function renderDocPage(page) {
     ${sectionsHtml}
     <section class="section-shell">
       <div class="ad-placeholder">
-        <p>这里预留给未来的 Google AdSense 模块。</p>
-        <code>&lt;!-- ADSENSE_SNIPPET --&gt;</code>
+        <p>AdSense 连接验证已经放在页面头部；广告单元等站点审批通过后再启用。</p>
+        <code>google-adsense-account: ${adsenseClientId}</code>
       </div>
     </section>
   `;
@@ -1731,7 +1733,7 @@ Allow: /
 Sitemap: ${SITE_URL}/sitemap.xml
 `;
 
-const ads = `google.com, pub-3833673520933536, DIRECT, f08c47fec0942fa0
+const ads = `google.com, ${adsensePublisherId}, DIRECT, f08c47fec0942fa0
 `;
 
 const manifest = JSON.stringify(

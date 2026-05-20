@@ -1,5 +1,7 @@
 const siteUrl = process.env.SITE_URL || "https://fivey-can-read-openclaw.pages.dev";
 const siteOrigin = new URL(siteUrl).origin;
+const adsenseClientId = "ca-pub-3833673520933536";
+const adsTxtRecord = "google.com, pub-3833673520933536, DIRECT, f08c47fec0942fa0";
 
 function absoluteUrl(pathname = "/") {
   return new URL(pathname, siteOrigin).toString();
@@ -11,6 +13,8 @@ const checks = [
     expect: [
       "Fivey Can Read OpenClaw",
       `<link rel="canonical" href="${siteOrigin}">`,
+      `<meta name="google-adsense-account" content="${adsenseClientId}">`,
+      `pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`,
       `<meta property="og:image" content="${absoluteUrl("/og-image.svg")}">`,
       "我们把 OpenClaw 官方文档变成了适合 5 岁小朋友"
     ]
@@ -26,7 +30,7 @@ const checks = [
   {
     path: "/tools/",
     expect: [
-      "Tools and plugins",
+      "Agent 的双手：工具、技能与插件",
       `<link rel="canonical" href="${absoluteUrl("/tools/")}">`,
       "Agent 除了生成文本之外的一切行为"
     ]
@@ -36,7 +40,7 @@ const checks = [
     expect: ["<urlset", `<loc>${absoluteUrl("/tools/")}</loc>`]
   },
   { path: "/robots.txt", expect: ["Sitemap:", "/sitemap.xml"] },
-  { path: "/ads.txt", expect: ["google.com", "DIRECT"] },
+  { path: "/ads.txt", expect: [adsTxtRecord] },
   { path: "/og-image.svg", expect: ["<svg", "OpenClaw 绘本版文档站"] }
 ];
 

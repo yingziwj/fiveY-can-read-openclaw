@@ -25,7 +25,7 @@
 - 核心入口页
 - 所有导航页的逐节故事化解读
 - SEO 所需的 meta/meta-graph 标签
-- `ads.txt`/占位脚本以便未来插入 Google AdSense
+- Google AdSense 连接验证 meta、加载脚本和 `ads.txt`
 - `sitemap.xml`、`robots.txt`、`site.webmanifest`
 
 站点代码会额外保留 3 个图标样例在 `assets/icons/`，默认构建使用 `concept-balloon-book.svg` 作为 favicon。
@@ -50,7 +50,7 @@
 ## SEO 与 Google AdSense 预留
 
 - 所有页面都会输出 `title`、`meta description`、`canonical`、`og:*`、`twitter:*` 和 JSON-LD。
-- 站点根目录已经准备 `ads.txt` 和广告占位注释，后续接入 Google AdSense 时直接替换占位即可。
+- 所有页面的 `<head>` 都会输出 `meta name="google-adsense-account"` 和 AdSense 加载脚本；站点根目录会输出包含 `pub-3833673520933536` 的 `ads.txt`。
 - 已生成 `sitemap.xml`、`robots.txt`、`site.webmanifest`，便于搜索引擎收录和后续站点资产配置。
 
 ## 目录结构预期
