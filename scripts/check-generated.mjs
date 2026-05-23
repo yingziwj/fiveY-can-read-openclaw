@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { DATA_PATH, DIST_DIR, SITE_URL } from "./site-lib.mjs";
-import { HANDCRAFTED_DIR, handcraftedPages } from "./handcrafted-pages.mjs";
+import { HANDCRAFTED_DIR, handcraftedPages, handcraftedPathnames } from "./handcrafted-pages.mjs";
 
 function fail(message) {
   throw new Error(message);
@@ -94,6 +94,12 @@ async function assertHandcraftedWiring() {
 
   const siteData = JSON.parse(await fs.readFile(DATA_PATH, "utf8"));
   const sourcePathnames = new Set((siteData.pages || []).map((page) => page.pathname));
+  const unknownHandcraftedRoutes = Array.from(handcraftedPathnames)
+    .filter((pathname) => !sourcePathnames.has(pathname))
+    .sort();
+  if (unknownHandcraftedRoutes.length) {
+    console.log(`Handcrafted manifest has ${unknownHandcraftedRoutes.length} route(s) not present in generated site data; they are ignored by rendered output checks.`);
+  }
   const renderedErrors = [];
   for (const entry of mapEntries) {
     if (!sourcePathnames.has(entry.pathname)) {

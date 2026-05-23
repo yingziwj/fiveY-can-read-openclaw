@@ -17,6 +17,12 @@
 
 如果你已经运行过 `npm run sync`，并且只想复用本地同步数据重新生成 `dist/`，运行 `npm run build:offline`。
 
+## Handcrafted 覆盖报告
+
+运行 `npm run report:handcrafted-gaps` 可以只读检查 `generated/site-data.json`，列出仍在使用自动生成内容、还没有接入 `content/handcrafted/` 的页面。报告会复用 `scripts/handcrafted-pages.mjs` 里的 manifest 判定 handcrafted 状态，并按插件、Codex、多代理、迁移、测试等关键词给出一批优先补写候选页。
+
+默认候选数是 20 个；需要更多时可运行 `npm run report:handcrafted-gaps -- --limit 40`。这个命令不会写入 `dist/`，适合在批量补 handcrafted 页面前排优先级。
+
 ## 同步与构建说明
 
 `npm run sync`：从 `https://docs.openclaw.ai/llms-full.txt` 抓取整站转储，解析导航顺序与各章节，连同命令/代码段一起转成可供 build 使用的结构化 JSON。

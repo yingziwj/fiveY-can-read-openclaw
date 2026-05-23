@@ -9,6 +9,12 @@
 3. 检查 `dist/` 中对应页面，确保顺序、标题、命令/代码段的“讲故事”输出未丢失。
 4. 如果需要同步和构建一步完成，运行 `npm run build`。Cloudflare Pages 也使用这个命令，保证干净 checkout 下不会缺少 `generated/site-data.json`。
 
+## Handcrafted 补页排队
+
+运行 `npm run report:handcrafted-gaps` 可以查看 `generated/site-data.json` 中还没有接入 handcrafted 内容的页面。报告会按分区列出全量缺口，并优先挑出插件、Codex、多代理、迁移、测试相关的候选页；如果要扩大候选范围，使用 `npm run report:handcrafted-gaps -- --limit 40`。
+
+这个命令只读取同步产物和 `scripts/handcrafted-pages.mjs`，不会改写 `dist/`，适合在批量新增 `content/handcrafted/*.zh.html` 前决定先写哪一组。
+
 ## 异常排查
 
 - 如果其中文档顺序变动但 `dist/` 未更新，先确认 `npm run sync` 是否抓到最新导航。可检查 `generated/site-data.json`。

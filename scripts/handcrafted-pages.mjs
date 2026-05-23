@@ -466,3 +466,11 @@ export const handcraftedPageMap = new Map(
     path.join(HANDCRAFTED_DIR, fileName)
   ])
 );
+
+export const handcraftedPathnames = new Set(
+  handcraftedPages.map(([pathname]) => pathname)
+);
+
+export function isHandcraftedPathname(pathname) {
+  return handcraftedPathnames.has(pathname);
+}
