@@ -324,12 +324,6 @@
     "description": "OpenClaw organizes conversations into **sessions**. Each message is routed to a session based on where it came from -- DMs, group chats, cron jobs, etc."
   },
   {
-    "title": "Session pruning",
-    "pathname": "/concepts/session-pruning",
-    "section": "Concepts",
-    "description": "Session pruning trims **old tool results** from the context before each LLM call. It reduces context bloat from accumulated tool outputs (exec results, file reads, search results)…"
-  },
-  {
     "title": "SOUL.md personality guide",
     "pathname": "/concepts/soul",
     "section": "Concepts",
@@ -526,6 +520,12 @@
     "pathname": "/install/updating",
     "section": "Install",
     "description": "Keep OpenClaw up to date."
+  },
+  {
+    "title": "Upstash Box",
+    "pathname": "/install/upstash",
+    "section": "Install",
+    "description": "Run a persistent OpenClaw Gateway on Upstash Box, a managed Linux environment with keep-alive lifecycle support."
   },
   {
     "title": "Pi development workflow",
@@ -748,6 +748,12 @@
     "pathname": "/concepts/retry",
     "section": "Concepts",
     "description": "Retry per HTTP request, not per multi-step flow. Preserve ordering by retrying only the current step. Avoid duplicating non-idempotent operations."
+  },
+  {
+    "title": "Session pruning",
+    "pathname": "/concepts/session-pruning",
+    "section": "Concepts",
+    "description": "Session pruning trims **old tool results** from the context before each LLM call. It reduces context bloat from accumulated tool outputs (exec results, file reads, search results)…"
   },
   {
     "title": "Session tools",
@@ -1140,12 +1146,6 @@
     "description": "/steer first tries to send guidance to an already-active run. It is for \"adjust this run while it is still working\" moments. If the current runtime cannot accept steering, OpenCla…"
   },
   {
-    "title": "Sub-agents",
-    "pathname": "/tools/subagents",
-    "section": "Tools",
-    "description": "Sub-agents are background agent runs spawned from an existing agent run. They run in their own session (agent:<agentId>:subagent:<uuid>) and, when finished, **announce** their res…"
-  },
-  {
     "title": "Tavily",
     "pathname": "/tools/tavily",
     "section": "Tools",
@@ -1302,6 +1302,12 @@
     "description": "<Note> The official Android app is available on Google Play. It is a companion node and requires a running OpenClaw Gateway. The source code is also available in the OpenClaw repo…"
   },
   {
+    "title": "EasyRunner",
+    "pathname": "/platforms/easyrunner",
+    "section": "Platforms",
+    "description": "EasyRunner can host the OpenClaw Gateway as a small containerized app behind its Caddy proxy. This guide assumes an EasyRunner host that runs Podman-compatible Compose apps and ex…"
+  },
+  {
     "title": "Platforms",
     "pathname": "/platforms/index",
     "section": "Platforms",
@@ -1366,12 +1372,6 @@
     "pathname": "/platforms/mac/menu-bar",
     "section": "Platforms",
     "description": "We surface the current agent work state in the menu bar icon and in the first status row of the menu. Health status is hidden while work is active; it returns when all sessions ar…"
-  },
-  {
-    "title": "Peekaboo bridge",
-    "pathname": "/platforms/mac/peekaboo",
-    "section": "Platforms",
-    "description": "OpenClaw can host **PeekabooBridge** as a local, permission-aware UI automation broker. This lets the peekaboo CLI drive UI automation while reusing the macOS app's TCC permission…"
   },
   {
     "title": "macOS permissions",
@@ -1546,12 +1546,6 @@
     "pathname": "/providers/github-copilot",
     "section": "Providers",
     "description": "GitHub Copilot is GitHub's AI coding assistant. It provides access to Copilot models for your GitHub account and plan. OpenClaw can use Copilot as a model provider in two differen…"
-  },
-  {
-    "title": "GLM (Zhipu)",
-    "pathname": "/providers/glm",
-    "section": "Providers",
-    "description": "GLM is a model family (not a company) available through the Z.AI platform. In OpenClaw, GLM models are accessed through the bundled zai provider with refs like zai/glm-5.1."
   },
   {
     "title": "Google (Gemini)",
@@ -1800,6 +1794,12 @@
     "description": "Each agent in a multi-agent setup can override the global sandbox and tool policy. This page covers per-agent configuration, precedence rules, and examples."
   },
   {
+    "title": "Sub-agents",
+    "pathname": "/tools/subagents",
+    "section": "Tools",
+    "description": "Sub-agents are background agent runs spawned from an existing agent run. They run in their own session (agent:<agentId>:subagent:<uuid>) and, when finished, **announce** their res…"
+  },
+  {
     "title": "Auth credential semantics",
     "pathname": "/auth-credential-semantics",
     "section": "Auth Credential Semantics",
@@ -1816,12 +1816,6 @@
     "pathname": "/cli/agents",
     "section": "Cli",
     "description": "openclaw agents"
-  },
-  {
-    "title": "Approvals",
-    "pathname": "/cli/approvals",
-    "section": "Cli",
-    "description": "openclaw approvals"
   },
   {
     "title": "Backup",
@@ -2008,12 +2002,6 @@
     "pathname": "/cli/update",
     "section": "Cli",
     "description": "openclaw update"
-  },
-  {
-    "title": "Voicecall",
-    "pathname": "/cli/voicecall",
-    "section": "Cli",
-    "description": "openclaw voicecall"
   },
   {
     "title": "Authentication",
@@ -2238,6 +2226,12 @@
     "description": "openclaw security audit emits structured findings keyed by checkId. This page is the reference catalog for those IDs. For the high-level threat model and hardening guidance, see S…"
   },
   {
+    "title": "Gateway exposure runbook",
+    "pathname": "/gateway/security/exposure-runbook",
+    "section": "Gateway",
+    "description": "<Warning> Expose the Gateway only after you can explain who can reach it, how they are authenticated, which agents they can trigger, and which tools those agents can use. When in…"
+  },
+  {
     "title": "Security",
     "pathname": "/gateway/security/index",
     "section": "Gateway",
@@ -2340,6 +2334,12 @@
     "description": "OpenClaw treats **wake words as a single global list** owned by the **Gateway**."
   },
   {
+    "title": "Peekaboo bridge",
+    "pathname": "/platforms/mac/peekaboo",
+    "section": "Platforms",
+    "description": "OpenClaw can host **PeekabooBridge** as a local, permission-aware UI automation broker. This lets the peekaboo CLI drive UI automation while reusing the macOS app's TCC permission…"
+  },
+  {
     "title": "Contributing to the threat model",
     "pathname": "/security/CONTRIBUTING-THREAT-MODEL",
     "section": "Security",
@@ -2410,6 +2410,12 @@
     "pathname": "/cli/acp",
     "section": "Cli",
     "description": "Run the Agent Client Protocol (ACP) bridge that talks to an OpenClaw Gateway."
+  },
+  {
+    "title": "Approvals",
+    "pathname": "/cli/approvals",
+    "section": "Cli",
+    "description": "openclaw approvals"
   },
   {
     "title": "Browser",
@@ -2530,6 +2536,12 @@
     "pathname": "/cli/tui",
     "section": "Cli",
     "description": "openclaw tui"
+  },
+  {
+    "title": "Voicecall",
+    "pathname": "/cli/voicecall",
+    "section": "Cli",
+    "description": "openclaw voicecall"
   },
   {
     "title": "Webhooks",
@@ -2976,12 +2988,6 @@
     "description": "This is the full reference for openclaw onboard. For a high-level overview, see Onboarding (CLI)."
   },
   {
-    "title": "Docs directory",
-    "pathname": "/start/docs-directory",
-    "section": "Start",
-    "description": "<Note> This page is a curated index. If you are new, start with Getting Started. For a complete map of the docs, see Docs hubs. </Note>"
-  },
-  {
     "title": "Docs hubs",
     "pathname": "/start/hubs",
     "section": "Start",
@@ -2992,5 +2998,11 @@
     "pathname": "/start/lore",
     "section": "Start",
     "description": "The Lore of OpenClaw 🦞📖"
+  },
+  {
+    "title": "Docs directory",
+    "pathname": "/start/docs-directory",
+    "section": "Start",
+    "description": "<Note> This page is a curated index. If you are new, start with Getting Started. For a complete map of the docs, see Docs hubs. </Note>"
   }
 ]

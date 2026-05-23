@@ -1,2 +1,120 @@
-<section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>Plugin SDK subpaths，是插件作者拿工具时用的“分抽屉目录”</h2><p><code>openclaw/plugin-sdk/</code> 下面有很多窄入口。官方建议按需要拿具体子路径，而不是把一整箱 SDK 都拖进来。</p><p>这页也帮助维护者区分公共导出、兼容导出和只给仓库内部测试用的私有入口。</p></div><div class="overview-meta"><span>SDK 子路径目录</span><span>新代码不要使用 deprecated compatibility facades</span><a href="https://docs.openclaw.ai/plugins/sdk-subpaths" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-<section class="section-shell"><div class="story-grid"><div class="story-card"><div class="story-card-label">公共子路径</div><p>插件作者可以依赖，像稳定开放的抽屉。</p></div><div class="story-card"><div class="story-card-label">兼容子路径</div><p>给旧插件过渡用，新代码不该继续新增依赖。</p></div><div class="story-card"><div class="story-card-label">私有本地子路径</div><p>只给 OpenClaw 仓库内部测试和实现使用，不能当公开 API。</p></div><div class="source-card"><div class="story-card-label">维护检查</div><p><code>pnpm plugin-sdk:surface</code> 和 boundary report 用来防止公共面悄悄变乱。</p></div></div></section>
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>Plugin SDK subpaths，是插件作者拿工具时用的“分抽屉目录”</h2>
+      <p><code>openclaw/plugin-sdk/</code> 下面不是一整个大杂货柜，而是很多窄窄的小抽屉。需要入口 API，就开入口抽屉；需要测试工具，就开测试抽屉；不要为了拿一支笔，把整张桌子搬走。</p>
+      <p>这页最重要的意思是：新插件应该优先使用稳定、聚焦、公开的子路径；旧兼容入口能继续跑，但不要把新代码继续绑在旧入口上。</p>
+    </div>
+    <div class="overview-meta">
+      <span>SDK public surface 地图</span>
+      <span>新代码优先用 focused subpaths</span>
+      <a href="https://docs.openclaw.ai/plugins/sdk-subpaths" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>为什么要分抽屉，而不是一个大入口</h2>
+    <p>SDK 子路径像工具箱里的标签。每个标签只公开一小组相关工具，这样插件作者知道自己依赖了什么，维护者也能看清哪些 API 真的有人使用。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-card-label">好处一</div><p>依赖更清楚：看到 import 路径，就知道这段代码在用入口、运行时、测试还是频道工具。</p></div>
+    <div class="story-card"><div class="story-card-label">好处二</div><p>升级更安全：维护者可以逐个抽屉检查，不用担心一个大 barrel 里什么都被外部拿走。</p></div>
+    <div class="story-card"><div class="story-card-label">好处三</div><p>边界更干净：公开 API、兼容 API、仓库内部测试 API 不会混在一起。</p></div>
+    <div class="source-card"><div class="story-card-label">记忆法</div><p>像图书馆按书架找书：你要食谱，就去食谱架；不要把全馆书打包装回家。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>常用公开抽屉先认这几类</h2>
+    <p>官方表格列了很多 key exports。低龄友好地看，可以先按“写插件会遇到的阶段”来记。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>Plugin entry</h2>
+      <p><code>plugin-sdk/plugin-entry</code> 像报名处，常见核心是 <code>definePluginEntry</code>。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>Runtime helpers</h2>
+      <p>运行时助手像工具台，帮插件在真正工作时拿到上下文、注册能力或处理结果。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>Channel pieces</h2>
+      <p>频道相关子路径像电话线、信箱和消息纸，适合写聊天通道插件。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">4</span>
+      <h2>Testing helpers</h2>
+      <p>测试子路径像练习场，帮你确认插件合同没有写歪。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>deprecated 不等于立刻坏掉，而是“别再给新房子用旧水管”</h2>
+    <p>官方保留了一些兼容入口，是为了旧插件还能跑、测试套件还能过。但新代码继续依赖它们，会让未来迁移越来越难。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">兼容和测试 helper</div>
+      <p>这些路径还在 package exports 里，主要照顾旧插件和 OpenClaw 自己的测试，不适合作为新插件的首选。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">少人使用的 public subpath</div>
+      <p>有些入口公开过一段时间，但生产插件很少用。它们保留可导入，只是新代码应该找更聚焦的替代。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">broad barrels</div>
+      <p>大桶式 re-export 能省 import，但边界太宽。新代码用窄入口，像只拿今天需要的积木。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">维护者怎么查</div>
+      <p><code>scripts/lib/plugin-sdk-entrypoints.json</code> 是生成出来的入口清单；package exports 是真正对外公开的子集。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>reserved helper subpaths 像“员工专用抽屉”</h2>
+    <p>有些子路径是 bundled plugin 自己的兼容表面，不是给所有插件作者用的普通 SDK。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>plugin-sdk/codex-mcp-projection</code></div><p>属于 Codex 相关 bundled plugin 的保留辅助面，不是通用插件 API。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>plugin-sdk/codex-native-task-runtime</code></div><p>同样是插件所有者自己的保留入口，跨 owner 乱用会被边界检查挡住。</p></div>
+    <div class="story-card"><div class="story-card-label">为什么要挡</div><p>如果一个插件偷偷拿另一个插件的内部工具，那个工具一改名，外部插件就会像踩空台阶。</p></div>
+    <div class="story-card"><div class="story-card-label">正确做法</div><p>需要通用能力时，推动它进入真正公开、稳定、文档化的 SDK 子路径。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>写 import 前先问四个小问题</h2>
+  </div>
+  <div class="home-grid">
+    <article class="home-card"><span class="home-card-index">?</span><h2>它公开吗</h2><p>确认路径在 package exports 里，而不是只在源码里碰巧存在。</p></article>
+    <article class="home-card"><span class="home-card-index">?</span><h2>它活跃吗</h2><p>优先选官方仍推荐的新入口，避开 deprecated rare 或 broad barrel。</p></article>
+    <article class="home-card"><span class="home-card-index">?</span><h2>它够窄吗</h2><p>能从小抽屉拿，就不要从大桶入口拿。</p></article>
+    <article class="home-card"><span class="home-card-index">?</span><h2>它归谁</h2><p>不要跨插件 owner 使用 reserved helper，除非文档明确说可以。</p></article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>SDK 子路径的核心不是“路径很多”，而是“边界清楚”</h2>
+    <p>第一次写插件时，先看 <a href="/plugins/sdk-overview/">SDK overview</a> 和 <a href="/plugins/sdk-setup/">SDK setup</a>；真正落到 import 时，再回到这页挑最小、最稳、最公开的抽屉。</p>
+  </div>
+</section>

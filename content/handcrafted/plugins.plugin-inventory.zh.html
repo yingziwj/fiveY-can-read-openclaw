@@ -1,2 +1,80 @@
-<section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>Plugin inventory，是插件清单和分发方式的目录页</h2><p>这页由 <code>extensions/*/package.json</code>、<code>openclaw.plugin.json</code> 和 npm package files 排除规则生成。它告诉维护者和用户：哪些插件在 core 包里，哪些是官方外部包，哪些只存在于源码 checkout。</p></div><div class="overview-meta"><span>生成型参考页</span><span>重点看 Distribution column</span><a href="https://docs.openclaw.ai/plugins/plugin-inventory" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-<section class="section-shell"><div class="story-grid"><div class="story-card"><div class="story-card-label">Core npm package</div><p>已经包含在 <code>openclaw</code> npm 包里，不需要额外安装。</p></div><div class="story-card"><div class="story-card-label">Official external package</div><p>由 OpenClaw 维护，但按需从 ClawHub 或 npm 安装。</p></div><div class="story-card"><div class="story-card-label">Source checkout only</div><p>只在源码仓库里，不能当成公开可安装包来宣传。</p></div><div class="source-card"><div class="story-card-label">使用方式</div><p>先看分发类型，再决定要不要 install 和 restart Gateway。</p></div></div></section>
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>Plugin inventory，是插件货架清单：哪些已经在盒子里，哪些要另装</h2>
+      <p>这页由 <code>extensions/*/package.json</code>、<code>openclaw.plugin.json</code> 和 npm package files 排除规则生成。它最关心的不是“插件怎么写”，而是“这个插件会怎么分发”。</p>
+      <p>看懂 Distribution 一栏，就像看懂玩具店货架标签：有的已经装在 OpenClaw 大盒子里，有的要从 ClawHub 或 npm 另拿，有的只适合源码 checkout 里开发时用。</p>
+    </div>
+    <div class="overview-meta">
+      <span>生成型清单页</span>
+      <span>重点看 Distribution column</span>
+      <a href="https://docs.openclaw.ai/plugins/plugin-inventory" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>三种分发标签先记住</h2>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>Core npm package</h2>
+      <p>已经包含在 <code>openclaw</code> npm 包里，像买大盒子时自带的小零件。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>Official external package</h2>
+      <p>OpenClaw 官方维护，但按需安装，像店里另一个小盒子。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>Source checkout only</h2>
+      <p>只在源码仓库里，适合开发和 QA，不要当成公开可安装插件宣传。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>安装前先看标签，别重复装</h2>
+    <p>如果清单说某个插件 included in OpenClaw，普通用户通常不用再安装。外部官方包才需要先 install，然后重启 Gateway。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">官方示例</div>
+      <pre><code class="language-bash">openclaw plugins install @openclaw/discord
+openclaw gateway restart
+openclaw plugins inspect discord --runtime --json</code></pre>
+    </div>
+    <div class="story-card"><div class="story-card-label">为什么要重启</div><p>安装像把新工具放进柜子，Gateway 重启后才会重新整理柜子并认出新工具。</p></div>
+    <div class="story-card"><div class="story-card-label">为什么要 inspect</div><p>检查运行时看到的插件，确认不是只“下载了”，而是真的被 OpenClaw 认出来了。</p></div>
+    <div class="source-card"><div class="story-card-label">源码 checkout 特别点</div><p>开发仓库里，bundled plugins 会从 <code>extensions/&lt;id&gt;</code> 加载，所以本地改动和 workspace 依赖都能被看见。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>inventory 和 reference 的分工</h2>
+    <p>这两页都像清单，但看问题的角度不一样。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-card-label">Inventory 问</div><p>这个插件在哪发、要不要装、是 core 里自带还是外部包？</p></div>
+    <div class="story-card"><div class="story-card-label">Reference 问</div><p>这个插件的 package 和 manifest 元信息长什么样？</p></div>
+    <div class="source-card"><div class="story-card-label">Manifest 问</div><p>OpenClaw 运行代码前，需要从这张身份证上读到哪些静态事实？</p></div>
+    <div class="source-card"><div class="story-card-label">一句话</div><p>inventory 管“货在哪”，reference 管“卡上写什么”，manifest 管“系统先信哪张卡”。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>这页不是手工维护表格，而是源元数据的镜子</h2>
+    <p>如果清单不对，优先检查插件的 <code>package.json</code>、<code>openclaw.plugin.json</code>、npm files 排除规则，然后重新生成 inventory。不要只改生成结果，那样下次同步会又变回去。</p>
+  </div>
+</section>

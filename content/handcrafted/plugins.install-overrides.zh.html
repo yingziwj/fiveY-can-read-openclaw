@@ -1,2 +1,70 @@
-<section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>Plugin install overrides，是维护者测试安装流程时用的临时换轨</h2><p>它允许维护者把 setup-time plugin install 指向指定 npm 包或本地 <code>npm pack</code> tarball。普通用户仍应使用 <code>openclaw plugins install</code>。</p></div><div class="overview-meta"><span>仅用于 E2E 和包验证</span><span>覆盖来源会执行插件代码</span><a href="https://docs.openclaw.ai/plugins/install-overrides" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-<section class="section-shell"><div class="story-grid"><div class="story-card"><div class="story-card-label">什么时候用</div><p>发版前想验证某个 npm 版本或本地 tarball 的安装行为。</p></div><div class="story-card"><div class="story-card-label">什么时候不用</div><p>普通安装、日常使用、生产机器上不该靠 override。</p></div><div class="source-card"><div class="story-card-label">安全边界</div><p>只在隔离 state directory 或一次性测试机器里使用。</p></div><div class="source-card"><div class="story-card-label">格式</div><p>override map 以 plugin id 为 key，值可以是 <code>npm:</code> spec 或 <code>npm-pack:</code> tarball。</p></div></div></section>
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>Plugin install overrides，是维护者测试安装流程时用的“临时换轨”</h2>
+      <p>平时安装插件，应该走 <code>openclaw plugins install</code> 和官方目录。install overrides 只给维护者做 E2E、发包验证或本地 tarball 测试时使用。</p>
+      <p>它很有用，也很危险：你给它什么 npm 包或 tarball，它就可能执行那里的插件代码。所以请只在隔离 state directory 或一次性测试机器里用。</p>
+    </div>
+    <div class="overview-meta">
+      <span>仅用于 E2E 和包验证</span>
+      <span>override source 会执行插件代码</span>
+      <a href="https://docs.openclaw.ai/plugins/install-overrides" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>什么时候该用，什么时候不该用</h2>
+  </div>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-card-label">适合用</div><p>发版前想验证某个 npm 版本、本地 <code>npm pack</code> tarball、或 setup-time install 流程能不能正确识别插件。</p></div>
+    <div class="story-card"><div class="story-card-label">不适合用</div><p>普通用户日常安装、生产环境长期配置、或任何来源不清楚的包。</p></div>
+    <div class="source-card"><div class="story-card-label">安全提醒</div><p>override 不是“官方可信来源”的延伸。即使原目录里是官方插件，你指定的新来源也只是操作者提供的测试输入。</p></div>
+    <div class="source-card"><div class="story-card-label">记忆法</div><p>像火车临时换轨测试新轨道，测试完要撤掉，不要让所有乘客都走临时轨。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>开关必须两把钥匙同时打开</h2>
+    <p>环境变量缺一不可：一个允许 override 机制启动，另一个给出 plugin id 到来源的映射。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">环境变量</div>
+      <pre><code class="language-bash">export OPENCLAW_ALLOW_PLUGIN_INSTALL_OVERRIDES=1
+export OPENCLAW_PLUGIN_INSTALL_OVERRIDES='{
+  "codex": "npm-pack:/tmp/openclaw-codex-2026.5.8.tgz",
+  "openclaw-web-search": "npm:@openclaw/web-search@2026.5.8"
+}'</code></pre>
+    </div>
+    <div class="story-card"><div class="story-card-label"><code>npm:</code></div><p>指向一个 npm package spec，适合验证某个发布版本或 tag。</p></div>
+    <div class="story-card"><div class="story-card-label"><code>npm-pack:</code></div><p>指向本地 <code>npm pack</code> 产物，适合发版前试装 tarball。</p></div>
+    <div class="source-card"><div class="story-card-label">id 仍要对</div><p>映射到 <code>codex</code> 的 tarball，安装出来的 manifest id 也必须是 <code>codex</code>，不能偷梁换柱。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>一次安全的本地包 E2E 像这样走</h2>
+  </div>
+  <div class="home-grid">
+    <article class="home-card"><span class="home-card-index">1</span><h2>打包</h2><p>先对目标 extension 运行 <code>npm pack</code>，得到本地 tarball。</p></article>
+    <article class="home-card"><span class="home-card-index">2</span><h2>隔离</h2><p>用临时 <code>OPENCLAW_STATE_DIR</code>，不要污染正常 OpenClaw 状态。</p></article>
+    <article class="home-card"><span class="home-card-index">3</span><h2>覆盖</h2><p>只把要测的 plugin id 映射到测试来源。</p></article>
+    <article class="home-card"><span class="home-card-index">4</span><h2>核对</h2><p>安装后检查 state directory 和 runtime inspect，确认装的是预期插件。</p></article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>install override 是测试工具，不是用户功能</h2>
+    <p>它帮助维护者验证“如果 setup 流程要装这个插件，会不会正确安装和识别”。测试结束后撤掉环境变量，回到正常 catalog、bundled 或 npm 来源。</p>
+  </div>
+</section>

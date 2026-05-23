@@ -1,2 +1,75 @@
-<section class="section-shell"><div class="overview-card"><div><p class="section-kicker">先讲人话版</p><h2>Plugin reference，是从插件元数据生成的简短参考表</h2><p>这页很窄，主要来自 <code>extensions/*/package.json</code> 和 <code>openclaw.plugin.json</code>。它不是教程，更像自动生成的索引卡，方便维护者快速核对插件元信息。</p></div><div class="overview-meta"><span>生成型参考页</span><span>保持最小正确说明</span><a href="https://docs.openclaw.ai/plugins/reference" target="_blank" rel="noreferrer">查看官方原文</a></div></div></section>
-<section class="section-shell"><div class="story-grid"><div class="story-card"><div class="story-card-label">适合谁看</div><p>维护者核对插件 id、包信息、manifest 字段时看。</p></div><div class="story-card"><div class="story-card-label">不适合谁看</div><p>第一次写插件的人应该先看 Building plugins 或 SDK overview。</p></div><div class="source-card"><div class="story-card-label">一句话</div><p>它是目录卡，不是故事书正文。</p></div></div></section>
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>Plugin reference，是从插件元数据自动整理出来的“索引卡盒”</h2>
+      <p>这页不是一步步教程，而是一盒很薄的卡片。卡片来自 <code>extensions/*/package.json</code> 和 <code>openclaw.plugin.json</code>，用来让维护者快速核对插件名字、清单和公开表面有没有对齐。</p>
+      <p>如果你是第一次写插件，先看 Building plugins；如果你在检查“这个插件到底有没有被系统认出来”，这页才最有用。</p>
+    </div>
+    <div class="overview-meta">
+      <span>生成型参考页</span>
+      <span>由插件元数据生成</span>
+      <a href="https://docs.openclaw.ai/plugins/reference" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>它像图书馆卡盒，不像绘本正文</h2>
+    <p>官方原文很短，只告诉你这页由清单生成，并给出重新生成命令。真正的价值在于：它是很多插件卡片的入口，不是讲概念的长教程。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-card-label">适合谁</div><p>维护者、发版前检查者、想确认插件元数据是否进入文档的人。</p></div>
+    <div class="story-card"><div class="story-card-label">不适合谁</div><p>第一次学习插件 API 的读者。那类读者应该先看 <a href="/plugins/building-plugins/">Building plugins</a> 或 <a href="/plugins/sdk-overview/">SDK overview</a>。</p></div>
+    <div class="source-card"><div class="story-card-label">原文命令</div><pre><code class="language-bash">pnpm plugins:inventory:gen</code></pre></div>
+    <div class="source-card"><div class="story-card-label">一句话</div><p>它回答“有哪些插件卡片”，不负责教你“怎么写完整插件”。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>一张插件卡通常在帮你核对三件事</h2>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>包信息</h2>
+      <p><code>package.json</code> 像外包装，告诉你 npm 包名、版本、文件出口和 OpenClaw 元数据块。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>manifest</h2>
+      <p><code>openclaw.plugin.json</code> 像身份证，告诉系统插件 id、配置、能力和 pre-runtime 线索。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>公开表面</h2>
+      <p>插件有没有工具、频道、provider、skill 或 setup 信息，可以从卡片里快速扫到。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>什么时候应该回来看这页</h2>
+    <p>它最适合做“发版前点名”。如果某个插件页面不对，通常不是手改这页，而是先检查源元数据，再重新生成。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-card-label">新增插件后</div><p>看它是否出现在参考卡盒里，名字和 id 是否一致。</p></div>
+    <div class="story-card"><div class="story-card-label">改 manifest 后</div><p>看能力、配置、认证提示有没有被生成器读到。</p></div>
+    <div class="story-card"><div class="story-card-label">改 package files 后</div><p>确认发布包里该带的东西带上了，不该带的源码或测试物没有混进去。</p></div>
+    <div class="source-card"><div class="story-card-label">出错线索</div><p>如果 reference 没变化，先怀疑生成命令没跑、源文件没改对、或 manifest id 和包信息没有对齐。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>Reference 是“看结果”的地方，不是“写规则”的地方</h2>
+    <p>要改插件事实，去改 <code>package.json</code> 和 <code>openclaw.plugin.json</code>；要理解字段意义，去看 <a href="/plugins/manifest/">Plugin manifest</a>；要判断分发方式，去看 <a href="/plugins/plugin-inventory/">Plugin inventory</a>。</p>
+  </div>
+</section>
