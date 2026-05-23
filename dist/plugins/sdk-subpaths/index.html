@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plugin SDK subpaths | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="新本领插件 SDK subpaths 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：The 新本领插件 SDK is exposed as a set of nar…">
+  <meta name="description" content="这页列出插件作者可使用的窄子路径，并帮助维护者区分公共导出、兼容导出和仓库内部私有测试入口。新代码应优先使用明确子路径，避免继续依赖 deprecated compatibility facades 或 local-only helpers。">
   <meta name="robots" content="index,follow">
   <meta name="google-adsense-account" content="ca-pub-3833673520933536">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Plugin SDK subpaths | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="新本领插件 SDK subpaths 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：The 新本领插件 SDK is exposed as a set of nar…">
+  <meta property="og:description" content="这页列出插件作者可使用的窄子路径，并帮助维护者区分公共导出、兼容导出和仓库内部私有测试入口。新代码应优先使用明确子路径，避免继续依赖 deprecated compatibility facades 或 local-only helpers。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/plugins/sdk-subpaths/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta property="og:image:alt" content="Plugin SDK subpaths 的中文故事化导读页面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Plugin SDK subpaths | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="新本领插件 SDK subpaths 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：The 新本领插件 SDK is exposed as a set of nar…">
+  <meta name="twitter:description" content="这页列出插件作者可使用的窄子路径，并帮助维护者区分公共导出、兼容导出和仓库内部私有测试入口。新代码应优先使用明确子路径，避免继续依赖 deprecated compatibility facades 或 local-only helpers。">
   <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/plugins/sdk-subpaths/">
@@ -25,7 +25,7 @@
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3833673520933536" crossorigin="anonymous"></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Plugin SDK subpaths","description":"新本领插件 SDK subpaths 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：The 新本领插件 SDK is exposed as a set of nar…","url":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-subpaths/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Plugin SDK subpaths","description":"这页列出插件作者可使用的窄子路径，并帮助维护者区分公共导出、兼容导出和仓库内部私有测试入口。新代码应优先使用明确子路径，避免继续依赖 deprecated compatibility facades 或 local-only helpers。","url":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-subpaths/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Plugins","item":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-subpaths/"}]}</script>
 </head>
 <body>
@@ -719,11 +719,6 @@
             <details class="sidebar-group">
               <summary>工具大全</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/tools/acp-agents/">
-                  <span>ACP agents 工具</span>
-                  <small>ACP agents</small>
-                </a>
-
                 <a class="sidebar-link " href="/tools/agent-send/">
                   <span>Agent send 工具</span>
                   <small>Agent send</small>
@@ -974,6 +969,11 @@
                   <small>Web fetch</small>
                 </a>
 
+                <a class="sidebar-link " href="/tools/acp-agents/">
+                  <span>ACP agents 工具</span>
+                  <small>ACP agents</small>
+                </a>
+
                 <a class="sidebar-link " href="/tools/acp-agents-setup/">
                   <span>ACP agents — setup</span>
                   <small>ACP agents — setup</small>
@@ -1027,6 +1027,11 @@
                 <a class="sidebar-link " href="/plugins/codex-harness/">
                   <span>Codex harness 插件</span>
                   <small>Codex harness</small>
+                </a>
+
+                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
+                  <span>Native Codex plugins 插件</span>
+                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/community/">
@@ -1117,11 +1122,6 @@
                 <a class="sidebar-link " href="/plugins/codex-harness-runtime/">
                   <span>Codex harness runtime 插件</span>
                   <small>Codex harness runtime</small>
-                </a>
-
-                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
-                  <span>Native Codex plugins 插件</span>
-                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/compatibility/">
@@ -1634,11 +1634,6 @@
             <details class="sidebar-group">
               <summary>网关</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/gateway/">
-                  <span>Gateway runbook</span>
-                  <small>Gateway runbook</small>
-                </a>
-
                 <a class="sidebar-link " href="/gateway/authentication/">
                   <span>身份认证</span>
                   <small>Authentication</small>
@@ -1722,6 +1717,11 @@
                 <a class="sidebar-link " href="/gateway/heartbeat/">
                   <span>Heartbeat</span>
                   <small>Heartbeat</small>
+                </a>
+
+                <a class="sidebar-link " href="/gateway/">
+                  <span>Gateway runbook</span>
+                  <small>Gateway runbook</small>
                 </a>
 
                 <a class="sidebar-link " href="/gateway/local-model-services/">
@@ -1872,11 +1872,6 @@
                 <a class="sidebar-link " href="/cli/backup/">
                   <span>Backup 命令</span>
                   <small>Backup</small>
-                </a>
-
-                <a class="sidebar-link " href="/cli/browser/">
-                  <span>浏览器</span>
-                  <small>Browser</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/channels/">
@@ -2039,6 +2034,11 @@
                   <small>ACP</small>
                 </a>
 
+                <a class="sidebar-link " href="/cli/browser/">
+                  <span>浏览器</span>
+                  <small>Browser</small>
+                </a>
+
                 <a class="sidebar-link " href="/cli/clawbot/">
                   <span>Clawbot 命令</span>
                   <small>Clawbot</small>
@@ -2107,6 +2107,11 @@
                 <a class="sidebar-link " href="/cli/plugins/">
                   <span>插件</span>
                   <small>Plugins</small>
+                </a>
+
+                <a class="sidebar-link " href="/cli/policy/">
+                  <span>Policy 命令</span>
+                  <small>Policy</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/proxy/">
@@ -2699,8 +2704,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Plugins 导读</p>
-        <h1>新本领插件 SDK subpaths：这块新积木往哪儿卡</h1>
-        <p class="hero-copy">新本领插件 SDK subpaths 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：The 新本领插件 SDK is exposed as a set of narrow public subpaths under openclaw/新本领插件-sdk/.…。</p>
+        <h1>Plugin SDK Subpaths 是 openclaw/plugin-sdk 的分抽屉目录</h1>
+        <p class="hero-copy">这页列出插件作者可使用的窄子路径，并帮助维护者区分公共导出、兼容导出和仓库内部私有测试入口。新代码应优先使用明确子路径，避免继续依赖 deprecated compatibility facades 或 local-only helpers。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -3391,11 +3396,6 @@
             <details class="sidebar-group">
               <summary>工具大全</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/tools/acp-agents/">
-                  <span>ACP agents 工具</span>
-                  <small>ACP agents</small>
-                </a>
-
                 <a class="sidebar-link " href="/tools/agent-send/">
                   <span>Agent send 工具</span>
                   <small>Agent send</small>
@@ -3646,6 +3646,11 @@
                   <small>Web fetch</small>
                 </a>
 
+                <a class="sidebar-link " href="/tools/acp-agents/">
+                  <span>ACP agents 工具</span>
+                  <small>ACP agents</small>
+                </a>
+
                 <a class="sidebar-link " href="/tools/acp-agents-setup/">
                   <span>ACP agents — setup</span>
                   <small>ACP agents — setup</small>
@@ -3699,6 +3704,11 @@
                 <a class="sidebar-link " href="/plugins/codex-harness/">
                   <span>Codex harness 插件</span>
                   <small>Codex harness</small>
+                </a>
+
+                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
+                  <span>Native Codex plugins 插件</span>
+                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/community/">
@@ -3789,11 +3799,6 @@
                 <a class="sidebar-link " href="/plugins/codex-harness-runtime/">
                   <span>Codex harness runtime 插件</span>
                   <small>Codex harness runtime</small>
-                </a>
-
-                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
-                  <span>Native Codex plugins 插件</span>
-                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/compatibility/">
@@ -4306,11 +4311,6 @@
             <details class="sidebar-group">
               <summary>网关</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/gateway/">
-                  <span>Gateway runbook</span>
-                  <small>Gateway runbook</small>
-                </a>
-
                 <a class="sidebar-link " href="/gateway/authentication/">
                   <span>身份认证</span>
                   <small>Authentication</small>
@@ -4394,6 +4394,11 @@
                 <a class="sidebar-link " href="/gateway/heartbeat/">
                   <span>Heartbeat</span>
                   <small>Heartbeat</small>
+                </a>
+
+                <a class="sidebar-link " href="/gateway/">
+                  <span>Gateway runbook</span>
+                  <small>Gateway runbook</small>
                 </a>
 
                 <a class="sidebar-link " href="/gateway/local-model-services/">
@@ -4544,11 +4549,6 @@
                 <a class="sidebar-link " href="/cli/backup/">
                   <span>Backup 命令</span>
                   <small>Backup</small>
-                </a>
-
-                <a class="sidebar-link " href="/cli/browser/">
-                  <span>浏览器</span>
-                  <small>Browser</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/channels/">
@@ -4711,6 +4711,11 @@
                   <small>ACP</small>
                 </a>
 
+                <a class="sidebar-link " href="/cli/browser/">
+                  <span>浏览器</span>
+                  <small>Browser</small>
+                </a>
+
                 <a class="sidebar-link " href="/cli/clawbot/">
                   <span>Clawbot 命令</span>
                   <small>Clawbot</small>
@@ -4779,6 +4784,11 @@
                 <a class="sidebar-link " href="/cli/plugins/">
                   <span>插件</span>
                   <small>Plugins</small>
+                </a>
+
+                <a class="sidebar-link " href="/cli/policy/">
+                  <span>Policy 命令</span>
+                  <small>Policy</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/proxy/">
@@ -5358,625 +5368,29 @@
         </div>
       </div>
 
-
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Plugin SDK subpaths</h2>
-          <p>这一页不是在堆术语，它像把“新本领插件 SDK subpaths”这台小机器搬到桌上，当着你的面拆开给你看。你先不用全记住，先抓住它到底在忙什么：The 新本领插件 SDK is exposed as a set of narrow public subpaths under openclaw/新本领插件-sdk/. This pag…。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/plugins/sdk-subpaths</span>
-          <span>章节数量：8</span>
-          <a href="https://docs.openclaw.ai/plugins/sdk-subpaths" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The 新本领插件 SDK is exposed as a set of narrow public subpaths under openclaw/新本领插件-sdk/. This page catalogs the commonly…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The 新本领插件 SDK is exposed as a set of narrow public subpaths under openclaw/新本领插件-sdk/. This page catalogs the commonly…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The plugin SDK is exposed as a set of narrow public subpaths under <code>openclaw/plugin-sdk/</code>. This page catalogs the commonly used subpaths grouped by purpose. The generated compiler entrypoint inventory lives in <code>scripts/lib/plugin-sdk-entrypoints.json</code>; package exports are the public subset after subtracting repo-local test/internal subpaths listed in <code>scripts/lib/plugin-sdk-private-local-only-subpaths.json</code>. Maintainers can audit the public export count with <code>pnpm plugin-sdk:surface</code> and active reserved helper subpaths with <code>pnpm plugins:boundary-report:summary</code>; unused reserved helper exports fail the CI report instead of staying in the public SDK as dormant compatibility debt.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：For the 新本领插件 authoring guide, see 新本领插件 SDK overview.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For the plugin authoring guide, see <a href="/plugins/sdk-overview" target="_blank" rel="noreferrer">Plugin SDK overview</a>.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>新本领插件 entry</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Subpath</th><th>Key exports</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>plugin-sdk/plugin-entry</code></td><td><code>definePluginEntry</code></td></tr><tr><td><code>plugin-sdk/core</code></td><td><code>defineChannelPluginEntry</code>, <code>createChatChannelPlugin</code>, <code>createChannelPluginBase</code>, <code>defineSetupPluginEntry</code>, <code>buildChannelConfigSchema</code>, <code>buildJsonChannelConfigSchema</code></td></tr><tr><td><code>plugin-sdk/config-schema</code></td><td><code>OpenClawSchema</code></td></tr><tr><td><code>plugin-sdk/provider-entry</code></td><td><code>defineSingleProviderPluginEntry</code></td></tr><tr><td><code>plugin-sdk/migration</code></td><td>Migration provider item helpers such as <code>createMigrationItem</code>, reason constants, item status markers, redaction helpers, and <code>summarizeMigrationItems</code></td></tr><tr><td><code>plugin-sdk/migration-runtime</code></td><td>Runtime migration helpers such as <code>copyMigrationFileItem</code>, <code>withCachedMigrationConfigRuntime</code>, and <code>writeMigrationReport</code></td></tr>
-        </tbody>
-      </table>
+      <!-- handcrafted-source:plugins.sdk-subpaths.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Plugin SDK Subpaths 是 openclaw/plugin-sdk 的分抽屉目录</h2>
+      <p>这页列出插件作者可使用的窄子路径，并帮助维护者区分公共导出、兼容导出和仓库内部私有测试入口。新代码应优先使用明确子路径，避免继续依赖 deprecated compatibility facades 或 local-only helpers。</p>
     </div>
-
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Deprecated compatibility and test helpers</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：These subpaths remain package exports for older 新本领插件s and OpenClaw test suites, but new code should not add imports fr…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：These subpaths remain package exports for older 新本领插件s and OpenClaw test suites, but new code should not add imports fr…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>These subpaths remain package exports for older plugins and OpenClaw test suites, but new code should not add imports from them: <code>agent-runtime-test-contracts</code>, <code>channel-contract-testing</code>, <code>channel-target-testing</code>, <code>channel-test-helpers</code>, <code>plugin-test-api</code>, <code>plugin-test-contracts</code>, <code>provider-http-test-mocks</code>, <code>provider-test-contracts</code>, <code>test-env</code>, <code>test-fixtures</code>, <code>test-node-mocks</code>, <code>testing</code>, <code>channel-runtime</code>, <code>compat</code>, <code>config-types</code>, <code>infra-runtime</code>, <code>text-runtime</code>, and <code>zod</code>. Import <code>zod</code> directly from <code>zod</code> in new plugin code. <code>plugin-test-runtime</code> is still an active focused test helper subpath.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Reserved bundled 新本领插件 helper subpaths</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：These subpaths are 新本领插件-owned compatibility surfaces reserved for their owning bundled 新本领插件, not general SDK 对话接口s: 新…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：These subpaths are 新本领插件-owned compatibility surfaces reserved for their owning bundled 新本领插件, not general SDK 对话接口s: 新…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>These subpaths are plugin-owned compatibility surfaces reserved for their owning bundled plugin, not general SDK APIs: <code>plugin-sdk/codex-mcp-projection</code> and <code>plugin-sdk/codex-native-task-runtime</code>. Cross-owner extension imports are blocked by package contract guardrails.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Deprecated unused public subpaths</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：These public subpaths existed for at least one month and currently have no bundled extension production imports. They r…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：These public subpaths existed for at least one month and currently have no bundled extension production imports. They r…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>These public subpaths existed for at least one month and currently have no bundled extension production imports. They remain importable for compatibility, but new plugin code should use focused, actively consumed SDK subpaths instead: <code>agent-config-primitives</code>, <code>channel-config-schema-legacy</code>, <code>channel-reply-pipeline</code>, <code>channel-runtime</code>, <code>channel-secret-runtime</code>, <code>command-auth</code>, <code>compat</code>, <code>config-runtime</code>, <code>config-schema</code>, <code>discord</code>, <code>group-access</code>, <code>infra-runtime</code>, <code>matrix</code>, <code>mattermost</code>, <code>media-generation-runtime-shared</code>, <code>memory-core-engine-runtime</code>, <code>memory-core-host-multimodal</code>, <code>memory-core-host-query</code>, <code>music-generation-core</code>, <code>self-hosted-provider-setup</code>, <code>telegram-account</code>, <code>telegram-command-config</code>, and <code>zalouser</code>.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Deprecated rare public subpaths</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Public subpaths currently used by only one or two bundled 新本领插件 owners are also deprecated for new 新本领插件 code. They rem…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Public subpaths currently used by only one or two bundled 新本领插件 owners are also deprecated for new 新本领插件 code. They rem…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Public subpaths currently used by only one or two bundled plugin owners are also deprecated for new plugin code. They remain package exports for compatibility, but new code should prefer actively shared SDK seams or plugin-owned package APIs. Maintainers track the exact set in <code>scripts/lib/plugin-sdk-deprecated-public-subpaths.json</code> and the current budget with <code>pnpm plugin-sdk:surface</code>.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Deprecated broad barrels</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：These broad re-export barrels remain buildable for OpenClaw source and compatibility checks, but new code should prefer…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：These broad re-export barrels remain buildable for OpenClaw source and compatibility checks, but new code should prefer…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>These broad re-export barrels remain buildable for OpenClaw source and compatibility checks, but new code should prefer focused SDK subpaths: <code>agent-runtime</code>, <code>channel-lifecycle</code>, <code>channel-runtime</code>, <code>cli-runtime</code>, <code>compat</code>, <code>config-types</code>, <code>conversation-runtime</code>, <code>hook-runtime</code>, <code>infra-runtime</code>, <code>media-runtime</code>, <code>plugin-runtime</code>, <code>security-runtime</code>, and <code>text-runtime</code>. <code>channel-runtime</code>, <code>compat</code>, <code>config-types</code>, <code>infra-runtime</code>, and <code>text-runtime</code> remain package exports only for backwards compatibility; use focused channel/runtime subpaths, <code>config-contracts</code>, <code>string-coerce-runtime</code>, <code>text-chunking</code>, <code>text-utility-runtime</code>, and <code>logging-core</code> instead.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion大家一起的房间&gt; &lt;Accordion title=&quot;消息通道 subpaths&quot;&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;AccordionGroup&gt; &lt;Accordion title=&quot;Channel subpaths&quot;&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Subpath</th><th>Key exports</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>plugin-sdk/channel-core</code></td><td><code>defineChannelPluginEntry</code>, <code>defineSetupPluginEntry</code>, <code>createChatChannelPlugin</code>, <code>createChannelPluginBase</code></td></tr><tr><td><code>plugin-sdk/config-schema</code></td><td>Root <code>openclaw.json</code> Zod schema export (<code>OpenClawSchema</code>)</td></tr><tr><td><code>plugin-sdk/json-schema-runtime</code></td><td>Cached JSON Schema validation helper for plugin-owned schemas</td></tr><tr><td><code>plugin-sdk/channel-setup</code></td><td><code>createOptionalChannelSetupSurface</code>, <code>createOptionalChannelSetupAdapter</code>, <code>createOptionalChannelSetupWizard</code>, plus <code>DEFAULT_ACCOUNT_ID</code>, <code>createTopLevelChannelDmPolicy</code>, <code>setSetupChannelEnabled</code>, <code>splitSetupEntries</code></td></tr><tr><td><code>plugin-sdk/setup</code></td><td>Shared setup wizard helpers, setup translator, allowlist prompts, setup status builders</td></tr><tr><td><code>plugin-sdk/setup-runtime</code></td><td><code>createSetupTranslator</code>, <code>createPatchedAccountSetupAdapter</code>, <code>createEnvPatchedAccountSetupAdapter</code>, <code>createSetupInputPresenceValidator</code>, <code>noteChannelLookupFailure</code>, <code>noteChannelLookupSummary</code>, <code>promptResolvedAllowFrom</code>, <code>splitSetupEntries</code>, <code>createAllowlistSetupWizardProxy</code>, <code>createDelegatedSetupWizardProxy</code></td></tr><tr><td><code>plugin-sdk/setup-adapter-runtime</code></td><td>Deprecated compatibility alias; use <code>plugin-sdk/setup-runtime</code></td></tr><tr><td><code>plugin-sdk/setup-tools</code></td><td><code>formatCliCommand</code>, <code>detectBinary</code>, <code>extractArchive</code>, <code>resolveBrewExecutable</code>, <code>formatDocsLink</code>, <code>CONFIG_DIR</code></td></tr><tr><td><code>plugin-sdk/account-core</code></td><td>Multi-account config/action-gate helpers, default-account fallback helpers</td></tr><tr><td><code>plugin-sdk/account-id</code></td><td><code>DEFAULT_ACCOUNT_ID</code>, account-id normalization helpers</td></tr><tr><td><code>plugin-sdk/account-resolution</code></td><td>Account lookup + default-fallback helpers</td></tr><tr><td><code>plugin-sdk/account-helpers</code></td><td>Narrow account-list/account-action helpers</td></tr><tr><td><code>plugin-sdk/access-groups</code></td><td>Access-group allowlist parsing and redacted group diagnostics helpers</td></tr><tr><td><code>plugin-sdk/channel-pairing</code></td><td><code>createChannelPairingController</code></td></tr><tr><td><code>plugin-sdk/channel-reply-pipeline</code></td><td>Legacy reply pipeline helpers. New channel reply pipeline code should use <code>createChannelMessageReplyPipeline</code> and <code>resolveChannelMessageSourceReplyDeliveryMode</code> from <code>plugin-sdk/channel-message</code>.</td></tr><tr><td><code>plugin-sdk/channel-config-helpers</code></td><td><code>createHybridChannelConfigAdapter</code>, <code>resolveChannelDmAccess</code>, <code>resolveChannelDmAllowFrom</code>, <code>resolveChannelDmPolicy</code>, <code>normalizeChannelDmPolicy</code>, <code>normalizeLegacyDmAliases</code></td></tr><tr><td><code>plugin-sdk/channel-config-schema</code></td><td>Shared channel config schema primitives plus Zod and direct JSON/TypeBox builders</td></tr><tr><td><code>plugin-sdk/bundled-channel-config-schema</code></td><td>Bundled OpenClaw channel config schemas for maintained bundled plugins only</td></tr><tr><td><code>plugin-sdk/channel-config-schema-legacy</code></td><td>Deprecated compatibility alias for bundled-channel config schemas</td></tr><tr><td><code>plugin-sdk/telegram-command-config</code></td><td>Telegram custom-command normalization/validation helpers with bundled-contract fallback</td></tr><tr><td><code>plugin-sdk/command-gating</code></td><td>Narrow command authorization gate helpers</td></tr><tr><td><code>plugin-sdk/channel-policy</code></td><td><code>resolveChannelGroupRequireMention</code></td></tr><tr><td><code>plugin-sdk/channel-ingress</code></td><td>Deprecated low-level channel ingress compatibility facade. New receive paths should use <code>plugin-sdk/channel-ingress-runtime</code>.</td></tr><tr><td><code>plugin-sdk/channel-ingress-runtime</code></td><td>Experimental high-level channel ingress runtime resolver and route fact builders for migrated channel receive paths. Prefer this over assembling effective allowlists, command allowlists, and legacy projections in each plugin. See <a href="/plugins/sdk-channel-ingress" target="_blank" rel="noreferrer">Channel ingress API</a>.</td></tr><tr><td><code>plugin-sdk/channel-lifecycle</code></td><td><code>createAccountStatusSink</code>, <code>createChannelRunQueue</code>, and legacy draft stream lifecycle helpers. New preview finalization code should use <code>plugin-sdk/channel-message</code>.</td></tr><tr><td><code>plugin-sdk/channel-message</code></td><td>Cheap message lifecycle contract helpers such as <code>defineChannelMessageAdapter</code>, <code>createChannelMessageAdapterFromOutbound</code>, <code>createChannelMessageReplyPipeline</code>, <code>createReplyPrefixContext</code>, <code>resolveChannelMessageSourceReplyDeliveryMode</code>, durable-final capability derivation, capability proof helpers for send/receipt/side-effect capabilities, <code>MessageReceiveContext</code>, receive ack policy proofs, <code>defineFinalizableLivePreviewAdapter</code>, <code>deliverWithFinalizableLivePreviewAdapter</code>, live-preview and live-finalizer capability proofs, durable recovery state, <code>RenderedMessageBatch</code>, message receipt types, and receipt id helpers. See <a href="/plugins/sdk-channel-message" target="_blank" rel="noreferrer">Channel message API</a>. Legacy reply-dispatch facades are deprecated compatibility only.</td></tr><tr><td><code>plugin-sdk/channel-message-runtime</code></td><td>Runtime delivery helpers that may load outbound delivery, including <code>deliverInboundReplyWithMessageSendContext</code>, <code>sendDurableMessageBatch</code>, and <code>withDurableMessageSendContext</code>. Deprecated reply-dispatch bridges remain importable for compatibility dispatchers only. Use from monitor/send runtime modules, not hot plugin bootstrap files.</td></tr><tr><td><code>plugin-sdk/inbound-envelope</code></td><td>Shared inbound route + envelope builder helpers</td></tr><tr><td><code>plugin-sdk/inbound-reply-dispatch</code></td><td>Legacy shared inbound record-and-dispatch helpers, visible/final dispatch predicates, and deprecated <code>deliverDurableInboundReplyPayload</code> compatibility for prepared channel dispatchers. New channel receive/dispatch code should import runtime lifecycle helpers from <code>plugin-sdk/channel-message-runtime</code>.</td></tr><tr><td><code>plugin-sdk/messaging-targets</code></td><td>Target parsing/matching helpers</td></tr><tr><td><code>plugin-sdk/outbound-media</code></td><td>Shared outbound media loading helpers</td></tr><tr><td><code>plugin-sdk/outbound-send-deps</code></td><td>Lightweight outbound send dependency lookup for channel adapters</td></tr><tr><td><code>plugin-sdk/outbound-runtime</code></td><td>Outbound identity, send delegate, session, formatting, and payload planning helpers. Direct delivery helpers such as <code>deliverOutboundPayloads</code> are deprecated compatibility substrate; use <code>plugin-sdk/channel-message-runtime</code> for new send paths.</td></tr><tr><td><code>plugin-sdk/poll-runtime</code></td><td>Narrow poll normalization helpers</td></tr><tr><td><code>plugin-sdk/thread-bindings-runtime</code></td><td>Thread-binding lifecycle and adapter helpers</td></tr><tr><td><code>plugin-sdk/agent-media-payload</code></td><td>Legacy agent media payload builder</td></tr><tr><td><code>plugin-sdk/conversation-runtime</code></td><td>Conversation/thread binding, pairing, and configured-binding helpers</td></tr><tr><td><code>plugin-sdk/runtime-config-snapshot</code></td><td>Runtime config snapshot helper</td></tr><tr><td><code>plugin-sdk/runtime-group-policy</code></td><td>Runtime group-policy resolution helpers</td></tr><tr><td><code>plugin-sdk/channel-status</code></td><td>Shared channel status snapshot/summary helpers</td></tr><tr><td><code>plugin-sdk/channel-config-primitives</code></td><td>Narrow channel config-schema primitives</td></tr><tr><td><code>plugin-sdk/channel-config-writes</code></td><td>Channel config-write authorization helpers</td></tr><tr><td><code>plugin-sdk/channel-plugin-common</code></td><td>Shared channel plugin prelude exports</td></tr><tr><td><code>plugin-sdk/allowlist-config-edit</code></td><td>Allowlist config edit/read helpers</td></tr><tr><td><code>plugin-sdk/group-access</code></td><td>Shared group-access decision helpers</td></tr><tr><td><code>plugin-sdk/direct-dm</code></td><td>Shared direct-DM auth/guard helpers</td></tr><tr><td><code>plugin-sdk/discord</code></td><td>Deprecated Discord compatibility facade for published <code>@openclaw/discord@2026.3.13</code> and tracked owner compatibility; new plugins should use generic channel SDK subpaths</td></tr><tr><td><code>plugin-sdk/telegram-account</code></td><td>Deprecated Telegram account-resolution compatibility facade for tracked owner compatibility; new plugins should use injected runtime helpers or generic channel SDK subpaths</td></tr><tr><td><code>plugin-sdk/zalouser</code></td><td>Deprecated Zalo Personal compatibility facade for published Lark/Zalo packages that still import sender command authorization; new plugins should use <code>plugin-sdk/command-auth</code></td></tr><tr><td><code>plugin-sdk/interactive-runtime</code></td><td>Semantic message presentation, delivery, and legacy interactive reply helpers. See <a href="/plugins/message-presentation" target="_blank" rel="noreferrer">Message Presentation</a></td></tr><tr><td><code>plugin-sdk/channel-inbound</code></td><td>Shared inbound helpers for event classification, context building, debounce, mention matching, mention-policy, and envelope formatting</td></tr><tr><td><code>plugin-sdk/channel-inbound-debounce</code></td><td>Narrow inbound debounce helpers</td></tr><tr><td><code>plugin-sdk/channel-mention-gating</code></td><td>Narrow mention-policy, mention marker, and mention text helpers without the broader inbound runtime surface</td></tr><tr><td><code>plugin-sdk/channel-envelope</code></td><td>Narrow inbound envelope formatting helpers</td></tr><tr><td><code>plugin-sdk/channel-location</code></td><td>Channel location context and formatting helpers</td></tr><tr><td><code>plugin-sdk/channel-logging</code></td><td>Channel logging helpers for inbound drops and typing/ack failures</td></tr><tr><td><code>plugin-sdk/channel-send-result</code></td><td>Reply result types</td></tr><tr><td><code>plugin-sdk/channel-actions</code></td><td>Channel message-action helpers, plus deprecated native schema helpers kept for plugin compatibility</td></tr><tr><td><code>plugin-sdk/channel-route</code></td><td>Shared route normalization, parser-driven target resolution, thread-id stringification, dedupe/compact route keys, parsed-target types, and route/target comparison helpers</td></tr><tr><td><code>plugin-sdk/channel-targets</code></td><td>Target parsing helpers; route comparison callers should use <code>plugin-sdk/channel-route</code></td></tr><tr><td><code>plugin-sdk/channel-contract</code></td><td>Channel contract types</td></tr><tr><td><code>plugin-sdk/channel-feedback</code></td><td>Feedback/reaction wiring</td></tr><tr><td><code>plugin-sdk/channel-secret-runtime</code></td><td>Narrow secret-contract helpers such as <code>collectSimpleChannelFieldAssignments</code>, <code>getChannelSurface</code>, <code>pushAssignment</code>, and secret target types</td></tr>
-        </tbody>
-      </table>
+    <div class="overview-meta">
+      <span>原文共 8 节，先看 Start Here</span>
+      <span>路径：/plugins/sdk-subpaths</span>
+      <a href="https://docs.openclaw.ai/plugins/sdk-subpaths" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
+  </div>
+</section>
 
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;Provider subpaths&quot;&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Provider subpaths&quot;&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Subpath</th><th>Key exports</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>plugin-sdk/provider-entry</code></td><td><code>defineSingleProviderPluginEntry</code></td></tr><tr><td><code>plugin-sdk/lmstudio</code></td><td>Supported LM Studio provider facade for setup, catalog discovery, and runtime model preparation</td></tr><tr><td><code>plugin-sdk/lmstudio-runtime</code></td><td>Supported LM Studio runtime facade for local server defaults, model discovery, request headers, and loaded-model helpers</td></tr><tr><td><code>plugin-sdk/provider-setup</code></td><td>Curated local/self-hosted provider setup helpers</td></tr><tr><td><code>plugin-sdk/self-hosted-provider-setup</code></td><td>Focused OpenAI-compatible self-hosted provider setup helpers</td></tr><tr><td><code>plugin-sdk/cli-backend</code></td><td>CLI backend defaults + watchdog constants</td></tr><tr><td><code>plugin-sdk/provider-auth-runtime</code></td><td>Runtime API-key resolution helpers for provider plugins</td></tr><tr><td><code>plugin-sdk/provider-auth-api-key</code></td><td>API-key onboarding/profile-write helpers such as <code>upsertApiKeyProfile</code></td></tr><tr><td><code>plugin-sdk/provider-auth-result</code></td><td>Standard OAuth auth-result builder</td></tr><tr><td><code>plugin-sdk/provider-env-vars</code></td><td>Provider auth env-var lookup helpers</td></tr><tr><td><code>plugin-sdk/provider-auth</code></td><td><code>createProviderApiKeyAuthMethod</code>, <code>ensureApiKeyFromOptionEnvOrPrompt</code>, <code>upsertAuthProfile</code>, <code>upsertApiKeyProfile</code>, <code>writeOAuthCredentials</code>, deprecated <code>resolveOpenClawAgentDir</code> compatibility export</td></tr><tr><td><code>plugin-sdk/provider-model-shared</code></td><td><code>ProviderReplayFamily</code>, <code>buildProviderReplayFamilyHooks</code>, <code>normalizeModelCompat</code>, shared replay-policy builders, provider-endpoint helpers, and shared model-id normalization helpers</td></tr><tr><td><code>plugin-sdk/provider-catalog-runtime</code></td><td>Provider catalog augmentation runtime hook and plugin-provider registry seams for contract tests</td></tr><tr><td><code>plugin-sdk/provider-catalog-shared</code></td><td><code>findCatalogTemplate</code>, <code>buildSingleProviderApiKeyCatalog</code>, <code>buildManifestModelProviderConfig</code>, <code>supportsNativeStreamingUsageCompat</code>, <code>applyProviderNativeStreamingUsageCompat</code></td></tr><tr><td><code>plugin-sdk/provider-http</code></td><td>Generic provider HTTP/endpoint capability helpers, provider HTTP errors, and audio transcription multipart form helpers</td></tr><tr><td><code>plugin-sdk/provider-web-fetch-contract</code></td><td>Narrow web-fetch config/selection contract helpers such as <code>enablePluginInConfig</code> and <code>WebFetchProviderPlugin</code></td></tr><tr><td><code>plugin-sdk/provider-web-fetch</code></td><td>Web-fetch provider registration/cache helpers</td></tr><tr><td><code>plugin-sdk/provider-web-search-config-contract</code></td><td>Narrow web-search config/credential helpers for providers that do not need plugin-enable wiring</td></tr><tr><td><code>plugin-sdk/provider-web-search-contract</code></td><td>Narrow web-search config/credential contract helpers such as <code>createWebSearchProviderContractFields</code>, <code>enablePluginInConfig</code>, <code>resolveProviderWebSearchPluginConfig</code>, and scoped credential setters/getters</td></tr><tr><td><code>plugin-sdk/provider-web-search</code></td><td>Web-search provider registration/cache/runtime helpers</td></tr><tr><td><code>plugin-sdk/provider-tools</code></td><td><code>ProviderToolCompatFamily</code>, <code>buildProviderToolCompatFamilyHooks</code>, and DeepSeek/Gemini/OpenAI schema cleanup + diagnostics</td></tr><tr><td><code>plugin-sdk/provider-usage</code></td><td><code>fetchClaudeUsage</code> and similar</td></tr><tr><td><code>plugin-sdk/provider-stream</code></td><td><code>ProviderStreamFamily</code>, <code>buildProviderStreamFamilyHooks</code>, <code>composeProviderStreamWrappers</code>, stream wrapper types, and shared Anthropic/Bedrock/DeepSeek V4/Google/Kilocode/Moonshot/OpenAI/OpenRouter/Z.A.I/MiniMax/Copilot wrapper helpers</td></tr><tr><td><code>plugin-sdk/provider-transport-runtime</code></td><td>Native provider transport helpers such as guarded fetch, transport message transforms, and writable transport event streams</td></tr><tr><td><code>plugin-sdk/provider-onboard</code></td><td>Onboarding config patch helpers</td></tr><tr><td><code>plugin-sdk/global-singleton</code></td><td>Process-local singleton/map/cache helpers</td></tr><tr><td><code>plugin-sdk/group-activation</code></td><td>Narrow group activation mode and command parsing helpers</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;Auth and 安全守门员 subpaths&quot;&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Auth and security subpaths&quot;&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Subpath</th><th>Key exports</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>plugin-sdk/command-auth</code></td><td><code>resolveControlCommandGate</code>, command registry helpers including dynamic argument menu formatting, sender-authorization helpers</td></tr><tr><td><code>plugin-sdk/command-status</code></td><td>Command/help message builders such as <code>buildCommandsMessagePaginated</code> and <code>buildHelpMessage</code></td></tr><tr><td><code>plugin-sdk/approval-auth-runtime</code></td><td>Approver resolution and same-chat action-auth helpers</td></tr><tr><td><code>plugin-sdk/approval-client-runtime</code></td><td>Native exec approval profile/filter helpers</td></tr><tr><td><code>plugin-sdk/approval-delivery-runtime</code></td><td>Native approval capability/delivery adapters</td></tr><tr><td><code>plugin-sdk/approval-gateway-runtime</code></td><td>Shared approval gateway-resolution helper</td></tr><tr><td><code>plugin-sdk/approval-handler-adapter-runtime</code></td><td>Lightweight native approval adapter loading helpers for hot channel entrypoints</td></tr><tr><td><code>plugin-sdk/approval-handler-runtime</code></td><td>Broader approval handler runtime helpers; prefer the narrower adapter/gateway seams when they are enough</td></tr><tr><td><code>plugin-sdk/approval-native-runtime</code></td><td>Native approval target + account-binding helpers</td></tr><tr><td><code>plugin-sdk/approval-reply-runtime</code></td><td>Exec/plugin approval reply payload helpers</td></tr><tr><td><code>plugin-sdk/approval-runtime</code></td><td>Exec/plugin approval payload helpers, native approval routing/runtime helpers, and structured approval display helpers such as <code>formatApprovalDisplayPath</code></td></tr><tr><td><code>plugin-sdk/reply-dedupe</code></td><td>Narrow inbound reply dedupe reset helpers</td></tr><tr><td><code>plugin-sdk/channel-contract-testing</code></td><td>Narrow channel contract test helpers without the broad testing barrel</td></tr><tr><td><code>plugin-sdk/command-auth-native</code></td><td>Native command auth, dynamic argument menu formatting, and native session-target helpers</td></tr><tr><td><code>plugin-sdk/command-detection</code></td><td>Shared command detection helpers</td></tr><tr><td><code>plugin-sdk/command-primitives-runtime</code></td><td>Lightweight command text predicates for hot channel paths</td></tr><tr><td><code>plugin-sdk/command-surface</code></td><td>Command-body normalization and command-surface helpers</td></tr><tr><td><code>plugin-sdk/allow-from</code></td><td><code>formatAllowFromLowercase</code></td></tr><tr><td><code>plugin-sdk/channel-secret-runtime</code></td><td>Narrow secret-contract collection helpers for channel/plugin secret surfaces</td></tr><tr><td><code>plugin-sdk/secret-ref-runtime</code></td><td>Narrow <code>coerceSecretRef</code> and SecretRef typing helpers for secret-contract/config parsing</td></tr><tr><td><code>plugin-sdk/security-runtime</code></td><td>Shared trust, DM gating, root-bounded file/path helpers including create-only writes, sync/async atomic file replacement, sibling temp writes, cross-device move fallback, private file-store helpers, symlink-parent guards, external-content, sensitive text redaction, constant-time secret comparison, and secret-collection helpers</td></tr><tr><td><code>plugin-sdk/ssrf-policy</code></td><td>Host allowlist and private-network SSRF policy helpers</td></tr><tr><td><code>plugin-sdk/ssrf-dispatcher</code></td><td>Narrow pinned-dispatcher helpers without the broad infra runtime surface</td></tr><tr><td><code>plugin-sdk/ssrf-runtime</code></td><td>Pinned-dispatcher, SSRF-guarded fetch, SSRF error, and SSRF policy helpers</td></tr><tr><td><code>plugin-sdk/secret-input</code></td><td>Secret input parsing helpers</td></tr><tr><td><code>plugin-sdk/webhook-ingress</code></td><td>Webhook request/target helpers and raw websocket/body coercion</td></tr><tr><td><code>plugin-sdk/webhook-request-guards</code></td><td>Request body size/timeout helpers</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;Runtime and storage subpaths&quot;&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Runtime and storage subpaths&quot;&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Subpath</th><th>Key exports</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>plugin-sdk/runtime</code></td><td>Broad runtime/logging/backup/plugin-install helpers</td></tr><tr><td><code>plugin-sdk/runtime-env</code></td><td>Narrow runtime env, logger, timeout, retry, and backoff helpers</td></tr><tr><td><code>plugin-sdk/browser-config</code></td><td>Supported browser config facade for normalized profile/defaults, CDP URL parsing, and browser-control auth helpers</td></tr><tr><td><code>plugin-sdk/codex-mcp-projection</code></td><td>Reserved bundled Codex helper for projecting user MCP server config into Codex thread config; not for third-party plugins</td></tr><tr><td><code>plugin-sdk/codex-native-task-runtime</code></td><td>Reserved bundled Codex helper for native task mirror/runtime wiring; not for third-party plugins</td></tr><tr><td><code>plugin-sdk/channel-runtime-context</code></td><td>Generic channel runtime-context registration and lookup helpers</td></tr><tr><td><code>plugin-sdk/matrix</code></td><td>Deprecated Matrix compatibility facade for older third-party channel packages; new plugins should import <code>plugin-sdk/run-command</code> directly</td></tr><tr><td><code>plugin-sdk/mattermost</code></td><td>Deprecated Mattermost compatibility facade for older third-party channel packages; new plugins should import generic SDK subpaths directly</td></tr><tr><td><code>plugin-sdk/runtime-store</code></td><td><code>createPluginRuntimeStore</code></td></tr><tr><td><code>plugin-sdk/plugin-runtime</code></td><td>Shared plugin command/hook/http/interactive helpers</td></tr><tr><td><code>plugin-sdk/hook-runtime</code></td><td>Shared webhook/internal hook pipeline helpers</td></tr><tr><td><code>plugin-sdk/lazy-runtime</code></td><td>Lazy runtime import/binding helpers such as <code>createLazyRuntimeModule</code>, <code>createLazyRuntimeMethod</code>, and <code>createLazyRuntimeSurface</code></td></tr><tr><td><code>plugin-sdk/process-runtime</code></td><td>Process exec helpers</td></tr><tr><td><code>plugin-sdk/cli-runtime</code></td><td>CLI formatting, wait, version, argument-invocation, and lazy command-group helpers</td></tr><tr><td><code>plugin-sdk/gateway-method-runtime</code></td><td>Reserved Gateway method dispatch helper for plugin HTTP routes that declare <code>contracts.gatewayMethodDispatch: [&quot;authenticated-request&quot;]</code></td></tr><tr><td><code>plugin-sdk/gateway-runtime</code></td><td>Gateway client, event-loop-ready client start helper, gateway CLI RPC, gateway protocol errors, and channel-status patch helpers</td></tr><tr><td><code>plugin-sdk/config-contracts</code></td><td>Focused type-only config surface for plugin config shapes such as <code>OpenClawConfig</code> and channel/provider config types</td></tr><tr><td><code>plugin-sdk/plugin-config-runtime</code></td><td>Runtime plugin-config lookup helpers such as <code>requireRuntimeConfig</code>, <code>resolvePluginConfigObject</code>, and <code>resolveLivePluginConfigObject</code></td></tr><tr><td><code>plugin-sdk/config-mutation</code></td><td>Transactional config mutation helpers such as <code>mutateConfigFile</code>, <code>replaceConfigFile</code>, and <code>logConfigUpdated</code></td></tr><tr><td><code>plugin-sdk/runtime-config-snapshot</code></td><td>Current process config snapshot helpers such as <code>getRuntimeConfig</code>, <code>getRuntimeConfigSnapshot</code>, and test snapshot setters</td></tr><tr><td><code>plugin-sdk/telegram-command-config</code></td><td>Telegram command-name/description normalization and duplicate/conflict checks, even when the bundled Telegram contract surface is unavailable</td></tr><tr><td><code>plugin-sdk/text-autolink-runtime</code></td><td>File-reference autolink detection without the broad text barrel</td></tr><tr><td><code>plugin-sdk/approval-runtime</code></td><td>Exec/plugin approval helpers, approval-capability builders, auth/profile helpers, native routing/runtime helpers, and structured approval display path formatting</td></tr><tr><td><code>plugin-sdk/reply-runtime</code></td><td>Shared inbound/reply runtime helpers, chunking, dispatch, heartbeat, reply planner</td></tr><tr><td><code>plugin-sdk/reply-dispatch-runtime</code></td><td>Narrow reply dispatch/finalize and conversation-label helpers</td></tr><tr><td><code>plugin-sdk/reply-history</code></td><td>Shared short-window reply-history helpers. New message-turn code should use <code>createChannelHistoryWindow</code>; lower-level map helpers remain deprecated compatibility exports only</td></tr><tr><td><code>plugin-sdk/reply-reference</code></td><td><code>createReplyReferencePlanner</code></td></tr><tr><td><code>plugin-sdk/reply-chunking</code></td><td>Narrow text/markdown chunking helpers</td></tr><tr><td><code>plugin-sdk/session-store-runtime</code></td><td>Session store path, session-key, updated-at, and store mutation helpers</td></tr><tr><td><code>plugin-sdk/cron-store-runtime</code></td><td>Cron store path/load/save helpers</td></tr><tr><td><code>plugin-sdk/state-paths</code></td><td>State/OAuth dir path helpers</td></tr><tr><td><code>plugin-sdk/routing</code></td><td>Route/session-key/account binding helpers such as <code>resolveAgentRoute</code>, <code>buildAgentSessionKey</code>, and <code>resolveDefaultAgentBoundAccountId</code></td></tr><tr><td><code>plugin-sdk/status-helpers</code></td><td>Shared channel/account status summary helpers, runtime-state defaults, and issue metadata helpers</td></tr><tr><td><code>plugin-sdk/target-resolver-runtime</code></td><td>Shared target resolver helpers</td></tr><tr><td><code>plugin-sdk/string-normalization-runtime</code></td><td>Slug/string normalization helpers</td></tr><tr><td><code>plugin-sdk/request-url</code></td><td>Extract string URLs from fetch/request-like inputs</td></tr><tr><td><code>plugin-sdk/run-command</code></td><td>Timed command runner with normalized stdout/stderr results</td></tr><tr><td><code>plugin-sdk/param-readers</code></td><td>Common tool/CLI param readers</td></tr><tr><td><code>plugin-sdk/tool-plugin</code></td><td>Define a simple typed agent-tool plugin and expose static metadata for manifest generation</td></tr><tr><td><code>plugin-sdk/tool-payload</code></td><td>Extract normalized payloads from tool result objects</td></tr><tr><td><code>plugin-sdk/tool-send</code></td><td>Extract canonical send target fields from tool args</td></tr><tr><td><code>plugin-sdk/temp-path</code></td><td>Shared temp-download path helpers and private secure temp workspaces</td></tr><tr><td><code>plugin-sdk/logging-core</code></td><td>Subsystem logger and redaction helpers</td></tr><tr><td><code>plugin-sdk/markdown-table-runtime</code></td><td>Markdown table mode and conversion helpers</td></tr><tr><td><code>plugin-sdk/model-session-runtime</code></td><td>Model/session override helpers such as <code>applyModelOverrideToSessionEntry</code> and <code>resolveAgentMaxConcurrent</code></td></tr><tr><td><code>plugin-sdk/talk-config-runtime</code></td><td>Talk provider config resolution helpers</td></tr><tr><td><code>plugin-sdk/json-store</code></td><td>Small JSON state read/write helpers</td></tr><tr><td><code>plugin-sdk/file-lock</code></td><td>Re-entrant file-lock helpers</td></tr><tr><td><code>plugin-sdk/persistent-dedupe</code></td><td>Disk-backed dedupe cache helpers</td></tr><tr><td><code>plugin-sdk/acp-runtime</code></td><td>ACP runtime/session and reply-dispatch helpers</td></tr><tr><td><code>plugin-sdk/acp-runtime-backend</code></td><td>Lightweight ACP backend registration and reply-dispatch helpers for startup-loaded plugins</td></tr><tr><td><code>plugin-sdk/acp-binding-resolve-runtime</code></td><td>Read-only ACP binding resolution without lifecycle startup imports</td></tr><tr><td><code>plugin-sdk/agent-config-primitives</code></td><td>Narrow agent runtime config-schema primitives</td></tr><tr><td><code>plugin-sdk/boolean-param</code></td><td>Loose boolean param reader</td></tr><tr><td><code>plugin-sdk/dangerous-name-runtime</code></td><td>Dangerous-name matching resolution helpers</td></tr><tr><td><code>plugin-sdk/device-bootstrap</code></td><td>Device bootstrap and pairing token helpers</td></tr><tr><td><code>plugin-sdk/extension-shared</code></td><td>Shared passive-channel, status, and ambient proxy helper primitives</td></tr><tr><td><code>plugin-sdk/models-provider-runtime</code></td><td><code>/models</code> command/provider reply helpers</td></tr><tr><td><code>plugin-sdk/skill-commands-runtime</code></td><td>Skill command listing helpers</td></tr><tr><td><code>plugin-sdk/native-command-registry</code></td><td>Native command registry/build/serialize helpers</td></tr><tr><td><code>plugin-sdk/agent-harness</code></td><td>Experimental trusted-plugin surface for low-level agent harnesses: harness types, active-run steer/abort helpers, OpenClaw tool bridge helpers, runtime-plan tool policy helpers, terminal outcome classification, tool progress formatting/detail helpers, and attempt result utilities</td></tr><tr><td><code>plugin-sdk/provider-zai-endpoint</code></td><td>Deprecated Z.AI provider-owned endpoint detection facade; use the Z.AI plugin public API</td></tr><tr><td><code>plugin-sdk/async-lock-runtime</code></td><td>Process-local async lock helper for small runtime state files</td></tr><tr><td><code>plugin-sdk/channel-activity-runtime</code></td><td>Channel activity telemetry helper</td></tr><tr><td><code>plugin-sdk/concurrency-runtime</code></td><td>Bounded async task concurrency helper</td></tr><tr><td><code>plugin-sdk/dedupe-runtime</code></td><td>In-memory dedupe cache helpers</td></tr><tr><td><code>plugin-sdk/delivery-queue-runtime</code></td><td>Outbound pending-delivery drain helper</td></tr><tr><td><code>plugin-sdk/file-access-runtime</code></td><td>Safe local-file and media-source path helpers</td></tr><tr><td><code>plugin-sdk/heartbeat-runtime</code></td><td>Heartbeat wake, event, and visibility helpers</td></tr><tr><td><code>plugin-sdk/number-runtime</code></td><td>Numeric coercion helper</td></tr><tr><td><code>plugin-sdk/secure-random-runtime</code></td><td>Secure token/UUID helpers</td></tr><tr><td><code>plugin-sdk/system-event-runtime</code></td><td>System event queue helpers</td></tr><tr><td><code>plugin-sdk/transport-ready-runtime</code></td><td>Transport readiness wait helper</td></tr><tr><td><code>plugin-sdk/infra-runtime</code></td><td>Deprecated compatibility shim; use the focused runtime subpaths above</td></tr><tr><td><code>plugin-sdk/collection-runtime</code></td><td>Small bounded cache helpers</td></tr><tr><td><code>plugin-sdk/diagnostic-runtime</code></td><td>Diagnostic flag, event, and trace-context helpers</td></tr><tr><td><code>plugin-sdk/error-runtime</code></td><td>Error graph, formatting, shared error classification helpers, <code>isApprovalNotFoundError</code></td></tr><tr><td><code>plugin-sdk/fetch-runtime</code></td><td>Wrapped fetch, proxy, EnvHttpProxyAgent option, and pinned lookup helpers</td></tr><tr><td><code>plugin-sdk/runtime-fetch</code></td><td>Dispatcher-aware runtime fetch without proxy/guarded-fetch imports</td></tr><tr><td><code>plugin-sdk/response-limit-runtime</code></td><td>Bounded response-body reader without the broad media runtime surface</td></tr><tr><td><code>plugin-sdk/session-binding-runtime</code></td><td>Current conversation binding state without configured binding routing or pairing stores</td></tr><tr><td><code>plugin-sdk/session-store-runtime</code></td><td>Session-store helpers without broad config writes/maintenance imports</td></tr><tr><td><code>plugin-sdk/context-visibility-runtime</code></td><td>Context visibility resolution and supplemental context filtering without broad config/security imports</td></tr><tr><td><code>plugin-sdk/string-coerce-runtime</code></td><td>Narrow primitive record/string coercion and normalization helpers without markdown/logging imports</td></tr><tr><td><code>plugin-sdk/host-runtime</code></td><td>Hostname and SCP host normalization helpers</td></tr><tr><td><code>plugin-sdk/retry-runtime</code></td><td>Retry config and retry runner helpers</td></tr><tr><td><code>plugin-sdk/agent-runtime</code></td><td>Agent dir/identity/workspace helpers, including <code>resolveAgentDir</code>, <code>resolveDefaultAgentDir</code>, and deprecated <code>resolveOpenClawAgentDir</code> compatibility export</td></tr><tr><td><code>plugin-sdk/directory-runtime</code></td><td>Config-backed directory query/dedup</td></tr><tr><td><code>plugin-sdk/keyed-async-queue</code></td><td><code>KeyedAsyncQueue</code></td></tr>
-        </tbody>
-      </table>
-    </div>
-
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;Capability and testing subpaths&quot;&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Capability and testing subpaths&quot;&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Subpath</th><th>Key exports</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>plugin-sdk/media-runtime</code></td><td>Shared media fetch/transform/store helpers including <code>saveRemoteMedia</code>, <code>saveResponseMedia</code>, <code>readRemoteMediaBuffer</code>, and deprecated <code>fetchRemoteMedia</code>; prefer store helpers before buffer reads when a URL should become OpenClaw media</td></tr><tr><td><code>plugin-sdk/media-mime</code></td><td>Narrow MIME normalization, file-extension mapping, MIME detection, and media-kind helpers</td></tr><tr><td><code>plugin-sdk/media-store</code></td><td>Narrow media store helpers such as <code>saveMediaBuffer</code> and <code>saveMediaStream</code></td></tr><tr><td><code>plugin-sdk/media-generation-runtime</code></td><td>Shared media-generation failover helpers, candidate selection, and missing-model messaging</td></tr><tr><td><code>plugin-sdk/media-understanding</code></td><td>Media understanding provider types plus provider-facing image/audio/structured-extraction helper exports</td></tr><tr><td><code>plugin-sdk/text-chunking</code></td><td>Text and markdown chunking/render helpers, markdown table conversion, directive-tag stripping, and safe-text utilities</td></tr><tr><td><code>plugin-sdk/text-chunking</code></td><td>Outbound text chunking helper</td></tr><tr><td><code>plugin-sdk/speech</code></td><td>Speech provider types plus provider-facing directive, registry, validation, OpenAI-compatible TTS builder, and speech helper exports</td></tr><tr><td><code>plugin-sdk/speech-core</code></td><td>Shared speech provider types, registry, directive, normalization, and speech helper exports</td></tr><tr><td><code>plugin-sdk/realtime-transcription</code></td><td>Realtime transcription provider types, registry helpers, and shared WebSocket session helper</td></tr><tr><td><code>plugin-sdk/realtime-voice</code></td><td>Realtime voice provider types and registry helpers</td></tr><tr><td><code>plugin-sdk/image-generation</code></td><td>Image generation provider types plus image asset/data URL helpers and the OpenAI-compatible image provider builder</td></tr><tr><td><code>plugin-sdk/image-generation-core</code></td><td>Shared image-generation types, failover, auth, and registry helpers</td></tr><tr><td><code>plugin-sdk/music-generation</code></td><td>Music generation provider/request/result types</td></tr><tr><td><code>plugin-sdk/music-generation-core</code></td><td>Shared music-generation types, failover helpers, provider lookup, and model-ref parsing</td></tr><tr><td><code>plugin-sdk/video-generation</code></td><td>Video generation provider/request/result types</td></tr><tr><td><code>plugin-sdk/video-generation-core</code></td><td>Shared video-generation types, failover helpers, provider lookup, and model-ref parsing</td></tr><tr><td><code>plugin-sdk/webhook-targets</code></td><td>Webhook target registry and route-install helpers</td></tr><tr><td><code>plugin-sdk/webhook-path</code></td><td>Deprecated compatibility alias; use <code>plugin-sdk/webhook-ingress</code></td></tr><tr><td><code>plugin-sdk/web-media</code></td><td>Shared remote/local media loading helpers</td></tr><tr><td><code>plugin-sdk/zod</code></td><td>Deprecated compatibility re-export; import <code>zod</code> from <code>zod</code> directly</td></tr><tr><td><code>plugin-sdk/testing</code></td><td>Repo-local deprecated compatibility barrel for legacy OpenClaw tests. New repo tests should import focused local test subpaths such as <code>plugin-sdk/agent-runtime-test-contracts</code>, <code>plugin-sdk/plugin-test-runtime</code>, <code>plugin-sdk/channel-test-helpers</code>, <code>plugin-sdk/test-env</code>, or <code>plugin-sdk/test-fixtures</code> instead</td></tr><tr><td><code>plugin-sdk/plugin-test-api</code></td><td>Repo-local minimal <code>createTestPluginApi</code> helper for direct plugin registration unit tests without importing repo test helper bridges</td></tr><tr><td><code>plugin-sdk/agent-runtime-test-contracts</code></td><td>Repo-local native agent-runtime adapter contract fixtures for auth, delivery, fallback, tool-hook, prompt-overlay, schema, and transcript projection tests</td></tr><tr><td><code>plugin-sdk/channel-test-helpers</code></td><td>Repo-local channel-oriented test helpers for generic actions/setup/status contracts, directory assertions, account startup lifecycle, send-config threading, runtime mocks, status issues, outbound delivery, and hook registration</td></tr><tr><td><code>plugin-sdk/channel-target-testing</code></td><td>Repo-local shared target-resolution error-case suite for channel tests</td></tr><tr><td><code>plugin-sdk/plugin-test-contracts</code></td><td>Repo-local plugin package, registration, public artifact, direct import, runtime API, and import side-effect contract helpers</td></tr><tr><td><code>plugin-sdk/provider-test-contracts</code></td><td>Repo-local provider runtime, auth, discovery, onboard, catalog, wizard, media capability, replay policy, realtime STT live-audio, web-search/fetch, and stream contract helpers</td></tr><tr><td><code>plugin-sdk/provider-http-test-mocks</code></td><td>Repo-local opt-in Vitest HTTP/auth mocks for provider tests that exercise <code>plugin-sdk/provider-http</code></td></tr><tr><td><code>plugin-sdk/test-fixtures</code></td><td>Repo-local generic CLI runtime capture, sandbox context, skill writer, agent-message, system-event, module reload, bundled plugin path, terminal-text, chunking, auth-token, and typed-case fixtures</td></tr><tr><td><code>plugin-sdk/test-node-mocks</code></td><td>Repo-local focused Node builtin mock helpers for use inside Vitest <code>vi.mock(&quot;node:*&quot;)</code> factories</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;Memory subpaths&quot;&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Memory subpaths&quot;&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Subpath</th><th>Key exports</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>plugin-sdk/memory-core</code></td><td>Bundled memory-core helper surface for manager/config/file/CLI helpers</td></tr><tr><td><code>plugin-sdk/memory-core-engine-runtime</code></td><td>Memory index/search runtime facade</td></tr><tr><td><code>plugin-sdk/memory-core-host-engine-foundation</code></td><td>Memory host foundation engine exports</td></tr><tr><td><code>plugin-sdk/memory-core-host-engine-embeddings</code></td><td>Memory host embedding contracts, registry access, local provider, and generic batch/remote helpers</td></tr><tr><td><code>plugin-sdk/memory-core-host-engine-qmd</code></td><td>Memory host QMD engine exports</td></tr><tr><td><code>plugin-sdk/memory-core-host-engine-storage</code></td><td>Memory host storage engine exports</td></tr><tr><td><code>plugin-sdk/memory-core-host-multimodal</code></td><td>Memory host multimodal helpers</td></tr><tr><td><code>plugin-sdk/memory-core-host-query</code></td><td>Memory host query helpers</td></tr><tr><td><code>plugin-sdk/memory-core-host-secret</code></td><td>Memory host secret helpers</td></tr><tr><td><code>plugin-sdk/memory-core-host-events</code></td><td>Deprecated compatibility alias; use <code>plugin-sdk/memory-host-events</code></td></tr><tr><td><code>plugin-sdk/memory-core-host-status</code></td><td>Memory host status helpers</td></tr><tr><td><code>plugin-sdk/memory-core-host-runtime-cli</code></td><td>Memory host CLI runtime helpers</td></tr><tr><td><code>plugin-sdk/memory-core-host-runtime-core</code></td><td>Memory host core runtime helpers</td></tr><tr><td><code>plugin-sdk/memory-core-host-runtime-files</code></td><td>Memory host file/runtime helpers</td></tr><tr><td><code>plugin-sdk/memory-host-core</code></td><td>Vendor-neutral alias for memory host core runtime helpers</td></tr><tr><td><code>plugin-sdk/memory-host-events</code></td><td>Vendor-neutral alias for memory host event journal helpers</td></tr><tr><td><code>plugin-sdk/memory-host-files</code></td><td>Deprecated compatibility alias; use <code>plugin-sdk/memory-core-host-runtime-files</code></td></tr><tr><td><code>plugin-sdk/memory-host-markdown</code></td><td>Shared managed-markdown helpers for memory-adjacent plugins</td></tr><tr><td><code>plugin-sdk/memory-host-search</code></td><td>Active memory runtime facade for search-manager access</td></tr><tr><td><code>plugin-sdk/memory-host-status</code></td><td>Deprecated compatibility alias; use <code>plugin-sdk/memory-core-host-status</code></td></tr>
-        </tbody>
-      </table>
-    </div>
-
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;/Accordion&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;/Accordion&gt;</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Accordion title=&quot;Reserved bundled-helper subpaths&quot;&gt; Reserved bundled-helper SDK subpaths are narrow owner-specific sur…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Accordion title=&quot;Reserved bundled-helper subpaths&quot;&gt; Reserved bundled-helper SDK subpaths are narrow owner-specific surfaces for bundled plugin code. They are tracked in the SDK inventory so package builds and aliasing stay deterministic, but they are not general plugin authoring APIs. New reusable host contracts should use generic SDK subpaths such as <code>plugin-sdk/gateway-runtime</code>, <code>plugin-sdk/security-runtime</code>, and <code>plugin-sdk/plugin-config-runtime</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Subpath</th><th>Owner and purpose</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>plugin-sdk/codex-mcp-projection</code></td><td>Bundled Codex plugin helper for projecting user MCP server config into Codex app-server thread config</td></tr><tr><td><code>plugin-sdk/codex-native-task-runtime</code></td><td>Bundled Codex plugin helper for mirroring Codex app-server native subagents into OpenClaw task state</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;/Accordion&gt; &lt;/Accordion大家一起的房间&gt;。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;/Accordion&gt; &lt;/AccordionGroup&gt;</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>Related</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Related”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：新本领插件 SDK overview、新本领插件 SDK setup、Building 新本领插件s。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><a href="/plugins/sdk-overview" target="_blank" rel="noreferrer">Plugin SDK overview</a></li><li><a href="/plugins/sdk-setup" target="_blank" rel="noreferrer">Plugin SDK setup</a></li><li><a href="/plugins/building-plugins" target="_blank" rel="noreferrer">Building plugins</a></li></ul>
-      </div>
-
-          </div>
-        </section>
-
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>AdSense 连接验证已经放在页面头部；广告单元等站点审批通过后再启用。</p>
-        <code>google-adsense-account: ca-pub-3833673520933536</code>
-      </div>
-    </section>
+<section class="section-shell"><div class="story-grid"><div class="story-card"><div class="story-card-label">公共子路径</div><p>插件作者可以依赖，像稳定开放的抽屉。</p></div><div class="story-card"><div class="story-card-label">兼容子路径</div><p>给旧插件过渡用，新代码不该继续新增依赖。</p></div><div class="story-card"><div class="story-card-label">私有本地子路径</div><p>只给 OpenClaw 仓库内部测试和实现使用，不能当公开 API。</p></div><div class="source-card"><div class="story-card-label">维护检查</div><p><code>pnpm plugin-sdk:surface</code> 和 boundary report 用来防止公共面悄悄变乱。</p></div></div></section>
 
 
       <footer class="page-footer">
         <div>
           <strong>Fivey Can Read OpenClaw</strong>
-          <p>同步时间：2026年5月20日 20:58</p>
+          <p>同步时间：2026年5月23日 00:22</p>
         </div>
       </footer>
     </main>

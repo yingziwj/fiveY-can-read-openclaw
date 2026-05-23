@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adding capabilities (contributor guide) | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="Adding capabilities (contributor guide) 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：&lt;Info&gt; This is a **…">
+  <meta name="description" content="这页是 OpenClaw 核心贡献者指南。它提醒你不要把某个厂商直接写进 channel 或 tool，而是先定义共享 capability：输入、输出、错误、注册表和运行时边界都说清楚，再让 provider、harness、工具和通道按同一张合同工作。">
   <meta name="robots" content="index,follow">
   <meta name="google-adsense-account" content="ca-pub-3833673520933536">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Adding capabilities (contributor guide) | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="Adding capabilities (contributor guide) 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：&lt;Info&gt; This is a **…">
+  <meta property="og:description" content="这页是 OpenClaw 核心贡献者指南。它提醒你不要把某个厂商直接写进 channel 或 tool，而是先定义共享 capability：输入、输出、错误、注册表和运行时边界都说清楚，再让 provider、harness、工具和通道按同一张合同工作。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/plugins/adding-capabilities/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta property="og:image:alt" content="Adding capabilities (contributor guide) 的中文故事化导读页面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Adding capabilities (contributor guide) | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="Adding capabilities (contributor guide) 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：&lt;Info&gt; This is a **…">
+  <meta name="twitter:description" content="这页是 OpenClaw 核心贡献者指南。它提醒你不要把某个厂商直接写进 channel 或 tool，而是先定义共享 capability：输入、输出、错误、注册表和运行时边界都说清楚，再让 provider、harness、工具和通道按同一张合同工作。">
   <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/plugins/adding-capabilities/">
@@ -25,7 +25,7 @@
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3833673520933536" crossorigin="anonymous"></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Adding capabilities (contributor guide)","description":"Adding capabilities (contributor guide) 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：\u003cInfo> This is a **…","url":"https://fivey-can-read-openclaw.pages.dev/plugins/adding-capabilities/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Adding capabilities (contributor guide)","description":"这页是 OpenClaw 核心贡献者指南。它提醒你不要把某个厂商直接写进 channel 或 tool，而是先定义共享 capability：输入、输出、错误、注册表和运行时边界都说清楚，再让 provider、harness、工具和通道按同一张合同工作。","url":"https://fivey-can-read-openclaw.pages.dev/plugins/adding-capabilities/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Plugins","item":"https://fivey-can-read-openclaw.pages.dev/plugins/adding-capabilities/"}]}</script>
 </head>
 <body>
@@ -719,11 +719,6 @@
             <details class="sidebar-group">
               <summary>工具大全</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/tools/acp-agents/">
-                  <span>ACP agents 工具</span>
-                  <small>ACP agents</small>
-                </a>
-
                 <a class="sidebar-link " href="/tools/agent-send/">
                   <span>Agent send 工具</span>
                   <small>Agent send</small>
@@ -974,6 +969,11 @@
                   <small>Web fetch</small>
                 </a>
 
+                <a class="sidebar-link " href="/tools/acp-agents/">
+                  <span>ACP agents 工具</span>
+                  <small>ACP agents</small>
+                </a>
+
                 <a class="sidebar-link " href="/tools/acp-agents-setup/">
                   <span>ACP agents — setup</span>
                   <small>ACP agents — setup</small>
@@ -1027,6 +1027,11 @@
                 <a class="sidebar-link " href="/plugins/codex-harness/">
                   <span>Codex harness 插件</span>
                   <small>Codex harness</small>
+                </a>
+
+                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
+                  <span>Native Codex plugins 插件</span>
+                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/community/">
@@ -1117,11 +1122,6 @@
                 <a class="sidebar-link " href="/plugins/codex-harness-runtime/">
                   <span>Codex harness runtime 插件</span>
                   <small>Codex harness runtime</small>
-                </a>
-
-                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
-                  <span>Native Codex plugins 插件</span>
-                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/compatibility/">
@@ -1634,11 +1634,6 @@
             <details class="sidebar-group">
               <summary>网关</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/gateway/">
-                  <span>Gateway runbook</span>
-                  <small>Gateway runbook</small>
-                </a>
-
                 <a class="sidebar-link " href="/gateway/authentication/">
                   <span>身份认证</span>
                   <small>Authentication</small>
@@ -1722,6 +1717,11 @@
                 <a class="sidebar-link " href="/gateway/heartbeat/">
                   <span>Heartbeat</span>
                   <small>Heartbeat</small>
+                </a>
+
+                <a class="sidebar-link " href="/gateway/">
+                  <span>Gateway runbook</span>
+                  <small>Gateway runbook</small>
                 </a>
 
                 <a class="sidebar-link " href="/gateway/local-model-services/">
@@ -1872,11 +1872,6 @@
                 <a class="sidebar-link " href="/cli/backup/">
                   <span>Backup 命令</span>
                   <small>Backup</small>
-                </a>
-
-                <a class="sidebar-link " href="/cli/browser/">
-                  <span>浏览器</span>
-                  <small>Browser</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/channels/">
@@ -2039,6 +2034,11 @@
                   <small>ACP</small>
                 </a>
 
+                <a class="sidebar-link " href="/cli/browser/">
+                  <span>浏览器</span>
+                  <small>Browser</small>
+                </a>
+
                 <a class="sidebar-link " href="/cli/clawbot/">
                   <span>Clawbot 命令</span>
                   <small>Clawbot</small>
@@ -2107,6 +2107,11 @@
                 <a class="sidebar-link " href="/cli/plugins/">
                   <span>插件</span>
                   <small>Plugins</small>
+                </a>
+
+                <a class="sidebar-link " href="/cli/policy/">
+                  <span>Policy 命令</span>
+                  <small>Policy</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/proxy/">
@@ -2699,8 +2704,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Plugins 导读</p>
-        <h1>Adding capabilities (contributor guide)：这块新积木往哪儿卡</h1>
-        <p class="hero-copy">Adding capabilities (contributor guide) 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：&lt;Info&gt; This is a **contributor guide** for OpenClaw core developers. If you are buildin…。</p>
+        <h1>新增 Capability 要先设计公共合同，再接具体插件和供应商</h1>
+        <p class="hero-copy">这页是 OpenClaw 核心贡献者指南。它提醒你不要把某个厂商直接写进 channel 或 tool，而是先定义共享 capability：输入、输出、错误、注册表和运行时边界都说清楚，再让 provider、harness、工具和通道按同一张合同工作。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -3391,11 +3396,6 @@
             <details class="sidebar-group">
               <summary>工具大全</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/tools/acp-agents/">
-                  <span>ACP agents 工具</span>
-                  <small>ACP agents</small>
-                </a>
-
                 <a class="sidebar-link " href="/tools/agent-send/">
                   <span>Agent send 工具</span>
                   <small>Agent send</small>
@@ -3646,6 +3646,11 @@
                   <small>Web fetch</small>
                 </a>
 
+                <a class="sidebar-link " href="/tools/acp-agents/">
+                  <span>ACP agents 工具</span>
+                  <small>ACP agents</small>
+                </a>
+
                 <a class="sidebar-link " href="/tools/acp-agents-setup/">
                   <span>ACP agents — setup</span>
                   <small>ACP agents — setup</small>
@@ -3699,6 +3704,11 @@
                 <a class="sidebar-link " href="/plugins/codex-harness/">
                   <span>Codex harness 插件</span>
                   <small>Codex harness</small>
+                </a>
+
+                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
+                  <span>Native Codex plugins 插件</span>
+                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/community/">
@@ -3789,11 +3799,6 @@
                 <a class="sidebar-link " href="/plugins/codex-harness-runtime/">
                   <span>Codex harness runtime 插件</span>
                   <small>Codex harness runtime</small>
-                </a>
-
-                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
-                  <span>Native Codex plugins 插件</span>
-                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/compatibility/">
@@ -4306,11 +4311,6 @@
             <details class="sidebar-group">
               <summary>网关</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/gateway/">
-                  <span>Gateway runbook</span>
-                  <small>Gateway runbook</small>
-                </a>
-
                 <a class="sidebar-link " href="/gateway/authentication/">
                   <span>身份认证</span>
                   <small>Authentication</small>
@@ -4394,6 +4394,11 @@
                 <a class="sidebar-link " href="/gateway/heartbeat/">
                   <span>Heartbeat</span>
                   <small>Heartbeat</small>
+                </a>
+
+                <a class="sidebar-link " href="/gateway/">
+                  <span>Gateway runbook</span>
+                  <small>Gateway runbook</small>
                 </a>
 
                 <a class="sidebar-link " href="/gateway/local-model-services/">
@@ -4544,11 +4549,6 @@
                 <a class="sidebar-link " href="/cli/backup/">
                   <span>Backup 命令</span>
                   <small>Backup</small>
-                </a>
-
-                <a class="sidebar-link " href="/cli/browser/">
-                  <span>浏览器</span>
-                  <small>Browser</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/channels/">
@@ -4711,6 +4711,11 @@
                   <small>ACP</small>
                 </a>
 
+                <a class="sidebar-link " href="/cli/browser/">
+                  <span>浏览器</span>
+                  <small>Browser</small>
+                </a>
+
                 <a class="sidebar-link " href="/cli/clawbot/">
                   <span>Clawbot 命令</span>
                   <small>Clawbot</small>
@@ -4779,6 +4784,11 @@
                 <a class="sidebar-link " href="/cli/plugins/">
                   <span>插件</span>
                   <small>Plugins</small>
+                </a>
+
+                <a class="sidebar-link " href="/cli/policy/">
+                  <span>Policy 命令</span>
+                  <small>Policy</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/proxy/">
@@ -5358,566 +5368,81 @@
         </div>
       </div>
 
+      <!-- handcrafted-source:plugins.adding-capabilities.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>新增 Capability 要先设计公共合同，再接具体插件和供应商</h2>
+      <p>这页是 OpenClaw 核心贡献者指南。它提醒你不要把某个厂商直接写进 channel 或 tool，而是先定义共享 capability：输入、输出、错误、注册表和运行时边界都说清楚，再让 provider、harness、工具和通道按同一张合同工作。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 10 节，先看 Start Here</span>
+      <span>路径：/plugins/adding-capabilities</span>
+      <a href="https://docs.openclaw.ai/plugins/adding-capabilities" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Adding capabilities (contributor guide)</h2>
-          <p>这一页不是在堆术语，它像把“Adding capabilities (contributor guide)”这台小机器搬到桌上，当着你的面拆开给你看。你先不用全记住，先抓住它到底在忙什么：&lt;Info&gt; This is a **contributor guide** for OpenClaw core developers. If you are building an ext…。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/plugins/adding-capabilities</span>
-          <span>章节数量：9</span>
-          <a href="https://docs.openclaw.ai/plugins/adding-capabilities" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>不要先把某个厂商直接塞进系统</h2>
+    <p>如果一个新能力以后可能有很多供应商、很多工具、很多通道一起用，就不能只为第一个厂商开一条小路。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-card-label">错误起点</div><p>直接把某个 vendor 写死到 channel 或 tool 里，像给全校只修一扇只认某个同学的门。</p></div>
+    <div class="story-card"><div class="story-card-label">正确起点</div><p>先定义 capability，让所有供应商都按同一张任务单交作业。</p></div>
+    <div class="source-card"><div class="story-card-label">plugin</div><p>像“这间教室归谁管”。它是所有权和加载边界。</p></div>
+    <div class="source-card"><div class="story-card-label">capability</div><p>像“大家交作业用同一张表”。它是核心共享合同。</p></div>
+  </div>
+</section>
 
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Info&gt; This is a **contributor guide** for OpenClaw core developers. If you are building an external 新本领插件, see Buildin…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>标准顺序像搭桥：先桥面，再车辆</h2>
+  </div>
+  <div class="home-grid">
+    <article class="home-card"><span class="home-card-index">1</span><h2>定义能力</h2><p>先把输入、输出、错误和权限边界说清楚。</p></article>
+    <article class="home-card"><span class="home-card-index">2</span><h2>放到 core contract</h2><p>共享类型和注册表要在核心位置，别散落在某个插件里。</p></article>
+    <article class="home-card"><span class="home-card-index">3</span><h2>接 provider</h2><p>供应商插件按同一能力合同提供实现。</p></article>
+    <article class="home-card"><span class="home-card-index">4</span><h2>再接工具和 UI</h2><p>通道、工具、命令只依赖能力，不直接绑死某个供应商。</p></article>
+  </div>
+</section>
 
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Info&gt; This is a **contributor guide** for OpenClaw core developers. If you are building an external 新本领插件, see Buildin…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Info&gt; This is a **contributor guide** for OpenClaw core developers. If you are building an external plugin, see <a href="/plugins/building-plugins" target="_blank" rel="noreferrer">Building plugins</a> instead. For the deep architecture reference (capability model, ownership, load pipeline, runtime helpers), see <a href="/plugins/architecture" target="_blank" rel="noreferrer">Plugin internals</a>. &lt;/Info&gt;</p>
-      </div>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>文件清单不是杂物表，而是“每个零件应该住在哪里”</h2>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>types.ts</code></div><p>放公开形状：能力吃什么、吐什么、错误怎么描述。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>registry.ts</code></div><p>放登记处：谁提供了这个能力，运行时怎么找到它。</p></div>
+    <div class="source-card"><div class="story-card-label"><code>runtime</code></div><p>放给执行阶段用的助手，避免每个调用方重复造轮子。</p></div>
+    <div class="story-card"><div class="story-card-label">检查重点</div><p>新能力要有清楚所有权、测试、文档和迁移说明，不能只靠“能跑”就合并。</p></div>
+  </div>
+</section>
 
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use this when OpenClaw needs a new shared domain such as image generation, video generation, or some future vendor-back…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use this when OpenClaw needs a new shared domain such as image generation, video generation, or some future vendor-backed feature area.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The rule:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The rule:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Start Here”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：**新本领插件** = ownership boundary、**capability** = shared core contract。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>**plugin** = ownership boundary</li><li>**capability** = shared core contract</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Do not start by wiring a vendor directly into a 消息通道 or a 工具小帮手. Start by defining the capability.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Do not start by wiring a vendor directly into a channel or a tool. Start by defining the capability.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>When to create a capability</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Create a new capability when **all** of these are true: 1. More than one vendor could plausibly implement it. 2. 消息通道s,…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Create a new capability when **all** of these are true:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Create a new capability when **all** of these are true:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：1. More than one vendor could plausibly implement it. 2. 消息通道s, 工具小帮手s, or feature 新本领插件s should consume it without car…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. More than one vendor could plausibly implement it. 2. Channels, tools, or feature plugins should consume it without caring about the vendor. 3. Core needs to own fallback, policy, config, or delivery behavior.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：If the work is vendor-only and no shared contract exists yet, stop and define the contract first.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If the work is vendor-only and no shared contract exists yet, stop and define the contract first.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>The standard sequence</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：1. Define the typed core contract. 2. Add 新本领插件 registration for that contract. 3. Add a shared runtime helper. 4. Wire…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：1. Define the typed core contract. 2. Add 新本领插件 registration for that contract. 3. Add a shared runtime helper. 4. Wire…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. Define the typed core contract. 2. Add plugin registration for that contract. 3. Add a shared runtime helper. 4. Wire one real vendor plugin as proof. 5. Move feature/channel consumers onto the runtime helper. 6. Add contract tests. 7. Document the operator-facing config and ownership model.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>What goes where</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：**Core:** **Vendor 新本领插件:** **Feature/消息通道 新本领插件:**。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：**Core:**。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Core:**</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“What goes where”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：Request/response types.、Provider registry + resolution.、Fallback behavior.、设置说明书 schema with propagated title / desc…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Request/response types.</li><li>Provider registry + resolution.</li><li>Fallback behavior.</li><li>Config schema with propagated <code>title</code> / <code>description</code> docs metadata on nested object, wildcard, array-item, and composition nodes.</li><li>Runtime helper surface.</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：**Vendor 新本领插件:**。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Vendor plugin:**</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“What goes where”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：Vendor 对话接口 calls.、Vendor auth handling.、Vendor-specific request normalization.、Registration of the capability implementa…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Vendor API calls.</li><li>Vendor auth handling.</li><li>Vendor-specific request normalization.</li><li>Registration of the capability implementation.</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：**Feature/消息通道 新本领插件:**。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>**Feature/channel plugin:**</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“What goes where”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：Calls 对话接口.runtime.* or the matching 新本领插…、Never calls a vendor implementation direc…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Calls <code>api.runtime.*</code> or the matching <code>plugin-sdk/*-runtime</code> helper.</li><li>Never calls a vendor implementation directly.</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Provider and harness seams</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use **provider hooks** when the behavior belongs to the 聪明脑袋模型 provider contract rather than the generic 机器人朋友 loop. Ex…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use **provider hooks** when the behavior belongs to the 聪明脑袋模型 provider contract rather than the generic 机器人朋友 loop. Ex…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use **provider hooks** when the behavior belongs to the model provider contract rather than the generic agent loop. Examples include provider-specific request params after transport selection, auth-profile preference, prompt overlays, and follow-up fallback routing after model/profile failover.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use **机器人朋友 harness hooks** when the behavior belongs to the runtime that is executing a turn. Harnesses can classify s…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use **agent harness hooks** when the behavior belongs to the runtime that is executing a turn. Harnesses can classify successful-but-unusable attempt results such as empty, reasoning-only, or planning-only responses so the outer model fallback policy can make the retry decision.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Keep both seams narrow:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Keep both seams narrow:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Provider and harness seams”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：Core owns the retry/fallback policy.、Provider 新本领插件s own provider-specific req…、Harness 新本领插件s own runtime-specific attem…、Third-party 新本领插件s return hints, not dire…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Core owns the retry/fallback policy.</li><li>Provider plugins own provider-specific request/auth/routing hints.</li><li>Harness plugins own runtime-specific attempt classification.</li><li>Third-party plugins return hints, not direct mutations of core state.</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>File checklist</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：For a new capability, expect to touch these areas:。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：For a new capability, expect to touch these areas:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For a new capability, expect to touch these areas:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“File checklist”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：src/&lt;capability&gt;/types.ts、src/&lt;capability&gt;/...registry/runtime.ts、src/新本领插件s/types.ts、src/新本领插件s/registry.ts。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>src/&lt;capability&gt;/types.ts</code></li><li><code>src/&lt;capability&gt;/...registry/runtime.ts</code></li><li><code>src/plugins/types.ts</code></li><li><code>src/plugins/registry.ts</code></li><li><code>src/plugins/captured-registration.ts</code></li><li><code>src/plugins/contracts/registry.ts</code></li><li><code>src/plugins/runtime/types-core.ts</code></li><li><code>src/plugins/runtime/index.ts</code></li><li><code>src/plugin-sdk/&lt;capability&gt;.ts</code></li><li><code>src/plugin-sdk/&lt;capability&gt;-runtime.ts</code></li><li>One or more bundled plugin packages.</li><li>Config, docs, tests.</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Worked example: image generation</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Image generation follows the standard shape: 1. Core defines ImageGenerationProvider. 2. Core exposes registerImageGene…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Image generation follows the standard shape:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Image generation follows the standard shape:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：1. Core defines ImageGenerationProvider. 2. Core exposes registerImageGenerationProvider(...). 3. Core exposes runtime.…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. Core defines <code>ImageGenerationProvider</code>. 2. Core exposes <code>registerImageGenerationProvider(...)</code>. 3. Core exposes <code>runtime.imageGeneration.generate(...)</code>. 4. The <code>openai</code>, <code>google</code>, <code>fal</code>, and <code>minimax</code> plugins register vendor-backed implementations. 5. Future vendors register the same contract without changing channels/tools.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The 设置说明书 key is intentionally separate from vision-analysis routing:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The config key is intentionally separate from vision-analysis routing:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Worked example: image generation”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：机器人朋友s.defaults.image聪明脑袋模型 analyzes imag…、机器人朋友s.defaults.imageGeneration聪明脑袋模型 gen…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>agents.defaults.imageModel</code> analyzes images.</li><li><code>agents.defaults.imageGenerationModel</code> generates images.</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Keep those separate so fallback and policy remain explicit.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Keep those separate so fallback and policy remain explicit.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>Review checklist</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Before shipping a new capability, verify: If a PR skips the capability layer and hardcodes vendor behavior into a 消息通道/…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Before shipping a new capability, verify:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Before shipping a new capability, verify:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Review checklist”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：No 消息通道/工具小帮手 imports vendor code directl…、The runtime helper is the shared path.、At least one contract test asserts bundle…、设置说明书 docs name the new 聪明脑袋模型/设置说明书 key.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>No channel/tool imports vendor code directly.</li><li>The runtime helper is the shared path.</li><li>At least one contract test asserts bundled ownership.</li><li>Config docs name the new model/config key.</li><li>Plugin docs explain the ownership boundary.</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：If a PR skips the capability layer and hardcodes vendor behavior into a 消息通道/工具小帮手, send it back and define the contrac…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If a PR skips the capability layer and hardcodes vendor behavior into a channel/tool, send it back and define the contract first.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>Related</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Related”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：新本领插件 internals — capability 聪明脑袋模型, owne…、Building 新本领插件s — first-新本领插件 tutorial.、SDK overview — import map and registratio…、Creating skills — companion contributor s…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><a href="/plugins/architecture" target="_blank" rel="noreferrer">Plugin internals</a> — capability model, ownership, load pipeline, runtime helpers.</li><li><a href="/plugins/building-plugins" target="_blank" rel="noreferrer">Building plugins</a> — first-plugin tutorial.</li><li><a href="/plugins/sdk-overview" target="_blank" rel="noreferrer">SDK overview</a> — import map and registration API reference.</li><li><a href="/tools/creating-skills" target="_blank" rel="noreferrer">Creating skills</a> — companion contributor surface.</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>AdSense 连接验证已经放在页面头部；广告单元等站点审批通过后再启用。</p>
-        <code>google-adsense-account: ca-pub-3833673520933536</code>
-      </div>
-    </section>
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>Image generation 示例的真正意思</h2>
+    <p>官方用图像生成举例，是因为它很像未来许多新能力：有不同供应商，有不同参数，还可能被工具、聊天通道和 UI 一起使用。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-card-label">能力层</div><p>定义“生成图片”这件事的共同语言。</p></div>
+    <div class="story-card"><div class="story-card-label">提供商层</div><p>不同厂商各自实现，但对外交同样格式的结果。</p></div>
+    <div class="story-card"><div class="story-card-label">使用层</div><p>工具和通道只说“我要生成图片”，不用知道背后找的是谁。</p></div>
+    <div class="source-card"><div class="story-card-label">一句话收住</div><p>先设计公路，再让车上路。不要为了第一辆车，把路修成只能它开。</p></div>
+  </div>
+</section>
 
 
       <footer class="page-footer">
         <div>
           <strong>Fivey Can Read OpenClaw</strong>
-          <p>同步时间：2026年5月20日 20:58</p>
+          <p>同步时间：2026年5月23日 00:22</p>
         </div>
       </footer>
     </main>

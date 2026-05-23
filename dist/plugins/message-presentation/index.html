@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Message presentation | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="小纸条消息 presentation 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：小纸条消息 presentation is OpenClaw&#39;s shared…">
+  <meta name="description" content="这页定义 rich outbound chat UI 的共享合同。代理、CLI、approval flows 和插件描述文本段、上下文、footer、divider 等可移植意图；Discord、Slack、Telegram、Teams、Feishu 等通道插件负责输出各自平台的原生 blocks、buttons 或…">
   <meta name="robots" content="index,follow">
   <meta name="google-adsense-account" content="ca-pub-3833673520933536">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Message presentation | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="小纸条消息 presentation 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：小纸条消息 presentation is OpenClaw&#39;s shared…">
+  <meta property="og:description" content="这页定义 rich outbound chat UI 的共享合同。代理、CLI、approval flows 和插件描述文本段、上下文、footer、divider 等可移植意图；Discord、Slack、Telegram、Teams、Feishu 等通道插件负责输出各自平台的原生 blocks、buttons 或…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/plugins/message-presentation/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta property="og:image:alt" content="Message presentation 的中文故事化导读页面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Message presentation | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="小纸条消息 presentation 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：小纸条消息 presentation is OpenClaw&#39;s shared…">
+  <meta name="twitter:description" content="这页定义 rich outbound chat UI 的共享合同。代理、CLI、approval flows 和插件描述文本段、上下文、footer、divider 等可移植意图；Discord、Slack、Telegram、Teams、Feishu 等通道插件负责输出各自平台的原生 blocks、buttons 或…">
   <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/plugins/message-presentation/">
@@ -25,7 +25,7 @@
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3833673520933536" crossorigin="anonymous"></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Message presentation","description":"小纸条消息 presentation 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：小纸条消息 presentation is OpenClaw's shared…","url":"https://fivey-can-read-openclaw.pages.dev/plugins/message-presentation/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Message presentation","description":"这页定义 rich outbound chat UI 的共享合同。代理、CLI、approval flows 和插件描述文本段、上下文、footer、divider 等可移植意图；Discord、Slack、Telegram、Teams、Feishu 等通道插件负责输出各自平台的原生 blocks、buttons 或…","url":"https://fivey-can-read-openclaw.pages.dev/plugins/message-presentation/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Plugins","item":"https://fivey-can-read-openclaw.pages.dev/plugins/message-presentation/"}]}</script>
 </head>
 <body>
@@ -719,11 +719,6 @@
             <details class="sidebar-group">
               <summary>工具大全</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/tools/acp-agents/">
-                  <span>ACP agents 工具</span>
-                  <small>ACP agents</small>
-                </a>
-
                 <a class="sidebar-link " href="/tools/agent-send/">
                   <span>Agent send 工具</span>
                   <small>Agent send</small>
@@ -974,6 +969,11 @@
                   <small>Web fetch</small>
                 </a>
 
+                <a class="sidebar-link " href="/tools/acp-agents/">
+                  <span>ACP agents 工具</span>
+                  <small>ACP agents</small>
+                </a>
+
                 <a class="sidebar-link " href="/tools/acp-agents-setup/">
                   <span>ACP agents — setup</span>
                   <small>ACP agents — setup</small>
@@ -1027,6 +1027,11 @@
                 <a class="sidebar-link " href="/plugins/codex-harness/">
                   <span>Codex harness 插件</span>
                   <small>Codex harness</small>
+                </a>
+
+                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
+                  <span>Native Codex plugins 插件</span>
+                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/community/">
@@ -1117,11 +1122,6 @@
                 <a class="sidebar-link " href="/plugins/codex-harness-runtime/">
                   <span>Codex harness runtime 插件</span>
                   <small>Codex harness runtime</small>
-                </a>
-
-                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
-                  <span>Native Codex plugins 插件</span>
-                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/compatibility/">
@@ -1634,11 +1634,6 @@
             <details class="sidebar-group">
               <summary>网关</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/gateway/">
-                  <span>Gateway runbook</span>
-                  <small>Gateway runbook</small>
-                </a>
-
                 <a class="sidebar-link " href="/gateway/authentication/">
                   <span>身份认证</span>
                   <small>Authentication</small>
@@ -1722,6 +1717,11 @@
                 <a class="sidebar-link " href="/gateway/heartbeat/">
                   <span>Heartbeat</span>
                   <small>Heartbeat</small>
+                </a>
+
+                <a class="sidebar-link " href="/gateway/">
+                  <span>Gateway runbook</span>
+                  <small>Gateway runbook</small>
                 </a>
 
                 <a class="sidebar-link " href="/gateway/local-model-services/">
@@ -1872,11 +1872,6 @@
                 <a class="sidebar-link " href="/cli/backup/">
                   <span>Backup 命令</span>
                   <small>Backup</small>
-                </a>
-
-                <a class="sidebar-link " href="/cli/browser/">
-                  <span>浏览器</span>
-                  <small>Browser</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/channels/">
@@ -2039,6 +2034,11 @@
                   <small>ACP</small>
                 </a>
 
+                <a class="sidebar-link " href="/cli/browser/">
+                  <span>浏览器</span>
+                  <small>Browser</small>
+                </a>
+
                 <a class="sidebar-link " href="/cli/clawbot/">
                   <span>Clawbot 命令</span>
                   <small>Clawbot</small>
@@ -2107,6 +2107,11 @@
                 <a class="sidebar-link " href="/cli/plugins/">
                   <span>插件</span>
                   <small>Plugins</small>
+                </a>
+
+                <a class="sidebar-link " href="/cli/policy/">
+                  <span>Policy 命令</span>
+                  <small>Policy</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/proxy/">
@@ -2699,8 +2704,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Plugins 导读</p>
-        <h1>小纸条消息 presentation：这块新积木往哪儿卡</h1>
-        <p class="hero-copy">小纸条消息 presentation 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：小纸条消息 presentation is OpenClaw&#39;s shared contract for rich outbound chat UI. It lets 机器人…。</p>
+        <h1>Message Presentation 让核心只描述消息意图，各通道自己渲染原生样式</h1>
+        <p class="hero-copy">这页定义 rich outbound chat UI 的共享合同。代理、CLI、approval flows 和插件描述文本段、上下文、footer、divider 等可移植意图；Discord、Slack、Telegram、Teams、Feishu 等通道插件负责输出各自平台的原生 blocks、buttons 或 cards。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -3391,11 +3396,6 @@
             <details class="sidebar-group">
               <summary>工具大全</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/tools/acp-agents/">
-                  <span>ACP agents 工具</span>
-                  <small>ACP agents</small>
-                </a>
-
                 <a class="sidebar-link " href="/tools/agent-send/">
                   <span>Agent send 工具</span>
                   <small>Agent send</small>
@@ -3646,6 +3646,11 @@
                   <small>Web fetch</small>
                 </a>
 
+                <a class="sidebar-link " href="/tools/acp-agents/">
+                  <span>ACP agents 工具</span>
+                  <small>ACP agents</small>
+                </a>
+
                 <a class="sidebar-link " href="/tools/acp-agents-setup/">
                   <span>ACP agents — setup</span>
                   <small>ACP agents — setup</small>
@@ -3699,6 +3704,11 @@
                 <a class="sidebar-link " href="/plugins/codex-harness/">
                   <span>Codex harness 插件</span>
                   <small>Codex harness</small>
+                </a>
+
+                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
+                  <span>Native Codex plugins 插件</span>
+                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/community/">
@@ -3789,11 +3799,6 @@
                 <a class="sidebar-link " href="/plugins/codex-harness-runtime/">
                   <span>Codex harness runtime 插件</span>
                   <small>Codex harness runtime</small>
-                </a>
-
-                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
-                  <span>Native Codex plugins 插件</span>
-                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/compatibility/">
@@ -4306,11 +4311,6 @@
             <details class="sidebar-group">
               <summary>网关</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/gateway/">
-                  <span>Gateway runbook</span>
-                  <small>Gateway runbook</small>
-                </a>
-
                 <a class="sidebar-link " href="/gateway/authentication/">
                   <span>身份认证</span>
                   <small>Authentication</small>
@@ -4394,6 +4394,11 @@
                 <a class="sidebar-link " href="/gateway/heartbeat/">
                   <span>Heartbeat</span>
                   <small>Heartbeat</small>
+                </a>
+
+                <a class="sidebar-link " href="/gateway/">
+                  <span>Gateway runbook</span>
+                  <small>Gateway runbook</small>
                 </a>
 
                 <a class="sidebar-link " href="/gateway/local-model-services/">
@@ -4544,11 +4549,6 @@
                 <a class="sidebar-link " href="/cli/backup/">
                   <span>Backup 命令</span>
                   <small>Backup</small>
-                </a>
-
-                <a class="sidebar-link " href="/cli/browser/">
-                  <span>浏览器</span>
-                  <small>Browser</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/channels/">
@@ -4711,6 +4711,11 @@
                   <small>ACP</small>
                 </a>
 
+                <a class="sidebar-link " href="/cli/browser/">
+                  <span>浏览器</span>
+                  <small>Browser</small>
+                </a>
+
                 <a class="sidebar-link " href="/cli/clawbot/">
                   <span>Clawbot 命令</span>
                   <small>Clawbot</small>
@@ -4779,6 +4784,11 @@
                 <a class="sidebar-link " href="/cli/plugins/">
                   <span>插件</span>
                   <small>Plugins</small>
+                </a>
+
+                <a class="sidebar-link " href="/cli/policy/">
+                  <span>Policy 命令</span>
+                  <small>Policy</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/proxy/">
@@ -5358,1274 +5368,29 @@
         </div>
       </div>
 
-
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Message presentation</h2>
-          <p>这一页不是在堆术语，它像把“小纸条消息 presentation”这台小机器搬到桌上，当着你的面拆开给你看。你先不用全记住，先抓住它到底在忙什么：小纸条消息 presentation is OpenClaw&#39;s shared contract for rich outbound chat UI. It lets 机器人朋友s, CLI…。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/plugins/message-presentation</span>
-          <span>章节数量：11</span>
-          <a href="https://docs.openclaw.ai/plugins/message-presentation" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：小纸条消息 presentation is OpenClaw&#39;s shared contract for rich outbound chat UI. It lets 机器人朋友s, CLI 魔法口令s, approval flows,…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：小纸条消息 presentation is OpenClaw&#39;s shared contract for rich outbound chat UI. It lets 机器人朋友s, CLI 魔法口令s, approval flows,…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Message presentation is OpenClaw&#39;s shared contract for rich outbound chat UI. It lets agents, CLI commands, approval flows, and plugins describe the message intent once, while each channel plugin renders the best native shape it can.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use presentation for portable 小纸条消息 UI:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use presentation for portable message UI:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Start Here”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：text sections、small context/footer text、dividers、buttons。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>text sections</li><li>small context/footer text</li><li>dividers</li><li>buttons</li><li>select menus</li><li>card title and tone</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Do not add new provider-native fields such as Discord components, Slack blocks, Telegram buttons, Teams card, or Feishu…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Do not add new provider-native fields such as Discord <code>components</code>, Slack <code>blocks</code>, Telegram <code>buttons</code>, Teams <code>card</code>, or Feishu <code>card</code> to the shared message tool. Those are renderer outputs owned by the channel plugin.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Contract</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：新本领插件 authors import the public contract from: Shape: Button semantics: existing interaction path when the 消息通道 support…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：新本领插件 authors import the public contract from:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Plugin authors import the public contract from:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“import type {”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“MessagePresentation,”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“ReplyPayloadDelivery,”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-ts">import type {
-  MessagePresentation,
-  ReplyPayloadDelivery,
-} from &quot;openclaw/plugin-sdk/interactive-runtime&quot;;</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Shape:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Shape:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“type MessagePresentation = {”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这里在给“title?”挂牌子，告诉系统它该指向“string;”。</li><li>这里在给“tone?”挂牌子，告诉系统它该指向“neutral | info | success | warning | danger;”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-ts">type MessagePresentation = {
-  title?: string;
-  tone?: &quot;neutral&quot; | &quot;info&quot; | &quot;success&quot; | &quot;warning&quot; | &quot;danger&quot;;
-  blocks: MessagePresentationBlock[];
-};
-
-type MessagePresentationBlock =
-  | { type: &quot;text&quot;; text: string }
-  | { type: &quot;context&quot;; text: string }
-  | { type: &quot;divider&quot; }
-  | { type: &quot;buttons&quot;; buttons: MessagePresentationButton[] }
-  | { type: &quot;select&quot;; placeholder?: string; options: MessagePresentationOption[] };
-
-type MessagePresentationButton = {
-  label: string;
-  value?: string;
-  url?: string;
-  webApp?: { url: string };
-  /** @deprecated Use webApp. Accepted for legacy JSON payloads only. */
-  web_app?: { url: string };
-  priority?: number;
-  disabled?: boolean;
-  style?: &quot;primary&quot; | &quot;secondary&quot; | &quot;success&quot; | &quot;danger&quot;;
-};
-
-type MessagePresentationOption = {
-  label: string;
-  value: string;
-};
-
-type ReplyPayloadDelivery = {
-  pin?:
-    | boolean
-    | {
-        enabled: boolean;
-        notify?: boolean;
-        required?: boolean;
-      };
-};</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Button semantics:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Button semantics:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：existing interaction path when the 消息通道 supports clickable controls.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>existing interaction path when the channel supports clickable controls.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：as web_app and only supports it in private chats. web_app is still accepted in loose JSON payloads for compatibility, b…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>as <code>web_app</code> and only supports it in private chats. <code>web_app</code> is still accepted in loose JSON payloads for compatibility, but TypeScript producers should use <code>webApp</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：default, not fail the send.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>default, not fail the send.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：must be dropped, core keeps higher-priority buttons first and preserves original order among equal priority buttons. Wh…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>must be dropped, core keeps higher-priority buttons first and preserves original order among equal priority buttons. When all controls fit, authored order is preserved.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：core degrades the disabled control to non-interactive fallback text.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>core degrades the disabled control to non-interactive fallback text.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Contract”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：value is an application action value rout…、url is a link button. It can exist withou…、webApp describes a 消息通道-native web app bu…、label is required and is also used in tex…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>value</code> is an application action value routed back through the channel&#39;s</li><li><code>url</code> is a link button. It can exist without <code>value</code>.</li><li><code>webApp</code> describes a channel-native web app button. Telegram renders this</li><li><code>label</code> is required and is also used in text fallback.</li><li><code>style</code> is advisory. Renderers should map unsupported styles to a safe</li><li><code>priority</code> is optional. When a channel advertises action limits and controls</li><li><code>disabled</code> is optional. Channels must opt in with <code>supportsDisabled</code>; otherwise</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Select semantics:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Select semantics:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：select support.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>select support.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Contract”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：options[].value is the selected applicati…、placeholder is advisory and may be ignore…、If a 消息通道 does not support selects, fallb…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>options[].value</code> is the selected application value.</li><li><code>placeholder</code> is advisory and may be ignored by channels without native</li><li>If a channel does not support selects, fallback text lists the labels.</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Producer examples</h2>
-            <p>这一节主要在解释“Producer examples”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Producer examples”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Simple card: URL-only link button: Telegram Mini App button: Select menu: CLI send: Pinned delivery: Pinned delivery wi…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Simple card:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Simple card:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。</p>
-        <ul class="code-steps">
-          <li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li><li>这里在给“title”挂牌子，告诉系统它该指向“Deploy approval”。</li><li>这里在给“tone”挂牌子，告诉系统它该指向“warning”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{
-  &quot;title&quot;: &quot;Deploy approval&quot;,
-  &quot;tone&quot;: &quot;warning&quot;,
-  &quot;blocks&quot;: [
-    { &quot;type&quot;: &quot;text&quot;, &quot;text&quot;: &quot;Canary is ready to promote.&quot; },
-    { &quot;type&quot;: &quot;context&quot;, &quot;text&quot;: &quot;Build 1234, staging passed.&quot; },
-    {
-      &quot;type&quot;: &quot;buttons&quot;,
-      &quot;buttons&quot;: [
-        { &quot;label&quot;: &quot;Approve&quot;, &quot;value&quot;: &quot;deploy:approve&quot;, &quot;style&quot;: &quot;success&quot; },
-        { &quot;label&quot;: &quot;Decline&quot;, &quot;value&quot;: &quot;deploy:decline&quot;, &quot;style&quot;: &quot;danger&quot; }
-      ]
-    }
-  ]
-}</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：URL-only link button:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>URL-only link button:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。</p>
-        <ul class="code-steps">
-          <li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li><li>这里在给“blocks”挂牌子，告诉系统它该指向“[”。</li><li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{
-  &quot;blocks&quot;: [
-    { &quot;type&quot;: &quot;text&quot;, &quot;text&quot;: &quot;Release notes are ready.&quot; },
-    {
-      &quot;type&quot;: &quot;buttons&quot;,
-      &quot;buttons&quot;: [{ &quot;label&quot;: &quot;Open notes&quot;, &quot;url&quot;: &quot;https://example.com/release&quot; }]
-    }
-  ]
-}</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Telegram Mini App button:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Telegram Mini App button:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。</p>
-        <ul class="code-steps">
-          <li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li><li>这里在给“blocks”挂牌子，告诉系统它该指向“[”。</li><li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{
-  &quot;blocks&quot;: [
-    {
-      &quot;type&quot;: &quot;buttons&quot;,
-      &quot;buttons&quot;: [{ &quot;label&quot;: &quot;Launch&quot;, &quot;web_app&quot;: { &quot;url&quot;: &quot;https://example.com/app&quot; } }]
-    }
-  ]
-}</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Select menu:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Select menu:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。</p>
-        <ul class="code-steps">
-          <li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li><li>这里在给“title”挂牌子，告诉系统它该指向“Choose environment”。</li><li>这里在给“blocks”挂牌子，告诉系统它该指向“[”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{
-  &quot;title&quot;: &quot;Choose environment&quot;,
-  &quot;blocks&quot;: [
-    {
-      &quot;type&quot;: &quot;select&quot;,
-      &quot;placeholder&quot;: &quot;Environment&quot;,
-      &quot;options&quot;: [
-        { &quot;label&quot;: &quot;Canary&quot;, &quot;value&quot;: &quot;env:canary&quot; },
-        { &quot;label&quot;: &quot;Production&quot;, &quot;value&quot;: &quot;env:prod&quot; }
-      ]
-    }
-  ]
-}</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：CLI send:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>CLI send:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，像你把任务清清楚楚塞到它手里。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 动起来：“openclaw message send --channel slack \”。你可以把它想成一句说出口就要执行的差事。</li><li>这里在给“--target channel”挂牌子，告诉系统它该指向“C123 \”。</li><li>这一行“--message &quot;Deploy approval&quot; \”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw message send --channel slack \
-  --target channel:C123 \
-  --message &quot;Deploy approval&quot; \
-  --presentation &#39;{&quot;title&quot;:&quot;Deploy approval&quot;,&quot;tone&quot;:&quot;warning&quot;,&quot;blocks&quot;:[{&quot;type&quot;:&quot;text&quot;,&quot;text&quot;:&quot;Canary is ready.&quot;},{&quot;type&quot;:&quot;buttons&quot;,&quot;buttons&quot;:[{&quot;label&quot;:&quot;Approve&quot;,&quot;value&quot;:&quot;deploy:approve&quot;,&quot;style&quot;:&quot;success&quot;},{&quot;label&quot;:&quot;Decline&quot;,&quot;value&quot;:&quot;deploy:decline&quot;,&quot;style&quot;:&quot;danger&quot;}]}]}&#39;</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Pinned delivery:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Pinned delivery:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，像你把任务清清楚楚塞到它手里。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 动起来：“openclaw message send --channel telegram \”。你可以把它想成一句说出口就要执行的差事。</li><li>这一行“--target -1001234567890 \”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“--message &quot;Topic opened&quot; \”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw message send --channel telegram \
-  --target -1001234567890 \
-  --message &quot;Topic opened&quot; \
-  --pin</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Pinned delivery with explicit JSON:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Pinned delivery with explicit JSON:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。</p>
-        <ul class="code-steps">
-          <li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li><li>这里在给“pin”挂牌子，告诉系统它该指向“{”。</li><li>这里在给“enabled”挂牌子，告诉系统它该指向“true”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{
-  &quot;pin&quot;: {
-    &quot;enabled&quot;: true,
-    &quot;notify&quot;: true,
-    &quot;required&quot;: false
-  }
-}</code></pre>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Renderer contract</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：消息通道 新本领插件s declare render support on their outbound adapter: Capability booleans describe what the renderer can make i…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：消息通道 新本领插件s declare render support on their outbound adapter:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Channel plugins declare render support on their outbound adapter:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这里在给“const adapter”挂牌子，告诉系统它该指向“ChannelOutboundAdapter = {”。</li><li>这里在给“deliveryMode”挂牌子，告诉系统它该指向“direct”。</li><li>这里在给“presentationCapabilities”挂牌子，告诉系统它该指向“{”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-ts">const adapter: ChannelOutboundAdapter = {
-  deliveryMode: &quot;direct&quot;,
-  presentationCapabilities: {
-    supported: true,
-    buttons: true,
-    selects: true,
-    context: true,
-    divider: true,
-    limits: {
-      actions: {
-        maxActions: 25,
-        maxActionsPerRow: 5,
-        maxRows: 5,
-        maxLabelLength: 80,
-        maxValueBytes: 100,
-        supportsStyles: true,
-        supportsDisabled: false,
-      },
-      selects: {
-        maxOptions: 25,
-        maxLabelLength: 100,
-        maxValueBytes: 100,
-      },
-      text: {
-        maxLength: 2000,
-        encoding: &quot;characters&quot;,
-        markdownDialect: &quot;discord-markdown&quot;,
-      },
-    },
-  },
-  deliveryCapabilities: {
-    pin: true,
-  },
-  renderPresentation({ payload, presentation, ctx }) {
-    return renderNativePayload(payload, presentation, ctx);
-  },
-  async pinDeliveredMessage({ target, messageId, pin }) {
-    await pinNativeMessage(target, messageId, { notify: pin.notify === true });
-  },
-};</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Capability booleans describe what the renderer can make interactive. Optional limits describe the generic envelope core…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Capability booleans describe what the renderer can make interactive. Optional <code>limits</code> describe the generic envelope core can adapt before calling the renderer:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“type ChannelPresentationCapabilities = {”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这里在给“supported?”挂牌子，告诉系统它该指向“boolean;”。</li><li>这里在给“buttons?”挂牌子，告诉系统它该指向“boolean;”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-ts">type ChannelPresentationCapabilities = {
-  supported?: boolean;
-  buttons?: boolean;
-  selects?: boolean;
-  context?: boolean;
-  divider?: boolean;
-  limits?: {
-    actions?: {
-      maxActions?: number;
-      maxActionsPerRow?: number;
-      maxRows?: number;
-      maxLabelLength?: number;
-      maxValueBytes?: number;
-      supportsStyles?: boolean;
-      supportsDisabled?: boolean;
-      supportsLayoutHints?: boolean;
-    };
-    selects?: {
-      maxOptions?: number;
-      maxLabelLength?: number;
-      maxValueBytes?: number;
-    };
-    text?: {
-      maxLength?: number;
-      encoding?: &quot;characters&quot; | &quot;utf8-bytes&quot; | &quot;utf16-units&quot;;
-      markdownDialect?: &quot;plain&quot; | &quot;markdown&quot; | &quot;html&quot; | &quot;slack-mrkdwn&quot; | &quot;discord-markdown&quot;;
-      supportsEdit?: boolean;
-    };
-  };
-};</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Core applies generic limits to semantic controls before rendering. Renderers still own final provider-specific validati…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Core applies generic limits to semantic controls before rendering. Renderers still own final provider-specific validation and clipping for native block count, card size, URL limits, and provider quirks that cannot be expressed in the generic contract. If limits remove every control from a block, core keeps the labels as non-interactive context text so the delivered message still has a visible fallback.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Core render flow</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：When a ReplyPayload or 小纸条消息 action includes presentation, core: 1. Normalizes the presentation payload. 2. Resolves th…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：When a ReplyPayload or 小纸条消息 action includes presentation, core:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When a <code>ReplyPayload</code> or message action includes <code>presentation</code>, core:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：1. Normalizes the presentation payload. 2. Resolves the target 消息通道&#39;s outbound adapter. 3. Reads presentationCapabiliti…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. Normalizes the presentation payload. 2. Resolves the target channel&#39;s outbound adapter. 3. Reads <code>presentationCapabilities</code>. 4. Applies generic capability limits such as action count, label length, and select option count when the adapter advertises them. 5. Calls <code>renderPresentation</code> when the adapter can render the payload. 6. Falls back to conservative text when the adapter is absent or cannot render. 7. Sends the resulting payload through the normal channel delivery path. 8. Applies delivery metadata such as <code>delivery.pin</code> after the first successful sent message.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Core owns fallback behavior so producers can stay 消息通道-agnostic. 消息通道 新本领插件s own native rendering and interaction handl…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Core owns fallback behavior so producers can stay channel-agnostic. Channel plugins own native rendering and interaction handling.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Degradation rules</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Presentation must be safe to send on limited 消息通道s. Fallback text includes: Unsupported native controls should degrade…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Presentation must be safe to send on limited 消息通道s.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Presentation must be safe to send on limited channels.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Fallback text includes:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Fallback text includes:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Degradation rules”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：title as the first line、text blocks as normal paragraphs、context blocks as compact context lines、divider blocks as a visual separator。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>title</code> as the first line</li><li><code>text</code> blocks as normal paragraphs</li><li><code>context</code> blocks as compact context lines</li><li><code>divider</code> blocks as a visual separator</li><li>button labels, including URLs for link buttons</li><li>select option labels</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Unsupported native controls should degrade rather than fail the whole send. Examples:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Unsupported native controls should degrade rather than fail the whole send. Examples:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Degradation rules”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：Telegram with inline buttons disabled sen…、A 消息通道 without select support lists selec…、A URL-only button becomes either a native…、Optional pin failures do not fail the del…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Telegram with inline buttons disabled sends text fallback.</li><li>A channel without select support lists select options as text.</li><li>A URL-only button becomes either a native link button or a fallback URL line.</li><li>Optional pin failures do not fail the delivered message.</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The main exception is delivery.pin.required: true; if pinning is requested as required and the 消息通道 cannot pin the sent…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The main exception is <code>delivery.pin.required: true</code>; if pinning is requested as required and the channel cannot pin the sent message, delivery reports failure.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>Provider mapping</h2>
-            <p>这一节主要在解释“Provider mapping”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Provider mapping”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Current bundled renderers: Provider-native payload compatibility is a transition affordance for existing reply producer…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Current bundled renderers:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Current bundled renderers:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Channel</th><th>Native render target</th><th>Notes</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Discord</td><td>Components and component containers</td><td>Preserves legacy <code>channelData.discord.components</code> for existing provider-native payload producers, but new shared sends should use <code>presentation</code>.</td></tr><tr><td>Slack</td><td>Block Kit</td><td>Preserves legacy <code>channelData.slack.blocks</code> for existing provider-native payload producers, but new shared sends should use <code>presentation</code>.</td></tr><tr><td>Telegram</td><td>Text plus inline keyboards</td><td>Buttons/selects require inline button capability for the target surface; otherwise text fallback is used.</td></tr><tr><td>Mattermost</td><td>Text plus interactive props</td><td>Other blocks degrade to text.</td></tr><tr><td>Microsoft Teams</td><td>Adaptive Cards</td><td>Plain <code>message</code> text is included with the card when both are provided.</td></tr><tr><td>Feishu</td><td>Interactive cards</td><td>Card header can use <code>title</code>; body avoids duplicating that title.</td></tr><tr><td>Plain channels</td><td>Text fallback</td><td>Channels without a renderer still get readable output.</td></tr>
-        </tbody>
-      </table>
+      <!-- handcrafted-source:plugins.message-presentation.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Message Presentation 让核心只描述消息意图，各通道自己渲染原生样式</h2>
+      <p>这页定义 rich outbound chat UI 的共享合同。代理、CLI、approval flows 和插件描述文本段、上下文、footer、divider 等可移植意图；Discord、Slack、Telegram、Teams、Feishu 等通道插件负责输出各自平台的原生 blocks、buttons 或 cards。</p>
     </div>
+    <div class="overview-meta">
+      <span>原文共 11 节，先看 Start Here</span>
+      <span>路径：/plugins/message-presentation</span>
+      <a href="https://docs.openclaw.ai/plugins/message-presentation" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Provider-native payload compatibility is a transition affordance for existing reply producers. It is not a reason to ad…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Provider-native payload compatibility is a transition affordance for existing reply producers. It is not a reason to add new shared native fields.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>Presentation vs InteractiveReply</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：InteractiveReply is the older internal subset used by approval and interaction helpers. It supports: 小纸条消息Presentation…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：InteractiveReply is the older internal subset used by approval and interaction helpers. It supports:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>InteractiveReply</code> is the older internal subset used by approval and interaction helpers. It supports:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Presentation vs InteractiveReply”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：text、buttons、selects。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>text</li><li>buttons</li><li>selects</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：小纸条消息Presentation is the canonical shared send contract. It adds:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>MessagePresentation</code> is the canonical shared send contract. It adds:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Presentation vs InteractiveReply”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：title、tone、context、divider。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>title</li><li>tone</li><li>context</li><li>divider</li><li>URL-only buttons</li><li>generic delivery metadata through <code>ReplyPayload.delivery</code></li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use helpers from openclaw/新本领插件-sdk/interactive-runtime when bridging older code:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use helpers from <code>openclaw/plugin-sdk/interactive-runtime</code> when bridging older code:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“import {”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“adaptMessagePresentationForChannel,”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“applyPresentationActionLimits,”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-ts">import {
-  adaptMessagePresentationForChannel,
-  applyPresentationActionLimits,
-  interactiveReplyToPresentation,
-  normalizeMessagePresentation,
-  presentationPageSize,
-  presentationToInteractiveControlsReply,
-  presentationToInteractiveReply,
-  renderMessagePresentationFallbackText,
-} from &quot;openclaw/plugin-sdk/interactive-runtime&quot;;</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：New code should accept or produce 小纸条消息Presentation directly. Existing interactive payloads are a deprecated subset of…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>New code should accept or produce <code>MessagePresentation</code> directly. Existing <code>interactive</code> payloads are a deprecated subset of <code>presentation</code>; runtime support remains for older producers.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The legacy InteractiveReply* types and conversion helpers are marked @deprecated in the SDK:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The legacy <code>InteractiveReply*</code> types and conversion helpers are marked <code>@deprecated</code> in the SDK:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：InteractiveReplyOption, InteractiveReplySelectBlock, and InteractiveReplyTextBlock。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>InteractiveReplyOption</code>, <code>InteractiveReplySelectBlock</code>, and <code>InteractiveReplyTextBlock</code></p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Presentation vs InteractiveReply”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：InteractiveReply, InteractiveReplyBlock,…、normalizeInteractiveReply(...)、hasInteractiveReplyBlocks(...)、interactiveReplyToPresentation(...)。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>InteractiveReply</code>, <code>InteractiveReplyBlock</code>, <code>InteractiveReplyButton</code>,</li><li><code>normalizeInteractiveReply(...)</code></li><li><code>hasInteractiveReplyBlocks(...)</code></li><li><code>interactiveReplyToPresentation(...)</code></li><li><code>presentationToInteractiveReply(...)</code></li><li><code>presentationToInteractiveControlsReply(...)</code></li><li><code>resolveInteractiveTextFallback(...)</code></li><li><code>reduceInteractiveReply(...)</code></li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：presentationToInteractiveReply(...) and presentationToInteractiveControlsReply(...) remain available as renderer bridge…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>presentationToInteractiveReply(...)</code> and <code>presentationToInteractiveControlsReply(...)</code> remain available as renderer bridges for legacy channel implementations. New producer code should not call them; send <code>presentation</code> and let core/channel adaptation handle rendering.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Approval helpers also have presentation-first replacements:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Approval helpers also have presentation-first replacements:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：buildApprovalInteractiveReplyFromActionDescriptors(...)。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>buildApprovalInteractiveReplyFromActionDescriptors(...)</code></p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：buildApprovalInteractiveReply(...)。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>buildApprovalInteractiveReply(...)</code></p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：buildExecApprovalInteractiveReply(...)。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>buildExecApprovalInteractiveReply(...)</code></p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Presentation vs InteractiveReply”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：use buildApprovalPresentationFromActionDe…、use buildApprovalPresentation(...) instea…、use buildExecApprovalPresentation(...) in…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>use <code>buildApprovalPresentationFromActionDescriptors(...)</code> instead of</li><li>use <code>buildApprovalPresentation(...)</code> instead of</li><li>use <code>buildExecApprovalPresentation(...)</code> instead of</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：render小纸条消息PresentationFallbackText(...) returns an empty string for presentation blocks that have no text fallback, su…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>renderMessagePresentationFallbackText(...)</code> returns an empty string for presentation blocks that have no text fallback, such as a divider-only presentation. Transports that require a non-empty send body can pass <code>emptyFallback</code> to opt into a minimal body without changing the default fallback contract.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>Delivery pin</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Pinning is delivery behavior, not presentation. Use delivery.pin instead of provider-native fields such as 消息通道Data.tel…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Pinning is delivery behavior, not presentation. Use delivery.pin instead of provider-native fields such as 消息通道Data.tel…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Pinning is delivery behavior, not presentation. Use <code>delivery.pin</code> instead of provider-native fields such as <code>channelData.telegram.pin</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Semantics:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Semantics:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Delivery pin”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：pin: true pins the first successfully del…、pin.notify defaults to false.、pin.required defaults to false.、Optional pin failures degrade and leave t…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>pin: true</code> pins the first successfully delivered message.</li><li><code>pin.notify</code> defaults to <code>false</code>.</li><li><code>pin.required</code> defaults to <code>false</code>.</li><li>Optional pin failures degrade and leave the sent message intact.</li><li>Required pin failures fail delivery.</li><li>Chunked messages pin the first delivered chunk, not the tail chunk.</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Manual pin, unpin, and pins 小纸条消息 actions still exist for existing 小纸条消息s where the provider supports those operations.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Manual <code>pin</code>, <code>unpin</code>, and <code>pins</code> message actions still exist for existing messages where the provider supports those operations.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>新本领插件 author checklist</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：render or safely degrade semantic presentation. setup code. they are known. duplication, and mixed 小纸条消息 plus presentat…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：render or safely degrade semantic presentation.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>render or safely degrade semantic presentation.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：setup code.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>setup code.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：they are known.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>they are known.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：duplication, and mixed 小纸条消息 plus presentation sends.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>duplication, and mixed <code>message</code> plus <code>presentation</code> sends.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：pinDelivered小纸条消息 only when the provider can pin the sent 小纸条消息 id.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>pinDeliveredMessage</code> only when the provider can pin the sent message id.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：the shared 小纸条消息 action schema.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>the shared message action schema.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Plugin author checklist”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：Declare presentation from describe小纸条消息工具…、Add presentationCapabilities to the runti…、Implement renderPresentation in runtime c…、Keep native UI libraries out of hot setup…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Declare <code>presentation</code> from <code>describeMessageTool(...)</code> when the channel can</li><li>Add <code>presentationCapabilities</code> to the runtime outbound adapter.</li><li>Implement <code>renderPresentation</code> in runtime code, not control-plane plugin</li><li>Keep native UI libraries out of hot setup/catalog paths.</li><li>Declare generic capability limits on <code>presentationCapabilities.limits</code> when</li><li>Preserve final platform limits in the renderer and tests.</li><li>Add fallback tests for unsupported buttons, selects, URL buttons, title/text</li><li>Add delivery pin support through <code>deliveryCapabilities.pin</code> and</li><li>Do not expose new provider-native card/block/component/button fields through</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-11">
-          <div class="section-heading">
-            <p class="section-kicker">第 11 站</p>
-            <h2>Related docs</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Related docs”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：小纸条消息 CLI、新本领插件 SDK Overview、新本领插件 Architecture、消息通道 Presentation Refactor Plan。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><a href="/cli/message" target="_blank" rel="noreferrer">Message CLI</a></li><li><a href="/plugins/sdk-overview" target="_blank" rel="noreferrer">Plugin SDK Overview</a></li><li><a href="/plugins/architecture-internals#message-tool-schemas" target="_blank" rel="noreferrer">Plugin Architecture</a></li><li><a href="/plan/ui-channels" target="_blank" rel="noreferrer">Channel Presentation Refactor Plan</a></li></ul>
-      </div>
-
-          </div>
-        </section>
-
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>AdSense 连接验证已经放在页面头部；广告单元等站点审批通过后再启用。</p>
-        <code>google-adsense-account: ca-pub-3833673520933536</code>
-      </div>
-    </section>
+<section class="section-shell"><div class="story-grid"><div class="story-card"><div class="story-card-label">共享层</div><p>文本段落、小上下文、footer、divider 这些可移植意图放在合同里。</p></div><div class="story-card"><div class="story-card-label">平台层</div><p>Slack blocks、Discord components、Telegram buttons 等由 channel renderer 输出。</p></div><div class="source-card"><div class="story-card-label">为什么</div><p>同一条消息可以在不同平台长得不同，但意图应该只有一份。</p></div><div class="source-card"><div class="story-card-label">一句话</div><p>核心写“信的意思”，平台负责“信封长相”。</p></div></div></section>
 
 
       <footer class="page-footer">
         <div>
           <strong>Fivey Can Read OpenClaw</strong>
-          <p>同步时间：2026年5月20日 20:58</p>
+          <p>同步时间：2026年5月23日 00:22</p>
         </div>
       </footer>
     </main>

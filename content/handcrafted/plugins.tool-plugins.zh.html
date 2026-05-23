@@ -1,0 +1,92 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>Tool plugins，就是给 OpenClaw 挂上一件“可以被代理拿来用的小工具”</h2>
+      <p>这页讲的是最轻的一类插件：它不负责聊天通道，不负责模型供应商，也不负责整套服务，只负责把一个或几个工具交给 OpenClaw。代理需要时，就能像从工具墙上取螺丝刀一样调用它。</p>
+      <p>最重要的路线是：先写工具，再生成插件说明书，再检查说明书没有过期，最后才安装或发布。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合只想增加 agent tool 的插件作者</span>
+      <span>关键口令：<code>defineToolPlugin</code></span>
+      <a href="https://docs.openclaw.ai/plugins/tool-plugins" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>先确认：你要做的是“工具”，不是一整座游乐场</h2>
+    <p>官方把 tool plugin 单独拿出来，是为了让简单工具不用背上太重的插件框架。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">它适合什么</div>
+      <p>适合固定的一组工具，比如查一个系统状态、读一个特殊资源、调用一个小服务。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">它不适合什么</div>
+      <p>如果你还要注册 provider、channel、hook、setup backend，应该去看更完整的 Building plugins。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>defineToolPlugin</code></div>
+      <p>它像一张工具登记表：工具叫什么、吃什么参数、做完后交回什么结果，都写在这里。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">为什么要生成 metadata</div>
+      <p>OpenClaw 需要先看说明书，才能在不加载运行时代码的情况下知道有哪些工具可用。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>Quickstart 像装一盒彩笔：先摆好，再贴标签，再试画</h2>
+  </div>
+  <div class="home-grid">
+    <article class="home-card"><span class="home-card-index">1</span><h2>Scaffold</h2><p>用 <code>openclaw plugins init</code> 先搭好小盒子。</p></article>
+    <article class="home-card"><span class="home-card-index">2</span><h2>Write</h2><p>用 <code>defineToolPlugin</code> 写出工具和参数形状。</p></article>
+    <article class="home-card"><span class="home-card-index">3</span><h2>Build</h2><p>把 TypeScript 做成可安装的 JavaScript。</p></article>
+    <article class="home-card"><span class="home-card-index">4</span><h2>Generate</h2><p>运行 <code>openclaw plugins build</code>，让 manifest 和 package metadata 对齐。</p></article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>工具真正上班时，重点看三件事</h2>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">参数</div>
+      <p>参数像任务单的格子。格子画清楚，代理才不容易把错误东西塞进去。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">返回值</div>
+      <p>返回值像工具交回来的回执。文字、结构化数据、错误信息，都要让调用方看得懂。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">可选工具</div>
+      <p>有副作用、会碰外部系统、或者需要额外本地程序的工具，适合先设成 optional，再由用户允许。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">工厂工具</div>
+      <p>factory tools 像“按配置现做一把工具”。配置不同，做出来的工具也可以不同。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>最常见的坑，都是“盒子标签”和“盒子里面”没对上</h2>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>plugin entry not found</code></div><p>通常是 <code>./dist/index.js</code> 没构建出来，或者 manifest 指错了入口。</p></div>
+    <div class="source-card"><div class="story-card-label">metadata stale</div><p>工具改了，但生成出来的 <code>openclaw.plugin.json</code> 还停在旧版本，需要重新 build。</p></div>
+    <div class="source-card"><div class="story-card-label">extensions 漏入口</div><p><code>package.json</code> 里的 <code>openclaw.extensions</code> 必须包含真正的运行时入口。</p></div>
+    <div class="story-card"><div class="story-card-label">最后检查</div><p>CI 里跑验证，就像出门前拉一下书包拉链：小动作，能挡住很多安装后才爆的错。</p></div>
+  </div>
+</section>

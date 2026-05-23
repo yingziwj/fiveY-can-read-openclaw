@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Channel turn kernel | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="消息通道 turn kernel 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：The 消息通道 turn kernel is the shared inbound…">
+  <meta name="description" content="这页讲 inbound message 的共享状态机。平台插件提供消息来源、目标、权限事实和发送回调；核心负责 ingest、classify、preflight、authorize、assemble、record、dispatch 和 finalize，避免每个 channel 重复实现同一套流程。">
   <meta name="robots" content="index,follow">
   <meta name="google-adsense-account" content="ca-pub-3833673520933536">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Channel turn kernel | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="消息通道 turn kernel 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：The 消息通道 turn kernel is the shared inbound…">
+  <meta property="og:description" content="这页讲 inbound message 的共享状态机。平台插件提供消息来源、目标、权限事实和发送回调；核心负责 ingest、classify、preflight、authorize、assemble、record、dispatch 和 finalize，避免每个 channel 重复实现同一套流程。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/plugins/sdk-channel-turn/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta property="og:image:alt" content="Channel turn kernel 的中文故事化导读页面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Channel turn kernel | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="消息通道 turn kernel 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：The 消息通道 turn kernel is the shared inbound…">
+  <meta name="twitter:description" content="这页讲 inbound message 的共享状态机。平台插件提供消息来源、目标、权限事实和发送回调；核心负责 ingest、classify、preflight、authorize、assemble、record、dispatch 和 finalize，避免每个 channel 重复实现同一套流程。">
   <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/plugins/sdk-channel-turn/">
@@ -25,7 +25,7 @@
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3833673520933536" crossorigin="anonymous"></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Channel turn kernel","description":"消息通道 turn kernel 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：The 消息通道 turn kernel is the shared inbound…","url":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-channel-turn/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Channel turn kernel","description":"这页讲 inbound message 的共享状态机。平台插件提供消息来源、目标、权限事实和发送回调；核心负责 ingest、classify、preflight、authorize、assemble、record、dispatch 和 finalize，避免每个 channel 重复实现同一套流程。","url":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-channel-turn/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Plugins","item":"https://fivey-can-read-openclaw.pages.dev/plugins/sdk-channel-turn/"}]}</script>
 </head>
 <body>
@@ -719,11 +719,6 @@
             <details class="sidebar-group">
               <summary>工具大全</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/tools/acp-agents/">
-                  <span>ACP agents 工具</span>
-                  <small>ACP agents</small>
-                </a>
-
                 <a class="sidebar-link " href="/tools/agent-send/">
                   <span>Agent send 工具</span>
                   <small>Agent send</small>
@@ -974,6 +969,11 @@
                   <small>Web fetch</small>
                 </a>
 
+                <a class="sidebar-link " href="/tools/acp-agents/">
+                  <span>ACP agents 工具</span>
+                  <small>ACP agents</small>
+                </a>
+
                 <a class="sidebar-link " href="/tools/acp-agents-setup/">
                   <span>ACP agents — setup</span>
                   <small>ACP agents — setup</small>
@@ -1027,6 +1027,11 @@
                 <a class="sidebar-link " href="/plugins/codex-harness/">
                   <span>Codex harness 插件</span>
                   <small>Codex harness</small>
+                </a>
+
+                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
+                  <span>Native Codex plugins 插件</span>
+                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/community/">
@@ -1117,11 +1122,6 @@
                 <a class="sidebar-link " href="/plugins/codex-harness-runtime/">
                   <span>Codex harness runtime 插件</span>
                   <small>Codex harness runtime</small>
-                </a>
-
-                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
-                  <span>Native Codex plugins 插件</span>
-                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/compatibility/">
@@ -1634,11 +1634,6 @@
             <details class="sidebar-group">
               <summary>网关</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/gateway/">
-                  <span>Gateway runbook</span>
-                  <small>Gateway runbook</small>
-                </a>
-
                 <a class="sidebar-link " href="/gateway/authentication/">
                   <span>身份认证</span>
                   <small>Authentication</small>
@@ -1722,6 +1717,11 @@
                 <a class="sidebar-link " href="/gateway/heartbeat/">
                   <span>Heartbeat</span>
                   <small>Heartbeat</small>
+                </a>
+
+                <a class="sidebar-link " href="/gateway/">
+                  <span>Gateway runbook</span>
+                  <small>Gateway runbook</small>
                 </a>
 
                 <a class="sidebar-link " href="/gateway/local-model-services/">
@@ -1872,11 +1872,6 @@
                 <a class="sidebar-link " href="/cli/backup/">
                   <span>Backup 命令</span>
                   <small>Backup</small>
-                </a>
-
-                <a class="sidebar-link " href="/cli/browser/">
-                  <span>浏览器</span>
-                  <small>Browser</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/channels/">
@@ -2039,6 +2034,11 @@
                   <small>ACP</small>
                 </a>
 
+                <a class="sidebar-link " href="/cli/browser/">
+                  <span>浏览器</span>
+                  <small>Browser</small>
+                </a>
+
                 <a class="sidebar-link " href="/cli/clawbot/">
                   <span>Clawbot 命令</span>
                   <small>Clawbot</small>
@@ -2107,6 +2107,11 @@
                 <a class="sidebar-link " href="/cli/plugins/">
                   <span>插件</span>
                   <small>Plugins</small>
+                </a>
+
+                <a class="sidebar-link " href="/cli/policy/">
+                  <span>Policy 命令</span>
+                  <small>Policy</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/proxy/">
@@ -2699,8 +2704,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Plugins 导读</p>
-        <h1>消息通道 turn kernel：这块新积木往哪儿卡</h1>
-        <p class="hero-copy">消息通道 turn kernel 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：The 消息通道 turn kernel is the shared inbound state machine that turns a normalized platfo…。</p>
+        <h1>Channel Turn Kernel 把平台消息整理成一轮可靠的代理任务</h1>
+        <p class="hero-copy">这页讲 inbound message 的共享状态机。平台插件提供消息来源、目标、权限事实和发送回调；核心负责 ingest、classify、preflight、authorize、assemble、record、dispatch 和 finalize，避免每个 channel 重复实现同一套流程。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -3391,11 +3396,6 @@
             <details class="sidebar-group">
               <summary>工具大全</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/tools/acp-agents/">
-                  <span>ACP agents 工具</span>
-                  <small>ACP agents</small>
-                </a>
-
                 <a class="sidebar-link " href="/tools/agent-send/">
                   <span>Agent send 工具</span>
                   <small>Agent send</small>
@@ -3646,6 +3646,11 @@
                   <small>Web fetch</small>
                 </a>
 
+                <a class="sidebar-link " href="/tools/acp-agents/">
+                  <span>ACP agents 工具</span>
+                  <small>ACP agents</small>
+                </a>
+
                 <a class="sidebar-link " href="/tools/acp-agents-setup/">
                   <span>ACP agents — setup</span>
                   <small>ACP agents — setup</small>
@@ -3699,6 +3704,11 @@
                 <a class="sidebar-link " href="/plugins/codex-harness/">
                   <span>Codex harness 插件</span>
                   <small>Codex harness</small>
+                </a>
+
+                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
+                  <span>Native Codex plugins 插件</span>
+                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/community/">
@@ -3789,11 +3799,6 @@
                 <a class="sidebar-link " href="/plugins/codex-harness-runtime/">
                   <span>Codex harness runtime 插件</span>
                   <small>Codex harness runtime</small>
-                </a>
-
-                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
-                  <span>Native Codex plugins 插件</span>
-                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/compatibility/">
@@ -4306,11 +4311,6 @@
             <details class="sidebar-group">
               <summary>网关</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/gateway/">
-                  <span>Gateway runbook</span>
-                  <small>Gateway runbook</small>
-                </a>
-
                 <a class="sidebar-link " href="/gateway/authentication/">
                   <span>身份认证</span>
                   <small>Authentication</small>
@@ -4394,6 +4394,11 @@
                 <a class="sidebar-link " href="/gateway/heartbeat/">
                   <span>Heartbeat</span>
                   <small>Heartbeat</small>
+                </a>
+
+                <a class="sidebar-link " href="/gateway/">
+                  <span>Gateway runbook</span>
+                  <small>Gateway runbook</small>
                 </a>
 
                 <a class="sidebar-link " href="/gateway/local-model-services/">
@@ -4544,11 +4549,6 @@
                 <a class="sidebar-link " href="/cli/backup/">
                   <span>Backup 命令</span>
                   <small>Backup</small>
-                </a>
-
-                <a class="sidebar-link " href="/cli/browser/">
-                  <span>浏览器</span>
-                  <small>Browser</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/channels/">
@@ -4711,6 +4711,11 @@
                   <small>ACP</small>
                 </a>
 
+                <a class="sidebar-link " href="/cli/browser/">
+                  <span>浏览器</span>
+                  <small>Browser</small>
+                </a>
+
                 <a class="sidebar-link " href="/cli/clawbot/">
                   <span>Clawbot 命令</span>
                   <small>Clawbot</small>
@@ -4779,6 +4784,11 @@
                 <a class="sidebar-link " href="/cli/plugins/">
                   <span>插件</span>
                   <small>Plugins</small>
+                </a>
+
+                <a class="sidebar-link " href="/cli/policy/">
+                  <span>Policy 命令</span>
+                  <small>Policy</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/proxy/">
@@ -5358,1948 +5368,29 @@
         </div>
       </div>
 
-
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Channel turn kernel</h2>
-          <p>这一页不是在堆术语，它像把“消息通道 turn kernel”这台小机器搬到桌上，当着你的面拆开给你看。你先不用全记住，先抓住它到底在忙什么：The 消息通道 turn kernel is the shared inbound state machine that turns a normalized platform event…。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/plugins/sdk-channel-turn</span>
-          <span>章节数量：29</span>
-          <a href="https://docs.openclaw.ai/plugins/sdk-channel-turn" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The 消息通道 turn kernel is the shared inbound state machine that turns a normalized platform event into an 机器人朋友 turn. 消息通…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The 消息通道 turn kernel is the shared inbound state machine that turns a normalized platform event into an 机器人朋友 turn. 消息通…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The channel turn kernel is the shared inbound state machine that turns a normalized platform event into an agent turn. Channel plugins provide the platform facts and the delivery callback. Core owns the orchestration: ingest, classify, preflight, resolve, authorize, assemble, record, dispatch, and finalize.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use this when your 新本领插件 is on the inbound 小纸条消息 hot path. For non-小纸条消息 events (slash 魔法口令s, modals, button interactio…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use this when your plugin is on the inbound message hot path. For non-message events (slash commands, modals, button interactions, lifecycle events, reactions, voice state), keep them plugin-local. The kernel only owns events that may become an agent text turn.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Info&gt; The kernel is reached through the injected 新本领插件 runtime as runtime.消息通道.turn.*. The 新本领插件 runtime type is expor…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Info&gt; The kernel is reached through the injected plugin runtime as <code>runtime.channel.turn.*</code>. The plugin runtime type is exported from <code>openclaw/plugin-sdk/core</code>, so third-party native plugins can use these entry points the same way bundled channel plugins do. &lt;/Info&gt;</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Why a shared kernel</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：消息通道 新本领插件s repeat the same inbound flow: normalize, route, gate, build a context, record session metadata, dispatch th…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：消息通道 新本领插件s repeat the same inbound flow: normalize, route, gate, build a context, record session metadata, dispatch th…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Channel plugins repeat the same inbound flow: normalize, route, gate, build a context, record session metadata, dispatch the agent turn, finalize delivery state. Without a shared kernel, a change to mention gating, tool-only visible replies, session metadata, pending history, or dispatch finalization has to be applied per channel.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The kernel keeps four concepts deliberately separate:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The kernel keeps four concepts deliberately separate:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Why a shared kernel”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：ConversationFacts: where the 小纸条消息 came f…、RouteFacts: which 机器人朋友 and session shoul…、ReplyPlanFacts: where visible replies sho…、小纸条消息Facts: what body and supplemental co…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>ConversationFacts</code>: where the message came from</li><li><code>RouteFacts</code>: which agent and session should process it</li><li><code>ReplyPlanFacts</code>: where visible replies should go</li><li><code>MessageFacts</code>: what body and supplemental context the agent should see</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Slack DMs, Telegram topics, Matrix threads, and Feishu topic sessions all distinguish these in practice. Treating them…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Slack DMs, Telegram topics, Matrix threads, and Feishu topic sessions all distinguish these in practice. Treating them as one identifier causes drift over time.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Stage lifecycle</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The kernel runs the same fixed pipeline regardless of 消息通道: 1. ingest -- adapter converts a raw platform event into Nor…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The kernel runs the same fixed pipeline regardless of 消息通道:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The kernel runs the same fixed pipeline regardless of channel:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：1. ingest -- adapter converts a raw platform event into NormalizedTurnInput 2. classify -- adapter declares whether thi…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. <code>ingest</code> -- adapter converts a raw platform event into <code>NormalizedTurnInput</code> 2. <code>classify</code> -- adapter declares whether this event can start an agent turn 3. <code>preflight</code> -- adapter does dedupe, self-echo, hydration, debounce, decryption, partial fact prefill 4. <code>resolve</code> -- adapter returns a fully assembled turn (route, reply plan, message, delivery) 5. <code>authorize</code> -- DM, group, mention, and command policy applied to the assembled facts 6. <code>assemble</code> -- <code>FinalizedMsgContext</code> built from the facts via <code>buildContext</code> 7. <code>record</code> -- inbound session metadata and last route persisted 8. <code>dispatch</code> -- agent turn executed through the buffered block dispatcher 9. <code>finalize</code> -- adapter <code>onFinalize</code> runs even on dispatch error</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Each stage emits a structured log event when a log callback is supplied. See Observability.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Each stage emits a structured log event when a <code>log</code> callback is supplied. See <a href="#observability" target="_blank" rel="noreferrer">Observability</a>.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Admission kinds</h2>
-            <p>这一节主要在解释“Admission kinds”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Admission kinds”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The kernel does not throw when a turn is gated. It returns a 消息通道TurnAdmission: Admission can come from classify (event…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The kernel does not throw when a turn is gated. It returns a 消息通道TurnAdmission:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The kernel does not throw when a turn is gated. It returns a <code>ChannelTurnAdmission</code>:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Kind</th><th>When</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>dispatch</code></td><td>Turn is admitted. Agent turn runs and the visible reply path is exercised.</td></tr><tr><td><code>observeOnly</code></td><td>Turn runs end-to-end but the delivery adapter sends nothing visible. Used for broadcast observer agents and other passive multi-agent flows.</td></tr><tr><td><code>handled</code></td><td>A platform event was consumed locally (lifecycle, reaction, button, modal). Kernel skips dispatch.</td></tr><tr><td><code>drop</code></td><td>Skip path. Optionally <code>recordHistory: true</code> keeps the message in pending group history so a future mention has context.</td></tr>
-        </tbody>
-      </table>
+      <!-- handcrafted-source:plugins.sdk-channel-turn.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Channel Turn Kernel 把平台消息整理成一轮可靠的代理任务</h2>
+      <p>这页讲 inbound message 的共享状态机。平台插件提供消息来源、目标、权限事实和发送回调；核心负责 ingest、classify、preflight、authorize、assemble、record、dispatch 和 finalize，避免每个 channel 重复实现同一套流程。</p>
     </div>
-
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Admission can come from classify (event class said it cannot start a turn), from preflight (dedupe, self-echo, missing…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Admission can come from <code>classify</code> (event class said it cannot start a turn), from <code>preflight</code> (dedupe, self-echo, missing mention with history record), or from <code>resolveTurn</code> itself.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Entry points</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The runtime exposes three preferred entry points so adapters can opt in at the level that matches the 消息通道. Two older r…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The runtime exposes three preferred entry points so adapters can opt in at the level that matches the 消息通道.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The runtime exposes three preferred entry points so adapters can opt in at the level that matches the channel.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“runtime.channel.turn.run(...)             // adapter-driven full pipeline”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“runtime.channel.turn.runAssembled(...)    // already-built context + delivery adapter”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“runtime.channel.turn.runPrepared(...)     // channel owns dispatch; kernel runs record + finalize”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">runtime.channel.turn.run(...)             // adapter-driven full pipeline
-runtime.channel.turn.runAssembled(...)    // already-built context + delivery adapter
-runtime.channel.turn.runPrepared(...)     // channel owns dispatch; kernel runs record + finalize
-runtime.channel.turn.buildContext(...)    // pure facts to FinalizedMsgContext mapping</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Two older runtime helpers remain available for 新本领插件 SDK compatibility:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Two older runtime helpers remain available for Plugin SDK compatibility:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“runtime.channel.turn.runResolved(...)      // deprecated compatibility alias; prefer run”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“runtime.channel.turn.dispatchAssembled(...) // deprecated compatibility alias; prefer runAssembled”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">runtime.channel.turn.runResolved(...)      // deprecated compatibility alias; prefer run
-runtime.channel.turn.dispatchAssembled(...) // deprecated compatibility alias; prefer runAssembled</code></pre>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>run</h2>
-            <p>这一节主要在解释“run”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“run”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use when your 消息通道 can express its inbound flow as a 消息通道TurnAdapter&lt;TRaw&gt;. The adapter has callbacks for ingest, optio…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use when your 消息通道 can express its inbound flow as a 消息通道TurnAdapter&lt;TRaw&gt;. The adapter has callbacks for ingest, optio…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use when your channel can express its inbound flow as a <code>ChannelTurnAdapter&lt;TRaw&gt;</code>. The adapter has callbacks for <code>ingest</code>, optional <code>classify</code>, optional <code>preflight</code>, mandatory <code>resolveTurn</code>, and optional <code>onFinalize</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“await runtime.channel.turn.run({”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这里在给“channel”挂牌子，告诉系统它该指向“tlon”。</li><li>这一行“accountId,”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">await runtime.channel.turn.run({
-  channel: &quot;tlon&quot;,
-  accountId,
-  raw: platformEvent,
-  adapter: {
-    ingest(raw) {
-      return {
-        id: raw.messageId,
-        timestamp: raw.timestamp,
-        rawText: raw.body,
-        textForAgent: raw.body,
-      };
-    },
-    classify(input) {
-      return { kind: &quot;message&quot;, canStartAgentTurn: input.rawText.length &gt; 0 };
-    },
-    async preflight(input, eventClass) {
-      if (await isDuplicate(input.id)) {
-        return { admission: { kind: &quot;drop&quot;, reason: &quot;dedupe&quot; } };
-      }
-      return {};
-    },
-    resolveTurn(input) {
-      return buildAssembledTurn(input);
-    },
-    onFinalize(result) {
-      clearPendingGroupHistory(result);
-    },
-  },
-});</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：run is the right shape when the 消息通道 has small adapter logic and benefits from owning the lifecycle through hooks.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>run</code> is the right shape when the channel has small adapter logic and benefits from owning the lifecycle through hooks.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>runAssembled</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use when the 消息通道 has already resolved routing, built a FinalizedMsgContext, and only needs the shared record, reply-pi…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use when the 消息通道 has already resolved routing, built a FinalizedMsgContext, and only needs the shared record, reply-pi…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use when the channel has already resolved routing, built a <code>FinalizedMsgContext</code>, and only needs the shared record, reply-pipeline, dispatch, and finalize ordering. This is the preferred shape for simple bundled inbound paths that would otherwise repeat <code>createChannelMessageReplyPipeline(...)</code> and <code>runPrepared(...)</code> boilerplate.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“await runtime.channel.turn.runAssembled({”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“cfg,”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这里在给“channel”挂牌子，告诉系统它该指向“irc”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">await runtime.channel.turn.runAssembled({
-  cfg,
-  channel: &quot;irc&quot;,
-  accountId,
-  agentId: route.agentId,
-  routeSessionKey: route.sessionKey,
-  storePath,
-  ctxPayload,
-  recordInboundSession: runtime.channel.session.recordInboundSession,
-  dispatchReplyWithBufferedBlockDispatcher:
-    runtime.channel.reply.dispatchReplyWithBufferedBlockDispatcher,
-  delivery: {
-    deliver: async (payload) =&gt; {
-      await sendPlatformReply(payload);
-    },
-    onError: (err, info) =&gt; {
-      runtime.error?.(`reply ${info.kind} failed: ${String(err)}`);
-    },
-  },
-});</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Choose runAssembled over runPrepared when the only 消息通道-owned dispatch behavior is final payload delivery plus optional…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Choose <code>runAssembled</code> over <code>runPrepared</code> when the only channel-owned dispatch behavior is final payload delivery plus optional typing, reply options, durable delivery, or error logging.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>runPrepared</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use when the 消息通道 has a complex local dispatcher with previews, retries, edits, or thread bootstrap that must stay 消息通道…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use when the 消息通道 has a complex local dispatcher with previews, retries, edits, or thread bootstrap that must stay 消息通道…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use when the channel has a complex local dispatcher with previews, retries, edits, or thread bootstrap that must stay channel-owned. The kernel still records the inbound session before dispatch and surfaces a uniform <code>DispatchedChannelTurnResult</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“const { dispatchResult } = await runtime.channel.turn.runPrepared({”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这里在给“channel”挂牌子，告诉系统它该指向“matrix”。</li><li>这一行“accountId,”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">const { dispatchResult } = await runtime.channel.turn.runPrepared({
-  channel: &quot;matrix&quot;,
-  accountId,
-  routeSessionKey,
-  storePath,
-  ctxPayload,
-  recordInboundSession,
-  record: {
-    onRecordError,
-    updateLastRoute,
-  },
-  onPreDispatchFailure: async (err) =&gt; {
-    await stopStatusReactions();
-  },
-  runDispatch: async () =&gt; {
-    return await runMatrixOwnedDispatcher();
-  },
-});</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Rich 消息通道s (Matrix, Mattermost, Microsoft Teams, Feishu, QQ Bot) use runPrepared because their dispatcher orchestrates…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Rich channels (Matrix, Mattermost, Microsoft Teams, Feishu, QQ Bot) use <code>runPrepared</code> because their dispatcher orchestrates platform-specific behavior the kernel must not learn about.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>buildContext</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：A pure function that maps fact bundles into FinalizedMsgContext. Use it when your 消息通道 hand-rolls part of the pipeline…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：A pure function that maps fact bundles into FinalizedMsgContext. Use it when your 消息通道 hand-rolls part of the pipeline…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>A pure function that maps fact bundles into <code>FinalizedMsgContext</code>. Use it when your channel hand-rolls part of the pipeline but wants consistent context shape.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“const ctxPayload = runtime.channel.turn.buildContext({”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这里在给“channel”挂牌子，告诉系统它该指向“googlechat”。</li><li>这一行“accountId,”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">const ctxPayload = runtime.channel.turn.buildContext({
-  channel: &quot;googlechat&quot;,
-  accountId,
-  messageId,
-  timestamp,
-  from,
-  sender,
-  conversation,
-  route,
-  reply,
-  message,
-  access,
-  media,
-  supplemental,
-});</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：buildContext is also useful inside resolveTurn callbacks when assembling a turn for run.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>buildContext</code> is also useful inside <code>resolveTurn</code> callbacks when assembling a turn for <code>run</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：&lt;Note&gt; Deprecated SDK helpers such as dispatchInboundReplyWithBase still bridge through an assembled-turn helper. New 新…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>&lt;Note&gt; Deprecated SDK helpers such as <code>dispatchInboundReplyWithBase</code> still bridge through an assembled-turn helper. New plugin code should use <code>run</code> or <code>runPrepared</code>. &lt;/Note&gt;</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>Fact types</h2>
-            <p>这一节主要在解释“Fact types”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Fact types”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The facts the kernel consumes from your adapter are platform-agnostic. Translate platform objects into these shapes bef…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The facts the kernel consumes from your adapter are platform-agnostic. Translate platform objects into these shapes bef…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The facts the kernel consumes from your adapter are platform-agnostic. Translate platform objects into these shapes before handing them to the kernel.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-11">
-          <div class="section-heading">
-            <p class="section-kicker">第 11 站</p>
-            <h2>NormalizedTurnInput</h2>
-            <p>这一节主要在解释“NormalizedTurnInput”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“NormalizedTurnInput”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Field</th><th>Purpose</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>id</code></td><td>Stable message id used for dedupe and logs</td></tr><tr><td><code>timestamp</code></td><td>Optional epoch ms</td></tr><tr><td><code>rawText</code></td><td>Body as received from the platform</td></tr><tr><td><code>textForAgent</code></td><td>Optional cleaned body for the agent (mention strip, typing trim)</td></tr><tr><td><code>textForCommands</code></td><td>Optional body used for <code>/command</code> parsing</td></tr><tr><td><code>raw</code></td><td>Optional pass-through reference for adapter callbacks that need the original</td></tr>
-        </tbody>
-      </table>
+    <div class="overview-meta">
+      <span>原文共 29 节，先看 Start Here</span>
+      <span>路径：/plugins/sdk-channel-turn</span>
+      <a href="https://docs.openclaw.ai/plugins/sdk-channel-turn" target="_blank" rel="noreferrer">查看官方原文</a>
     </div>
+  </div>
+</section>
 
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-12">
-          <div class="section-heading">
-            <p class="section-kicker">第 12 站</p>
-            <h2>消息通道EventClass</h2>
-            <p>这一节主要在解释“消息通道EventClass”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“消息通道EventClass”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Field</th><th>Purpose</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>kind</code></td><td><code>message</code>, <code>command</code>, <code>interaction</code>, <code>reaction</code>, <code>lifecycle</code>, <code>unknown</code></td></tr><tr><td><code>canStartAgentTurn</code></td><td>If false the kernel returns <code>{ kind: &quot;handled&quot; }</code></td></tr><tr><td><code>requiresImmediateAck</code></td><td>Hint for adapters that need to ACK before dispatch</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-13">
-          <div class="section-heading">
-            <p class="section-kicker">第 13 站</p>
-            <h2>SenderFacts</h2>
-            <p>这一节主要在解释“SenderFacts”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“SenderFacts”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Field</th><th>Purpose</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>id</code></td><td>Stable platform sender id</td></tr><tr><td><code>name</code></td><td>Display name</td></tr><tr><td><code>username</code></td><td>Handle if distinct from <code>name</code></td></tr><tr><td><code>tag</code></td><td>Discord-style discriminator or platform tag</td></tr><tr><td><code>roles</code></td><td>Role ids, used for member-role allowlist matching</td></tr><tr><td><code>isBot</code></td><td>True when the sender is a known bot (kernel uses for dropping)</td></tr><tr><td><code>isSelf</code></td><td>True when the sender is the configured agent itself</td></tr><tr><td><code>displayLabel</code></td><td>Pre-rendered label for envelope text</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-14">
-          <div class="section-heading">
-            <p class="section-kicker">第 14 站</p>
-            <h2>ConversationFacts</h2>
-            <p>这一节主要在解释“ConversationFacts”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“ConversationFacts”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Field</th><th>Purpose</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>kind</code></td><td><code>direct</code>, <code>group</code>, or <code>channel</code></td></tr><tr><td><code>id</code></td><td>Conversation id used for routing</td></tr><tr><td><code>label</code></td><td>Human label for the envelope</td></tr><tr><td><code>spaceId</code></td><td>Optional outer space identifier (Slack workspace, Matrix homeserver)</td></tr><tr><td><code>parentId</code></td><td>Outer conversation id when this is a thread</td></tr><tr><td><code>threadId</code></td><td>Thread id when this message is inside a thread</td></tr><tr><td><code>nativeChannelId</code></td><td>Platform-native channel id when different from the routing id</td></tr><tr><td><code>routePeer</code></td><td>Peer used for <code>resolveAgentRoute</code> lookup</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-15">
-          <div class="section-heading">
-            <p class="section-kicker">第 15 站</p>
-            <h2>RouteFacts</h2>
-            <p>这一节主要在解释“RouteFacts”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“RouteFacts”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Field</th><th>Purpose</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>agentId</code></td><td>Agent that should handle this turn</td></tr><tr><td><code>accountId</code></td><td>Optional override (multi-account channels)</td></tr><tr><td><code>routeSessionKey</code></td><td>Session key used for routing</td></tr><tr><td><code>dispatchSessionKey</code></td><td>Session key used at dispatch when different from route key</td></tr><tr><td><code>persistedSessionKey</code></td><td>Session key written to persisted session metadata</td></tr><tr><td><code>parentSessionKey</code></td><td>Parent for branched/threaded sessions</td></tr><tr><td><code>modelParentSessionKey</code></td><td>Model-side parent for branched sessions</td></tr><tr><td><code>mainSessionKey</code></td><td>Main DM owner pin for direct conversations</td></tr><tr><td><code>createIfMissing</code></td><td>Allow record step to create a missing session row</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-16">
-          <div class="section-heading">
-            <p class="section-kicker">第 16 站</p>
-            <h2>ReplyPlanFacts</h2>
-            <p>这一节主要在解释“ReplyPlanFacts”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“ReplyPlanFacts”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Field</th><th>Purpose</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>to</code></td><td>Logical reply target written into context <code>To</code></td></tr><tr><td><code>originatingTo</code></td><td>Originating context target (<code>OriginatingTo</code>)</td></tr><tr><td><code>nativeChannelId</code></td><td>Platform-native channel id for delivery</td></tr><tr><td><code>replyTarget</code></td><td>Final visible-reply destination if it differs from <code>to</code></td></tr><tr><td><code>deliveryTarget</code></td><td>Lower-level delivery override</td></tr><tr><td><code>replyToId</code></td><td>Quoted/anchored message id</td></tr><tr><td><code>replyToIdFull</code></td><td>Full-form quoted id when the platform has both</td></tr><tr><td><code>messageThreadId</code></td><td>Thread id at delivery time</td></tr><tr><td><code>threadParentId</code></td><td>Parent message id of the thread</td></tr><tr><td><code>sourceReplyDeliveryMode</code></td><td><code>thread</code>, <code>reply</code>, <code>channel</code>, <code>direct</code>, or <code>none</code></td></tr>
-        </tbody>
-      </table>
-    </div>
-
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-17">
-          <div class="section-heading">
-            <p class="section-kicker">第 17 站</p>
-            <h2>AccessFacts</h2>
-            <p>这一节主要在解释“AccessFacts”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“AccessFacts”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：AccessFacts carries the booleans the authorize stage needs. Identity matching stays in the 消息通道: the kernel only consum…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：AccessFacts carries the booleans the authorize stage needs. Identity matching stays in the 消息通道: the kernel only consum…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>AccessFacts</code> carries the booleans the authorize stage needs. Identity matching stays in the channel: the kernel only consumes the result.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Field</th><th>Purpose</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>dm</code></td><td>DM allow/pairing/deny decision and <code>allowFrom</code> list</td></tr><tr><td><code>group</code></td><td>Group policy, route allow, sender allow, allowlist, mention requirement</td></tr><tr><td><code>commands</code></td><td>Command authorization across configured authorizers</td></tr><tr><td><code>mentions</code></td><td>Whether mention detection is possible and whether the agent was mentioned</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-18">
-          <div class="section-heading">
-            <p class="section-kicker">第 18 站</p>
-            <h2>小纸条消息Facts</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像整理表格</div>
-        <p>这段是在把几种选项排成表格，左边像标签，右边像说明。手机上可以横向滑动原文表格。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文表格</div>
-
-    <div class="source-table-scroll">
-      <table class="source-table">
-        <thead>
-          <tr><th>Field</th><th>Purpose</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>body</code></td><td>Final envelope body (formatted)</td></tr><tr><td><code>rawBody</code></td><td>Raw inbound body</td></tr><tr><td><code>bodyForAgent</code></td><td>Body the agent sees</td></tr><tr><td><code>commandBody</code></td><td>Body used for command parsing</td></tr><tr><td><code>envelopeFrom</code></td><td>Pre-rendered sender label for the envelope</td></tr><tr><td><code>senderLabel</code></td><td>Optional override for the rendered sender</td></tr><tr><td><code>preview</code></td><td>Short redacted preview for logs</td></tr><tr><td><code>inboundHistory</code></td><td>Recent inbound history entries when the channel keeps a buffer</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-19">
-          <div class="section-heading">
-            <p class="section-kicker">第 19 站</p>
-            <h2>SupplementalContextFacts</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Supplemental context covers quote, forwarded, and thread-bootstrap context. The kernel applies the 设置说明书ured contextVis…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Supplemental context covers quote, forwarded, and thread-bootstrap context. The kernel applies the 设置说明书ured contextVis…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Supplemental context covers quote, forwarded, and thread-bootstrap context. The kernel applies the configured <code>contextVisibility</code> policy. The channel adapter only provides facts and <code>senderAllowed</code> flags so cross-channel policy stays consistent.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-20">
-          <div class="section-heading">
-            <p class="section-kicker">第 20 站</p>
-            <h2>InboundMediaFacts</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Media is fact-shaped. Platform download, auth, SSRF policy, CDN rules, and decryption stay 消息通道-local. The kernel maps…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Media is fact-shaped. Platform download, auth, SSRF policy, CDN rules, and decryption stay 消息通道-local. The kernel maps…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Media is fact-shaped. Platform download, auth, SSRF policy, CDN rules, and decryption stay channel-local. The kernel maps facts into <code>MediaPath</code>, <code>MediaUrl</code>, <code>MediaType</code>, <code>MediaPaths</code>, <code>MediaUrls</code>, <code>MediaTypes</code>, and <code>MediaTranscribedIndexes</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use toInboundMediaFacts(...) from openclaw/新本领插件-sdk/消息通道-inbound when your 消息通道 has a resolved media list and only nee…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use <code>toInboundMediaFacts(...)</code> from <code>openclaw/plugin-sdk/channel-inbound</code> when your channel has a resolved media list and only needs to attach generic facts:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这里在给“media”挂牌子，告诉系统它该指向“toInboundMediaFacts(resolvedMedia {”。</li><li>这里在给“kind”挂牌子，告诉系统它该指向“image”。</li><li>这里在给“messageId”挂牌子，告诉系统它该指向“input.id”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">media: toInboundMediaFacts(resolvedMedia, {
-  kind: &quot;image&quot;,
-  messageId: input.id,
-});</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：If media mixes local files and URL-only entries, keep the list as media facts. Core preserves array indexes when it wri…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If media mixes local files and URL-only entries, keep the list as media facts. Core preserves array indexes when it writes legacy context fields so downstream media understanding, transcription markers, and prompt notes continue to refer to the same attachment.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：For skipped 大家一起的房间 小纸条消息s that should be available to a later mention, pass media facts through the turn preflight.med…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For skipped group messages that should be available to a later mention, pass media facts through the turn <code>preflight.media</code> field. The kernel converts those facts into bounded history media entries before recording:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“preflight(input) {”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“return {”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这里在给“admission”挂牌子，告诉系统它该指向“{ kind: drop reason: missing_mention recordHistory: true }”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">preflight(input) {
-  return {
-    admission: { kind: &quot;drop&quot;, reason: &quot;missing_mention&quot;, recordHistory: true },
-    media: () =&gt; toInboundMediaFacts(resolveLocalImages(input), {
-      kind: &quot;image&quot;,
-      messageId: input.id,
-    }),
-    history: {
-      key: historyKey,
-      limit: historyLimit,
-      mediaLimit: 4,
-      shouldRecord: () =&gt; stillCurrent(input),
-    },
-  };
-}</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：History media is intentionally conservative: image-only today, local readable paths only, bounded by the 设置说明书ured medi…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>History media is intentionally conservative: image-only today, local readable paths only, bounded by the configured media limit, and still tied to the channel history key. Authenticated provider URLs should be downloaded by the plugin before they become model-visible media.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-21">
-          <div class="section-heading">
-            <p class="section-kicker">第 21 站</p>
-            <h2>History windows</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：小纸条消息-turn code should use create消息通道HistoryWindow(...) instead of calling low-level reply-history map helpers directly…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：小纸条消息-turn code should use create消息通道HistoryWindow(...) instead of calling low-level reply-history map helpers directly…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Message-turn code should use <code>createChannelHistoryWindow(...)</code> instead of calling low-level <code>reply-history</code> map helpers directly. The old map helpers remain importable as deprecated compatibility exports, but new plugin runtime code should not call them. The window facade keeps text context, structured <code>InboundHistory</code>, history-media normalization, and clearing behind one core-owned API while still letting the channel choose how a history line is rendered.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这里在给“const history = createChannelHistoryWindow({ historyMap”挂牌子，告诉系统它该指向“groupHistories });”。</li><li>这一行“await history.recordWithMedia({”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“historyKey,”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">const history = createChannelHistoryWindow({ historyMap: groupHistories });
-
-await history.recordWithMedia({
-  historyKey,
-  limit: historyLimit,
-  entry,
-  media: () =&gt;
-    toInboundMediaFacts(resolvedImages, {
-      kind: &quot;image&quot;,
-      messageId: entry.messageId,
-    }),
-});
-
-const combinedBody = history.buildPendingContext({
-  historyKey,
-  limit: historyLimit,
-  currentMessage,
-  formatEntry: (entry) =&gt; `${entry.sender}: ${entry.body}`,
-});</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The older buildPendingHistoryContextFromMap, buildInboundHistoryFromMap, recordPendingHistoryEntry*, and clearHistoryEn…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The older <code>buildPendingHistoryContextFromMap</code>, <code>buildInboundHistoryFromMap</code>, <code>recordPendingHistoryEntry*</code>, and <code>clearHistoryEntries*</code> exports remain as deprecated compatibility for plugins that have not migrated yet. New channel work should use the window or the turn kernel record/finalize options.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-22">
-          <div class="section-heading">
-            <p class="section-kicker">第 22 站</p>
-            <h2>Common 小纸条消息 patterns</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Text-only 大家一起的房间 with mention required: Image-only 小纸条消息 followed by a later mention: Explicit reply-to-image: Direct…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Text-only 大家一起的房间 with mention required:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Text-only group with mention required:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“preflight(input) {”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“const decision = resolveInboundMentionDecision({ facts, policy });”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“if (decision.shouldSkip) {”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">preflight(input) {
-  const decision = resolveInboundMentionDecision({ facts, policy });
-  if (decision.shouldSkip) {
-    return {
-      admission: { kind: &quot;drop&quot;, reason: &quot;missing_mention&quot;, recordHistory: true },
-      history: { key: historyKey, limit: historyLimit },
-    };
-  }
-  return { access: { mentions: decision } };
-}</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Image-only 小纸条消息 followed by a later mention:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Image-only message followed by a later mention:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“preflight(input) {”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“if (!wasMentioned &amp;&amp; resolvedImages.length &gt; 0) {”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“return {”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">preflight(input) {
-  if (!wasMentioned &amp;&amp; resolvedImages.length &gt; 0) {
-    return {
-      admission: { kind: &quot;drop&quot;, reason: &quot;missing_mention&quot;, recordHistory: true },
-      media: () =&gt; toInboundMediaFacts(resolvedImages, {
-        kind: &quot;image&quot;,
-        messageId: input.id,
-      }),
-      history: { key: historyKey, limit: historyLimit, mediaLimit: 4 },
-    };
-  }
-  return {};
-}</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Explicit reply-to-image:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Explicit reply-to-image:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“resolveTurn(input, _eventClass, preflight) {”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“return {”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“...assembled,”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">resolveTurn(input, _eventClass, preflight) {
-  return {
-    ...assembled,
-    media: toInboundMediaFacts([...currentMedia, ...referencedReplyMedia]),
-    supplemental: {
-      quote: preflight.supplemental?.quote,
-    },
-  };
-}</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Direct 小纸条消息 with history:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Direct message with history:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“resolveTurn(input) {”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“return {”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“...assembled,”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">resolveTurn(input) {
-  return {
-    ...assembled,
-    history: undefined,
-    message: {
-      rawBody: input.rawText,
-      bodyForAgent: input.textForAgent,
-    },
-  };
-}</code></pre>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-23">
-          <div class="section-heading">
-            <p class="section-kicker">第 23 站</p>
-            <h2>Adapter contract</h2>
-            <p>这一节主要在解释“Adapter contract”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“Adapter contract”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：For full run, the adapter shape is: resolveTurn returns a 消息通道TurnResolved, which is an Assembled消息通道Turn with an optio…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：For full run, the adapter shape is:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For full <code>run</code>, the adapter shape is:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“type ChannelTurnAdapter&lt;TRaw&gt; = {”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这里在给“ingest(raw”挂牌子，告诉系统它该指向“TRaw): Promise&lt;NormalizedTurnInput | null&gt; | NormalizedTurnInput | null;”。</li><li>这里在给“classify?(input”挂牌子，告诉系统它该指向“NormalizedTurnInput): Promise&lt;ChannelEventClass&gt; | ChannelEventClass;”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">type ChannelTurnAdapter&lt;TRaw&gt; = {
-  ingest(raw: TRaw): Promise&lt;NormalizedTurnInput | null&gt; | NormalizedTurnInput | null;
-  classify?(input: NormalizedTurnInput): Promise&lt;ChannelEventClass&gt; | ChannelEventClass;
-  preflight?(
-    input: NormalizedTurnInput,
-    eventClass: ChannelEventClass,
-  ): Promise&lt;PreflightFacts | ChannelTurnAdmission | null | undefined&gt;;
-  resolveTurn(
-    input: NormalizedTurnInput,
-    eventClass: ChannelEventClass,
-    preflight: PreflightFacts,
-  ): Promise&lt;ChannelTurnResolved&gt; | ChannelTurnResolved;
-  onFinalize?(result: ChannelTurnResult): Promise&lt;void&gt; | void;
-};</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：resolveTurn returns a 消息通道TurnResolved, which is an Assembled消息通道Turn with an optional admission kind. Returning { admi…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>resolveTurn</code> returns a <code>ChannelTurnResolved</code>, which is an <code>AssembledChannelTurn</code> with an optional admission kind. Returning <code>{ admission: { kind: &quot;observeOnly&quot; } }</code> runs the turn without producing visible output. The adapter still owns the delivery callback; it just becomes a no-op for that turn.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：onFinalize runs on every result, including dispatch errors. Use it to clear pending 大家一起的房间 history, remove ack reactio…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>onFinalize</code> runs on every result, including dispatch errors. Use it to clear pending group history, remove ack reactions, stop status indicators, and flush local state.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-24">
-          <div class="section-heading">
-            <p class="section-kicker">第 24 站</p>
-            <h2>Delivery adapter</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The kernel does not call the platform directly. The 消息通道 hands the kernel a 消息通道EventDeliveryAdapter: deliver is called…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The kernel does not call the platform directly. The 消息通道 hands the kernel a 消息通道EventDeliveryAdapter:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The kernel does not call the platform directly. The channel hands the kernel a <code>ChannelEventDeliveryAdapter</code>:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“type ChannelEventDeliveryAdapter = {”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这里在给“deliver(payload”挂牌子，告诉系统它该指向“ReplyPayload info: ChannelDeliveryInfo): Promise&lt;ChannelDeliveryResult | void&gt;;”。</li><li>这里在给“onError?(err”挂牌子，告诉系统它该指向“unknown info: { kind: string }): void;”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">type ChannelEventDeliveryAdapter = {
-  deliver(payload: ReplyPayload, info: ChannelDeliveryInfo): Promise&lt;ChannelDeliveryResult | void&gt;;
-  onError?(err: unknown, info: { kind: string }): void;
-  durable?: false | DurableInboundReplyDeliveryOptions;
-};
-
-type ChannelDeliveryResult = {
-  messageIds?: string[];
-  receipt?: MessageReceipt;
-  threadId?: string;
-  replyToId?: string;
-  visibleReplySent?: boolean;
-};</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：deliver is called once per buffered reply chunk. During the 小纸条消息-lifecycle migration, assembled 消息通道-event delivery is…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>deliver</code> is called once per buffered reply chunk. During the message-lifecycle migration, assembled channel-event delivery is channel-owned by default: an omitted <code>durable</code> field means the kernel must call <code>deliver</code> directly and must not route through generic outbound delivery. Set <code>durable</code> only after the channel has been audited to prove the generic send path preserves the old delivery behavior, including reply/thread targets, media handling, sent-message/self-echo caches, status cleanup, and returned message ids. <code>durable: false</code> remains a compatibility spelling for &quot;use the channel-owned callback&quot;, but unmigrated channels should not need to add it. Return platform message ids when the channel has them so the dispatcher can preserve thread anchors and edit later chunks; newer delivery paths should also return <code>receipt</code> so recovery, preview finalization, and duplicate suppression can move off <code>messageIds</code>. For observe-only turns, return <code>{ visibleReplySent: false }</code> or use <code>createNoopChannelEventDeliveryAdapter()</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：消息通道s using runPrepared with a fully 消息通道-owned dispatcher do not have a 消息通道EventDeliveryAdapter. Those dispatchers ar…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Channels using <code>runPrepared</code> with a fully channel-owned dispatcher do not have a <code>ChannelEventDeliveryAdapter</code>. Those dispatchers are not durable by default. They should keep their direct delivery path until they explicitly opt in to the new send context with a complete target, replay-safe adapter, receipt contract, and channel side-effect hooks.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Public compatibility helpers such as recordInboundSessionAndDispatchReply, dispatchInboundReplyWithBase, and direct-DM…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Public compatibility helpers such as <code>recordInboundSessionAndDispatchReply</code>, <code>dispatchInboundReplyWithBase</code>, and direct-DM helpers must stay behavior-preserving during migration. They should not call generic durable delivery before caller-owned <code>deliver</code> or <code>reply</code> callbacks.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-25">
-          <div class="section-heading">
-            <p class="section-kicker">第 25 站</p>
-            <h2>Record options</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The record stage wraps recordInboundSession. Most 消息通道s can use the defaults. Override via record: The dispatcher waits…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The record stage wraps recordInboundSession. Most 消息通道s can use the defaults. Override via record:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The record stage wraps <code>recordInboundSession</code>. Most channels can use the defaults. Override via <code>record</code>:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这里在给“record”挂牌子，告诉系统它该指向“{”。</li><li>这一行“groupResolution,”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这里在给“createIfMissing”挂牌子，告诉系统它该指向“true”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">record: {
-  groupResolution,
-  createIfMissing: true,
-  updateLastRoute,
-  onRecordError: (err) =&gt; log.warn(&quot;record failed&quot;, err),
-  trackSessionMetaTask: (task) =&gt; pendingTasks.push(task),
-}</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The dispatcher waits for the record stage. If record throws, the kernel runs onPreDispatchFailure (when provided to run…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The dispatcher waits for the record stage. If record throws, the kernel runs <code>onPreDispatchFailure</code> (when provided to <code>runPrepared</code>) and rethrows.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-26">
-          <div class="section-heading">
-            <p class="section-kicker">第 26 站</p>
-            <h2>Observability</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Each stage emits a structured event when a log callback is supplied: Logged stages: ingest, classify, preflight, resolv…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Each stage emits a structured event when a log callback is supplied:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Each stage emits a structured event when a <code>log</code> callback is supplied:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“await runtime.channel.turn.run({”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这里在给“channel”挂牌子，告诉系统它该指向“twitch”。</li><li>这一行“accountId,”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">await runtime.channel.turn.run({
-  channel: &quot;twitch&quot;,
-  accountId,
-  raw,
-  adapter,
-  log: (event) =&gt; {
-    runtime.log?.debug?.(`turn.${event.stage}:${event.event}`, {
-      channel: event.channel,
-      accountId: event.accountId,
-      messageId: event.messageId,
-      sessionKey: event.sessionKey,
-      admission: event.admission,
-      reason: event.reason,
-    });
-  },
-});</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Logged stages: ingest, classify, preflight, resolve, authorize, assemble, record, dispatch, finalize. Avoid logging raw…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Logged stages: <code>ingest</code>, <code>classify</code>, <code>preflight</code>, <code>resolve</code>, <code>authorize</code>, <code>assemble</code>, <code>record</code>, <code>dispatch</code>, <code>finalize</code>. Avoid logging raw bodies; use <code>MessageFacts.preview</code> for short redacted previews.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-27">
-          <div class="section-heading">
-            <p class="section-kicker">第 27 站</p>
-            <h2>What stays 消息通道-local</h2>
-            <p>这一节主要在解释“What stays 消息通道-local”到底是干什么的，以及你什么时候会遇到它。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节主要在解释“What stays 消息通道-local”到底是干什么的，以及你什么时候会遇到它。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>如果你是第一次接触 OpenClaw，这一节最值得看的不是术语本身，而是它背后的使用场景和限制。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正动手时，先看它有没有默认值、有没有必须打开的选项、以及会不会影响安全边界。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The kernel owns orchestration. The 消息通道 still owns: If two 消息通道s start needing the same helper for one of these, extrac…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The kernel owns orchestration. The 消息通道 still owns:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The kernel owns orchestration. The channel still owns:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“What stays channel-local”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：Platform transports (门口的小门卫, REST, websoc…、Identity resolution and display-name matc…、Native 魔法口令s, slash 魔法口令s, autocomplete,…、Card, modal, and adaptive-card rendering。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Platform transports (gateway, REST, websocket, polling, webhooks)</li><li>Identity resolution and display-name matching</li><li>Native commands, slash commands, autocomplete, modals, buttons, voice state</li><li>Card, modal, and adaptive-card rendering</li><li>Media auth, CDN rules, encrypted media, transcription</li><li>Edit, reaction, redaction, and presence APIs</li><li>Backfill and platform-side history fetch</li><li>Pairing flows that require platform-specific verification</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：If two 消息通道s start needing the same helper for one of these, extract a shared SDK helper instead of pushing it into the…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>If two channels start needing the same helper for one of these, extract a shared SDK helper instead of pushing it into the kernel.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-28">
-          <div class="section-heading">
-            <p class="section-kicker">第 28 站</p>
-            <h2>Stability</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：runtime.消息通道.turn.* is part of the public 新本领插件 runtime surface. The fact types (SenderFacts, ConversationFacts, RouteF…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：runtime.消息通道.turn.* is part of the public 新本领插件 runtime surface. The fact types (SenderFacts, ConversationFacts, RouteF…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>runtime.channel.turn.*</code> is part of the public plugin runtime surface. The fact types (<code>SenderFacts</code>, <code>ConversationFacts</code>, <code>RouteFacts</code>, <code>ReplyPlanFacts</code>, <code>AccessFacts</code>, <code>MessageFacts</code>, <code>SupplementalContextFacts</code>, <code>InboundMediaFacts</code>) and admission shapes (<code>ChannelTurnAdmission</code>, <code>ChannelEventClass</code>) are reachable through <code>PluginRuntime</code> from <code>openclaw/plugin-sdk/core</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Backward compatibility rules apply: new fact fields are additive, admission kinds are not renamed, and the entry point…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Backward compatibility rules apply: new fact fields are additive, admission kinds are not renamed, and the entry point names stay stable. New channel needs that require a non-additive change must go through the plugin SDK migration process.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-29">
-          <div class="section-heading">
-            <p class="section-kicker">第 29 站</p>
-            <h2>Related</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Related”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：小纸条消息 lifecycle refactor for the planned…、Building 消息通道 新本领插件s for the broader 消息通道…、新本领插件 runtime helpers for other runtime.*…、新本领插件 internals for load pipeline and reg…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><a href="/concepts/message-lifecycle-refactor" target="_blank" rel="noreferrer">Message lifecycle refactor</a> for the planned send/receive/live lifecycle that will wrap this kernel</li><li><a href="/plugins/sdk-channel-plugins" target="_blank" rel="noreferrer">Building channel plugins</a> for the broader channel plugin contract</li><li><a href="/plugins/sdk-runtime" target="_blank" rel="noreferrer">Plugin runtime helpers</a> for other <code>runtime.*</code> surfaces</li><li><a href="/plugins/architecture-internals" target="_blank" rel="noreferrer">Plugin internals</a> for load pipeline and registry mechanics</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>AdSense 连接验证已经放在页面头部；广告单元等站点审批通过后再启用。</p>
-        <code>google-adsense-account: ca-pub-3833673520933536</code>
-      </div>
-    </section>
+<section class="section-shell"><div class="section-heading"><p class="section-kicker">怎么理解</p><h2>共享 kernel 是为了避免每个通道重复修同一条路</h2></div><div class="story-grid"><div class="story-card"><div class="story-card-label">插件给事实</div><p>消息来自哪里、是谁发的、能不能回复、怎么送达，这些平台事实由插件提供。</p></div><div class="story-card"><div class="story-card-label">核心管流程</div><p>ingest、classify、preflight、authorize、assemble、record、dispatch、finalize 这些通用步骤由核心管。</p></div><div class="story-card"><div class="story-card-label">只管消息 turn</div><p>按钮、弹窗、生命周期、语音状态等非消息事件，通常仍留在插件本地。</p></div><div class="source-card"><div class="story-card-label">最大价值</div><p>mention gating、session metadata、visible replies 这类规则改一次，就能让多个通道一起受益。</p></div></div></section>
 
 
       <footer class="page-footer">
         <div>
           <strong>Fivey Can Read OpenClaw</strong>
-          <p>同步时间：2026年5月20日 20:58</p>
+          <p>同步时间：2026年5月23日 00:22</p>
         </div>
       </footer>
     </main>

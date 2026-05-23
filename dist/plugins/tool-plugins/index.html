@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tool plugins | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="工具小帮手 新本领插件s 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：工具小帮手 新本领插件s add 机器人朋友-callable 工具小帮手s to Open…">
+  <meta name="description" content="这页讲最轻量的插件形态：只注册 agent-callable tools，不新增 channel、provider、hook 或服务。读它时抓住三步就够了：用 defineToolPlugin 写工具，生成 openclaw.plugin.json 和 package metadata，再用验证命令确认入口、参数和…">
   <meta name="robots" content="index,follow">
   <meta name="google-adsense-account" content="ca-pub-3833673520933536">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Tool plugins | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="工具小帮手 新本领插件s 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：工具小帮手 新本领插件s add 机器人朋友-callable 工具小帮手s to Open…">
+  <meta property="og:description" content="这页讲最轻量的插件形态：只注册 agent-callable tools，不新增 channel、provider、hook 或服务。读它时抓住三步就够了：用 defineToolPlugin 写工具，生成 openclaw.plugin.json 和 package metadata，再用验证命令确认入口、参数和…">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/plugins/tool-plugins/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta property="og:image:alt" content="Tool plugins 的中文故事化导读页面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tool plugins | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="工具小帮手 新本领插件s 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：工具小帮手 新本领插件s add 机器人朋友-callable 工具小帮手s to Open…">
+  <meta name="twitter:description" content="这页讲最轻量的插件形态：只注册 agent-callable tools，不新增 channel、provider、hook 或服务。读它时抓住三步就够了：用 defineToolPlugin 写工具，生成 openclaw.plugin.json 和 package metadata，再用验证命令确认入口、参数和…">
   <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/plugins/tool-plugins/">
@@ -25,7 +25,7 @@
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3833673520933536" crossorigin="anonymous"></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Tool plugins","description":"工具小帮手 新本领插件s 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：工具小帮手 新本领插件s add 机器人朋友-callable 工具小帮手s to Open…","url":"https://fivey-can-read-openclaw.pages.dev/plugins/tool-plugins/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Tool plugins","description":"这页讲最轻量的插件形态：只注册 agent-callable tools，不新增 channel、provider、hook 或服务。读它时抓住三步就够了：用 defineToolPlugin 写工具，生成 openclaw.plugin.json 和 package metadata，再用验证命令确认入口、参数和…","url":"https://fivey-can-read-openclaw.pages.dev/plugins/tool-plugins/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Plugins","item":"https://fivey-can-read-openclaw.pages.dev/plugins/tool-plugins/"}]}</script>
 </head>
 <body>
@@ -719,11 +719,6 @@
             <details class="sidebar-group">
               <summary>工具大全</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/tools/acp-agents/">
-                  <span>ACP agents 工具</span>
-                  <small>ACP agents</small>
-                </a>
-
                 <a class="sidebar-link " href="/tools/agent-send/">
                   <span>Agent send 工具</span>
                   <small>Agent send</small>
@@ -974,6 +969,11 @@
                   <small>Web fetch</small>
                 </a>
 
+                <a class="sidebar-link " href="/tools/acp-agents/">
+                  <span>ACP agents 工具</span>
+                  <small>ACP agents</small>
+                </a>
+
                 <a class="sidebar-link " href="/tools/acp-agents-setup/">
                   <span>ACP agents — setup</span>
                   <small>ACP agents — setup</small>
@@ -1027,6 +1027,11 @@
                 <a class="sidebar-link " href="/plugins/codex-harness/">
                   <span>Codex harness 插件</span>
                   <small>Codex harness</small>
+                </a>
+
+                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
+                  <span>Native Codex plugins 插件</span>
+                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/community/">
@@ -1117,11 +1122,6 @@
                 <a class="sidebar-link " href="/plugins/codex-harness-runtime/">
                   <span>Codex harness runtime 插件</span>
                   <small>Codex harness runtime</small>
-                </a>
-
-                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
-                  <span>Native Codex plugins 插件</span>
-                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/compatibility/">
@@ -1634,11 +1634,6 @@
             <details class="sidebar-group">
               <summary>网关</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/gateway/">
-                  <span>Gateway runbook</span>
-                  <small>Gateway runbook</small>
-                </a>
-
                 <a class="sidebar-link " href="/gateway/authentication/">
                   <span>身份认证</span>
                   <small>Authentication</small>
@@ -1722,6 +1717,11 @@
                 <a class="sidebar-link " href="/gateway/heartbeat/">
                   <span>Heartbeat</span>
                   <small>Heartbeat</small>
+                </a>
+
+                <a class="sidebar-link " href="/gateway/">
+                  <span>Gateway runbook</span>
+                  <small>Gateway runbook</small>
                 </a>
 
                 <a class="sidebar-link " href="/gateway/local-model-services/">
@@ -1872,11 +1872,6 @@
                 <a class="sidebar-link " href="/cli/backup/">
                   <span>Backup 命令</span>
                   <small>Backup</small>
-                </a>
-
-                <a class="sidebar-link " href="/cli/browser/">
-                  <span>浏览器</span>
-                  <small>Browser</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/channels/">
@@ -2039,6 +2034,11 @@
                   <small>ACP</small>
                 </a>
 
+                <a class="sidebar-link " href="/cli/browser/">
+                  <span>浏览器</span>
+                  <small>Browser</small>
+                </a>
+
                 <a class="sidebar-link " href="/cli/clawbot/">
                   <span>Clawbot 命令</span>
                   <small>Clawbot</small>
@@ -2107,6 +2107,11 @@
                 <a class="sidebar-link " href="/cli/plugins/">
                   <span>插件</span>
                   <small>Plugins</small>
+                </a>
+
+                <a class="sidebar-link " href="/cli/policy/">
+                  <span>Policy 命令</span>
+                  <small>Policy</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/proxy/">
@@ -2699,8 +2704,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Plugins 导读</p>
-        <h1>工具小帮手 新本领插件s：这块新积木往哪儿卡</h1>
-        <p class="hero-copy">工具小帮手 新本领插件s 这页像在教你把一块新积木卡进主机身上。你先看它负责哪段本领、说明纸塞在哪里、外面的世界怎么从它这道门进来，以及哪些 secret、route、manifest 最不能写歪。原文最响的一记鼓点，其实是：工具小帮手 新本领插件s add 机器人朋友-callable 工具小帮手s to OpenClaw without adding a 消息通道, 聪明脑袋模型 provid…。</p>
+        <h1>Tool Plugin 是给代理挂一件小工具，不是重做一整套插件系统</h1>
+        <p class="hero-copy">这页讲最轻量的插件形态：只注册 agent-callable tools，不新增 channel、provider、hook 或服务。读它时抓住三步就够了：用 defineToolPlugin 写工具，生成 openclaw.plugin.json 和 package metadata，再用验证命令确认入口、参数和 metadata 没有错位。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -3391,11 +3396,6 @@
             <details class="sidebar-group">
               <summary>工具大全</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/tools/acp-agents/">
-                  <span>ACP agents 工具</span>
-                  <small>ACP agents</small>
-                </a>
-
                 <a class="sidebar-link " href="/tools/agent-send/">
                   <span>Agent send 工具</span>
                   <small>Agent send</small>
@@ -3646,6 +3646,11 @@
                   <small>Web fetch</small>
                 </a>
 
+                <a class="sidebar-link " href="/tools/acp-agents/">
+                  <span>ACP agents 工具</span>
+                  <small>ACP agents</small>
+                </a>
+
                 <a class="sidebar-link " href="/tools/acp-agents-setup/">
                   <span>ACP agents — setup</span>
                   <small>ACP agents — setup</small>
@@ -3699,6 +3704,11 @@
                 <a class="sidebar-link " href="/plugins/codex-harness/">
                   <span>Codex harness 插件</span>
                   <small>Codex harness</small>
+                </a>
+
+                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
+                  <span>Native Codex plugins 插件</span>
+                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/community/">
@@ -3789,11 +3799,6 @@
                 <a class="sidebar-link " href="/plugins/codex-harness-runtime/">
                   <span>Codex harness runtime 插件</span>
                   <small>Codex harness runtime</small>
-                </a>
-
-                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
-                  <span>Native Codex plugins 插件</span>
-                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/compatibility/">
@@ -4306,11 +4311,6 @@
             <details class="sidebar-group">
               <summary>网关</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/gateway/">
-                  <span>Gateway runbook</span>
-                  <small>Gateway runbook</small>
-                </a>
-
                 <a class="sidebar-link " href="/gateway/authentication/">
                   <span>身份认证</span>
                   <small>Authentication</small>
@@ -4394,6 +4394,11 @@
                 <a class="sidebar-link " href="/gateway/heartbeat/">
                   <span>Heartbeat</span>
                   <small>Heartbeat</small>
+                </a>
+
+                <a class="sidebar-link " href="/gateway/">
+                  <span>Gateway runbook</span>
+                  <small>Gateway runbook</small>
                 </a>
 
                 <a class="sidebar-link " href="/gateway/local-model-services/">
@@ -4544,11 +4549,6 @@
                 <a class="sidebar-link " href="/cli/backup/">
                   <span>Backup 命令</span>
                   <small>Backup</small>
-                </a>
-
-                <a class="sidebar-link " href="/cli/browser/">
-                  <span>浏览器</span>
-                  <small>Browser</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/channels/">
@@ -4711,6 +4711,11 @@
                   <small>ACP</small>
                 </a>
 
+                <a class="sidebar-link " href="/cli/browser/">
+                  <span>浏览器</span>
+                  <small>Browser</small>
+                </a>
+
                 <a class="sidebar-link " href="/cli/clawbot/">
                   <span>Clawbot 命令</span>
                   <small>Clawbot</small>
@@ -4779,6 +4784,11 @@
                 <a class="sidebar-link " href="/cli/plugins/">
                   <span>插件</span>
                   <small>Plugins</small>
+                </a>
+
+                <a class="sidebar-link " href="/cli/policy/">
+                  <span>Policy 命令</span>
+                  <small>Policy</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/proxy/">
@@ -5358,1376 +5368,104 @@
         </div>
       </div>
 
-
-    <section class="section-shell">
-      <div class="overview-card">
-        <div>
-          <p class="section-kicker">先听这页的人话版</p>
-          <h2>Tool plugins</h2>
-          <p>这一页不是在堆术语，它像把“工具小帮手 新本领插件s”这台小机器搬到桌上，当着你的面拆开给你看。你先不用全记住，先抓住它到底在忙什么：工具小帮手 新本领插件s add 机器人朋友-callable 工具小帮手s to OpenClaw without adding a 消息通道, 聪明脑袋模型 provider, hook…。</p>
-          <p>如果把这页当成“给普通人看的版本”，你最应该带走的是：它到底在教你一件什么事、什么时候要这样做、以及哪里最容易踩坑。</p>
-        </div>
-        <div class="overview-meta">
-          <span>原始路径：/plugins/tool-plugins</span>
-          <span>章节数量：19</span>
-          <a href="https://docs.openclaw.ai/plugins/tool-plugins" target="_blank" rel="noreferrer">查看原文</a>
-        </div>
-      </div>
-    </section>
-
-        <section class="section-shell" id="section-1">
-          <div class="section-heading">
-            <p class="section-kicker">第 1 站</p>
-            <h2>Start Here</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：工具小帮手 新本领插件s add 机器人朋友-callable 工具小帮手s to OpenClaw without adding a 消息通道, 聪明脑袋模型 provider, hook, service, or setup back…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：工具小帮手 新本领插件s add 机器人朋友-callable 工具小帮手s to OpenClaw without adding a 消息通道, 聪明脑袋模型 provider, hook, service, or setup back…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Tool plugins add agent-callable tools to OpenClaw without adding a channel, model provider, hook, service, or setup backend. Use <code>defineToolPlugin</code> when the plugin owns a fixed list of tools and you want OpenClaw to generate the manifest metadata that keeps those tools discoverable without loading runtime code.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The recommended flow is:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The recommended flow is:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：1. Scaffold a package with openclaw 新本领插件s init. 2. Write 工具小帮手s with define工具小帮手新本领插件. 3. Build JavaScript. 4. Generat…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. Scaffold a package with <code>openclaw plugins init</code>. 2. Write tools with <code>defineToolPlugin</code>. 3. Build JavaScript. 4. Generate <code>openclaw.plugin.json</code> and <code>package.json</code> metadata with <code>openclaw plugins build</code>. 5. Validate the generated metadata before publishing or installing.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：For provider, 消息通道, hook, service, or mixed-capability 新本领插件s, start with Building 新本领插件s, 消息通道 新本领插件s, or Provider 新本领…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For provider, channel, hook, service, or mixed-capability plugins, start with <a href="/plugins/building-plugins" target="_blank" rel="noreferrer">Building plugins</a>, <a href="/plugins/sdk-channel-plugins" target="_blank" rel="noreferrer">Channel Plugins</a>, or <a href="/plugins/sdk-provider-plugins" target="_blank" rel="noreferrer">Provider Plugins</a> instead.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-2">
-          <div class="section-heading">
-            <p class="section-kicker">第 2 站</p>
-            <h2>Requirements</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：openclaw/新本领插件-sdk/工具小帮手-新本领插件. package.json. The generated 新本领插件 imports typebox at runtime, so keep typebox in depend…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：openclaw/新本领插件-sdk/工具小帮手-新本领插件.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>openclaw/plugin-sdk/tool-plugin</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：package.json.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>package.json</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Requirements”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：Node &gt;= 22.、TypeScript ESM package output.、typebox for 设置说明书 and 工具小帮手 parameter sch…、openclaw &gt;=2026.5.17, the first OpenClaw…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Node &gt;= 22.</li><li>TypeScript ESM package output.</li><li><code>typebox</code> for config and tool parameter schemas.</li><li><code>openclaw &gt;=2026.5.17</code>, the first OpenClaw version that exports</li><li>A package root that can ship <code>dist/</code>, <code>openclaw.plugin.json</code>, and</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The generated 新本领插件 imports typebox at runtime, so keep typebox in dependencies, not only devDependencies.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The generated plugin imports <code>typebox</code> at runtime, so keep <code>typebox</code> in <code>dependencies</code>, not only <code>devDependencies</code>.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-3">
-          <div class="section-heading">
-            <p class="section-kicker">第 3 站</p>
-            <h2>Quickstart</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Create a new 新本领插件 package: The scaffold creates: openclaw.extensions: [&quot;./dist/index.js&quot;]. Expected validation output:。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Create a new 新本领插件 package:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Create a new plugin package:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，像你把任务清清楚楚塞到它手里。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 动起来：“openclaw plugins init stock-quotes --name &quot;Stock Quotes&quot;”。你可以把它想成一句说出口就要执行的差事。</li><li>这一行“cd stock-quotes”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一句像在终端上按下启动钮：“npm install”。它会让电脑去请求、安装或者把东西搭起来。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw plugins init stock-quotes --name &quot;Stock Quotes&quot;
-cd stock-quotes
-npm install
-npm run plugin:build
-npm run plugin:validate
-npm test</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The scaffold creates:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The scaffold creates:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：openclaw.extensions: [&quot;./dist/index.js&quot;].</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>openclaw.extensions: [&quot;./dist/index.js&quot;]</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Quickstart”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：src/index.ts: a define工具小帮手新本领插件 entry wi…、src/index.test.ts: a small metadata test.、ts设置说明书.json: NodeNext TypeScript output…、package.json: scripts, runtime dependenci…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>src/index.ts</code>: a <code>defineToolPlugin</code> entry with an <code>echo</code> tool.</li><li><code>src/index.test.ts</code>: a small metadata test.</li><li><code>tsconfig.json</code>: NodeNext TypeScript output to <code>dist/</code>.</li><li><code>package.json</code>: scripts, runtime dependencies, and</li><li><code>openclaw.plugin.json</code>: generated manifest metadata for the initial tool.</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Expected validation output:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Expected validation output:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“Plugin stock-quotes is valid.”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-text">Plugin stock-quotes is valid.</code></pre>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-4">
-          <div class="section-heading">
-            <p class="section-kicker">第 4 站</p>
-            <h2>Write a 工具小帮手</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：define工具小帮手新本领插件 takes 新本领插件 identity, an optional 设置说明书 schema, and a static list of 工具小帮手s. Parameter and 设置说明书 types…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：define工具小帮手新本领插件 takes 新本领插件 identity, an optional 设置说明书 schema, and a static list of 工具小帮手s. Parameter and 设置说明书 types…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>defineToolPlugin</code> takes plugin identity, an optional config schema, and a static list of tools. Parameter and config types are inferred from TypeBox schemas.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“import { Type } from &quot;typebox&quot;;”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“import { defineToolPlugin } from &quot;openclaw/plugin-sdk/tool-plugin&quot;;”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“export default defineToolPlugin({”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">import { Type } from &quot;typebox&quot;;
-import { defineToolPlugin } from &quot;openclaw/plugin-sdk/tool-plugin&quot;;
-
-export default defineToolPlugin({
-  id: &quot;stock-quotes&quot;,
-  name: &quot;Stock Quotes&quot;,
-  description: &quot;Fetch stock quote snapshots.&quot;,
-  configSchema: Type.Object({
-    apiKey: Type.Optional(Type.String({ description: &quot;Quote API key.&quot; })),
-    baseUrl: Type.Optional(Type.String({ description: &quot;Quote API base URL.&quot; })),
-  }),
-  tools: (tool) =&gt; [
-    tool({
-      name: &quot;stock_quote&quot;,
-      label: &quot;Stock Quote&quot;,
-      description: &quot;Fetch a stock quote snapshot.&quot;,
-      parameters: Type.Object({
-        symbol: Type.String({ description: &quot;Ticker symbol, for example OPEN.&quot; }),
-      }),
-      async execute({ symbol }, config, context) {
-        context.signal?.throwIfAborted();
-        return {
-          symbol: symbol.toUpperCase(),
-          configured: Boolean(config.apiKey),
-          baseUrl: config.baseUrl ?? &quot;https://api.example.com&quot;,
-        };
-      },
-    }),
-  ],
-});</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：工具小帮手 names are the stable 对话接口. Pick names that are unique, lowercase, and specific enough to avoid collisions with co…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Tool names are the stable API. Pick names that are unique, lowercase, and specific enough to avoid collisions with core tools or other plugins.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-5">
-          <div class="section-heading">
-            <p class="section-kicker">第 5 站</p>
-            <h2>Optional and factory 工具小帮手s</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Set optional: true when users should explicitly allowlist the 工具小帮手 before it is sent to a 聪明脑袋模型: openclaw 新本领插件s buil…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Set optional: true when users should explicitly allowlist the 工具小帮手 before it is sent to a 聪明脑袋模型:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Set <code>optional: true</code> when users should explicitly allowlist the tool before it is sent to a model:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“tool({”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这里在给“name”挂牌子，告诉系统它该指向“workflow_run”。</li><li>这里在给“description”挂牌子，告诉系统它该指向“Run an external workflow.”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">tool({
-  name: &quot;workflow_run&quot;,
-  description: &quot;Run an external workflow.&quot;,
-  parameters: Type.Object({ goal: Type.String() }),
-  optional: true,
-  execute: ({ goal }) =&gt; ({ queued: true, goal }),
-});</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：openclaw 新本领插件s build writes the matching 工具小帮手Metadata.&lt;工具小帮手&gt;.optional manifest entry, so OpenClaw can discover the 工…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>openclaw plugins build</code> writes the matching <code>toolMetadata.&lt;tool&gt;.optional</code> manifest entry, so OpenClaw can discover the tool without loading plugin runtime code.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use factory when a 工具小帮手 needs the runtime 工具小帮手 context before it can be created. The factory keeps metadata static wh…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use <code>factory</code> when a tool needs the runtime tool context before it can be created. The factory keeps metadata static while letting the tool opt out for a specific run, inspect sandbox state, or bind runtime helpers.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“tool({”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这里在给“name”挂牌子，告诉系统它该指向“local_workflow”。</li><li>这里在给“description”挂牌子，告诉系统它该指向“Run a local workflow outside sandboxed sessions.”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">tool({
-  name: &quot;local_workflow&quot;,
-  description: &quot;Run a local workflow outside sandboxed sessions.&quot;,
-  parameters: Type.Object({ goal: Type.String() }),
-  optional: true,
-  factory({ api, toolContext }) {
-    if (toolContext.sandboxed) {
-      return null;
-    }
-    return createLocalWorkflowTool(api);
-  },
-});</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Factories are still for fixed 工具小帮手 names. Use define新本领插件Entry directly when the 新本领插件 computes 工具小帮手 names dynamicall…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Factories are still for fixed tool names. Use <code>definePluginEntry</code> directly when the plugin computes tool names dynamically or combines tools with hooks, services, providers, commands, or other runtime surfaces.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-6">
-          <div class="section-heading">
-            <p class="section-kicker">第 6 站</p>
-            <h2>Return values</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：define工具小帮手新本领插件 wraps plain return values into the OpenClaw 工具小帮手-result format: and OpenClaw to keep the original val…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：define工具小帮手新本领插件 wraps plain return values into the OpenClaw 工具小帮手-result format:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>defineToolPlugin</code> wraps plain return values into the OpenClaw tool-result format:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：and OpenClaw to keep the original value in details.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>and OpenClaw to keep the original value in <code>details</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Return values”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：Return a string when the 聪明脑袋模型 should se…、Return a JSON-compatible value when you w…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li>Return a string when the model should see that exact text.</li><li>Return a JSON-compatible value when you want the model to see formatted JSON</li></ul>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“tool({”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这里在给“name”挂牌子，告诉系统它该指向“echo_text”。</li><li>这里在给“description”挂牌子，告诉系统它该指向“Echo input text.”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">tool({
-  name: &quot;echo_text&quot;,
-  description: &quot;Echo input text.&quot;,
-  parameters: Type.Object({
-    input: Type.String(),
-  }),
-  execute: ({ input }) =&gt; input,
-});</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“tool({”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这里在给“name”挂牌子，告诉系统它该指向“echo_json”。</li><li>这里在给“description”挂牌子，告诉系统它该指向“Echo input as structured JSON.”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">tool({
-  name: &quot;echo_json&quot;,
-  description: &quot;Echo input as structured JSON.&quot;,
-  parameters: Type.Object({
-    input: Type.String(),
-  }),
-  execute: ({ input }) =&gt; ({ input, length: input.length }),
-});</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use a factory 工具小帮手 when you need to return a custom 机器人朋友工具小帮手Result or reuse an existing 对话接口.register工具小帮手 implement…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use a factory tool when you need to return a custom <code>AgentToolResult</code> or reuse an existing <code>api.registerTool</code> implementation. Use <code>definePluginEntry</code> instead of <code>defineToolPlugin</code> when you need fully dynamic tools or mixed plugin capabilities.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-7">
-          <div class="section-heading">
-            <p class="section-kicker">第 7 站</p>
-            <h2>设置说明书uration</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：设置说明书Schema is optional. If you omit it, OpenClaw uses a strict empty object schema and the generated manifest still in…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：设置说明书Schema is optional. If you omit it, OpenClaw uses a strict empty object schema and the generated manifest still in…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>configSchema</code> is optional. If you omit it, OpenClaw uses a strict empty object schema and the generated manifest still includes <code>configSchema</code>.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“export default defineToolPlugin({”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这里在给“id”挂牌子，告诉系统它该指向“no-config-tools”。</li><li>这里在给“name”挂牌子，告诉系统它该指向“No Config Tools”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">export default defineToolPlugin({
-  id: &quot;no-config-tools&quot;,
-  name: &quot;No Config Tools&quot;,
-  description: &quot;Adds tools that do not need configuration.&quot;,
-  tools: () =&gt; [],
-});</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：When you include 设置说明书Schema, the second execute argument is typed from the schema:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>When you include <code>configSchema</code>, the second <code>execute</code> argument is typed from the schema:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段像放在桌上的操作卡，谁来照着做，现场就会动起来。</p>
-        <ul class="code-steps">
-          <li>这一行“const configSchema = Type.Object({”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这里在给“apiKey”挂牌子，告诉系统它该指向“Type.String()”。</li><li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-typescript">const configSchema = Type.Object({
-  apiKey: Type.String(),
-});
-
-export default defineToolPlugin({
-  id: &quot;configured-tools&quot;,
-  name: &quot;Configured Tools&quot;,
-  description: &quot;Adds configured tools.&quot;,
-  configSchema,
-  tools: (tool) =&gt; [
-    tool({
-      name: &quot;configured_ping&quot;,
-      description: &quot;Check whether configuration is available.&quot;,
-      parameters: Type.Object({}),
-      execute: (_params, config) =&gt; ({ hasKey: config.apiKey.length &gt; 0 }),
-    }),
-  ],
-});</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：OpenClaw reads 新本领插件 设置说明书 from the 新本领插件 entry in the 门口的小门卫 设置说明书. Do not hard-code secrets in source or in docs exam…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw reads plugin config from the plugin entry in the Gateway config. Do not hard-code secrets in source or in docs examples. Use config, environment variables, or SecretRefs according to the plugin&#39;s security model.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-8">
-          <div class="section-heading">
-            <p class="section-kicker">第 8 站</p>
-            <h2>Generated metadata</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：OpenClaw discovers installed 新本领插件s from cold metadata. It must be able to read the 新本领插件 manifest before importing 新本领…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：OpenClaw discovers installed 新本领插件s from cold metadata. It must be able to read the 新本领插件 manifest before importing 新本领…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>OpenClaw discovers installed plugins from cold metadata. It must be able to read the plugin manifest before importing plugin runtime code. <code>defineToolPlugin</code> therefore exposes static metadata, and <code>openclaw plugins build</code> writes that metadata into the package.</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Run the generator after changing 新本领插件 id, name, description, 设置说明书 schema, activation, or 工具小帮手 names:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Run the generator after changing plugin id, name, description, config schema, activation, or tool names:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端口令，像你站在控制台前，一下下按按钮让机器醒过来。</p>
-        <ul class="code-steps">
-          <li>这一句像在终端上按下启动钮：“npm run build”。它会让电脑去请求、安装或者把东西搭起来。</li><li>这一句是在直接叫 OpenClaw 动起来：“openclaw plugins build --entry ./dist/index.js”。你可以把它想成一句说出口就要执行的差事。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">npm run build
-openclaw plugins build --entry ./dist/index.js</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：For a one-工具小帮手 新本领插件, the generated manifest looks like this:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For a one-tool plugin, the generated manifest looks like this:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。</p>
-        <ul class="code-steps">
-          <li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li><li>这里在给“id”挂牌子，告诉系统它该指向“stock-quotes”。</li><li>这里在给“name”挂牌子，告诉系统它该指向“Stock Quotes”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{
-  &quot;id&quot;: &quot;stock-quotes&quot;,
-  &quot;name&quot;: &quot;Stock Quotes&quot;,
-  &quot;description&quot;: &quot;Fetch stock quote snapshots.&quot;,
-  &quot;version&quot;: &quot;0.1.0&quot;,
-  &quot;configSchema&quot;: {
-    &quot;type&quot;: &quot;object&quot;,
-    &quot;additionalProperties&quot;: false,
-    &quot;properties&quot;: {}
-  },
-  &quot;activation&quot;: {
-    &quot;onStartup&quot;: true
-  },
-  &quot;contracts&quot;: {
-    &quot;tools&quot;: [&quot;stock_quote&quot;]
-  }
-}</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：contracts.工具小帮手s is the important discovery contract. It tells OpenClaw which 新本领插件 owns each 工具小帮手 without loading eve…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>contracts.tools</code> is the important discovery contract. It tells OpenClaw which plugin owns each tool without loading every installed plugin runtime. If the manifest is stale, the tool may be missing from discovery or the wrong plugin may be blamed for a registration error.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-9">
-          <div class="section-heading">
-            <p class="section-kicker">第 9 站</p>
-            <h2>Package metadata</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：For the simple 工具小帮手-新本领插件 workflow, openclaw 新本领插件s build aligns package.json to the selected single runtime entry: Us…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：For the simple 工具小帮手-新本领插件 workflow, openclaw 新本领插件s build aligns package.json to the selected single runtime entry:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For the simple tool-plugin workflow, <code>openclaw plugins build</code> aligns <code>package.json</code> to the selected single runtime entry:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这段不是对白，而是一叠设置卡片，像在给系统贴门牌、路线和规矩。</p>
-        <ul class="code-steps">
-          <li>大括号像两只手把同一组设置拢住，意思是“这些东西算一伙”。</li><li>这里在给“type”挂牌子，告诉系统它该指向“module”。</li><li>这里在给“files”挂牌子，告诉系统它该指向“[dist openclaw.plugin.json README.md]”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-json">{
-  &quot;type&quot;: &quot;module&quot;,
-  &quot;files&quot;: [&quot;dist&quot;, &quot;openclaw.plugin.json&quot;, &quot;README.md&quot;],
-  &quot;dependencies&quot;: {
-    &quot;typebox&quot;: &quot;^1.1.38&quot;
-  },
-  &quot;peerDependencies&quot;: {
-    &quot;openclaw&quot;: &quot;&gt;=2026.5.17&quot;
-  },
-  &quot;openclaw&quot;: {
-    &quot;extensions&quot;: [&quot;./dist/index.js&quot;]
-  }
-}</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use built JavaScript such as ./dist/index.js for installed packages. Source entries are useful in workspace development…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use built JavaScript such as <code>./dist/index.js</code> for installed packages. Source entries are useful in workspace development, but published packages should not depend on TypeScript runtime loading.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-10">
-          <div class="section-heading">
-            <p class="section-kicker">第 10 站</p>
-            <h2>Validate in CI</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use 新本领插件s build --check to fail CI when generated metadata is stale without rewriting files: 新本领插件s validate checks th…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Use 新本领插件s build --check to fail CI when generated metadata is stale without rewriting files:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Use <code>plugins build --check</code> to fail CI when generated metadata is stale without rewriting files:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端口令，像你站在控制台前，一下下按按钮让机器醒过来。</p>
-        <ul class="code-steps">
-          <li>这一句像在终端上按下启动钮：“npm run build”。它会让电脑去请求、安装或者把东西搭起来。</li><li>这一句是在直接叫 OpenClaw 动起来：“openclaw plugins build --entry ./dist/index.js --check”。你可以把它想成一句说出口就要执行的差事。</li><li>这一句是在直接叫 OpenClaw 动起来：“openclaw plugins validate --entry ./dist/index.js”。你可以把它想成一句说出口就要执行的差事。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">npm run build
-openclaw plugins build --entry ./dist/index.js --check
-openclaw plugins validate --entry ./dist/index.js
-npm test</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：新本领插件s validate checks that:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p><code>plugins validate</code> checks that:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“Validate in CI”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：openclaw.新本领插件.json exists and passes the…、The current entry exports define工具小帮手新本领插…、Generated manifest fields match the entry…、contracts.工具小帮手s matches the declared 工具小…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><code>openclaw.plugin.json</code> exists and passes the normal manifest loader.</li><li>The current entry exports <code>defineToolPlugin</code> metadata.</li><li>Generated manifest fields match the entry metadata.</li><li><code>contracts.tools</code> matches the declared tool names.</li><li><code>package.json</code> points <code>openclaw.extensions</code> at the selected runtime entry.</li></ul>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-11">
-          <div class="section-heading">
-            <p class="section-kicker">第 11 站</p>
-            <h2>Install and inspect locally</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：From a separate OpenClaw checkout or installed CLI, install the package path: For a packaged smoke, pack first and inst…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：From a separate OpenClaw checkout or installed CLI, install the package path:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>From a separate OpenClaw checkout or installed CLI, install the package path:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，像你把任务清清楚楚塞到它手里。</p>
-        <ul class="code-steps">
-          <li>这一句是在直接叫 OpenClaw 动起来：“openclaw plugins install ./stock-quotes”。你可以把它想成一句说出口就要执行的差事。</li><li>这一句是在直接叫 OpenClaw 动起来：“openclaw plugins inspect stock-quotes --runtime”。你可以把它想成一句说出口就要执行的差事。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw plugins install ./stock-quotes
-openclaw plugins inspect stock-quotes --runtime</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：For a packaged smoke, pack first and install the tarball:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>For a packaged smoke, pack first and install the tarball:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端口令，像你站在控制台前，一下下按按钮让机器醒过来。</p>
-        <ul class="code-steps">
-          <li>这一句像在终端上按下启动钮：“npm pack”。它会让电脑去请求、安装或者把东西搭起来。</li><li>这里在给“openclaw plugins install npm-pack”挂牌子，告诉系统它该指向“./openclaw-plugin-stock-quotes-0.1.0.tgz”。</li><li>这一句是在直接叫 OpenClaw 动起来：“openclaw plugins inspect stock-quotes --runtime --json”。你可以把它想成一句说出口就要执行的差事。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">npm pack
-openclaw plugins install npm-pack:./openclaw-plugin-stock-quotes-0.1.0.tgz
-openclaw plugins inspect stock-quotes --runtime --json</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：After installation, start or restart the 门口的小门卫 and ask the 机器人朋友 to use the 工具小帮手. If you are debugging 工具小帮手 visibili…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>After installation, start or restart the Gateway and ask the agent to use the tool. If you are debugging tool visibility, inspect the plugin runtime and the effective tool catalog before changing the code.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-12">
-          <div class="section-heading">
-            <p class="section-kicker">第 12 站</p>
-            <h2>Publish</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Publish through ClawHub when the package is ready: Install with an explicit ClawHub locator: Bare npm package specs rem…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Publish through ClawHub when the package is ready:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Publish through ClawHub when the package is ready:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端口令，像你站在控制台前，一下下按按钮让机器醒过来。</p>
-        <ul class="code-steps">
-          <li>这一行“clawhub package publish your-org/stock-quotes --dry-run”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li><li>这一行“clawhub package publish your-org/stock-quotes”是在给电脑递一张小纸条，告诉它眼下该做哪一步。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">clawhub package publish your-org/stock-quotes --dry-run
-clawhub package publish your-org/stock-quotes</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Install with an explicit ClawHub locator:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Install with an explicit ClawHub locator:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一句直接对 OpenClaw 说的话，像你把任务清清楚楚塞到它手里。</p>
-        <ul class="code-steps">
-          <li>这里在给“openclaw plugins install clawhub”挂牌子，告诉系统它该指向“your-org/stock-quotes”。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">openclaw plugins install clawhub:your-org/stock-quotes</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Bare npm package specs remain supported during the launch cutover, but ClawHub is the preferred discovery and distribut…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Bare npm package specs remain supported during the launch cutover, but ClawHub is the preferred discovery and distribution surface for OpenClaw plugins.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-13">
-          <div class="section-heading">
-            <p class="section-kicker">第 13 站</p>
-            <h2>`新本领插件 entry not found: ./dist/index.js`</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The selected entry file does not exist. Run npm run build, then rerun openclaw 新本领插件s build --entry ./dist/index.js or…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The selected entry file does not exist. Run npm run build, then rerun openclaw 新本领插件s build --entry ./dist/index.js or…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The selected entry file does not exist. Run <code>npm run build</code>, then rerun <code>openclaw plugins build --entry ./dist/index.js</code> or <code>openclaw plugins validate --entry ./dist/index.js</code>.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-14">
-          <div class="section-heading">
-            <p class="section-kicker">第 14 站</p>
-            <h2>`新本领插件 entry does not expose define工具小帮手新本领插件 metadata`</h2>
-            <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲规则和边界：什么默认允许、什么必须显式打开、什么被禁止。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>这种内容决定了 OpenClaw 是“能做”还是“现在还不能做”，读懂它比记术语更重要。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>你可以把这一节当成权限说明书，真正配置时优先盯住 default、required、allow、deny 这几个词。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The entry did not export a value created by define工具小帮手新本领插件. Check that the module default export is the define工具小帮手新本…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The entry did not export a value created by define工具小帮手新本领插件. Check that the module default export is the define工具小帮手新本…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The entry did not export a value created by <code>defineToolPlugin</code>. Check that the module default export is the <code>defineToolPlugin(...)</code> result, or pass the correct entry with <code>--entry</code>.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-15">
-          <div class="section-heading">
-            <p class="section-kicker">第 15 站</p>
-            <h2>`openclaw.新本领插件.json generated metadata is stale`</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The manifest no longer matches the entry metadata. Run: Commit both openclaw.新本领插件.json and package.json changes.</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The manifest no longer matches the entry metadata. Run:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The manifest no longer matches the entry metadata. Run:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像魔法口令拆解</div>
-        <p>这是一串终端口令，像你站在控制台前，一下下按按钮让机器醒过来。</p>
-        <ul class="code-steps">
-          <li>这一句像在终端上按下启动钮：“npm run build”。它会让电脑去请求、安装或者把东西搭起来。</li><li>这一句是在直接叫 OpenClaw 动起来：“openclaw plugins build --entry ./dist/index.js”。你可以把它想成一句说出口就要执行的差事。</li>
-        </ul>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文代码块</div>
-        <pre><code class="language-bash">npm run build
-openclaw plugins build --entry ./dist/index.js</code></pre>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Commit both openclaw.新本领插件.json and package.json changes.</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Commit both <code>openclaw.plugin.json</code> and <code>package.json</code> changes.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-16">
-          <div class="section-heading">
-            <p class="section-kicker">第 16 站</p>
-            <h2>`package.json openclaw.extensions must include ./dist/index.js`</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The package metadata points at a different runtime entry. Run openclaw 新本领插件s build --entry ./dist/index.js so the gene…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The package metadata points at a different runtime entry. Run openclaw 新本领插件s build --entry ./dist/index.js so the gene…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The package metadata points at a different runtime entry. Run <code>openclaw plugins build --entry ./dist/index.js</code> so the generator aligns the package metadata with the entry you intend to ship.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-17">
-          <div class="section-heading">
-            <p class="section-kicker">第 17 站</p>
-            <h2>`Cannot find package &#39;typebox&#39;`</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The built 新本领插件 imports typebox at runtime. Keep typebox in dependencies, reinstall package dependencies, rebuild, and…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：The built 新本领插件 imports typebox at runtime. Keep typebox in dependencies, reinstall package dependencies, rebuild, and…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>The built plugin imports <code>typebox</code> at runtime. Keep <code>typebox</code> in <code>dependencies</code>, reinstall package dependencies, rebuild, and rerun validation.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-18">
-          <div class="section-heading">
-            <p class="section-kicker">第 18 站</p>
-            <h2>工具小帮手 does not appear after install</h2>
-            <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节更像安装或配置步骤，重点不是概念，而是“按什么顺序做才不会卡住”。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>很多文档看起来长，其实是在防你漏掉前置条件。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>真正照做时，先找前置条件，再找必填项，最后看验证方法。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Check these in order: 1. openclaw 新本领插件s inspect &lt;新本领插件-id&gt; --runtime 2. openclaw 新本领插件s validate --root &lt;新本领插件-root&gt; -…。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：Check these in order:。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>Check these in order:</p>
-      </div>
-
-      <div class="story-card">
-        <div class="story-card-label">像讲绘本</div>
-        <p>如果把这一段摆成一个小场景，你会看到几样东西正在互相打招呼、拦路或者传东西。别急着记名词，先抓住它此刻到底在发生什么：1. openclaw 新本领插件s inspect &lt;新本领插件-id&gt; --runtime 2. openclaw 新本领插件s validate --root &lt;新本领插件-root&gt; --entry ./dist/index.js…。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <p>1. <code>openclaw plugins inspect &lt;plugin-id&gt; --runtime</code> 2. <code>openclaw plugins validate --root &lt;plugin-root&gt; --entry ./dist/index.js</code> 3. <code>openclaw.plugin.json</code> has <code>contracts.tools</code> with the expected tool names. 4. <code>package.json</code> has <code>openclaw.extensions: [&quot;./dist/index.js&quot;]</code>. 5. The Gateway was restarted or reloaded after installing the plugin.</p>
-      </div>
-
-          </div>
-        </section>
-
-        <section class="section-shell" id="section-19">
-          <div class="section-heading">
-            <p class="section-kicker">第 19 站</p>
-            <h2>See also</h2>
-            <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-          </div>
-          <div class="story-grid">
-            <div class="story-card">
-              <div class="story-card-label">这段在解决什么</div>
-              <p>这一节在讲一类能力是怎么工作的：它能做什么、不能做什么、适合在什么场景下调用。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">为什么值得看</div>
-              <p>你理解的是能力边界，不只是功能名字。</p>
-            </div>
-            <div class="story-card">
-              <div class="story-card-label">真要动手时</div>
-              <p>如果这节里同时出现命令、配置和例子，优先先看例子，再回头看配置。</p>
-            </div>
-            <div class="source-card">
-              <div class="story-card-label">先别急着背术语</div>
-              <p>这一小段像旁白，在提醒我们镜头已经切到下一站。</p>
-            </div>
-          </div>
-          <div class="story-grid">
-
-      <div class="story-card">
-        <div class="story-card-label">像准备清单</div>
-        <p>这一串条目别硬背，把它当成“See also”门口贴出来的几张便签就行。它们在提醒你先备好什么、别漏掉什么、哪里最容易走错：Building 新本领插件s、新本领插件 entry points、新本领插件 SDK subpaths、新本领插件 manifest。</p>
-      </div>
-      <div class="source-card">
-        <div class="story-card-label">原文小纸条</div>
-        <ul><li><a href="/plugins/building-plugins" target="_blank" rel="noreferrer">Building plugins</a></li><li><a href="/plugins/sdk-entrypoints" target="_blank" rel="noreferrer">Plugin entry points</a></li><li><a href="/plugins/sdk-subpaths" target="_blank" rel="noreferrer">Plugin SDK subpaths</a></li><li><a href="/plugins/manifest" target="_blank" rel="noreferrer">Plugin manifest</a></li><li><a href="/cli/plugins" target="_blank" rel="noreferrer">Plugins CLI</a></li><li><a href="/clawhub/publishing" target="_blank" rel="noreferrer">ClawHub publishing</a></li></ul>
-      </div>
-
-          </div>
-        </section>
-
-    <section class="section-shell">
-      <div class="ad-placeholder">
-        <p>AdSense 连接验证已经放在页面头部；广告单元等站点审批通过后再启用。</p>
-        <code>google-adsense-account: ca-pub-3833673520933536</code>
-      </div>
-    </section>
+      <!-- handcrafted-source:plugins.tool-plugins.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Tool Plugin 是给代理挂一件小工具，不是重做一整套插件系统</h2>
+      <p>这页讲最轻量的插件形态：只注册 agent-callable tools，不新增 channel、provider、hook 或服务。读它时抓住三步就够了：用 defineToolPlugin 写工具，生成 openclaw.plugin.json 和 package metadata，再用验证命令确认入口、参数和 metadata 没有错位。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 19 节，先看 Start Here</span>
+      <span>路径：/plugins/tool-plugins</span>
+      <a href="https://docs.openclaw.ai/plugins/tool-plugins" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>先确认：你要做的是“工具”，不是一整座游乐场</h2>
+    <p>官方把 tool plugin 单独拿出来，是为了让简单工具不用背上太重的插件框架。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">它适合什么</div>
+      <p>适合固定的一组工具，比如查一个系统状态、读一个特殊资源、调用一个小服务。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">它不适合什么</div>
+      <p>如果你还要注册 provider、channel、hook、setup backend，应该去看更完整的 Building plugins。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label"><code>defineToolPlugin</code></div>
+      <p>它像一张工具登记表：工具叫什么、吃什么参数、做完后交回什么结果，都写在这里。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">为什么要生成 metadata</div>
+      <p>OpenClaw 需要先看说明书，才能在不加载运行时代码的情况下知道有哪些工具可用。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>Quickstart 像装一盒彩笔：先摆好，再贴标签，再试画</h2>
+  </div>
+  <div class="home-grid">
+    <article class="home-card"><span class="home-card-index">1</span><h2>Scaffold</h2><p>用 <code>openclaw plugins init</code> 先搭好小盒子。</p></article>
+    <article class="home-card"><span class="home-card-index">2</span><h2>Write</h2><p>用 <code>defineToolPlugin</code> 写出工具和参数形状。</p></article>
+    <article class="home-card"><span class="home-card-index">3</span><h2>Build</h2><p>把 TypeScript 做成可安装的 JavaScript。</p></article>
+    <article class="home-card"><span class="home-card-index">4</span><h2>Generate</h2><p>运行 <code>openclaw plugins build</code>，让 manifest 和 package metadata 对齐。</p></article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>工具真正上班时，重点看三件事</h2>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">参数</div>
+      <p>参数像任务单的格子。格子画清楚，代理才不容易把错误东西塞进去。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">返回值</div>
+      <p>返回值像工具交回来的回执。文字、结构化数据、错误信息，都要让调用方看得懂。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">可选工具</div>
+      <p>有副作用、会碰外部系统、或者需要额外本地程序的工具，适合先设成 optional，再由用户允许。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">工厂工具</div>
+      <p>factory tools 像“按配置现做一把工具”。配置不同，做出来的工具也可以不同。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>最常见的坑，都是“盒子标签”和“盒子里面”没对上</h2>
+  </div>
+  <div class="story-grid">
+    <div class="source-card"><div class="story-card-label"><code>plugin entry not found</code></div><p>通常是 <code>./dist/index.js</code> 没构建出来，或者 manifest 指错了入口。</p></div>
+    <div class="source-card"><div class="story-card-label">metadata stale</div><p>工具改了，但生成出来的 <code>openclaw.plugin.json</code> 还停在旧版本，需要重新 build。</p></div>
+    <div class="source-card"><div class="story-card-label">extensions 漏入口</div><p><code>package.json</code> 里的 <code>openclaw.extensions</code> 必须包含真正的运行时入口。</p></div>
+    <div class="story-card"><div class="story-card-label">最后检查</div><p>CI 里跑验证，就像出门前拉一下书包拉链：小动作，能挡住很多安装后才爆的错。</p></div>
+  </div>
+</section>
 
 
       <footer class="page-footer">
         <div>
           <strong>Fivey Can Read OpenClaw</strong>
-          <p>同步时间：2026年5月20日 20:58</p>
+          <p>同步时间：2026年5月23日 00:22</p>
         </div>
       </footer>
     </main>

@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zalo personal plugin | Fivey Can Read OpenClaw</title>
-  <meta name="description" content="这个插件让OpenClaw通过个人Zalo账号收发消息，但官方不认可这种自动化方式，账号可能被禁。安装后必须重启Gateway进程，不需要额外装zca命令行工具。">
+  <meta name="description" content="这个插件通过 zca-js 在 Gateway 进程中自动化个人 Zalo 账号，channel id 使用 zalouser 以明确区分个人账号自动化和未来可能的官方 Zalo API。使用前必须理解账号暂停或封禁风险，远程 Gateway 场景要装在 Gateway 所在机器上。">
   <meta name="robots" content="index,follow">
   <meta name="google-adsense-account" content="ca-pub-3833673520933536">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Fivey Can Read OpenClaw">
   <meta property="og:title" content="Zalo personal plugin | Fivey Can Read OpenClaw">
-  <meta property="og:description" content="这个插件让OpenClaw通过个人Zalo账号收发消息，但官方不认可这种自动化方式，账号可能被禁。安装后必须重启Gateway进程，不需要额外装zca命令行工具。">
+  <meta property="og:description" content="这个插件通过 zca-js 在 Gateway 进程中自动化个人 Zalo 账号，channel id 使用 zalouser 以明确区分个人账号自动化和未来可能的官方 Zalo API。使用前必须理解账号暂停或封禁风险，远程 Gateway 场景要装在 Gateway 所在机器上。">
   <meta property="og:url" content="https://fivey-can-read-openclaw.pages.dev/plugins/zalouser/">
   <meta property="og:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta property="og:image:alt" content="Zalo personal plugin 的中文故事化导读页面">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Zalo personal plugin | Fivey Can Read OpenClaw">
-  <meta name="twitter:description" content="这个插件让OpenClaw通过个人Zalo账号收发消息，但官方不认可这种自动化方式，账号可能被禁。安装后必须重启Gateway进程，不需要额外装zca命令行工具。">
+  <meta name="twitter:description" content="这个插件通过 zca-js 在 Gateway 进程中自动化个人 Zalo 账号，channel id 使用 zalouser 以明确区分个人账号自动化和未来可能的官方 Zalo API。使用前必须理解账号暂停或封禁风险，远程 Gateway 场景要装在 Gateway 所在机器上。">
   <meta name="twitter:image" content="https://fivey-can-read-openclaw.pages.dev/og-image.svg">
   <meta name="theme-color" content="#f5576c">
   <link rel="canonical" href="https://fivey-can-read-openclaw.pages.dev/plugins/zalouser/">
@@ -25,7 +25,7 @@
   <link rel="preload" href="/assets/site.css" as="style">
   <link rel="stylesheet" href="/assets/site.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3833673520933536" crossorigin="anonymous"></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Zalo personal plugin","description":"这个插件让OpenClaw通过个人Zalo账号收发消息，但官方不认可这种自动化方式，账号可能被禁。安装后必须重启Gateway进程，不需要额外装zca命令行工具。","url":"https://fivey-can-read-openclaw.pages.dev/plugins/zalouser/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Zalo personal plugin","description":"这个插件通过 zca-js 在 Gateway 进程中自动化个人 Zalo 账号，channel id 使用 zalouser 以明确区分个人账号自动化和未来可能的官方 Zalo API。使用前必须理解账号暂停或封禁风险，远程 Gateway 场景要装在 Gateway 所在机器上。","url":"https://fivey-can-read-openclaw.pages.dev/plugins/zalouser/","isPartOf":{"@type":"WebSite","name":"Fivey Can Read OpenClaw","url":"https://fivey-can-read-openclaw.pages.dev"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://fivey-can-read-openclaw.pages.dev"},{"@type":"ListItem","position":2,"name":"Plugins","item":"https://fivey-can-read-openclaw.pages.dev/plugins/zalouser/"}]}</script>
 </head>
 <body>
@@ -719,11 +719,6 @@
             <details class="sidebar-group">
               <summary>工具大全</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/tools/acp-agents/">
-                  <span>ACP agents 工具</span>
-                  <small>ACP agents</small>
-                </a>
-
                 <a class="sidebar-link " href="/tools/agent-send/">
                   <span>Agent send 工具</span>
                   <small>Agent send</small>
@@ -974,6 +969,11 @@
                   <small>Web fetch</small>
                 </a>
 
+                <a class="sidebar-link " href="/tools/acp-agents/">
+                  <span>ACP agents 工具</span>
+                  <small>ACP agents</small>
+                </a>
+
                 <a class="sidebar-link " href="/tools/acp-agents-setup/">
                   <span>ACP agents — setup</span>
                   <small>ACP agents — setup</small>
@@ -1027,6 +1027,11 @@
                 <a class="sidebar-link " href="/plugins/codex-harness/">
                   <span>Codex harness 插件</span>
                   <small>Codex harness</small>
+                </a>
+
+                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
+                  <span>Native Codex plugins 插件</span>
+                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/community/">
@@ -1117,11 +1122,6 @@
                 <a class="sidebar-link " href="/plugins/codex-harness-runtime/">
                   <span>Codex harness runtime 插件</span>
                   <small>Codex harness runtime</small>
-                </a>
-
-                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
-                  <span>Native Codex plugins 插件</span>
-                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/compatibility/">
@@ -1634,11 +1634,6 @@
             <details class="sidebar-group">
               <summary>网关</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/gateway/">
-                  <span>Gateway runbook</span>
-                  <small>Gateway runbook</small>
-                </a>
-
                 <a class="sidebar-link " href="/gateway/authentication/">
                   <span>身份认证</span>
                   <small>Authentication</small>
@@ -1722,6 +1717,11 @@
                 <a class="sidebar-link " href="/gateway/heartbeat/">
                   <span>Heartbeat</span>
                   <small>Heartbeat</small>
+                </a>
+
+                <a class="sidebar-link " href="/gateway/">
+                  <span>Gateway runbook</span>
+                  <small>Gateway runbook</small>
                 </a>
 
                 <a class="sidebar-link " href="/gateway/local-model-services/">
@@ -1872,11 +1872,6 @@
                 <a class="sidebar-link " href="/cli/backup/">
                   <span>Backup 命令</span>
                   <small>Backup</small>
-                </a>
-
-                <a class="sidebar-link " href="/cli/browser/">
-                  <span>浏览器</span>
-                  <small>Browser</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/channels/">
@@ -2039,6 +2034,11 @@
                   <small>ACP</small>
                 </a>
 
+                <a class="sidebar-link " href="/cli/browser/">
+                  <span>浏览器</span>
+                  <small>Browser</small>
+                </a>
+
                 <a class="sidebar-link " href="/cli/clawbot/">
                   <span>Clawbot 命令</span>
                   <small>Clawbot</small>
@@ -2107,6 +2107,11 @@
                 <a class="sidebar-link " href="/cli/plugins/">
                   <span>插件</span>
                   <small>Plugins</small>
+                </a>
+
+                <a class="sidebar-link " href="/cli/policy/">
+                  <span>Policy 命令</span>
+                  <small>Policy</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/proxy/">
@@ -2699,8 +2704,8 @@
           </div>
         </div>
         <p class="hero-eyebrow">Plugins 导读</p>
-        <h1>用个人Zalo账号做自动化？先看风险再装插件</h1>
-        <p class="hero-copy">这个插件让OpenClaw通过个人Zalo账号收发消息，但官方不认可这种自动化方式，账号可能被禁。安装后必须重启Gateway进程，不需要额外装zca命令行工具。</p>
+        <h1>Zalo Personal Plugin 用非官方方式自动化普通 Zalo 用户账号</h1>
+        <p class="hero-copy">这个插件通过 zca-js 在 Gateway 进程中自动化个人 Zalo 账号，channel id 使用 zalouser 以明确区分个人账号自动化和未来可能的官方 Zalo API。使用前必须理解账号暂停或封禁风险，远程 Gateway 场景要装在 Gateway 所在机器上。</p>
       </header>
 
       <div class="mobile-nav-shell" data-mobile-shell>
@@ -3391,11 +3396,6 @@
             <details class="sidebar-group">
               <summary>工具大全</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/tools/acp-agents/">
-                  <span>ACP agents 工具</span>
-                  <small>ACP agents</small>
-                </a>
-
                 <a class="sidebar-link " href="/tools/agent-send/">
                   <span>Agent send 工具</span>
                   <small>Agent send</small>
@@ -3646,6 +3646,11 @@
                   <small>Web fetch</small>
                 </a>
 
+                <a class="sidebar-link " href="/tools/acp-agents/">
+                  <span>ACP agents 工具</span>
+                  <small>ACP agents</small>
+                </a>
+
                 <a class="sidebar-link " href="/tools/acp-agents-setup/">
                   <span>ACP agents — setup</span>
                   <small>ACP agents — setup</small>
@@ -3699,6 +3704,11 @@
                 <a class="sidebar-link " href="/plugins/codex-harness/">
                   <span>Codex harness 插件</span>
                   <small>Codex harness</small>
+                </a>
+
+                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
+                  <span>Native Codex plugins 插件</span>
+                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/community/">
@@ -3789,11 +3799,6 @@
                 <a class="sidebar-link " href="/plugins/codex-harness-runtime/">
                   <span>Codex harness runtime 插件</span>
                   <small>Codex harness runtime</small>
-                </a>
-
-                <a class="sidebar-link " href="/plugins/codex-native-plugins/">
-                  <span>Native Codex plugins 插件</span>
-                  <small>Native Codex plugins</small>
                 </a>
 
                 <a class="sidebar-link " href="/plugins/compatibility/">
@@ -4306,11 +4311,6 @@
             <details class="sidebar-group">
               <summary>网关</summary>
               <div class="sidebar-links">
-                <a class="sidebar-link " href="/gateway/">
-                  <span>Gateway runbook</span>
-                  <small>Gateway runbook</small>
-                </a>
-
                 <a class="sidebar-link " href="/gateway/authentication/">
                   <span>身份认证</span>
                   <small>Authentication</small>
@@ -4394,6 +4394,11 @@
                 <a class="sidebar-link " href="/gateway/heartbeat/">
                   <span>Heartbeat</span>
                   <small>Heartbeat</small>
+                </a>
+
+                <a class="sidebar-link " href="/gateway/">
+                  <span>Gateway runbook</span>
+                  <small>Gateway runbook</small>
                 </a>
 
                 <a class="sidebar-link " href="/gateway/local-model-services/">
@@ -4544,11 +4549,6 @@
                 <a class="sidebar-link " href="/cli/backup/">
                   <span>Backup 命令</span>
                   <small>Backup</small>
-                </a>
-
-                <a class="sidebar-link " href="/cli/browser/">
-                  <span>浏览器</span>
-                  <small>Browser</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/channels/">
@@ -4711,6 +4711,11 @@
                   <small>ACP</small>
                 </a>
 
+                <a class="sidebar-link " href="/cli/browser/">
+                  <span>浏览器</span>
+                  <small>Browser</small>
+                </a>
+
                 <a class="sidebar-link " href="/cli/clawbot/">
                   <span>Clawbot 命令</span>
                   <small>Clawbot</small>
@@ -4779,6 +4784,11 @@
                 <a class="sidebar-link " href="/cli/plugins/">
                   <span>插件</span>
                   <small>Plugins</small>
+                </a>
+
+                <a class="sidebar-link " href="/cli/policy/">
+                  <span>Policy 命令</span>
+                  <small>Policy</small>
                 </a>
 
                 <a class="sidebar-link " href="/cli/proxy/">
@@ -5358,215 +5368,29 @@
         </div>
       </div>
 
+      <!-- handcrafted-source:plugins.zalouser.zh.html -->
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲这一页到底在解决什么</p>
+      <h2>Zalo Personal Plugin 用非官方方式自动化普通 Zalo 用户账号</h2>
+      <p>这个插件通过 zca-js 在 Gateway 进程中自动化个人 Zalo 账号，channel id 使用 zalouser 以明确区分个人账号自动化和未来可能的官方 Zalo API。使用前必须理解账号暂停或封禁风险，远程 Gateway 场景要装在 Gateway 所在机器上。</p>
+    </div>
+    <div class="overview-meta">
+      <span>原文共 9 节，先看 Start Here</span>
+      <span>路径：/plugins/zalouser</span>
+      <a href="https://docs.openclaw.ai/plugins/zalouser" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
 
-      <section class="section-shell">
-        <div class="overview-card">
-          <div>
-            <p class="section-kicker">AI 绘本解读版</p>
-            <h2>给你的Zalo个人号装个“遥控器”</h2>
-            <p>想象一下，你的Zalo个人号现在有了一个专属的“遥控器”。这个遥控器能帮你自动收发消息、管理好友，但它就住在OpenClaw的“总闸门”里。不过要小心，用遥控器玩Zalo，官方可能会不高兴。</p>
-          </div>
-          <div class="overview-meta">
-            <span>原始路径：/plugins/zalouser</span>
-            <span>故事卡片：7 张</span>
-            <a href="https://docs.openclaw.ai/plugins/zalouser" target="_blank" rel="noreferrer">查看官方原文</a>
-          </div>
-        </div>
-      </section>
-
-          <section class="section-shell" id="section-1">
-            <div class="section-heading">
-              <p class="section-kicker">第 1 站</p>
-              <h2>名字的讲究</h2>
-              <p>这个遥控器的名字叫“zalouser”，一听就知道是给个人Zalo号用的。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这样你就不会把它和未来可能出现的官方Zalo通道搞混了。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>我们特意把‘zalo’这个名字留给了未来可能的官方合作。</li><li>‘zalouser’这个名字，就是告诉你：这是给个人号用的，非官方的。</li><li>名字就是它的身份证，一看就懂。</li></ul>
-              </div>
-
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>名字是‘zalouser’，专为个人号服务。</p>
-              </div>
-            </div>
-          </section>
-
-          <section class="section-shell" id="section-2">
-            <div class="section-heading">
-              <p class="section-kicker">第 2 站</p>
-              <h2>遥控器住在哪？</h2>
-              <p>这个遥控器就住在OpenClaw的“总闸门”里。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>知道它住哪，你才知道去哪找它、给它装软件。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>它不单独住在外面，就安家在‘总闸门’这个核心进程里。</li><li>如果你的‘总闸门’是放在另一台电脑上的，那你就得去那台电脑上安装。</li><li>装好之后，别忘了重启‘总闸门’，它才能认出这个新住户。</li><li>好消息是，你不用额外去下载什么‘zca’工具箱，它自己全包了。</li></ul>
-              </div>
-
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>它住在‘总闸门’里，装完记得重启。</p>
-              </div>
-            </div>
-          </section>
-
-          <section class="section-shell" id="section-3">
-            <div class="section-heading">
-              <p class="section-kicker">第 3 站</p>
-              <h2>安装方法A：从软件商店拿</h2>
-              <p>就像从应用商店下载App一样简单。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这是最省事的安装方式。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>打开命令行，就像打开工具箱。</li><li>输入安装命令，就像在商店里点‘下载’。</li><li>命令执行完，这个‘遥控器’的软件包就放进你的系统了。</li></ul>
-              </div>
-
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>命令 `openclaw plugins install @openclaw/zalouser` 一敲下去，系统就会去软件仓库里找到这个插件，然后把它下载、安装到正确的位置。</li></ul>
-            </div>
-
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>一条命令，从商店直接安装。</p>
-              </div>
-            </div>
-          </section>
-
-          <section class="section-shell" id="section-4">
-            <div class="section-heading">
-              <p class="section-kicker">第 4 站</p>
-              <h2>安装方法B：从本地文件夹装（给开发者）</h2>
-              <p>如果你自己写了代码，可以从本地文件夹直接安装。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>方便开发者测试自己修改过的版本。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>先告诉系统你的插件代码放在哪个文件夹里。</li><li>然后执行安装命令，系统就会从这个文件夹里读取并安装。</li><li>安装完，别忘了进入文件夹，把插件需要的其他零件也装好。</li></ul>
-              </div>
-
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`PLUGIN_SRC=./path/to/local/zalouser-plugin` 这行是设置一个‘地址标签’，告诉系统插件在哪。</li><li>`openclaw plugins install &quot;$PLUGIN_SRC&quot;` 这行命令会根据‘地址标签’去那个文件夹安装。</li><li>`cd &quot;$PLUGIN_SRC&quot; &amp;&amp; pnpm install` 这行是进入文件夹，并安装插件运行需要的其他小零件。</li></ul>
-            </div>
-
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>设置好本地路径，就能安装自己开发的版本。</p>
-              </div>
-            </div>
-          </section>
-
-          <section class="section-shell" id="section-5">
-            <div class="section-heading">
-              <p class="section-kicker">第 5 站</p>
-              <h2>给遥控器定规矩</h2>
-              <p>安装好了，还得告诉系统怎么启用这个遥控器，给它定几条规矩。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>不开开关，不通电，遥控器就是块砖头。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>配置不是写在‘插件’那个柜子里，而是写在‘频道’这个专属抽屉下，抽屉名字叫‘zalouser’。</li><li>你需要把‘enabled’这个开关拨到‘true’，给它通电。</li><li>还可以设置‘dmPolicy’（私信策略），比如设为‘pairing’，控制谁能给你发私信。</li></ul>
-              </div>
-
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>在配置文件里找到 `channels.zalouser` 这个位置。</li><li>写下 `enabled: true`，就像按下了遥控器的电源开关。</li><li>写下 `dmPolicy: &quot;pairing&quot;`，就像设置了私信的白名单。</li></ul>
-            </div>
-
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>在‘频道’配置里，打开‘zalouser’的开关。</p>
-              </div>
-            </div>
-          </section>
-
-          <section class="section-shell" id="section-6">
-            <div class="section-heading">
-              <p class="section-kicker">第 6 站</p>
-              <h2>拿起遥控器试试看</h2>
-              <p>配置好了，现在可以用命令行来操控你的Zalo号了。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>光装上不行，得试试它灵不灵。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>用 `login` 命令登录你的Zalo账号，就像把遥控器和Zalo号配对。</li><li>用 `send` 命令发送消息，遥控器会帮你把话传过去。</li><li>用 `status` 命令检查遥控器和Zalo号的连接状态，看看信号强不强。</li><li>还能用 `peers list` 命令看看你的好友列表，就像翻通讯录。</li></ul>
-              </div>
-
-            <div class="source-card">
-              <div class="story-card-label">🛠 命令 / 代码像在做什么</div>
-              <ul><li>`openclaw channels login --channel zalouser`：执行后，会弹出一个窗口或提示，让你输入Zalo账号密码，完成配对登录。</li><li>`openclaw message send ...`：执行后，你指定的消息就会从你的Zalo号发出去，对方Zalo上会亮起你的消息提示。</li><li>`openclaw channels status --probe`：执行后，命令行会显示连接是否正常，就像网络诊断工具。</li></ul>
-            </div>
-
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>登录、发消息、查状态，命令行就是遥控器的按钮。</p>
-              </div>
-            </div>
-          </section>
-
-          <section class="section-shell" id="section-7">
-            <div class="section-heading">
-              <p class="section-kicker">第 7 站</p>
-              <h2>给AI助手用的工具</h2>
-              <p>这个遥控器还能变成AI助手的‘手’，让AI帮你操作Zalo。</p>
-            </div>
-            <div class="story-grid">
-              <div class="story-card">
-                <div class="story-card-label">🌟 为什么要看</div>
-                <p>这样AI就能替你发消息、找朋友了。</p>
-              </div>
-              <div class="source-card">
-                <div class="story-card-label">🧠 这节要记住什么</div>
-                <ul><li>AI助手可以调用一个叫‘zalouser’的工具箱。</li><li>这个工具箱里有好多‘手’：能‘发送’消息、能传‘图片’、能发‘链接’。</li><li>还能‘查找’好友、‘查看’群组、‘看看’自己是谁、‘检查’状态。</li><li>甚至还能对消息‘点个赞’（添加反应）。</li></ul>
-              </div>
-
-              <div class="story-card">
-                <div class="story-card-label">🎈 最后记一句</div>
-                <p>AI也能通过‘zalouser’工具包来操控你的Zalo。</p>
-              </div>
-            </div>
-          </section>
-
-      <section class="section-shell">
-        <div class="ad-placeholder">
-          <p>AdSense 连接验证已经放在页面头部；广告单元等站点审批通过后再启用。</p>
-          <code>google-adsense-account: ca-pub-3833673520933536</code>
-        </div>
-      </section>
+<section class="section-shell"><div class="story-grid"><div class="story-card"><div class="story-card-label">为什么叫 zalouser</div><p>名字故意说明这是个人账号自动化，未来官方 API 可保留给 <code>zalo</code>。</p></div><div class="story-card"><div class="story-card-label">跑在哪里</div><p>插件在 Gateway 进程里运行。远程 Gateway 场景要装在 Gateway 所在机器上。</p></div><div class="source-card"><div class="story-card-label">启用后</div><p>配置完成后需要重启 Gateway，让通道插件真正加载。</p></div><div class="source-card"><div class="story-card-label">风险提醒</div><p>这类自动化最重要的不是“能不能跑”，而是账号风险和使用边界。</p></div></div></section>
 
 
       <footer class="page-footer">
         <div>
           <strong>Fivey Can Read OpenClaw</strong>
-          <p>同步时间：2026年5月20日 20:58</p>
+          <p>同步时间：2026年5月23日 00:22</p>
         </div>
       </footer>
     </main>

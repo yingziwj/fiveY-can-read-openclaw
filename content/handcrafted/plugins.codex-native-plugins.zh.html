@@ -1,0 +1,54 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>Native Codex plugins，是让 Codex 自己的插件在 Codex 线程里原样工作</h2>
+      <p>这页讲的是 Codex 模式下的一条特别通道：OpenClaw 不把 Codex 插件伪装成一堆动态工具，而是让 Codex app-server 自己处理这些 app 和 plugin 调用。</p>
+      <p>可以把它想成：OpenClaw 负责把任务交到 Codex 房间门口，房间里面的插件由 Codex 原生管家来安排。</p>
+    </div>
+    <div class="overview-meta">
+      <span>前提：Codex harness 已经能工作</span>
+      <span>插件调用保留在 Codex native transcript</span>
+      <a href="https://docs.openclaw.ai/plugins/codex-native-plugins" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>它不是“翻译器”，而是“让原住民自己说原来的语言”</h2>
+  </div>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-card-label">不做的事</div><p>OpenClaw 不会把 Codex 插件硬翻译成 <code>codex_plugin_*</code> 动态工具。</p></div>
+    <div class="story-card"><div class="story-card-label">会做的事</div><p>Codex 插件调用留在 Codex 线程里，由 Codex app-server 执行。</p></div>
+    <div class="source-card"><div class="story-card-label">为什么这样设计</div><p>原生插件通常有自己的权限、app-backed MCP、上下文和执行记录，硬翻译会丢掉细节。</p></div>
+    <div class="source-card"><div class="story-card-label">先看哪页</div><p>如果 Codex harness 还没跑通，先回到 <code>/plugins/codex-harness</code>。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>Setup 像把两份名单对齐</h2>
+  </div>
+  <div class="home-grid">
+    <article class="home-card"><span class="home-card-index">1</span><h2>source Codex home</h2><p>插件必须装在来源 Codex home 里。</p></article>
+    <article class="home-card"><span class="home-card-index">2</span><h2>inventory</h2><p>OpenClaw 要知道哪些 plugin 和 app 可见。</p></article>
+    <article class="home-card"><span class="home-card-index">3</span><h2>thread config</h2><p>线程里的 app config 决定本轮能用哪些能力。</p></article>
+    <article class="home-card"><span class="home-card-index">4</span><h2>native transcript</h2><p>真正调用时，记录仍按 Codex 原生格式保存。</p></article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>安全边界：会动东西的动作不能偷偷溜过去</h2>
+  </div>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-card-label">Destructive action</div><p>会删除、覆盖、提交、发布的动作，要遵守 Codex 原生的确认和权限策略。</p></div>
+    <div class="story-card"><div class="story-card-label">谁负责执行</div><p>app-backed MCP 的执行归 Codex app-server 管，OpenClaw 不假装自己是最终执行者。</p></div>
+    <div class="source-card"><div class="story-card-label">V1 support boundary</div><p>官方把支持范围说清楚，是为了避免大家把实验能力当成永久承诺。</p></div>
+    <div class="source-card"><div class="story-card-label">排错方向</div><p>先查 inventory 有没有插件，再查 thread app config 有没有打开，最后看 Codex 端日志。</p></div>
+  </div>
+</section>
