@@ -440,6 +440,8 @@ export const handcraftedPages = [
   ["/help/index", "help.index.zh.html"],
   ["/help/scripts", "help.scripts.zh.html"],
   ["/help/testing", "help.testing.zh.html"],
+  ["/help/testing-live", "help.testing-live.zh.html"],
+  ["/help/testing-updates-plugins", "help.testing-updates-plugins.zh.html"],
   ["/help/troubleshooting", "help.troubleshooting.zh.html"],
   ["/index", "index.zh.html"],
   ["/vps", "vps.zh.html"],

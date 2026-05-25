@@ -1,0 +1,177 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>更新和插件测试，是确认新包不会把老用户的家弄乱</h2>
+      <p>这页专门讲发版前的“搬家检查”：新 OpenClaw 包能不能从旧版本平稳升级，插件能不能安装、更新、卸载，旧状态能不能被 <code>doctor</code> 修好。</p>
+      <p>它关心的不只是代码会不会编译，而是真用户已经有配置、agent、会话、工作区和插件时，升级后这些东西还在不在、干不干净。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合维护者做更新和插件发布验证</span>
+      <span>重点是 tarball、doctor、Docker lanes、Package Acceptance</span>
+      <a href="https://docs.openclaw.ai/help/testing-updates-plugins" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>这组测试到底在保护什么</h2>
+    <p>可以把它想成给升级包和插件做入城检查：包要完整，路要通，旧行李不能丢，坏旧件要由 doctor 明明白白修掉。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">包</span>
+      <h2>tarball 要完整</h2>
+      <p>候选包里要有需要的 <code>dist/postinstall-inventory.json</code>，不能偷偷依赖仓库里没打进去的文件。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">家</span>
+      <h2>旧状态要保住</h2>
+      <p>配置、agent、会话、workspace、插件 allowlist、频道配置，升级后都不能莫名消失。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">医</span>
+      <h2>旧问题交给 doctor</h2>
+      <p><code>openclaw doctor --fix --non-interactive</code> 负责清理旧插件状态，启动流程不应偷偷长出一堆隐藏迁移。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">插</span>
+      <h2>插件来源都要能走通</h2>
+      <p>本地目录、git、npm、ClawHub registry，都要能按支持的方式安装、加载、更新和卸载。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>本地开发先跑小门岗</h2>
+    <p>改代码时先从变更相关的窄检查开始，像先查你刚动过的抽屉，不必立刻翻遍整间屋子。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">先看改动影响哪些 lanes</div>
+      <pre><code class="language-bash">pnpm changed:lanes --json
+pnpm check:changed
+pnpm test:changed</code></pre>
+      <p>这三步像先问“我到底动了哪几块”，再跑对应检查。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">插件和包清单相关改动</div>
+      <pre><code class="language-bash">pnpm test src/plugins/uninstall.test.ts \
+  src/infra/package-dist-inventory.test.ts \
+  test/scripts/package-acceptance-workflow.test.ts</code></pre>
+      <p>如果你碰了安装、卸载、依赖或包 inventory，就把这些守门测试也带上。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">Docker lanes 用包前先验包</div>
+      <pre><code class="language-bash">pnpm release:check</code></pre>
+      <p>它会写 inventory、做 <code>npm pack --dry-run</code>、拒绝不该打包的文件，并试装 tarball。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>Docker lanes 像把新包放进真实小房间</h2>
+    <p>这些 lanes 会在 Linux 容器里安装或升级真实包，再用 CLI、Gateway、HTTP 探针和文件系统状态检查结果。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">常用 focused lanes</div>
+      <pre><code class="language-bash">pnpm test:docker:plugins
+pnpm test:docker:plugin-lifecycle-matrix
+pnpm test:docker:plugin-update
+pnpm test:docker:upgrade-survivor
+pnpm test:docker:published-upgrade-survivor
+pnpm test:docker:update-restart-auth
+pnpm test:docker:update-migration</code></pre>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">plugins</div>
+      <p>验证插件从本地目录、file 包、git、npm、ClawHub fixture 等来源安装和更新，还会看 malformed package 是否被拒绝。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">upgrade survivor</div>
+      <p>把候选包装到旧用户状态上，看配置、会话、插件和 Gateway 启动能不能一起活下来。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">update migration</div>
+      <p>专门检查旧插件依赖残留、频道配置和 doctor 清理。它是清理重活，不默认塞进每次完整 release。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>Package Acceptance 是 GitHub 上的包验收闸门</h2>
+    <p>它先把一个候选包解析成固定 tarball，记录版本和 SHA-256，再让 Docker E2E lanes 都围着同一个包跑。这样大家检查的是同一件包裹。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">npm</span>
+      <h2>测已发布包</h2>
+      <p>可以验证 <code>openclaw@beta</code>、<code>openclaw@latest</code> 或某个精确版本。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">ref</span>
+      <h2>测分支或提交</h2>
+      <p>把可信 branch、tag 或 commit 打包后，交给当前 harness 检查。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">url</span>
+      <h2>测外部 tarball</h2>
+      <p>需要 HTTPS tarball 和指定 SHA-256，确保验收的包没有被换掉。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">artifact</span>
+      <h2>复用构建产物</h2>
+      <p>Full Release Validation 常用这个来源，直接拿已经上传的 release artifact 验收。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>发版默认证明栈，从轻到重排队</h2>
+    <p>发版候选不靠一个超级命令赌运气，而是像过五道门：先源代码，再包，再产品行为，再跨系统，最后按需 live。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-card-label">1. 变更检查</div><p><code>pnpm check:changed</code> 和 <code>pnpm test:changed</code> 先守住源码层回归。</p></div>
+    <div class="story-card"><div class="story-card-label">2. 包完整性</div><p><code>pnpm release:check</code> 确认 tarball、inventory、postinstall 和入口烟雾都正常。</p></div>
+    <div class="story-card"><div class="story-card-label">3. 包验收</div><p>Package Acceptance 或 release-check package lanes 验证安装、更新、重启、插件合同。</p></div>
+    <div class="story-card"><div class="story-card-label">4. 跨 OS</div><p>检查安装器、onboarding 和平台特有行为，避免只在一种系统上看起来没事。</p></div>
+    <div class="story-card"><div class="story-card-label">5. Live suites</div><p>只有改动碰到 provider 或托管服务行为时，才把 live 测试接上。</p></div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第六站</p>
+    <h2>旧版本兼容要窄，不要把旧包袱背到启动里</h2>
+    <p>有些早期包已经发出去，验收时可以对已知历史缺口保持有限宽容。但新的包必须满足现代合同，不能继续新增“启动时偷偷修旧状态”的魔法。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">正确修法</div>
+      <p>如果旧形状需要修复，优先扩展 <code>doctor</code> repair，然后用 <code>upgrade-survivor</code>、<code>published-upgrade-survivor</code> 或 <code>update-restart-auth</code> 证明它真的会修。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">为什么这样做</div>
+      <p>启动流程越干净，日常运行越可预期；doctor 则像维修单，哪里修过、为什么修，都更容易追踪。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>更新和插件验证，目标是让升级像搬家清单一样可靠</h2>
+    <p>小改动先跑窄测试，包要先证明自己完整，Docker lanes 负责模拟真实安装升级，Package Acceptance 负责盯住同一个候选包。这样发出去的东西，才不会让用户的旧家当散一地。</p>
+  </div>
+</section>

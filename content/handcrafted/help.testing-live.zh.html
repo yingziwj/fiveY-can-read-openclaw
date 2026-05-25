@@ -1,0 +1,148 @@
+<section class="section-shell">
+  <div class="overview-card">
+    <div>
+      <p class="section-kicker">先讲人话版</p>
+      <h2>Live suites，是拿真钥匙去真门口试一试</h2>
+      <p>普通测试像在教室里演练，live 测试像真的走到门口，拿真实账号、真实网络、真实模型服务敲门。</p>
+      <p>它能发现“本地看起来没坏，但连到外面的服务就不通”的问题。不过它会碰网络和凭据，所以默认要主动打开，不会偷偷乱跑。</p>
+    </div>
+    <div class="overview-meta">
+      <span>适合维护者和 QA 跑真实服务验证</span>
+      <span>重点是模型、CLI 后端、ACP、媒体和凭据</span>
+      <a href="https://docs.openclaw.ai/help/testing-live" target="_blank" rel="noreferrer">查看官方原文</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第一站</p>
+    <h2>什么时候才需要 live 测试</h2>
+    <p>如果你只是改普通代码，先看 <a href="/help/testing/">Testing</a>。只有碰到真实外部服务时，才把 live 这盏大灯打开。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">1</span>
+      <h2>模型能不能回答</h2>
+      <p>直接问模型一句小问题，确认 provider、model id 和钥匙都还能用。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">2</span>
+      <h2>Gateway 链路通不通</h2>
+      <p>让完整 agent 流程跑起来，顺便检查读文件、执行命令、图片输入这些工具链。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">3</span>
+      <h2>外部能力是否在线</h2>
+      <p>CLI 后端、ACP 绑定、APNs、图片、音乐、视频等服务，都用小而明确的探针验证。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第二站</p>
+    <h2>先跑小烟雾，不要一上来点全场</h2>
+    <p>live 测试会用真实服务，最好从最窄的命令开始。能证明问题就停在小范围里，别让测试变成又慢又贵的大巡游。</p>
+  </div>
+  <div class="story-grid">
+    <div class="source-card">
+      <div class="story-card-label">安全的媒体烟雾</div>
+      <pre><code class="language-bash">pnpm openclaw infer tts convert --local --json \
+  --text "OpenClaw live smoke." \
+  --output /tmp/openclaw-live-smoke.mp3</code></pre>
+      <p>像让音箱说一句短话，确认媒体管道不是哑的。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">语音呼叫准备检查</div>
+      <pre><code class="language-bash">pnpm openclaw voicecall setup --json
+pnpm openclaw voicecall smoke --to "+15555550123"</code></pre>
+      <p><code>voicecall smoke</code> 默认是干跑。只有加 <code>--yes</code>，才表示你真的想发起通知呼叫。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第三站</p>
+    <h2>模型 live 测试分两层，方便找错</h2>
+    <p>同样是“模型不工作”，可能是钥匙坏了，也可能是 Gateway 到 agent 的整条路坏了。分层以后，问题更容易定位。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">第一层：Direct model</div>
+      <p>不启动完整 Gateway，只看某个 provider/model 能不能用当前凭据回答。常用开关是 <code>OPENCLAW_LIVE_MODELS</code>。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">第二层：Gateway smoke</div>
+      <p>启动完整 agent 流程，检查会话、历史、工具调用、沙箱策略和图片输入。常用开关是 <code>OPENCLAW_LIVE_GATEWAY_MODELS</code>。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">窄范围示例</div>
+      <pre><code class="language-bash">OPENCLAW_LIVE_GATEWAY_MODELS="openai/gpt-5.5" \
+  pnpm test:live src/gateway/gateway-models.profiles.live.test.ts</code></pre>
+      <p>像只检查一扇门，不把整栋楼都跑一遍。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">先看本机有什么</div>
+      <pre><code class="language-bash">openclaw models list
+openclaw models list --json</code></pre>
+      <p>不要硬背模型清单。你机器上发现到的模型和可用凭据，才是本次测试的真实地图。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第四站</p>
+    <h2>CLI、ACP、Codex harness 也有自己的 live 探针</h2>
+    <p>这些测试像检查不同入口的门铃：Claude、Gemini、Codex、ACP harness 都要证明“能接上、能继续对话、能按合同工作”。</p>
+  </div>
+  <div class="home-grid">
+    <article class="home-card">
+      <span class="home-card-index">CLI</span>
+      <h2>本地命令后端</h2>
+      <p>用 <code>OPENCLAW_LIVE_CLI_BACKEND=1</code> 检查 Claude、Gemini 等本地 CLI 是否能被 Gateway 正确驱动。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">ACP</span>
+      <h2>绑定对话</h2>
+      <p>用 <code>OPENCLAW_LIVE_ACP_BIND=1</code> 验证 <code>/acp spawn ... --bind here</code> 之后，后续消息还在同一条会话里。</p>
+    </article>
+    <article class="home-card">
+      <span class="home-card-index">Codex</span>
+      <h2>app-server harness</h2>
+      <p>用 <code>OPENCLAW_LIVE_CODEX_HARNESS=1</code> 验证 Codex runtime、续聊、状态命令和可选工具探针。</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">第五站</p>
+    <h2>凭据要像借书证一样保管</h2>
+    <p>live 测试会找真实钥匙，但不应该把钥匙写进代码、日志或提交里。能用 CLI 跑通的凭据，live 测试通常也应该能找到。</p>
+  </div>
+  <div class="story-grid">
+    <div class="story-card">
+      <div class="story-card-label">常见来源</div>
+      <p>环境变量、<code>~/.openclaw/openclaw.json</code>、每个 agent 的 <code>auth-profiles.json</code>，以及部分外部 CLI 的认证目录。</p>
+    </div>
+    <div class="story-card">
+      <div class="story-card-label">更严格的钥匙规则</div>
+      <p>设置 <code>OPENCLAW_LIVE_REQUIRE_PROFILE_KEYS=1</code> 时，只认 profile store，避免旧环境变量把问题遮住。</p>
+    </div>
+    <div class="source-card">
+      <div class="story-card-label">不要提交</div>
+      <p>API key、OAuth token、语音服务号码、临时测试 home 里的认证材料，都只留在本机或安全的 CI secret 里。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="section-kicker">最后记住</p>
+    <h2>Live 测试不是每天随手全跑的大扫除</h2>
+    <p>它更像发车前对真实铁轨的试跑：窄一点、明白一点、带好钥匙、看清失败点。普通测试负责守住日常，live 测试负责确认外面的世界还真的接得上。</p>
+  </div>
+</section>
